@@ -79,71 +79,155 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="accessreviewreadall">AccessReview.Read.All</h1>
 
-<h2 id="application-permission">Application Permission</h2>
-<p>d07a8cc0-3d51-4b77-b3b0-32704d1f69fa</p>
-<p>Read all access reviews</p>
-<p>Allows the app to read access reviews, reviewers, decisions and settings in the organization, without a signed-in user.</p>
-<h2 id="delegate-permission">Delegate Permission</h2>
-<p>ebfcd32b-babb-40f4-a14b-42706e83bd28</p>
-<p>Consent Type: Admin</p>
-<p>Admin Description</p>
-<p>Read all access reviews that user can access</p>
+<blockquote>
 <p>Allows the app to read access reviews, reviewers, decisions and settings that the signed-in user has access to in the organization.</p>
-<p>User Description</p>
-<p>Read access reviews that you can access</p>
-<p>Allows the app to read information on access reviews, reviewers, decisions and settings that you have access to.</p>
+</blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<h3 id="v1">V1</h3>
-<ul>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/accessreviewinstance-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinitionId}/instances/{accessReviewInstanceId}</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/accessreviewscheduledefinition-list-instances?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinitionId}/instances</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/accessreviewscheduledefinition-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinitionId}</a></p>
-</li>
-</ul>
-<h3 id="beta">Beta</h3>
-<ul>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/accessreview-get?view=graph-rest-beta&amp;tabs=http">GET /accessReviews/{reviewId}</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/accessreview-list?view=graph-rest-beta&amp;tabs=http">GET /accessReviews?$filter=businessFlowTemplateId eq {businessFlowTemplate-id}&amp;$top={pagesize}&amp;$skip=0</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/accessreview-listdecisions?view=graph-rest-beta&amp;tabs=http">GET /accessReviews/{reviewId}/decisions</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/accessreview-listmydecisions?view=graph-rest-beta&amp;tabs=http">GET /accessReviews/{reviewId}/myDecisions</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/accessreview-listreviewers?view=graph-rest-beta&amp;tabs=http">GET /accessReviews/{reviewId}/reviewers</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/accessreviewinstance-get?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/accessReviews/definitions/{definition-id}/instances/{instance-id}</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/accessreviewinstance-list?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/accessReviews/definitions/{definition-id}/instances</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/accessreviewinstance-pendingaccessreviewinstances?view=graph-rest-beta&amp;tabs=http">GET /me/pendingAccessReviewInstances</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/accessreviewinstancedecisionitem-list?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/accessReviews/definitions/{definition-id}/instances/{instance-id}/decisions</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/accessreviewinstancedecisionitem-listpendingapproval?view=graph-rest-beta&amp;tabs=http">GET /me/pendingAccessReviewInstances/{instance-id}/decisions</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/accessreviewscheduledefinition-get?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/accessReviews/definitions/{review-id}</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/businessflowtemplate-list?view=graph-rest-beta&amp;tabs=http">GET /businessFlowTemplates</a></p>
-</li>
-</ul>
-<h3 id="v1--beta">V1 + Beta</h3>
-<ul>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/accessreviewinstance-filterbycurrentuser?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinitionId}/instances/filterByCurrentUser(on='reviewer')</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/accessreviewinstancedecisionitem-list?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinitionId}/instances/{accessReviewInstanceId}/decisions</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/accessreviewinstancedecisionitem-filterbycurrentuser?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinitionId}/instances/{accessReviewInstanceId}/decisions/filterByCurrentUser(on='reviewer')</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/accessreviewinstancedecisionitem-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinitionId}/instances/{accessReviewInstanceId}/decisions/{accessReviewInstanceDecisionItemId}</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/accessreviewscheduledefinition-filterbycurrentuser?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/accessReviews/definitions/filterByCurrentUser(on='reviewer')</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/accessreviewscheduledefinition-list?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/accessReviews/definitions</a></p>
-</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Beta</td>
+<td><a href="https://docs.microsoft.com/graph/api/accessreview-get?view=graph-rest-beta&amp;tabs=http">GET /accessReviews/{reviewId}</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td><a href="https://docs.microsoft.com/graph/api/accessreview-listdecisions?view=graph-rest-beta&amp;tabs=http">GET /accessReviews/{reviewId}/decisions</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td><a href="https://docs.microsoft.com/graph/api/accessreview-listmydecisions?view=graph-rest-beta&amp;tabs=http">GET /accessReviews/{reviewId}/myDecisions</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td><a href="https://docs.microsoft.com/graph/api/accessreview-listreviewers?view=graph-rest-beta&amp;tabs=http">GET /accessReviews/{reviewId}/reviewers</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td><a href="https://docs.microsoft.com/graph/api/accessreview-list?view=graph-rest-beta&amp;tabs=http">GET /accessReviews?$filter=businessFlowTemplateId eq {businessFlowTemplate-id}&amp;$top={pagesize}&amp;$skip=0</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td><a href="https://docs.microsoft.com/graph/api/businessflowtemplate-list?view=graph-rest-beta&amp;tabs=http">GET /businessFlowTemplates</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td><a href="https://docs.microsoft.com/graph/api/accessreviewscheduledefinition-list?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/accessReviews/definitions</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td><a href="https://docs.microsoft.com/graph/api/accessreviewscheduledefinition-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinitionId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td><a href="https://docs.microsoft.com/graph/api/accessreviewscheduledefinition-list-instances?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinitionId}/instances</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td><a href="https://docs.microsoft.com/graph/api/accessreviewinstance-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinitionId}/instances/{accessReviewInstanceId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td><a href="https://docs.microsoft.com/graph/api/accessreviewinstancedecisionitem-list?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinitionId}/instances/{accessReviewInstanceId}/decisions</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td><a href="https://docs.microsoft.com/graph/api/accessreviewinstancedecisionitem-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinitionId}/instances/{accessReviewInstanceId}/decisions/{accessReviewInstanceDecisionItemId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td><a href="https://docs.microsoft.com/graph/api/accessreviewinstancedecisionitem-filterbycurrentuser?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinitionId}/instances/{accessReviewInstanceId}/decisions/filterByCurrentUser(on='reviewer')</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td><a href="https://docs.microsoft.com/graph/api/accessreviewinstance-filterbycurrentuser?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinitionId}/instances/filterByCurrentUser(on='reviewer')</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td><a href="https://docs.microsoft.com/graph/api/accessreviewinstance-list?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/accessReviews/definitions/{definition-id}/instances</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td><a href="https://docs.microsoft.com/graph/api/accessreviewinstance-get?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/accessReviews/definitions/{definition-id}/instances/{instance-id}</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td><a href="https://docs.microsoft.com/graph/api/accessreviewinstancedecisionitem-list?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/accessReviews/definitions/{definition-id}/instances/{instance-id}/decisions</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td><a href="https://docs.microsoft.com/graph/api/accessreviewscheduledefinition-get?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/accessReviews/definitions/{review-id}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td><a href="https://docs.microsoft.com/graph/api/accessreviewscheduledefinition-filterbycurrentuser?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/accessReviews/definitions/filterByCurrentUser(on='reviewer')</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td><a href="https://docs.microsoft.com/graph/api/accessreviewinstance-pendingaccessreviewinstances?view=graph-rest-beta&amp;tabs=http">GET /me/pendingAccessReviewInstances</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td><a href="https://docs.microsoft.com/graph/api/accessreviewinstancedecisionitem-listpendingapproval?view=graph-rest-beta&amp;tabs=http">GET /me/pendingAccessReviewInstances/{instance-id}/decisions</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="permission-type">Permission Type</h2>
+<h3 id="delegate-permission">Delegate Permission</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Id</strong></td>
+<td>ebfcd32b-babb-40f4-a14b-42706e83bd28</td>
+</tr>
+<tr>
+<td><strong>Consent Type</strong></td>
+<td>Admin</td>
+</tr>
+<tr>
+<td><strong>Display String</strong></td>
+<td>Read all access reviews that user can access</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Allows the app to read access reviews, reviewers, decisions and settings that the signed-in user has access to in the organization.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="application-permission">Application Permission</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Id</strong></td>
+<td>d07a8cc0-3d51-4b77-b3b0-32704d1f69fa</td>
+</tr>
+<tr>
+<td><strong>Display String</strong></td>
+<td>Read all access reviews</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Allows the app to read access reviews, reviewers, decisions and settings in the organization, without a signed-in user.</td>
+</tr>
+</tbody>
+</table>
 </article>
           </div>
           
@@ -151,9 +235,6 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
-                  <li>
-                    <a href="https://github.com/merill/GraphPermission/blob/master/docfx_project/graphpermission/AccessReview.Read.All.md/#L1" class="contribution-link">Improve this Doc</a>
-                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

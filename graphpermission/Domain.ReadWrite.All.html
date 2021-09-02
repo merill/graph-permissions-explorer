@@ -79,64 +79,143 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="domainreadwriteall">Domain.ReadWrite.All</h1>
 
-<h2 id="application-permission">Application Permission</h2>
-<p>7e05723c-0bb0-42da-be95-ae9f08a6e53c</p>
-<p>Read and write domains</p>
-<p>Allows the app to read and write all domain properties without a signed in user.  Also allows the app to add,  verify and remove domains.</p>
-<h2 id="delegate-permission">Delegate Permission</h2>
-<p>0b5d694c-a244-4bde-86e6-eb5cd07730fe</p>
-<p>Consent Type: Admin</p>
-<p>Admin Description</p>
-<p>Read and write domains</p>
+<blockquote>
 <p>Allows the app to read and write all domain properties on behalf of the signed-in user. Also allows the app to add, verify and remove domains.</p>
-<p>User Description</p>
-<p>Read and write domains</p>
-<p>Allows the app to read and write all domain properties on your behalf. Also allows the app to add, verify and remove domains.</p>
+</blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<h3 id="v1">V1</h3>
-<ul>
-<li><a href="https://docs.microsoft.com/en-us/graph/api/domain-list-serviceconfigurationrecords?view=graph-rest-1.0&amp;tabs=http">GET /domains/contoso.com/serviceConfigurationRecords</a></li>
-</ul>
-<h3 id="beta">Beta</h3>
-<ul>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/domain-list-serviceconfigurationrecords?view=graph-rest-beta&amp;tabs=http">GET /domains/{id}/serviceConfigurationRecords</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/samlorwsfedexternaldomainfederation-delete?view=graph-rest-beta&amp;tabs=http">DELETE directory/federationConfigurations/{samlOrWsFedExternalDomainFederation ID}</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/samlorwsfedexternaldomainfederation-get?view=graph-rest-beta&amp;tabs=http">GET /directory/federationConfigurations/graph.samlOrWsFedExternalDomainFederation?$filter=domains/any(x: x/id eq 'domainName-value')</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/samlorwsfedexternaldomainfederation-list-domains?view=graph-rest-beta&amp;tabs=http">GET /directory/federationConfigurations/microsoft.graph.samlOrWsFedExternalDomainFederation/{samlOrWsFedExternalDomainFederation ID}/domains</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/samlorwsfedexternaldomainfederation-list?view=graph-rest-beta&amp;tabs=http">GET /directory/federationConfigurations/graph.samlOrWsFedExternalDomainFederation</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/samlorwsfedexternaldomainfederation-post-domains?view=graph-rest-beta&amp;tabs=http">POST /directory/federationConfigurations/{samlOrWsFedExternalDomainFederation ID}/microsoft.graph.samlOrWsFedExternalDomainFederation/domains</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/samlorwsfedexternaldomainfederation-post?view=graph-rest-beta&amp;tabs=http">POST /directory/federationConfigurations</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/samlorwsfedexternaldomainfederation-update?view=graph-rest-beta&amp;tabs=http">PATCH directory/federationConfigurations/graph.samlOrWsFedExternalDomainFederation/{samlOrWsFedExternalDomainFederation ID}</a></p>
-</li>
-</ul>
-<h3 id="v1--beta">V1 + Beta</h3>
-<ul>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/domain-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /domains/{id}</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/domain-forcedelete?view=graph-rest-1.0&amp;tabs=http">POST /domains/{id}/forceDelete</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/domain-get?view=graph-rest-1.0&amp;tabs=http">GET /domains/{id}</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/domain-list-domainnamereferences?view=graph-rest-1.0&amp;tabs=http">GET /domains/{domain-id}/domainNameReferences</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/domain-list-verificationdnsrecords?view=graph-rest-1.0&amp;tabs=http">GET /domains/{id}/verificationDnsRecords</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/domain-list?view=graph-rest-1.0&amp;tabs=http">GET /domains</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/domain-post-domains?view=graph-rest-1.0&amp;tabs=http">POST /domains</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/domain-update?view=graph-rest-1.0&amp;tabs=http">PATCH /domains/{id}</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/domain-verify?view=graph-rest-1.0&amp;tabs=http">POST /domains/{id}/verify</a></p>
-</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V1</td>
+<td><a href="https://docs.microsoft.com/graph/api/domain-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /domains/{id}</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td><a href="https://docs.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-delete?view=graph-rest-beta&amp;tabs=http">DELETE directory/federationConfigurations/{samlOrWsFedExternalDomainFederation ID}</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td><a href="https://docs.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-list?view=graph-rest-beta&amp;tabs=http">GET /directory/federationConfigurations/graph.samlOrWsFedExternalDomainFederation</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td><a href="https://docs.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-get?view=graph-rest-beta&amp;tabs=http">GET /directory/federationConfigurations/graph.samlOrWsFedExternalDomainFederation?$filter=domains/any(x: x/id eq 'domainName-value')</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td><a href="https://docs.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-list-domains?view=graph-rest-beta&amp;tabs=http">GET /directory/federationConfigurations/microsoft.graph.samlOrWsFedExternalDomainFederation/{samlOrWsFedExternalDomainFederation ID}/domains</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td><a href="https://docs.microsoft.com/graph/api/domain-list?view=graph-rest-1.0&amp;tabs=http">GET /domains</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td><a href="https://docs.microsoft.com/graph/api/domain-list-domainnamereferences?view=graph-rest-1.0&amp;tabs=http">GET /domains/{domain-id}/domainNameReferences</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td><a href="https://docs.microsoft.com/graph/api/domain-get?view=graph-rest-1.0&amp;tabs=http">GET /domains/{id}</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td><a href="https://docs.microsoft.com/graph/api/domain-list-serviceconfigurationrecords?view=graph-rest-beta&amp;tabs=http">GET /domains/{id}/serviceConfigurationRecords</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td><a href="https://docs.microsoft.com/graph/api/domain-list-verificationdnsrecords?view=graph-rest-1.0&amp;tabs=http">GET /domains/{id}/verificationDnsRecords</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td><a href="https://docs.microsoft.com/graph/api/domain-list-serviceconfigurationrecords?view=graph-rest-1.0&amp;tabs=http">GET /domains/contoso.com/serviceConfigurationRecords</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td><a href="https://docs.microsoft.com/graph/api/domain-update?view=graph-rest-1.0&amp;tabs=http">PATCH /domains/{id}</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td><a href="https://docs.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-update?view=graph-rest-beta&amp;tabs=http">PATCH directory/federationConfigurations/graph.samlOrWsFedExternalDomainFederation/{samlOrWsFedExternalDomainFederation ID}</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td><a href="https://docs.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-post?view=graph-rest-beta&amp;tabs=http">POST /directory/federationConfigurations</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td><a href="https://docs.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-post-domains?view=graph-rest-beta&amp;tabs=http">POST /directory/federationConfigurations/{samlOrWsFedExternalDomainFederation ID}/microsoft.graph.samlOrWsFedExternalDomainFederation/domains</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td><a href="https://docs.microsoft.com/graph/api/domain-post-domains?view=graph-rest-1.0&amp;tabs=http">POST /domains</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td><a href="https://docs.microsoft.com/graph/api/domain-forcedelete?view=graph-rest-1.0&amp;tabs=http">POST /domains/{id}/forceDelete</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td><a href="https://docs.microsoft.com/graph/api/domain-verify?view=graph-rest-1.0&amp;tabs=http">POST /domains/{id}/verify</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="permission-type">Permission Type</h2>
+<h3 id="delegate-permission">Delegate Permission</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Id</strong></td>
+<td>0b5d694c-a244-4bde-86e6-eb5cd07730fe</td>
+</tr>
+<tr>
+<td><strong>Consent Type</strong></td>
+<td>Admin</td>
+</tr>
+<tr>
+<td><strong>Display String</strong></td>
+<td>Read and write domains</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Allows the app to read and write all domain properties on behalf of the signed-in user. Also allows the app to add, verify and remove domains.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="application-permission">Application Permission</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Id</strong></td>
+<td>7e05723c-0bb0-42da-be95-ae9f08a6e53c</td>
+</tr>
+<tr>
+<td><strong>Display String</strong></td>
+<td>Read and write domains</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Allows the app to read and write all domain properties without a signed in user.  Also allows the app to add,  verify and remove domains.</td>
+</tr>
+</tbody>
+</table>
 </article>
           </div>
           
@@ -144,9 +223,6 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
-                  <li>
-                    <a href="https://github.com/merill/GraphPermission/blob/master/docfx_project/graphpermission/Domain.ReadWrite.All.md/#L1" class="contribution-link">Improve this Doc</a>
-                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

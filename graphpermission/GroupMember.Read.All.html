@@ -79,59 +79,135 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="groupmemberreadall">GroupMember.Read.All</h1>
 
-<h2 id="application-permission">Application Permission</h2>
-<p>98830695-27a2-44f7-8c18-0c3ebc9698f6</p>
-<p>Read all group memberships</p>
-<p>Allows the app to read memberships and basic group properties for all groups without a signed-in user.</p>
-<h2 id="delegate-permission">Delegate Permission</h2>
-<p>bc024368-1153-4739-b217-4326f2e966d0</p>
-<p>Consent Type: Admin</p>
-<p>Admin Description</p>
-<p>Read group memberships</p>
+<blockquote>
 <p>Allows the app to list groups, read basic group properties and read membership of all groups the signed-in user has access to.</p>
-<p>User Description</p>
-<p>Read group memberships</p>
-<p>Allows the app to list groups, read basic group properties and read membership of all your groups.</p>
+</blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<h3 id="v1">V1</h3>
-<h3 id="beta">Beta</h3>
-<ul>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/directoryobject-getmembergroups?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/getMemberGroups</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/user-list-memberof?view=graph-rest-beta&amp;tabs=http">or</a></p>
-</li>
-</ul>
-<h3 id="v1--beta">V1 + Beta</h3>
-<ul>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0&amp;tabs=http">POST /me/getMemberGroups</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/getMemberGroups</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/group-getmembergroups?view=graph-rest-1.0&amp;tabs=http">POST /groups/{id}/getMemberGroups</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0&amp;tabs=http">POST /directoryObjects/{id}/getMemberGroups</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/group-checkmembergroups?view=graph-rest-1.0&amp;tabs=http">POST /groups/{id}/checkMemberGroups</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/group-delta?view=graph-rest-1.0&amp;tabs=http">GET /groups/delta</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/group-get?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/group-list-memberof?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/memberOf</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/group-list-members?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/members</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/group-list-owners?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/owners</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/group-list-transitivemembers?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/transitiveMembers</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/group-list?view=graph-rest-1.0&amp;tabs=http">GET /groups</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/user-list-memberof?view=graph-rest-1.0&amp;tabs=http">GET /me/memberOf</a></p>
-</li>
-<li><p><a href="https://docs.microsoft.com/en-us/graph/api/user-list-memberof?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/memberOf</a></p>
-</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V1</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-list?view=graph-rest-1.0&amp;tabs=http">GET /groups</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-get?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-list-memberof?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/memberOf</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-list-members?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/members</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-list-owners?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/owners</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-list-transitivemembers?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/transitiveMembers</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-delta?view=graph-rest-1.0&amp;tabs=http">GET /groups/delta</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-memberof?view=graph-rest-1.0&amp;tabs=http">GET /me/memberOf</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-memberof?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/memberOf</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-memberof?view=graph-rest-beta&amp;tabs=http">or</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td><a href="https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0&amp;tabs=http">POST /directoryObjects/{id}/getMemberGroups</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-checkmembergroups?view=graph-rest-1.0&amp;tabs=http">POST /groups/{id}/checkMemberGroups</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-getmembergroups?view=graph-rest-1.0&amp;tabs=http">POST /groups/{id}/getMemberGroups</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td><a href="https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0&amp;tabs=http">POST /me/getMemberGroups</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td><a href="https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/getMemberGroups</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td><a href="https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/getMemberGroups</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="permission-type">Permission Type</h2>
+<h3 id="delegate-permission">Delegate Permission</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Id</strong></td>
+<td>bc024368-1153-4739-b217-4326f2e966d0</td>
+</tr>
+<tr>
+<td><strong>Consent Type</strong></td>
+<td>Admin</td>
+</tr>
+<tr>
+<td><strong>Display String</strong></td>
+<td>Read group memberships</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Allows the app to list groups, read basic group properties and read membership of all groups the signed-in user has access to.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="application-permission">Application Permission</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Id</strong></td>
+<td>98830695-27a2-44f7-8c18-0c3ebc9698f6</td>
+</tr>
+<tr>
+<td><strong>Display String</strong></td>
+<td>Read all group memberships</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Allows the app to read memberships and basic group properties for all groups without a signed-in user.</td>
+</tr>
+</tbody>
+</table>
 </article>
           </div>
           
@@ -139,9 +215,6 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
-                  <li>
-                    <a href="https://github.com/merill/GraphPermission/blob/master/docfx_project/graphpermission/GroupMember.Read.All.md/#L1" class="contribution-link">Improve this Doc</a>
-                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
