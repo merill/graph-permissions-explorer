@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Permission required to create subscription | Graph Permissions </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Permission required to create subscription | Graph Permissions ">
+    <meta name="generator" content="docfx 2.58.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="permission-required-to-create-subscription">Permission required to create subscription</h1>
+
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<table>
+<thead>
+<tr>
+<th>Ver</th>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Beta</td>
+<td></td>
+<td><a href="https://docs.microsoft.com/graph/api/subscription-list?view=graph-rest-beta&amp;tabs=http">GET /subscriptions</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="resources">Resources</h2>
+<h3 id="subscription-"><a href="https://docs.microsoft.com/graph/api/resources/subscription?view=graph-rest-1.0&amp;tabs=http">subscription </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Supported Resources</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">applicationId</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Identifier of the application used to create the subscription. Read-only.</td>
+<td style="text-align: left;">All</td>
+</tr>
+<tr>
+<td style="text-align: left;">changeType</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: <code>created</code>, <code>updated</code>, <code>deleted</code>. Multiple values can be combined using a comma-separated list.<br><br>Note: Drive root item and list change notifications support only the <code>updated</code> changeType. User and group change notifications support <code>updated</code> and <code>deleted</code> changeType.</td>
+<td style="text-align: left;">All</td>
+</tr>
+<tr>
+<td style="text-align: left;">clientState</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Optional. Specifies the value of the <code>clientState</code> property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the <code>clientState</code> property sent with the subscription with the value of the <code>clientState</code> property received with each change notification.</td>
+<td style="text-align: left;">All</td>
+</tr>
+<tr>
+<td style="text-align: left;">creatorId</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.</td>
+<td style="text-align: left;">All</td>
+</tr>
+<tr>
+<td style="text-align: left;">encryptionCertificate</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional. Required when <strong>includeResourceData</strong> is true.</td>
+<td style="text-align: left;">All</td>
+</tr>
+<tr>
+<td style="text-align: left;">encryptionCertificateId</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">A custom app-provided identifier to help identify the certificate needed to decrypt resource data. Optional.</td>
+<td style="text-align: left;">All</td>
+</tr>
+<tr>
+<td style="text-align: left;">expirationDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to.  See the table below for maximum supported subscription length of time.</td>
+<td style="text-align: left;">All</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Unique identifier for the subscription. Read-only.</td>
+<td style="text-align: left;">All</td>
+</tr>
+<tr>
+<td style="text-align: left;">includeResourceData</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">When set to <code>true</code>, change notifications include resource data (such as content of a chat message). Optional.</td>
+<td style="text-align: left;">All</td>
+</tr>
+<tr>
+<td style="text-align: left;">latestSupportedTlsVersion</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by <strong>notificationUrl</strong>, supports. The possible values are: <code>v1_0</code>, <code>v1_1</code>, <code>v1_2</code>, <code>v1_3</code>. <br>For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. </br><br>For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to <code>v1_2</code>.</td>
+<td style="text-align: left;">All</td>
+</tr>
+<tr>
+<td style="text-align: left;">lifecycleNotificationUrl</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The URL of the endpoint that receives lifecycle notifications, including <code>subscriptionRemoved</code> and <code>missed</code> notifications. This URL must make use of the HTTPS protocol. Optional. <br><br>Read more about how Outlook resources use lifecycle notifications.</td>
+<td style="text-align: left;">All</td>
+</tr>
+<tr>
+<td style="text-align: left;">notificationContentType</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Desired content-type for MS Graph change notifications for supported resource types. The default content-type is the &quot;application/json&quot; content-type.</td>
+<td style="text-align: left;">All</td>
+</tr>
+<tr>
+<td style="text-align: left;">notificationQueryOptions</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">OData Query Options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property eg  when the print job is completed, when a print job resource <code>isFetchable</code> property value becomes true etc.</td>
+<td style="text-align: left;">Universal Print Service</td>
+</tr>
+<tr>
+<td style="text-align: left;">notificationUrl</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol.</td>
+<td style="text-align: left;">All</td>
+</tr>
+<tr>
+<td style="text-align: left;">resource</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Required. Specifies the resource that will be monitored for changes. Do not include the base URL (<code>https://graph.microsoft.com/v1.0/</code>). See the possible resource path values for each supported resource.</td>
+<td style="text-align: left;">All</td>
+</tr>
+</tbody>
+</table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Created by <strong><a href="https://twitter.com/merill">merill</a></strong></span> | <span><a href="https://github.com/merill/graphpermissions.github.io/issues">Submit feedback</a></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

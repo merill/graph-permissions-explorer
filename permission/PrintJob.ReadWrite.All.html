@@ -1,0 +1,746 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>PrintJob.ReadWrite.All | Graph Permissions </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="PrintJob.ReadWrite.All | Graph Permissions ">
+    <meta name="generator" content="docfx 2.58.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="printjobreadwriteall">PrintJob.ReadWrite.All</h1>
+
+<blockquote>
+<p>Allows the application to read and update the metadata and document content of print jobs on behalf of the signed-in user. </p>
+</blockquote>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<table>
+<thead>
+<tr>
+<th>Ver</th>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/printer-list-jobs?view=graph-rest-beta&amp;tabs=http">GET /print/printers/{id}/jobs</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/printjob-get?view=graph-rest-1.0&amp;tabs=http">GET /print/printers/{id}/jobs/{id}</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/printdocument-get-file?view=graph-rest-beta&amp;tabs=http">GET /print/printers/{id}/jobs/{id}/documents/{id}/$value</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/printer-list-jobs?view=graph-rest-1.0&amp;tabs=http">GET /print/printers/{printerId}/jobs</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/printdocument-get-file?view=graph-rest-1.0&amp;tabs=http">GET /print/printers/{printerId}/jobs/{printJobId}/documents/{printDocumentId}/$value</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/printershare-list-jobs?view=graph-rest-beta&amp;tabs=http">GET /print/shares/{id}/jobs</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/printershare-list-jobs?view=graph-rest-1.0&amp;tabs=http">GET /print/shares/{printerShareId}/jobs</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/printjob-update?view=graph-rest-beta&amp;tabs=http">PATCH /print/printers/{id}/jobs/{id}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/printjob-update?view=graph-rest-1.0&amp;tabs=http">PATCH /print/printers/{printerId}/jobs/{printJobId}</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/printjob-abort?view=graph-rest-beta&amp;tabs=http">POST /print/printers/{id}/jobs/{id}/abort</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/printjob-cancel?view=graph-rest-beta&amp;tabs=http">POST /print/printers/{id}/jobs/{id}/cancel</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/printdocument-createuploadsession?view=graph-rest-1.0&amp;tabs=http">POST /print/printers/{id}/jobs/{id}/documents/{id}/createUploadSession</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/printdocument-uploaddata?view=graph-rest-beta&amp;tabs=http">POST /print/printers/{id}/jobs/{id}/documents/{id}/uploadData</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/printer-post-jobs?view=graph-rest-1.0&amp;tabs=http">POST /print/printers/{printerId}/jobs</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/printjob-abort?view=graph-rest-1.0&amp;tabs=http">POST /print/printers/{printerId}/jobs/{printJobId}/abort</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/printjob-cancel?view=graph-rest-1.0&amp;tabs=http">POST /print/printers/{printerId}/jobs/{printJobId}/cancel</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/printjob-start?view=graph-rest-beta&amp;tabs=http">POST /print/shares/{id}/jobs/{id}/start</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/printershare-post-jobs?view=graph-rest-1.0&amp;tabs=http">POST /print/shares/{printerShareId}/jobs</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/printjob-start?view=graph-rest-1.0&amp;tabs=http">POST /print/shares/{printerShareId}/jobs/{printJobId}/start</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/printer-post-jobs?view=graph-rest-beta&amp;tabs=http">POST print/printers/{id}/jobs</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/printershare-post-jobs?view=graph-rest-beta&amp;tabs=http">POST print/shares/{id}/jobs</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="delegate-permission">Delegate Permission</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Id</strong></td>
+<td>036b9544-e8c5-46ef-900a-0646cc42b271</td>
+</tr>
+<tr>
+<td><strong>Consent Type</strong></td>
+<td>Admin</td>
+</tr>
+<tr>
+<td><strong>Display String</strong></td>
+<td>Read and write print jobs</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Allows the application to read and update the metadata and document content of print jobs on behalf of the signed-in user. </td>
+</tr>
+</tbody>
+</table>
+<h2 id="application-permission">Application Permission</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Id</strong></td>
+<td>5114b07b-2898-4de7-a541-53b0004e2e13</td>
+</tr>
+<tr>
+<td><strong>Display String</strong></td>
+<td>Read and write print jobs</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Allows the application to read and update the metadata and document content of print jobs without a signed-in user.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="resources">Resources</h2>
+<h3 id="printdocument-"><a href="https://docs.microsoft.com/graph/api/resources/printdocument?view=graph-rest-1.0&amp;tabs=http">printDocument </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The document's identifier. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The document's name. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">contentType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The document's content (MIME) type. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">size</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">The document's size in bytes. Read-only.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="printer-"><a href="https://docs.microsoft.com/graph/api/resources/printer?view=graph-rest-1.0&amp;tabs=http">printer </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The document's identifier. Inherited from printerBase. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name of the printer. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">manufacturer</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The manufacturer reported by the printer. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">model</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The model name reported by the printer. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">registeredDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The DateTimeOffset when the printer was registered. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">printerStatus</td>
+<td style="text-align: left;">The processing status of the printer, including any errors. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isShared</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">True if the printer is shared; false otherwise. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">hasPhysicalDevice</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">True if the printer has a physical device for printing. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isAcceptingJobs</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Whether the printer is currently accepting new print jobs. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">location</td>
+<td style="text-align: left;">printerLocation</td>
+<td style="text-align: left;">The physical and/or organizational location of the printer. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">defaults</td>
+<td style="text-align: left;">printerDefaults</td>
+<td style="text-align: left;">The printer's default print settings. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">capabilities</td>
+<td style="text-align: left;">printerCapabilities</td>
+<td style="text-align: left;">The capabilities of the printer associated with this printer share. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastSeenDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The most recent dateTimeOffset when a printer interacted with Universal Print. Read-only.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="printercapabilities-"><a href="https://docs.microsoft.com/graph/api/resources/printercapabilities?view=graph-rest-1.0&amp;tabs=http">printerCapabilities </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">contentTypes</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">A list of supported content (MIME) types that the printer supports. It is not guaranteed that the Universal Print service supports printing all of these MIME types.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isColorPrintingSupported</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">True if color printing is supported by the printer; false otherwise. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">feedOrientations</td>
+<td style="text-align: left;">printerFeedOrientation collection</td>
+<td style="text-align: left;">The list of feed orientations that are supported by the printer.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isPageRangeSupported</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">True if the printer supports printing by page ranges; false otherwise.</td>
+</tr>
+<tr>
+<td style="text-align: left;">qualities</td>
+<td style="text-align: left;">printQuality collection</td>
+<td style="text-align: left;">The print qualities supported by the printer.</td>
+</tr>
+<tr>
+<td style="text-align: left;">dpis</td>
+<td style="text-align: left;">Int32 collection</td>
+<td style="text-align: left;">The list of print resolutions in DPI that are supported by the printer.</td>
+</tr>
+<tr>
+<td style="text-align: left;">duplexModes</td>
+<td style="text-align: left;">printDuplexMode collection</td>
+<td style="text-align: left;">The list of duplex modes that are supported by the printer. Valid values are described in the following table.</td>
+</tr>
+<tr>
+<td style="text-align: left;">queueBufferSizeInBytes</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The maximum print job queue size that can be stored by the printer.</td>
+</tr>
+<tr>
+<td style="text-align: left;">copiesPerJob</td>
+<td style="text-align: left;">integerRange</td>
+<td style="text-align: left;">The range of copies per job supported by the printer.</td>
+</tr>
+<tr>
+<td style="text-align: left;">finishings</td>
+<td style="text-align: left;">printFinishing collection</td>
+<td style="text-align: left;">Finishing processes the printer supports for a printed document.</td>
+</tr>
+<tr>
+<td style="text-align: left;">mediaColors</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">The media (i.e., paper) colors supported by the printer.</td>
+</tr>
+<tr>
+<td style="text-align: left;">mediaTypes</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">The media types supported by the printer.</td>
+</tr>
+<tr>
+<td style="text-align: left;">mediaSizes</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. Valid values are in the following table.</td>
+</tr>
+<tr>
+<td style="text-align: left;">pagesPerSheet</td>
+<td style="text-align: left;">Int32 collection</td>
+<td style="text-align: left;">Supported number of Input Pages to impose upon a single Impression.</td>
+</tr>
+<tr>
+<td style="text-align: left;">orientations</td>
+<td style="text-align: left;">printOrientation collection</td>
+<td style="text-align: left;">The print orientations supported by the printer. Valid values are described in the following table.</td>
+</tr>
+<tr>
+<td style="text-align: left;">inputBins</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Supported input bins for the printer.</td>
+</tr>
+<tr>
+<td style="text-align: left;">outputBins</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">The printer's supported output bins (trays).</td>
+</tr>
+<tr>
+<td style="text-align: left;">supportsFitPdfToPage</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">True if the printer supports scaling PDF pages to match the print media size; false otherwise.</td>
+</tr>
+<tr>
+<td style="text-align: left;">multipageLayouts</td>
+<td style="text-align: left;">printMultipageLayout collection</td>
+<td style="text-align: left;">The presentation directions supported by the printer. Supported values are described in the following table.</td>
+</tr>
+<tr>
+<td style="text-align: left;">colorModes</td>
+<td style="text-align: left;">printColorMode collection</td>
+<td style="text-align: left;">The color modes supported by the printer. Valid values are described in the following table.</td>
+</tr>
+<tr>
+<td style="text-align: left;">topMargins</td>
+<td style="text-align: left;">Int32 collection</td>
+<td style="text-align: left;">A list of supported top margins(in microns) for the printer.</td>
+</tr>
+<tr>
+<td style="text-align: left;">bottomMargins</td>
+<td style="text-align: left;">Int32 collection</td>
+<td style="text-align: left;">A list of supported bottom margins(in microns) for the printer.</td>
+</tr>
+<tr>
+<td style="text-align: left;">rightMargins</td>
+<td style="text-align: left;">Int32 collection</td>
+<td style="text-align: left;">A list of supported right margins(in microns) for the printer.</td>
+</tr>
+<tr>
+<td style="text-align: left;">leftMargins</td>
+<td style="text-align: left;">Int32 collection</td>
+<td style="text-align: left;">A list of supported left margins(in microns) for the printer.</td>
+</tr>
+<tr>
+<td style="text-align: left;">collation</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">True if the printer supports collating when printing muliple copies of a multi-page document; false otherwise.</td>
+</tr>
+<tr>
+<td style="text-align: left;">scalings</td>
+<td style="text-align: left;">printScaling collection</td>
+<td style="text-align: left;">Supported print scalings.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="printershare-"><a href="https://docs.microsoft.com/graph/api/resources/printershare?view=graph-rest-1.0&amp;tabs=http">printerShare </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The printerShare's identifier. Inherited from printerBase. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name of the printer share that print clients should display. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The DateTimeOffset when the printer share was created. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">manufacturer</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The manufacturer reported by the printer associated with this printer share. Inherited from printerBase. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">model</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The model name reported by the printer associated with this printer share. Inherited from printerBase. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isAcceptingJobs</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Whether the printer associated with this printer share is currently accepting new print jobs. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">defaults</td>
+<td style="text-align: left;">printerDefaults</td>
+<td style="text-align: left;">The default print settings of the printer associated with this printer share. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">capabilities</td>
+<td style="text-align: left;">printerCapabilities</td>
+<td style="text-align: left;">The capabilities of the printer associated with this printer share. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">location</td>
+<td style="text-align: left;">printerLocation</td>
+<td style="text-align: left;">The physical and/or organizational location of the printer associated with this printer share. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">printerStatus</td>
+<td style="text-align: left;">The processing status, including any errors, of the printer associated with this printer share.Inherited from printerBase. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">allowAllUsers</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the **a</td>
+</tr>
+</tbody>
+</table>
+<h3 id="printjob-"><a href="https://docs.microsoft.com/graph/api/resources/printjob?view=graph-rest-1.0&amp;tabs=http">printJob </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The printer's GUID. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The DateTimeOffset when the job was created. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">printJobStatus</td>
+<td style="text-align: left;">The status of the print job. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">configuration</td>
+<td style="text-align: left;">printJobConfiguration</td>
+<td style="text-align: left;">A group of settings that a printer should use to print a job.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isFetchable</td>
+<td style="text-align: left;">Edm.Boolean</td>
+<td style="text-align: left;">If true, document can be fetched by printer.</td>
+</tr>
+<tr>
+<td style="text-align: left;">redirectedFrom</td>
+<td style="text-align: left;">Edm.String</td>
+<td style="text-align: left;">Contains the source job URL, if the job has been redirected from another printer.</td>
+</tr>
+<tr>
+<td style="text-align: left;">redirectedTo</td>
+<td style="text-align: left;">Edm.String</td>
+<td style="text-align: left;">Contains the destination job URL, if the job has been redirected to another printer.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">userIdentity</td>
+<td style="text-align: left;">Read-only. Nullable.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="printjobstatus-"><a href="https://docs.microsoft.com/graph/api/resources/printjobstatus?view=graph-rest-1.0&amp;tabs=http">printJobStatus </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">state</td>
+<td style="text-align: left;">printJobProcessingState</td>
+<td style="text-align: left;">The print job's current processing state. Valid values are described in the following table. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">details</td>
+<td style="text-align: left;">printJobProcessingDetail collection</td>
+<td style="text-align: left;">Additional details for print job state. Valid values are described in the following table. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A human-readable description of the print job's current processing state. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isAcquiredByPrinter</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">True if the job was acknowledged by a printer; false otherwise. Read-only.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="printtask-"><a href="https://docs.microsoft.com/graph/api/resources/printtask?view=graph-rest-1.0&amp;tabs=http">printTask </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The printTask's identifier. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">printTaskStatus</td>
+<td style="text-align: left;">The current execution status of this printTask. <strong>The calling application is responsible for updating this status when processing is finished, unless the related printJob has been redirected to another printer.</strong> Failure to report completion will result in the related print job being blocked from printing and eventually deleted.</td>
+</tr>
+<tr>
+<td style="text-align: left;">parentUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The URL for the print entity that triggered this task. For example, <code>https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}</code>. Read-only.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="uploadsession-"><a href="https://docs.microsoft.com/graph/api/resources/uploadsession?view=graph-rest-1.0&amp;tabs=http">uploadSession </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">expirationDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time in UTC that the upload session will expire. The complete file must be uploaded before this expiration time is reached.</td>
+</tr>
+<tr>
+<td style="text-align: left;">nextExpectedRanges</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">A collection of byte ranges that the server is missing for the file. These ranges are zero indexed and of the format &quot;start-end&quot; (e.g. &quot;0-26&quot; to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value &quot;{start}&quot;, the location in the file where the next upload should begin.</td>
+</tr>
+<tr>
+<td style="text-align: left;">uploadUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The URL endpoint that accepts PUT requests for byte ranges of the file.</td>
+</tr>
+</tbody>
+</table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Created by <strong><a href="https://twitter.com/merill">merill</a></strong></span> | <span><a href="https://github.com/merill/graphpermissions.github.io/issues">Submit feedback</a></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
