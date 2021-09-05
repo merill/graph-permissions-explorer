@@ -4636,6 +4636,16 @@
 <tr>
 <td>Beta</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/intune-cirrus-windowsofficeclientsecurityconfiguration-list?view=graph-rest-beta&amp;tabs=http">GET /officeConfiguration/clientConfigurations</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/intune-cirrus-windowsofficeclientsecurityconfiguration-get?view=graph-rest-beta&amp;tabs=http">GET /officeConfiguration/clientConfigurations/{key}</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/intune-raimportcerts-onpremencryptedpayload-list?view=graph-rest-beta&amp;tabs=http">GET /onPremEncryptedPayloads</a></td>
 </tr>
 <tr>
@@ -11528,6 +11538,177 @@
 <td style="text-align: left;">lastDirectorySyncDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">The ChromebookTenant's LastDirectorySyncDateTime</td>
+</tr>
+</tbody>
+</table>
+<h3 id="officeclientconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/intune-cirrus-officeclientconfiguration?view=graph-rest-1.0&amp;tabs=http">officeClientConfiguration </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Id of the office client configuration policy.</td>
+</tr>
+<tr>
+<td style="text-align: left;">userPreferencePayload</td>
+<td style="text-align: left;">Stream</td>
+<td style="text-align: left;">Preference settings JSON string in binary format, these values can be overridden by the user.</td>
+</tr>
+<tr>
+<td style="text-align: left;">policyPayload</td>
+<td style="text-align: left;">Stream</td>
+<td style="text-align: left;">Policy settings JSON string in binary format, these values cannot be changed by the user.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Not yet documented</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Admin provided description of the office client configuration policy.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTime</td>
+<td style="text-align: left;">Last modified datetime stamp of the policy.</td>
+</tr>
+<tr>
+<td style="text-align: left;">priority</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Priority value should be unique value for each policy under a tenant and will be used for conflict resolution, lower values mean priority is high.</td>
+</tr>
+<tr>
+<td style="text-align: left;">userCheckinSummary</td>
+<td style="text-align: left;">officeUserCheckinSummary</td>
+<td style="text-align: left;">User check-in summary for the policy.</td>
+</tr>
+<tr>
+<td style="text-align: left;">checkinStatuses</td>
+<td style="text-align: left;">officeClientCheckinStatus collection</td>
+<td style="text-align: left;">List of office Client check-in status.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="windowsofficeclientconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/intune-cirrus-windowsofficeclientconfiguration?view=graph-rest-1.0&amp;tabs=http">windowsOfficeClientConfiguration </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Id of the office client configuration policy. Inherited from officeClientConfiguration</td>
+</tr>
+<tr>
+<td style="text-align: left;">userPreferencePayload</td>
+<td style="text-align: left;">Stream</td>
+<td style="text-align: left;">Preference settings JSON string in binary format, these values can be overridden by the user. Inherited from officeClientConfiguration</td>
+</tr>
+<tr>
+<td style="text-align: left;">policyPayload</td>
+<td style="text-align: left;">Stream</td>
+<td style="text-align: left;">Policy settings JSON string in binary format, these values cannot be changed by the user. Inherited from officeClientConfiguration</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Admin provided description of the office client configuration policy. Inherited from officeClientConfiguration</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Admin provided name of the office client configuration policy. Inherited from officeClientConfiguration</td>
+</tr>
+<tr>
+<td style="text-align: left;">priority</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Priority value should be unique value for each policy under a tenant and will be used for conflict resolution, lower values mean priority is high. Inherited from officeClientConfiguration</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTime</td>
+<td style="text-align: left;">Last modified datetime stamp of the policy. Inherited from officeClientConfiguration</td>
+</tr>
+<tr>
+<td style="text-align: left;">userCheckinSummary</td>
+<td style="text-align: left;">officeUserCheckinSummary</td>
+<td style="text-align: left;">User check-in summary for the policy. Inherited from officeClientConfiguration</td>
+</tr>
+<tr>
+<td style="text-align: left;">checkinStatuses</td>
+<td style="text-align: left;">officeClientCheckinStatus collection</td>
+<td style="text-align: left;">List of office Client check-in status. Inherited from officeClientConfiguration</td>
+</tr>
+</tbody>
+</table>
+<h3 id="windowsofficeclientsecurityconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/intune-cirrus-windowsofficeclientsecurityconfiguration?view=graph-rest-1.0&amp;tabs=http">windowsOfficeClientSecurityConfiguration </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Id of the office client configuration policy. Inherited from officeClientConfiguration</td>
+</tr>
+<tr>
+<td style="text-align: left;">userPreferencePayload</td>
+<td style="text-align: left;">Stream</td>
+<td style="text-align: left;">Preference settings JSON string in binary format, these values can be overridden by the user. Inherited from officeClientConfiguration</td>
+</tr>
+<tr>
+<td style="text-align: left;">policyPayload</td>
+<td style="text-align: left;">Stream</td>
+<td style="text-align: left;">Policy settings JSON string in binary format, these values cannot be changed by the user. Inherited from officeClientConfiguration</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Admin provided description of the office client configuration policy. Inherited from officeClientConfiguration</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Admin provided name of the office client configuration policy. Inherited from officeClientConfiguration</td>
+</tr>
+<tr>
+<td style="text-align: left;">priority</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Priority value should be unique value for each policy under a tenant and will be used for conflict resolution, lower values mean priority is high. Inherited from officeClientConfiguration</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTime</td>
+<td style="text-align: left;">Last modified datetime stamp of the policy. Inherited from officeClientConfiguration</td>
+</tr>
+<tr>
+<td style="text-align: left;">userCheckinSummary</td>
+<td style="text-align: left;">officeUserCheckinSummary</td>
+<td style="text-align: left;">User check-in summary for the policy. Inherited from officeClientConfiguration</td>
+</tr>
+<tr>
+<td style="text-align: left;">checkinStatuses</td>
+<td style="text-align: left;">officeClientCheckinStatus collection</td>
+<td style="text-align: left;">List of office Client check-in status. Inherited from officeClientConfiguration</td>
 </tr>
 </tbody>
 </table>
