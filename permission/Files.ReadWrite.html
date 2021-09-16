@@ -271,6 +271,11 @@
 <td><a href="https://docs.microsoft.com/graph/api/workbookcommentreply-get?view=graph-rest-beta&amp;tabs=http">GET /drive/items/{id}/workbook/comments/{id}/replies/{id}</a></td>
 </tr>
 <tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/workbook-tablerowoperationresult?view=graph-rest-1.0&amp;tabs=http">GET /driveItem/workbook/tableRowOperationResult</a></td>
+</tr>
+<tr>
 <td>Beta</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/activities-list?view=graph-rest-beta&amp;tabs=http">GET /drives/{drive-id}/activities</a></td>
@@ -3893,6 +3898,11 @@
 <tr>
 <td>V1</td>
 <td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/table-post-rows?view=graph-rest-1.0&amp;tabs=http">POST /me/drive/items/{id}/workbook/tables/{id|name}/rows</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/tablerowcollection-add?view=graph-rest-1.0&amp;tabs=http">POST /me/drive/items/{id}/workbook/tables/{id|name}/rows/add</a></td>
 </tr>
 <tr>
@@ -4184,6 +4194,11 @@
 <td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/table-reapplyfilters?view=graph-rest-1.0&amp;tabs=http">POST /me/drive/items/{id}/workbook/worksheets/{id|name}/tables/{id|name}/reapplyFilters</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/table-post-rows?view=graph-rest-1.0&amp;tabs=http">POST /me/drive/items/{id}/workbook/worksheets/{id|name}/tables/{id|name}/rows</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -4514,6 +4529,11 @@
 <td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/table-reapplyfilters?view=graph-rest-1.0&amp;tabs=http">POST /me/drive/root:/{item-path}:/workbook/tables/{id|name}/reapplyFilters</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/table-post-rows?view=graph-rest-1.0&amp;tabs=http">POST /me/drive/root:/{item-path}:/workbook/tables/{id|name}/rows</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -4859,6 +4879,11 @@
 <td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/workbookrange-resizedrange?view=graph-rest-1.0&amp;tabs=http">POST /me/drive/root:/{item-path}:/workbook/worksheets/{id}/range/resizedRange(deltaRows={n}, deltaColumns={n})</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/table-post-rows?view=graph-rest-1.0&amp;tabs=http">POST /me/drive/root:/{item-path}:/workbookworksheets/{id|name}/tables/{id|name}/rows</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -5862,6 +5887,16 @@
 </tr>
 </tbody>
 </table>
+<h3 id="json-"><a href="https://docs.microsoft.com/graph/api/resources/json?view=graph-rest-1.0&amp;tabs=http">Json </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+</table>
 <h3 id="list"><a href="https://docs.microsoft.com/graph/api/resources/list?view=graph-rest-1.0&amp;tabs=http">list</a></h3>
 <h3 id="listitem"><a href="https://docs.microsoft.com/graph/api/resources/listitem?view=graph-rest-1.0&amp;tabs=http">listitem</a></h3>
 <h3 id="nameditem-"><a href="https://docs.microsoft.com/graph/api/resources/nameditem?view=graph-rest-1.0&amp;tabs=http">NamedItem </a></h3>
@@ -6505,28 +6540,6 @@
 <td style="text-align: left;">legacyId</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Legacy Id used in older Excle clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and should not be parsed to any other type. Read-only.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="tablerow-"><a href="https://docs.microsoft.com/graph/api/resources/tablerow?view=graph-rest-1.0&amp;tabs=http">TableRow </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">index</td>
-<td style="text-align: left;">int</td>
-<td style="text-align: left;">Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">values</td>
-<td style="text-align: left;">Json</td>
-<td style="text-align: left;">Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.</td>
 </tr>
 </tbody>
 </table>
@@ -7599,7 +7612,7 @@
 <tbody>
 <tr>
 <td style="text-align: left;">index</td>
-<td style="text-align: left;">int</td>
+<td style="text-align: left;">Int32</td>
 <td style="text-align: left;">Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.</td>
 </tr>
 <tr>
