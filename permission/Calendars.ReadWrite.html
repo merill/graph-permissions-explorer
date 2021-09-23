@@ -963,12 +963,12 @@
 </tr>
 <tr>
 <td style="text-align: left;">attendees</td>
-<td style="text-align: left;">attendee collection</td>
+<td style="text-align: left;">Attendee collection</td>
 <td style="text-align: left;">The collection of attendees for the event.</td>
 </tr>
 <tr>
 <td style="text-align: left;">body</td>
-<td style="text-align: left;">itemBody</td>
+<td style="text-align: left;">ItemBody</td>
 <td style="text-align: left;">The body of the message associated with the event. It can be in HTML or text format.</td>
 </tr>
 <tr>
@@ -977,9 +977,14 @@
 <td style="text-align: left;">The preview of the message associated with the event. It is in text format.</td>
 </tr>
 <tr>
+<td style="text-align: left;">cancelledOccurrences</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Contains <strong>occurrenceId</strong> property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.<br><br>Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).</td>
+</tr>
+<tr>
 <td style="text-align: left;">categories</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">The categories associated with the event.</td>
+<td style="text-align: left;">The categories associated with the event. Each category corresponds to the <strong>displayName</strong> property of an outlookCategory defined for the user.</td>
 </tr>
 <tr>
 <td style="text-align: left;">changeKey</td>
@@ -993,8 +998,13 @@
 </tr>
 <tr>
 <td style="text-align: left;">end</td>
-<td style="text-align: left;">dateTimeTimeZone</td>
+<td style="text-align: left;">DateTimeTimeZone</td>
 <td style="text-align: left;">The date, time, and time zone that the event ends. By default, the end time is in UTC.</td>
+</tr>
+<tr>
+<td style="text-align: left;">exceptionOccurrences</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Contains the <strong>id</strong> property values of the event instances that are exceptions in a recurring series.<br>Exceptions can differ from other occurrences in a recurring series, such as the subject, start or end times, or attendees. Exceptions do not include cancelled occurrences.<br><br>Returned only on $select and $expand in a GET operation which specifies the id of a series master event (that is, the seriesMasterId property value).</td>
 </tr>
 <tr>
 <td style="text-align: left;">hasAttachments</td>
@@ -1007,24 +1017,19 @@
 <td style="text-align: left;">When set to <code>true</code>, each attendee only sees themselves in the meeting request and meeting <strong>Tracking</strong> list. Default is false.</td>
 </tr>
 <tr>
-<td style="text-align: left;">iCalUId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">A unique identifier for an event across calendars. This ID is different for each occurrence in a recurring series. Read-only.</td>
-</tr>
-<tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Read-only.</td>
+<td style="text-align: left;">Unique identifier for the event. !INCLUDE [outlook-beta-id] Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">importance</td>
-<td style="text-align: left;">importance</td>
-<td style="text-align: left;">The importance of the event. The possible values are: <code>low</code>, <code>normal</code>, <code>high</code>.</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The importance of the event. Possible values are: <code>low</code>, <code>normal</code>, <code>high</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">isAllDay</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Set to true if the event lasts all day.</td>
+<td style="text-align: left;">Set to true if the event lasts all day. If true, regardless of whether it's a single-day or multi-day event, start and end time must be set to midnight and be in the same time zone.</td>
 </tr>
 <tr>
 <td style="text-align: left;">isCancelled</td>
@@ -1039,7 +1044,7 @@
 <tr>
 <td style="text-align: left;">isOnlineMeeting</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;"><code>True</code> if this event has online meeting information, <code>false</code> otherwise. Default is false. Optional.</td>
+<td style="text-align: left;"><code>True</code> if this event has online meeting information (that is, <strong>onlineMeeting</strong> points to an onlineMeetingInfo resource), <code>false</code> otherwise. Default is <code>false</code> (<strong>onlineMeeting</strong> is <code>null</code>). Optional. <br> After you set <strong>isOnlineMeeting</strong> to <code>true</code>, Microsoft Graph initializes <strong>onlineMeeting</strong>. Subsequently Outlook ignores any further changes to <strong>isOnlineMeeting</strong>, and the meeting remains available online.</td>
 </tr>
 <tr>
 <td style="text-align: left;">isOrganizer</td>
@@ -1058,32 +1063,37 @@
 </tr>
 <tr>
 <td style="text-align: left;">location</td>
-<td style="text-align: left;">location</td>
+<td style="text-align: left;">Location</td>
 <td style="text-align: left;">The location of the event.</td>
 </tr>
 <tr>
 <td style="text-align: left;">locations</td>
-<td style="text-align: left;">location collection</td>
+<td style="text-align: left;">Location collection</td>
 <td style="text-align: left;">The locations where the event is held or attended from. The <strong>location</strong> and <strong>locations</strong> properties always correspond with each other. If you update the <strong>location</strong> property, any prior locations in the <strong>locations</strong> collection would be removed and replaced by the new <strong>location</strong> value.</td>
+</tr>
+<tr>
+<td style="text-align: left;">occurrenceId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">An identifier for an occurrence in a recurring event series. Null if the event is not part of a recurring series.<br><br>The format of the property value is OID.{seriesMasterId-value}.{occurrence-start-date}. The time zone for {occurrence-start-date} is the recurrenceTimeZone property defined for the corresponding recurrenceRange.<br><br>This property can identify any occurrence in a recurring series, including an occurrence that has been modified or cancelled. You can use this property to perform all operations supported by occurrences in the recurring series.</td>
 </tr>
 <tr>
 <td style="text-align: left;">onlineMeeting</td>
 <td style="text-align: left;">OnlineMeetingInfo</td>
-<td style="text-align: left;">Details for an attendee to join the meeting online. Read-only.</td>
+<td style="text-align: left;">Details for an attendee to join the meeting online. Default is null. Read-only. <br>After you set the <strong>isOnlineMeeting</strong> and <strong>onlineMeetingProvider</strong> properties to enable a meeting online, Microsoft Graph initializes <strong>onlineMeeting</strong>. When set, the meeting remains available online, and you cannot change the <strong>isOnlineMeeting</strong>, <strong>onlineMeetingProvider</strong>, and <strong>onlneMeeting</strong> properties again.</td>
 </tr>
 <tr>
 <td style="text-align: left;">onlineMeetingProvider</td>
 <td style="text-align: left;">onlineMeetingProviderType</td>
-<td style="text-align: left;">Represents the online meeting service provider. The possible values are <code>teamsForBusiness</code>, <code>skypeForBusiness</code>, and <code>skypeForConsumer</code>. Optional.</td>
+<td style="text-align: left;">Represents the online meeting service provider. By default, <strong>onlineMeetingProvider</strong> is <code>unknown</code>. The possible values are <code>unknown</code>, <code>teamsForBusiness</code>, <code>skypeForBusiness</code>, and <code>skypeForConsumer</code>. Optional. <br> After you set <strong>onlineMeetingProvider</strong>, Microsoft Graph initializes <strong>onlineMeeting</strong>. Subsequently you cannot change <strong>onlineMeetingProvider</strong> again, and the meeting remains available online.</td>
 </tr>
 <tr>
 <td style="text-align: left;">onlineMeetingUrl</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">A URL for an online meeting. The property is set only when an organizer specifies an event as an online meeting such as a Skype meeting. Read-only.</td>
+<td style="text-align: left;">A URL for an online meeting. The property is set only when an organizer specifies in Outlook that an event is an online meeting such as Skype. Read-only.<br>To access the URL to join an online meeting, use <strong>joinUrl</strong> which is exposed via the <strong>onlineMeeting</strong> property of the <strong>event</strong>. The <strong>onlineMeetingUrl</strong> property will be deprecated in the future.</td>
 </tr>
 <tr>
 <td style="text-align: left;">organizer</td>
-<td style="text-align: left;">recipient</td>
+<td style="text-align: left;">Recipient</td>
 <td style="text-align: left;">The organizer of the event.</td>
 </tr>
 <tr>
@@ -1094,7 +1104,7 @@
 <tr>
 <td style="text-align: left;">originalStart</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code></td>
+<td style="text-align: left;">Represents the start time of an event when it is initially created as an occurrence or exception in a recurring series. This property is not returned for events that are single instances. Its date and time information is expressed in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code></td>
 </tr>
 <tr>
 <td style="text-align: left;">originalStartTimeZone</td>
@@ -1103,7 +1113,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">recurrence</td>
-<td style="text-align: left;">patternedRecurrence</td>
+<td style="text-align: left;">PatternedRecurrence</td>
 <td style="text-align: left;">The recurrence pattern for the event.</td>
 </tr>
 <tr>
@@ -1118,13 +1128,13 @@
 </tr>
 <tr>
 <td style="text-align: left;">responseStatus</td>
-<td style="text-align: left;">responseStatus</td>
+<td style="text-align: left;">ResponseStatus</td>
 <td style="text-align: left;">Indicates the type of response sent in response to an event message.</td>
 </tr>
 <tr>
 <td style="text-align: left;">sensitivity</td>
-<td style="text-align: left;">sensitivity</td>
-<td style="text-align: left;">The possible values are: <code>normal</code>, <code>personal</code>, <code>private</code>, <code>confidential</code>.</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Possible values are: <code>normal</code>, <code>personal</code>, <code>private</code>, <code>confidential</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">seriesMasterId</td>
@@ -1133,13 +1143,13 @@
 </tr>
 <tr>
 <td style="text-align: left;">showAs</td>
-<td style="text-align: left;">freeBusyStatus</td>
-<td style="text-align: left;">The status to show. The possible values are: <code>free</code>, <code>tentative</code>, <code>busy</code>, <code>oof</code>, <code>workingElsewhere</code>, <code>unknown</code>.</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The status to show. Possible values are: <code>free</code>, <code>tentative</code>, <code>busy</code>, <code>oof</code>, <code>workingElsewhere</code>, <code>unknown</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">start</td>
-<td style="text-align: left;">dateTimeTimeZone</td>
-<td style="text-align: left;">The date, time, and time zone that the event starts. By default, the start time is in UTC.</td>
+<td style="text-align: left;">DateTimeTimeZone</td>
+<td style="text-align: left;">The start date, time, and time zone of the event. By default, the start time is in UTC.</td>
 </tr>
 <tr>
 <td style="text-align: left;">subject</td>
@@ -1153,8 +1163,13 @@
 </tr>
 <tr>
 <td style="text-align: left;">type</td>
-<td style="text-align: left;">eventType</td>
-<td style="text-align: left;">The event type. The possible values are: <code>singleInstance</code>, <code>occurrence</code>, <code>exception</code>, <code>seriesMaster</code>. Read-only.</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The event type. Possible values are: <code>singleInstance</code>, <code>occurrence</code>, <code>exception</code>, <code>seriesMaster</code>. Read-only</td>
+</tr>
+<tr>
+<td style="text-align: left;">uid</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A unique identifier for calendar events. For recurring events, the value is the same for the series master and all of its occurrences including exceptions. This property will replace the current iCalUid property defined in the event resource, which is different for each instance in a series.</td>
 </tr>
 <tr>
 <td style="text-align: left;">webLink</td>
