@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>OnlineMeetingArtifact.Read.All | Graph Permissions </title>
+    <title>OnlineMeetingArtifact.Read.ALl | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="OnlineMeetingArtifact.Read.All | Graph Permissions ">
+    <meta name="title" content="OnlineMeetingArtifact.Read.ALl | Graph Permissions ">
     <meta name="generator" content="docfx 2.58.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -85,16 +85,31 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="onlinemeetingartifactreadall">OnlineMeetingArtifact.Read.All</h1>
+<h1 id="onlinemeetingartifactreadall">OnlineMeetingArtifact.Read.ALl</h1>
 
-<blockquote>
-<p>Allows the app to read online meeting artifacts on behalf of the signed-in user.</p>
-</blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
-</div>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<table>
+<thead>
+<tr>
+<th>Ver</th>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Beta</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-beta&amp;tabs=http">GET /me/onlineMeetings/{meetingId}</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-beta&amp;tabs=http">GET /users/{userId}/onlineMeetings/{meetingId}</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -106,42 +121,154 @@
 <tbody>
 <tr>
 <td><strong>Id</strong></td>
-<td>110e5abb-a10c-4b59-8b55-9b4daa4ef743</td>
+<td></td>
 </tr>
 <tr>
 <td><strong>Consent Type</strong></td>
-<td>User</td>
+<td></td>
 </tr>
 <tr>
 <td><strong>Display String</strong></td>
-<td>Read user's online meeting artifacts</td>
+<td></td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
-<td>Allows the app to read online meeting artifacts on behalf of the signed-in user.</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<h2 id="application-permission">Application Permission</h2>
+<h2 id="resources">Resources</h2>
+<h3 id="meetingattendancereport-"><a href="https://docs.microsoft.com/graph/api/resources/meetingAttendanceReport?view=graph-rest-1.0&amp;tabs=http">meetingAttendanceReport </a></h3>
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Id</strong></td>
-<td>df01ed3b-eb61-4eca-9965-6b3d789751b2</td>
+<td style="text-align: left;">attendanceRecords</td>
+<td style="text-align: left;">attendanceRecord collection</td>
+<td style="text-align: left;">The list of attendance records.</td>
 </tr>
 <tr>
-<td><strong>Display String</strong></td>
-<td>Read online meeting artifacts</td>
+<td style="text-align: left;">totalParticipantCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Total number of participants.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="onlinemeeting-"><a href="https://docs.microsoft.com/graph/api/resources/onlinemeeting?view=graph-rest-1.0&amp;tabs=http">onlineMeeting </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">allowedPresenters</td>
+<td style="text-align: left;">onlineMeetingPresenters</td>
+<td style="text-align: left;">Specifies who can be a presenter in a meeting. Possible values are listed in the following table.</td>
 </tr>
 <tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read online meeting artifacts in your organization, without a signed-in user.</td>
+<td style="text-align: left;">allowAttendeeToEnableCamera</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether attendees can turn on their camera.</td>
+</tr>
+<tr>
+<td style="text-align: left;">allowAttendeeToEnableMic</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether attendees can turn on their microphone.</td>
+</tr>
+<tr>
+<td style="text-align: left;">allowMeetingChat</td>
+<td style="text-align: left;">meetingChatMode</td>
+<td style="text-align: left;">Specifies the mode of meeting chat.</td>
+</tr>
+<tr>
+<td style="text-align: left;">allowTeamworkReactions</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether Teams reactions are enabled for the meeting.</td>
+</tr>
+<tr>
+<td style="text-align: left;">audioConferencing</td>
+<td style="text-align: left;">audioConferencing</td>
+<td style="text-align: left;">The phone access (dial-in) information for an online meeting. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">broadcastSettings</td>
+<td style="text-align: left;">broadcastMeetingSettings</td>
+<td style="text-align: left;">Settings related to a live event.</td>
+</tr>
+<tr>
+<td style="text-align: left;">chatInfo</td>
+<td style="text-align: left;">chatInfo</td>
+<td style="text-align: left;">The chat information associated with this online meeting.</td>
+</tr>
+<tr>
+<td style="text-align: left;">creationDateTime</td>
+<td style="text-align: left;">DateTime</td>
+<td style="text-align: left;">The meeting creation time in UTC. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">endDateTime</td>
+<td style="text-align: left;">DateTime</td>
+<td style="text-align: left;">The meeting end time in UTC.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The default ID associated with the online meeting. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isBroadcast</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates if this is a live event.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isEntryExitAnnounced</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether to announce when callers join or leave.</td>
+</tr>
+<tr>
+<td style="text-align: left;">joinInformation</td>
+<td style="text-align: left;">itemBody</td>
+<td style="text-align: left;">The join information in the language and locale variant specified in the <code>Accept-Language</code> request HTTP header. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">joinWebUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The join URL of the online meeting. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lobbyBypassSettings</td>
+<td style="text-align: left;">lobbyBypassSettings</td>
+<td style="text-align: left;">Specifies which participants can bypass the meeting   lobby.</td>
+</tr>
+<tr>
+<td style="text-align: left;">participants</td>
+<td style="text-align: left;">meetingParticipants</td>
+<td style="text-align: left;">The participants associated with the online meeting.  This includes the organizer and the attendees.</td>
+</tr>
+<tr>
+<td style="text-align: left;">startDateTime</td>
+<td style="text-align: left;">DateTime</td>
+<td style="text-align: left;">The meeting start time in UTC.</td>
+</tr>
+<tr>
+<td style="text-align: left;">subject</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The subject of the online meeting.</td>
+</tr>
+<tr>
+<td style="text-align: left;">videoTeleconferenceId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The video teleconferencing ID. Read-only.</td>
 </tr>
 </tbody>
 </table>
