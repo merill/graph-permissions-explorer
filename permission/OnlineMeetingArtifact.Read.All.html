@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>OnlineMeetingArtifact.Read.ALl | Graph Permissions </title>
+    <title>OnlineMeetingArtifact.Read.All | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="OnlineMeetingArtifact.Read.ALl | Graph Permissions ">
+    <meta name="title" content="OnlineMeetingArtifact.Read.All | Graph Permissions ">
     <meta name="generator" content="docfx 2.58.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -85,8 +85,11 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="onlinemeetingartifactreadall">OnlineMeetingArtifact.Read.ALl</h1>
+<h1 id="onlinemeetingartifactreadall">OnlineMeetingArtifact.Read.All</h1>
 
+<blockquote>
+<p>Allows the app to read online meeting artifacts on behalf of the signed-in user.</p>
+</blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
 <p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
@@ -99,14 +102,14 @@
 </thead>
 <tbody>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-beta&amp;tabs=http">GET /me/onlineMeetings/{meetingId}</a></td>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0&amp;tabs=http">GET /me/onlineMeetings/{meetingId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-beta&amp;tabs=http">GET /users/{userId}/onlineMeetings/{meetingId}</a></td>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{userId}/onlineMeetings/{meetingId}</a></td>
 </tr>
 </tbody>
 </table>
@@ -121,19 +124,42 @@
 <tbody>
 <tr>
 <td><strong>Id</strong></td>
-<td></td>
+<td>110e5abb-a10c-4b59-8b55-9b4daa4ef743</td>
 </tr>
 <tr>
 <td><strong>Consent Type</strong></td>
-<td></td>
+<td>User</td>
 </tr>
 <tr>
 <td><strong>Display String</strong></td>
-<td></td>
+<td>Read user's online meeting artifacts</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
-<td></td>
+<td>Allows the app to read online meeting artifacts on behalf of the signed-in user.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="application-permission">Application Permission</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Id</strong></td>
+<td>df01ed3b-eb61-4eca-9965-6b3d789751b2</td>
+</tr>
+<tr>
+<td><strong>Display String</strong></td>
+<td>Read online meeting artifacts</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Allows the app to read online meeting artifacts in your organization, without a signed-in user.</td>
 </tr>
 </tbody>
 </table>
@@ -196,6 +222,11 @@
 <td style="text-align: left;">Indicates whether Teams reactions are enabled for the meeting.</td>
 </tr>
 <tr>
+<td style="text-align: left;">attendeeReport</td>
+<td style="text-align: left;">Stream</td>
+<td style="text-align: left;">The content stream of the attendee report of a live event. Read-only.</td>
+</tr>
+<tr>
 <td style="text-align: left;">audioConferencing</td>
 <td style="text-align: left;">audioConferencing</td>
 <td style="text-align: left;">The phone access (dial-in) information for an online meeting. Read-only.</td>
@@ -254,6 +285,11 @@
 <td style="text-align: left;">participants</td>
 <td style="text-align: left;">meetingParticipants</td>
 <td style="text-align: left;">The participants associated with the online meeting.  This includes the organizer and the attendees.</td>
+</tr>
+<tr>
+<td style="text-align: left;">recordAutomatically</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether to record the meeting automatically.</td>
 </tr>
 <tr>
 <td style="text-align: left;">startDateTime</td>
