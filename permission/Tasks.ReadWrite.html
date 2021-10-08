@@ -942,7 +942,7 @@
 <tr>
 <td style="text-align: left;">isAssignableToRole</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates whether this group can be assigned to an Azure Active Directory role or not. Optional. <br><br>This property can only be set while creating the group and is immutable. If set to <code>true</code>, the <strong>securityEnabled</strong> property must also be set to <code>true</code> and the group cannot be a dynamic group (that is, <strong>groupTypes</strong> cannot contain <code>DynamicMembership</code>). Only callers in Global administrator and Privileged role administrator roles can set this property. The caller must be assigned the <em>RoleManagement.ReadWrite.Directory</em> permission to set this property or update the memership of such groups. For more, see Using a group to manage Azure AD role assignments<br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>).</td>
+<td style="text-align: left;">Indicates whether this group can be assigned to an Azure Active Directory role or not. Optional. <br><br>This property can only be set while creating the group and is immutable. If set to <code>true</code>, the <strong>securityEnabled</strong> property must also be set to <code>true</code> and the group cannot be a dynamic group (that is, <strong>groupTypes</strong> cannot contain <code>DynamicMembership</code>). Only callers in Global administrator and Privileged role administrator roles can set this property. The caller must be assigned the <em>RoleManagement.ReadWrite.Directory</em> permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignments<br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">isSubscribedByMail</td>
@@ -967,7 +967,7 @@
 <tr>
 <td style="text-align: left;">mailNickname</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The mail alias for the group, unique in the organization. Required. These characters cannot be used in the mailNickName: <code>@()\[]&quot;;:.&lt;&gt;,SPACE</code>. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>).</td>
+<td style="text-align: left;">The mail alias for the group, unique in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: <code> @ () \ [] &quot; ; : . &lt;&gt; , SPACE</code>. <br><br>Required. Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">membershipRule</td>
