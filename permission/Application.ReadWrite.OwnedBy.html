@@ -759,7 +759,7 @@
 <tr>
 <td style="text-align: left;">requiredResourceAccess</td>
 <td style="text-align: left;">requiredResourceAccess collection</td>
-<td style="text-align: left;">Specifies the resources that the application needs to access. This property also specifies the set of OAuth permission scopes and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. Not nullable. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>NOT</code>, <code>ge</code>, <code>le</code>).</td>
+<td style="text-align: left;">Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>NOT</code>, <code>ge</code>, <code>le</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">signInAudience</td>
@@ -2493,7 +2493,7 @@
 <tr>
 <td style="text-align: left;">lastPasswordChangeDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The time when this Azure AD user last changed their password. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. <br><br>Returned only on <code>$select</code>.</td>
+<td style="text-align: left;">The time when this Azure AD user last changed their password or when their password was created, whichever date the latest action was performed. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. <br><br>Returned only on <code>$select</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">legalAgeGroupClassification</td>
@@ -2693,7 +2693,7 @@
 <tr>
 <td style="text-align: left;">userType</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">A string value that can be used to classify user types in your directory, such as <code>Member</code> and <code>Guest</code>. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>, <code>in</code>).</td>
+<td style="text-align: left;">A string value that can be used to classify user types in your directory, such as <code>Member</code> and <code>Guest</code>. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>, <code>in</code>). **N</td>
 </tr>
 </tbody>
 </table>
