@@ -102,6 +102,11 @@
 </thead>
 <tbody>
 <tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/teamsapp-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /appCatalogs/teamsApps/{id}</a></td>
+</tr>
+<tr>
 <td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-delete?view=graph-rest-beta&amp;tabs=http">DELETE /applications/{id}</a></td>
@@ -275,6 +280,11 @@
 <td>Beta</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/administrativeunit-delta?view=graph-rest-beta&amp;tabs=http">GET /administrativeUnits/delta</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/appcatalogs-list-teamsapps?view=graph-rest-1.0&amp;tabs=http">GET /appCatalogs/teamsApps</a></td>
 </tr>
 <tr>
 <td>Beta</td>
@@ -1157,6 +1167,16 @@
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-update?view=graph-rest-beta&amp;tabs=http">PATCH applications/{id}/synchronization/templates/{templateId}</a></td>
 </tr>
 <tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/teamsapp-publish?view=graph-rest-1.0&amp;tabs=http">POST /appCatalogs/teamsApps</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/teamsapp-update?view=graph-rest-1.0&amp;tabs=http">POST /appCatalogs/teamsApps/{id}/appDefinitions</a></td>
+</tr>
+<tr>
 <td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-post-applications?view=graph-rest-beta&amp;tabs=http">POST /applications</a></td>
@@ -1305,6 +1325,11 @@
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-checkmemberobjects?view=graph-rest-1.0&amp;tabs=http">POST /me/checkMemberObjects</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-invalidateallrefreshtokens?view=graph-rest-beta&amp;tabs=http">POST /me/invalidateAllRefreshTokens</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -1575,6 +1600,11 @@
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-getmemberobjects?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/getMemberObjects</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-invalidateallrefreshtokens?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/invalidateAllRefreshTokens</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -4041,7 +4071,7 @@
 <tr>
 <td style="text-align: left;">resourceAppId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the resource that the application requires access to.  This should be equal to the **a</td>
+<td style="text-align: left;">The unique identifier for the resource that the application requires access to. This should be equal to the **a</td>
 </tr>
 </tbody>
 </table>
@@ -4978,6 +5008,53 @@
 <td style="text-align: left;">distributionMethod</td>
 <td style="text-align: left;">teamsAppDistributionMethod</td>
 <td style="text-align: left;">The method of distribution for the app. Read-only.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="teamsappdefinition-"><a href="https://docs.microsoft.com/graph/api/resources/teamsappdefinition?view=graph-rest-1.0&amp;tabs=http">teamsAppDefinition </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">A unique ID (not the Teams app ID).</td>
+</tr>
+<tr>
+<td style="text-align: left;">teamsAppId</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The ID from the Teams app manifest.</td>
+</tr>
+<tr>
+<td style="text-align: left;">publishingState</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The published status of a specific version of a Teams app. Possible values are:<br><code>submitted</code> — The specific version of the Teams app has been submitted and is under review. </br><code>published</code>  — The request to publish the specific version of the Teams app has been approved by the admin and the app is published. <br> <code>rejected</code> — The request to publish the specific version of the Teams app was rejected by the admin.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The name of the app provided by the app developer.</td>
+</tr>
+<tr>
+<td style="text-align: left;">version</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The version number of the application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">shortDescription</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Short description of the application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Verbose description of the application.</td>
 </tr>
 </tbody>
 </table>
