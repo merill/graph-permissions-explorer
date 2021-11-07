@@ -8,7 +8,7 @@
     <title>DeviceManagementServiceConfig.ReadWrite.All | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="DeviceManagementServiceConfig.ReadWrite.All | Graph Permissions ">
-    <meta name="generator" content="docfx 2.58.4.0">
+    <meta name="generator" content="docfx 2.58.9.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -1209,11 +1209,6 @@
 <tr>
 <td>Beta</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/intune-remoteassistance-devicemanagement-reportremoteassistance?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/reportRemoteAssistance</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/intune-remoteassistance-devicemanagementreports-getremoteassistancemonitoractivesessionsreport?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/reports/getRemoteAssistanceMonitorActiveSessionsReport</a></td>
 </tr>
 <tr>
@@ -1746,7 +1741,7 @@
 <tr>
 <td style="text-align: left;">deviceType</td>
 <td style="text-align: left;">windowsAutopilotDeviceType</td>
-<td style="text-align: left;">The AutoPilot device type that this profile is applicable to. Inherited from windowsAutopilotDeploymentProfile. Possible values are: <code>windowsPc</code>, <code>surfaceHub2</code>, <code>holoLens</code>.</td>
+<td style="text-align: left;">The AutoPilot device type that this profile is applicable to. Inherited from windowsAutopilotDeploymentProfile. Possible values are: <code>windowsPc</code>, <code>surfaceHub2</code>, <code>holoLens</code>, <code>surfaceHub2S</code>, <code>virtualMachine</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">enableWhiteGlove</td>
@@ -1935,7 +1930,7 @@
 <tr>
 <td style="text-align: left;">deviceType</td>
 <td style="text-align: left;">windowsAutopilotDeviceType</td>
-<td style="text-align: left;">The AutoPilot device type that this profile is applicable to. Inherited from windowsAutopilotDeploymentProfile. Possible values are: <code>windowsPc</code>, <code>surfaceHub2</code>, <code>holoLens</code>.</td>
+<td style="text-align: left;">The AutoPilot device type that this profile is applicable to. Inherited from windowsAutopilotDeploymentProfile. Possible values are: <code>windowsPc</code>, <code>surfaceHub2</code>, <code>holoLens</code>, <code>surfaceHub2S</code>, <code>virtualMachine</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">enableWhiteGlove</td>
@@ -5486,118 +5481,6 @@
 <td style="text-align: left;">lastConnectionDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">Timestamp of the last request sent to Intune by the TEM partner.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="remoteassistancereporting-"><a href="https://docs.microsoft.com/graph/api/resources/intune-remoteassistance-remoteassistancereporting?view=graph-rest-1.0&amp;tabs=http">remoteAssistanceReporting </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for a session and for each sessions's reporting payload</td>
-</tr>
-<tr>
-<td style="text-align: left;">startDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Start time for the session</td>
-</tr>
-<tr>
-<td style="text-align: left;">endDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">End time for the session</td>
-</tr>
-<tr>
-<td style="text-align: left;">remoteAssistanceSessionType</td>
-<td style="text-align: left;">remoteAssistanceSessionType</td>
-<td style="text-align: left;">Type of the remote assistance session that was held. Possible values are: <code>viewOnly</code>, <code>fullControl</code>, <code>elevation</code>. Possible values are: <code>viewOnly</code>, <code>fullControl</code>, <code>elevation</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">helperEmail</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Login email used by the helper to establish the session</td>
-</tr>
-<tr>
-<td style="text-align: left;">helperTenantId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Tenant id for the helper</td>
-</tr>
-<tr>
-<td style="text-align: left;">helperFirstName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Helper's first name</td>
-</tr>
-<tr>
-<td style="text-align: left;">helperLastName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Helper's last name</td>
-</tr>
-<tr>
-<td style="text-align: left;">helperOs</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Helper's operating system</td>
-</tr>
-<tr>
-<td style="text-align: left;">helperDeviceAadId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Helper's device AAD Id</td>
-</tr>
-<tr>
-<td style="text-align: left;">helperDeviceName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Helper's device name</td>
-</tr>
-<tr>
-<td style="text-align: left;">helperEnrollmentState</td>
-<td style="text-align: left;">enrollmentState</td>
-<td style="text-align: left;">Intune enrollment state of the helper's device. Possible values are: <code>unknown</code>, <code>enrolled</code>, <code>pendingReset</code>, <code>failed</code>, <code>notContacted</code>, <code>blocked</code>. Possible values are: <code>unknown</code>, <code>enrolled</code>, <code>pendingReset</code>, <code>failed</code>, <code>notContacted</code>, <code>blocked</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">sharerEmail</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Login email used by the sharer to establish the session</td>
-</tr>
-<tr>
-<td style="text-align: left;">sharerTenantId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Tenant id for the sharer</td>
-</tr>
-<tr>
-<td style="text-align: left;">sharerFirstName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Sharer's first name</td>
-</tr>
-<tr>
-<td style="text-align: left;">sharerLastName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Sharer's last name</td>
-</tr>
-<tr>
-<td style="text-align: left;">sharerDeviceAadId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Sharer's device AAD Id</td>
-</tr>
-<tr>
-<td style="text-align: left;">sharerDeviceName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Sharer's device name</td>
-</tr>
-<tr>
-<td style="text-align: left;">sharerOs</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Sharer's operating system</td>
-</tr>
-<tr>
-<td style="text-align: left;">sharerEnrollmentState</td>
-<td style="text-align: left;">enrollmentState</td>
-<td style="text-align: left;">Intune enrollment state of the sharer's device. Possible values are: <code>unknown</code>, <code>enrolled</code>, <code>pendingReset</code>, <code>failed</code>, <code>notContacted</code>, <code>blocked</code>. Possible values are: <code>unknown</code>, <code>enrolled</code>, <code>pendingReset</code>, <code>failed</code>, <code>notContacted</code>, <code>blocked</code>.</td>
 </tr>
 </tbody>
 </table>

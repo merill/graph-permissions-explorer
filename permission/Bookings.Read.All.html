@@ -8,7 +8,7 @@
     <title>Bookings.Read.All | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Bookings.Read.All | Graph Permissions ">
-    <meta name="generator" content="docfx 2.58.4.0">
+    <meta name="generator" content="docfx 2.58.9.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -237,6 +237,11 @@
 <td style="text-align: left;">The customer's phone number.</td>
 </tr>
 <tr>
+<td style="text-align: left;">customerTimeZone</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The time zone of the customer. For a list of possible values, see dateTimeTimeZone.</td>
+</tr>
+<tr>
 <td style="text-align: left;">duration</td>
 <td style="text-align: left;">Duration</td>
 <td style="text-align: left;">The length of the appointment, denoted in ISO8601 format.</td>
@@ -275,6 +280,16 @@
 <td style="text-align: left;">invoiceUrl</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The URL of the invoice in Microsoft Bookings.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isLocationOnline</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">True indicates that the appointment will be held online. Default value is false.</td>
+</tr>
+<tr>
+<td style="text-align: left;">joinWebUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The URL of the online meeting for the appointment.</td>
 </tr>
 <tr>
 <td style="text-align: left;">optOutOfCustomerEmail</td>
@@ -330,6 +345,11 @@
 <td style="text-align: left;">serviceNotes</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Notes from a bookingStaffMember. The value of this property is available only when reading this <strong>bookingAppointment</strong> by its ID.</td>
+</tr>
+<tr>
+<td style="text-align: left;">smsNotificationsEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">True indicates SMS notifications will be sent to the customers for the appointment. Default value is false.</td>
 </tr>
 <tr>
 <td style="text-align: left;">staffMemberIds</td>
@@ -462,6 +482,16 @@
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The ID of the customer. Read-only.</td>
 </tr>
+<tr>
+<td style="text-align: left;">addresses</td>
+<td style="text-align: left;">physicalAddress collection</td>
+<td style="text-align: left;">Addresses associated with the customer, including home, business and other addresses.</td>
+</tr>
+<tr>
+<td style="text-align: left;">phones</td>
+<td style="text-align: left;">phone collection</td>
+<td style="text-align: left;">Phone numbers associated with the customer, including home, business and mobile numbers.</td>
+</tr>
 </tbody>
 </table>
 <h3 id="bookingservice-"><a href="https://docs.microsoft.com/graph/api/resources/bookingservice?view=graph-rest-1.0&amp;tabs=http">bookingService </a></h3>
@@ -525,6 +555,11 @@
 <td style="text-align: left;">True means this service is not available to customers for booking.</td>
 </tr>
 <tr>
+<td style="text-align: left;">isLocationOnline</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">True indicates that the appointments for the service will be held online. Default value is false.</td>
+</tr>
+<tr>
 <td style="text-align: left;">notes</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Additional information about this service.</td>
@@ -545,9 +580,19 @@
 <td style="text-align: left;">The set of policies that determine how appointments for this type of service should be created and managed.</td>
 </tr>
 <tr>
+<td style="text-align: left;">smsNotificationsEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">True indicates SMS notifications can be sent to the customers for the appointment of the service. Default value is false.</td>
+</tr>
+<tr>
 <td style="text-align: left;">staffMemberIds</td>
 <td style="text-align: left;">String collection</td>
 <td style="text-align: left;">Represents those staff members who provide this service.</td>
+</tr>
+<tr>
+<td style="text-align: left;">webUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The URL a customer uses to access the service.</td>
 </tr>
 </tbody>
 </table>
@@ -590,6 +635,11 @@
 <td style="text-align: left;">role</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: left;">The role of the staff member in the business. Possible values are: <code>guest</code>, <code>administrator</code>, <code>viewer</code>, <code>externalGuest</code>. Required.</td>
+</tr>
+<tr>
+<td style="text-align: left;">timeZone</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.</td>
 </tr>
 <tr>
 <td style="text-align: left;">useBusinessHours</td>

@@ -8,7 +8,7 @@
     <title>CloudPC.ReadWrite.All | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="CloudPC.ReadWrite.All | Graph Permissions ">
-    <meta name="generator" content="docfx 2.58.4.0">
+    <meta name="generator" content="docfx 2.58.9.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -173,6 +173,16 @@
 </tr>
 <tr>
 <td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-list-galleryimages?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/galleryImages</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcgalleryimage-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/galleryImages/{id}</a></td>
+</tr>
+<tr>
+<td>Beta</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-geteffectivepermissions?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/getEffectivePermissions</a></td>
 </tr>
@@ -195,6 +205,11 @@
 <td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpcprovisioningpolicy-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/provisioningPolicies/{id}</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-list-serviceplans?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/servicePlans</a></td>
 </tr>
 <tr>
 <td>Beta</td>
@@ -620,6 +635,83 @@
 </tr>
 </tbody>
 </table>
+<h3 id="cloudpcgalleryimage-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcgalleryimage?view=graph-rest-1.0&amp;tabs=http">cloudPcGalleryImage </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The official display name of the gallery image. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">endDate</td>
+<td style="text-align: left;">Date</td>
+<td style="text-align: left;">The date in which this image is no longer within long-term support. The Cloud PC will continue to provide short-term support. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">expirationDate</td>
+<td style="text-align: left;">Date</td>
+<td style="text-align: left;">The date when the image is no longer available. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for the gallery image resource on the Cloud PC. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">offer</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The offer name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">offerDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The official display offer name of the gallery image. For example, Windows 10 Enterprise + OS Optimizations. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">publisher</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The publisher name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">recommendedSku</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Recommended Cloud PC SKU for this gallery image. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sizeInGB</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The size of this image in gigabytes. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sku</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The SKU name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">skuDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The official display stock keeping unit (SKU) name of this gallery image. For example, 2004. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">startDate</td>
+<td style="text-align: left;">Date</td>
+<td style="text-align: left;">The date when the image becomes available. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">cloudPcGalleryImageStatus</td>
+<td style="text-align: left;">The status of the gallery image on the Cloud PC. Possible values are: <code>supported</code>, <code>supportedWithWarning</code>, <code>notSupported</code>, <code>unknownFutureValue</code>. Read-only.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="cloudpconpremisesconnection-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpconpremisesconnection?view=graph-rest-1.0&amp;tabs=http">cloudPcOnPremisesConnection </a></h3>
 <table>
 <thead>
@@ -774,6 +866,11 @@
 <td style="text-align: left;">cloudPcProvisioningPolicyImageType</td>
 <td style="text-align: left;">The type of OS image (custom or gallery) you want to provision on Cloud PCs. Possible values are: <code>gallery</code>, <code>custom</code>.</td>
 </tr>
+<tr>
+<td style="text-align: left;">domainJoinConfiguration</td>
+<td style="text-align: left;">cloudPcDomainJoinConfiguration</td>
+<td style="text-align: left;">Specifies how Cloud PCs will join Azure Active Directory.</td>
+</tr>
 </tbody>
 </table>
 <h3 id="cloudpcprovisioningpolicyassignment-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcprovisioningpolicyassignment?view=graph-rest-1.0&amp;tabs=http">cloudPcProvisioningPolicyAssignment </a></h3>
@@ -842,6 +939,53 @@
 <td style="text-align: left;">statusDetails</td>
 <td style="text-align: left;">cloudPcStatusDetails</td>
 <td style="text-align: left;">The details of the Cloud PC status.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cloudpcserviceplan-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcserviceplan?view=graph-rest-1.0&amp;tabs=http">cloudPcServicePlan </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name for the service plan. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for the service plan. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">ramInGB</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The size of the RAM in GB. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">storageInGB</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The size of the OS Disk in GB. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">type</td>
+<td style="text-align: left;">cloudPcServicePlanType</td>
+<td style="text-align: left;">The type of the service plan. Possible values are: <code>enterprise</code>, <code>business</code>, <code>unknownFutureValue</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">userProfileInGB</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The size of the user profile disk in GB. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">vCpuCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The number of vCPUs. Read-only.</td>
 </tr>
 </tbody>
 </table>
