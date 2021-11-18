@@ -91,10 +91,43 @@
 <p>Allows the app to read and write custom security attribute assignments for all principals in the tenant on behalf of a signed in user.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
-</div>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<table>
+<thead>
+<tr>
+<th>Ver</th>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directory-list-attributesets?view=graph-rest-beta&amp;tabs=http">GET /directory/attributeSets</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/attributeset-get?view=graph-rest-beta&amp;tabs=http">GET /directory/attributeSets/{attributeSetId}</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directory-list-customsecurityattributedefinitions?view=graph-rest-beta&amp;tabs=http">GET /directory/customSecurityAttributeDefinitions</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/customsecurityattributedefinition-get?view=graph-rest-beta&amp;tabs=http">GET /directory/customSecurityAttributeDefinitions/{customSecurityAttributeDefinitionId}</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/customsecurityattributedefinition-list-allowedvalues?view=graph-rest-beta&amp;tabs=http">GET /directory/customSecurityAttributeDefinitions/{customSecurityAttributeDefinitionId}/allowedValues</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -119,6 +152,136 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the app to read and write custom security attribute assignments for all principals in the tenant on behalf of a signed in user.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="application-permission">Application Permission</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Display String</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="resources">Resources</h2>
+<h3 id="allowedvalue-"><a href="https://docs.microsoft.com/graph/api/resources/allowedvalue?view=graph-rest-1.0&amp;tabs=http">allowedValue </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifier for the predefined value. Can be up to 64 characters long and include Unicode characters. Can include spaces, but some special characters are not allowed. Cannot be changed later. Case sensitive.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isActive</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the predefined value is active or deactivated. If set to <code>false</code>, this predefined value cannot be assigned to any additional supported directory objects.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="attributeset-"><a href="https://docs.microsoft.com/graph/api/resources/attributeset?view=graph-rest-1.0&amp;tabs=http">attributeSet </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Description of the attribute set. Can be up to 128 characters long and include Unicode characters. Can be changed later.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifier for the attribute set that is unique within a tenant. Can be up to 32 characters long and include Unicode characters. Cannot contain spaces or special characters. Cannot be changed later. Case insensitive.</td>
+</tr>
+<tr>
+<td style="text-align: left;">maxAttributesPerSet</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Maximum number of custom security attributes that can be defined in this attribute set. Default value is <code>null</code>. If not specified, the administrator can add up to the maximum of 500 active attributes per tenant. Can be changed later.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="customsecurityattributedefinition-"><a href="https://docs.microsoft.com/graph/api/resources/customsecurityattributedefinition?view=graph-rest-1.0&amp;tabs=http">customSecurityAttributeDefinition </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">attributeSet</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the attribute set. Case insensitive.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Description of the custom security attribute. Can be up to 128 characters long and include Unicode characters. Can be changed later.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifier of the custom security attribute, which is a combination of the attribute set name and the custom security attribute name separated by an underscore (<code>attributeSet</code>_<code>name</code>). The <code>id</code> property is auto generated and cannot be set. Case insensitive.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isCollection</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether multiple values can be assigned to the custom security attribute. Cannot be changed later. If <code>type</code> is set to Boolean, <code>isCollection</code> cannot be set to true.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isSearchable</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether custom security attribute values will be indexed for searching on objects that are assigned attribute values. Cannot be changed later.</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the custom security attribute. Must be unique within an attribute set. Can be up to 32 characters long and include Unicode characters. Cannot contain spaces or special characters. Cannot be changed later. Case insensitive.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Specifies whether the custom security attribute is active or deactivated. Acceptable values are <code>Available</code> and <code>Deprecated</code>. Can be changed later.</td>
+</tr>
+<tr>
+<td style="text-align: left;">type</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Data type for the custom security attribute values. Supported types are <code>Boolean</code>, <code>Integer</code>, and <code>String</code>. Cannot be changed later.</td>
+</tr>
+<tr>
+<td style="text-align: left;">usePreDefinedValuesOnly</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether only predefined values can be assigned to the custom security attribute. If set to false, free-form values are allowed. Can later be changed from true to false, but cannot be changed from false to true. If <code>type</code> is set to Boolean, <code>usePreDefinedValuesOnly</code> cannot be set to true.</td>
 </tr>
 </tbody>
 </table>
