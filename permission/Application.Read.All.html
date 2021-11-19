@@ -282,6 +282,16 @@
 <td><a href="https://docs.microsoft.com/graph/api/appmanagementpolicy-post-appliesto?view=graph-rest-beta&amp;tabs=http">POST /applications/{id}/appManagementPolicies/$ref</a></td>
 </tr>
 <tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-beta&amp;tabs=http">POST /directoryObjects/{id}/checkMemberGroups</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-beta&amp;tabs=http">POST /directoryObjects/{id}/getMemberGroups</a></td>
+</tr>
+<tr>
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/conditionalaccessroot-post-policies?view=graph-rest-1.0&amp;tabs=http">POST /identity/conditionalAccess/policies</a></td>
@@ -294,17 +304,7 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-checkmembergroups?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{id}/checkMemberGroups</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-checkmemberobjects?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{id}/checkMemberObjects</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-getmembergroups?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{id}/getMemberGroups</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -1320,6 +1320,93 @@
 </tr>
 </tbody>
 </table>
+<h3 id="orgcontact-"><a href="https://docs.microsoft.com/graph/api/resources/orgcontact?view=graph-rest-1.0&amp;tabs=http">orgContact </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">addresses</td>
+<td style="text-align: left;">physicalOfficeAddress collection</td>
+<td style="text-align: left;">Postal addresses for this organizational contact. For now a contact can only have one physical address.</td>
+</tr>
+<tr>
+<td style="text-align: left;">companyName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the company that this organizational contact belongs to.  Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
+</tr>
+<tr>
+<td style="text-align: left;">department</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name for the department in which the contact works.  Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Display name for this organizational contact. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values), <code>$search</code>, and <code>$orderBy</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">givenName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">First name for this organizational contact. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for this organizational contact.  Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>, <code>in</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">jobTitle</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Job title for this organizational contact. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
+</tr>
+<tr>
+<td style="text-align: left;">mail</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The SMTP address for the contact, for example, &quot;jeff@contoso.onmicrosoft.com&quot;. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
+</tr>
+<tr>
+<td style="text-align: left;">mailNickname</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Email alias (portion of email address pre-pending the @ symbol) for this organizational contact. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
+</tr>
+<tr>
+<td style="text-align: left;">onPremisesLastSyncDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time when this organizational contact was last synchronized from on-premises AD. This date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>, <code>ge</code>, <code>le</code>, <code>in</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">onPremisesProvisioningErrors</td>
+<td style="text-align: left;">onPremisesProvisioningError collection</td>
+<td style="text-align: left;">List of any synchronization provisioning errors for this organizational contact. Supports <code>$filter</code> (<code>eq</code>, <code>NOT</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">onPremisesSyncEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if this object is synced from an on-premises directory; <code>false</code> if this object was originally synced from an on-premises directory but is no longer synced and now mastered in Exchange; <code>null</code> if this object has never been synced from an on-premises directory (default). <br> <br> Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>, <code>in</code>, and <code>eq</code> on <code>null</code> values).</td>
+</tr>
+<tr>
+<td style="text-align: left;">phones</td>
+<td style="text-align: left;">phone collection</td>
+<td style="text-align: left;">List of phones for this organizational contact. Phone types can be mobile, business, and businessFax. Only one of each type can ever be present in the collection.</td>
+</tr>
+<tr>
+<td style="text-align: left;">proxyAddresses</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">For example: &quot;SMTP: bob@contoso.com&quot;, &quot;smtp: bob@sales.contoso.com&quot;. The <strong>any</strong> operator is required for filter expressions on multi-valued properties. Supports <code>$filter</code> (<code>eq</code>, <code>NOT</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">surname</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Last name for this organizational contact. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
+</tr>
+</tbody>
+</table>
 <h3 id="schemaextension"><a href="https://docs.microsoft.com/graph/api/resources/schemaextension?view=graph-rest-1.0&amp;tabs=http">schemaextension</a></h3>
 <table>
 <thead>
@@ -1400,7 +1487,7 @@
 <tr>
 <td style="text-align: left;">appId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the associated application (its <strong>appId</strong> property).</td>
+<td style="text-align: left;">The unique identifier for the associated application (its <strong>appId</strong> property). Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>, <code>startsWith</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">applicationTemplateId</td>
