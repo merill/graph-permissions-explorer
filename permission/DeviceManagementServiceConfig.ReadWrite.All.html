@@ -8,7 +8,7 @@
     <title>DeviceManagementServiceConfig.ReadWrite.All | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="DeviceManagementServiceConfig.ReadWrite.All | Graph Permissions ">
-    <meta name="generator" content="docfx 2.58.9.0">
+    <meta name="generator" content="docfx 2.59.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -2002,7 +2002,7 @@
 <tr>
 <td style="text-align: left;">supervisedModeEnabled</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Supervised mode, True to enable, false otherwise. See <a href="https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune">https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune</a> for additional information.</td>
+<td style="text-align: left;">Supervised mode, True to enable, false otherwise. See Enroll devices in Microsoft Intune for additional information.</td>
 </tr>
 <tr>
 <td style="text-align: left;">supportDepartment</td>
@@ -2144,7 +2144,7 @@
 <tr>
 <td style="text-align: left;">supervisedModeEnabled</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Supervised mode, True to enable, false otherwise. See <a href="https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune">https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune</a> for additional information.</td>
+<td style="text-align: left;">Supervised mode, True to enable, false otherwise. See Enroll devices in Microsoft Intune for additional information.</td>
 </tr>
 <tr>
 <td style="text-align: left;">supportDepartment</td>
@@ -2311,7 +2311,7 @@
 <tr>
 <td style="text-align: left;">supervisedModeEnabled</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Supervised mode, True to enable, false otherwise. See <a href="https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune">https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune</a> for additional information. Inherited from depEnrollmentBaseProfile</td>
+<td style="text-align: left;">Supervised mode, True to enable, false otherwise. See Enroll devices in Microsoft Intune for additional information. Inherited from depEnrollmentBaseProfile</td>
 </tr>
 <tr>
 <td style="text-align: left;">supportDepartment</td>
@@ -2538,6 +2538,11 @@
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Carrier URL for activating device eSIM.</td>
 </tr>
+<tr>
+<td style="text-align: left;">userlessSharedAadModeEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See Shared iOS and iPadOS devices</td>
+</tr>
 </tbody>
 </table>
 <h3 id="depmacosenrollmentprofile-"><a href="https://docs.microsoft.com/graph/api/resources/intune-enrollment-depmacosenrollmentprofile?view=graph-rest-1.0&amp;tabs=http">depMacOSEnrollmentProfile </a></h3>
@@ -2593,7 +2598,7 @@
 <tr>
 <td style="text-align: left;">supervisedModeEnabled</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Supervised mode, True to enable, false otherwise. See <a href="https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune">https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune</a> for additional information. Inherited from depEnrollmentBaseProfile</td>
+<td style="text-align: left;">Supervised mode, True to enable, false otherwise. See Enroll devices in Microsoft Intune for additional information. Inherited from depEnrollmentBaseProfile</td>
 </tr>
 <tr>
 <td style="text-align: left;">supportDepartment</td>
@@ -2719,6 +2724,11 @@
 <td style="text-align: left;">accessibilityScreenDisabled</td>
 <td style="text-align: left;">Boolean</td>
 <td style="text-align: left;">Indicates if Accessibility screen is disabled</td>
+</tr>
+<tr>
+<td style="text-align: left;">autoUnlockWithWatchDisabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates if UnlockWithWatch screen is disabled</td>
 </tr>
 </tbody>
 </table>
@@ -3801,6 +3811,11 @@
 <td style="text-align: left;">Optional role scope tags for the enrollment restrictions. Inherited from deviceEnrollmentConfiguration</td>
 </tr>
 <tr>
+<td style="text-align: left;">deviceEnrollmentConfigurationType</td>
+<td style="text-align: left;">deviceEnrollmentConfigurationType</td>
+<td style="text-align: left;">Support for Enrollment Configuration Type Inherited from deviceEnrollmentConfiguration. Possible values are: <code>unknown</code>, <code>limit</code>, <code>platformRestrictions</code>, <code>windowsHelloForBusiness</code>, <code>defaultLimit</code>, <code>defaultPlatformRestrictions</code>, <code>defaultWindowsHelloForBusiness</code>, <code>defaultWindows10EnrollmentCompletionPageConfiguration</code>, <code>windows10EnrollmentCompletionPageConfiguration</code>, <code>deviceComanagementAuthorityConfiguration</code>, <code>singlePlatformRestriction</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
 <td style="text-align: left;">managedDeviceAuthority</td>
 <td style="text-align: left;">Int32</td>
 <td style="text-align: left;">CoManagement Authority configuration ManagedDeviceAuthority</td>
@@ -3864,6 +3879,7 @@
 </tr>
 </tbody>
 </table>
+<h3 id="intune-onboarding-deviceenrollmentconfigurationtype"><a href="https://docs.microsoft.com/graph/api/resources/intune-onboarding-deviceenrollmentconfigurationtype?view=graph-rest-1.0&amp;tabs=http">intune-onboarding-deviceenrollmentconfigurationtype</a></h3>
 <h3 id="deviceenrollmentlimitconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/intune-onboarding-deviceenrollmentlimitconfiguration?view=graph-rest-1.0&amp;tabs=http">deviceEnrollmentLimitConfiguration </a></h3>
 <table>
 <thead>
@@ -3999,6 +4015,11 @@
 <td style="text-align: left;">Optional role scope tags for the enrollment restrictions. Inherited from deviceEnrollmentConfiguration</td>
 </tr>
 <tr>
+<td style="text-align: left;">deviceEnrollmentConfigurationType</td>
+<td style="text-align: left;">deviceEnrollmentConfigurationType</td>
+<td style="text-align: left;">Support for Enrollment Configuration Type Inherited from deviceEnrollmentConfiguration. Possible values are: <code>unknown</code>, <code>limit</code>, <code>platformRestrictions</code>, <code>windowsHelloForBusiness</code>, <code>defaultLimit</code>, <code>defaultPlatformRestrictions</code>, <code>defaultWindowsHelloForBusiness</code>, <code>defaultWindows10EnrollmentCompletionPageConfiguration</code>, <code>windows10EnrollmentCompletionPageConfiguration</code>, <code>deviceComanagementAuthorityConfiguration</code>, <code>singlePlatformRestriction</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
 <td style="text-align: left;">platformRestriction</td>
 <td style="text-align: left;">deviceEnrollmentPlatformRestriction</td>
 <td style="text-align: left;">Restrictions based on platform, platform operating system version, and device ownership</td>
@@ -4006,7 +4027,7 @@
 <tr>
 <td style="text-align: left;">platformType</td>
 <td style="text-align: left;">enrollmentRestrictionPlatformType</td>
-<td style="text-align: left;">Type of platform for which this restriction applies. Possible values are: <code>allPlatforms</code>, <code>ios</code>, <code>windows</code>, <code>windowsPhone</code>, <code>android</code>, <code>androidForWork</code>, <code>androidAosp</code>, <code>mac</code>.</td>
+<td style="text-align: left;">Type of platform for which this restriction applies. Possible values are: <code>allPlatforms</code>, <code>ios</code>, <code>windows</code>, <code>windowsPhone</code>, <code>android</code>, <code>androidForWork</code>, <code>mac</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -4879,6 +4900,11 @@
 <td style="text-align: left;">Optional role scope tags for the enrollment restrictions. Inherited from deviceEnrollmentConfiguration</td>
 </tr>
 <tr>
+<td style="text-align: left;">deviceEnrollmentConfigurationType</td>
+<td style="text-align: left;">deviceEnrollmentConfigurationType</td>
+<td style="text-align: left;">Support for Enrollment Configuration Type Inherited from deviceEnrollmentConfiguration. Possible values are: <code>unknown</code>, <code>limit</code>, <code>platformRestrictions</code>, <code>windowsHelloForBusiness</code>, <code>defaultLimit</code>, <code>defaultPlatformRestrictions</code>, <code>defaultWindowsHelloForBusiness</code>, <code>defaultWindows10EnrollmentCompletionPageConfiguration</code>, <code>windows10EnrollmentCompletionPageConfiguration</code>, <code>deviceComanagementAuthorityConfiguration</code>, <code>singlePlatformRestriction</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
 <td style="text-align: left;">showInstallationProgress</td>
 <td style="text-align: left;">Boolean</td>
 <td style="text-align: left;">Show or hide installation progress to user</td>
@@ -5502,7 +5528,7 @@
 <tr>
 <td style="text-align: left;">remoteAssistanceState</td>
 <td style="text-align: left;">remoteAssistanceState</td>
-<td style="text-align: left;">The current state of remote assistance for the account. Possible values are: notConfigured, disabled, enabled. This setting is configurable by the admin. Remote assistance settings that have not yet been configured by the admin have a notConfigured state. Returned by default. Possible values are: <code>notConfigured</code>, <code>disabled</code>, <code>enabled</code>.</td>
+<td style="text-align: left;">The current state of remote assistance for the account. Possible values are: disabled, enabled. This setting is configurable by the admin. Remote assistance settings that have not yet been configured by the admin have a disabled state. Returned by default. Possible values are: <code>disabled</code>, <code>enabled</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">allowSessionsToUnenrolledDevices</td>

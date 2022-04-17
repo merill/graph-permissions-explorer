@@ -8,7 +8,7 @@
     <title>Organization.ReadWrite.All | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Organization.ReadWrite.All | Graph Permissions ">
-    <meta name="generator" content="docfx 2.58.9.0">
+    <meta name="generator" content="docfx 2.59.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -132,6 +132,11 @@
 <td><a href="https://docs.microsoft.com/graph/api/certificatebasedauthconfiguration-get?view=graph-rest-1.0&amp;tabs=http">GET /organization/{id}/certificateBasedAuthConfiguration/{id}</a></td>
 </tr>
 <tr>
+<td>Beta</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/organizationsettings-list-microsoftapplicationdataaccess?view=graph-rest-beta&amp;tabs=http">GET /organization/{organizationId}/settings/microsoftApplicationDataAccess</a></td>
+</tr>
+<tr>
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/subscribedsku-list?view=graph-rest-1.0&amp;tabs=http">GET /subscribedSkus</a></td>
@@ -157,6 +162,11 @@
 <td><a href="https://docs.microsoft.com/graph/api/organizationalbrandinglocalization-update?view=graph-rest-1.0&amp;tabs=http">PATCH /organization/{organizationId}/branding/localizations/{organizationalBrandingLocalizationId}</a></td>
 </tr>
 <tr>
+<td>Beta</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/microsoftapplicationdataaccesssettings-update?view=graph-rest-beta&amp;tabs=http">PATCH /organization/{organizationId}/settings/microsoftApplicationDataAccess</a></td>
+</tr>
+<tr>
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/certificatebasedauthconfiguration-post-certificatebasedauthconfiguration?view=graph-rest-1.0&amp;tabs=http">POST /organization/{id}/certificateBasedAuthConfiguration</a></td>
@@ -169,7 +179,7 @@
 <tr>
 <td>V1</td>
 <td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/organizationalbrandinglocalization-update?view=graph-rest-1.0&amp;tabs=http">PUT /organization/{organizationId}/branding/localizations/{organizationalBrandingLocalizationId}</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/organizationalbrandinglocalization-update?view=graph-rest-1.0&amp;tabs=http">PUT /organization/{organizationId}/branding/localizations/{organizationalBrandingLocalizationId}/{backgroundImage | bannerLogo | squareLogo}</a></td>
 </tr>
 </tbody>
 </table>
@@ -285,6 +295,28 @@
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The unique identifier of the certificate based auth configuration. Read-only.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="microsoftapplicationdataaccesssettings-"><a href="https://docs.microsoft.com/graph/api/resources/microsoftapplicationdataaccesssettings?view=graph-rest-1.0&amp;tabs=http">microsoftApplicationDataAccessSettings </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">isEnabledForAllMicrosoftApplications</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">When set to <code>true</code>, all users in the organization can access in a Microsoft app any Microsoft 365 data that the user has been authorized to access. The Microsoft app can be a Microsoft 365 app (for example, Excel, Outlook) or non-Microsoft 365 app (for example, Edge). The default is <code>true</code>. <br> It is possible to disable this access for a subset of users in an Azure AD security group, by specifying the group in the <strong>disabledForGroup</strong> property. <br> When set to <code>false</code>, all users can access authorized Microsoft 365 data only in a Microsoft 365 app.</td>
+</tr>
+<tr>
+<td style="text-align: left;">disabledForGroup</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The ID of an Azure Active Directory (Azure AD) security group for which the members are allowed to access Microsoft 365 data using only Microsoft 365 apps, but not other Microsoft apps such as Edge. <br> This is only applicable if **i</td>
 </tr>
 </tbody>
 </table>
@@ -458,7 +490,7 @@
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">An identifier that represents the locale specified in the ISO 639-1 standard, for example English is <code>en-US</code>. The <strong>id</strong> for the default /branding is always the String types <code>0</code> or <code>default</code>. Read-only. <br><br><strong>NOTE:</strong> Multiple branding for a single locale are currently not supported. Inherited from organizationalBrandingProperties.</td>
+<td style="text-align: left;">An identifier that represents the locale specified using culture names. Culture names follow the RFC 1766 standard in the format &quot;languagecode2-country/regioncode2&quot;, where &quot;languagecode2&quot; is a lowercase two-letter code derived from ISO 639-1 and &quot;country/regioncode2&quot; is an uppercase two-letter code derived from ISO 3166. For example, U.S. English is <code>en-US</code>. The <strong>id</strong> for the default /branding is always the String types <code>0</code> or <code>default</code>. Read-only. <br><br><strong>NOTE:</strong> Multiple branding for a single locale are currently not supported. Inherited from organizationalBrandingProperties.</td>
 </tr>
 <tr>
 <td style="text-align: left;">signInPageText</td>
@@ -525,7 +557,7 @@
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">An identifier that represents the locale specified in the ISO 639-1 standard, for example English is <code>en-US</code>. The <strong>id</strong> for the default /branding is always the String types <code>0</code> or <code>default</code>. Read-only. <br><br><strong>NOTE:</strong> Multiple branding for a single locale are currently not supported. Inherited from organizationalBrandingProperties.</td>
+<td style="text-align: left;">An identifier that represents the locale specified using culture names. Culture names follow the RFC 1766 standard in the format &quot;languagecode2-country/regioncode2&quot;, where &quot;languagecode2&quot; is a lowercase two-letter code derived from ISO 639-1 and &quot;country/regioncode2&quot; is an uppercase two-letter code derived from ISO 3166. For example, U.S. English is <code>en-US</code>. The <strong>id</strong> for the default /branding is always the String types <code>0</code> or <code>default</code>. Read-only. <br><br><strong>NOTE:</strong> Multiple branding for a single locale are currently not supported. Inherited from organizationalBrandingProperties.</td>
 </tr>
 <tr>
 <td style="text-align: left;">signInPageText</td>

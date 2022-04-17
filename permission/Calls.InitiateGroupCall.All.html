@@ -8,7 +8,7 @@
     <title>Calls.InitiateGroupCall.All | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Calls.InitiateGroupCall.All | Graph Permissions ">
-    <meta name="generator" content="docfx 2.58.9.0">
+    <meta name="generator" content="docfx 2.59.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -91,10 +91,28 @@
 <p>Allows the app to place outbound calls to multiple users and add participants to meetings in your organization, without a signed-in user.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
-</div>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<table>
+<thead>
+<tr>
+<th>Ver</th>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Beta</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/call-list-audioroutinggroups?view=graph-rest-beta&amp;tabs=http">GET /app/calls/{id}/audioRoutingGroups</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/call-list-audioroutinggroups?view=graph-rest-beta&amp;tabs=http">GET /communications/calls/{id}/audioRoutingGroups</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="application-permission">Application Permission</h2>
 <table>
 <thead>
@@ -115,6 +133,39 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the app to place outbound calls to multiple users and add participants to meetings in your organization, without a signed-in user.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="resources">Resources</h2>
+<h3 id="audioroutinggroup-"><a href="https://docs.microsoft.com/graph/api/resources/audioroutinggroup?view=graph-rest-1.0&amp;tabs=http">audioRoutingGroup </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">receivers</td>
+<td style="text-align: left;">collection(string)</td>
+<td style="text-align: left;">List of receiving participant ids.</td>
+</tr>
+<tr>
+<td style="text-align: left;">routingMode</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Routing group mode.  Possible values are: <code>oneToOne</code>, <code>multicast</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sources</td>
+<td style="text-align: left;">collection(string)</td>
+<td style="text-align: left;">List of source participant ids.</td>
 </tr>
 </tbody>
 </table>

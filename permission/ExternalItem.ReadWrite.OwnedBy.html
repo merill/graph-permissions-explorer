@@ -8,7 +8,7 @@
     <title>ExternalItem.ReadWrite.OwnedBy | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="ExternalItem.ReadWrite.OwnedBy | Graph Permissions ">
-    <meta name="generator" content="docfx 2.58.9.0">
+    <meta name="generator" content="docfx 2.59.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -88,7 +88,7 @@
 <h1 id="externalitemreadwriteownedby">ExternalItem.ReadWrite.OwnedBy</h1>
 
 <blockquote>
-<p>Allows the app to read and write external items without a signed-in user. The app can only read external items of the connection that it is authorized to.</p>
+<p>Allows the app to read and write external items on behalf of a signed-in user. The signed-in user must be an administrator. The app can only read external items of the connection that it is authorized to.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
 <p>Type: A = Application Permission, D = Delegate Permission</p>
@@ -104,6 +104,11 @@
 <tr>
 <td>Beta</td>
 <td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalitem-delete?view=graph-rest-beta&amp;tabs=http">DELETE /external/connections/{connection-id}/items/{item-id}</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalgroup-delete?view=graph-rest-beta&amp;tabs=http">DELETE /external/connections/{connectionId}/groups/{externalGroupId}</a></td>
 </tr>
 <tr>
@@ -115,11 +120,6 @@
 <td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/externalconnectors-identity-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /external/connections/{connectionId}/groups/{externalGroupId}/members/{identityId}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalitem-delete?view=graph-rest-beta&amp;tabs=http">DELETE /external/connections/{connection-id}/items/{item-id}</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -174,12 +174,34 @@
 <tr>
 <td>V1</td>
 <td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalitem-create?view=graph-rest-1.0&amp;tabs=http">POST /external/connections/{connectionsId}/items</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalitem-create?view=graph-rest-1.0&amp;tabs=http">PUT /external/connections/{connection-id}/items/{item-id}</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="delegate-permission">Delegate Permission</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Id</strong></td>
+<td>4367b9d7-cee7-4995-853c-a0bdfe95c1f9</td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-put-items?view=graph-rest-beta&amp;tabs=http">PUT /external/connections/{connection-id}/items/{item-id}</a></td>
+<td><strong>Consent Type</strong></td>
+<td>Admin</td>
+</tr>
+<tr>
+<td><strong>Display String</strong></td>
+<td>Read and write external items</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Allows the app to read and write external items on behalf of a signed-in user. The signed-in user must be an administrator. The app can only read external items of the connection that it is authorized to.</td>
 </tr>
 </tbody>
 </table>
@@ -370,7 +392,7 @@
 <tr>
 <td style="text-align: left;">type</td>
 <td style="text-align: left;">microsoft.graph.externalConnectors.externalItemContentType</td>
-<td style="text-align: left;">The type of content in the value property. Possible values are: <code>text</code>, <code>html</code>, <code>unknownFutureValue</code>.</td>
+<td style="text-align: left;">The type of content in the value property. Possible values are: <code>text</code>, <code>html</code>, <code>unknownFutureValue</code>. These are the content types that the indexer supports, and not the file extension types allowed.</td>
 </tr>
 <tr>
 <td style="text-align: left;">value</td>

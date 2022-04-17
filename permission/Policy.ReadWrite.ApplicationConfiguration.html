@@ -8,7 +8,7 @@
     <title>Policy.ReadWrite.ApplicationConfiguration | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Policy.ReadWrite.ApplicationConfiguration | Graph Permissions ">
-    <meta name="generator" content="docfx 2.58.9.0">
+    <meta name="generator" content="docfx 2.59.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -229,6 +229,11 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/homerealmdiscoverypolicy-list?view=graph-rest-1.0&amp;tabs=http">GET /policies/homeRealmDiscoveryPolicies</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/homerealmdiscoverypolicy-get?view=graph-rest-1.0&amp;tabs=http">GET /policies/homeRealmDiscoveryPolicies/{id}</a></td>
 </tr>
 <tr>
@@ -275,11 +280,6 @@
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/activitybasedtimeoutpolicy-list?view=graph-rest-1.0&amp;tabs=http">GET policies/activityBasedTimeoutPolicies</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/homerealmdiscoverypolicy-list?view=graph-rest-1.0&amp;tabs=http">GET policies/homeRealmDiscoveryPolicies</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -364,6 +364,11 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/homerealmdiscoverypolicy-post-homerealmdiscoverypolicies?view=graph-rest-1.0&amp;tabs=http">POST /policies/homeRealmDiscoveryPolicies</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-claimsmappingpolicies?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{id}/claimsMappingPolicies/$ref</a></td>
 </tr>
 <tr>
@@ -380,11 +385,6 @@
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/activitybasedtimeoutpolicy-post-activitybasedtimeoutpolicies?view=graph-rest-1.0&amp;tabs=http">POST policies/activityBasedTimeoutPolicies</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/homerealmdiscoverypolicy-post-homerealmdiscoverypolicies?view=graph-rest-1.0&amp;tabs=http">POST policies/homeRealmDiscoveryPolicies</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -519,7 +519,7 @@
 <tr>
 <td style="text-align: left;">applicationTemplateId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Unique identifier of the applicationTemplate.</td>
+<td style="text-align: left;">Unique identifier of the applicationTemplate. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ne</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">appRoles</td>
@@ -529,7 +529,7 @@
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>, <code>ge</code>, <code>le</code>, <code>in</code>, and <code>eq</code> on <code>null</code> values) and <code>$orderBy</code>.</td>
+<td style="text-align: left;">The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, and <code>eq</code> on <code>null</code> values) and <code>$orderBy</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">deletedDateTime</td>
@@ -539,17 +539,17 @@
 <tr>
 <td style="text-align: left;">description</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">An optional description of the application. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>) and <code>$search</code>.</td>
+<td style="text-align: left;">Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>) and <code>$search</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">disabledByMicrosoftStatus</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Specifies whether Microsoft has disabled the registered application. Possible values are: <code>null</code> (default value), <code>NotDisabled</code>, and <code>DisabledDueToViolationOfServicesAgreement</code> (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement). <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>).</td>
+<td style="text-align: left;">Specifies whether Microsoft has disabled the registered application. Possible values are: <code>null</code> (default value), <code>NotDisabled</code>, and <code>DisabledDueToViolationOfServicesAgreement</code> (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement). <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name for the application. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values), <code>$search</code>, and <code>$orderBy</code>.</td>
+<td style="text-align: left;">The display name for the application. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values), <code>$search</code>, and <code>$orderBy</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">groupMembershipClaims</td>
@@ -559,7 +559,7 @@
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the application. Inherited from directoryObject. Key. Not nullable. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>, <code>in</code>).</td>
+<td style="text-align: left;">The unique identifier for the application. Inherited from directoryObject. Key. Not nullable. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">identifierUris</td>
@@ -569,7 +569,7 @@
 <tr>
 <td style="text-align: left;">info</td>
 <td style="text-align: left;">informationalUrl</td>
-<td style="text-align: left;">Basic profile information of the application such as  app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>, <code>ge</code>, <code>le</code>, and <code>eq</code> on <code>null</code> values).</td>
+<td style="text-align: left;">Basic profile information of the application such as  app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, and <code>eq</code> on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">isDeviceOnlyAuthSupported</td>
@@ -584,7 +584,7 @@
 <tr>
 <td style="text-align: left;">keyCredentials</td>
 <td style="text-align: left;">keyCredential collection</td>
-<td style="text-align: left;">The collection of key credentials associated with the application. Not nullable. Supports <code>$filter</code> (<code>eq</code>, <code>NOT</code>, <code>ge</code>, <code>le</code>).</td>
+<td style="text-align: left;">The collection of key credentials associated with the application. Not nullable. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">logo</td>
@@ -629,12 +629,12 @@
 <tr>
 <td style="text-align: left;">requiredResourceAccess</td>
 <td style="text-align: left;">requiredResourceAccess collection</td>
-<td style="text-align: left;">Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>NOT</code>, <code>ge</code>, <code>le</code>).</td>
+<td style="text-align: left;">Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">signInAudience</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Specifies the Microsoft accounts that are supported for the current application. The possible values are: <code>AzureADMyOrg</code>, <code>AzureADMultipleOrgs</code>, <code>AzureADandPersonalMicrosoftAccount</code> (default), and <code>PersonalMicrosoftAccount</code>. See more in the table below. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>).</td>
+<td style="text-align: left;">Specifies the Microsoft accounts that are supported for the current application. The possible values are: <code>AzureADMyOrg</code>, <code>AzureADMultipleOrgs</code>, <code>AzureADandPersonalMicrosoftAccount</code> (default), and <code>PersonalMicrosoftAccount</code>. See more in the table below. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">spa</td>
@@ -644,7 +644,7 @@
 <tr>
 <td style="text-align: left;">tags</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Custom strings that can be used to categorize and identify the application. Not nullable. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>NOT</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
+<td style="text-align: left;">Custom strings that can be used to categorize and identify the application. Not nullable. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">tokenEncryptionKeyId</td>
@@ -654,7 +654,7 @@
 <tr>
 <td style="text-align: left;">verifiedPublisher</td>
 <td style="text-align: left;">verifiedPublisher</td>
-<td style="text-align: left;">Specifies the verified publisher of the application.</td>
+<td style="text-align: left;">Specifies the verified publisher of the application. For more information about how publisher verification helps support application security, trustworthiness, and compliance, see Publisher verification.</td>
 </tr>
 <tr>
 <td style="text-align: left;">web</td>
@@ -824,9 +824,14 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">deletedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time when this object was deleted. Always <code>null</code> when the object hasn't been deleted.</td>
+</tr>
+<tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the object. For example, 12345678-9abc-def0-1234-56789abcde. The value of the **i</td>
+<td style="text-align: left;">The unique identifier for the object. For example, <code>12345678-9abc-def0-1234-56789abcde</code>. The value of the **i</td>
 </tr>
 </tbody>
 </table>
@@ -848,7 +853,7 @@
 <tr>
 <td style="text-align: left;">definition</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">A string collection containing a JSON string that defines the rules and settings for this policy. See below for more details about the JSON schema for this property. Required.</td>
+<td style="text-align: left;">A string collection containing a JSON string that defines the rules and settings for this policy. See Properties of a home realm discovery policy definition for more details about the JSON schema for this property. Required.</td>
 </tr>
 <tr>
 <td style="text-align: left;">description</td>
@@ -863,7 +868,7 @@
 <tr>
 <td style="text-align: left;">isOrganizationDefault</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">If set to true, activates this policy. There can be many policies for the same policy type, but only one can be activated as the organization default. Optional, default value is false.</td>
+<td style="text-align: left;">If set to <code>true</code>, activates this policy. There can be many policies for the same policy type, but only one can be activated as the organization default. Optional, default value is <code>false</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -934,7 +939,7 @@
 <tr>
 <td style="text-align: left;">accountEnabled</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;"><code>true</code> if the service principal account is enabled; otherwise, <code>false</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>, <code>in</code>).</td>
+<td style="text-align: left;"><code>true</code> if the service principal account is enabled; otherwise, <code>false</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">addIns</td>
@@ -944,7 +949,7 @@
 <tr>
 <td style="text-align: left;">alternativeNames</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports <code>$filter</code> (<code>eq</code>, <code>NOT</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
+<td style="text-align: left;">Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">appDescription</td>
@@ -968,7 +973,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">appOwnerOrganizationId</td>
-<td style="text-align: left;">String</td>
+<td style="text-align: left;">Guid</td>
 <td style="text-align: left;">Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>, <code>ge</code>, <code>le</code>).</td>
 </tr>
 <tr>
@@ -989,17 +994,17 @@
 <tr>
 <td style="text-align: left;">description</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>) and <code>$search</code>.</td>
+<td style="text-align: left;">Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>) and <code>$search</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">disabledByMicrosoftStatus</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Specifies whether Microsoft has disabled the registered application. Possible values are: <code>null</code> (default value), <code>NotDisabled</code>, and <code>DisabledDueToViolationOfServicesAgreement</code> (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement). <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>).</td>
+<td style="text-align: left;">Specifies whether Microsoft has disabled the registered application. Possible values are: <code>null</code> (default value), <code>NotDisabled</code>, and <code>DisabledDueToViolationOfServicesAgreement</code> (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement). <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name for the service principal. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values), <code>$search</code>, and <code>$orderBy</code>.</td>
+<td style="text-align: left;">The display name for the service principal. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values), <code>$search</code>, and <code>$orderBy</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">homepage</td>
@@ -1009,17 +1014,17 @@
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the service principal. Inherited from directoryObject. Key. Not nullable. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>, <code>in</code>).</td>
+<td style="text-align: left;">The unique identifier for the service principal. Inherited from directoryObject. Key. Not nullable. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">info</td>
 <td style="text-align: left;">informationalUrl</td>
-<td style="text-align: left;">Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>, <code>ge</code>, <code>le</code>, and <code>eq</code> on <code>null</code> values).</td>
+<td style="text-align: left;">Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, and <code>eq</code> on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">keyCredentials</td>
 <td style="text-align: left;">keyCredential collection</td>
-<td style="text-align: left;">The collection of key credentials associated with the service principal. Not nullable. Supports <code>$filter</code> (<code>eq</code>, <code>NOT</code>, <code>ge</code>, <code>le</code>).</td>
+<td style="text-align: left;">The collection of key credentials associated with the service principal. Not nullable. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">loginUrl</td>
@@ -1062,6 +1067,11 @@
 <td style="text-align: left;">The URLs that user tokens are sent to for sign in with the associated application, or the redirect URIs that OAuth 2.0 authorization codes and access tokens are sent to for the associated application. Not nullable.</td>
 </tr>
 <tr>
+<td style="text-align: left;">resourceSpecificApplicationPermissions</td>
+<td style="text-align: left;">resourceSpecificPermission collection</td>
+<td style="text-align: left;">The resource-specific application permissions exposed by this application. Currently, resource-specific permissions are only supported for Teams apps accessing to specific chats and teams using Microsoft Graph. Read-only.</td>
+</tr>
+<tr>
 <td style="text-align: left;">samlSingleSignOnSettings</td>
 <td style="text-align: left;">samlSingleSignOnSettings</td>
 <td style="text-align: left;">The collection for settings related to saml single sign-on.</td>
@@ -1069,7 +1079,7 @@
 <tr>
 <td style="text-align: left;">servicePrincipalNames</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Contains the list of <strong>identifiersUris</strong>, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,<ul><li>Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the “aud” claim.</li></ul><br>The any operator is required for filter expressions on multi-valued properties. Not nullable. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>NOT</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
+<td style="text-align: left;">Contains the list of <strong>identifiersUris</strong>, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,<ul><li>Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the “aud” claim.</li></ul><br>The any operator is required for filter expressions on multi-valued properties. Not nullable. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">servicePrincipalType</td>
@@ -1084,7 +1094,7 @@
 <tr>
 <td style="text-align: left;">tags</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Custom strings that can be used to categorize and identify the service principal. Not nullable. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>NOT</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
+<td style="text-align: left;">Custom strings that can be used to categorize and identify the service principal. Not nullable. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">tokenEncryptionKeyId</td>

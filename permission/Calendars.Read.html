@@ -8,7 +8,7 @@
     <title>Calendars.Read | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Calendars.Read | Graph Permissions ">
-    <meta name="generator" content="docfx 2.58.9.0">
+    <meta name="generator" content="docfx 2.59.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -247,14 +247,14 @@
 <td><a href="https://docs.microsoft.com/graph/api/user-reminderview?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/reminderView(startDateTime=startDateTime-value,endDateTime=endDateTime-value)</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/event-list-attachments?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/events/{id}/attachments</a></td>
-</tr>
-<tr>
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0&amp;tabs=http">GET /users/{id}/calendarView/delta?startDateTime={start_datetime}&amp;endDateTime={end_datetime}</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-list-attachments?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/events/{id}/attachments</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -593,11 +593,6 @@
 <td style="text-align: left;">The preview of the message associated with the event. It is in text format.</td>
 </tr>
 <tr>
-<td style="text-align: left;">cancelledOccurrences</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Contains <strong>occurrenceId</strong> property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.<br><br>Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).</td>
-</tr>
-<tr>
 <td style="text-align: left;">categories</td>
 <td style="text-align: left;">String collection</td>
 <td style="text-align: left;">The categories associated with the event. Each category corresponds to the <strong>displayName</strong> property of an outlookCategory defined for the user.</td>
@@ -616,11 +611,6 @@
 <td style="text-align: left;">end</td>
 <td style="text-align: left;">DateTimeTimeZone</td>
 <td style="text-align: left;">The date, time, and time zone that the event ends. By default, the end time is in UTC.</td>
-</tr>
-<tr>
-<td style="text-align: left;">exceptionOccurrences</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Contains the <strong>id</strong> property values of the event instances that are exceptions in a recurring series.<br>Exceptions can differ from other occurrences in a recurring series, such as the subject, start or end times, or attendees. Exceptions do not include cancelled occurrences.<br><br>Returned only on $select and $expand in a GET operation which specifies the id of a series master event (that is, the seriesMasterId property value).</td>
 </tr>
 <tr>
 <td style="text-align: left;">hasAttachments</td>
@@ -691,11 +681,6 @@
 <td style="text-align: left;">locations</td>
 <td style="text-align: left;">Location collection</td>
 <td style="text-align: left;">The locations where the event is held or attended from. The <strong>location</strong> and <strong>locations</strong> properties always correspond with each other. If you update the <strong>location</strong> property, any prior locations in the <strong>locations</strong> collection would be removed and replaced by the new <strong>location</strong> value.</td>
-</tr>
-<tr>
-<td style="text-align: left;">occurrenceId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">An identifier for an occurrence in a recurring event series. Null if the event is not part of a recurring series.<br><br>The format of the property value is OID.{seriesMasterId-value}.{occurrence-start-date}. The time zone for {occurrence-start-date} is the recurrenceTimeZone property defined for the corresponding recurrenceRange.<br><br>This property can identify any occurrence in a recurring series, including an occurrence that has been modified or cancelled. You can use this property to perform all operations supported by occurrences in the recurring series.</td>
 </tr>
 <tr>
 <td style="text-align: left;">onlineMeeting</td>
@@ -786,11 +771,6 @@
 <td style="text-align: left;">type</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The event type. Possible values are: <code>singleInstance</code>, <code>occurrence</code>, <code>exception</code>, <code>seriesMaster</code>. Read-only</td>
-</tr>
-<tr>
-<td style="text-align: left;">uid</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">A unique identifier for calendar events. For recurring events, the value is the same for the series master and all of its occurrences including exceptions. This property will replace the current iCalUid property defined in the event resource, which is different for each instance in a series.</td>
 </tr>
 <tr>
 <td style="text-align: left;">webLink</td>
@@ -905,28 +885,6 @@
 </tr>
 </tbody>
 </table>
-<h3 id="searchalterationoptions-"><a href="https://docs.microsoft.com/graph/api/resources/searchalterationoptions?view=graph-rest-1.0&amp;tabs=http">searchAlterationOptions </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">enableSuggestion</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates whether spelling suggestions are enabled. If enabled, user will get the search results for original search query and suggesting spelling correction in <strong>queryAlterationResponse</strong> property of the response for typos in query. Optional.</td>
-</tr>
-<tr>
-<td style="text-align: left;">enableModification</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates whether spelling modifications are enabled. If enabled, user will get the search results for corrected query **w</td>
-</tr>
-</tbody>
-</table>
 <h3 id="search-api-overview"><a href="https://docs.microsoft.com/graph/api/resources/search-api-overview?view=graph-rest-1.0&amp;tabs=http">search-api-overview</a></h3>
 <h3 id="searchrequest-"><a href="https://docs.microsoft.com/graph/api/resources/searchrequest?view=graph-rest-1.0&amp;tabs=http">searchRequest </a></h3>
 <table>
@@ -939,14 +897,14 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">aggregations</td>
-<td style="text-align: left;">aggregationOption collection</td>
-<td style="text-align: left;">Specifies aggregations (also known as refiners) to be returned alongside search results. Optional.</td>
-</tr>
-<tr>
 <td style="text-align: left;">aggregationFilters</td>
 <td style="text-align: left;">String collection</td>
 <td style="text-align: left;">Contains one or more filters to obtain search results aggregated and filtered to a specific value of a field. Optional.<br>Build this filter based on a prior search that aggregates by the same field. From the response of the prior search, identify the searchBucket that filters results to the specific value of the field, use the string in its <strong>aggregationFilterToken</strong> property, and build an aggregation filter string in the format <strong>&quot;{field}:\&quot;{aggregationFilterToken}\&quot;&quot;</strong>. <br>If multiple values for the same field need to be provided, use the strings in its <strong>aggregationFilterToken</strong> property and build an aggregation filter string in the format <strong>&quot;{field}:or(\&quot;{aggregationFilterToken1}\&quot;,\&quot;{aggregationFilterToken2}\&quot;)&quot;</strong>. <br>For example, searching and aggregating drive items by file type returns a <strong>searchBucket</strong> for the file type <code>docx</code> in the response. You can conveniently use the <strong>aggregationFilterToken</strong> returned for this <strong>searchBucket</strong> in a subsequent search query and filter matches down to drive items of the <code>docx</code> file type. Example 1 and example 2 show the actual requests and responses.</td>
+</tr>
+<tr>
+<td style="text-align: left;">aggregations</td>
+<td style="text-align: left;">aggregationOption collection</td>
+<td style="text-align: left;">Specifies aggregations (also known as refiners) to be returned alongside search results. Optional.</td>
 </tr>
 <tr>
 <td style="text-align: left;">contentSources</td>
@@ -966,7 +924,7 @@
 <tr>
 <td style="text-align: left;">fields</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Contains the fields to be returned for each resource object specified in <strong>entityTypes</strong>, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive. Optional.</td>
+<td style="text-align: left;">Contains the fields to be returned for each resource object specified in <strong>entityTypes</strong>, allowing customization of the fields returned by default; otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in <strong>externalItem</strong> from the content that Microsoft Graph connectors bring in. The <strong>fields</strong> property can use the semantic labels applied to properties. For example, if a property is labeled as title, you can retrieve it using the following syntax: <code>label_title</code>. Optional.</td>
 </tr>
 <tr>
 <td style="text-align: left;">from</td>
@@ -977,6 +935,16 @@
 <td style="text-align: left;">query</td>
 <td style="text-align: left;">searchQuery</td>
 <td style="text-align: left;">Contains the query terms. Required.</td>
+</tr>
+<tr>
+<td style="text-align: left;">queryAlterationOptions</td>
+<td style="text-align: left;">searchAlterationOptions</td>
+<td style="text-align: left;">Query alteration options formatted in a JSON blob that contains two optional flags related to spelling correction. Optional.</td>
+</tr>
+<tr>
+<td style="text-align: left;">resultTemplateOptions</td>
+<td style="text-align: left;">resultTemplateOption collection</td>
+<td style="text-align: left;">Provides the search result template options to render search results from connectors.</td>
 </tr>
 <tr>
 <td style="text-align: left;">size</td>
@@ -1006,9 +974,19 @@
 <td style="text-align: left;">A collection of search results.</td>
 </tr>
 <tr>
+<td style="text-align: left;">resultTemplates</td>
+<td style="text-align: left;">resultTemplate collection</td>
+<td style="text-align: left;">A dictionary of <strong>resultTemplateIds</strong> and associated values, which include the name and JSON schema of the result templates.</td>
+</tr>
+<tr>
 <td style="text-align: left;">searchTerms</td>
 <td style="text-align: left;">String collection</td>
 <td style="text-align: left;">Contains the search terms sent in the initial search query.</td>
+</tr>
+<tr>
+<td style="text-align: left;">queryAlterationResponse</td>
+<td style="text-align: left;">alterationResponse</td>
+<td style="text-align: left;">Provides information related to spelling corrections in the alteration response.</td>
 </tr>
 </tbody>
 </table>

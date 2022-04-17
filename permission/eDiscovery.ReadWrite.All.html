@@ -8,7 +8,7 @@
     <title>eDiscovery.ReadWrite.All | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="eDiscovery.ReadWrite.All | Graph Permissions ">
-    <meta name="generator" content="docfx 2.58.9.0">
+    <meta name="generator" content="docfx 2.59.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -464,6 +464,11 @@
 <tr>
 <td>Beta</td>
 <td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/ediscovery-sourcecollection-purgedata?view=graph-rest-beta&amp;tabs=http">POST /compliance/ediscovery/cases/{caseId}/sourceCollections/{sourceCollectionId}/purgeData</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/ediscovery-case-post-tags?view=graph-rest-beta&amp;tabs=http">POST /compliance/ediscovery/cases/{caseId}/tags</a></td>
 </tr>
 <tr>
@@ -507,6 +512,29 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the app to read and write eDiscovery objects such as cases, custodians, review sets and other related objects on behalf of the signed-in user.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="application-permission">Application Permission</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Id</strong></td>
+<td>b2620db1-3bf7-4c5b-9cb9-576d29eac736</td>
+</tr>
+<tr>
+<td><strong>Display String</strong></td>
+<td>Read and write all eDiscovery objects</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Allows the app to read and write eDiscovery objects such as cases, custodians, review sets and other related objects without a signed-in user.</td>
 </tr>
 </tbody>
 </table>
@@ -725,7 +753,7 @@
 <tr>
 <td style="text-align: left;">action</td>
 <td style="text-align: left;">microsoft.graph.ediscovery.caseAction</td>
-<td style="text-align: left;">The type of action the operation represents. Possible values are: <code>addToReviewSet</code>,<code>applyTags</code>,<code>contentExport</code>,<code>convertToPdf</code>,<code>estimateStatistics</code></td>
+<td style="text-align: left;">The type of action the operation represents. Possible values are: <code>addToReviewSet</code>,<code>applyTags</code>,<code>contentExport</code>,<code>convertToPdf</code>,<code>estimateStatistics</code>, <code>purgeData</code></td>
 </tr>
 <tr>
 <td style="text-align: left;">completedDateTime</td>
@@ -1049,6 +1077,58 @@
 </tr>
 </tbody>
 </table>
+<h3 id="purgedataoperation-"><a href="https://docs.microsoft.com/graph/api/resources/ediscovery-purgedataoperation?view=graph-rest-1.0&amp;tabs=http">purgeDataOperation </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">action</td>
+<td style="text-align: left;">microsoft.graph.ediscovery.caseAction</td>
+<td style="text-align: left;">The type of action the operation represents. Possible values are: <code>addToReviewSet</code>,<code>applyTags</code>,<code>contentExport</code>,<code>convertToPdf</code>,<code>estimateStatistics</code>,<code>purgeData</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">completedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the operation was completed.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The user that created the operation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the operation was created.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The ID for the operation. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">percentProgress</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The progress of the operation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">resultInfo</td>
+<td style="text-align: left;">resultInfo</td>
+<td style="text-align: left;">Contains success and failure-specific result information.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">microsoft.graph.ediscovery.caseOperationStatus</td>
+<td style="text-align: left;">The status of the case operation. Possible values are: <code>notStarted</code>, <code>submissionFailed</code>, <code>running</code>, <code>succeeded</code>, <code>partiallySucceeded</code>, <code>failed</code>.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="reviewset-"><a href="https://docs.microsoft.com/graph/api/resources/ediscovery-reviewset?view=graph-rest-1.0&amp;tabs=http">reviewSet </a></h3>
 <table>
 <thead>
@@ -1335,6 +1415,11 @@
 <td style="text-align: left;">includedSources</td>
 <td style="text-align: left;">microsoft.graph.ediscovery.sourceType</td>
 <td style="text-align: left;">Specifies which sources are included in this group. Possible values are: <code>mailbox</code>, <code>site</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">siteWebUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The URL of the user's OneDrive for Business site. Read-only.</td>
 </tr>
 </tbody>
 </table>

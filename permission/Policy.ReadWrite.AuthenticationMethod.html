@@ -8,7 +8,7 @@
     <title>Policy.ReadWrite.AuthenticationMethod | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Policy.ReadWrite.AuthenticationMethod | Graph Permissions ">
-    <meta name="generator" content="docfx 2.58.9.0">
+    <meta name="generator" content="docfx 2.59.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -132,6 +132,11 @@
 <td><a href="https://docs.microsoft.com/graph/api/temporaryaccesspassauthenticationmethodconfiguration-delete?view=graph-rest-beta&amp;tabs=http">DELETE /policies/authenticationMethodsPolicy/authenticationMethodConfigurations/TemporaryAccessPass</a></td>
 </tr>
 <tr>
+<td>Beta</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/x509certificateauthenticationmethodconfiguration-delete?view=graph-rest-beta&amp;tabs=http">DELETE /policies/authenticationMethodsPolicy/authenticationMethodConfigurations/x509Certificate</a></td>
+</tr>
+<tr>
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/authenticationmethodspolicy-get?view=graph-rest-1.0&amp;tabs=http">GET /policies/authenticationMethodsPolicy</a></td>
@@ -160,6 +165,11 @@
 <td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/temporaryaccesspassauthenticationmethodconfiguration-get?view=graph-rest-beta&amp;tabs=http">GET /policies/authenticationMethodsPolicy/authenticationMethodConfigurations/TemporaryAccessPass</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/x509certificateauthenticationmethodconfiguration-get?view=graph-rest-beta&amp;tabs=http">GET /policies/authenticationMethodsPolicy/authenticationMethodConfigurations/x509Certificate</a></td>
 </tr>
 <tr>
 <td>Beta</td>
@@ -205,6 +215,11 @@
 <td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/temporaryaccesspassauthenticationmethodconfiguration-update?view=graph-rest-beta&amp;tabs=http">PATCH /policies/authenticationMethodsPolicy/authenticationMethodConfigurations/TemporaryAccessPass</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/x509certificateauthenticationmethodconfiguration-update?view=graph-rest-beta&amp;tabs=http">PATCH /policies/authenticationMethodsPolicy/authenticationMethodConfigurations/x509Certificate</a></td>
 </tr>
 <tr>
 <td>Beta</td>
@@ -552,6 +567,87 @@
 <td style="text-align: left;">state</td>
 <td style="text-align: left;">authenticationMethodState</td>
 <td style="text-align: left;">Possible values are: <code>enabled</code>, <code>disabled</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="x509certificateauthenticationmethodconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/x509certificateauthenticationmethodconfiguration?view=graph-rest-1.0&amp;tabs=http">x509CertificateAuthenticationMethodConfiguration </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier for the authentication method policy. The value is always <code>X509Certificate</code>. Inherited from authenticationMethodConfiguration.</td>
+</tr>
+<tr>
+<td style="text-align: left;">state</td>
+<td style="text-align: left;">authenticationMethodState</td>
+<td style="text-align: left;">The possible values are: <code>enabled</code>, <code>disabled</code>. Inherited from authenticationMethodConfiguration.</td>
+</tr>
+<tr>
+<td style="text-align: left;">certificateUserBindings</td>
+<td style="text-align: left;">x509CertificateUserBinding collection</td>
+<td style="text-align: left;">Defines fields in the X.509 certificate that map to attributes of the Azure AD user object in order to bind the certificate to the user. The <strong>priority</strong> of the object determines the order in which the binding is carried out. The first binding that matches will be used and the rest ignored.</td>
+</tr>
+<tr>
+<td style="text-align: left;">authenticationModeConfiguration</td>
+<td style="text-align: left;">x509CertificateAuthenticationModeConfiguration</td>
+<td style="text-align: left;">Defines strong authentication configurations. This configuration includes the default authentication mode and the different rules for strong authentication bindings.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="x509certificateauthenticationmodeconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/x509certificateauthenticationmodeconfiguration?view=graph-rest-1.0&amp;tabs=http">x509CertificateAuthenticationModeConfiguration </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">rules</td>
+<td style="text-align: left;">x509CertificateRule collection</td>
+<td style="text-align: left;">Rules are configured in addition to the authentication mode to bind a specific <strong>x509CertificateRuleType</strong> to an <strong>x509CertificateAuthenticationMode</strong>. For example, bind the <code>policyOID</code> with identifier <code>1.32.132.343</code> to <code>x509CertificateMultiFactor</code> authentication mode.</td>
+</tr>
+<tr>
+<td style="text-align: left;">x509CertificateAuthenticationDefaultMode</td>
+<td style="text-align: left;">x509CertificateAuthenticationMode</td>
+<td style="text-align: left;">The type of strong authentication mode. The possible values are: <code>x509CertificateSingleFactor</code>, <code>x509CertificateMultiFactor</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="x509certificateuserbinding-"><a href="https://docs.microsoft.com/graph/api/resources/x509certificateuserbinding?view=graph-rest-1.0&amp;tabs=http">x509CertificateUserBinding </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">priority</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The priority of the binding. Azure AD uses the binding with the highest priority. This value must be a non-negative integer and unique in the collection of objects in the <strong>certificateUserBindings</strong> property of an <strong>x509CertificateAuthenticationMethodConfiguration</strong> object. Required</td>
+</tr>
+<tr>
+<td style="text-align: left;">userProperty</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Defines the Azure AD user property of the user object to use for the binding. The possible values are: <strong>userPrincipalName</strong>, <code>onPremisesUserPrincipalName</code>, <code>email</code>. Required.</td>
+</tr>
+<tr>
+<td style="text-align: left;">x509CertificateField</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The field on the X.509 certificate to use for the binding. The possible values are: <code>PrincipalName</code>, <code>RFC822Name</code>.</td>
 </tr>
 </tbody>
 </table>

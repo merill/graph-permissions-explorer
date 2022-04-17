@@ -8,7 +8,7 @@
     <title>OnlineMeetingArtifact.Read.All | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="OnlineMeetingArtifact.Read.All | Graph Permissions ">
-    <meta name="generator" content="docfx 2.58.9.0">
+    <meta name="generator" content="docfx 2.59.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -109,7 +109,37 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0&amp;tabs=http">GET /me/onlineMeetings/{meetingId}/attendanceReports</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0&amp;tabs=http">GET /me/onlineMeetings/{meetingId}/attendanceReports/{reportId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0&amp;tabs=http">GET /me/onlineMeetings/{meetingId}/attendanceReports/{reportId}/attendanceRecords</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{userId}/onlineMeetings/{meetingId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0&amp;tabs=http">GET /users/{userId}/onlineMeetings/{meetingId}/attendanceReports</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{userId}/onlineMeetings/{meetingId}/attendanceReports/{reportId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0&amp;tabs=http">GET /users/{userId}/onlineMeetings/{meetingId}/attendanceReports/{reportId}/attendanceRecords</a></td>
 </tr>
 </tbody>
 </table>
@@ -164,7 +194,7 @@
 </tbody>
 </table>
 <h2 id="resources">Resources</h2>
-<h3 id="meetingattendancereport-"><a href="https://docs.microsoft.com/graph/api/resources/meetingAttendanceReport?view=graph-rest-1.0&amp;tabs=http">meetingAttendanceReport </a></h3>
+<h3 id="attendancerecord-"><a href="https://docs.microsoft.com/graph/api/resources/attendancerecord?view=graph-rest-1.0&amp;tabs=http">attendanceRecord </a></h3>
 <table>
 <thead>
 <tr>
@@ -175,14 +205,29 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">attendanceRecords</td>
-<td style="text-align: left;">attendanceRecord collection</td>
-<td style="text-align: left;">The list of attendance records.</td>
+<td style="text-align: left;">attendanceIntervals</td>
+<td style="text-align: left;">attendanceInterval collection</td>
+<td style="text-align: left;">List of time periods between joining and leaving a meeting.</td>
 </tr>
 <tr>
-<td style="text-align: left;">totalParticipantCount</td>
+<td style="text-align: left;">emailAddress</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Email address of the user associated with this atttendance record.</td>
+</tr>
+<tr>
+<td style="text-align: left;">identity</td>
+<td style="text-align: left;">identity</td>
+<td style="text-align: left;">Identity of the user associated with this atttendance record.</td>
+</tr>
+<tr>
+<td style="text-align: left;">role</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Role of the attendee. Possible values are: <code>None</code>, <code>Attendee</code>, <code>Presenter</code>, and <code>Organizer</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">totalAttendanceInSeconds</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">Total number of participants.</td>
+<td style="text-align: left;">Total duration of the attendances in seconds.</td>
 </tr>
 </tbody>
 </table>

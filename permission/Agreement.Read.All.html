@@ -8,7 +8,7 @@
     <title>Agreement.Read.All | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Agreement.Read.All | Graph Permissions ">
-    <meta name="generator" content="docfx 2.58.9.0">
+    <meta name="generator" content="docfx 2.59.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -104,7 +104,17 @@
 <tr>
 <td>V1</td>
 <td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/agreement-list?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/termsOfUse/agreements</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/agreement-list-files?view=graph-rest-1.0&amp;tabs=http">GET /agreements/{agreementsId}?$expand=files</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/agreementfile-get?view=graph-rest-1.0&amp;tabs=http">GET /agreements/{agreementsId}/file</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/termsofusecontainer-list-agreements?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/termsOfUse/agreements</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -177,32 +187,136 @@
 <tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Display name of the agreement. The display name is used for internal tracking of the agreement but is not shown to end users who view the agreement.</td>
+<td style="text-align: left;">Display name of the agreement. The display name is used for internal tracking of the agreement but is not shown to end users who view the agreement. Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The identifier of the agreement. Read-only.</td>
+<td style="text-align: left;">The identifier of the agreement. Read-only. Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">isPerDeviceAcceptanceRequired</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Azure AD, if they haven't already done so.</td>
+<td style="text-align: left;">Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Azure AD, if they haven't already done so. Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">isViewingBeforeAcceptanceRequired</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates whether the user has to expand the agreement before accepting.</td>
+<td style="text-align: left;">Indicates whether the user has to expand the agreement before accepting. Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">termsExpiration</td>
 <td style="text-align: left;">termsExpiration</td>
-<td style="text-align: left;">Expiration schedule and frequency of agreement for all users.</td>
+<td style="text-align: left;">Expiration schedule and frequency of agreement for all users. Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">userReacceptRequiredFrequency</td>
 <td style="text-align: left;">Duration</td>
-<td style="text-align: left;">The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations.</td>
+<td style="text-align: left;">The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations. Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="agreementfile-"><a href="https://docs.microsoft.com/graph/api/resources/agreementfile?view=graph-rest-1.0&amp;tabs=http">agreementFile </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date time representing when the file was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Inherited from agreementFileProperties.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Localized display name of the policy file of an agreement. The localized display name is shown to end users who view the agreement. Inherited from agreementFileProperties.</td>
+</tr>
+<tr>
+<td style="text-align: left;">fileData</td>
+<td style="text-align: left;">agreementFileData</td>
+<td style="text-align: left;">Data that represents the terms of use PDF document. Read-only. Inherited from agreementFileProperties.</td>
+</tr>
+<tr>
+<td style="text-align: left;">fileName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the agreement file (for example, TOU.pdf). Read-only. Inherited from agreementFileProperties.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the agreementFileVersion object. Read-only. Inherited from agreementFileProperties.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isDefault</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">If none of the languages matches the client preference, indicates whether this is the default agreement file . If none of the files are marked as default, the first one is treated as the default. Read-only. Inherited from agreementFileProperties.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isMajorVersion</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the agreement file is a major version update. Major version updates invalidate the agreement's acceptances on the corresponding language. Inherited from agreementFileProperties.</td>
+</tr>
+<tr>
+<td style="text-align: left;">language</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The language of the agreement file in the format &quot;languagecode2-country/regioncode2&quot;. &quot;languagecode2&quot; is a lowercase two-letter code derived from ISO 639-1, while &quot;country/regioncode2&quot; is derived from ISO 3166 and usually consists of two uppercase letters, or a BCP-47 language tag. For example, U.S. English is <code>en-US</code>. Read-only. Inherited from agreementFileProperties.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="agreementfilelocalization-"><a href="https://docs.microsoft.com/graph/api/resources/agreementfilelocalization?view=graph-rest-1.0&amp;tabs=http">agreementFileLocalization </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date time representing when the file was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Inherited from agreementFileProperties.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Localized display name of the policy file of an agreement. The localized display name is shown to end users who view the agreement. Inherited from agreementFileProperties.</td>
+</tr>
+<tr>
+<td style="text-align: left;">fileData</td>
+<td style="text-align: left;">agreementFileData</td>
+<td style="text-align: left;">Data that represents the terms of use PDF document. Read-only. Inherited from agreementFileProperties.</td>
+</tr>
+<tr>
+<td style="text-align: left;">fileName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the agreement file (for example, TOU.pdf). Read-only. Inherited from agreementFileProperties.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the agreementFileVersion object. Read-only. Inherited from agreementFileProperties.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isDefault</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">If none of the languages matches the client preference, indicates whether this is the default agreement file . If none of the files are marked as default, the first one is treated as the default. Read-only. Inherited from agreementFileProperties.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isMajorVersion</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the agreement file is a major version update. Major version updates invalidate the agreement's acceptances on the corresponding language. Inherited from agreementFileProperties.</td>
+</tr>
+<tr>
+<td style="text-align: left;">language</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The language of the agreement file in the format &quot;languagecode2-country/regioncode2&quot;. &quot;languagecode2&quot; is a lowercase two-letter code derived from ISO 639-1, while &quot;country/regioncode2&quot; is derived from ISO 3166 and usually consists of two uppercase letters, or a BCP-47 language tag. For example, U.S. English is <code>en-US</code>. Read-only. Inherited from agreementFileProperties.</td>
 </tr>
 </tbody>
 </table>

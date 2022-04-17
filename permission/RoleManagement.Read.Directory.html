@@ -8,7 +8,7 @@
     <title>RoleManagement.Read.Directory | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="RoleManagement.Read.Directory | Graph Permissions ">
-    <meta name="generator" content="docfx 2.58.9.0">
+    <meta name="generator" content="docfx 2.59.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -174,7 +174,7 @@
 <tr>
 <td>Beta</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/unifiedrolemanagementpolicy-list?view=graph-rest-beta&amp;tabs=http">GET /policies/roleManagementPolicies</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedrolemanagementpolicy-list?view=graph-rest-beta&amp;tabs=http">GET /policies/roleManagementPolicies?$filter=scopeId eq 'scopeId' and scopeType eq 'scopeType'</a></td>
 </tr>
 <tr>
 <td>Beta</td>
@@ -204,7 +204,7 @@
 <tr>
 <td>Beta</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/unifiedrolemanagementpolicyassignment-list?view=graph-rest-beta&amp;tabs=http">GET /policies/roleManagementPolicyAssignments</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedrolemanagementpolicyassignment-list?view=graph-rest-beta&amp;tabs=http">GET /policies/roleManagementPolicyAssignments?$filter=scopeId eq 'scopeId' and scopeType eq 'scopeType'</a></td>
 </tr>
 <tr>
 <td>Beta</td>
@@ -222,9 +222,24 @@
 <td><a href="https://docs.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/cloudPC/roleDefinitions/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
+<td>Beta</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/unifiedroleassignment-get?view=graph-rest-1.0&amp;tabs=http">GET /roleManagement/directory/roleAssignments/{id}</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/rbacapplicationmultiple-list-resourcenamespaces?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/directory/resourceNamespaces</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedrbacresourcenamespace-get?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/directory/resourceNamespaces/{unifiedRbacResourceNamespaceId}</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedrbacresourcenamespace-list-resourceactions?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/directory/resourceNamespaces/{unifiedRbacResourceNamespaceId}/resourceActions</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedrbacresourceaction-get?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/directory/resourceNamespaces/{unifiedRbacResourceNamespaceId}/resourceActions/{unifiedRbacResourceActionId}</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -235,6 +250,11 @@
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignments?view=graph-rest-1.0&amp;tabs=http">GET /roleManagement/directory/roleAssignments?$filter=roleDefinitionId eq '{roleDefinition id}'</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedroleassignment-get?view=graph-rest-1.0&amp;tabs=http">GET /roleManagement/directory/roleAssignments/{id}</a></td>
 </tr>
 <tr>
 <td>Beta</td>
@@ -334,6 +354,11 @@
 <tr>
 <td>Beta</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/rbacapplication-list-transitiveroleassignments?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/directory/transitiveRoleAssignments?$filter=principalId eq '{principalId}'</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/unifiedroleeligibilityschedule-filterbycurrentuser?view=graph-rest-beta&amp;tabs=http">GET roleManagement/directory/roleEligibilitySchedules/filterByCurrentUser(on='principal')</a></td>
 </tr>
 </tbody>
@@ -400,9 +425,14 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">deletedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time when this object was deleted. Always <code>null</code> when the object hasn't been deleted.</td>
+</tr>
+<tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the object. For example, 12345678-9abc-def0-1234-56789abcde. The value of the **i</td>
+<td style="text-align: left;">The unique identifier for the object. For example, <code>12345678-9abc-def0-1234-56789abcde</code>. The value of the **i</td>
 </tr>
 </tbody>
 </table>
@@ -419,17 +449,17 @@
 <tr>
 <td style="text-align: left;">description</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The description for the directory role. Read-only.</td>
+<td style="text-align: left;">The description for the directory role. Read-only. Supports <code>$filter</code> (<code>eq</code>), <code>$search</code>, <code>$select</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name for the directory role. Read-only.</td>
+<td style="text-align: left;">The display name for the directory role. Read-only. Supports <code>$filter</code> (<code>eq</code>), <code>$search</code>, <code>$select</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the directory role. Inherited from directoryObject. Key, Not nullable, Read-only.</td>
+<td style="text-align: left;">The unique identifier for the directory role. Inherited from directoryObject. Key, Not nullable, Read-only. Supports <code>$filter</code> (<code>eq</code>), <code>$select</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">roleTemplateId</td>
@@ -494,6 +524,65 @@
 <td style="text-align: left;">roleMemberInfo</td>
 <td style="text-align: left;">identity</td>
 <td style="text-align: left;">Role member identity information. Represents the user that is a member of this scoped-role.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="unifiedrbacresourceaction-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedrbacresourceaction?view=graph-rest-1.0&amp;tabs=http">unifiedRbacResourceAction </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">actionVerb</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">HTTP method for the action, such as <code>DELETE</code>, <code>GET</code>, <code>PATCH</code>, <code>POST</code>, <code>PUT</code>, or <code>null</code>. Supports <code>$filter</code> (<code>eq</code>) but not for <code>null</code> values.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Description for the action. Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for an action within the resource namespace, such as <code>microsoft.insights-programs-update-patch</code>. Cannot include slash character (<code>/</code>). Case insensitive. Required. Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name for the action within the resource namespace, such as <code>microsoft.insights/programs/update</code>. Can include slash character (<code>/</code>). Case insensitive. Required. Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">resourceScopeId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Not implemented.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="unifiedrbacresourcenamespace-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedrbacresourcenamespace?view=graph-rest-1.0&amp;tabs=http">unifiedRbacResourceNamespace </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier of the resource namespace that defines permissions, such as <code>microsoft.aad.b2c</code>. Required.</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the resource namespace. Typically, the same name as the **i</td>
 </tr>
 </tbody>
 </table>
@@ -1096,12 +1185,12 @@
 <tr>
 <td style="text-align: left;">scopeId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The id of the scope where the policy is created. E.g. &quot;/&quot;, groupId, etc.</td>
+<td style="text-align: left;">The id of the scope where the policy is created. Can be <code>/</code> for the tenant or a group ID. Required.</td>
 </tr>
 <tr>
 <td style="text-align: left;">scopeType</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The type of the scope where the policy is created. One of Directory, DirectoryRole, Group.</td>
+<td style="text-align: left;">The type of the scope where the policy is created. One of <code>Directory</code>, <code>DirectoryRole</code>. Required.</td>
 </tr>
 </tbody>
 </table>

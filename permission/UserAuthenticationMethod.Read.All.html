@@ -8,7 +8,7 @@
     <title>UserAuthenticationMethod.Read.All | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="UserAuthenticationMethod.Read.All | Graph Permissions ">
-    <meta name="generator" content="docfx 2.58.9.0">
+    <meta name="generator" content="docfx 2.59.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -169,7 +169,7 @@
 <tr>
 <td>Beta</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/phoneauthenticationmethod-get?view=graph-rest-beta&amp;tabs=http">GET /me/authentication/phoneMethods/{id}</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/phoneauthenticationmethod-get?view=graph-rest-beta&amp;tabs=http">GET /me/authentication/phoneMethods/{phoneMethodId}</a></td>
 </tr>
 <tr>
 <td>Beta</td>
@@ -200,6 +200,16 @@
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/windowshelloforbusinessauthenticationmethod-get?view=graph-rest-1.0&amp;tabs=http">GET /me/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethodId}</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/authenticationmethodsroot-list-userregistrationdetails?view=graph-rest-beta&amp;tabs=http">GET /reports/authenticationMethods/userRegistrationDetails</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/userregistrationdetails-get?view=graph-rest-beta&amp;tabs=http">GET /reports/authenticationMethods/userRegistrationDetails/{userRegistrationDetailsId}</a></td>
 </tr>
 <tr>
 <td>Beta</td>
@@ -274,11 +284,6 @@
 <tr>
 <td>Beta</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/phoneauthenticationmethod-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/authentication/phoneMethods/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/authentication-list-softwareoathmethods?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/authentication/softwareOathMethods</a></td>
 </tr>
 <tr>
@@ -305,6 +310,11 @@
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/windowshelloforbusinessauthenticationmethod-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethodId}</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/phoneauthenticationmethod-get?view=graph-rest-beta&amp;tabs=http">GET /users/{userId | userPrincipalName}/authentication/phoneMethods/{phoneMethodId}</a></td>
 </tr>
 </tbody>
 </table>
@@ -523,17 +533,17 @@
 <tr>
 <td style="text-align: left;">creationDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time when this password was last updated. This property is currently not populated. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code></td>
+<td style="text-align: left;">The date and time when this password was last updated. This property is currently not populated. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The identifier of this password registered to this user. Read-only.</td>
+<td style="text-align: left;">The identifier of this password registered to this user. This is generally <code>28c10230-6103-485e-b985-444c60001490</code>. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">password</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">For security, the password is always returned as null from a LIST or GET operation.</td>
+<td style="text-align: left;">For security, the password is always returned as <code>null</code> from a LIST or GET operation.</td>
 </tr>
 </tbody>
 </table>
@@ -667,6 +677,68 @@
 <td style="text-align: left;">methodUsabilityReason</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Details about usability state (isUsable). Reasons can include: <code>enabledByPolicy</code>, <code>disabledByPolicy</code>, <code>expired</code>, <code>notYetValid</code>, <code>oneTimeUsed</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="userregistrationdetails-"><a href="https://docs.microsoft.com/graph/api/resources/userregistrationdetails?view=graph-rest-1.0&amp;tabs=http">userRegistrationDetails </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">User object identifier in Azure AD. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isMfaCapable</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">isMfaRegistered</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy.  Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">isPasswordlessCapable</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Whether the user has registered a passwordless strong authentication method (including FIDO2, Windows Hello for Business, and Microsoft Authenticator (Passwordless)) that is allowed by the authentication methods policy. Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">isSsprCapable</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Whether the user has registered the required number of authentication methods for self-service password reset and the user is allowed to perform self-service password reset by policy. Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">isSsprEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Whether the user is allowed to perform self-service password reset by policy. The user may not necessarily have registered the required number of authentication methods for self-service password reset. Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">isSsprRegistered</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Whether the user has registered the required number of authentication methods for self-service password reset. The user may not necessarily be allowed to perform self-service password reset by policy. Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">methodsRegistered</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Collection of authentication methods registered, such as <code>mobilePhone</code>, <code>email</code>, <code>fido2</code>. Supports <code>$filter</code> (<code>any</code> with <code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">userDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The user display name, such as <code>Adele Vance</code>. Supports <code>$filter</code> (<code>eq</code>, <code>startsWith</code>) and <code>$orderBy</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">userPrincipalName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The user principal name, such as <code>AdeleV@contoso.com</code>. Supports <code>$filter</code> (<code>eq</code>, <code>startsWith</code>) and <code>$orderBy</code>.</td>
 </tr>
 </tbody>
 </table>

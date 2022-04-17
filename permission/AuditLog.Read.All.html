@@ -8,7 +8,7 @@
     <title>AuditLog.Read.All | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="AuditLog.Read.All | Graph Permissions ">
-    <meta name="generator" content="docfx 2.58.9.0">
+    <meta name="generator" content="docfx 2.59.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -128,6 +128,16 @@
 </tr>
 <tr>
 <td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/authenticationmethodsroot-list-userregistrationdetails?view=graph-rest-beta&amp;tabs=http">GET /reports/authenticationMethods/userRegistrationDetails</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/userregistrationdetails-get?view=graph-rest-beta&amp;tabs=http">GET /reports/authenticationMethods/userRegistrationDetails/{userRegistrationDetailsId}</a></td>
+</tr>
+<tr>
+<td>Beta</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/authenticationmethodsroot-usersregisteredbyfeature?view=graph-rest-beta&amp;tabs=http">GET /reports/authenticationMethods/usersRegisteredByFeature</a></td>
 </tr>
@@ -226,7 +236,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">correlationId</td>
-<td style="text-align: left;">GUID</td>
+<td style="text-align: left;">Guid</td>
 <td style="text-align: left;">Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services.</td>
 </tr>
 <tr>
@@ -238,6 +248,11 @@
 <td style="text-align: left;">initiatedBy</td>
 <td style="text-align: left;">auditActivityInitiator</td>
 <td style="text-align: left;">Indicates information about the user or app initiated the activity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">operationType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Indicates the type of operation that was performed. The possible values include but are not limited to the following: <code>Add</code>, <code>Assign</code>, <code>Update</code>, <code>Unassign</code>, and <code>Delete</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">loggedByService</td>
@@ -386,7 +401,7 @@
 <tr>
 <td style="text-align: left;">clientAppUsed</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifies the legacy client used for sign-in activity.  Includes <code>Browser</code>, <code>Exchange Active Sync</code>, <code>modern clients</code>, <code>IMAP</code>, <code>MAPI</code>, <code>SMTP</code>, and <code>POP</code>. Supports <code>$filter</code> (<code>eq</code> operator only).</td>
+<td style="text-align: left;">Identifies the client used for the sign-in activity. Modern authentication clients include <code>Browser</code> and <code>modern clients</code>. Legacy authentication clients include <code>Exchange ActiveSync</code>, <code>IMAP</code>, <code>MAPI</code>, <code>SMTP</code>, <code>POP</code>, and <code>other clients</code>. Supports <code>$filter</code> (<code>eq</code> operator only).</td>
 </tr>
 <tr>
 <td style="text-align: left;">conditionalAccessStatus</td>
@@ -487,6 +502,68 @@
 <td style="text-align: left;">userPrincipalName</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">User principal name of the user that initiated the sign-in. Supports <code>$filter</code> (<code>eq</code> and <code>startsWith</code> operators only).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="userregistrationdetails-"><a href="https://docs.microsoft.com/graph/api/resources/userregistrationdetails?view=graph-rest-1.0&amp;tabs=http">userRegistrationDetails </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">User object identifier in Azure AD. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isMfaCapable</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">isMfaRegistered</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy.  Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">isPasswordlessCapable</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Whether the user has registered a passwordless strong authentication method (including FIDO2, Windows Hello for Business, and Microsoft Authenticator (Passwordless)) that is allowed by the authentication methods policy. Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">isSsprCapable</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Whether the user has registered the required number of authentication methods for self-service password reset and the user is allowed to perform self-service password reset by policy. Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">isSsprEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Whether the user is allowed to perform self-service password reset by policy. The user may not necessarily have registered the required number of authentication methods for self-service password reset. Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">isSsprRegistered</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Whether the user has registered the required number of authentication methods for self-service password reset. The user may not necessarily be allowed to perform self-service password reset by policy. Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">methodsRegistered</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Collection of authentication methods registered, such as <code>mobilePhone</code>, <code>email</code>, <code>fido2</code>. Supports <code>$filter</code> (<code>any</code> with <code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">userDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The user display name, such as <code>Adele Vance</code>. Supports <code>$filter</code> (<code>eq</code>, <code>startsWith</code>) and <code>$orderBy</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">userPrincipalName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The user principal name, such as <code>AdeleV@contoso.com</code>. Supports <code>$filter</code> (<code>eq</code>, <code>startsWith</code>) and <code>$orderBy</code>.</td>
 </tr>
 </tbody>
 </table>

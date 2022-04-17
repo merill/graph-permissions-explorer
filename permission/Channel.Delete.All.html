@@ -8,7 +8,7 @@
     <title>Channel.Delete.All | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Channel.Delete.All | Graph Permissions ">
-    <meta name="generator" content="docfx 2.58.9.0">
+    <meta name="generator" content="docfx 2.59.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -105,6 +105,11 @@
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/channel-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /teams/{team-id}/channels/{channel-id}</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/team-delete-incomingchannel?view=graph-rest-beta&amp;tabs=http">DELETE /teams/{team-id}/channels/{channel-id}/incomingChannels/{incoming-channel-id}</a></td>
 </tr>
 </tbody>
 </table>
@@ -208,6 +213,83 @@
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">dateTimeOffset</td>
 <td style="text-align: left;">Read only. Timestamp at which the channel was created.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="team-"><a href="https://docs.microsoft.com/graph/api/resources/team?view=graph-rest-1.0&amp;tabs=http">team </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The name of the team.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">An optional description for the team. Maximum length: 1024 characters.</td>
+</tr>
+<tr>
+<td style="text-align: left;">classification</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.</td>
+</tr>
+<tr>
+<td style="text-align: left;">specialization</td>
+<td style="text-align: left;">teamSpecialization</td>
+<td style="text-align: left;">Optional. Indicates whether the team is intended for a particular use case.  Each team specialization has access to unique behaviors and experiences targeted to its use case.</td>
+</tr>
+<tr>
+<td style="text-align: left;">visibility</td>
+<td style="text-align: left;">teamVisibilityType</td>
+<td style="text-align: left;">The visibility of the group and team. Defaults to Public.</td>
+</tr>
+<tr>
+<td style="text-align: left;">funSettings</td>
+<td style="text-align: left;">teamFunSettings</td>
+<td style="text-align: left;">Settings to configure use of Giphy, memes, and stickers in the team.</td>
+</tr>
+<tr>
+<td style="text-align: left;">guestSettings</td>
+<td style="text-align: left;">teamGuestSettings</td>
+<td style="text-align: left;">Settings to configure whether guests can create, update, or delete channels in the team.</td>
+</tr>
+<tr>
+<td style="text-align: left;">internalId</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isArchived</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Whether this team is in read-only mode.</td>
+</tr>
+<tr>
+<td style="text-align: left;">memberSettings</td>
+<td style="text-align: left;">teamMemberSettings</td>
+<td style="text-align: left;">Settings to configure whether members can perform certain actions, for example, create channels and add bots, in the team.</td>
+</tr>
+<tr>
+<td style="text-align: left;">messagingSettings</td>
+<td style="text-align: left;">teamMessagingSettings</td>
+<td style="text-align: left;">Settings to configure messaging and mentions in the team.</td>
+</tr>
+<tr>
+<td style="text-align: left;">webUrl</td>
+<td style="text-align: left;">string (readonly)</td>
+<td style="text-align: left;">A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select <strong>Get link to team</strong>. This URL should be treated as an opaque blob, and not parsed.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">dateTimeOffset</td>
+<td style="text-align: left;">Timestamp at which the team was created.</td>
 </tr>
 </tbody>
 </table>

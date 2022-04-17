@@ -8,7 +8,7 @@
     <title>Mail.ReadWrite | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Mail.ReadWrite | Graph Permissions ">
-    <meta name="generator" content="docfx 2.58.9.0">
+    <meta name="generator" content="docfx 2.59.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -434,17 +434,17 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/inferenceclassification-post-overrides?view=graph-rest-1.0&amp;tabs=http">POST /users/{id}/inferenceClassification/overrides</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-post-messages?view=graph-rest-1.0&amp;tabs=http">POST /users/{id|userPrincipalName}/messages</a></td>
 </tr>
 <tr>
 <td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-beta&amp;tabs=http">POST /users/{id|userPrincipalName}/messages/{id}/attachments</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/inferenceclassification-post-overrides?view=graph-rest-1.0&amp;tabs=http">POST /users/{id}/inferenceClassification/overrides</a></td>
 </tr>
 </tbody>
 </table>
@@ -557,6 +557,11 @@
 <td style="text-align: left;">The type of attachment. Possible values are: <code>file</code>, <code>item</code>, <code>reference</code>. Required.</td>
 </tr>
 <tr>
+<td style="text-align: left;">contentId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The CID or Content-Id of the attachment for referencing in case of in-line attachments using <code>&lt;img src=&quot;cid:contentId&quot;&gt;</code> tag in HTML messages. Optional.</td>
+</tr>
+<tr>
 <td style="text-align: left;">contentType</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The nature of the data in the attachment. Optional.</td>
@@ -609,11 +614,6 @@
 <td style="text-align: left;">The preview of the message associated with the event. It is in text format.</td>
 </tr>
 <tr>
-<td style="text-align: left;">cancelledOccurrences</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Contains <strong>occurrenceId</strong> property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.<br><br>Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).</td>
-</tr>
-<tr>
 <td style="text-align: left;">categories</td>
 <td style="text-align: left;">String collection</td>
 <td style="text-align: left;">The categories associated with the event. Each category corresponds to the <strong>displayName</strong> property of an outlookCategory defined for the user.</td>
@@ -632,11 +632,6 @@
 <td style="text-align: left;">end</td>
 <td style="text-align: left;">DateTimeTimeZone</td>
 <td style="text-align: left;">The date, time, and time zone that the event ends. By default, the end time is in UTC.</td>
-</tr>
-<tr>
-<td style="text-align: left;">exceptionOccurrences</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Contains the <strong>id</strong> property values of the event instances that are exceptions in a recurring series.<br>Exceptions can differ from other occurrences in a recurring series, such as the subject, start or end times, or attendees. Exceptions do not include cancelled occurrences.<br><br>Returned only on $select and $expand in a GET operation which specifies the id of a series master event (that is, the seriesMasterId property value).</td>
 </tr>
 <tr>
 <td style="text-align: left;">hasAttachments</td>
@@ -707,11 +702,6 @@
 <td style="text-align: left;">locations</td>
 <td style="text-align: left;">Location collection</td>
 <td style="text-align: left;">The locations where the event is held or attended from. The <strong>location</strong> and <strong>locations</strong> properties always correspond with each other. If you update the <strong>location</strong> property, any prior locations in the <strong>locations</strong> collection would be removed and replaced by the new <strong>location</strong> value.</td>
-</tr>
-<tr>
-<td style="text-align: left;">occurrenceId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">An identifier for an occurrence in a recurring event series. Null if the event is not part of a recurring series.<br><br>The format of the property value is OID.{seriesMasterId-value}.{occurrence-start-date}. The time zone for {occurrence-start-date} is the recurrenceTimeZone property defined for the corresponding recurrenceRange.<br><br>This property can identify any occurrence in a recurring series, including an occurrence that has been modified or cancelled. You can use this property to perform all operations supported by occurrences in the recurring series.</td>
 </tr>
 <tr>
 <td style="text-align: left;">onlineMeeting</td>
@@ -802,11 +792,6 @@
 <td style="text-align: left;">type</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The event type. Possible values are: <code>singleInstance</code>, <code>occurrence</code>, <code>exception</code>, <code>seriesMaster</code>. Read-only</td>
-</tr>
-<tr>
-<td style="text-align: left;">uid</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">A unique identifier for calendar events. For recurring events, the value is the same for the series master and all of its occurrences including exceptions. This property will replace the current iCalUid property defined in the event resource, which is different for each instance in a series.</td>
 </tr>
 <tr>
 <td style="text-align: left;">webLink</td>

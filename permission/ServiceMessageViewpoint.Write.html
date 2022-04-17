@@ -8,7 +8,7 @@
     <title>ServiceMessageViewpoint.Write | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="ServiceMessageViewpoint.Write | Graph Permissions ">
-    <meta name="generator" content="docfx 2.58.9.0">
+    <meta name="generator" content="docfx 2.59.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -87,6 +87,9 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="servicemessageviewpointwrite">ServiceMessageViewpoint.Write</h1>
 
+<blockquote>
+<p>Allows the app to update service announcement messages' user status on behalf of the signed-in user. The message status can be marked as read, archive, or favorite.</p>
+</blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
 <p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
@@ -141,19 +144,19 @@
 <tbody>
 <tr>
 <td><strong>Id</strong></td>
-<td></td>
+<td>636e1b0b-1cc2-4b1c-9aa9-4eeed9b9761b</td>
 </tr>
 <tr>
 <td><strong>Consent Type</strong></td>
-<td></td>
+<td>Admin</td>
 </tr>
 <tr>
 <td><strong>Display String</strong></td>
-<td></td>
+<td>Update user status on service announcement messages</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
-<td></td>
+<td>Allows the app to update service announcement messages' user status on behalf of the signed-in user. The message status can be marked as read, archive, or favorite.</td>
 </tr>
 </tbody>
 </table>
@@ -174,6 +177,11 @@
 <td style="text-align: left;">The expected deadline of the action for the message.</td>
 </tr>
 <tr>
+<td style="text-align: left;">attachmentsArchive</td>
+<td style="text-align: left;">Stream</td>
+<td style="text-align: left;">The zip file that contains all attachments for a message.</td>
+</tr>
+<tr>
 <td style="text-align: left;">body</td>
 <td style="text-align: left;">itemBody</td>
 <td style="text-align: left;">The content type and content of the service message body.</td>
@@ -192,6 +200,11 @@
 <td style="text-align: left;">endDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">The end time of the service message. Inherited from serviceAnnouncementBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">hasAttachments</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the message has any attachment.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
@@ -226,7 +239,7 @@
 <tr>
 <td style="text-align: left;">tags</td>
 <td style="text-align: left;">Collection(string)</td>
-<td style="text-align: left;">A collection of tags for the service message.</td>
+<td style="text-align: left;">A collection of tags for the service message. Tags are provided by the service team/support team who post the message to tell whether this message contains privacy data, or whether this message is for a service new feature update, and so on.</td>
 </tr>
 <tr>
 <td style="text-align: left;">title</td>
@@ -236,7 +249,7 @@
 <tr>
 <td style="text-align: left;">viewPoint</td>
 <td style="text-align: left;">serviceUpdateMessageViewpoint</td>
-<td style="text-align: left;">Represents user view points data of the service message. This data includes message status such as whether the user has archived, read, or marked the message as favorite. This property is null when accessed with application permissions.</td>
+<td style="text-align: left;">Represents user viewpoints data of the service message. This data includes message status such as whether the user has archived, read, or marked the message as favorite. This property is null when accessed with application permissions.</td>
 </tr>
 </tbody>
 </table>

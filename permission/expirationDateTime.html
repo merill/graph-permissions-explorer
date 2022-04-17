@@ -8,7 +8,7 @@
     <title>expirationDateTime | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="expirationDateTime | Graph Permissions ">
-    <meta name="generator" content="docfx 2.58.9.0">
+    <meta name="generator" content="docfx 2.59.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -142,13 +142,13 @@
 <td style="text-align: left;">The unique identifier of the permission among all permissions on the item. Read-only.</td>
 </tr>
 <tr>
-<td style="text-align: left;">grantedTo</td>
-<td style="text-align: left;">IdentitySet</td>
-<td style="text-align: left;">For user type permissions, the details of the users &amp; applications for this permission. Read-only.</td>
+<td style="text-align: left;">grantedToV2</td>
+<td style="text-align: left;">[SharePointIdentitySet][]</td>
+<td style="text-align: left;">For user type permissions, the details of the users and applications for this permission. Read-only.</td>
 </tr>
 <tr>
-<td style="text-align: left;">grantedToIdentities</td>
-<td style="text-align: left;">Collection(IdentitySet)</td>
+<td style="text-align: left;">grantedToIdentitiesV2</td>
+<td style="text-align: left;">Collection([SharePointIdentitySet][])</td>
 <td style="text-align: left;">For link type permissions, the details of the users to whom permission was granted. Read-only.</td>
 </tr>
 <tr>
@@ -169,7 +169,7 @@
 <tr>
 <td style="text-align: left;">roles</td>
 <td style="text-align: left;">Collection of String</td>
-<td style="text-align: left;">The type of permission, e.g. <code>read</code>. See below for the full list of roles. Read-only.</td>
+<td style="text-align: left;">The type of permission, for example, <code>read</code>. See below for the full list of roles. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">shareId</td>
@@ -184,7 +184,17 @@
 <tr>
 <td style="text-align: left;">hasPassword</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">This indicates whether password is set for this permission, it's only showing in response. Optional and Read-only and for OneDrive Personal only.</td>
+<td style="text-align: left;">Indicates whether the password is set for this permission. This property only appears in the response. Optional. Read-only. For OneDrive Personal only..</td>
+</tr>
+<tr>
+<td style="text-align: left;">grantedTo (deprecated)</td>
+<td style="text-align: left;">IdentitySet</td>
+<td style="text-align: left;">For user type permissions, the details of the users and applications for this permission. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">grantedToIdentities (deprecated)</td>
+<td style="text-align: left;">Collection(IdentitySet)</td>
+<td style="text-align: left;">For type permissions, the details of the users to whom permission was granted. Read-only.</td>
 </tr>
 </tbody>
 </table>

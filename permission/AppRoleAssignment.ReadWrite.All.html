@@ -8,7 +8,7 @@
     <title>AppRoleAssignment.ReadWrite.All | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="AppRoleAssignment.ReadWrite.All | Graph Permissions ">
-    <meta name="generator" content="docfx 2.58.9.0">
+    <meta name="generator" content="docfx 2.59.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -215,24 +215,19 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">A unique identifier for the <strong>appRoleAssignment</strong> Key. Not nullable. Read-only.</td>
+<td style="text-align: left;">appRoleId</td>
+<td style="text-align: left;">Guid</td>
+<td style="text-align: left;">The identifier (<strong>id</strong>) for the app role which is assigned to the principal. This app role must be exposed in the <strong>appRoles</strong> property on the resource application's service principal (<strong>resourceId</strong>). If the resource application has not declared any app roles, a default app role ID of <code>00000000-0000-0000-0000-000000000000</code> can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The time when the app role assignment was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
+<td style="text-align: left;">The time when the app role assignment was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
 </tr>
 <tr>
-<td style="text-align: left;">principalId</td>
-<td style="text-align: left;">Guid</td>
-<td style="text-align: left;">The unique identifier (<strong>id</strong>) for the user, group or service principal being granted the app role. Required on create.</td>
-</tr>
-<tr>
-<td style="text-align: left;">principalType</td>
+<td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The type of the assigned principal. This can either be <code>User</code>, <code>Group</code> or <code>ServicePrincipal</code>. Read-only.</td>
+<td style="text-align: left;">A unique identifier for the <strong>appRoleAssignment</strong> key. Not nullable. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">principalDisplayName</td>
@@ -240,9 +235,14 @@
 <td style="text-align: left;">The display name of the user, group, or service principal that was granted the app role assignment. Read-only. Supports <code>$filter</code> (<code>eq</code> and <code>startswith</code>).</td>
 </tr>
 <tr>
-<td style="text-align: left;">resourceId</td>
+<td style="text-align: left;">principalId</td>
 <td style="text-align: left;">Guid</td>
-<td style="text-align: left;">The unique identifier (<strong>id</strong>) for the resource service principal for which the assignment is made. Required on create. Supports <code>$filter</code> (<code>eq</code> only).</td>
+<td style="text-align: left;">The unique identifier (<strong>id</strong>) for the user, group, or service principal being granted the app role. Required on create.</td>
+</tr>
+<tr>
+<td style="text-align: left;">principalType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The type of the assigned principal. This can either be <code>User</code>, <code>Group</code>, or <code>ServicePrincipal</code>. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">resourceDisplayName</td>
@@ -250,9 +250,9 @@
 <td style="text-align: left;">The display name of the resource app's service principal to which the assignment is made.</td>
 </tr>
 <tr>
-<td style="text-align: left;">appRoleId</td>
+<td style="text-align: left;">resourceId</td>
 <td style="text-align: left;">Guid</td>
-<td style="text-align: left;">The identifier (**i</td>
+<td style="text-align: left;">The unique identifier (**i</td>
 </tr>
 </tbody>
 </table>

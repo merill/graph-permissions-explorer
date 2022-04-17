@@ -8,7 +8,7 @@
     <title>PrintJob.ReadBasic.All | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="PrintJob.ReadBasic.All | Graph Permissions ">
-    <meta name="generator" content="docfx 2.58.9.0">
+    <meta name="generator" content="docfx 2.59.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -115,6 +115,41 @@
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/printer-list-jobs?view=graph-rest-1.0&amp;tabs=http">GET /print/printers/{printerId}/jobs</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/print-list-services?view=graph-rest-1.0&amp;tabs=http">GET /print/services</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/printservice-get?view=graph-rest-beta&amp;tabs=http">GET /print/services/{id}</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/printservice-list-endpoints?view=graph-rest-beta&amp;tabs=http">GET /print/services/{id}/endpoints</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/printserviceendpoint-get?view=graph-rest-beta&amp;tabs=http">GET /print/services/{id}/endpoints/{name}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/printservice-get?view=graph-rest-1.0&amp;tabs=http">GET /print/services/{printServiceId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/printservice-list-endpoints?view=graph-rest-1.0&amp;tabs=http">GET /print/services/{printServiceId}/endpoints</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/printserviceendpoint-get?view=graph-rest-1.0&amp;tabs=http">GET /print/services/{printServiceId}/endpoints/{printServiceEndpointId}</a></td>
 </tr>
 <tr>
 <td>Beta</td>
@@ -404,6 +439,50 @@
 <td style="text-align: left;">createdBy</td>
 <td style="text-align: left;">userIdentity</td>
 <td style="text-align: left;">Read-only. Nullable.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="printservice-"><a href="https://docs.microsoft.com/graph/api/resources/printservice?view=graph-rest-1.0&amp;tabs=http">printService </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The service's identifier. Read-only.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="printserviceendpoint-"><a href="https://docs.microsoft.com/graph/api/resources/printserviceendpoint?view=graph-rest-1.0&amp;tabs=http">printServiceEndpoint </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A human-readable display name for the endpoint.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A unique name that identifies the service that the endpoint provides. Possible values are: <code>discovery</code> (Discovery Service), <code>notification</code> (Notification Service), <code>ipp</code> (IPP Service), and <code>registration</code> (Registration Service). Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">uri</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The URI that can be used to access the service.</td>
 </tr>
 </tbody>
 </table>

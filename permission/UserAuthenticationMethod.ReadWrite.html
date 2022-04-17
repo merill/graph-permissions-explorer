@@ -8,7 +8,7 @@
     <title>UserAuthenticationMethod.ReadWrite | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="UserAuthenticationMethod.ReadWrite | Graph Permissions ">
-    <meta name="generator" content="docfx 2.58.9.0">
+    <meta name="generator" content="docfx 2.59.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -229,7 +229,7 @@
 <tr>
 <td>Beta</td>
 <td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/phoneauthenticationmethod-get?view=graph-rest-beta&amp;tabs=http">GET /me/authentication/phoneMethods/{id}</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/phoneauthenticationmethod-get?view=graph-rest-beta&amp;tabs=http">GET /me/authentication/phoneMethods/{phoneMethodId}</a></td>
 </tr>
 <tr>
 <td>Beta</td>
@@ -334,11 +334,6 @@
 <tr>
 <td>Beta</td>
 <td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/phoneauthenticationmethod-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/authentication/phoneMethods/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/authentication-list-softwareoathmethods?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/authentication/softwareOathMethods</a></td>
 </tr>
 <tr>
@@ -365,6 +360,11 @@
 <td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/windowshelloforbusinessauthenticationmethod-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethodId}</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/phoneauthenticationmethod-get?view=graph-rest-beta&amp;tabs=http">GET /users/{userId | userPrincipalName}/authentication/phoneMethods/{phoneMethodId}</a></td>
 </tr>
 <tr>
 <td>Beta</td>
@@ -615,17 +615,17 @@
 <tr>
 <td style="text-align: left;">creationDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time when this password was last updated. This property is currently not populated. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code></td>
+<td style="text-align: left;">The date and time when this password was last updated. This property is currently not populated. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The identifier of this password registered to this user. Read-only.</td>
+<td style="text-align: left;">The identifier of this password registered to this user. This is generally <code>28c10230-6103-485e-b985-444c60001490</code>. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">password</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">For security, the password is always returned as null from a LIST or GET operation.</td>
+<td style="text-align: left;">For security, the password is always returned as <code>null</code> from a LIST or GET operation.</td>
 </tr>
 </tbody>
 </table>

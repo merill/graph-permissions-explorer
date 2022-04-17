@@ -8,7 +8,7 @@
     <title>Domain.Read.All | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Domain.Read.All | Graph Permissions ">
-    <meta name="generator" content="docfx 2.58.9.0">
+    <meta name="generator" content="docfx 2.59.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -122,6 +122,11 @@
 <td><a href="https://docs.microsoft.com/graph/api/domain-list?view=graph-rest-1.0&amp;tabs=http">GET /domains</a></td>
 </tr>
 <tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/internaldomainfederation-get?view=graph-rest-beta&amp;tabs=http">GET /domains/{domainsId}/federationConfiguration/{internalDomainFederationId}</a></td>
+</tr>
+<tr>
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/domain-get?view=graph-rest-1.0&amp;tabs=http">GET /domains/{id}</a></td>
@@ -210,9 +215,14 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">deletedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time when this object was deleted. Always <code>null</code> when the object hasn't been deleted.</td>
+</tr>
+<tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the object. For example, 12345678-9abc-def0-1234-56789abcde. The value of the **i</td>
+<td style="text-align: left;">The unique identifier for the object. For example, <code>12345678-9abc-def0-1234-56789abcde</code>. The value of the **i</td>
 </tr>
 </tbody>
 </table>
@@ -366,6 +376,88 @@
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The display name of the identity provider.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="internaldomainfederation-"><a href="https://docs.microsoft.com/graph/api/resources/internaldomainfederation?view=graph-rest-1.0&amp;tabs=http">internalDomainFederation </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">activeSignInUri</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">URL of the endpoint used by active clients when authenticating with federated domains set up for single sign-on in Azure Active Directory (Azure AD). Corresponds to the <strong>ActiveLogOnUri</strong> property of the Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the federated identity Provider (IdP). Inherited from identityProviderBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">federatedIdpMfaBehavior</td>
+<td style="text-align: left;">federatedIdpMfaBehavior</td>
+<td style="text-align: left;">Determines whether Azure AD accepts the MFA performed by the federated IdP when a federated user accesses an application that is governed by a conditional access policy that requires MFA. The possible values are: <code>acceptIfMfaDoneByFederatedIdp</code>, <code>enforceMfaByFederatedIdp</code>, <code>rejectMfaByFederatedIdp</code>, <code>unknownFutureValue</code>. For more information, see federatedIdpMfaBehavior values.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the federated identity provider. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isSignedAuthenticationRequestRequired</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">If <code>true</code>, when SAML authentication requests are sent to the federated SAML IdP, Azure AD will sign those requests using the OrgID signing key. If <code>false</code> (default), the SAML authentication requests sent to the federated IdP are not signed.</td>
+</tr>
+<tr>
+<td style="text-align: left;">issuerUri</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Issuer URI of the federation server. Inherited from samlOrWsFedProvider.</td>
+</tr>
+<tr>
+<td style="text-align: left;">metadataExchangeUri</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">URI of the metadata exchange endpoint used for authentication from rich client applications. Inherited from samlOrWsFedProvider.</td>
+</tr>
+<tr>
+<td style="text-align: left;">nextSigningCertificate</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Fallback token signing certificate that is used to sign tokens when the primary signing certificate expires. Formatted as Base64 encoded strings of the public portion of the federated IdP's token signing certificate. Needs to be compatible with the X509Certificate2 class. Much like the signingCertificate, the nextSigningCertificate property is used if a rollover is required outside of the auto-rollover update, a new federation service is being set up, or if the new token signing certificate is not present in the federation properties after the federation service certificate has been updated.</td>
+</tr>
+<tr>
+<td style="text-align: left;">passiveSignInUri</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">URI that web-based clients are directed to when signing into Azure AD services. Inherited from samlOrWsFedProvider.</td>
+</tr>
+<tr>
+<td style="text-align: left;">preferredAuthenticationProtocol</td>
+<td style="text-align: left;">authenticationProtocol</td>
+<td style="text-align: left;">Preferred authentication protocol. The possible values are: <code>wsFed</code>, <code>saml</code>, <code>unknownFutureValue</code>. Inherited from samlOrWsFedProvider.</td>
+</tr>
+<tr>
+<td style="text-align: left;">promptLoginBehavior</td>
+<td style="text-align: left;">promptLoginBehavior</td>
+<td style="text-align: left;">Sets the preferred behavior for the sign-in prompt. The possible values are: <code>translateToFreshPasswordAuthentication</code>, <code>nativeSupport</code>, <code>disabled</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">signingCertificate</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Current certificate used to sign tokens passed to the Microsoft identity platform. The certificate is formatted as a Base64 encoded string of the public portion of the federated IdP's token signing certificate and must be compatible with the X509Certificate2 class. <br>This property is used in the following scenarios: <li> If a rollover is required outside of the autorollover update <li> A new federation service is being set up <li> If the new token signing certificate isn't present in the federation properties after the federation service certificate has been updated.<br>Azure AD updates certificates via an autorollover process in which it attempts to retrieve a new certificate from the federation service metadata, 30 days before expiry of the current certificate. If a new certificate isn't available, Azure AD monitors the metadata daily and will update the federation settings for the domain when a new certificate is available. Inherited from samlOrWsFedProvider.</li></li></li></td>
+</tr>
+<tr>
+<td style="text-align: left;">signingCertificateUpdateStatus</td>
+<td style="text-align: left;">signingCertificateUpdateStatus</td>
+<td style="text-align: left;">Provides status and timestamp of the last update of the signing certificate.</td>
+</tr>
+<tr>
+<td style="text-align: left;">signOutUri</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">URI that clients are redirected to when they sign out of Azure AD services. Corresponds to the **L</td>
 </tr>
 </tbody>
 </table>

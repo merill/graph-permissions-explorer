@@ -8,7 +8,7 @@
     <title>Policy.ReadWrite.PermissionGrant | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Policy.ReadWrite.PermissionGrant | Graph Permissions ">
-    <meta name="generator" content="docfx 2.58.9.0">
+    <meta name="generator" content="docfx 2.59.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -109,6 +109,21 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-delete-excludes?view=graph-rest-1.0&amp;tabs=http">DELETE /policies/permissionGrantPolicies/{permissiongrantpolicy-id}/excludes/{exclude-id}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-delete-includes?view=graph-rest-1.0&amp;tabs=http">DELETE /policies/permissionGrantPolicies/{permissiongrantpolicy-id}/includes/{include-id}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-delegatedpermissionclassifications?view=graph-rest-1.0&amp;tabs=http">DELETE /servicePrincipals/{id}/delegatedPermissionClassifications/{id}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-list?view=graph-rest-1.0&amp;tabs=http">GET /policies/permissionGrantPolicies</a></td>
 </tr>
 <tr>
@@ -124,12 +139,22 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-post-permissiongrantpolicies?view=graph-rest-1.0&amp;tabs=http">POST /policies/permissionGrantPolicies</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-post-excludes?view=graph-rest-1.0&amp;tabs=http">POST /policies/permissionGrantPolicies/{id}/excludes</a></td>
 </tr>
 <tr>
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-post-includes?view=graph-rest-1.0&amp;tabs=http">POST /policies/permissionGrantPolicies/{id}/includes</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-delegatedpermissionclassifications?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{id}/delegatedPermissionClassifications</a></td>
 </tr>
 </tbody>
 </table>
@@ -184,6 +209,38 @@
 </tbody>
 </table>
 <h2 id="resources">Resources</h2>
+<h3 id="delegatedpermissionclassification-"><a href="https://docs.microsoft.com/graph/api/resources/delegatedpermissionclassification?view=graph-rest-1.0&amp;tabs=http">delegatedPermissionClassification </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A unique identifier for the <strong>delegatedPermissionClassification</strong> Key. Not nullable. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">classification</td>
+<td style="text-align: left;">permissionClassificationType</td>
+<td style="text-align: left;">The classification value being given. Possible value: <code>low</code>. Does not support <code>$filter</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">permissionId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier (<strong>id</strong>) for the delegated permission listed in the <strong>oauth2PermissionScopes</strong> collection of the servicePrincipal. Required on create. Does not support <code>$filter</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">permissionName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The claim value (**v</td>
+</tr>
+</tbody>
+</table>
 <h3 id="permissiongrantconditionset-"><a href="https://docs.microsoft.com/graph/api/resources/permissiongrantconditionset?view=graph-rest-1.0&amp;tabs=http">permissionGrantConditionSet </a></h3>
 <table>
 <thead>

@@ -8,7 +8,7 @@
     <title>PrivilegedAccess.Read.AzureAD | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="PrivilegedAccess.Read.AzureAD | Graph Permissions ">
-    <meta name="generator" content="docfx 2.58.9.0">
+    <meta name="generator" content="docfx 2.59.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -154,12 +154,17 @@
 <tr>
 <td>Beta</td>
 <td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/governanceroleassignmentrequest-list?view=graph-rest-beta&amp;tabs=http">GET /privilegedAccess/azureResources/roleAssignmentRequests?$filter=resourceId+eq+'{resourceId}'</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/governanceroleassignmentrequest-get?view=graph-rest-beta&amp;tabs=http">GET /privilegedAccess/azureResources/roleAssignmentRequests/{id}</a></td>
 </tr>
 <tr>
 <td>Beta</td>
 <td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/governanceroleassignmentrequest-list?view=graph-rest-beta&amp;tabs=http">GET /privilegedAccess/azureResources/roleAssignmentRequests?$filter=resourceId+eq+'{resourceId}'</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/governanceroleassignment-list?view=graph-rest-beta&amp;tabs=http">GET /privilegedAccess/azureResources/roleAssignments?$filter=resourceId+eq+'{resourceId}'</a></td>
 </tr>
 <tr>
 <td>Beta</td>
@@ -174,7 +179,7 @@
 <tr>
 <td>Beta</td>
 <td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/governanceroleassignment-list?view=graph-rest-beta&amp;tabs=http">GET /privilegedAccess/azureResources/roleAssignments?$filter=resourceId+eq+'{resourceId}'</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/governanceroledefinition-list?view=graph-rest-beta&amp;tabs=http">GET /privilegedAccess/azureResources/roleDefinitions?$filter=resourceId+eq+'{resourceId}'</a></td>
 </tr>
 <tr>
 <td>Beta</td>
@@ -184,17 +189,12 @@
 <tr>
 <td>Beta</td>
 <td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/governanceroledefinition-list?view=graph-rest-beta&amp;tabs=http">GET /privilegedAccess/azureResources/roleDefinitions?$filter=resourceId+eq+'{resourceId}'</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/governancerolesetting-list?view=graph-rest-beta&amp;tabs=http">GET /privilegedAccess/azureResources/roleSettings?$filter=resourceId+eq+'<resourceid>'</resourceid></a></td>
 </tr>
 <tr>
 <td>Beta</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/governancerolesetting-get?view=graph-rest-beta&amp;tabs=http">GET /privilegedAccess/azureResources/roleSettings/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/governancerolesetting-list?view=graph-rest-beta&amp;tabs=http">GET /privilegedAccess/azureResources/roleSettings?$filter=resourceId+eq+'<resourceid>'</resourceid></a></td>
 </tr>
 <tr>
 <td>Beta</td>
@@ -396,22 +396,22 @@
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The id of the role assignment request.</td>
+<td style="text-align: left;">The identifier of the role assignment request.</td>
 </tr>
 <tr>
 <td style="text-align: left;">resourceId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Required. The id of the resource which the role assignment request is associated with.</td>
+<td style="text-align: left;">Required. The unique identifier of the Azure resource that is associated with the role assignment request. Azure resources can include subscriptions, resource groups, virtual machines, and SQL databases.</td>
 </tr>
 <tr>
 <td style="text-align: left;">roleDefinitionId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Required. The id of the role definition which the role assignment request is associated with.</td>
+<td style="text-align: left;">Required. The identifier of the Azure role definition that the role assignment request is associated with.</td>
 </tr>
 <tr>
 <td style="text-align: left;">subjectId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Required. The id of the subject which the role assignment request is associated with.</td>
+<td style="text-align: left;">Required. The unique identifier of the principal or subject that the role assignment request is associated with. Principals can be users, groups, or service principals.</td>
 </tr>
 <tr>
 <td style="text-align: left;">type</td>
@@ -592,12 +592,12 @@
 <tr>
 <td style="text-align: left;">scopeId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The id of the scope where the policy is created. E.g. &quot;/&quot;, groupId, etc.</td>
+<td style="text-align: left;">The id of the scope where the policy is created. Can be <code>/</code> for the tenant or a group ID. Required.</td>
 </tr>
 <tr>
 <td style="text-align: left;">scopeType</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The type of the scope where the policy is created. One of Directory, DirectoryRole, Group.</td>
+<td style="text-align: left;">The type of the scope where the policy is created. One of <code>Directory</code>, <code>DirectoryRole</code>. Required.</td>
 </tr>
 </tbody>
 </table>

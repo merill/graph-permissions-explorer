@@ -8,7 +8,7 @@
     <title>RoleManagement.Read.All | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="RoleManagement.Read.All | Graph Permissions ">
-    <meta name="generator" content="docfx 2.58.9.0">
+    <meta name="generator" content="docfx 2.59.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -104,7 +104,7 @@
 <tr>
 <td>Beta</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/unifiedrolemanagementpolicy-list?view=graph-rest-beta&amp;tabs=http">GET /policies/roleManagementPolicies</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedrolemanagementpolicy-list?view=graph-rest-beta&amp;tabs=http">GET /policies/roleManagementPolicies?$filter=scopeId eq 'scopeId' and scopeType eq 'scopeType'</a></td>
 </tr>
 <tr>
 <td>Beta</td>
@@ -134,12 +134,42 @@
 <tr>
 <td>Beta</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/unifiedrolemanagementpolicyassignment-list?view=graph-rest-beta&amp;tabs=http">GET /policies/roleManagementPolicyAssignments</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedrolemanagementpolicyassignment-list?view=graph-rest-beta&amp;tabs=http">GET /policies/roleManagementPolicyAssignments?$filter=scopeId eq 'scopeId' and scopeType eq 'scopeType'</a></td>
 </tr>
 <tr>
 <td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/unifiedrolemanagementpolicyassignment-get?view=graph-rest-beta&amp;tabs=http">GET /policies/roleManagementPolicyAssignments/{unifiedRoleManagementPolicyAssignmentId}</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/cloudPC/roleDefinitions</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/cloudPC/roleDefinitions/{id}</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/rbacapplicationmultiple-list-resourcenamespaces?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/directory/resourceNamespaces</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedrbacresourcenamespace-get?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/directory/resourceNamespaces/{unifiedRbacResourceNamespaceId}</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedrbacresourcenamespace-list-resourceactions?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/directory/resourceNamespaces/{unifiedRbacResourceNamespaceId}/resourceActions</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedrbacresourceaction-get?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/directory/resourceNamespaces/{unifiedRbacResourceNamespaceId}/resourceActions/{unifiedRbacResourceActionId}</a></td>
 </tr>
 <tr>
 <td>Beta</td>
@@ -284,6 +314,65 @@
 </tbody>
 </table>
 <h2 id="resources">Resources</h2>
+<h3 id="unifiedrbacresourceaction-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedrbacresourceaction?view=graph-rest-1.0&amp;tabs=http">unifiedRbacResourceAction </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">actionVerb</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">HTTP method for the action, such as <code>DELETE</code>, <code>GET</code>, <code>PATCH</code>, <code>POST</code>, <code>PUT</code>, or <code>null</code>. Supports <code>$filter</code> (<code>eq</code>) but not for <code>null</code> values.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Description for the action. Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for an action within the resource namespace, such as <code>microsoft.insights-programs-update-patch</code>. Cannot include slash character (<code>/</code>). Case insensitive. Required. Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name for the action within the resource namespace, such as <code>microsoft.insights/programs/update</code>. Can include slash character (<code>/</code>). Case insensitive. Required. Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">resourceScopeId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Not implemented.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="unifiedrbacresourcenamespace-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedrbacresourcenamespace?view=graph-rest-1.0&amp;tabs=http">unifiedRbacResourceNamespace </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier of the resource namespace that defines permissions, such as <code>microsoft.aad.b2c</code>. Required.</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the resource namespace. Typically, the same name as the **i</td>
+</tr>
+</tbody>
+</table>
 <h3 id="unifiedroleassignmentschedule-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedroleassignmentschedule?view=graph-rest-1.0&amp;tabs=http">unifiedRoleAssignmentSchedule </a></h3>
 <table>
 <thead>
@@ -522,6 +611,63 @@
 <td style="text-align: left;">ticketInfo</td>
 <td style="text-align: left;">ticketInfo</td>
 <td style="text-align: left;">The ticketInfo object attached to the role assignment request which includes details of the ticket number and ticket system.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="unifiedroledefinition-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedroledefinition?view=graph-rest-1.0&amp;tabs=http">unifiedRoleDefinition </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The description for the unifiedRoleDefinition. Read-only when <strong>isBuiltIn</strong> is <code>true</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name for the unifiedRoleDefinition. Read-only when <strong>isBuiltIn</strong> is <code>true</code>. Required.  Supports $filter (<code>eq</code>, <code>in</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the role definition. Key, not nullable, Read-only. Inherited from entity. Supports $filter (<code>eq</code>, <code>in</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">isBuiltIn</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Flag indicating whether the role definition is part of the default set included in Azure Active Directory (Azure AD) or a custom definition. Read-only. Supports $filter (<code>eq</code>, <code>in</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">isEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Flag indicating whether the role is enabled for assignment. If <code>false</code> the role is not available for assignment. Read-only when <strong>isBuiltIn</strong> is true.</td>
+</tr>
+<tr>
+<td style="text-align: left;">resourceScopes</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">List of the scopes or permissions the role definition applies to. Currently only <code>/</code> is supported. Read-only when <strong>isBuiltIn</strong> is true. <strong>DO NOT USE. This will be deprecated soon. Attach scope to role assignment.</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">rolePermissions</td>
+<td style="text-align: left;">unifiedRolePermission collection</td>
+<td style="text-align: left;">List of permissions included in the role. Read-only when <strong>isBuiltIn</strong> is <code>true</code>. Required.</td>
+</tr>
+<tr>
+<td style="text-align: left;">templateId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Custom template identifier that can be set when <strong>isBuiltIn</strong> is <code>false</code> but is read-only when <strong>isBuiltIn</strong> is <code>true</code>. This identifier is typically used if one needs an identifier to be the same across different directories.</td>
+</tr>
+<tr>
+<td style="text-align: left;">version</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Indicates version of the role definition. Read-only when **i</td>
 </tr>
 </tbody>
 </table>
@@ -789,12 +935,12 @@
 <tr>
 <td style="text-align: left;">scopeId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The id of the scope where the policy is created. E.g. &quot;/&quot;, groupId, etc.</td>
+<td style="text-align: left;">The id of the scope where the policy is created. Can be <code>/</code> for the tenant or a group ID. Required.</td>
 </tr>
 <tr>
 <td style="text-align: left;">scopeType</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The type of the scope where the policy is created. One of Directory, DirectoryRole, Group.</td>
+<td style="text-align: left;">The type of the scope where the policy is created. One of <code>Directory</code>, <code>DirectoryRole</code>. Required.</td>
 </tr>
 </tbody>
 </table>
