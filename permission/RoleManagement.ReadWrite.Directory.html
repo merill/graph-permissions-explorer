@@ -399,11 +399,6 @@
 <tr>
 <td>Beta</td>
 <td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/unifiedrolemanagementpolicyrule-update?view=graph-rest-beta&amp;tabs=http">PATCH /policies/roleManagementPolicies/{unifiedRoleManagementPolicyId}/effectiveRules/{unifiedRoleManagementPolicyRuleId}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/unifiedrolemanagementpolicyrule-update?view=graph-rest-beta&amp;tabs=http">PATCH /policies/roleManagementPolicies/{unifiedRoleManagementPolicyId}/rules/{unifiedRoleManagementPolicyRuleId}</a></td>
 </tr>
 <tr>
@@ -1326,6 +1321,33 @@
 </tr>
 </tbody>
 </table>
+<h3 id="unifiedrolemanagementpolicyapprovalrule-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedrolemanagementpolicyapprovalrule?view=graph-rest-1.0&amp;tabs=http">unifiedRoleManagementPolicyApprovalRule </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for the rule. Inherited from unifiedRoleManagementPolicyRule</td>
+</tr>
+<tr>
+<td style="text-align: left;">setting</td>
+<td style="text-align: left;">approvalSettings</td>
+<td style="text-align: left;">The approval setting for the rule.</td>
+</tr>
+<tr>
+<td style="text-align: left;">target</td>
+<td style="text-align: left;">unifiedRoleManagementPolicyRuleTarget</td>
+<td style="text-align: left;">The target for the rule rule. Inherited from unifiedRoleManagementPolicyRule</td>
+</tr>
+</tbody>
+</table>
 <h3 id="unifiedrolemanagementpolicyassignment-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedrolemanagementpolicyassignment?view=graph-rest-1.0&amp;tabs=http">unifiedRoleManagementPolicyAssignment </a></h3>
 <table>
 <thead>
@@ -1360,6 +1382,144 @@
 <td style="text-align: left;">scopeType</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The type of the scope where the policy is assigned. One of Directory, DirectoryRole, Group.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="unifiedrolemanagementpolicyauthenticationcontextrule-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedrolemanagementpolicyauthenticationcontextrule?view=graph-rest-1.0&amp;tabs=http">unifiedRoleManagementPolicyAuthenticationContextRule </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">claimValue</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Value of the authentication context claim.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for the rule. Inherited from unifiedRoleManagementPolicyRule</td>
+</tr>
+<tr>
+<td style="text-align: left;">isEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates if the setting is enabled.</td>
+</tr>
+<tr>
+<td style="text-align: left;">target</td>
+<td style="text-align: left;">unifiedRoleManagementPolicyRuleTarget</td>
+<td style="text-align: left;">The target for the rule. Inherited from unifiedRoleManagementPolicyRule</td>
+</tr>
+</tbody>
+</table>
+<h3 id="unifiedrolemanagementpolicyenablementrule-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedrolemanagementpolicyenablementrule?view=graph-rest-1.0&amp;tabs=http">unifiedRoleManagementPolicyEnablementRule </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">enabledRules</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">The rules which are enabled. Allowed values are MultifactorAuthentication, Justification, Ticketing.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for the rule. Inherited from unifiedRoleManagementPolicyRule</td>
+</tr>
+<tr>
+<td style="text-align: left;">target</td>
+<td style="text-align: left;">unifiedRoleManagementPolicyRuleTarget</td>
+<td style="text-align: left;">The target for the rule. Inherited from unifiedRoleManagementPolicyRule</td>
+</tr>
+</tbody>
+</table>
+<h3 id="unifiedrolemanagementpolicyexpirationrule-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedrolemanagementpolicyexpirationrule?view=graph-rest-1.0&amp;tabs=http">unifiedRoleManagementPolicyExpirationRule </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for the rule. Inherited from unifiedRoleManagementPolicyRule</td>
+</tr>
+<tr>
+<td style="text-align: left;">isExpirationRequired</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates if expiration is required for eligibility or assignment.</td>
+</tr>
+<tr>
+<td style="text-align: left;">maximumDuration</td>
+<td style="text-align: left;">Duration</td>
+<td style="text-align: left;">The maximum duration allowed for eligiblity or assignment which is not permanent.</td>
+</tr>
+<tr>
+<td style="text-align: left;">target</td>
+<td style="text-align: left;">unifiedRoleManagementPolicyRuleTarget</td>
+<td style="text-align: left;">The target for the rule. Inherited from unifiedRoleManagementPolicyRule</td>
+</tr>
+</tbody>
+</table>
+<h3 id="unifiedrolemanagementpolicynotificationrule-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedrolemanagementpolicynotificationrule?view=graph-rest-1.0&amp;tabs=http">unifiedRoleManagementPolicyNotificationRule </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for the rule. Inherited from unifiedRoleManagementPolicyRule</td>
+</tr>
+<tr>
+<td style="text-align: left;">notificationLevel</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The level of notification. One of None, Critical, All.</td>
+</tr>
+<tr>
+<td style="text-align: left;">notificationRecipients</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">The list of notification recepients like email.</td>
+</tr>
+<tr>
+<td style="text-align: left;">notificationType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The type of notification. One of Email.</td>
+</tr>
+<tr>
+<td style="text-align: left;">recipientType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The type of recipient. One of Requestor, Approver, Admin.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isDefaultRecipientsEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Whether default recipient is receiving the email or not.</td>
+</tr>
+<tr>
+<td style="text-align: left;">target</td>
+<td style="text-align: left;">unifiedRoleManagementPolicyRuleTarget</td>
+<td style="text-align: left;">The target for the rule. Inherited from unifiedRoleManagementPolicyRule</td>
 </tr>
 </tbody>
 </table>
