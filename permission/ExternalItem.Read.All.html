@@ -102,6 +102,21 @@
 </thead>
 <tbody>
 <tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalitem-get?view=graph-rest-beta&amp;tabs=http">GET /external/connections/{connection-id}/items/{item-id}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalgroup-get?view=graph-rest-1.0&amp;tabs=http">GET /external/connections/{connectionsId}/groups/{externalGroupId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalitem-get?view=graph-rest-1.0&amp;tabs=http">GET /external/connections/{connectionsId}/items/{externalItemId}</a></td>
+</tr>
+<tr>
 <td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/search-query?view=graph-rest-1.0&amp;tabs=http">POST /search/query</a></td>
@@ -159,6 +174,102 @@
 </tbody>
 </table>
 <h2 id="resources">Resources</h2>
+<h3 id="externalconnection-"><a href="https://docs.microsoft.com/graph/api/resources/externalconnectors-externalconnection?view=graph-rest-1.0&amp;tabs=http">externalConnection </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">configuration</td>
+<td style="text-align: left;">microsoft.graph.externalConnectors.configuration</td>
+<td style="text-align: left;">Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Description of the connection displayed in the Microsoft 365 admin center. Optional.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Developer-provided unique ID of the connection within the Azure Active Directory tenant. Must be between 3 and 32 characters in length. Must only contain alphanumeric characters. Cannot begin with <code>Microsoft</code> or be one of the following values: <code>None</code>, <code>Directory</code>, <code>Exchange</code>, <code>ExchangeArchive</code>, <code>LinkedIn</code>, <code>Mailbox</code>, <code>OneDriveBusiness</code>, <code>SharePoint</code>, <code>Teams</code>, <code>Yammer</code>, <code>Connectors</code>, <code>TaskFabric</code>, <code>PowerBI</code>, <code>Assistant</code>, <code>TopicEngine</code>, <code>MSFT_All_Connectors</code>. Required.</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.</td>
+</tr>
+<tr>
+<td style="text-align: left;">state</td>
+<td style="text-align: left;">microsoft.graph.externalConnectors.connectionState</td>
+<td style="text-align: left;">Indicates the current state of the connection. Possible values are: <code>draft</code>, <code>ready</code>, <code>obsolete</code>, <code>limitExceeded</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="externalgroup-"><a href="https://docs.microsoft.com/graph/api/resources/externalconnectors-externalgroup?view=graph-rest-1.0&amp;tabs=http">externalGroup </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique ID of the external group within a connection. It must be alphanumeric and can be up to 128 characters long.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The friendly name of the external group. Optional.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The description of the external group. Optional.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="externalitem-"><a href="https://docs.microsoft.com/graph/api/resources/externalconnectors-externalitem?view=graph-rest-1.0&amp;tabs=http">externalItem </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">acl</td>
+<td style="text-align: left;">microsoft.graph.externalConnectors.acl collection</td>
+<td style="text-align: left;">An array of access control entries. Each entry specifies the access granted to a user or group. Required.</td>
+</tr>
+<tr>
+<td style="text-align: left;">content</td>
+<td style="text-align: left;">microsoft.graph.externalConnectors.externalItemContent</td>
+<td style="text-align: left;">A plain-text  representation of the contents of the item. The text in this property is full-text indexed. Optional.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Developer-provided unique ID of the item within the containing externalConnection. Must be alphanumeric and a maximum of 128 characters. Required.</td>
+</tr>
+<tr>
+<td style="text-align: left;">properties</td>
+<td style="text-align: left;">microsoft.graph.externalConnectors.properties</td>
+<td style="text-align: left;">A property bag with the properties of the item. The properties MUST conform to the schema defined for the externalConnection. Required.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="search-api-overview"><a href="https://docs.microsoft.com/graph/api/resources/search-api-overview?view=graph-rest-1.0&amp;tabs=http">search-api-overview</a></h3>
 <h3 id="searchrequest-"><a href="https://docs.microsoft.com/graph/api/resources/searchrequest?view=graph-rest-1.0&amp;tabs=http">searchRequest </a></h3>
 <table>

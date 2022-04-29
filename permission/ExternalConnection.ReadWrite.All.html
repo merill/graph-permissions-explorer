@@ -91,10 +91,88 @@
 <p>Allows the app to read and write all external connections on behalf of a signed-in user. The signed-in user must be an administrator.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
-</div>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<table>
+<thead>
+<tr>
+<th>Ver</th>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /external/connections/{connectionsId}</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-delete?view=graph-rest-beta&amp;tabs=http">DELETE /external/connections/{id}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-list?view=graph-rest-1.0&amp;tabs=http">GET /external/connections</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-connectionoperation-get?view=graph-rest-beta&amp;tabs=http">GET /external/connections/{connection-id}/operations/{operation-id}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-get?view=graph-rest-1.0&amp;tabs=http">GET /external/connections/{connectionsId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-connectionoperation-get?view=graph-rest-1.0&amp;tabs=http">GET /external/connections/{connectionsId}/operations/{connectionOperationId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-schema-get?view=graph-rest-1.0&amp;tabs=http">GET /external/connections/{connectionsId}/schema</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-get?view=graph-rest-beta&amp;tabs=http">GET /external/connections/{id}</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-schema-get?view=graph-rest-beta&amp;tabs=http">GET /external/connections/{id}/schema</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-schema-update?view=graph-rest-beta&amp;tabs=http">PATCH /external/connections/{connectionId}/schema</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-update?view=graph-rest-1.0&amp;tabs=http">PATCH /external/connections/{connectionsId}</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-update?view=graph-rest-beta&amp;tabs=http">PATCH /external/connections/{id}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-external-post-connections?view=graph-rest-1.0&amp;tabs=http">POST /external/connections</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-schema-create?view=graph-rest-1.0&amp;tabs=http">POST /external/connections/{id}/schema</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -142,6 +220,110 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the app to read and write all external connections without a signed-in user.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="resources">Resources</h2>
+<h3 id="configuration-"><a href="https://docs.microsoft.com/graph/api/resources/externalconnectors-configuration?view=graph-rest-1.0&amp;tabs=http">configuration </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">authorizedAppIds</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">A collection of application IDs for registered Azure Active Directory apps that are allowed to manage the externalConnection and to index content in the externalConnection.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="connectionoperation-"><a href="https://docs.microsoft.com/graph/api/resources/externalconnectors-connectionoperation?view=graph-rest-1.0&amp;tabs=http">connectionOperation </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">error</td>
+<td style="text-align: left;">publicError</td>
+<td style="text-align: left;">If <code>status</code> is <code>failed</code>, provides more information about the error that caused the failure.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for the connectionOperation. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">microsoft.graph.externalConnectors.connectionOperationStatus</td>
+<td style="text-align: left;">Indicates the status of the asynchronous operation. Possible values are: <code>unspecified</code>, <code>inprogress</code>, <code>completed</code>, <code>failed</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="externalconnection-"><a href="https://docs.microsoft.com/graph/api/resources/externalconnectors-externalconnection?view=graph-rest-1.0&amp;tabs=http">externalConnection </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">configuration</td>
+<td style="text-align: left;">microsoft.graph.externalConnectors.configuration</td>
+<td style="text-align: left;">Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Description of the connection displayed in the Microsoft 365 admin center. Optional.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Developer-provided unique ID of the connection within the Azure Active Directory tenant. Must be between 3 and 32 characters in length. Must only contain alphanumeric characters. Cannot begin with <code>Microsoft</code> or be one of the following values: <code>None</code>, <code>Directory</code>, <code>Exchange</code>, <code>ExchangeArchive</code>, <code>LinkedIn</code>, <code>Mailbox</code>, <code>OneDriveBusiness</code>, <code>SharePoint</code>, <code>Teams</code>, <code>Yammer</code>, <code>Connectors</code>, <code>TaskFabric</code>, <code>PowerBI</code>, <code>Assistant</code>, <code>TopicEngine</code>, <code>MSFT_All_Connectors</code>. Required.</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.</td>
+</tr>
+<tr>
+<td style="text-align: left;">state</td>
+<td style="text-align: left;">microsoft.graph.externalConnectors.connectionState</td>
+<td style="text-align: left;">Indicates the current state of the connection. Possible values are: <code>draft</code>, <code>ready</code>, <code>obsolete</code>, <code>limitExceeded</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="schema-"><a href="https://docs.microsoft.com/graph/api/resources/externalconnectors-schema?view=graph-rest-1.0&amp;tabs=http">schema </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">baseType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Must be set to <code>microsoft.graph.externalConnector.externalItem</code>. Required.</td>
+</tr>
+<tr>
+<td style="text-align: left;">properties</td>
+<td style="text-align: left;">property collection</td>
+<td style="text-align: left;">The properties defined for the items in the connection. The minimum number of properties is one, the maximum is 128.</td>
 </tr>
 </tbody>
 </table>
