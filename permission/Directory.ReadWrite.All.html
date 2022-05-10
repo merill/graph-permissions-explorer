@@ -192,6 +192,11 @@
 <td><a href="https://docs.microsoft.com/graph/api/unifiedroledefinition-delete?view=graph-rest-beta&amp;tabs=http">DELETE /roleManagement/deviceManagement/roleDefinitions/{id}</a></td>
 </tr>
 <tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/schemaextension-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /schemaExtensions/{id}</a></td>
+</tr>
+<tr>
 <td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete?view=graph-rest-beta&amp;tabs=http">DELETE /servicePrincipals/{id}</a></td>
@@ -1087,6 +1092,11 @@
 <td><a href="https://docs.microsoft.com/graph/api/unifiedroledefinition-update?view=graph-rest-beta&amp;tabs=http">PATCH /roleManagement/deviceManagement/roleDefinitions/{id}</a></td>
 </tr>
 <tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/schemaextension-update?view=graph-rest-1.0&amp;tabs=http">PATCH /schemaExtensions/{id}</a></td>
+</tr>
+<tr>
 <td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-update?view=graph-rest-beta&amp;tabs=http">PATCH /servicePrincipals/{id}</a></td>
@@ -1335,6 +1345,11 @@
 <td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-beta&amp;tabs=http">POST /roleManagement/deviceManagement/roleDefinitions</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/schemaextension-post-schemaextensions?view=graph-rest-1.0&amp;tabs=http">POST /schemaExtensions</a></td>
 </tr>
 <tr>
 <td>Beta</td>
@@ -2724,6 +2739,28 @@
 </tr>
 </tbody>
 </table>
+<h3 id="extensionschemaproperty-"><a href="https://docs.microsoft.com/graph/api/resources/extensionschemaproperty?view=graph-rest-1.0&amp;tabs=http">extensionSchemaProperty </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name of the strongly-typed property defined as part of a schema extension.</td>
+</tr>
+<tr>
+<td style="text-align: left;">type</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The type of the property that is defined as part of a schema extension.  Allowed values are *B</td>
+</tr>
+</tbody>
+</table>
 <h3 id="featurerolloutpolicy-"><a href="https://docs.microsoft.com/graph/api/resources/featurerolloutpolicy?view=graph-rest-1.0&amp;tabs=http">featureRolloutPolicy </a></h3>
 <table>
 <thead>
@@ -4043,6 +4080,48 @@
 </tr>
 </tbody>
 </table>
+<h3 id="schemaextension"><a href="https://docs.microsoft.com/graph/api/resources/schemaextension?view=graph-rest-1.0&amp;tabs=http">schemaextension</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Description for the schema extension. Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the schema extension definition. <br>You can assign a value in one of two ways: <ul><li>Concatenate the name of one of your verified domains with a name for the schema extension to form a unique string in this format, {<em>﻿domainName</em>}_{<em>﻿schemaName</em>}. As an example, <code>contoso_mySchema</code>. </li><li>Provide a schema name, and let Microsoft Graph use that schema name to complete the <strong>id</strong> assignment in this format: ext{<em>﻿8-random-alphanumeric-chars</em>}_{<em>﻿schema-name</em>}. An example would be <code>extkvbmkofy_mySchema</code>.</li></ul>This property cannot be changed after creation. Supports <code>$filter</code> (<code>eq</code>). <strong>Note:</strong> We recommend that your <strong>id</strong> starts with an alphabetic letter between A-Z because query capabilities might be limited for IDs that begin with integers.</td>
+</tr>
+<tr>
+<td style="text-align: left;">owner</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The <code>appId</code> of the application that is the owner of the schema extension. This property can be supplied on creation, to set the owner.  If not supplied, then the calling application's <code>appId</code> will be set as the owner. In either case, the signed-in user must be the owner of the application. So, for example, if creating a new schema extension definition using Graph Explorer, you <strong>must</strong> supply the owner property. Once set, this property is read-only and cannot be changed. Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">properties</td>
+<td style="text-align: left;">extensionSchemaProperty collection</td>
+<td style="text-align: left;">The collection of property names and types that make up the schema extension definition.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The lifecycle state of the schema extension. Possible states are <code>InDevelopment</code>, <code>Available</code>, and <code>Deprecated</code>. Automatically set to <code>InDevelopment</code> on creation. Schema extensions provides more information on the possible state transitions and behaviors. Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">targetTypes</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from **c</td>
+</tr>
+</tbody>
+</table>
 <h3 id="scopedrolemembership-"><a href="https://docs.microsoft.com/graph/api/resources/scopedrolemembership?view=graph-rest-1.0&amp;tabs=http">scopedRoleMembership </a></h3>
 <table>
 <thead>
@@ -4736,7 +4815,7 @@
 <tr>
 <td style="text-align: left;">ruleId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The identifier of a the synchronizationRule to be applied.</td>
+<td style="text-align: left;">The identifier of the synchronizationRule to be applied. This rule ID is defined in the schema for a given synchronization job or template.</td>
 </tr>
 <tr>
 <td style="text-align: left;">subjects</td>
