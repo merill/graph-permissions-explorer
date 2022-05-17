@@ -1251,7 +1251,7 @@
 <tr>
 <td style="text-align: left;">proxyAddresses</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Email addresses for the group that direct to the same group mailbox. For example: <code>[&quot;SMTP: bob@contoso.com&quot;, &quot;smtp: bob@sales.contoso.com&quot;]</code>. The <strong>any</strong> operator is required to filter expressions on multi-valued properties. <br><br>Returned by default. Read-only. Not nullable. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
+<td style="text-align: left;">Email addresses for the group that direct to the same group mailbox. For example: <code>[&quot;SMTP: bob@contoso.com&quot;, &quot;smtp: bob@sales.contoso.com&quot;]</code>. The <strong>any</strong> operator is required to filter expressions on multi-valued properties. <br><br>Returned by default. Read-only. Not nullable. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>, <code>endsWith</code>, and counting empty collections).</td>
 </tr>
 <tr>
 <td style="text-align: left;">renewedDateTime</td>
@@ -2481,7 +2481,7 @@
 <tr>
 <td style="text-align: left;">assignedLicenses</td>
 <td style="text-align: left;">assignedLicense collection</td>
-<td style="text-align: left;">The licenses that are assigned to the user, including inherited (group-based) licenses.  Not nullable. Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code> and <code>not</code>).</td>
+<td style="text-align: left;">The licenses that are assigned to the user, including inherited (group-based) licenses.  Not nullable. Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, and counting empty collections).</td>
 </tr>
 <tr>
 <td style="text-align: left;">assignedPlans</td>
@@ -2716,7 +2716,7 @@
 <tr>
 <td style="text-align: left;">otherMails</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">A list of additional email addresses for the user; for example: <code>[&quot;bob@contoso.com&quot;, &quot;Robert@fabrikam.com&quot;]</code>. <br>NOTE: This property cannot contain accent characters. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>).</td>
+<td style="text-align: left;">A list of additional email addresses for the user; for example: <code>[&quot;bob@contoso.com&quot;, &quot;Robert@fabrikam.com&quot;]</code>. <br>NOTE: This property cannot contain accent characters. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and counting empty collections).</td>
 </tr>
 <tr>
 <td style="text-align: left;">passwordPolicies</td>
@@ -2761,7 +2761,7 @@
 <tr>
 <td style="text-align: left;">proxyAddresses</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">For example: <code>&quot;SMTP: bob@contoso.com&quot;, &quot;smtp: bob@sales.contoso.com&quot;]</code>. Changes to the <strong>mail</strong> property will also update this collection to include the value as an SMTP address. For more information, see [mail and proxyAddresses properties. The proxy address prefixed with <code>SMTP</code> (capitalized) is the primary proxy address while those prefixed with <code>smtp</code> are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
+<td style="text-align: left;">For example: <code>&quot;SMTP: bob@contoso.com&quot;, &quot;smtp: bob@sales.contoso.com&quot;]</code>. Changes to the <strong>mail</strong> property will also update this collection to include the value as an SMTP address. For more information, see [mail and proxyAddresses properties. The proxy address prefixed with <code>SMTP</code> (capitalized) is the primary proxy address while those prefixed with <code>smtp</code> are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>, <code>endsWith</code>, and counting empty collections).</td>
 </tr>
 <tr>
 <td style="text-align: left;">refreshTokensValidFromDateTime</td>
