@@ -8,7 +8,7 @@
     <title>EduAssignments.Read.All | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="EduAssignments.Read.All | Graph Permissions ">
-    <meta name="generator" content="docfx 2.59.2.0">
+    <meta name="generator" content="docfx 2.59.3.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -88,7 +88,7 @@
 <h1 id="eduassignmentsreadall">EduAssignments.Read.All</h1>
 
 <blockquote>
-<p>Allows the app to read assignments and their grades for all users.</p>
+<p>Allows the app to read all class assignments with grades for all users without a signed-in user.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
 <p>Type: A = Application Permission, D = Delegate Permission</p>
@@ -107,9 +107,9 @@
 <td><a href="https://docs.microsoft.com/graph/api/educationassignmentresource-get?view=graph-rest-1.0&amp;tabs=http">GET /education/classes/{class-id}/assignments/{assignment-id}/resources/{resource-id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
+<td>V1</td>
 <td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/educationassignment-list-submissions?view=graph-rest-beta&amp;tabs=http">GET /education/classes/{class-id}/assignments/{assignment-id}/submissions</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/educationassignment-list-submissions?view=graph-rest-1.0&amp;tabs=http">GET /education/classes/{class-id}/assignments/{assignment-id}/submissions</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -177,9 +177,9 @@
 <td><a href="https://docs.microsoft.com/graph/api/educationassignment-list-resources?view=graph-rest-1.0&amp;tabs=http">GET /education/classes/{id}/assignments/{id}/resources</a></td>
 </tr>
 <tr>
-<td>Beta</td>
+<td>V1</td>
 <td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/educationassignment-get-rubric?view=graph-rest-beta&amp;tabs=http">GET /education/classes/{id}/assignments/{id}/rubric</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/educationassignment-get-rubric?view=graph-rest-1.0&amp;tabs=http">GET /education/classes/{id}/assignments/{id}/rubric</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -187,14 +187,14 @@
 <td><a href="https://docs.microsoft.com/graph/api/educationassignment-list-submissions?view=graph-rest-1.0&amp;tabs=http">GET /education/classes/{id}/assignments/{id}/submissions</a></td>
 </tr>
 <tr>
-<td>Beta</td>
+<td>V1</td>
 <td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/educationsubmission-list-outcomes?view=graph-rest-beta&amp;tabs=http">GET /education/classes/{id}/assignments/{id}/submissions/{id}/outcomes</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/educationsubmission-list-outcomes?view=graph-rest-1.0&amp;tabs=http">GET /education/classes/{id}/assignments/{id}/submissions/{id}/outcomes</a></td>
 </tr>
 <tr>
-<td>Beta</td>
+<td>V1</td>
 <td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/educationsubmission-list-resources?view=graph-rest-beta&amp;tabs=http">GET /education/classes/{id}/assignments/{id}/submissions/{id}/resources</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/educationsubmission-list-resources?view=graph-rest-1.0&amp;tabs=http">GET /education/classes/{id}/assignments/{id}/submissions/{id}/resources</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -232,9 +232,9 @@
 <td><a href="https://docs.microsoft.com/graph/api/educationuser-list-assignments?view=graph-rest-1.0&amp;tabs=http">GET /education/me/assignments</a></td>
 </tr>
 <tr>
-<td>Beta</td>
+<td>V1</td>
 <td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/educationrubric-get?view=graph-rest-beta&amp;tabs=http">GET /education/me/rubrics/{id}</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/educationrubric-get?view=graph-rest-1.0&amp;tabs=http">GET /education/me/rubrics/{id}</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -263,11 +263,11 @@
 </tr>
 <tr>
 <td><strong>Display String</strong></td>
-<td>Read class assignments with grades</td>
+<td>Read all class assignments with grades</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
-<td>Allows the app to read assignments and their grades for all users.</td>
+<td>Allows the app to read all class assignments with grades for all users without a signed-in user.</td>
 </tr>
 </tbody>
 </table>
@@ -571,6 +571,33 @@
 <td style="text-align: left;">term</td>
 <td style="text-align: left;">educationTerm</td>
 <td style="text-align: left;">Term for this class.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="educationfeedbackresourceoutcome-"><a href="https://docs.microsoft.com/graph/api/resources/educationfeedbackresourceoutcome?view=graph-rest-1.0&amp;tabs=http">educationFeedbackResourceOutcome </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">feedbackResource</td>
+<td style="text-align: left;">educationResource</td>
+<td style="text-align: left;">The actual feedback resource.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for the <strong>educationFeedbackResourceOutcome</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">resourceStatus</td>
+<td style="text-align: left;">educationFeedbackResourceOutcomeStatus</td>
+<td style="text-align: left;">The status of the feedback resource. The possible values are: <code>notPublished</code>, <code>pendingPublish</code>, <code>published</code>, <code>failedPublish</code>, and <code>unknownFutureValue</code>.</td>
 </tr>
 </tbody>
 </table>

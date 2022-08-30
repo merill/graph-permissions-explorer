@@ -8,7 +8,7 @@
     <title>CrossTenantInformation.ReadBasic.All | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="CrossTenantInformation.ReadBasic.All | Graph Permissions ">
-    <meta name="generator" content="docfx 2.59.2.0">
+    <meta name="generator" content="docfx 2.59.3.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -91,10 +91,28 @@
 <p>Allows the application to obtain basic tenant information about another target tenant within the Azure AD ecosystem on behalf of the signed-in user.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
-</div>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<table>
+<thead>
+<tr>
+<th>Ver</th>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/tenantrelationship-findtenantinformationbydomainname?view=graph-rest-1.0&amp;tabs=http">GET /tenantRelationships/findTenantInformationByDomainName(domainName='{id}')</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/tenantrelationship-findtenantinformationbytenantid?view=graph-rest-1.0&amp;tabs=http">GET /tenantRelationships/findTenantInformationByTenantId(tenantId='{id}')</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -142,6 +160,86 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the application to obtain basic tenant information about another target tenant within the Azure AD ecosystem without a signed-in user.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="resources">Resources</h2>
+<h3 id="crosstenantaccesspolicyconfigurationpartner-"><a href="https://docs.microsoft.com/graph/api/resources/crosstenantaccesspolicyconfigurationpartner?view=graph-rest-1.0&amp;tabs=http">crossTenantAccessPolicyConfigurationPartner </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">b2bCollaborationInbound</td>
+<td style="text-align: left;">crossTenantAccessPolicyB2BSetting</td>
+<td style="text-align: left;">Defines your partner-specific configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.</td>
+</tr>
+<tr>
+<td style="text-align: left;">b2bCollaborationOutbound</td>
+<td style="text-align: left;">crossTenantAccessPolicyB2BSetting</td>
+<td style="text-align: left;">Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B collaboration.</td>
+</tr>
+<tr>
+<td style="text-align: left;">b2bDirectConnectInbound</td>
+<td style="text-align: left;">crossTenantAccessPolicyB2BSetting</td>
+<td style="text-align: left;">Defines your partner-specific configuration for users from other organizations accessing your resources via Azure B2B direct connect.</td>
+</tr>
+<tr>
+<td style="text-align: left;">b2bDirectConnectOutbound</td>
+<td style="text-align: left;">crossTenantAccessPolicyB2BSetting</td>
+<td style="text-align: left;">Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B direct connect.</td>
+</tr>
+<tr>
+<td style="text-align: left;">inboundTrust</td>
+<td style="text-align: left;">crossTenantAccessPolicyInboundTrust</td>
+<td style="text-align: left;">Determines the partner-specific configuration for trusting other Conditional Access claims from external Azure AD organizations.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isServiceProvider</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Identifies whether the partner-specific configuration is a Cloud Service Provider for your organization.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tenantId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The tenant identifier for the partner Azure AD organization. Read-only. Key.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tenantinformation-"><a href="https://docs.microsoft.com/graph/api/resources/tenantinformation?view=graph-rest-1.0&amp;tabs=http">tenantInformation </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">defaultDomainName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Primary domain name of an Azure AD tenant.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Display name of an Azure AD tenant.</td>
+</tr>
+<tr>
+<td style="text-align: left;">federationBrandName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name shown to users that sign in to an Azure AD tenant.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tenantId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier of an Azure AD tenant.</td>
 </tr>
 </tbody>
 </table>

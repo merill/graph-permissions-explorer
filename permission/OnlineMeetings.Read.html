@@ -8,7 +8,7 @@
     <title>OnlineMeetings.Read | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="OnlineMeetings.Read | Graph Permissions ">
-    <meta name="generator" content="docfx 2.59.2.0">
+    <meta name="generator" content="docfx 2.59.3.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -102,19 +102,19 @@
 </thead>
 <tbody>
 <tr>
-<td>Beta</td>
+<td>V1</td>
 <td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-beta&amp;tabs=http">GET /me/onlineMeetings/{id}/registration</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0&amp;tabs=http">GET /me/onlineMeetings/{id}/registration</a></td>
 </tr>
 <tr>
-<td>Beta</td>
+<td>V1</td>
 <td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/meetingregistration-list-customquestions?view=graph-rest-beta&amp;tabs=http">GET /me/onlineMeetings/{id}/registration/microsoft.graph.meetingRegistration/customQuestions</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/meetingregistration-list-customquestions?view=graph-rest-1.0&amp;tabs=http">GET /me/onlineMeetings/{id}/registration/microsoft.graph.meetingRegistration/customQuestions</a></td>
 </tr>
 <tr>
-<td>Beta</td>
+<td>V1</td>
 <td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/meetingregistration-list-registrants?view=graph-rest-beta&amp;tabs=http">GET /me/onlineMeetings/{id}/registration/registrants</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/meetingregistration-list-registrants?view=graph-rest-1.0&amp;tabs=http">GET /me/onlineMeetings/{id}/registration/registrants</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -122,14 +122,19 @@
 <td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0&amp;tabs=http">GET /me/onlineMeetings/{meetingId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
+<td>V1</td>
 <td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-beta&amp;tabs=http">GET /me/onlineMeetings/{meetingId}/registration</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0&amp;tabs=http">GET /me/onlineMeetings/{meetingId}/registration</a></td>
 </tr>
 <tr>
-<td>Beta</td>
+<td>V1</td>
 <td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/meetingregistrationquestion-get?view=graph-rest-beta&amp;tabs=http">GET /me/onlineMeetings/{meetingId}/registration/customQuestions/{id}</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/meetingregistrationquestion-get?view=graph-rest-1.0&amp;tabs=http">GET /me/onlineMeetings/{meetingId}/registration/customQuestions/{id}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualappointment-get?view=graph-rest-1.0&amp;tabs=http">GET /me/onlineMeetings/{onlineMeetingId}/virtualAppointment</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -137,9 +142,14 @@
 <td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{userId}/onlineMeetings/{meetingId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
+<td>V1</td>
 <td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-beta&amp;tabs=http">GET /users/{userId}/onlineMeetings/{meetingId}/registration</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{userId}/onlineMeetings/{meetingId}/registration</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualappointment-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{userId}/onlineMeetings/{onlineMeetingId}/virtualAppointment</a></td>
 </tr>
 </tbody>
 </table>
@@ -448,6 +458,43 @@
 <td style="text-align: left;">videoTeleconferenceId</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The video teleconferencing ID. Read-only.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="virtualappointment-"><a href="https://docs.microsoft.com/graph/api/resources/virtualappointment?view=graph-rest-1.0&amp;tabs=http">virtualAppointment </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">appointmentClients</td>
+<td style="text-align: left;">virtualAppointmentUser collection</td>
+<td style="text-align: left;">The client information for the virtual appointment, including name, email, and SMS phone number. Optional.</td>
+</tr>
+<tr>
+<td style="text-align: left;">appointmentClientJoinWebUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.</td>
+</tr>
+<tr>
+<td style="text-align: left;">externalAppointmentId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.</td>
+</tr>
+<tr>
+<td style="text-align: left;">externalAppointmentUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.</td>
+</tr>
+<tr>
+<td style="text-align: left;">settings</td>
+<td style="text-align: left;">virtualAppointmentSettings</td>
+<td style="text-align: left;">The settings associated with the virtual appointment resource. Optional.</td>
 </tr>
 </tbody>
 </table>

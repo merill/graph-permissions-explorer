@@ -8,7 +8,7 @@
     <title>ChannelMessage.Read.All | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="ChannelMessage.Read.All | Graph Permissions ">
-    <meta name="generator" content="docfx 2.59.2.0">
+    <meta name="generator" content="docfx 2.59.3.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -151,6 +151,11 @@
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/channel-getallmessages?view=graph-rest-1.0&amp;tabs=http">GET /teams/{team-id}/channels/getAllMessages</a></td>
 </tr>
+<tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/deletedteam-getallmessages?view=graph-rest-1.0&amp;tabs=http">GET /teamwork/deletedTeams/{deletedTeamId}/channels/getAllMessages</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="delegate-permission">Delegate Permission</h2>
@@ -247,12 +252,17 @@
 <tr>
 <td style="text-align: left;">membershipType</td>
 <td style="text-align: left;">channelMembershipType</td>
-<td style="text-align: left;">The type of the channel. Can be set during creation and can't be changed. Possible values are: <code>standard</code> - Channel inherits the list of members of the parent team; <code>private</code> - Channel can have members that are a subset of all the members on the parent team.</td>
+<td style="text-align: left;">The type of the channel. Can be set during creation and can't be changed. The possible values are: <code>standard</code>, <code>private</code>, <code>unknownFutureValue</code>, <code>shared</code>. The default value is <code>standard</code>. Note that you must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value in this evolvable enum: <code>shared</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">dateTimeOffset</td>
 <td style="text-align: left;">Read only. Timestamp at which the channel was created.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tenantId</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The ID of the Azure Active Directory tenant.</td>
 </tr>
 </tbody>
 </table>
@@ -457,6 +467,23 @@
 </tr>
 </tbody>
 </table>
+<h3 id="deletedteam-"><a href="https://docs.microsoft.com/graph/api/resources/deletedteam?view=graph-rest-1.0&amp;tabs=http">deletedTeam </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The ID of a deleted team. Inherited from entity.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="team-"><a href="https://docs.microsoft.com/graph/api/resources/team?view=graph-rest-1.0&amp;tabs=http">team </a></h3>
 <table>
 <thead>
@@ -531,6 +558,11 @@
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">dateTimeOffset</td>
 <td style="text-align: left;">Timestamp at which the team was created.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tenantId</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The ID of the Azure Active Directory tenant.</td>
 </tr>
 </tbody>
 </table>

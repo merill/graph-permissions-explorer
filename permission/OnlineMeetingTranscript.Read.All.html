@@ -8,7 +8,7 @@
     <title>OnlineMeetingTranscript.Read.All | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="OnlineMeetingTranscript.Read.All | Graph Permissions ">
-    <meta name="generator" content="docfx 2.59.2.0">
+    <meta name="generator" content="docfx 2.59.3.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -91,10 +91,38 @@
 <p>Allows the app to read all transcripts of online meetings, on behalf of the signed-in user.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
-</div>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<table>
+<thead>
+<tr>
+<th>Ver</th>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0&amp;tabs=http">GET /me/onlineMeetings({meetingId})/transcripts</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/calltranscript-get?view=graph-rest-1.0&amp;tabs=http">GET /me/onlineMeetings({meetingId})/transcripts({transcriptId})</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0&amp;tabs=http">GET /users({userId})/onlineMeetings({meetingId})/transcripts</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/calltranscript-get?view=graph-rest-1.0&amp;tabs=http">GET /users({userId})/onlineMeetings({meetingId})/transcripts({transcriptId})</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -142,6 +170,156 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the app to read all transcripts of all online meetings, without a signed-in user.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="resources">Resources</h2>
+<h3 id="calltranscript-"><a href="https://docs.microsoft.com/graph/api/resources/calltranscript?view=graph-rest-1.0&amp;tabs=http">callTranscript </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The transcript's unique identifier. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">dateTimeOffset</td>
+<td style="text-align: left;">Date and time at which the transcript was created. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">content</td>
+<td style="text-align: left;">Stream</td>
+<td style="text-align: left;">A field representing the content of the transcript. Read-only.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="onlinemeeting-"><a href="https://docs.microsoft.com/graph/api/resources/onlinemeeting?view=graph-rest-1.0&amp;tabs=http">onlineMeeting </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">allowedPresenters</td>
+<td style="text-align: left;">onlineMeetingPresenters</td>
+<td style="text-align: left;">Specifies who can be a presenter in a meeting. Possible values are listed in the following table.</td>
+</tr>
+<tr>
+<td style="text-align: left;">allowAttendeeToEnableCamera</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether attendees can turn on their camera.</td>
+</tr>
+<tr>
+<td style="text-align: left;">allowAttendeeToEnableMic</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether attendees can turn on their microphone.</td>
+</tr>
+<tr>
+<td style="text-align: left;">allowMeetingChat</td>
+<td style="text-align: left;">meetingChatMode</td>
+<td style="text-align: left;">Specifies the mode of meeting chat.</td>
+</tr>
+<tr>
+<td style="text-align: left;">allowTeamworkReactions</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether Teams reactions are enabled for the meeting.</td>
+</tr>
+<tr>
+<td style="text-align: left;">attendeeReport</td>
+<td style="text-align: left;">Stream</td>
+<td style="text-align: left;">The content stream of the attendee report of a Microsoft Teams live event. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">audioConferencing</td>
+<td style="text-align: left;">audioConferencing</td>
+<td style="text-align: left;">The phone access (dial-in) information for an online meeting. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">broadcastSettings</td>
+<td style="text-align: left;">broadcastMeetingSettings</td>
+<td style="text-align: left;">Settings related to a live event.</td>
+</tr>
+<tr>
+<td style="text-align: left;">chatInfo</td>
+<td style="text-align: left;">chatInfo</td>
+<td style="text-align: left;">The chat information associated with this online meeting.</td>
+</tr>
+<tr>
+<td style="text-align: left;">creationDateTime</td>
+<td style="text-align: left;">DateTime</td>
+<td style="text-align: left;">The meeting creation time in UTC. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">endDateTime</td>
+<td style="text-align: left;">DateTime</td>
+<td style="text-align: left;">The meeting end time in UTC.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The default ID associated with the online meeting. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isBroadcast</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates if this is a Teams live event.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isEntryExitAnnounced</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether to announce when callers join or leave.</td>
+</tr>
+<tr>
+<td style="text-align: left;">joinInformation</td>
+<td style="text-align: left;">itemBody</td>
+<td style="text-align: left;">The join information in the language and locale variant specified in the <code>Accept-Language</code> request HTTP header. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">joinWebUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The join URL of the online meeting. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lobbyBypassSettings</td>
+<td style="text-align: left;">lobbyBypassSettings</td>
+<td style="text-align: left;">Specifies which participants can bypass the meeting   lobby.</td>
+</tr>
+<tr>
+<td style="text-align: left;">participants</td>
+<td style="text-align: left;">meetingParticipants</td>
+<td style="text-align: left;">The participants associated with the online meeting.  This includes the organizer and the attendees.</td>
+</tr>
+<tr>
+<td style="text-align: left;">recordAutomatically</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether to record the meeting automatically.</td>
+</tr>
+<tr>
+<td style="text-align: left;">startDateTime</td>
+<td style="text-align: left;">DateTime</td>
+<td style="text-align: left;">The meeting start time in UTC.</td>
+</tr>
+<tr>
+<td style="text-align: left;">subject</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The subject of the online meeting.</td>
+</tr>
+<tr>
+<td style="text-align: left;">videoTeleconferenceId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The video teleconferencing ID. Read-only.</td>
 </tr>
 </tbody>
 </table>

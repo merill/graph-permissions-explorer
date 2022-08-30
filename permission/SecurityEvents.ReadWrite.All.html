@@ -8,7 +8,7 @@
     <title>SecurityEvents.ReadWrite.All | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="SecurityEvents.ReadWrite.All | Graph Permissions ">
-    <meta name="generator" content="docfx 2.59.2.0">
+    <meta name="generator" content="docfx 2.59.3.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -117,9 +117,9 @@
 <td><a href="https://docs.microsoft.com/graph/api/alert-list?view=graph-rest-1.0&amp;tabs=http">GET /security/alerts?$filter={property} eq '{property-value}' and {property} eq '{property-value}'</a></td>
 </tr>
 <tr>
-<td>Beta</td>
+<td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/alert-list?view=graph-rest-beta&amp;tabs=http">GET /security/alerts?$filter={property} eq '{property-value}'&amp;{property} eq '{property-value}'</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/alert-list?view=graph-rest-1.0&amp;tabs=http">GET /security/alerts?$filter={property} eq '{property-value}'&amp;{property} eq '{property-value}'</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -137,14 +137,14 @@
 <td><a href="https://docs.microsoft.com/graph/api/alert-get?view=graph-rest-1.0&amp;tabs=http">GET /security/alerts/{alert_id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
+<td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/alert-get?view=graph-rest-beta&amp;tabs=http">GET /security/alerts/{id}</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/alert-get?view=graph-rest-1.0&amp;tabs=http">GET /security/alerts/{id}</a></td>
 </tr>
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/security-list-securescorecontrolprofiles?view=graph-rest-1.0&amp;tabs=http">GET /security/secureScoreControlProfiles</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/securescorecontrolprofiles-list?view=graph-rest-1.0&amp;tabs=http">GET /security/secureScoreControlProfiles</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -164,7 +164,7 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/security-list-securescores?view=graph-rest-1.0&amp;tabs=http">GET /security/secureScores</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/securescores-list?view=graph-rest-1.0&amp;tabs=http">GET /security/secureScores</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -194,12 +194,12 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/securescorecontrolprofile-update?view=graph-rest-1.0&amp;tabs=http">PATCH /security/secureScoreControlProfiles/{id}</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/securescorecontrolprofiles-update?view=graph-rest-1.0&amp;tabs=http">PATCH /security/secureScoreControlProfiles/{id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
+<td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/alert-updatealerts?view=graph-rest-beta&amp;tabs=http">POST /security/alerts/updateAlerts</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/alert-updatealerts?view=graph-rest-1.0&amp;tabs=http">POST /security/alerts/updateAlerts</a></td>
 </tr>
 </tbody>
 </table>
@@ -516,14 +516,39 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">activeUserCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Active user count of the given tenant.</td>
+</tr>
+<tr>
+<td style="text-align: left;">averageComparativeScores</td>
+<td style="text-align: left;">averageComparativeScore collection</td>
+<td style="text-align: left;">Average score by different scopes (for example, average by industry, average by seating) and control category (Identity, Data, Device, Apps, Infrastructure) within the scope.</td>
+</tr>
+<tr>
 <td style="text-align: left;">azureTenantId</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">GUID string for tenant ID.</td>
 </tr>
 <tr>
+<td style="text-align: left;">controlScores</td>
+<td style="text-align: left;">controlScore collection</td>
+<td style="text-align: left;">Contains tenant scores for a set of controls.</td>
+</tr>
+<tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">The date when the entity is created.</td>
+</tr>
+<tr>
+<td style="text-align: left;">currentScore</td>
+<td style="text-align: left;">Double</td>
+<td style="text-align: left;">Tenant current attained score on specified date.</td>
+</tr>
+<tr>
+<td style="text-align: left;">enabledServices</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Microsoft-provided services for the tenant (for example, Exchange online, Skype, SharePoint).</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
@@ -536,34 +561,9 @@
 <td style="text-align: left;">Licensed user count of the given tenant.</td>
 </tr>
 <tr>
-<td style="text-align: left;">activeUserCount</td>
-<td style="text-align: left;">Int32</td>
-<td style="text-align: left;">Active user count of the given tenant.</td>
-</tr>
-<tr>
-<td style="text-align: left;">currentScore</td>
-<td style="text-align: left;">Double</td>
-<td style="text-align: left;">Tenant current attained score on specified date.</td>
-</tr>
-<tr>
 <td style="text-align: left;">maxScore</td>
 <td style="text-align: left;">Double</td>
 <td style="text-align: left;">Tenant maximum possible score on specified date.</td>
-</tr>
-<tr>
-<td style="text-align: left;">enabledServices</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Microsoft-provided services for the tenant (for example, Exchange online, Skype, Sharepoint).</td>
-</tr>
-<tr>
-<td style="text-align: left;">averageComparativeScores</td>
-<td style="text-align: left;">averageComparativeScore collection</td>
-<td style="text-align: left;">Average score by different scopes (for example, average by industry, average by seating) and control category (Identity, Data, Device, Apps, Infrastructure) within the scope.</td>
-</tr>
-<tr>
-<td style="text-align: left;">controlScores</td>
-<td style="text-align: left;">controlScore collection</td>
-<td style="text-align: left;">Contains tenant scores for a set of controls.</td>
 </tr>
 </tbody>
 </table>

@@ -8,7 +8,7 @@
     <title>ChannelSettings.ReadWrite.Group | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="ChannelSettings.ReadWrite.Group | Graph Permissions ">
-    <meta name="generator" content="docfx 2.59.2.0">
+    <meta name="generator" content="docfx 2.59.3.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -187,12 +187,17 @@
 <tr>
 <td style="text-align: left;">membershipType</td>
 <td style="text-align: left;">channelMembershipType</td>
-<td style="text-align: left;">The type of the channel. Can be set during creation and can't be changed. Possible values are: <code>standard</code> - Channel inherits the list of members of the parent team; <code>private</code> - Channel can have members that are a subset of all the members on the parent team.</td>
+<td style="text-align: left;">The type of the channel. Can be set during creation and can't be changed. The possible values are: <code>standard</code>, <code>private</code>, <code>unknownFutureValue</code>, <code>shared</code>. The default value is <code>standard</code>. Note that you must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value in this evolvable enum: <code>shared</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">dateTimeOffset</td>
 <td style="text-align: left;">Read only. Timestamp at which the channel was created.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tenantId</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The ID of the Azure Active Directory tenant.</td>
 </tr>
 </tbody>
 </table>
@@ -302,6 +307,11 @@
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">dateTimeOffset</td>
 <td style="text-align: left;">Timestamp at which the team was created.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tenantId</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The ID of the Azure Active Directory tenant.</td>
 </tr>
 </tbody>
 </table>

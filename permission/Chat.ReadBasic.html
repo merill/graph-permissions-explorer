@@ -8,7 +8,7 @@
     <title>Chat.ReadBasic | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Chat.ReadBasic | Graph Permissions ">
-    <meta name="generator" content="docfx 2.59.2.0">
+    <meta name="generator" content="docfx 2.59.3.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -122,14 +122,14 @@
 <td><a href="https://docs.microsoft.com/graph/api/chat-get-members?view=graph-rest-1.0&amp;tabs=http">GET /chats/{chat-id}/members/{membership-id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
+<td>V1</td>
 <td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/chat-list-operations?view=graph-rest-beta&amp;tabs=http">GET /chats/{chat-id}/operations</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/chat-list-operations?view=graph-rest-1.0&amp;tabs=http">GET /chats/{chat-id}/operations</a></td>
 </tr>
 <tr>
-<td>Beta</td>
+<td>V1</td>
 <td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/teamsasyncoperation-get?view=graph-rest-beta&amp;tabs=http">GET /chats/{chat-id}/operations/{operation-id}</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/teamsasyncoperation-get?view=graph-rest-1.0&amp;tabs=http">GET /chats/{chat-id}/operations/{operation-id}</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -144,22 +144,12 @@
 <tr>
 <td>V1</td>
 <td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/chat-list?view=graph-rest-1.0&amp;tabs=http">GET /me/chats</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/chat-get?view=graph-rest-1.0&amp;tabs=http">GET /me/chats/{chat-id}</a></td>
 </tr>
 <tr>
 <td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/conversationmember-get?view=graph-rest-1.0&amp;tabs=http">GET /teams/{id}/channels/{id}/members/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/chat-list?view=graph-rest-1.0&amp;tabs=http">GET /users/{user-id | user-principal-name}/chats</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -172,9 +162,9 @@
 <td><a href="https://docs.microsoft.com/graph/api/chat-list-members?view=graph-rest-1.0&amp;tabs=http">GET /users/{user-id | user-principal-name}/chats/{chat-id}/members</a></td>
 </tr>
 <tr>
-<td>Beta</td>
+<td>V1</td>
 <td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/chat-get-members?view=graph-rest-beta&amp;tabs=http">GET /users/{user-id | user-principal-name}/chats/{chat-id}/members/{membership-id}</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/chat-get-members?view=graph-rest-1.0&amp;tabs=http">GET /users/{user-id | user-principal-name}/chats/{chat-id}/members/{membership-id}</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -254,12 +244,17 @@
 <tr>
 <td style="text-align: left;">membershipType</td>
 <td style="text-align: left;">channelMembershipType</td>
-<td style="text-align: left;">The type of the channel. Can be set during creation and can't be changed. Possible values are: <code>standard</code> - Channel inherits the list of members of the parent team; <code>private</code> - Channel can have members that are a subset of all the members on the parent team.</td>
+<td style="text-align: left;">The type of the channel. Can be set during creation and can't be changed. The possible values are: <code>standard</code>, <code>private</code>, <code>unknownFutureValue</code>, <code>shared</code>. The default value is <code>standard</code>. Note that you must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value in this evolvable enum: <code>shared</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">dateTimeOffset</td>
 <td style="text-align: left;">Read only. Timestamp at which the channel was created.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tenantId</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The ID of the Azure Active Directory tenant.</td>
 </tr>
 </tbody>
 </table>
@@ -460,7 +455,7 @@
 <tr>
 <td style="text-align: left;">roles</td>
 <td style="text-align: left;">string collection</td>
-<td style="text-align: left;">The roles for that user.</td>
+<td style="text-align: left;">The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has <code>owner</code> privileges, the <strong>roles</strong> property contains <code>owner</code> as one of the values. Similarly, if the member is a guest, the <strong>roles</strong> property contains <code>guest</code> as one of the values. A basic member should not have any values specified in the <strong>roles</strong> property.</td>
 </tr>
 <tr>
 <td style="text-align: left;">visibleHistoryStartDateTime</td>

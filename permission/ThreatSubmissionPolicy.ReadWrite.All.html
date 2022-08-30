@@ -8,7 +8,7 @@
     <title>ThreatSubmissionPolicy.ReadWrite.All | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="ThreatSubmissionPolicy.ReadWrite.All | Graph Permissions ">
-    <meta name="generator" content="docfx 2.59.2.0">
+    <meta name="generator" content="docfx 2.59.3.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -91,10 +91,43 @@
 <p>Allows the app to read your organization's threat submission policies on behalf of the signed-in user. Also allows the app to create new threat submission policies on behalf of the signed-in user.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
-</div>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<table>
+<thead>
+<tr>
+<th>Ver</th>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-emailthreatsubmissionpolicy-delete?view=graph-rest-1.0&amp;tabs=http">DELETE security/threatSubmission/emailThreatSubmissionPolices/{id}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-emailthreatsubmissionpolicy-get?view=graph-rest-1.0&amp;tabs=http">GET security/threatSubmission//emailThreatSubmissionPolicies/{emailThreatSubmissionPoliciesId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-emailthreatsubmissionpolicy-list?view=graph-rest-1.0&amp;tabs=http">GET security/threatSubmission/emailThreatSubmissionPolicies</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-emailthreatsubmissionpolicy-update?view=graph-rest-1.0&amp;tabs=http">PATCH security/threatSubmission/emailThreatSubmissionPolicies/{emailThreatSubmissionPoliciesId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-emailthreatsubmissionpolicy-post-emailthreatsubmissionpolicies?view=graph-rest-1.0&amp;tabs=http">POST /security/threatSubmission/emailThreatSubmissionPolicies</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -142,6 +175,89 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the app to read your organization's threat submission policies without a signed-in user. Also allows the app to create new threat submission polices without a signed-in user.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="resources">Resources</h2>
+<h3 id="emailthreatsubmissionpolicy-"><a href="https://docs.microsoft.com/graph/api/resources/security-emailthreatsubmissionpolicy?view=graph-rest-1.0&amp;tabs=http">emailThreatSubmissionPolicy </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">customizedNotificationSenderEmailAddress</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Specifies the email address of the sender from which email notifications will be sent to end users to inform them whether an email is spam, phish or clean. The default value is <code>null</code>. Optional for creation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">customizedReportRecipientEmailAddress</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Specifies the destination where the reported messages from end users will land whenever they report something as phish, junk or not junk. The default value is <code>null</code>. Optional for creation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Only one id is supported. The default value is <code>DefaultReportSubmissionPolicy</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isAlwaysReportEnabledForUsers</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether end users can report a message as spam, phish or junk directly without a confirmation(popup). The default value is <code>true</code>.  Optional for creation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isAskMeEnabledForUsers</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether end users can confirm using a popup before reporting messages as spam, phish or not junk. The default value is <code>true</code>.  Optional for creation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isCustomizedMessageEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the email notifications sent to end users to inform them if an email is phish, spam or junk is customized or not. The default value is <code>false</code>. Optional for creation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isCustomizedMessageEnabledForPhishing</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">If enabled, customized message only shows when email is reported as phishing. The default value is <code>false</code>. Optional for creation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isCustomizedNotificationSenderEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether to use the sender email address set using customizedNotificationSenderEmailAddress for sending email notifications to end users. The default value is <code>false</code>. Optional for creation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isNeverReportEnabledForUsers</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether end users can simply move the message from one folder to another based on the action of spam, phish or not junk without actually reporting it. The default value is <code>true</code>. Optional for creation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isOrganizationBrandingEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the branding logo should be used in the email notifications sent to end users. The default value is <code>false</code>. Optional for creation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isReportFromQuarantineEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether end users can submit from the quarantine page. The default value is <code>true</code>. Optional for creation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isReportToCustomizedEmailAddressEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether emails reported by end users should be send to the custom mailbox configured using customizedReportRecipientEmailAddress.  The default value is <code>false</code>. Optional for creation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isReportToMicrosoftEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">If enabled, the email will be sent to Microsoft for analysis. The default value is <code>false</code>. Required for creation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isReviewEmailNotificationEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether an email notification is sent to the end user who reported the email when it has been reviewed by the admin. The default value is <code>false</code>. Optional for creation.</td>
 </tr>
 </tbody>
 </table>

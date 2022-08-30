@@ -8,7 +8,7 @@
     <title>TeamsTab.ReadWriteSelfForTeam.All | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="TeamsTab.ReadWriteSelfForTeam.All | Graph Permissions ">
-    <meta name="generator" content="docfx 2.59.2.0">
+    <meta name="generator" content="docfx 2.59.3.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -91,10 +91,53 @@
 <p>Allows a Teams app to read, install, upgrade, and uninstall its own tabs in any team, without a signed-in user.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
-</div>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<table>
+<thead>
+<tr>
+<th>Ver</th>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/channel-delete-tabs?view=graph-rest-1.0&amp;tabs=http">DELETE /teams/{team-id}/channels/{channel-id}/tabs/{tab-id}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/channel-list-tabs?view=graph-rest-1.0&amp;tabs=http">GET /teams/{id}/channels/{id}/tabs</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/channel-list-tabs?view=graph-rest-1.0&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/tabs</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/channel-get-tabs?view=graph-rest-1.0&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/tabs/{tab-id}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/channel-patch-tabs?view=graph-rest-1.0&amp;tabs=http">PATCH /teams/{team-id}/channels/{channel-id}/tabs/{tab-id}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/channel-post-tabs?view=graph-rest-1.0&amp;tabs=http">POST /teams/{id}/channels/{id}/tabs</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/channel-post-tabs?view=graph-rest-1.0&amp;tabs=http">POST /teams/{team-id}/channels/{channel-id}/tabs</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="application-permission">Application Permission</h2>
 <table>
 <thead>
@@ -115,6 +158,178 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows a Teams app to read, install, upgrade, and uninstall its own tabs in any team, without a signed-in user.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="resources">Resources</h2>
+<h3 id="channel-"><a href="https://docs.microsoft.com/graph/api/resources/channel?view=graph-rest-1.0&amp;tabs=http">channel </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Optional textual description for the channel.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Channel name as it will appear to the user in Microsoft Teams.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The channel's unique identifier. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isFavoriteByDefault</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: <code>false</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">email</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The email address for sending messages to the channel. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">webUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">membershipType</td>
+<td style="text-align: left;">channelMembershipType</td>
+<td style="text-align: left;">The type of the channel. Can be set during creation and can't be changed. The possible values are: <code>standard</code>, <code>private</code>, <code>unknownFutureValue</code>, <code>shared</code>. The default value is <code>standard</code>. Note that you must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value in this evolvable enum: <code>shared</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">dateTimeOffset</td>
+<td style="text-align: left;">Read only. Timestamp at which the channel was created.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tenantId</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The ID of the Azure Active Directory tenant.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="team-"><a href="https://docs.microsoft.com/graph/api/resources/team?view=graph-rest-1.0&amp;tabs=http">team </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The name of the team.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">An optional description for the team. Maximum length: 1024 characters.</td>
+</tr>
+<tr>
+<td style="text-align: left;">classification</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.</td>
+</tr>
+<tr>
+<td style="text-align: left;">specialization</td>
+<td style="text-align: left;">teamSpecialization</td>
+<td style="text-align: left;">Optional. Indicates whether the team is intended for a particular use case.  Each team specialization has access to unique behaviors and experiences targeted to its use case.</td>
+</tr>
+<tr>
+<td style="text-align: left;">visibility</td>
+<td style="text-align: left;">teamVisibilityType</td>
+<td style="text-align: left;">The visibility of the group and team. Defaults to Public.</td>
+</tr>
+<tr>
+<td style="text-align: left;">funSettings</td>
+<td style="text-align: left;">teamFunSettings</td>
+<td style="text-align: left;">Settings to configure use of Giphy, memes, and stickers in the team.</td>
+</tr>
+<tr>
+<td style="text-align: left;">guestSettings</td>
+<td style="text-align: left;">teamGuestSettings</td>
+<td style="text-align: left;">Settings to configure whether guests can create, update, or delete channels in the team.</td>
+</tr>
+<tr>
+<td style="text-align: left;">internalId</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isArchived</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Whether this team is in read-only mode.</td>
+</tr>
+<tr>
+<td style="text-align: left;">memberSettings</td>
+<td style="text-align: left;">teamMemberSettings</td>
+<td style="text-align: left;">Settings to configure whether members can perform certain actions, for example, create channels and add bots, in the team.</td>
+</tr>
+<tr>
+<td style="text-align: left;">messagingSettings</td>
+<td style="text-align: left;">teamMessagingSettings</td>
+<td style="text-align: left;">Settings to configure messaging and mentions in the team.</td>
+</tr>
+<tr>
+<td style="text-align: left;">webUrl</td>
+<td style="text-align: left;">string (readonly)</td>
+<td style="text-align: left;">A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select <strong>Get link to team</strong>. This URL should be treated as an opaque blob, and not parsed.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">dateTimeOffset</td>
+<td style="text-align: left;">Timestamp at which the team was created.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tenantId</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The ID of the Azure Active Directory tenant.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="teamstab-"><a href="https://docs.microsoft.com/graph/api/resources/teamstab?view=graph-rest-1.0&amp;tabs=http">teamsTab </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Identifier that uniquely identifies a specific instance of a channel tab. Read only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Name of the tab.</td>
+</tr>
+<tr>
+<td style="text-align: left;">webUrl</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Deep link URL of the tab instance. Read only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">configuration</td>
+<td style="text-align: left;">teamsTabConfiguration</td>
+<td style="text-align: left;">Container for custom settings applied to a tab. The tab is considered configured only once this property is set.</td>
 </tr>
 </tbody>
 </table>

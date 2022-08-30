@@ -8,7 +8,7 @@
     <title>People.Read.All | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="People.Read.All | Graph Permissions ">
-    <meta name="generator" content="docfx 2.59.2.0">
+    <meta name="generator" content="docfx 2.59.3.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -459,7 +459,7 @@
 <tr>
 <td style="text-align: left;">mail</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The SMTP address for the user, for example, <code>jeff@contoso.onmicrosoft.com</code>.<br>Changes to this property will also update the user's <strong>proxyAddresses</strong> collection to include the value as an SMTP address. For Azure AD B2C accounts, this property can be updated up to only ten times with unique SMTP addresses. This property cannot contain accent characters.<br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, <code>endsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
+<td style="text-align: left;">The SMTP address for the user, for example, <code>jeff@contoso.onmicrosoft.com</code>. Changes to this property will also update the user's <strong>proxyAddresses</strong> collection to include the value as an SMTP address. This property cannot contain accent characters. <br> <strong>NOTE:</strong> We do not recommend updating this property for Azure AD B2C user profiles. Use the <strong>otherMails</strong> property instead. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, <code>endsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">mailboxSettings</td>
@@ -499,7 +499,7 @@
 <tr>
 <td style="text-align: left;">onPremisesExtensionAttributes</td>
 <td style="text-align: left;">onPremisesExtensionAttributes</td>
-<td style="text-align: left;">Contains extensionAttributes1-15 for the user. The individual extension attributes are neither selectable nor filterable. <br><li>For an <strong>onPremisesSyncEnabled</strong> user, the source of authority for this set of properties is the on-premises and is read-only. </li><li>For a cloud-only user (where <strong>onPremisesSyncEnabled</strong> is <code>false</code>), these properties can be set during creation or update of a user object.  </li><li>For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell.</li><br> These extension attributes are also known as Exchange custom attributes 1-15.</td>
+<td style="text-align: left;">Contains extensionAttributes1-15 for the user. These extension attributes are also known as Exchange custom attributes 1-15. <br><li>For an <strong>onPremisesSyncEnabled</strong> user, the source of authority for this set of properties is the on-premises and is read-only. </li><li>For a cloud-only user (where <strong>onPremisesSyncEnabled</strong> is <code>false</code>), these properties can be set during creation or update of a user object.  </li><li>For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell.</li><br> Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">onPremisesImmutableId</td>
@@ -529,7 +529,7 @@
 <tr>
 <td style="text-align: left;">onPremisesSyncEnabled</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;"><code>true</code> if this object is synced from an on-premises directory; <code>false</code> if this object was originally synced from an on-premises directory but is no longer synced; <code>null</code> if this object has never been synced from an on-premises directory (default). Read-only. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>, and <code>eq</code> on <code>null</code> values).</td>
+<td style="text-align: left;"><code>true</code> if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>, and <code>eq</code> on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">onPremisesUserPrincipalName</td>
@@ -539,7 +539,7 @@
 <tr>
 <td style="text-align: left;">otherMails</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">A list of additional email addresses for the user; for example: <code>[&quot;bob@contoso.com&quot;, &quot;Robert@fabrikam.com&quot;]</code>. <br>NOTE: This property cannot contain accent characters. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and counting empty collections).</td>
+<td style="text-align: left;">A list of additional email addresses for the user; for example: <code>[&quot;bob@contoso.com&quot;, &quot;Robert@fabrikam.com&quot;]</code>. <br>NOTE: This property cannot contain accent characters. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, <code>endsWith</code>, and counting empty collections).</td>
 </tr>
 <tr>
 <td style="text-align: left;">passwordPolicies</td>
@@ -574,7 +574,7 @@
 <tr>
 <td style="text-align: left;">preferredName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The preferred name for the user. <br><br>Returned only on <code>$select</code>.</td>
+<td style="text-align: left;">The preferred name for the user. <strong>Not Supported. This attribute returns an empty string.</strong><br><br>Returned only on <code>$select</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">provisionedPlans</td>

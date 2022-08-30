@@ -8,7 +8,7 @@
     <title>ExternalItem.ReadWrite.OwnedBy | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="ExternalItem.ReadWrite.OwnedBy | Graph Permissions ">
-    <meta name="generator" content="docfx 2.59.2.0">
+    <meta name="generator" content="docfx 2.59.3.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -102,19 +102,19 @@
 </thead>
 <tbody>
 <tr>
-<td>Beta</td>
+<td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalitem-delete?view=graph-rest-beta&amp;tabs=http">DELETE /external/connections/{connection-id}/items/{item-id}</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalitem-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /external/connections/{connection-id}/items/{item-id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
+<td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalgroup-delete?view=graph-rest-beta&amp;tabs=http">DELETE /external/connections/{connectionId}/groups/{externalGroupId}</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalgroup-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /external/connections/{connectionId}/groups/{externalGroupId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
+<td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalgroupmember-delete?view=graph-rest-beta&amp;tabs=http">DELETE /external/connections/{connectionId}/groups/{externalGroupId}/members/{externalGroupMemberId}</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalgroupmember-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /external/connections/{connectionId}/groups/{externalGroupId}/members/{externalGroupMemberId}</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -132,9 +132,9 @@
 <td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalitem-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /external/connections/{connectionsId}/items/{externalItemId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
+<td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalitem-get?view=graph-rest-beta&amp;tabs=http">GET /external/connections/{connection-id}/items/{item-id}</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalitem-get?view=graph-rest-1.0&amp;tabs=http">GET /external/connections/{connection-id}/items/{item-id}</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -157,9 +157,14 @@
 <td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalgroup-update?view=graph-rest-1.0&amp;tabs=http">PATCH /external/connections/{connectionsId}/groups/{externalGroupId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalitem-addactivities?view=graph-rest-1.0&amp;tabs=http">POST /connections/{connectionsId}/items/{externalItemId}/addActivities</a></td>
+</tr>
+<tr>
+<td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-post-groups?view=graph-rest-beta&amp;tabs=http">POST /external/connections/{connectionId}/groups</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-post-groups?view=graph-rest-1.0&amp;tabs=http">POST /external/connections/{connectionId}/groups</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -174,7 +179,7 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalitem-create?view=graph-rest-1.0&amp;tabs=http">PUT /external/connections/{connection-id}/items/{item-id}</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-put-items?view=graph-rest-1.0&amp;tabs=http">PUT /external/connections/{connection-id}/items/{item-id}</a></td>
 </tr>
 </tbody>
 </table>
@@ -253,6 +258,55 @@
 <td style="text-align: left;">value</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The unique identifer of the identity. In case of Azure Active Directory identities, <code>value</code> is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups <code>value</code> is set to the ID of the externalGroup</td>
+</tr>
+</tbody>
+</table>
+<h3 id="externalactivity-"><a href="https://docs.microsoft.com/graph/api/resources/externalconnectors-externalactivity?view=graph-rest-1.0&amp;tabs=http">externalActivity </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">startDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">When the particular activity occurred.</td>
+</tr>
+<tr>
+<td style="text-align: left;">type</td>
+<td style="text-align: left;">externalConnectors.externalActivityType</td>
+<td style="text-align: left;">The type of activity performed. The possible values are: <code>viewed</code>, <code>modified</code>, <code>created</code>, <code>commented</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="externalactivityresult-"><a href="https://docs.microsoft.com/graph/api/resources/externalconnectors-externalactivityresult?view=graph-rest-1.0&amp;tabs=http">externalActivityResult </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">error</td>
+<td style="text-align: left;">microsoft.graph.publicError</td>
+<td style="text-align: left;">Error information explaining failure to process external activity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">startDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">When the particular activity occurred. Inherited from externalActivity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">type</td>
+<td style="text-align: left;">externalConnectors.externalActivityType</td>
+<td style="text-align: left;">The type of activity performed. Inherited from externalActivity. The possible values are: <code>viewed</code>, <code>modified</code>, <code>created</code>, <code>commented</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 </tbody>
 </table>

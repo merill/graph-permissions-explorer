@@ -8,7 +8,7 @@
     <title>SharePointTenantSettings.ReadWrite.All | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="SharePointTenantSettings.ReadWrite.All | Graph Permissions ">
-    <meta name="generator" content="docfx 2.59.2.0">
+    <meta name="generator" content="docfx 2.59.3.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -102,14 +102,14 @@
 </thead>
 <tbody>
 <tr>
-<td>Beta</td>
+<td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/tenantadmin-settings-get?view=graph-rest-beta&amp;tabs=http">GET /admin/sharepoint/settings</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/tenantadmin-settings-get?view=graph-rest-1.0&amp;tabs=http">GET /admin/sharepoint/settings</a></td>
 </tr>
 <tr>
-<td>Beta</td>
+<td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/tenantadmin-settings-update?view=graph-rest-beta&amp;tabs=http">PATCH /admin/sharepoint/settings</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/tenantadmin-settings-update?view=graph-rest-1.0&amp;tabs=http">PATCH /admin/sharepoint/settings</a></td>
 </tr>
 </tbody>
 </table>
@@ -164,6 +164,33 @@
 </tbody>
 </table>
 <h2 id="resources">Resources</h2>
+<h3 id="idlesessionsignout-"><a href="https://docs.microsoft.com/graph/api/resources/tenantadmin-idlesessionsignout?view=graph-rest-1.0&amp;tabs=http">idleSessionSignOut </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">isEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the idle session sign-out policy is enabled.</td>
+</tr>
+<tr>
+<td style="text-align: left;">signOutAfterInSeconds</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">Number of seconds of inactivity after which a user is signed out.</td>
+</tr>
+<tr>
+<td style="text-align: left;">warnAfterInSeconds</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">Number of seconds of inactivity after which a user is notified that they'll be signed out.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="settings-"><a href="https://docs.microsoft.com/graph/api/resources/tenantadmin-settings?view=graph-rest-1.0&amp;tabs=http">settings </a></h3>
 <table>
 <thead>
@@ -195,6 +222,11 @@
 <td style="text-align: left;">Collection of file extensions not uploaded by the OneDrive sync app.</td>
 </tr>
 <tr>
+<td style="text-align: left;">idleSessionSignOut</td>
+<td style="text-align: left;">tenantAdmin.idleSessionSignOut</td>
+<td style="text-align: left;">Specifies the idle session sign-out policies for the tenant.</td>
+</tr>
+<tr>
 <td style="text-align: left;">imageTaggingOption</td>
 <td style="text-align: left;">tenantAdmin.imageTaggingChoice</td>
 <td style="text-align: left;">Specifies the image tagging option for the tenant. Possible values are: <code>disabled</code>, <code>basic</code>, <code>enhanced</code>.</td>
@@ -210,6 +242,11 @@
 <td style="text-align: left;">Indicates whether push notifications are enabled for OneDrive events.</td>
 </tr>
 <tr>
+<td style="text-align: left;">isLegacyAuthProtocolsEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether legacy authentication protocols are enabled for the tenant.</td>
+</tr>
+<tr>
 <td style="text-align: left;">isLoopEnabled</td>
 <td style="text-align: left;">Boolean</td>
 <td style="text-align: left;">Indicates whetherif Fluid Framework is allowed on SharePoint sites.</td>
@@ -218,6 +255,11 @@
 <td style="text-align: left;">isMacSyncAppEnabled</td>
 <td style="text-align: left;">Boolean</td>
 <td style="text-align: left;">Indicates whether files can be synced using the OneDrive sync app for Mac.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isRequireAcceptingUserToMatchInvitedUserEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether guests must sign in using the same account to which sharing invitations are sent.</td>
 </tr>
 <tr>
 <td style="text-align: left;">isResharingByExternalUsersEnabled</td>

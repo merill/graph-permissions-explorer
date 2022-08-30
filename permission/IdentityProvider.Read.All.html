@@ -8,7 +8,7 @@
     <title>IdentityProvider.Read.All | Graph Permissions </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="IdentityProvider.Read.All | Graph Permissions ">
-    <meta name="generator" content="docfx 2.59.2.0">
+    <meta name="generator" content="docfx 2.59.3.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -101,6 +101,21 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-list?view=graph-rest-1.0&amp;tabs=http">GET /directory/federationConfigurations/graph.samlOrWsFedExternalDomainFederation</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-get?view=graph-rest-1.0&amp;tabs=http">GET /directory/federationConfigurations/graph.samlOrWsFedExternalDomainFederation?$filter=domains/any(x: x/id eq 'domainName-value')</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-list-domains?view=graph-rest-1.0&amp;tabs=http">GET /directory/federationConfigurations/microsoft.graph.samlOrWsFedExternalDomainFederation/{samlOrWsFedExternalDomainFederation ID}/domains</a></td>
+</tr>
 <tr>
 <td>V1</td>
 <td>A,D</td>
@@ -250,6 +265,23 @@
 <td style="text-align: left;">identityProviderType</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The identity provider type. For a B2B scenario, possible values: <code>AADSignup</code>, <code>MicrosoftAccount</code>, <code>EmailOTP</code>. Required.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="externaldomainname-"><a href="https://docs.microsoft.com/graph/api/resources/externaldomainname?view=graph-rest-1.0&amp;tabs=http">externalDomainName </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Domain name of the external organization that the Azure AD tenant is federating with. Inherited from entity.</td>
 </tr>
 </tbody>
 </table>
@@ -438,6 +470,53 @@
 <td style="text-align: left;">scope</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Scope defines the information and permissions you are looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users are not able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended separated by space. For more details about the scope limitations see RFC6749 Section 3.3. It is a required property.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="samlorwsfedexternaldomainfederation-"><a href="https://docs.microsoft.com/graph/api/resources/samlorwsfedexternaldomainfederation?view=graph-rest-1.0&amp;tabs=http">samlOrWsFedExternalDomainFederation </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the SAML or WS-Fed based IdP. Inherited from identityProviderBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the identity provider. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">issuerUri</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Issuer URI of the federation server. Inherited from samlOrWsFedProvider.</td>
+</tr>
+<tr>
+<td style="text-align: left;">metadataExchangeUri</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">URI of the metadata exchange endpoint used for authentication from rich client applications. Inherited from samlOrWsFedProvider.</td>
+</tr>
+<tr>
+<td style="text-align: left;">passiveSignInUri</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">URI that web-based clients are directed to when signing in to Azure AD services. Inherited from samlOrWsFedProvider.</td>
+</tr>
+<tr>
+<td style="text-align: left;">preferredAuthenticationProtocol</td>
+<td style="text-align: left;">authenticationProtocol</td>
+<td style="text-align: left;">Preferred authentication protocol. The possible values are: <code>wsFed</code>, <code>saml</code>, <code>unknownFutureValue</code>. Inherited from samlOrWsFedProvider.</td>
+</tr>
+<tr>
+<td style="text-align: left;">signingCertificate</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Current certificate used to sign tokens passed to the Microsoft identity platform. The certificate is formatted as a Base64 encoded string of the public portion of the federated IdP's token signing certificate and must be compatible with the X509Certificate2 class.  <br><br> This property is used in the following scenarios: <ul><li> if a rollover is required outside of the autorollover update <li>a new federation service is being set up <li> if the new token signing certificate isn't present in the federation properties after the federation service certificate has been updated. </li></li></li></ul> <br><br> Azure AD updates certificates via an autorollover process in which it attempts to retrieve a new certificate from the federation service metadata, 30 days before expiry of the current certificate. If a new certificate isn't available, Azure AD monitors the metadata daily and will update the federation settings for the domain when a new certificate is available. <br><br> Inherited from samlOrWsFedProvider.</td>
 </tr>
 </tbody>
 </table>
