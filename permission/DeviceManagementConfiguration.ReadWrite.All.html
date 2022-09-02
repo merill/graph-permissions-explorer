@@ -22345,6 +22345,7 @@
 <h3 id="intune-deviceconfig-emailcertificatetype"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfig-emailcertificatetype?view=graph-rest-1.0&amp;tabs=http">intune-deviceconfig-emailcertificatetype</a></h3>
 <h3 id="intune-deviceconfig-emailsyncduration"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfig-emailsyncduration?view=graph-rest-1.0&amp;tabs=http">intune-deviceconfig-emailsyncduration</a></h3>
 <h3 id="intune-deviceconfig-emailsyncschedule"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfig-emailsyncschedule?view=graph-rest-1.0&amp;tabs=http">intune-deviceconfig-emailsyncschedule</a></h3>
+<h3 id="intune-deviceconfig-enablement"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfig-enablement?view=graph-rest-1.0&amp;tabs=http">intune-deviceconfig-enablement</a></h3>
 <h3 id="intune-deviceconfig-encryptionreadinessstate"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfig-encryptionreadinessstate?view=graph-rest-1.0&amp;tabs=http">intune-deviceconfig-encryptionreadinessstate</a></h3>
 <h3 id="encryptionreportpolicydetails-"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfig-encryptionreportpolicydetails?view=graph-rest-1.0&amp;tabs=http">encryptionReportPolicyDetails </a></h3>
 <table>
@@ -35700,67 +35701,182 @@
 <tr>
 <td style="text-align: left;">deliveryOptimizationMode</td>
 <td style="text-align: left;">windowsDeliveryOptimizationMode</td>
-<td style="text-align: left;">Delivery Optimization Mode. Possible values are: <code>userDefined</code>, <code>httpOnly</code>, <code>httpWithPeeringNat</code>, <code>httpWithPeeringPrivateGroup</code>, <code>httpWithInternetPeering</code>, <code>simpleDownload</code>, <code>bypassMode</code>.</td>
+<td style="text-align: left;">The Delivery Optimization Mode. Possible values are: UserDefined, HttpOnly, HttpWithPeeringNat, HttpWithPeeringPrivateGroup, HttpWithInternetPeering, SimpleDownload, BypassMode. UserDefined allows the user to set. Returned by default. Query parameters are not supported. Possible values are: <code>userDefined</code>, <code>httpOnly</code>, <code>httpWithPeeringNat</code>, <code>httpWithPeeringPrivateGroup</code>, <code>httpWithInternetPeering</code>, <code>simpleDownload</code>, <code>bypassMode</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">prereleaseFeatures</td>
 <td style="text-align: left;">prereleaseFeatures</td>
-<td style="text-align: left;">The pre-release features. Possible values are: <code>userDefined</code>, <code>settingsOnly</code>, <code>settingsAndExperimentations</code>, <code>notAllowed</code>.</td>
+<td style="text-align: left;">The Pre-Release Features. Possible values are: UserDefined, SettingsOnly, SettingsAndExperimentations, NotAllowed. UserDefined is the default value, no intent. Returned by default. Query parameters are not supported. Possible values are: <code>userDefined</code>, <code>settingsOnly</code>, <code>settingsAndExperimentations</code>, <code>notAllowed</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">automaticUpdateMode</td>
 <td style="text-align: left;">automaticUpdateMode</td>
-<td style="text-align: left;">Automatic update mode. Possible values are: <code>userDefined</code>, <code>notifyDownload</code>, <code>autoInstallAtMaintenanceTime</code>, <code>autoInstallAndRebootAtMaintenanceTime</code>, <code>autoInstallAndRebootAtScheduledTime</code>, <code>autoInstallAndRebootWithoutEndUserControl</code>.</td>
+<td style="text-align: left;">The Automatic Update Mode. Possible values are: UserDefined, NotifyDownload, AutoInstallAtMaintenanceTime, AutoInstallAndRebootAtMaintenanceTime, AutoInstallAndRebootAtScheduledTime, AutoInstallAndRebootWithoutEndUserControl, WindowsDefault. UserDefined is the default value, no intent. Returned by default. Query parameters are not supported. Possible values are: <code>userDefined</code>, <code>notifyDownload</code>, <code>autoInstallAtMaintenanceTime</code>, <code>autoInstallAndRebootAtMaintenanceTime</code>, <code>autoInstallAndRebootAtScheduledTime</code>, <code>autoInstallAndRebootWithoutEndUserControl</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">microsoftUpdateServiceAllowed</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Allow Microsoft Update Service</td>
+<td style="text-align: left;">When TRUE, allows Microsoft Update Service. When FALSE, does not allow Microsoft Update Service. Returned by default. Query parameters are not supported.</td>
 </tr>
 <tr>
 <td style="text-align: left;">driversExcluded</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Exclude Windows update Drivers</td>
+<td style="text-align: left;">When TRUE, excludes Windows update Drivers. When FALSE, does not exclude Windows update Drivers. Returned by default. Query parameters are not supported.</td>
 </tr>
 <tr>
 <td style="text-align: left;">installationSchedule</td>
 <td style="text-align: left;">windowsUpdateInstallScheduleType</td>
-<td style="text-align: left;">Installation schedule</td>
+<td style="text-align: left;">The Installation Schedule. Possible values are: ActiveHoursStart, ActiveHoursEnd, ScheduledInstallDay, ScheduledInstallTime. Returned by default. Query parameters are not supported.</td>
 </tr>
 <tr>
 <td style="text-align: left;">qualityUpdatesDeferralPeriodInDays</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">Defer Quality Updates by these many days</td>
+<td style="text-align: left;">Defer Quality Updates by these many days with valid range from 0 to 30 days. Returned by default. Query parameters are not supported.</td>
 </tr>
 <tr>
 <td style="text-align: left;">featureUpdatesDeferralPeriodInDays</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">Defer Feature Updates by these many days</td>
+<td style="text-align: left;">Defer Feature Updates by these many days with valid range from 0 to 30 days. Returned by default. Query parameters are not supported.</td>
 </tr>
 <tr>
 <td style="text-align: left;">qualityUpdatesPaused</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Pause Quality Updates</td>
+<td style="text-align: left;">When TRUE, assigned devices are paused from receiving quality updates for up to 35 days from the time you pause the ring. When FALSE, does not pause Quality Updates. Returned by default. Query parameters are not supported.</td>
 </tr>
 <tr>
 <td style="text-align: left;">featureUpdatesPaused</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Pause Feature Updates</td>
+<td style="text-align: left;">When TRUE, assigned devices are paused from receiving feature updates for up to 35 days from the time you pause the ring. When FALSE, does not pause Feature Updates. Returned by default. Query parameters are not supported.s</td>
 </tr>
 <tr>
 <td style="text-align: left;">qualityUpdatesPauseExpiryDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Quality Updates Pause Expiry datetime</td>
+<td style="text-align: left;">The Quality Updates Pause Expiry datetime. This value is 35 days from the time admin paused or extended the pause for the ring. Returned by default. Query parameters are not supported.</td>
 </tr>
 <tr>
 <td style="text-align: left;">featureUpdatesPauseExpiryDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Feature Updates Pause Expiry datetime</td>
+<td style="text-align: left;">The Feature Updates Pause Expiry datetime. This value is 35 days from the time admin paused or extended the pause for the ring. Returned by default. Query parameters are not supported.</td>
 </tr>
 <tr>
 <td style="text-align: left;">businessReadyUpdatesOnly</td>
 <td style="text-align: left;">windowsUpdateType</td>
-<td style="text-align: left;">Determines which branch devices will receive their updates from. Possible values are: <code>userDefined</code>, <code>all</code>, <code>businessReadyOnly</code>, <code>windowsInsiderBuildFast</code>, <code>windowsInsiderBuildSlow</code>, <code>windowsInsiderBuildRelease</code>.</td>
+<td style="text-align: left;">Determines which branch devices will receive their updates from. Possible values are: UserDefined, All, BusinessReadyOnly, WindowsInsiderBuildFast, WindowsInsiderBuildSlow, WindowsInsiderBuildRelease. Returned by default. Query parameters are not supported. Possible values are: <code>userDefined</code>, <code>all</code>, <code>businessReadyOnly</code>, <code>windowsInsiderBuildFast</code>, <code>windowsInsiderBuildSlow</code>, <code>windowsInsiderBuildRelease</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">skipChecksBeforeRestart</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">When TRUE, skips all checks before restart: Battery level = 40%, User presence, Display Needed, Presentation mode, Full screen mode, phone call state, game mode etc. When FALSE, does not skip all checks before restart. Returned by default. Query parameters are not supported.</td>
+</tr>
+<tr>
+<td style="text-align: left;">updateWeeks</td>
+<td style="text-align: left;">windowsUpdateForBusinessUpdateWeeks</td>
+<td style="text-align: left;">Schedule the update installation on the weeks of the month. Possible values are: UserDefined, FirstWeek, SecondWeek, ThirdWeek, FourthWeek, EveryWeek. Returned by default. Query parameters are not supported. Possible values are: <code>userDefined</code>, <code>firstWeek</code>, <code>secondWeek</code>, <code>thirdWeek</code>, <code>fourthWeek</code>, <code>everyWeek</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">qualityUpdatesPauseStartDate</td>
+<td style="text-align: left;">Date</td>
+<td style="text-align: left;">The Quality Updates Pause start date. This value is the time when the admin paused or extended the pause for the ring. Returned by default. Query parameters are not supported. This property is read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">featureUpdatesPauseStartDate</td>
+<td style="text-align: left;">Date</td>
+<td style="text-align: left;">The Feature Updates Pause start date. This value is the time when the admin paused or extended the pause for the ring. Returned by default. Query parameters are not supported. This property is read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">featureUpdatesRollbackWindowInDays</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The number of days after a Feature Update for which a rollback is valid with valid range from 2 to 60 days. Returned by default. Query parameters are not supported.</td>
+</tr>
+<tr>
+<td style="text-align: left;">qualityUpdatesWillBeRolledBack</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">When TRUE, rollback Quality Updates on the next device check in. When FALSE, do not rollback Quality Updates on the next device check in. Returned by default. Query parameters are not supported.</td>
+</tr>
+<tr>
+<td style="text-align: left;">featureUpdatesWillBeRolledBack</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">When TRUE, rollback Feature Updates on the next device check in. When FALSE, do not rollback Feature Updates on the next device check in. Returned by default.Query parameters are not supported.</td>
+</tr>
+<tr>
+<td style="text-align: left;">qualityUpdatesRollbackStartDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The Quality Updates Rollback Start datetime. This value is the time when the admin rolled back the Quality update for the ring. Returned by default. Query parameters are not supported.</td>
+</tr>
+<tr>
+<td style="text-align: left;">featureUpdatesRollbackStartDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The Feature Updates Rollback Start datetime.This value is the time when the admin rolled back the Feature update for the ring.Returned by default.Query parameters are not supported.</td>
+</tr>
+<tr>
+<td style="text-align: left;">engagedRestartDeadlineInDays</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Deadline in days before automatically scheduling and executing a pending restart outside of active hours, with valid range from 2 to 30 days. Returned by default. Query parameters are not supported.</td>
+</tr>
+<tr>
+<td style="text-align: left;">engagedRestartSnoozeScheduleInDays</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Number of days a user can snooze Engaged Restart reminder notifications with valid range from 1 to 3 days. Returned by default. Query parameters are not supported.</td>
+</tr>
+<tr>
+<td style="text-align: left;">engagedRestartTransitionScheduleInDays</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Number of days before transitioning from Auto Restarts scheduled outside of active hours to Engaged Restart, which requires the user to schedule, with valid range from 0 to 30 days. Returned by default. Query parameters are not supported.</td>
+</tr>
+<tr>
+<td style="text-align: left;">deadlineForFeatureUpdatesInDays</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Number of days before feature updates are installed automatically with valid range from 0 to 30 days. Returned by default. Query parameters are not supported.</td>
+</tr>
+<tr>
+<td style="text-align: left;">deadlineForQualityUpdatesInDays</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Number of days before quality updates are installed automatically with valid range from 0 to 30 days. Returned by default. Query parameters are not supported.</td>
+</tr>
+<tr>
+<td style="text-align: left;">deadlineGracePeriodInDays</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Number of days after deadline until restarts occur automatically with valid range from 0 to 7 days. Returned by default. Query parameters are not supported.</td>
+</tr>
+<tr>
+<td style="text-align: left;">postponeRebootUntilAfterDeadline</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">When TRUE the device should wait until deadline for rebooting outside of active hours. When FALSE the device should not wait until deadline for rebooting outside of active hours. Returned by default. Query parameters are not supported.</td>
+</tr>
+<tr>
+<td style="text-align: left;">autoRestartNotificationDismissal</td>
+<td style="text-align: left;">autoRestartNotificationDismissalMethod</td>
+<td style="text-align: left;">Specify the method by which the auto-restart required notification is dismissed. Possible values are: NotConfigured, Automatic, User. Returned by default. Query parameters are not supported. Possible values are: <code>notConfigured</code>, <code>automatic</code>, <code>user</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">scheduleRestartWarningInHours</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Specify the period for auto-restart warning reminder notifications. Supported values: 2, 4, 8, 12 or 24 (hours). Returned by default. Query parameters are not supported.</td>
+</tr>
+<tr>
+<td style="text-align: left;">scheduleImminentRestartWarningInMinutes</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Specify the period for auto-restart imminent warning notifications. Supported values: 15, 30 or 60 (minutes). Returned by default. Query parameters are not supported.</td>
+</tr>
+<tr>
+<td style="text-align: left;">userPauseAccess</td>
+<td style="text-align: left;">enablement</td>
+<td style="text-align: left;">Specifies whether to enable end user’s access to pause software updates. Possible values are: NotConfigured, Enabled, Disabled. Returned by default. Query parameters are not supported. Possible values are: <code>notConfigured</code>, <code>enabled</code>, <code>disabled</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">userWindowsUpdateScanAccess</td>
+<td style="text-align: left;">enablement</td>
+<td style="text-align: left;">Specifies whether to disable user’s access to scan Windows Update. Possible values are: NotConfigured, Enabled, Disabled. Returned by default. Query parameters are not supported. Possible values are: <code>notConfigured</code>, <code>enabled</code>, <code>disabled</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">updateNotificationLevel</td>
+<td style="text-align: left;">windowsUpdateNotificationDisplayOption</td>
+<td style="text-align: left;">Specifies what Windows Update notifications users see. Possible values are: NotConfigured, DefaultNotifications, RestartWarningsOnly, DisableAllNotifications. Returned by default. Query parameters are not supported. Possible values are: <code>notConfigured</code>, <code>defaultNotifications</code>, <code>restartWarningsOnly</code>, <code>disableAllNotifications</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">allowWindows11Upgrade</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">When TRUE, allows eligible Windows 10 devices to upgrade to Windows 11. When FALSE, implies the device stays on the existing operating system. Returned by default. Query parameters are not supported.</td>
 </tr>
 </tbody>
 </table>
@@ -39973,6 +40089,16 @@
 <td style="text-align: left;">deviceCount</td>
 <td style="text-align: left;">Int32</td>
 <td style="text-align: left;">The number of devices that have installed this application</td>
+</tr>
+<tr>
+<td style="text-align: left;">publisher</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Indicates the publisher of the discovered application. For example: 'Microsoft'.  The default value is an empty string.</td>
+</tr>
+<tr>
+<td style="text-align: left;">platform</td>
+<td style="text-align: left;">detectedAppPlatformType</td>
+<td style="text-align: left;">Indicates the operating system / platform of the discovered application.  Some possible values are Windows, iOS, macOS. The default value is unknown (0). Possible values are: <code>unknown</code>, <code>windows</code>, <code>windowsMobile</code>, <code>windowsHolographic</code>, <code>ios</code>, <code>macOS</code>, <code>chromeOS</code>, <code>androidOSP</code>, <code>androidDeviceAdministrator</code>, <code>androidWorkProfile</code>, <code>androidDedicatedAndFullyManaged</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -53298,7 +53424,7 @@ The input must match the following regular expression: '^(</p>
 <tr>
 <td style="text-align: left;">format</td>
 <td style="text-align: left;">deviceManagementReportFileFormat</td>
-<td style="text-align: left;">Format of the exported report. Possible values are: <code>csv</code>, <code>json</code>.</td>
+<td style="text-align: left;">Format of the exported report. Possible values are: <code>csv</code>, <code>pdf</code>, <code>json</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">snapshotId</td>
