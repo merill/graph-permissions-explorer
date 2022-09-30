@@ -364,7 +364,7 @@
 <tr>
 <td style="text-align: left;">workflowScheduleIntervalInHours</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The interval in hours at which all workflows running in the tenant should be scheduled for execution. This interval has a minimum value of 1 and a maximum value of 24.</td>
+<td style="text-align: left;">The interval in hours at which all workflows running in the tenant should be scheduled for execution. This interval has a minimum value of 1 and a maximum value of 24. The default value is 3 hours.</td>
 </tr>
 </tbody>
 </table>
@@ -484,7 +484,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">category</td>
-<td style="text-align: left;">String</td>
+<td style="text-align: left;">microsoft.graph.identityGovernance.lifecycleTaskCategory</td>
 <td style="text-align: left;">The category of the task. The possible values are: <code>joiner</code>, <code>leaver</code>, <code>unknownFutureValue</code>. This property is multi-valued and the same task can apply to both <code>joiner</code> and <code>leaver</code> categories.</td>
 </tr>
 <tr>
@@ -536,33 +536,33 @@
 <tbody>
 <tr>
 <td style="text-align: left;">category</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The category of the HR function that the tasks created using this definition can be used with. The possible values are: <code>joiner</code>, <code>leaver</code>.</td>
+<td style="text-align: left;">microsoft.graph.identityGovernance.lifecycleTaskCategory</td>
+<td style="text-align: left;">The category of the HR function that the tasks created using this definition can be used with. The possible values are: <code>joiner</code>, <code>leaver</code>. This is a multi-valued enumeration whose allowed combinations are <code>joiner</code>, <code>joiner,leaver</code>, or <code>leaver</code>. Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">description</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The description of the <code>taskDefinition</code>.</td>
+<td style="text-align: left;">The description of the taskDefinition.</td>
 </tr>
 <tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name of the <code>taskDefinition</code>.</td>
+<td style="text-align: left;">The display name of the taskDefinition`.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the <code>taskDefinition</code>. Inherited from entity.</td>
+<td style="text-align: left;">The unique identifier for the taskDefinition. Inherited from entity.</td>
 </tr>
 <tr>
 <td style="text-align: left;">parameters</td>
 <td style="text-align: left;">microsoft.graph.identityGovernance.parameter collection</td>
-<td style="text-align: left;">The parameters that must be supplied when creating a <code>task</code>.</td>
+<td style="text-align: left;">The parameters that must be supplied when creating a workflow task object.</td>
 </tr>
 <tr>
 <td style="text-align: left;">version</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The version number of the <code>taskDefinition</code>. New records are pushed when we add support for new parameters.</td>
+<td style="text-align: left;">The version number of the taskDefinition. New records are pushed when we add support for new parameters.</td>
 </tr>
 </tbody>
 </table>
@@ -812,12 +812,12 @@
 <tr>
 <td style="text-align: left;">isEnabled</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">If true, the <code>workflow</code> engine creates and processes <code>taskProcessingResults</code> on the users scoped to the workflow. <br><br>Supports <code>$filter</code>(<code>eq</code>,<code>ne</code>) and <code>orderby</code>.</td>
+<td style="text-align: left;">If <code>true</code>, the <code>workflow</code> engine creates and processes <code>taskProcessingResults</code> on the users scoped to the workflow. <br><br>Supports <code>$filter</code>(<code>eq</code>,<code>ne</code>) and <code>orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">isSchedulingEnabled</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">If true, the <code>workflow</code> engine executes the workflow on the schedule defined by tenant settings.</td>
+<td style="text-align: left;">If <code>true</code>, the <code>workflow</code> engine executes the workflow on the schedule defined by tenant settings.</td>
 </tr>
 <tr>
 <td style="text-align: left;">lastModifiedDateTime</td>
@@ -832,7 +832,7 @@
 <tr>
 <td style="text-align: left;">version</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The current version number of the workflow. Value is 1 when the workflow is first created. <br><br>Supports <code>$filter</code>(<code>eq</code>).</td>
+<td style="text-align: left;">The current version number of the workflow. Value is <code>1</code> when the workflow is first created. <br><br>Supports <code>$filter</code>(<code>eq</code>).</td>
 </tr>
 </tbody>
 </table>
@@ -849,7 +849,7 @@
 <tr>
 <td style="text-align: left;">category</td>
 <td style="text-align: left;">microsoft.graph.identityGovernance.lifecycleWorkflowCategory</td>
-<td style="text-align: left;">The category of the workflow template. The possible values are: <code>joiner</code>, <code>leaver</code>.</td>
+<td style="text-align: left;">The category of the workflow template. The possible values are: <code>joiner</code>, <code>leaver</code>. Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">description</td>
