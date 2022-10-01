@@ -139,6 +139,11 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/attacksimulationroot-get-simulationautomations?view=graph-rest-1.0&amp;tabs=http">GET /security/attackSimulation/simulationAutomations/{simulationAutomationId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/simulationautomation-list-runs?view=graph-rest-1.0&amp;tabs=http">GET /security/attackSimulation/simulationAutomations/{simulationAutomationId}/runs</a></td>
 </tr>
 <tr>
@@ -149,12 +154,17 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/simulationreportoverview-get?view=graph-rest-1.0&amp;tabs=http">GET /security/attackSimulation/simulations/{id}/report/overview</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/attacksimulationroot-get-simulations?view=graph-rest-1.0&amp;tabs=http">GET /security/attackSimulation/simulations/{simulationId}</a></td>
 </tr>
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/usersimulationdetails-list?view=graph-rest-1.0&amp;tabs=http">GET /security/attackSimulation/simulations/{id}/report/simulationUsers</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/simulationreportoverview-get?view=graph-rest-1.0&amp;tabs=http">GET /security/attackSimulation/simulations/{simulationId}/report/overview</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/usersimulationdetails-list?view=graph-rest-1.0&amp;tabs=http">GET /security/attackSimulation/simulations/{simulationId}/report/simulationUsers</a></td>
 </tr>
 </tbody>
 </table>
@@ -222,7 +232,7 @@
 <tr>
 <td style="text-align: left;">attackSimulationUser</td>
 <td style="text-align: left;">attackSimulationUser</td>
-<td style="text-align: left;">User in an attack simulation and training campaign.</td>
+<td style="text-align: left;">The user in an attack simulation and training campaign.</td>
 </tr>
 <tr>
 <td style="text-align: left;">repeatOffenceCount</td>
@@ -259,7 +269,7 @@
 <tr>
 <td style="text-align: left;">latestSimulationDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Date and time of latest attack simulation and training campaign that the user was included in.</td>
+<td style="text-align: left;">Date and time of the latest attack simulation and training campaign that the user was included in.</td>
 </tr>
 <tr>
 <td style="text-align: left;">simulationCount</td>
@@ -286,7 +296,7 @@
 <tr>
 <td style="text-align: left;">userTrainings</td>
 <td style="text-align: left;">userTrainingStatusInfo collection</td>
-<td style="text-align: left;">List of assigned trainings' and their statuses for the user.</td>
+<td style="text-align: left;">List of assigned trainings and their statuses for the user.</td>
 </tr>
 </tbody>
 </table>
@@ -343,12 +353,12 @@
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Unique identifier for the attack simulation and training campaign.</td>
+<td style="text-align: left;">Unique identifier for the attack simulation and training campaign. Inherited from entity.</td>
 </tr>
 <tr>
 <td style="text-align: left;">isAutomated</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Flag representing if the attack simulation and training campaign was created from a simulation automation flow. Supports <code>$filter</code> and <code>$orderby</code>.</td>
+<td style="text-align: left;">Flag that represents if the attack simulation and training campaign was created from a simulation automation flow. Supports <code>$filter</code> and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">lastModifiedBy</td>
@@ -415,7 +425,7 @@
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Unique identifier for the attack simulation automation.</td>
+<td style="text-align: left;">Unique identifier for the attack simulation automation. Inherited from entity.</td>
 </tr>
 <tr>
 <td style="text-align: left;">lastModifiedBy</td>
@@ -462,7 +472,7 @@
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Unique identifier for the run of an attack simulation automation.</td>
+<td style="text-align: left;">Unique identifier for the run of an attack simulation automation. Inherited from entity.</td>
 </tr>
 <tr>
 <td style="text-align: left;">simulationId</td>
@@ -477,7 +487,7 @@
 <tr>
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">simulationAutomationRunStatus</td>
-<td style="text-align: left;">Status of the run of an attack simulation automation. The possible values are: <code>unknown</code>, <code>running</code>, <code>succeeded</code>, <code>failed</code>, <code>skipped</code>, <code>unknownFutureValue</code>.</td>
+<td style="text-align: left;">Status of the attack simulation automation run. The possible values are: <code>unknown</code>, <code>running</code>, <code>succeeded</code>, <code>failed</code>, <code>skipped</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -546,12 +556,12 @@
 <tr>
 <td style="text-align: left;">isCompromised</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Flag representing if user was compromised in an attack simulation and training campaign.</td>
+<td style="text-align: left;">Indicates whether a user was compromised in an attack simulation and training campaign.</td>
 </tr>
 <tr>
 <td style="text-align: left;">reportedPhishDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Date and time when user reported delivered payload as phish in the attack simulation and training campaign.</td>
+<td style="text-align: left;">Date and time when a user reported the delivered payload as phishing in the attack simulation and training campaign.</td>
 </tr>
 <tr>
 <td style="text-align: left;">simulationEvents</td>
