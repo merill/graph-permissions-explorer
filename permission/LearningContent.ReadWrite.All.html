@@ -103,13 +103,13 @@
 <tbody>
 <tr>
 <td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/learningprovider-delete-learningcontents?view=graph-rest-1.0&amp;tabs=http">DELETE /employeeExperience/learningProviders/{learningProviderId}/learningContents/{externalId='{externalId}'}/$ref</a></td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/learningprovider-delete-learningcontents?view=graph-rest-1.0&amp;tabs=http">DELETE /employeeExperience/learningProviders/{learningProviderId}/learningContents/{learningContentId}/$ref</a></td>
 </tr>
 <tr>
 <td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/learningcontent-update?view=graph-rest-1.0&amp;tabs=http">PATCH /employeeExperience/learningProviders/{registrationId}/learningContents(externalId='{externalId}') </a></td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/learningcontent-update?view=graph-rest-1.0&amp;tabs=http">PATCH /employeeExperience/learningProviders/{learningProviderId}/learningContents/{learningContentId}</a></td>
 </tr>
 </tbody>
 </table>
@@ -185,9 +185,9 @@
 <td style="text-align: left;">The content web URL for the learning content. Required.</td>
 </tr>
 <tr>
-<td style="text-align: left;">contributor</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The author, creator, or contributor of the learning content. Optional.</td>
+<td style="text-align: left;">contributors</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">The authors, creators, or contributors of the learning content. Optional.</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>
@@ -213,6 +213,11 @@
 <td style="text-align: left;">format</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The format of the learning content. For example, <code>Course</code>, <code>Video</code>, <code>Book</code>, <code>Book Summary</code>, <code>Audiobook Summary</code>. Optional.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the learning content. Not nullable. Read-only. Inherited from entity.</td>
 </tr>
 <tr>
 <td style="text-align: left;">isActive</td>
