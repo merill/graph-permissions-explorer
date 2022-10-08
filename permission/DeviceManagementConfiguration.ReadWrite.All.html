@@ -39833,6 +39833,16 @@
 <td style="text-align: left;">The expiration date and time for Apple push notification certificate.</td>
 </tr>
 <tr>
+<td style="text-align: left;">certificateUploadStatus</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The certificate upload status.</td>
+</tr>
+<tr>
+<td style="text-align: left;">certificateUploadFailureReason</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The reason the certificate upload failed.</td>
+</tr>
+<tr>
 <td style="text-align: left;">certificateSerialNumber</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Certificate serial number. This property is read-only.</td>
@@ -41501,6 +41511,36 @@
 <td style="text-align: left;">Int32</td>
 <td style="text-align: left;">Number of unknown device count.</td>
 </tr>
+<tr>
+<td style="text-align: left;">androidDedicatedCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Number of dedicated Android devices.</td>
+</tr>
+<tr>
+<td style="text-align: left;">androidDeviceAdminCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Number of device admin Android devices.</td>
+</tr>
+<tr>
+<td style="text-align: left;">androidFullyManagedCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Number of fully managed Android devices.</td>
+</tr>
+<tr>
+<td style="text-align: left;">androidWorkProfileCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Number of work profile Android devices.</td>
+</tr>
+<tr>
+<td style="text-align: left;">androidCorporateWorkProfileCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The count of Corporate work profile Android devices. Also known as Corporate Owned Personally Enabled (COPE). Valid values -1 to 2147483647</td>
+</tr>
+<tr>
+<td style="text-align: left;">configMgrDeviceCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Number of ConfigMgr managed devices.</td>
+</tr>
 </tbody>
 </table>
 <h3 id="intune-devices-deviceregistrationstate"><a href="https://docs.microsoft.com/graph/api/resources/intune-devices-deviceregistrationstate?view=graph-rest-1.0&amp;tabs=http">intune-devices-deviceregistrationstate</a></h3>
@@ -42109,6 +42149,16 @@
 <td style="text-align: left;">partnerReportedThreatState</td>
 <td style="text-align: left;">managedDevicePartnerReportedHealthState</td>
 <td style="text-align: left;">Indicates the threat state of a device when a Mobile Threat Defense partner is in use by the account and device. Read Only. This property is read-only. Possible values are: <code>unknown</code>, <code>activated</code>, <code>deactivated</code>, <code>secured</code>, <code>lowSeverity</code>, <code>mediumSeverity</code>, <code>highSeverity</code>, <code>unresponsive</code>, <code>compromised</code>, <code>misconfigured</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">requireUserEnrollmentApproval</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Reports if the managed iOS device is user approval enrollment. This property is read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">managementCertificateExpirationDate</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Reports device management certificate expiration date. This property is read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">iccid</td>
@@ -49834,6 +49884,23 @@ The input must match the following regular expression: '^(</p>
 </tr>
 </tbody>
 </table>
+<h3 id="devicemanagement--3"><a href="https://docs.microsoft.com/graph/api/resources/intune-mstunnel-devicemanagement?view=graph-rest-1.0&amp;tabs=http">deviceManagement </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Not yet documented</td>
+</tr>
+</tbody>
+</table>
 <h3 id="metrictimeseriesdatapoint-"><a href="https://docs.microsoft.com/graph/api/resources/intune-mstunnel-metrictimeseriesdatapoint?view=graph-rest-1.0&amp;tabs=http">metricTimeSeriesDataPoint </a></h3>
 <table>
 <thead>
@@ -49895,26 +49962,6 @@ The input must match the following regular expression: '^(</p>
 <td style="text-align: left;">defaultDomainSuffix</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The Default Domain appendix that will be used by the clients</td>
-</tr>
-<tr>
-<td style="text-align: left;">routesInclude</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">The routes that will be routed by the server. This property is going to be deprecated with the option of using the new property, 'RouteIncludes'.</td>
-</tr>
-<tr>
-<td style="text-align: left;">routesExclude</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Subsets of the routes that will not be routed by the server. This property is going to be deprecated with the option of using the new property, 'RouteExcludes'.</td>
-</tr>
-<tr>
-<td style="text-align: left;">routeIncludes</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">The routes that will be routed by the server</td>
-</tr>
-<tr>
-<td style="text-align: left;">routeExcludes</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Subsets of the routes that will not be routed by the server</td>
 </tr>
 <tr>
 <td style="text-align: left;">splitDNS</td>
@@ -50009,7 +50056,7 @@ The input must match the following regular expression: '^(</p>
 <tr>
 <td style="text-align: left;">tunnelServerHealthStatus</td>
 <td style="text-align: left;">microsoftTunnelServerHealthStatus</td>
-<td style="text-align: left;">Indicates the server's health Status as of the last evaluation time. Health is evaluated every 60 seconds, and the possible values are: unknown, healthy, unhealthy, warning, offline, upgradeInProgress, upgradeFailed. Possible values are: <code>unknown</code>, <code>healthy</code>, <code>unhealthy</code>, <code>warning</code>, <code>offline</code>, <code>upgradeInProgress</code>, <code>upgradeFailed</code>, <code>unknownFutureValue</code>.</td>
+<td style="text-align: left;">Indicates the server's health Status as of the last evaluation time. Health is evaluated every 60 seconds, and the possible values are: unknown, healthy, unhealthy, warning, offline, upgradeInProgress, upgradeFailed. Possible values are: <code>unknown</code>, <code>healthy</code>, <code>unhealthy</code>, <code>warning</code>, <code>offline</code>, <code>upgradeInProgress</code>, <code>upgradeFailed</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">lastCheckinDateTime</td>
@@ -50047,7 +50094,7 @@ The input must match the following regular expression: '^(</p>
 <tr>
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">microsoftTunnelLogCollectionStatus</td>
-<td style="text-align: left;">The status of log collection. Possible values are: pending, completed, failed. Possible values are: <code>pending</code>, <code>completed</code>, <code>failed</code>, <code>unknownFutureValue</code>.</td>
+<td style="text-align: left;">The status of log collection. Possible values are: pending, completed, failed. Possible values are: <code>pending</code>, <code>completed</code>, <code>failed</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">startDateTime</td>
@@ -50140,11 +50187,6 @@ The input must match the following regular expression: '^(</p>
 <td style="text-align: left;">internalNetworkProbeUrl</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The site's Internal Network Access Probe URL</td>
-</tr>
-<tr>
-<td style="text-align: left;">enableCertificatePinning</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">When set to true, certificate pinning will be enforced on connections between the Microsoft Tunnel server and Microsoft Tunnel clients. When set to false, certificate pinning will be disabled.</td>
 </tr>
 <tr>
 <td style="text-align: left;">roleScopeTagIds</td>
@@ -52624,7 +52666,7 @@ The input must match the following regular expression: '^(</p>
 </tr>
 </tbody>
 </table>
-<h3 id="devicemanagement--3"><a href="https://docs.microsoft.com/graph/api/resources/intune-policyset-devicemanagement?view=graph-rest-1.0&amp;tabs=http">deviceManagement </a></h3>
+<h3 id="devicemanagement--4"><a href="https://docs.microsoft.com/graph/api/resources/intune-policyset-devicemanagement?view=graph-rest-1.0&amp;tabs=http">deviceManagement </a></h3>
 <table>
 <thead>
 <tr>
@@ -53637,7 +53679,7 @@ The input must match the following regular expression: '^(</p>
 </tr>
 </tbody>
 </table>
-<h3 id="devicemanagement--4"><a href="https://docs.microsoft.com/graph/api/resources/intune-raimportcerts-devicemanagement?view=graph-rest-1.0&amp;tabs=http">deviceManagement </a></h3>
+<h3 id="devicemanagement--5"><a href="https://docs.microsoft.com/graph/api/resources/intune-raimportcerts-devicemanagement?view=graph-rest-1.0&amp;tabs=http">deviceManagement </a></h3>
 <table>
 <thead>
 <tr>
@@ -54716,7 +54758,7 @@ The input must match the following regular expression: '^(</p>
 </tr>
 </tbody>
 </table>
-<h3 id="devicemanagement--5"><a href="https://docs.microsoft.com/graph/api/resources/intune-reporting-devicemanagement?view=graph-rest-1.0&amp;tabs=http">deviceManagement </a></h3>
+<h3 id="devicemanagement--6"><a href="https://docs.microsoft.com/graph/api/resources/intune-reporting-devicemanagement?view=graph-rest-1.0&amp;tabs=http">deviceManagement </a></h3>
 <table>
 <thead>
 <tr>
