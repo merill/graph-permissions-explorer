@@ -777,62 +777,62 @@
 <tr>
 <td style="text-align: left;">category</td>
 <td style="text-align: left;">microsoft.graph.identityGovernance.lifecycleWorkflowCategory</td>
-<td style="text-align: left;">The category of the HR function supported by the workflows created using this template. A workflow can only belong to one category. The possible values are: <code>joiner</code>, <code>leaver</code>, <code>unknownFutureValue</code>.</td>
+<td style="text-align: left;">The category of the HR function supported by the workflows created using this template. A workflow can only belong to one category. The possible values are: <code>joiner</code>, <code>leaver</code>, <code>unknownFutureValue</code>. Inherited from workflowBase.<br><br>Supports <code>$filter</code>(<code>eq</code>,<code>ne</code>) and <code>$orderBy</code></td>
 </tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date time when the <code>workflow</code> was versioned. <br><br>Supports <code>$filter</code>(<code>lt</code>,<code>gt</code>) and <code>$orderby</code>.</td>
+<td style="text-align: left;">When the <code>workflow</code> was created. Inherited from workflowBase.<br><br>Supports <code>$filter</code>(<code>lt</code>,<code>gt</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">deletedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The time and date a workflow is deleted. <br><br>Supports <code>$filter</code>(<code>lt</code>,<code>gt</code>) and <code>$orderby</code>.</td>
+<td style="text-align: left;">When the workflow was deleted. <br><br>Supports <code>$filter</code>(<code>lt</code>,<code>gt</code>) and <code>$orderBy</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">description</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The description of the <code>workflow</code> or <code>workflowVersion</code>.</td>
+<td style="text-align: left;">The description of the <code>workflow</code>. Inherited from workflowBase.</td>
 </tr>
 <tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name of the <code>workflow</code> or <code>workflowVersion</code>. <br><br>Supports <code>$filter</code>(<code>eq</code>), <code>orderby</code>, and <code>$search</code>.</td>
+<td style="text-align: left;">The display name of the <code>workflow</code>. Inherited from workflowBase.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>), <code>orderby</code>, and <code>$search</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">executionConditions</td>
 <td style="text-align: left;">microsoft.graph.identityGovernance.workflowExecutionConditions</td>
-<td style="text-align: left;">Conditions describing when to execute the workflow and the criteria to identify in-scope subject set.</td>
+<td style="text-align: left;">Conditions describing when to execute the workflow and the criteria to identify in-scope subject set. Inherited from workflowBase.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifier used for individually addressing a specific workflow. <br><br>Supports <code>$filter</code>(<code>eq</code>).</td>
+<td style="text-align: left;">Identifier used for individually addressing a specific workflow. <br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">isEnabled</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">If <code>true</code>, the <code>workflow</code> engine creates and processes <code>taskProcessingResults</code> on the users scoped to the workflow. <br><br>Supports <code>$filter</code>(<code>eq</code>,<code>ne</code>) and <code>orderby</code>.</td>
+<td style="text-align: left;">Whether the workflow is enabled or disabled. If this setting is <code>true</code>, the workflow can be run on demand or on schedule when <strong>isSchedulingEnabled</strong> is <code>true</code>. Inherited from workflowBase.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>orderBy</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">isSchedulingEnabled</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">If <code>true</code>, the <code>workflow</code> engine executes the workflow on the schedule defined by tenant settings.</td>
+<td style="text-align: left;">If <code>true</code>, the Lifecycle Workflow engine executes the workflow based on the schedule defined by tenant settings. Cannot be <code>true</code> for a disabled workflow (where <strong>isEnabled</strong> is <code>false</code>). Inherited from workflowBase.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>orderBy</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">lastModifiedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date time when the <code>workflow</code> was last modified. <br><br>Supports <code>$filter</code>(<code>lt</code>,<code>gt</code>) and <code>$orderby</code>.</td>
+<td style="text-align: left;">The date time when the <code>workflow</code> was last modified. Inherited from workflowBase.<br><br>Supports <code>$filter</code>(<code>lt</code>,<code>gt</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">nextScheduleRunDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date time when the <code>workflow</code> is expected to run next based on the schedule interval, if there are any users matching the execution conditions. <br><br>Supports <code>$filter</code>(<code>lt</code>,<code>gt</code>) and <code>$orderby</code>.</td>
+<td style="text-align: left;">The date time when the <code>workflow</code> is expected to run next based on the schedule interval, if there are any users matching the execution conditions. <br><br>Supports <code>$filter</code>(<code>lt</code>,<code>gt</code>) and <code>$orderBy</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">version</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The current version number of the workflow. Value is <code>1</code> when the workflow is first created. <br><br>Supports <code>$filter</code>(<code>eq</code>).</td>
+<td style="text-align: left;">The current version number of the workflow. Value is 1 when the workflow is first created. <br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>).</td>
 </tr>
 </tbody>
 </table>
@@ -890,38 +890,48 @@
 <tbody>
 <tr>
 <td style="text-align: left;">category</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The category of the HR function supported by the workflows created using this template. A workflow can only belong to one category. The possible values are: <code>joiner</code>, <code>leaver</code>, <code>unknownFutureValue</code>.</td>
+<td style="text-align: left;">microsoft.graph.identityGovernance.lifecycleWorkflowCategory</td>
+<td style="text-align: left;">The category of the HR function supported by the workflows created using this template. A workflow can only belong to one category. The possible values are: <code>joiner</code>, <code>leaver</code>, <code>unknownFutureValue</code>. Inherited from workflowBase.<br><br>Supports <code>$filter</code>(<code>eq</code>,<code>ne</code>) and <code>$orderby</code></td>
 </tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date time when the <code>workflow</code> was versioned. <br><br>Supports <code>$filter</code>(<code>lt</code>, <code>gt</code>) and <code>$orderby</code>.</td>
+<td style="text-align: left;">The date time when the <code>workflow</code> was versioned. Inherited from workflowBase.<br><br>Supports <code>$filter</code>(<code>lt</code>, <code>gt</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">description</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The description of the <code>workflowversion</code>.</td>
+<td style="text-align: left;">The description of the <code>workflowversion</code>. Inherited from workflowBase.</td>
 </tr>
 <tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name of the <code>workflowversion</code>. <br><br>Supports <code>$filter</code>(<code>eq</code>), <code>orderby</code>, and <code>$search</code>.</td>
+<td style="text-align: left;">The display name of the <code>workflowversion</code>. Inherited from workflowBase.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>), <code>orderby</code>, and <code>$search</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">executionConditions</td>
 <td style="text-align: left;">microsoft.graph.identityGovernance.workflowExecutionConditions</td>
-<td style="text-align: left;">Conditions describing when to execute the workflow and the criteria to identify in-scope subject set.</td>
+<td style="text-align: left;">Conditions describing when to execute the workflow and the criteria to identify in-scope subject set. Inherited from workflowBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Whether the workflow is enabled or disabled. If this setting is <code>true</code>, the workflow can be run on demand or on schedule when <strong>isSchedulingEnabled</strong> is <code>true</code>. Inherited from workflowBase.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>orderBy</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isSchedulingEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">If <code>true</code>, the Lifecycle Workflow engine executes the workflow based on the schedule defined by tenant settings. Cannot be <code>true</code> for a disabled workflow (where <strong>isEnabled</strong> is <code>false</code>). Inherited from workflowBase.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>orderBy</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">lastModifiedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date time when the <code>workflow</code> was last modified. <br><br>Supports <code>$filter</code>(<code>lt</code>,<code>gt</code>) and <code>$orderby</code>.</td>
+<td style="text-align: left;">The date time when the <code>workflow</code> was last modified. Inherited from workflowBase.<br><br>Supports <code>$filter</code>(<code>lt</code>,<code>gt</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">versionNumber</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The version of the workflow.</td>
+<td style="text-align: left;">The version of the workflow.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>), <code>orderby</code>.</td>
 </tr>
 </tbody>
 </table>
