@@ -154,6 +154,26 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/authenticationstrengthroot-list-authenticationmethodmodes?view=graph-rest-1.0&amp;tabs=http">GET /identity/conditionalAccess/authenticationStrengths/authenticationMethodModes</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/authenticationmethodmodedetail-get?view=graph-rest-1.0&amp;tabs=http">GET /identity/conditionalAccess/authenticationStrengths/authenticationMethodModes/{authenticationMethodModeDetailId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/authenticationstrengthpolicy-list-combinationconfigurations?view=graph-rest-1.0&amp;tabs=http">GET /identity/conditionalAccess/authenticationStrengths/policies/{authenticationStrengthPolicyId}/combinationConfigurations</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/authenticationcombinationconfiguration-get?view=graph-rest-1.0&amp;tabs=http">GET /identity/conditionalAccess/authenticationStrengths/policies/{authenticationStrengthPolicyId}/combinationConfigurations/{authenticationCombinationConfigurationId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/conditionalaccessroot-list-namedlocations?view=graph-rest-1.0&amp;tabs=http">GET /identity/conditionalAccess/namedLocations</a></td>
 </tr>
 <tr>
@@ -235,6 +255,26 @@
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/authenticationflowspolicy-get?view=graph-rest-1.0&amp;tabs=http">GET /policies/authenticationFlowsPolicy</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/authenticationstrengthroot-list-policies?view=graph-rest-1.0&amp;tabs=http">GET /policies/authenticationStrengthPolicies</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/authenticationstrengthpolicy-get?view=graph-rest-1.0&amp;tabs=http">GET /policies/authenticationStrengthPolicies/{authenticationStrengthPolicyId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/authenticationstrengthpolicy-usage?view=graph-rest-1.0&amp;tabs=http">GET /policies/authenticationStrengthPolicies/{authenticationStrengthPolicyId}/usage</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/authenticationstrengthpolicy-findbymethodmode?view=graph-rest-1.0&amp;tabs=http">GET /policies/authenticationStrengthPolicies/findByMethodMode(authenticationMethodModes=[&quot;authenticationMethodMode&quot;])</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -859,6 +899,28 @@
 </tr>
 </tbody>
 </table>
+<h3 id="authenticationcombinationconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/authenticationcombinationconfiguration?view=graph-rest-1.0&amp;tabs=http">authenticationCombinationConfiguration </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">appliesToCombinations</td>
+<td style="text-align: left;">authenticationMethodModes collection</td>
+<td style="text-align: left;">Which authentication method combinations this configuration applies to. Must be an <strong>allowedCombinations</strong> object that's defined for the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is <code>&quot;fido2&quot;</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A unique system-generated identifier. Inherited from entity.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="authenticationflowspolicy-"><a href="https://docs.microsoft.com/graph/api/resources/authenticationflowspolicy?view=graph-rest-1.0&amp;tabs=http">authenticationFlowsPolicy </a></h3>
 <table>
 <thead>
@@ -915,6 +977,107 @@
 <td style="text-align: left;">sourceFilter</td>
 <td style="text-align: left;">authenticationSourceFilter</td>
 <td style="text-align: left;">Filter based on the source of the authentication that is used to determine whether the listener is evaluated. This is currently limited to evaluations based on application the user is authenticating to.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="authenticationmethodmodedetail-"><a href="https://docs.microsoft.com/graph/api/resources/authenticationmethodmodedetail?view=graph-rest-1.0&amp;tabs=http">authenticationMethodModeDetail </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">authenticationMethod</td>
+<td style="text-align: left;">baseAuthenticationMethod</td>
+<td style="text-align: left;">The authentication method that this mode modifies. The possible values are: <code>password</code>, <code>voice</code>, <code>hardwareOath</code>, <code>softwareOath</code>, <code>sms</code>, <code>fido2</code>, <code>windowsHelloForBusiness</code>, <code>microsoftAuthenticator</code>, <code>temporaryAccessPass</code>, <code>email</code>, <code>x509Certificate</code>, <code>federation</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of this mode</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The system-generated identifier for this mode. Inherited from entity.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="authenticationstrengthpolicy-"><a href="https://docs.microsoft.com/graph/api/resources/authenticationstrengthpolicy?view=graph-rest-1.0&amp;tabs=http">authenticationStrengthPolicy </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">allowedCombinations</td>
+<td style="text-align: left;">authenticationMethodModes collection</td>
+<td style="text-align: left;">A collection of authentication method modes that are required be used to satify this authentication strength.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The datetime when this policy was created.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The human-readable description of this policy.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The human-readable display name of this policy. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code> , and <code>in</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The system-generated identifier for this mode. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">modifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The datetime when this policy was last modified.</td>
+</tr>
+<tr>
+<td style="text-align: left;">policyType</td>
+<td style="text-align: left;">authenticationStrengthPolicyType</td>
+<td style="text-align: left;">A descriptor of whether this policy is built into Azure AD or created by an admin for the tenant. The possible values are: <code>builtIn</code>, <code>custom</code>, <code>unknownFutureValue</code>. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code> , and <code>in</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">requirementsSatisfied</td>
+<td style="text-align: left;">authenticationStrengthRequirements</td>
+<td style="text-align: left;">A descriptor of whether this authentication strength grants the MFA claim upon successful satisfaction. The possible values are: <code>none</code>, <code>mfa</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="authenticationstrengthusage-"><a href="https://docs.microsoft.com/graph/api/resources/authenticationstrengthusage?view=graph-rest-1.0&amp;tabs=http">authenticationStrengthUsage </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">mfa</td>
+<td style="text-align: left;">conditionalAccessPolicy collection</td>
+<td style="text-align: left;">A collection of Conditional Access policies that reference the specified authentication strength policy and that require an MFA claim.</td>
+</tr>
+<tr>
+<td style="text-align: left;">none</td>
+<td style="text-align: left;">conditionalAccessPolicy collection</td>
+<td style="text-align: left;">A collection of Conditional Access policies that reference the specified authentication strength policy and that do not require an MFA claim.</td>
 </tr>
 </tbody>
 </table>
@@ -1564,6 +1727,33 @@
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The policy name. Inherited from policyBase.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fido2combinationconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/fido2combinationconfiguration?view=graph-rest-1.0&amp;tabs=http">fido2CombinationConfiguration </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">allowedAAGUIDs</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">A list of AAGUIDs allowed to be used as part of the specified authentication method combinations.</td>
+</tr>
+<tr>
+<td style="text-align: left;">appliesToCombinations</td>
+<td style="text-align: left;">authenticationMethodModes collection</td>
+<td style="text-align: left;">Which authentication method combinations this configuration applies to. The only possible value for fido2combinationConfigurations is <code>&quot;fido2&quot;</code>. Inherited from authenticationCombinationConfiguration.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A system-generated identifier. Inherited from entity.</td>
 </tr>
 </tbody>
 </table>
