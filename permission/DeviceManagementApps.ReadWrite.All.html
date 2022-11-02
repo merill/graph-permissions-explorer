@@ -2519,6 +2519,11 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/intune-mam-devicemanagementreports-getmobileapplicationmanagementappconfigurationreport?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/reports/getMobileApplicationManagementAppConfigurationReport</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/intune-mam-devicemanagementreports-getmobileapplicationmanagementappregistrationsummaryreport?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/reports/getMobileApplicationManagementAppRegistrationSummaryReport</a></td>
 </tr>
 <tr>
@@ -4952,52 +4957,52 @@
 <tr>
 <td style="text-align: left;">bundleId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The bundle id.</td>
+<td style="text-align: left;">The primary bundleId of the package.</td>
 </tr>
 <tr>
 <td style="text-align: left;">minimumSupportedOperatingSystem</td>
 <td style="text-align: left;">macOSMinimumOperatingSystem</td>
-<td style="text-align: left;">The value for the minimum applicable operating system.</td>
+<td style="text-align: left;">ComplexType macOSMinimumOperatingSystem that indicates the minimum operating system applicable for the application.</td>
 </tr>
 <tr>
 <td style="text-align: left;">buildNumber</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The build number of MacOS Line of Business (LoB) app.</td>
+<td style="text-align: left;">The build number of the package. This should match the package CFBundleShortVersionString of the .pkg file.</td>
 </tr>
 <tr>
 <td style="text-align: left;">versionNumber</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The version number of MacOS Line of Business (LoB) app.</td>
+<td style="text-align: left;">The version number of the package. This should match the package CFBundleVersion in the packageinfo file.</td>
 </tr>
 <tr>
 <td style="text-align: left;">childApps</td>
 <td style="text-align: left;">macOSLobChildApp collection</td>
-<td style="text-align: left;">The app list in this bundle package</td>
+<td style="text-align: left;">List of ComplexType macOSLobChildApp objects. Represents the apps expected to be installed by the package.</td>
 </tr>
 <tr>
 <td style="text-align: left;">identityVersion</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The identity version.</td>
+<td style="text-align: left;">The identity version. This property is being deprecated in 2211(November 2022).</td>
 </tr>
 <tr>
 <td style="text-align: left;">md5HashChunkSize</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The chunk size for MD5 hash</td>
+<td style="text-align: left;">The chunk size for MD5 hash. This is '0' or empty if the package was uploaded directly. If the Intune App Wrapping Tool is used to create a .intunemac, this value can be found inside the Detection.xml file.</td>
 </tr>
 <tr>
 <td style="text-align: left;">md5Hash</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">The MD5 hash codes</td>
+<td style="text-align: left;">The MD5 hash codes. This is empty if the package was uploaded directly. If the Intune App Wrapping Tool is used to create a .intunemac, this value can be found inside the Detection.xml file.</td>
 </tr>
 <tr>
 <td style="text-align: left;">ignoreVersionDetection</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">A boolean to control whether the app's version will be used to detect the app after it is installed on a device. Set this to true for macOS Line of Business (LoB) apps that use a self update feature.</td>
+<td style="text-align: left;">When TRUE, indicates that the app's version will NOT be used to detect if the app is installed on a device. When FALSE, indicates that the app's version will be used to detect if the app is installed on a device. Set this to true for apps that use a self update feature.</td>
 </tr>
 <tr>
 <td style="text-align: left;">installAsManaged</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">A boolean to control whether the app will be installed as managed (requires macOS 11.0 and other PKG restrictions).</td>
+<td style="text-align: left;">When TRUE, indicates that the app will be installed as managed (requires macOS 11.0 and other managed package restrictions). When FALSE, indicates that the app will be installed as unmanaged.</td>
 </tr>
 </tbody>
 </table>
@@ -5014,21 +5019,133 @@
 <tr>
 <td style="text-align: left;">bundleId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The Identity Name.</td>
+<td style="text-align: left;">The bundleId of the app.</td>
 </tr>
 <tr>
 <td style="text-align: left;">buildNumber</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The build number of MacOS Line of Business (LoB) app.</td>
+<td style="text-align: left;">The build number of the app.</td>
 </tr>
 <tr>
 <td style="text-align: left;">versionNumber</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The version number of MacOS Line of Business (LoB) app.</td>
+<td style="text-align: left;">The version number of the app.</td>
 </tr>
 </tbody>
 </table>
 <h3 id="macosmdatpapp-"><a href="https://docs.microsoft.com/graph/api/resources/intune-apps-macosmdatpapp?view=graph-rest-1.0&amp;tabs=http">macOSMdatpApp </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Key of the entity. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The admin provided or imported title of the app. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The description of the app. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">publisher</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The publisher of the app. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">largeIcon</td>
+<td style="text-align: left;">mimeContent</td>
+<td style="text-align: left;">The large icon, to be displayed in the app details and used for upload of the icon. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the app was created. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the app was last modified. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">isFeatured</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The value indicating whether the app is marked as featured by the admin. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">privacyInformationUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The privacy statement Url. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">informationUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The more information Url. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">owner</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The owner of the app. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">developer</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The developer of the app. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">notes</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Notes for the app. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">uploadState</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The upload state. Possible values are: 0 - <code>Not Ready</code>, 1 - <code>Ready</code>, 2 - <code>Processing</code>. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">publishingState</td>
+<td style="text-align: left;">mobileAppPublishingState</td>
+<td style="text-align: left;">The publishing state for the app. The app cannot be assigned unless the app is published. Inherited from mobileApp. Possible values are: <code>notPublished</code>, <code>processing</code>, <code>published</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isAssigned</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The value indicating whether the app is assigned to at least one group. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">roleScopeTagIds</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">List of scope tag ids for this mobile app. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">dependentAppCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The total number of dependencies the child app has. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">supersedingAppCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The total number of apps this app directly or indirectly supersedes. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">supersededAppCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The total number of apps this app is directly or indirectly superseded by. Inherited from mobileApp</td>
+</tr>
+</tbody>
+</table>
+<h3 id="macosmicrosoftdefenderapp-"><a href="https://docs.microsoft.com/graph/api/resources/intune-apps-macosmicrosoftdefenderapp?view=graph-rest-1.0&amp;tabs=http">macOSMicrosoftDefenderApp </a></h3>
 <table>
 <thead>
 <tr>
@@ -5253,7 +5370,7 @@
 <tr>
 <td style="text-align: left;">channel</td>
 <td style="text-align: left;">microsoftEdgeChannel</td>
-<td style="text-align: left;">The channel to install on target devices. Possible values are: <code>dev</code>, <code>beta</code>, <code>stable</code>.</td>
+<td style="text-align: left;">The channel to install on target devices. Possible values are: <code>dev</code>, <code>beta</code>, <code>stable</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -5270,27 +5387,27 @@
 <tr>
 <td style="text-align: left;">v10_7</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">When TRUE, indicates macOS 10.7 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</td>
+<td style="text-align: left;">When TRUE, indicates Mac OS X 10.7 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</td>
 </tr>
 <tr>
 <td style="text-align: left;">v10_8</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">When TRUE, indicates macOS 10.8 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</td>
+<td style="text-align: left;">When TRUE, indicates OS X 10.8 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</td>
 </tr>
 <tr>
 <td style="text-align: left;">v10_9</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">When TRUE, indicates macOS 10.9 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</td>
+<td style="text-align: left;">When TRUE, indicates OS X 10.9 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</td>
 </tr>
 <tr>
 <td style="text-align: left;">v10_10</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">When TRUE, indicates macOS 10.10 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</td>
+<td style="text-align: left;">When TRUE, indicates OS X 10.10 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</td>
 </tr>
 <tr>
 <td style="text-align: left;">v10_11</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">When TRUE, indicates macOS 10.11 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</td>
+<td style="text-align: left;">When TRUE, indicates OS X 10.11 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</td>
 </tr>
 <tr>
 <td style="text-align: left;">v10_12</td>
@@ -8456,7 +8573,7 @@
 <tr>
 <td style="text-align: left;">channel</td>
 <td style="text-align: left;">microsoftEdgeChannel</td>
-<td style="text-align: left;">The channel to install on target devices. Possible values are: <code>dev</code>, <code>beta</code>, <code>stable</code>.</td>
+<td style="text-align: left;">The channel to install on target devices. Possible values are: <code>dev</code>, <code>beta</code>, <code>stable</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">displayLanguageLocale</td>
@@ -9756,6 +9873,11 @@
 <td style="text-align: left;">supersededAppCount</td>
 <td style="text-align: left;">Int32</td>
 <td style="text-align: left;">The total number of apps this app is directly or indirectly superseded by. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">manifestHash</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Hash of package metadata properties used to validate that the application matches the metadata in the source repository.</td>
 </tr>
 <tr>
 <td style="text-align: left;">packageIdentifier</td>
@@ -15491,6 +15613,11 @@
 <td style="text-align: left;">showOfficeWebApps</td>
 <td style="text-align: left;">Boolean</td>
 <td style="text-align: left;">Boolean that indicates if Office WebApps will be shown in Company Portal</td>
+</tr>
+<tr>
+<td style="text-align: left;">showConfigurationManagerApps</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Boolean that indicates if Configuration Manager Apps will be shown in Company Portal</td>
 </tr>
 <tr>
 <td style="text-align: left;">sendDeviceOwnershipChangePushNotification</td>
