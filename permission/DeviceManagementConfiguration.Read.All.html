@@ -944,6 +944,16 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/intune-onboarding-devicecategory-list?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/deviceCategories</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/intune-onboarding-devicecategory-get?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/deviceCategories/{deviceCategoryId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/intune-shared-devicecompliancepolicy-list?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/deviceCompliancePolicies</a></td>
 </tr>
 <tr>
@@ -4495,6 +4505,16 @@
 <td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/managedtenants-devicecompliancepolicysettingstatesummary-get?view=graph-rest-1.0&amp;tabs=http">GET /tenantRelationships/managedTenants/deviceCompliancePolicySettingStateSummaries/{deviceCompliancePolicySettingStateSummaryId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/intune-onboarding-user-list?view=graph-rest-1.0&amp;tabs=http">GET /users</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/intune-onboarding-user-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{usersId}</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -31049,7 +31069,7 @@
 <tr>
 <td style="text-align: left;">platform</td>
 <td style="text-align: left;">detectedAppPlatformType</td>
-<td style="text-align: left;">Indicates the operating system / platform of the discovered application.  Some possible values are Windows, iOS, macOS. The default value is unknown (0). Possible values are: <code>unknown</code>, <code>windows</code>, <code>windowsMobile</code>, <code>windowsHolographic</code>, <code>ios</code>, <code>macOS</code>, <code>chromeOS</code>, <code>androidOSP</code>, <code>androidDeviceAdministrator</code>, <code>androidWorkProfile</code>, <code>androidDedicatedAndFullyManaged</code>.</td>
+<td style="text-align: left;">Indicates the operating system / platform of the discovered application.  Some possible values are Windows, iOS, macOS. The default value is unknown (0). Possible values are: <code>unknown</code>, <code>windows</code>, <code>windowsMobile</code>, <code>windowsHolographic</code>, <code>ios</code>, <code>macOS</code>, <code>chromeOS</code>, <code>androidOSP</code>, <code>androidDeviceAdministrator</code>, <code>androidWorkProfile</code>, <code>androidDedicatedAndFullyManaged</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -32250,7 +32270,7 @@
 <tr>
 <td style="text-align: left;">freeStorageSpaceInBytes</td>
 <td style="text-align: left;">Int64</td>
-<td style="text-align: left;">Free Storage in Bytes. This property is read-only.</td>
+<td style="text-align: left;">Free Storage in Bytes. Default value is 0. Read-only. This property is read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">managedDeviceName</td>
@@ -32275,17 +32295,17 @@
 <tr>
 <td style="text-align: left;">iccid</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Integrated Circuit Card Identifier, it is A SIM card's unique identification number. This property is read-only.</td>
+<td style="text-align: left;">Integrated Circuit Card Identifier, it is A SIM card's unique identification number. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">udid</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Unique Device Identifier for iOS and macOS devices. This property is read-only.</td>
+<td style="text-align: left;">Unique Device Identifier for iOS and macOS devices. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">notes</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Notes on the device created by IT Admin</td>
+<td style="text-align: left;">Notes on the device created by IT Admin. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select.  $Search is not supported.</td>
 </tr>
 <tr>
 <td style="text-align: left;">ethernetMacAddress</td>
@@ -32295,7 +32315,7 @@
 <tr>
 <td style="text-align: left;">physicalMemoryInBytes</td>
 <td style="text-align: left;">Int64</td>
-<td style="text-align: left;">Total Memory in Bytes. This property is read-only.</td>
+<td style="text-align: left;">Total Memory in Bytes. Return default value 0 in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. Default value is 0. Read-only. This property is read-only.</td>
 </tr>
 </tbody>
 </table>
@@ -40087,6 +40107,70 @@
 </tr>
 </tbody>
 </table>
+<h3 id="deviceappmanagement-"><a href="https://docs.microsoft.com/graph/api/resources/intune-onboarding-deviceappmanagement?view=graph-rest-1.0&amp;tabs=http">deviceAppManagement </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Not yet documented</td>
+</tr>
+<tr>
+<td style="text-align: left;">microsoftStoreForBusinessLastSuccessfulSyncDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The last time the apps from the Microsoft Store for Business were synced successfully for the account.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isEnabledForMicrosoftStoreForBusiness</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Whether the account is enabled for syncing applications from the Microsoft Store for Business.</td>
+</tr>
+<tr>
+<td style="text-align: left;">microsoftStoreForBusinessLanguage</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The locale information used to sync applications from the Microsoft Store for Business. Cultures that are specific to a country/region. The names of these cultures follow RFC 4646 (Windows Vista and later). The format is <languagecode2>-&lt;country/regioncode2&gt;, where <languagecode2> is a lowercase two-letter code derived from ISO 639-1 and &lt;country/regioncode2&gt; is an uppercase two-letter code derived from ISO 3166. For example, en-US for English (United States) is a specific culture.</languagecode2></languagecode2></td>
+</tr>
+<tr>
+<td style="text-align: left;">microsoftStoreForBusinessLastCompletedApplicationSyncTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The last time an application sync from the Microsoft Store for Business was completed.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="devicecategory-"><a href="https://docs.microsoft.com/graph/api/resources/intune-onboarding-devicecategory?view=graph-rest-1.0&amp;tabs=http">deviceCategory </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for the device category. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Display name for the device category.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Optional description for the device category.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="devicecomanagementauthorityconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/intune-onboarding-devicecomanagementauthorityconfiguration?view=graph-rest-1.0&amp;tabs=http">deviceComanagementAuthorityConfiguration </a></h3>
 <table>
 <thead>
@@ -40156,6 +40240,53 @@
 <td style="text-align: left;">configurationManagerAgentCommandLineArgument</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">CoManagement Authority configuration ConfigurationManagerAgentCommandLineArgument</td>
+</tr>
+</tbody>
+</table>
+<h3 id="deviceenrollmentconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/intune-onboarding-deviceenrollmentconfiguration?view=graph-rest-1.0&amp;tabs=http">deviceEnrollmentConfiguration </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique Identifier for the account</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the device enrollment configuration</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The description of the device enrollment configuration</td>
+</tr>
+<tr>
+<td style="text-align: left;">priority</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Priority is used when a user exists in multiple groups that are assigned enrollment configuration. Users are subject only to the configuration with the lowest priority value.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Created date time in UTC of the device enrollment configuration</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Last modified date time in UTC of the device enrollment configuration</td>
+</tr>
+<tr>
+<td style="text-align: left;">version</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The version of the device enrollment configuration</td>
 </tr>
 </tbody>
 </table>
@@ -40544,6 +40675,28 @@
 </tr>
 </tbody>
 </table>
+<h3 id="devicemanagement--4"><a href="https://docs.microsoft.com/graph/api/resources/intune-onboarding-devicemanagement?view=graph-rest-1.0&amp;tabs=http">deviceManagement </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for this entity</td>
+</tr>
+<tr>
+<td style="text-align: left;">intuneBrand</td>
+<td style="text-align: left;">intuneBrand</td>
+<td style="text-align: left;">intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="devicemanagementexchangeconnector-"><a href="https://docs.microsoft.com/graph/api/resources/intune-onboarding-devicemanagementexchangeconnector?view=graph-rest-1.0&amp;tabs=http">deviceManagementExchangeConnector </a></h3>
 <table>
 <thead>
@@ -40877,6 +41030,28 @@
 <td style="text-align: left;">lastUpdatedDateTime</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Side Loading Key Last Updated Date displayed to the ITPro Admins.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="user-"><a href="https://docs.microsoft.com/graph/api/resources/intune-onboarding-user?view=graph-rest-1.0&amp;tabs=http">user </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier of the user.</td>
+</tr>
+<tr>
+<td style="text-align: left;">deviceEnrollmentLimit</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.</td>
 </tr>
 </tbody>
 </table>
@@ -41807,7 +41982,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="deviceappmanagement-"><a href="https://docs.microsoft.com/graph/api/resources/intune-policyset-deviceappmanagement?view=graph-rest-1.0&amp;tabs=http">deviceAppManagement </a></h3>
+<h3 id="deviceappmanagement--1"><a href="https://docs.microsoft.com/graph/api/resources/intune-policyset-deviceappmanagement?view=graph-rest-1.0&amp;tabs=http">deviceAppManagement </a></h3>
 <table>
 <thead>
 <tr>
@@ -41938,7 +42113,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="devicemanagement--4"><a href="https://docs.microsoft.com/graph/api/resources/intune-policyset-devicemanagement?view=graph-rest-1.0&amp;tabs=http">deviceManagement </a></h3>
+<h3 id="devicemanagement--5"><a href="https://docs.microsoft.com/graph/api/resources/intune-policyset-devicemanagement?view=graph-rest-1.0&amp;tabs=http">deviceManagement </a></h3>
 <table>
 <thead>
 <tr>
@@ -42917,7 +43092,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="devicemanagement--5"><a href="https://docs.microsoft.com/graph/api/resources/intune-raimportcerts-devicemanagement?view=graph-rest-1.0&amp;tabs=http">deviceManagement </a></h3>
+<h3 id="devicemanagement--6"><a href="https://docs.microsoft.com/graph/api/resources/intune-raimportcerts-devicemanagement?view=graph-rest-1.0&amp;tabs=http">deviceManagement </a></h3>
 <table>
 <thead>
 <tr>
@@ -44057,7 +44232,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="devicemanagement--6"><a href="https://docs.microsoft.com/graph/api/resources/intune-reporting-devicemanagement?view=graph-rest-1.0&amp;tabs=http">deviceManagement </a></h3>
+<h3 id="devicemanagement--7"><a href="https://docs.microsoft.com/graph/api/resources/intune-reporting-devicemanagement?view=graph-rest-1.0&amp;tabs=http">deviceManagement </a></h3>
 <table>
 <thead>
 <tr>
@@ -44416,7 +44591,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="deviceenrollmentconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-deviceenrollmentconfiguration?view=graph-rest-1.0&amp;tabs=http">deviceEnrollmentConfiguration </a></h3>
+<h3 id="deviceenrollmentconfiguration--1"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-deviceenrollmentconfiguration?view=graph-rest-1.0&amp;tabs=http">deviceEnrollmentConfiguration </a></h3>
 <table>
 <thead>
 <tr>

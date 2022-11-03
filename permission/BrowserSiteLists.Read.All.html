@@ -91,10 +91,48 @@
 <p>Allows an app to read the browser site lists configured for your organization, on behalf of the signed-in user.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
-</div>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<table>
+<thead>
+<tr>
+<th>Ver</th>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/internetexplorermode-list-sitelists?view=graph-rest-1.0&amp;tabs=http">GET /admin/edge/internetExplorerMode/siteLists</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/browsersitelist-get?view=graph-rest-1.0&amp;tabs=http">GET /admin/edge/internetExplorerMode/siteLists/{browserSiteListId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/browsersitelist-list-sharedcookies?view=graph-rest-1.0&amp;tabs=http">GET /admin/edge/internetExplorerMode/siteLists/{browserSiteListId}/sharedCookies</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/browsersharedcookie-get?view=graph-rest-1.0&amp;tabs=http">GET /admin/edge/internetExplorerMode/siteLists/{browserSiteListId}/sharedCookies/{browserSharedCookieId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/browsersitelist-list-sites?view=graph-rest-1.0&amp;tabs=http">GET /admin/edge/internetExplorerMode/siteLists/{browserSiteListId}/sites</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/browsersite-get?view=graph-rest-1.0&amp;tabs=http">GET /admin/edge/internetExplorerMode/siteLists/{browserSiteListId}/sites/{browserSiteId}</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -142,6 +180,218 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows an app to read all browser site lists configured for your organization, without a signed-in user.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="resources">Resources</h2>
+<h3 id="browsersharedcookie-"><a href="https://docs.microsoft.com/graph/api/resources/browsersharedcookie?view=graph-rest-1.0&amp;tabs=http">browserSharedCookie </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">comment</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The comment for the shared cookie.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the shared cookie was created.</td>
+</tr>
+<tr>
+<td style="text-align: left;">deletedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the shared cookie was deleted.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name of the cookie.</td>
+</tr>
+<tr>
+<td style="text-align: left;">history</td>
+<td style="text-align: left;">browserSharedCookieHistory collection</td>
+<td style="text-align: left;">The history of modifications applied to the cookie.</td>
+</tr>
+<tr>
+<td style="text-align: left;">hostOnly</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Controls whether a cookie is a host-only or domain cookie.</td>
+</tr>
+<tr>
+<td style="text-align: left;">hostOrDomain</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The URL of the cookie.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the cookie.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The user who last modified the cookie.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the cookie was last modified.</td>
+</tr>
+<tr>
+<td style="text-align: left;">path</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The path of the cookie.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sourceEnvironment</td>
+<td style="text-align: left;">browserSharedCookieSourceEnvironment</td>
+<td style="text-align: left;">Specifies how the cookies are shared between Microsoft Edge and Internet Explorer. The possible values are: <code>microsoftEdge</code>, <code>internetExplorer11</code>, <code>both</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">browserSharedCookieStatus</td>
+<td style="text-align: left;">The status of the cookie. The possible values are: <code>published</code>, <code>pendingAdd</code>, <code>pendingEdit</code>, <code>pendingDelete</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="browsersite-"><a href="https://docs.microsoft.com/graph/api/resources/browsersite?view=graph-rest-1.0&amp;tabs=http">browserSite </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">allowRedirect</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Controls the behavior of redirected sites. If <code>true</code>, indicates that the site will open in Internet Explorer 11 or Microsoft Edge even if the site is navigated to as part of a HTTP or meta refresh redirection chain.</td>
+</tr>
+<tr>
+<td style="text-align: left;">comment</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The comment for the site.</td>
+</tr>
+<tr>
+<td style="text-align: left;">compatibilityMode</td>
+<td style="text-align: left;">browserSiteCompatibilityMode</td>
+<td style="text-align: left;">Controls what compatibility setting is used for specific sites or domains. The possible values are: <code>default</code>, <code>internetExplorer8Enterprise</code>, <code>internetExplorer7Enterprise</code>, <code>internetExplorer11</code>, <code>internetExplorer10</code>, <code>internetExplorer9</code>, <code>internetExplorer8</code>, <code>internetExplorer7</code>, <code>internetExplorer5</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the site was created.</td>
+</tr>
+<tr>
+<td style="text-align: left;">deletedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the site was deleted.</td>
+</tr>
+<tr>
+<td style="text-align: left;">history</td>
+<td style="text-align: left;">browserSiteHistory collection</td>
+<td style="text-align: left;">The history of modifications applied to the site.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the site.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The user who last modified the site.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the site was last modified.</td>
+</tr>
+<tr>
+<td style="text-align: left;">mergeType</td>
+<td style="text-align: left;">browserSiteMergeType</td>
+<td style="text-align: left;">The merge type of the site. The possible values are: <code>noMerge</code>, <code>default</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">browserSiteStatus</td>
+<td style="text-align: left;">Indicates the status of the site. The possible values are: <code>published</code>, <code>pendingAdd</code>, <code>pendingEdit</code>, <code>pendingDelete</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">targetEnvironment</td>
+<td style="text-align: left;">browserSiteTargetEnvironment</td>
+<td style="text-align: left;">The target environment that the site should open in. The possible values are: <code>internetExplorerMode</code>, <code>internetExplorer11</code>, <code>microsoftEdge</code>, <code>configurable</code>, <code>none</code>, <code>unknownFutureValue</code>.<br><br>Prior to June 15, 2022, the <code>internetExplorer11</code> option would allow opening a site in the Internet Explorer 11 (IE11) desktop application. Following the retirement of IE11 on June 15, 2022, the <code>internetExplorer11</code> option will no longer open an IE11 window and will instead behave the same as the <code>internetExplorerMode</code> option.</td>
+</tr>
+<tr>
+<td style="text-align: left;">webUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The URL of the site.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="browsersitelist-"><a href="https://docs.microsoft.com/graph/api/resources/browsersitelist?view=graph-rest-1.0&amp;tabs=http">browserSiteList </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The description of the site list.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name of the site list.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the site list.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The user who last modified the site list.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the site list was last modified.</td>
+</tr>
+<tr>
+<td style="text-align: left;">publishedBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The user who published the site list.</td>
+</tr>
+<tr>
+<td style="text-align: left;">publishedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the site list was published.</td>
+</tr>
+<tr>
+<td style="text-align: left;">revision</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The current revision of the site list.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">browserSiteListStatus</td>
+<td style="text-align: left;">The current status of the site list. The possible values are: <code>draft</code>, <code>published</code>, <code>pending</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 </tbody>
 </table>
