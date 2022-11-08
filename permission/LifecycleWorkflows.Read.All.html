@@ -302,7 +302,7 @@
 <tr>
 <td style="text-align: left;">authenticationConfiguration</td>
 <td style="text-align: left;">microsoft.graph.customExtensionAuthenticationConfiguration</td>
-<td style="text-align: left;">Configuration for securing the API call to the logic app. Inherited from customCalloutExtension.</td>
+<td style="text-align: left;">Configuration for securing the API call to the logic app. Inherited from customCalloutExtension. Required.</td>
 </tr>
 <tr>
 <td style="text-align: left;">callbackConfiguration</td>
@@ -317,17 +317,17 @@
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">When the custom task extension was created.</td>
+<td style="text-align: left;">When the custom task extension was created.<br><br>Supports <code>$filter</code>(<code>lt</code>, <code>le</code>, <code>gt</code>, <code>ge</code>, <code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">description</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Describes the purpose of the custom task extension for administrative use. Inherited from customCalloutExtension.</td>
+<td style="text-align: left;">Describes the purpose of the custom task extension for administrative use. Inherited from customCalloutExtension. Optional.</td>
 </tr>
 <tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">A unique string that identifies the custom task extension. Inherited from customCalloutExtension.</td>
+<td style="text-align: left;">A unique string that identifies the custom task extension. Inherited from customCalloutExtension. Required.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">endpointConfiguration</td>
@@ -337,12 +337,12 @@
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Inherited from entity.</td>
+<td style="text-align: left;">Inherited from entity.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">lastModifiedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">When the custom extension was last modified.</td>
+<td style="text-align: left;">When the custom extension was last modified.<br><br>Supports <code>$filter</code>(<code>lt</code>, <code>le</code>, <code>gt</code>, <code>ge</code>, <code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -381,57 +381,57 @@
 <tr>
 <td style="text-align: left;">completedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date time that the run completed. Value is <code>null</code> if the workflow hasn't completed. Optional.</td>
+<td style="text-align: left;">The date time that the run completed. Value is <code>null</code> if the workflow hasn't completed.<br><br>Supports <code>$filter</code>(<code>lt</code>, <code>le</code>, <code>gt</code>, <code>ge</code>, <code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">failedTasksCount</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The number of tasks that failed in the run execution. Required.</td>
+<td style="text-align: left;">The number of tasks that failed in the run execution.</td>
 </tr>
 <tr>
 <td style="text-align: left;">failedUsersCount</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The number of users that failed in the run execution. Required.</td>
+<td style="text-align: left;">The number of users that failed in the run execution.</td>
 </tr>
 <tr>
 <td style="text-align: left;">lastUpdatedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The datetime that the run was last updated. Optional.</td>
+<td style="text-align: left;">The datetime that the run was last updated.<br><br>Supports <code>$filter</code>(<code>lt</code>, <code>le</code>, <code>gt</code>, <code>ge</code>, <code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">processingStatus</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The run execution status. The possible values are: <code>queued</code>, <code>inProgress</code>, <code>completed</code>, <code>completedWithErrors</code>, <code>canceled</code>, <code>failed</code>, <code>unknownFutureValue</code>. Required.</td>
+<td style="text-align: left;">The run execution status. The possible values are: <code>queued</code>, <code>inProgress</code>, <code>completed</code>, <code>completedWithErrors</code>, <code>canceled</code>, <code>failed</code>, <code>unknownFutureValue</code>.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">startedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date time that the run execution started. Optional.</td>
+<td style="text-align: left;">The date time that the run execution started.<br><br>Supports <code>$filter</code>(<code>lt</code>, <code>le</code>, <code>gt</code>, <code>ge</code>, <code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">scheduledDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date time that the run is scheduled to be executed for a workflow. Required.</td>
+<td style="text-align: left;">The date time that the run is scheduled to be executed for a workflow.<br><br>Supports <code>$filter</code>(<code>lt</code>, <code>le</code>, <code>gt</code>, <code>ge</code>, <code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">successfulUsersCount</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The number of successfully completed users in the run. Required.</td>
+<td style="text-align: left;">The number of successfully completed users in the run.</td>
 </tr>
 <tr>
 <td style="text-align: left;">totalUsersCount</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The total number of users in the workflow execution. Required.</td>
+<td style="text-align: left;">The total number of users in the workflow execution.</td>
 </tr>
 <tr>
 <td style="text-align: left;">totalUnprocessedTasksCount</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The total number of unprocessed tasks in the run execution. Required.</td>
+<td style="text-align: left;">The total number of unprocessed tasks in the run execution.</td>
 </tr>
 <tr>
 <td style="text-align: left;">workflowExecutionType</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The execution type of the workflows associated with the run. The possible values are: <code>scheduled</code>, <code>onDemand</code>, <code>unknownFutureValue</code>. Required.</td>
+<td style="text-align: left;">The execution type of the workflows associated with the run. The possible values are: <code>scheduled</code>, <code>onDemand</code>, <code>unknownFutureValue</code>.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -480,47 +480,47 @@
 <tr>
 <td style="text-align: left;">arguments</td>
 <td style="text-align: left;">microsoft.graph.keyValuePair collection</td>
-<td style="text-align: left;">Arguments included within the task. <br> For guidance to configure this property, see Configure the arguments for built-in Lifecycle Workflow tasks.</td>
+<td style="text-align: left;">Arguments included within the task. <br> For guidance to configure this property, see Configure the arguments for built-in Lifecycle Workflow tasks. Required.</td>
 </tr>
 <tr>
 <td style="text-align: left;">category</td>
 <td style="text-align: left;">microsoft.graph.identityGovernance.lifecycleTaskCategory</td>
-<td style="text-align: left;">The category of the task. The possible values are: <code>joiner</code>, <code>leaver</code>, <code>unknownFutureValue</code>. This property is multi-valued and the same task can apply to both <code>joiner</code> and <code>leaver</code> categories.</td>
+<td style="text-align: left;">The category of the task. The possible values are: <code>joiner</code>, <code>leaver</code>, <code>unknownFutureValue</code>. This property is multi-valued and the same task can apply to both <code>joiner</code> and <code>leaver</code> categories.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">continueOnError</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">A boolean value that determines if the failure of this task stops the subsequent workflows from running.</td>
+<td style="text-align: left;">A boolean value that determines if the failure of this task stops the subsequent workflows from running. Optional.</td>
 </tr>
 <tr>
 <td style="text-align: left;">description</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">A string that describes the purpose of the task for administrative use.</td>
+<td style="text-align: left;">A string that describes the purpose of the task for administrative use. Optional.</td>
 </tr>
 <tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">A unique string that identifies the task. <br><br>Supports <code>$filter</code>(<code>eq</code>) and <code>orderBy</code>.</td>
+<td style="text-align: left;">A unique string that identifies the task. Required.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>orderBy</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">executionSequence</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">An integer that states in what order the task will run in a workflow.</td>
+<td style="text-align: left;">An integer that states in what order the task will run in a workflow.<br><br>Supports <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifier used for individually addressing a specific task. Inherited from entity.</td>
+<td style="text-align: left;">Identifier used for individually addressing a specific task. Inherited from entity.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">isEnabled</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">A boolean value that denotes whether the task is set to run or not. <br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>orderBy</code>.</td>
+<td style="text-align: left;">A boolean value that denotes whether the task is set to run or not. Optional.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>orderBy</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">taskDefinitionId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">A unique template identifier for the task. For more information about the tasks that Lifecycle Workflows currently supports and their unique identifiers, see supported tasks</td>
+<td style="text-align: left;">A unique template identifier for the task. For more information about the tasks that Lifecycle Workflows currently supports and their unique identifiers, see supported tasks. Required.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>).</td>
 </tr>
 </tbody>
 </table>
@@ -537,7 +537,7 @@
 <tr>
 <td style="text-align: left;">category</td>
 <td style="text-align: left;">microsoft.graph.identityGovernance.lifecycleTaskCategory</td>
-<td style="text-align: left;">The category of the HR function that the tasks created using this definition can be used with. The possible values are: <code>joiner</code>, <code>leaver</code>. This is a multi-valued enumeration whose allowed combinations are <code>joiner</code>, <code>joiner,leaver</code>, or <code>leaver</code>. Supports <code>$filter</code> (<code>eq</code>, <code>has</code>).</td>
+<td style="text-align: left;">The category of the HR function that the tasks created using this definition can be used with. The possible values are: <code>joiner</code>, <code>leaver</code>. This is a multi-valued enumeration whose allowed combinations are <code>joiner</code>, <code>joiner,leaver</code>, or <code>leaver</code>.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>, <code>has</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">description</td>
@@ -547,7 +547,7 @@
 <tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name of the taskDefinition`.</td>
+<td style="text-align: left;">The display name of the taskDefinition.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
@@ -557,12 +557,12 @@
 <tr>
 <td style="text-align: left;">parameters</td>
 <td style="text-align: left;">microsoft.graph.identityGovernance.parameter collection</td>
-<td style="text-align: left;">The parameters that must be supplied when creating a workflow task object.</td>
+<td style="text-align: left;">The parameters that must be supplied when creating a workflow task object.<br><br>Supports <code>$filter</code>(<code>any</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">version</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The version number of the taskDefinition. New records are pushed when we add support for new parameters.</td>
+<td style="text-align: left;">The version number of the taskDefinition. New records are pushed when we add support for new parameters.<br><br>Supports <code>$filter</code>(<code>ge</code>, <code>gt</code>, <code>le</code>, <code>lt</code>, <code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -579,12 +579,12 @@
 <tr>
 <td style="text-align: left;">completedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date time when taskProcessingResult execution ended. Value is <code>null</code> if task execution is still in progress.</td>
+<td style="text-align: left;">The date time when taskProcessingResult execution ended. Value is <code>null</code> if task execution is still in progress.<br><br>Supports <code>$filter</code>(<code>lt</code>, <code>le</code>, <code>gt</code>, <code>ge</code>, <code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date time when the taskProcessingResult was created. <br><br>Supports <code>$filter</code>(<code>lt</code>, <code>gt</code>) and <code>orderBy</code>.</td>
+<td style="text-align: left;">The date time when the taskProcessingResult was created.<br><br>Supports <code>$filter</code>(<code>lt</code>, <code>le</code>, <code>gt</code>, <code>ge</code>, <code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">failureReason</td>
@@ -594,17 +594,17 @@
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifier used for individually addressing a specific task processing result. Inherited from entity.</td>
+<td style="text-align: left;">Identifier used for individually addressing a specific task processing result. Inherited from entity.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">processingStatus</td>
 <td style="text-align: left;">microsoft.graph.identityGovernance.lifecycleWorkflowProcessingStatus</td>
-<td style="text-align: left;">Describes the execution status of the <code>taskProcessingResult</code>. The possible values are: <code>queued</code>, <code>inProgress</code>, <code>completed</code>, <code>completedWithErrors</code>, <code>canceled</code>, <code>failed</code>, <code>unknownFutureValue</code>. <br><br>Supports <code>$filter</code>(<code>eq</code>).</td>
+<td style="text-align: left;">Describes the execution status of the <code>taskProcessingResult</code>. The possible values are: <code>queued</code>, <code>inProgress</code>, <code>completed</code>, <code>completedWithErrors</code>, <code>canceled</code>, <code>failed</code>, <code>unknownFutureValue</code>.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">startedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date time when taskProcessingResult execution started. Value is <code>null</code> if task execution has not yet started. <br><br>Supports <code>$filter</code>(<code>lt</code>, <code>gt</code>) and <code>orderBy</code>.</td>
+<td style="text-align: left;">The date time when taskProcessingResult execution started. Value is <code>null</code> if task execution has not yet started.<br><br>Supports <code>$filter</code>(<code>lt</code>, <code>le</code>, <code>gt</code>, <code>ge</code>, <code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -621,17 +621,17 @@
 <tr>
 <td style="text-align: left;">completedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date time that the associated run completed. Value is <code>null</code> if the run has not completed.</td>
+<td style="text-align: left;">The date time that the associated run completed. Value is <code>null</code> if the run has not completed.<br><br>Supports <code>$filter</code>(<code>lt</code>, <code>le</code>, <code>gt</code>, <code>ge</code>, <code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">failedUsersCount</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The number of users in the run execution for which the associated task failed.</td>
+<td style="text-align: left;">The number of users in the run execution for which the associated task failed.<br><br>Supports <code>$filter</code>(<code>lt</code>, <code>le</code>, <code>gt</code>, <code>ge</code>, <code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier of the task report. Inherited from entity.</td>
+<td style="text-align: left;">The unique identifier of the task report. Inherited from entity.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">lastUpdatedDateTime</td>
@@ -641,7 +641,7 @@
 <tr>
 <td style="text-align: left;">processingStatus</td>
 <td style="text-align: left;">microsoft.graph.identityGovernance.lifecycleWorkflowProcessingStatus</td>
-<td style="text-align: left;">The processing status of the associated task based on the taskProcessingResults. The possible values are based on the number of <code>queued</code>, <code>inProgress</code>, <code>completed</code>, <code>completedWithErrors</code>, <code>canceled</code>, <code>failed</code>, and <code>unknownFutureValue</code>.</td>
+<td style="text-align: left;">The processing status of the associated task based on the taskProcessingResults. The possible values are based on the number of <code>queued</code>, <code>inProgress</code>, <code>completed</code>, <code>completedWithErrors</code>, <code>canceled</code>, <code>failed</code>, and <code>unknownFutureValue</code>.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">runId</td>
@@ -656,17 +656,17 @@
 <tr>
 <td style="text-align: left;">successfulUsersCount</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The number of users in the run execution for which the associated task succeeded.</td>
+<td style="text-align: left;">The number of users in the run execution for which the associated task succeeded.<br><br>Supports <code>$filter</code>(<code>lt</code>, <code>le</code>, <code>gt</code>, <code>ge</code>, <code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">totalUsersCount</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The total number of users in the run execution for which the associated task was scheduled to execute.</td>
+<td style="text-align: left;">The total number of users in the run execution for which the associated task was scheduled to execute.<br><br>Supports <code>$filter</code>(<code>lt</code>, <code>le</code>, <code>gt</code>, <code>ge</code>, <code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">unprocessedUsersCount</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The number of users in the run execution for which the associated task is <code>queued</code>, <code>in progress</code>, or <code>canceled</code>.</td>
+<td style="text-align: left;">The number of users in the run execution for which the associated task is <code>queued</code>, <code>in progress</code>, or <code>canceled</code>.<br><br>Supports <code>$filter</code>(<code>lt</code>, <code>le</code>, <code>gt</code>, <code>ge</code>, <code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -715,7 +715,7 @@
 <tr>
 <td style="text-align: left;">completedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date time that the workflow execution for a user completed. Value is null if the workflow hasn't completed. <br><br>Supports <code>$filter</code>(<code>lt</code>, <code>gt</code>) and <code>$orderby</code>.</td>
+<td style="text-align: left;">The date time that the workflow execution for a user completed. Value is null if the workflow hasn't completed.<br><br>Supports <code>$filter</code>(<code>lt</code>, <code>le</code>, <code>gt</code>, <code>ge</code>, <code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">failedTasksCount</td>
@@ -725,22 +725,22 @@
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifier used for individually addressing a specific user processing result. Inherited from entity.</td>
+<td style="text-align: left;">Identifier used for individually addressing a specific user processing result. Inherited from entity.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">processingStatus</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The workflow execution status. The possible values are: <code>queued</code>, <code>inProgress</code>, <code>completed</code>, <code>completedWithErrors</code>, <code>canceled</code>, <code>failed</code>, <code>unknownFutureValue</code>.</td>
+<td style="text-align: left;">The workflow execution status. The possible values are: <code>queued</code>, <code>inProgress</code>, <code>completed</code>, <code>completedWithErrors</code>, <code>canceled</code>, <code>failed</code>, <code>unknownFutureValue</code>.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">scheduledDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date time that the workflow is scheduled to be executed for a user.</td>
+<td style="text-align: left;">The date time that the workflow is scheduled to be executed for a user.<br><br>Supports <code>$filter</code>(<code>lt</code>, <code>le</code>, <code>gt</code>, <code>ge</code>, <code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">startedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date time that the workflow execution started. Value is <code>null</code> if the workflow execution has not started. <br><br>Supports <code>$filter</code>(<code>lt</code>, <code>gt</code>) and <code>$orderby</code>.</td>
+<td style="text-align: left;">The date time that the workflow execution started. Value is <code>null</code> if the workflow execution has not started.<br><br>Supports <code>$filter</code>(<code>lt</code>, <code>le</code>, <code>gt</code>, <code>ge</code>, <code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">totalTasksCount</td>
@@ -755,7 +755,7 @@
 <tr>
 <td style="text-align: left;">workflowExecutionType</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Describes the execution type of the workflow. The possible values are: <code>scheduled</code>, <code>onDemand</code>, <code>unknownFutureValue</code>. <br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>).</td>
+<td style="text-align: left;">Describes the execution type of the workflow. The possible values are: <code>scheduled</code>, <code>onDemand</code>, <code>unknownFutureValue</code>.<br><br>Supports <code>$filter</code>(<code>lt</code>, <code>le</code>, <code>gt</code>, <code>ge</code>, <code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">workflowVersion</td>
@@ -777,52 +777,52 @@
 <tr>
 <td style="text-align: left;">category</td>
 <td style="text-align: left;">microsoft.graph.identityGovernance.lifecycleWorkflowCategory</td>
-<td style="text-align: left;">The category of the HR function supported by the workflows created using this template. A workflow can only belong to one category. The possible values are: <code>joiner</code>, <code>leaver</code>, <code>unknownFutureValue</code>. Inherited from workflowBase.<br><br>Supports <code>$filter</code>(<code>eq</code>,<code>ne</code>) and <code>$orderBy</code></td>
+<td style="text-align: left;">The category of the HR function supported by the workflows created using this template. A workflow can only belong to one category. The possible values are: <code>joiner</code>, <code>leaver</code>, <code>unknownFutureValue</code>. Inherited from workflowBase. Required.<br><br>Supports <code>$filter</code>(<code>eq</code>,<code>ne</code>) and <code>$orderBy</code></td>
 </tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">When the <code>workflow</code> was created. Inherited from workflowBase.<br><br>Supports <code>$filter</code>(<code>lt</code>,<code>gt</code>) and <code>$orderby</code>.</td>
+<td style="text-align: left;">When the <code>workflow</code> was created. Inherited from workflowBase.<br><br>Supports <code>$filter</code>(<code>lt</code>, <code>le</code>, <code>gt</code>, <code>ge</code>, <code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">deletedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">When the workflow was deleted. <br><br>Supports <code>$filter</code>(<code>lt</code>,<code>gt</code>) and <code>$orderBy</code>.</td>
+<td style="text-align: left;">When the workflow was deleted.<br><br>Supports <code>$filter</code>(<code>lt</code>, <code>le</code>, <code>gt</code>, <code>ge</code>, <code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">description</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The description of the <code>workflow</code>. Inherited from workflowBase.</td>
+<td style="text-align: left;">The description of the <code>workflow</code>. Inherited from workflowBase. Optional.</td>
 </tr>
 <tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name of the <code>workflow</code>. Inherited from workflowBase.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>), <code>orderby</code>, and <code>$search</code>.</td>
+<td style="text-align: left;">The display name of the <code>workflow</code>. Inherited from workflowBase. Required.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">executionConditions</td>
 <td style="text-align: left;">microsoft.graph.identityGovernance.workflowExecutionConditions</td>
-<td style="text-align: left;">Conditions describing when to execute the workflow and the criteria to identify in-scope subject set. Inherited from workflowBase.</td>
+<td style="text-align: left;">Conditions describing when to execute the workflow and the criteria to identify in-scope subject set. Inherited from workflowBase. Required.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifier used for individually addressing a specific workflow. <br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>).</td>
+<td style="text-align: left;">Identifier used for individually addressing a specific workflow.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">isEnabled</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Whether the workflow is enabled or disabled. If this setting is <code>true</code>, the workflow can be run on demand or on schedule when <strong>isSchedulingEnabled</strong> is <code>true</code>. Inherited from workflowBase.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>orderBy</code>.</td>
+<td style="text-align: left;">Whether the workflow is enabled or disabled. If this setting is <code>true</code>, the workflow can be run on demand or on schedule when <strong>isSchedulingEnabled</strong> is <code>true</code>. Inherited from workflowBase. Optional. Defaults to <code>true</code>.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>orderBy</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">isSchedulingEnabled</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">If <code>true</code>, the Lifecycle Workflow engine executes the workflow based on the schedule defined by tenant settings. Cannot be <code>true</code> for a disabled workflow (where <strong>isEnabled</strong> is <code>false</code>). Inherited from workflowBase.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>orderBy</code>.</td>
+<td style="text-align: left;">If <code>true</code>, the Lifecycle Workflow engine executes the workflow based on the schedule defined by tenant settings. Cannot be <code>true</code> for a disabled workflow (where <strong>isEnabled</strong> is <code>false</code>). Inherited from workflowBase. Optional. Defaults to <code>false</code>.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>orderBy</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">lastModifiedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date time when the <code>workflow</code> was last modified. Inherited from workflowBase.<br><br>Supports <code>$filter</code>(<code>lt</code>,<code>gt</code>) and <code>$orderby</code>.</td>
+<td style="text-align: left;">The date time when the <code>workflow</code> was last modified. Inherited from workflowBase.<br><br>Supports <code>$filter</code>(<code>lt</code>, <code>le</code>, <code>gt</code>, <code>ge</code>, <code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">nextScheduleRunDateTime</td>
@@ -832,7 +832,7 @@
 <tr>
 <td style="text-align: left;">version</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The current version number of the workflow. Value is 1 when the workflow is first created. <br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>).</td>
+<td style="text-align: left;">The current version number of the workflow. Value is 1 when the workflow is first created.<br><br>Supports <code>$filter</code>(<code>lt</code>, <code>le</code>, <code>gt</code>, <code>ge</code>, <code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -849,7 +849,7 @@
 <tr>
 <td style="text-align: left;">category</td>
 <td style="text-align: left;">microsoft.graph.identityGovernance.lifecycleWorkflowCategory</td>
-<td style="text-align: left;">The category of the workflow template. The possible values are: <code>joiner</code>, <code>leaver</code>. Supports <code>$filter</code> (<code>eq</code>).</td>
+<td style="text-align: left;">The category of the workflow template. The possible values are: <code>joiner</code>, <code>leaver</code>.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">description</td>
@@ -859,7 +859,7 @@
 <tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name of the <code>workflowTemplate</code>. <br><br>Supports  <code>orderby</code>.</td>
+<td style="text-align: left;">The display name of the <code>workflowTemplate</code>.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">executionConditions</td>
@@ -869,12 +869,7 @@
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the <code>workflowTemplate</code>. Inherited from entity.</td>
-</tr>
-<tr>
-<td style="text-align: left;">tasks</td>
-<td style="text-align: left;">microsoft.graph.identityGovernance.task collection</td>
-<td style="text-align: left;">Represents the configured tasks to execute and their execution sequence within a workflow. This relationship is expanded by default.</td>
+<td style="text-align: left;">The unique identifier for the <code>workflowTemplate</code>. Inherited from entity.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -896,7 +891,7 @@
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date time when the <code>workflow</code> was versioned. Inherited from workflowBase.<br><br>Supports <code>$filter</code>(<code>lt</code>, <code>gt</code>) and <code>$orderby</code>.</td>
+<td style="text-align: left;">The date time when the <code>workflow</code> was versioned. Inherited from workflowBase.<br><br>Supports <code>$filter</code>(<code>lt</code>, <code>le</code>, <code>gt</code>, <code>ge</code>, <code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">description</td>
@@ -906,7 +901,7 @@
 <tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name of the <code>workflowversion</code>. Inherited from workflowBase.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>), <code>orderby</code>, and <code>$search</code>.</td>
+<td style="text-align: left;">The display name of the <code>workflowversion</code>. Inherited from workflowBase.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">executionConditions</td>
@@ -926,12 +921,12 @@
 <tr>
 <td style="text-align: left;">lastModifiedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date time when the <code>workflow</code> was last modified. Inherited from workflowBase.<br><br>Supports <code>$filter</code>(<code>lt</code>,<code>gt</code>) and <code>$orderby</code>.</td>
+<td style="text-align: left;">The date time when the <code>workflow</code> was last modified. Inherited from workflowBase.<br><br>Supports <code>$filter</code>(<code>lt</code>, <code>le</code>, <code>gt</code>, <code>ge</code>, <code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">versionNumber</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The version of the workflow.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>), <code>orderby</code>.</td>
+<td style="text-align: left;">The version of the workflow.<br><br>Supports <code>$filter</code>(<code>lt</code>, <code>le</code>, <code>gt</code>, <code>ge</code>, <code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 </tbody>
 </table>
