@@ -114,11 +114,6 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/application-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /applications/{applicationObjectId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-delete-owners?view=graph-rest-1.0&amp;tabs=http">DELETE /applications/{id}/owners/{id}/$ref</a></td>
 </tr>
 <tr>
@@ -1088,11 +1083,6 @@
 </tr>
 <tr>
 <td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/application-update?view=graph-rest-1.0&amp;tabs=http">PATCH /applications/{applicationObjectId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/device-update?view=graph-rest-1.0&amp;tabs=http">PATCH /devices/{id}</a></td>
 </tr>
@@ -1205,11 +1195,6 @@
 <td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/teamsapp-update?view=graph-rest-1.0&amp;tabs=http">POST /appCatalogs/teamsApps/{id}/appDefinitions</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/application-post-applications?view=graph-rest-1.0&amp;tabs=http">POST /applications</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -1849,43 +1834,6 @@
 <td style="text-align: left;">visibility</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Controls whether the administrative unit and its members are hidden or public. Can be set to <code>HiddenMembership</code>. If not set (value is <code>null</code>), the default behavior is public. When set to <code>HiddenMembership</code>, only members of the administrative unit can list other members of the administrative unit.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="apiapplication-"><a href="https://docs.microsoft.com/graph/api/resources/apiapplication?view=graph-rest-1.0&amp;tabs=http">apiApplication </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">acceptMappedClaims</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">When <code>true</code>, allows an application to use claims mapping without specifying a custom signing key.</td>
-</tr>
-<tr>
-<td style="text-align: left;">knownClientApplications</td>
-<td style="text-align: left;">Guid collection</td>
-<td style="text-align: left;">Used for bundling consent if you have a solution that contains two parts: a client app and a custom web API app. If you set the appID of the client app to this value, the user only consents once to the client app. Azure AD knows that consenting to the client means implicitly consenting to the web API and automatically provisions service principals for both APIs at the same time. Both the client and the web API app must be registered in the same tenant.</td>
-</tr>
-<tr>
-<td style="text-align: left;">oauth2PermissionScopes</td>
-<td style="text-align: left;">permissionScope collection</td>
-<td style="text-align: left;">The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes.</td>
-</tr>
-<tr>
-<td style="text-align: left;">preAuthorizedApplications</td>
-<td style="text-align: left;">preAuthorizedApplication collection</td>
-<td style="text-align: left;">Lists the client applications that are pre-authorized with the specified delegated permissions to access this application's APIs. Users are not required to consent to any pre-authorized application (for the permissions specified). However, any additional permissions not listed in preAuthorizedApplications (requested through incremental consent for example) will require user consent.</td>
-</tr>
-<tr>
-<td style="text-align: left;">requestedAccessTokenVersion</td>
-<td style="text-align: left;">Int32</td>
-<td style="text-align: left;">Specifies the access token version expected by this resource. This changes the version and format of the JWT produced independent of the endpoint or client used to request the access token. <br><br> The endpoint used, v1.0 or v2.0, is chosen by the client and only impacts the version of id_tokens. Resources need to explicitly configure **r</td>
 </tr>
 </tbody>
 </table>
@@ -3249,43 +3197,6 @@
 </tr>
 </tbody>
 </table>
-<h3 id="informationalurl-"><a href="https://docs.microsoft.com/graph/api/resources/informationalurl?view=graph-rest-1.0&amp;tabs=http">informationalUrl </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">logoUrl</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">CDN URL to the application's logo, Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">marketingUrl</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Link to the application's marketing page. For example, <a href="https://www.contoso.com/app/marketing">https://www.contoso.com/app/marketing</a></td>
-</tr>
-<tr>
-<td style="text-align: left;">privacyStatementUrl</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Link to the application's privacy statement. For example, <a href="https://www.contoso.com/app/privacy">https://www.contoso.com/app/privacy</a></td>
-</tr>
-<tr>
-<td style="text-align: left;">supportUrl</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Link to the application's support page. For example, <a href="https://www.contoso.com/app/support">https://www.contoso.com/app/support</a></td>
-</tr>
-<tr>
-<td style="text-align: left;">termsOfServiceUrl</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Link to the application's terms of service statement. For example, <a href="https://www.contoso.com/app/termsofservice">https://www.contoso.com/app/termsofservice</a></td>
-</tr>
-</tbody>
-</table>
 <h3 id="invitation-"><a href="https://docs.microsoft.com/graph/api/resources/invitation?view=graph-rest-1.0&amp;tabs=http">invitation </a></h3>
 <table>
 <thead>
@@ -3674,113 +3585,6 @@
 </tr>
 </tbody>
 </table>
-<h3 id="onpremisespublishing-"><a href="https://docs.microsoft.com/graph/api/resources/onpremisespublishing?view=graph-rest-1.0&amp;tabs=http">onPremisesPublishing </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">alternateUrl</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">If you are configuring a traffic manager in front of multiple App Proxy applications, the alternateUrl is the user-friendly URL that will point to the traffic manager.</td>
-</tr>
-<tr>
-<td style="text-align: left;">applicationServerTimeout</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The duration the connector will wait for a response from the backend application before closing the connection. Possible values are <code>default</code>, <code>long</code>. When set to default, the backend application timeout has a length of 85 seconds. When set to long, the backend timeout is increased to 180 seconds. Use <code>long</code> if your server takes more than 85 seconds to respond to requests or if you are unable to access the application and the error status is &quot;Backend Timeout&quot;. Default value is <code>default</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">applicationType</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Indicates if this application is an Application Proxy configured application. This is pre-set by the system. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">externalAuthenticationType</td>
-<td style="text-align: left;">externalAuthenticationType</td>
-<td style="text-align: left;">Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Passthru does not require authentication. Possible values are: <code>passthru</code>, <code>aadPreAuthentication</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">externalUrl</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The published external url for the application. For example, <a href="https://intranet-contoso.msappproxy.net/">https://intranet-contoso.msappproxy.net/</a>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">internalUrl</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The internal url of the application. For example, https://intranet/.</td>
-</tr>
-<tr>
-<td style="text-align: left;">isBackendCertificateValidationEnabled</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property will be set to <code>true</code> by default. For all existing apps, the property will be set to <code>false</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">isHttpOnlyCookieEnabled</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates if the HTTPOnly cookie flag should be set in the HTTP response headers. Set this value to <code>true</code> to have Application Proxy cookies include the HTTPOnly flag in the HTTP response headers. If using Remote Desktop Services, set this value to False. Default value is <code>false</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">isOnPremPublishingEnabled</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates if the application is currently being published via Application Proxy or not. This is pre-set by the system. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">isPersistentCookieEnabled</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates if the Persistent cookie flag should be set in the HTTP response headers. Keep this value set to <code>false</code>. Only use this setting for applications that can't share cookies between processes. For more information about cookie settings, see Cookie settings for accessing on-premises applications in Azure Active Directory. Default value is <code>false</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">isSecureCookieEnabled</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates if the Secure cookie flag should be set in the HTTP response headers. Set this value to <code>true</code> to transmit cookies over a secure channel such as an encrypted HTTPS request. Default value is <code>true</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">isStateSessionEnabled</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates whether validation of the state parameter when the client uses the OAuth 2.0 authorization code grant flow is enabled. This setting allows admins to specify whether they want to enable CSRF protection for their apps.</td>
-</tr>
-<tr>
-<td style="text-align: left;">isTranslateHostHeaderEnabled</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates if the application should translate urls in the reponse headers. Keep this value as <code>true</code> unless your application required the original host header in the authentication request. Default value is <code>true</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">isTranslateLinksInBodyEnabled</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates if the application should translate urls in the application body. Keep this value as <code>false</code> unless you have hardcoded HTML links to other on-premises applications and don't use custom domains. For more information, see Link translation with Application Proxy. Default value is <code>false</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">onPremisesApplicationSegments</td>
-<td style="text-align: left;">onPremisesApplicationSegment collection</td>
-<td style="text-align: left;">Represents the application segment collection for an on-premises wildcard application.</td>
-</tr>
-<tr>
-<td style="text-align: left;">singleSignOnSettings</td>
-<td style="text-align: left;">onPremisesPublishingSingleSignOn</td>
-<td style="text-align: left;">Represents the single sign-on configuration for the on-premises application.</td>
-</tr>
-<tr>
-<td style="text-align: left;">verifiedCustomDomainCertificatesMetadata</td>
-<td style="text-align: left;">verifiedCustomDomainCertificatesMetadata</td>
-<td style="text-align: left;">Details of the certificate associated with the application when a custom domain is in use. <code>null</code> when using the default domain. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">verifiedCustomDomainKeyCredential</td>
-<td style="text-align: left;">keyCredential</td>
-<td style="text-align: left;">The associated key credential for the custom domain used.</td>
-</tr>
-<tr>
-<td style="text-align: left;">verifiedCustomDomainPasswordCredential</td>
-<td style="text-align: left;">passwordCredential</td>
-<td style="text-align: left;">The associated password credential for the custom domain used.</td>
-</tr>
-</tbody>
-</table>
 <h3 id="onpremisespublishingprofile-"><a href="https://docs.microsoft.com/graph/api/resources/onpremisespublishingprofile?view=graph-rest-1.0&amp;tabs=http">onPremisesPublishingProfile </a></h3>
 <table>
 <thead>
@@ -4022,28 +3826,6 @@
 </tr>
 </tbody>
 </table>
-<h3 id="parentalcontrolsettings-"><a href="https://docs.microsoft.com/graph/api/resources/parentalcontrolsettings?view=graph-rest-1.0&amp;tabs=http">parentalControlSettings </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">countriesBlockedForMinors</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Specifies the two-letter ISO country codes. Access to the application will be blocked for minors from the countries specified in this list.</td>
-</tr>
-<tr>
-<td style="text-align: left;">legalAgeGroupRule</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Specifies the legal age group rule that applies to users of the app. Can be set to one of the following values: <table><tr><th>Value</th><th>Description</th></tr><tr><td>Allow</td><td>Default. Enforces the legal minimum. This means parental consent is required for minors in the European Union and Korea.</td></tr><tr><td>RequireConsentForPrivacyServices</td><td>Enforces the user to specify date of birth to comply with COPPA rules. </td></tr><tr><td>RequireConsentForMinors</td><td>Requires parental consent for ages below 18, regardless of country minor rules.</td></tr><tr><td>RequireConsentForKids</td><td>Requires parental consent for ages below 14, regardless of country minor rules.</td></tr><tr><td>BlockMinors</td><td>Blocks minors from using the app.</td></tr></table></td>
-</tr>
-</tbody>
-</table>
 <h3 id="passwordcredential-"><a href="https://docs.microsoft.com/graph/api/resources/passwordcredential?view=graph-rest-1.0&amp;tabs=http">passwordCredential </a></h3>
 <table>
 <thead>
@@ -4164,45 +3946,6 @@
 <td style="text-align: left;">width</td>
 <td style="text-align: left;">int32</td>
 <td style="text-align: left;">The width of the photo. Read-only.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="publicclientapplication-"><a href="https://docs.microsoft.com/graph/api/resources/publicclientapplication?view=graph-rest-1.0&amp;tabs=http">publicClientApplication </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">redirectUris</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="requiredresourceaccess-"><a href="https://docs.microsoft.com/graph/api/resources/requiredresourceaccess?view=graph-rest-1.0&amp;tabs=http">requiredResourceAccess </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">resourceAccess</td>
-<td style="text-align: left;">resourceAccess collection</td>
-<td style="text-align: left;">The list of OAuth2.0 permission scopes and app roles that the application requires from the specified resource.</td>
-</tr>
-<tr>
-<td style="text-align: left;">resourceAppId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the resource that the application requires access to. This should be equal to the **a</td>
 </tr>
 </tbody>
 </table>
@@ -4560,23 +4303,6 @@
 <td style="text-align: left;">value</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Value of the setting.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="spaapplication-"><a href="https://docs.microsoft.com/graph/api/resources/spaapplication?view=graph-rest-1.0&amp;tabs=http">spaApplication </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">redirectUris</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.</td>
 </tr>
 </tbody>
 </table>
@@ -5897,60 +5623,6 @@
 <td style="text-align: left;">userType</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">A string value that can be used to classify user types in your directory, such as <code>Member</code> and <code>Guest</code>. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>, and <code>eq</code> on <code>null</code> values). **N</td>
-</tr>
-</tbody>
-</table>
-<h3 id="webapplication-"><a href="https://docs.microsoft.com/graph/api/resources/webapplication?view=graph-rest-1.0&amp;tabs=http">webApplication </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">homePageUrl</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Home page or landing page of the application.</td>
-</tr>
-<tr>
-<td style="text-align: left;">implicitGrantSettings</td>
-<td style="text-align: left;">implicitGrantSettings</td>
-<td style="text-align: left;">Specifies whether this web application can request tokens using the OAuth 2.0 implicit flow.</td>
-</tr>
-<tr>
-<td style="text-align: left;">logoutUrl</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Specifies the URL that will be used by Microsoft's authorization service to logout an user using front-channel, back-channel or SAML logout protocols.</td>
-</tr>
-<tr>
-<td style="text-align: left;">redirectUris</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="windowsapplication-"><a href="https://docs.microsoft.com/graph/api/resources/windowsapplication?view=graph-rest-1.0&amp;tabs=http">windowsApplication </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">packageSid</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The package security identifier that Microsoft has assigned the application. Optional. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">redirectUris</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Specifies the URLs where user tokens are sent for sign-in or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent. Only available for applications that support the <code>PersonalMicrosoftAccount</code> **s</td>
 </tr>
 </tbody>
 </table>
