@@ -289,6 +289,11 @@
 <tr>
 <td>V1</td>
 <td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-get?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals(appId='{appId}')</a></td>
 </tr>
 <tr>
@@ -299,12 +304,27 @@
 <tr>
 <td>V1</td>
 <td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-approleassignedto?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/appRoleAssignedTo</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-approleassignments?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/appRoleAssignments</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-claimsmappingpolicies?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/claimsMappingPolicies</a></td>
 </tr>
 <tr>
 <td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-createdobjects?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/createdObjects</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-delegatedpermissionclassifications?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/delegatedPermissionClassifications</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -320,6 +340,11 @@
 <td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-ownedobjects?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/ownedObjects</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-owners?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/owners</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -1044,6 +1069,58 @@
 </tr>
 </tbody>
 </table>
+<h3 id="approleassignment-"><a href="https://docs.microsoft.com/graph/api/resources/approleassignment?view=graph-rest-1.0&amp;tabs=http">appRoleAssignment </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">appRoleId</td>
+<td style="text-align: left;">Guid</td>
+<td style="text-align: left;">The identifier (<strong>id</strong>) for the app role which is assigned to the principal. This app role must be exposed in the <strong>appRoles</strong> property on the resource application's service principal (<strong>resourceId</strong>). If the resource application has not declared any app roles, a default app role ID of <code>00000000-0000-0000-0000-000000000000</code> can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The time when the app role assignment was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A unique identifier for the <strong>appRoleAssignment</strong> key. Not nullable. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">principalDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the user, group, or service principal that was granted the app role assignment. Read-only. Supports <code>$filter</code> (<code>eq</code> and <code>startswith</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">principalId</td>
+<td style="text-align: left;">Guid</td>
+<td style="text-align: left;">The unique identifier (<strong>id</strong>) for the user, security group, or service principal being granted the app role. Security groups with dynamic memberships are supported. Required on create.</td>
+</tr>
+<tr>
+<td style="text-align: left;">principalType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The type of the assigned principal. This can either be <code>User</code>, <code>Group</code>, or <code>ServicePrincipal</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">resourceDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the resource app's service principal to which the assignment is made.</td>
+</tr>
+<tr>
+<td style="text-align: left;">resourceId</td>
+<td style="text-align: left;">Guid</td>
+<td style="text-align: left;">The unique identifier (**i</td>
+</tr>
+</tbody>
+</table>
 <h3 id="claimsmappingpolicy-"><a href="https://docs.microsoft.com/graph/api/resources/claimsmappingpolicy?view=graph-rest-1.0&amp;tabs=http">claimsMappingPolicy </a></h3>
 <table>
 <thead>
@@ -1077,6 +1154,38 @@
 </tbody>
 </table>
 <h3 id="customsecurityattributevalue-"><a href="https://docs.microsoft.com/graph/api/resources/customsecurityattributevalue?view=graph-rest-1.0&amp;tabs=http">customSecurityAttributeValue </a></h3>
+<h3 id="delegatedpermissionclassification-"><a href="https://docs.microsoft.com/graph/api/resources/delegatedpermissionclassification?view=graph-rest-1.0&amp;tabs=http">delegatedPermissionClassification </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A unique identifier for the <strong>delegatedPermissionClassification</strong> Key. Not nullable. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">classification</td>
+<td style="text-align: left;">permissionClassificationType</td>
+<td style="text-align: left;">The classification value being given. Possible value: <code>low</code>. Does not support <code>$filter</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">permissionId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier (<strong>id</strong>) for the delegated permission listed in the <strong>oauth2PermissionScopes</strong> collection of the servicePrincipal. Required on create. Does not support <code>$filter</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">permissionName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The claim value (**v</td>
+</tr>
+</tbody>
+</table>
 <h3 id="directory-"><a href="https://docs.microsoft.com/graph/api/resources/directory?view=graph-rest-1.0&amp;tabs=http">directory </a></h3>
 <table>
 <thead>
@@ -1368,7 +1477,7 @@
 <tr>
 <td style="text-align: left;">proxyAddresses</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Email addresses for the group that direct to the same group mailbox. For example: <code>[&quot;SMTP: bob@contoso.com&quot;, &quot;smtp: bob@sales.contoso.com&quot;]</code>. The <strong>any</strong> operator is required to filter expressions on multi-valued properties. <br><br>Returned by default. Read-only. Not nullable. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>, <code>endsWith</code>, and counting empty collections).</td>
+<td style="text-align: left;">Email addresses for the group that direct to the same group mailbox. For example: <code>[&quot;SMTP: bob@contoso.com&quot;, &quot;smtp: bob@sales.contoso.com&quot;]</code>. The <strong>any</strong> operator is required to filter expressions on multi-valued properties. <br><br>Returned by default. Read-only. Not nullable. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>, <code>endsWith</code>, <code>/$count eq 0</code>, <code>/$count ne 0</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">renewedDateTime</td>
@@ -2608,7 +2717,7 @@
 <tr>
 <td style="text-align: left;">assignedLicenses</td>
 <td style="text-align: left;">assignedLicense collection</td>
-<td style="text-align: left;">The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate directly-assigned and inherited licenses. Use the <strong>licenseAssignmentStates</strong> property to identify the directly-assigned and inherited licenses.  Not nullable. Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, and counting empty collections).</td>
+<td style="text-align: left;">The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate directly-assigned and inherited licenses. Use the <strong>licenseAssignmentStates</strong> property to identify the directly-assigned and inherited licenses.  Not nullable. Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>/$count eq 0</code>, <code>/$count ne 0</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">assignedPlans</td>
@@ -2843,7 +2952,7 @@
 <tr>
 <td style="text-align: left;">otherMails</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">A list of additional email addresses for the user; for example: <code>[&quot;bob@contoso.com&quot;, &quot;Robert@fabrikam.com&quot;]</code>. <br>NOTE: This property cannot contain accent characters. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, <code>endsWith</code>, and counting empty collections).</td>
+<td style="text-align: left;">A list of additional email addresses for the user; for example: <code>[&quot;bob@contoso.com&quot;, &quot;Robert@fabrikam.com&quot;]</code>. <br>NOTE: This property cannot contain accent characters. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, <code>endsWith</code>, <code>/$count eq 0</code>, <code>/$count ne 0</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">passwordPolicies</td>
@@ -2888,7 +2997,7 @@
 <tr>
 <td style="text-align: left;">proxyAddresses</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">For example: <code>&quot;SMTP: bob@contoso.com&quot;, &quot;smtp: bob@sales.contoso.com&quot;]</code>. Changes to the <strong>mail</strong> property will also update this collection to include the value as an SMTP address. For more information, see [mail and proxyAddresses properties. The proxy address prefixed with <code>SMTP</code> (capitalized) is the primary proxy address while those prefixed with <code>smtp</code> are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>, <code>endsWith</code>, and counting empty collections).</td>
+<td style="text-align: left;">For example: <code>&quot;SMTP: bob@contoso.com&quot;, &quot;smtp: bob@sales.contoso.com&quot;]</code>. Changes to the <strong>mail</strong> property will also update this collection to include the value as an SMTP address. For more information, see [mail and proxyAddresses properties. The proxy address prefixed with <code>SMTP</code> (capitalized) is the primary proxy address while those prefixed with <code>smtp</code> are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>, <code>endsWith</code>, <code>/$count eq 0</code>, <code>/$count ne 0</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">refreshTokensValidFromDateTime</td>
