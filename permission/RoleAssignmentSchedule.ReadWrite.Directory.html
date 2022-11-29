@@ -178,7 +178,7 @@
 </tr>
 <tr>
 <td>V1</td>
-<td>A,D</td>
+<td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/rbacapplication-post-roleassignmentschedulerequests?view=graph-rest-1.0&amp;tabs=http">POST /roleManagement/directory/roleAssignmentScheduleRequests</a></td>
 </tr>
 <tr>
@@ -190,11 +190,6 @@
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/unifiedroleassignmentschedulerequest-cancel?view=graph-rest-1.0&amp;tabs=http">POST /roleManagement/directory/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequestsId}/cancel</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/rbacapplication-post-roleeligibilityschedulerequests?view=graph-rest-1.0&amp;tabs=http">POST /roleManagement/directory/roleEligibilityScheduleRequests</a></td>
 </tr>
 </tbody>
 </table>
@@ -625,103 +620,6 @@
 <td style="text-align: left;">version</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Indicates version of the role definition. Read-only when **i</td>
-</tr>
-</tbody>
-</table>
-<h3 id="unifiedroleeligibilityschedulerequest-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedroleeligibilityschedulerequest?view=graph-rest-1.0&amp;tabs=http">unifiedRoleEligibilityScheduleRequest </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">action</td>
-<td style="text-align: left;">unifiedRoleScheduleRequestActions</td>
-<td style="text-align: left;">Represents the type of operation on the role eligibility request. The possible values are: <code>adminAssign</code>, <code>adminUpdate</code>, <code>adminRemove</code>, <code>selfActivate</code>, <code>selfDeactivate</code>, <code>adminExtend</code>, <code>adminRenew</code>, <code>selfExtend</code>, <code>selfRenew</code>, <code>unknownFutureValue</code>. <br><ul><li><code>adminAssign</code>: For administrators to assign eligible roles to principals.</li><li><code>adminRemove</code>: For administrators to remove eligible roles from principals.</li><li> <code>adminUpdate</code>: For administrators to change existing role eligibilities.</li><li><code>adminExtend</code>: For administrators to extend expiring role eligibilities.</li><li><code>adminRenew</code>: For administrators to renew expired eligibilities.</li><li><code>selfActivate</code>: For users to activate their assignments.</li><li><code>selfDeactivate</code>: For users to deactivate their active assignments.</li><li><code>selfExtend</code>: For users to request to extend their expiring assignments.</li><li><code>selfRenew</code>: For users to request to renew their expired assignments.</li></ul></td>
-</tr>
-<tr>
-<td style="text-align: left;">approvalId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The identifier of the approval of the request. Inherited from request.</td>
-</tr>
-<tr>
-<td style="text-align: left;">appScopeId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifier of the app-specific scope when the role eligibility is scoped to an app. The scope of a role eligibility determines the set of resources for which the principal is eligible to access. App scopes are scopes that are defined and understood by this application only. Use <code>/</code> for tenant-wide app scopes. Use <strong>directoryScopeId</strong> to limit the scope to particular directory objects, for example, administrative units. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, and on <code>null</code> values).</td>
-</tr>
-<tr>
-<td style="text-align: left;">completedDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The request completion date time. Inherited from request.</td>
-</tr>
-<tr>
-<td style="text-align: left;">createdBy</td>
-<td style="text-align: left;">identitySet</td>
-<td style="text-align: left;">The principal that created this request. Inherited from request.</td>
-</tr>
-<tr>
-<td style="text-align: left;">createdDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The request creation date time. Inherited from request.</td>
-</tr>
-<tr>
-<td style="text-align: left;">customData</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Free text field to define any custom data for the request. Not used. Inherited from request.</td>
-</tr>
-<tr>
-<td style="text-align: left;">directoryScopeId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifier of the directory object representing the scope of the role eligibility. The scope of a role eligibility determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use <code>/</code> for tenant-wide scope. Use <strong>appScopeId</strong> to limit the scope to an application only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, and on <code>null</code> values).</td>
-</tr>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the <strong>unifiedRoleEligibilityScheduleRequest</strong> object. Key, not nullable, Read-only.  Inherited from entity.</td>
-</tr>
-<tr>
-<td style="text-align: left;">isValidationOnly</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Determines whether the call is a validation or an actual call. Only set this property if you want to check whether an activation is subject to additional rules like MFA before actually submitting the request.</td>
-</tr>
-<tr>
-<td style="text-align: left;">justification</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">A message provided by users and administrators when create they create the <strong>unifiedRoleEligibilityScheduleRequest</strong> object.</td>
-</tr>
-<tr>
-<td style="text-align: left;">principalId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifier of the principal that has been granted the role eligibility. Can be a user or a role-assignable group. You can grant only active assignments service principals.Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">roleDefinitionId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifier of the unifiedRoleDefinition object that is being assigned to the principal. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">scheduleInfo</td>
-<td style="text-align: left;">requestSchedule</td>
-<td style="text-align: left;">The period of the role eligibility. Recurring schedules are currently unsupported.</td>
-</tr>
-<tr>
-<td style="text-align: left;">status</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The status of the role eligibility request. Inherited from request. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">targetScheduleId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifier of the schedule object that's linked to the eligibility request. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">ticketInfo</td>
-<td style="text-align: left;">ticketInfo</td>
-<td style="text-align: left;">Ticket details linked to the role eligibility request including details of the ticket number and ticket system. Optional.</td>
 </tr>
 </tbody>
 </table>
