@@ -380,9 +380,14 @@
 <td style="text-align: left;">Additional information that is sent to the customer when an appointment is confirmed.</td>
 </tr>
 <tr>
+<td style="text-align: left;">anonymousJoinWebUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The URL of the meeting to join anonymously.</td>
+</tr>
+<tr>
 <td style="text-align: left;">customers</td>
 <td style="text-align: left;">bookingCustomerInformation collection</td>
-<td style="text-align: left;">It lists down the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.</td>
+<td style="text-align: left;">A collection of customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.</td>
 </tr>
 <tr>
 <td style="text-align: left;">customerTimeZone</td>
@@ -547,6 +552,11 @@
 <td style="text-align: left;">The scheduling page has been made available to external customers. Use the <strong>publish</strong> and <strong>unpublish</strong> actions to set this property. Read-only.</td>
 </tr>
 <tr>
+<td style="text-align: left;">languageTag</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The language of the self-service booking page.</td>
+</tr>
+<tr>
 <td style="text-align: left;">phone</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The telephone number for the business. The <strong>phone</strong> property, together with <strong>address</strong> and <strong>webSiteUrl</strong>, appear in the footer of a business scheduling page.</td>
@@ -638,14 +648,19 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">emailAddress</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The SMTP address of the bookingCustomer who is booking the appointment</td>
-</tr>
-<tr>
 <td style="text-align: left;">customerId</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The ID of the <strong>bookingCustomer</strong> for this appointment. If no ID is specified when an appointment is created, then a new <strong>bookingCustomer</strong> object is created. Once set, you should consider the <strong>customerId</strong> immutable.</td>
+</tr>
+<tr>
+<td style="text-align: left;">customQuestionAnswers</td>
+<td style="text-align: left;">bookingQuestionAnswer collection</td>
+<td style="text-align: left;">It consists of the list of custom questions and answers given by the customer as part of the appointment</td>
+</tr>
+<tr>
+<td style="text-align: left;">emailAddress</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The SMTP address of the bookingCustomer who is booking the appointment</td>
 </tr>
 <tr>
 <td style="text-align: left;">location</td>
@@ -671,11 +686,6 @@
 <td style="text-align: left;">timeZone</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The time zone of the customer. For a list of possible values, see dateTimeTimeZone.</td>
-</tr>
-<tr>
-<td style="text-align: left;">customQuestionAnswers</td>
-<td style="text-align: left;">bookingQuestionAnswer collection</td>
-<td style="text-align: left;">It consists of the list of custom questions and answers given by the customer as part of the appointment</td>
 </tr>
 </tbody>
 </table>
@@ -799,6 +809,11 @@
 <td style="text-align: left;">The ID of that service, in a GUID format. Read-only.</td>
 </tr>
 <tr>
+<td style="text-align: left;">isAnonymousJoinEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>True</code> if the URL to join the appointment anonymously (<strong>anonymousJoinWebUrl</strong>) will be generated for the appointment booked for this service.</td>
+</tr>
+<tr>
 <td style="text-align: left;">isHiddenFromCustomers</td>
 <td style="text-align: left;">Boolean</td>
 <td style="text-align: left;">True means this service is not available to customers for booking.</td>
@@ -807,6 +822,11 @@
 <td style="text-align: left;">isLocationOnline</td>
 <td style="text-align: left;">Boolean</td>
 <td style="text-align: left;">True indicates that the appointments for the service will be held online. Default value is false.</td>
+</tr>
+<tr>
+<td style="text-align: left;">languageTag</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The language of the self-service booking page.</td>
 </tr>
 <tr>
 <td style="text-align: left;">maximumAttendeesCount</td>
@@ -881,9 +901,14 @@
 <td style="text-align: left;">The ID of the staff member, in a GUID format. Read-only.</td>
 </tr>
 <tr>
+<td style="text-align: left;">isEmailNotificationEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>True</code> indicates that a staff member will be notified via email when a booking assigned to them is created or changed.</td>
+</tr>
+<tr>
 <td style="text-align: left;">role</td>
 <td style="text-align: left;">bookingStaffRole</td>
-<td style="text-align: left;">The role of the staff member in the business. Possible values are: <code>guest</code>, <code>administrator</code>, <code>viewer</code>, <code>externalGuest</code> and <code>unknownFutureValue</code>. Required.</td>
+<td style="text-align: left;">The role of the staff member in the business. Possible values are: <code>guest</code>, <code>administrator</code>, <code>viewer</code>, <code>externalGuest</code>, <code>unknownFutureValue</code>, <code>scheduler</code>, <code>teamMember</code>. Note that you must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following values from this evolvable enum: <code>scheduler</code>, <code>teamMember</code>. Required.</td>
 </tr>
 <tr>
 <td style="text-align: left;">timeZone</td>
