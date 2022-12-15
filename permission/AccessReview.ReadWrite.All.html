@@ -718,6 +718,11 @@
 <td style="text-align: left;">Unique identifier of the instance. Supports <code>$select</code>. Read-only.</td>
 </tr>
 <tr>
+<td style="text-align: left;">reviewers</td>
+<td style="text-align: left;">accessReviewReviewerScope collection</td>
+<td style="text-align: left;">This collection of access review scopes is used to define who the reviewers are. Supports <code>$select</code>. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.</td>
+</tr>
+<tr>
 <td style="text-align: left;">scope</td>
 <td style="text-align: left;">accessReviewScope</td>
 <td style="text-align: left;">Created based on <strong>scope</strong> and <strong>instanceEnumerationScope</strong> at the accessReviewScheduleDefinition level. Defines the scope of users reviewed in a group. Supports <code>$select</code> and <code>$filter</code> (<code>contains</code> only). Read-only.</td>
@@ -731,11 +736,6 @@
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Specifies the status of an accessReview. Possible values: <code>Initializing</code>, <code>NotStarted</code>, <code>Starting</code>, <code>InProgress</code>, <code>Completing</code>, <code>Completed</code>, <code>AutoReviewing</code>, and <code>AutoReviewed</code>. Supports <code>$select</code>, <code>$orderby</code>, and <code>$filter</code> (<code>eq</code> only). Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">reviewers</td>
-<td style="text-align: left;">accessReviewReviewerScope collection</td>
-<td style="text-align: left;">This collection of access review scopes is used to define who the reviewers are. Supports <code>$select</code>. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.</td>
 </tr>
 </tbody>
 </table>
@@ -928,14 +928,14 @@
 <td style="text-align: left;">The query specifying who will be the reviewer.</td>
 </tr>
 <tr>
-<td style="text-align: left;">queryType</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The type of query. Examples include <code>MicrosoftGraph</code> and <code>ARM</code>.</td>
-</tr>
-<tr>
 <td style="text-align: left;">queryRoot</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query, for example, <code>./manager</code>, is specified. Possible value: <code>decisions</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">queryType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The type of query. Examples include <code>MicrosoftGraph</code> and <code>ARM</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -959,6 +959,11 @@
 <td style="text-align: left;">createdBy</td>
 <td style="text-align: left;">userIdentity</td>
 <td style="text-align: left;">User who created this review. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">backupReviewers (deprecated)</td>
+<td style="text-align: left;">accessReviewReviewerScope collection</td>
+<td style="text-align: left;">This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist.  Supports <code>$select</code>. <br><strong>Note:</strong> This property has been replaced by <strong>fallbackReviewers</strong>. However, specifying either <strong>backupReviewers</strong> or <strong>fallbackReviewers</strong> automatically populates the same values to the other property.</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>
@@ -1011,24 +1016,19 @@
 <td style="text-align: left;">Defines the entities whose access is reviewed. For supported scopes, see accessReviewScope. Required on create. Supports <code>$select</code> and <code>$filter</code> (<code>contains</code> only). For examples of options for configuring scope, see Configure the scope of your access review definition using the Microsoft Graph API.</td>
 </tr>
 <tr>
-<td style="text-align: left;">stageSettings</td>
-<td style="text-align: left;">accessReviewStageSettings collection</td>
-<td style="text-align: left;">Required only for a multi-stage access review to define the stages and their settings. You can break down each review instance into up to three sequential stages, where each stage can have a different set of reviewers, fallback reviewers, and settings. Stages will be created sequentially based on the <strong>dependsOn</strong> property. Optional.  <br><br>When this property is defined, its settings are used instead of the corresponding settings in the accessReviewScheduleDefinition object and its <strong>settings</strong>, <strong>reviewers</strong>, and <strong>fallbackReviewers</strong> properties.</td>
-</tr>
-<tr>
 <td style="text-align: left;">settings</td>
 <td style="text-align: left;">accessReviewScheduleSettings</td>
 <td style="text-align: left;">The settings for an access review series, see type definition below. Supports <code>$select</code>. Required on create.</td>
 </tr>
 <tr>
+<td style="text-align: left;">stageSettings</td>
+<td style="text-align: left;">accessReviewStageSettings collection</td>
+<td style="text-align: left;">Required only for a multi-stage access review to define the stages and their settings. You can break down each review instance into up to three sequential stages, where each stage can have a different set of reviewers, fallback reviewers, and settings. Stages will be created sequentially based on the <strong>dependsOn</strong> property. Optional.  <br><br>When this property is defined, its settings are used instead of the corresponding settings in the accessReviewScheduleDefinition object and its <strong>settings</strong>, <strong>reviewers</strong>, and <strong>fallbackReviewers</strong> properties.</td>
+</tr>
+<tr>
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">This read-only field specifies the status of an access review. The typical states include <code>Initializing</code>, <code>NotStarted</code>, <code>Starting</code>, <code>InProgress</code>, <code>Completing</code>, <code>Completed</code>, <code>AutoReviewing</code>, and <code>AutoReviewed</code>.  <br>Supports <code>$select</code>, <code>$orderby</code>, and <code>$filter</code> (<code>eq</code> only). Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">backupReviewers (deprecated)</td>
-<td style="text-align: left;">accessReviewReviewerScope collection</td>
-<td style="text-align: left;">This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist.  Supports <code>$select</code>. <br>**N</td>
 </tr>
 </tbody>
 </table>
