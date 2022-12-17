@@ -119,6 +119,11 @@
 <tr>
 <td>V1</td>
 <td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0&amp;tabs=http">POST /users/{userId}/presence/setStatusMessage</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/presence-setuserpreferredpresence?view=graph-rest-1.0&amp;tabs=http">POST /users/{userId}/presence/setUserPreferredPresence</a></td>
 </tr>
 </tbody>
@@ -147,6 +152,34 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the app to read the presence information and write activity and availability on behalf of the signed-in user. Presence information includes activity, availability, status note, calendar out-of-office message, timezone and location.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="resources">Resources</h2>
+<h3 id="presencestatusmessage-"><a href="https://docs.microsoft.com/graph/api/resources/presenceStatusMessage?view=graph-rest-1.0&amp;tabs=http">presenceStatusMessage </a></h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>message</td>
+<td>microsoft.graph.itemBody</td>
+<td>Status message item.<br><br> The only supported format currently is <code>message.contentType = 'text'</code>.</td>
+</tr>
+<tr>
+<td>publishedDateTime</td>
+<td>Edm.DateTimeOffset</td>
+<td>Time in which the status message was published.<br>Read-only.<br><br><code>publishedDateTime</code> is not available when requesting presence of another user.</td>
+</tr>
+<tr>
+<td>expiryDateTime</td>
+<td>microsoft.graph.dateTimeTimeZone</td>
+<td>Time in which the status message expires.<br>If not provided, the status message does not expire.<br><br><code>expiryDateTime.dateTime</code> should not include time zone.<br><br><code>expiryDateTime</code> is not available when requesting presence of another user.</td>
 </tr>
 </tbody>
 </table>
