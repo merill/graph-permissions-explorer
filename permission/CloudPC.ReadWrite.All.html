@@ -1938,7 +1938,7 @@
 <tr>
 <td style="text-align: left;">alertImpact</td>
 <td style="text-align: left;">microsoft.graph.deviceManagement.alertImpact</td>
-<td style="text-align: left;">The impact of the alert event. Consists of a number followed by the aggregation type. For example, <code>6 Count</code> and <code>12 AffectedCloudPcPercentage</code>.</td>
+<td style="text-align: left;">The impact of the alert event. Consists of a number followed by the aggregation type. For example, <code>6 affectedCloudPcCount</code> means that 6 Cloud PCs are affected. <code>12 affectedCloudPcPercentage</code> means 12% of Cloud PCs are affected.</td>
 </tr>
 <tr>
 <td style="text-align: left;">alertRuleId</td>
@@ -2025,12 +2025,7 @@
 <tr>
 <td style="text-align: left;">isSystemRule</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates whether the rule is a system rule. If <code>true</code>, the rule is a system rule; otherwise, the rule is a custom defined rule and can be edited. System rules are built-in and only</td>
-</tr>
-<tr>
-<td style="text-align: left;">a few properties can be edited.</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">Indicates whether the rule is a system rule. If <code>true</code>, the rule is a system rule; otherwise, the rule is a custom defined rule and can be edited. System rules are built-in and only a few properties can be edited.</td>
 </tr>
 <tr>
 <td style="text-align: left;">notificationChannels</td>
@@ -2045,7 +2040,7 @@
 <tr>
 <td style="text-align: left;">threshold</td>
 <td style="text-align: left;">microsoft.graph.deviceManagement.ruleThreshold</td>
-<td style="text-align: left;">The threshold of the rule.</td>
+<td style="text-align: left;">The conditions to send alerts. For example, send alert when provisioning has failed for greater than or equal to 6 Cloud PCs.</td>
 </tr>
 </tbody>
 </table>
@@ -2119,7 +2114,7 @@
 <tr>
 <td style="text-align: left;">isPortalNotificationSent</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">If <code>true</code>, the portal notification has already been sent for the user; otherwise, the portal notification hasn't been sent yet.</td>
+<td style="text-align: left;"><code>true</code> if the portal notification has already been sent to the user; <code>false</code> otherwise.</td>
 </tr>
 <tr>
 <td style="text-align: left;">severity</td>
