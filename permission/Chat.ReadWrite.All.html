@@ -278,6 +278,11 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">dateTimeOffset</td>
+<td style="text-align: left;">Read only. Timestamp at which the channel was created.</td>
+</tr>
+<tr>
 <td style="text-align: left;">description</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Optional textual description for the channel.</td>
@@ -286,6 +291,11 @@
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Channel name as it will appear to the user in Microsoft Teams. The maximum length is 50 characters.</td>
+</tr>
+<tr>
+<td style="text-align: left;">email</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The email address for sending messages to the channel. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
@@ -298,29 +308,19 @@
 <td style="text-align: left;">Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: <code>false</code>.</td>
 </tr>
 <tr>
-<td style="text-align: left;">email</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The email address for sending messages to the channel. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">webUrl</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.</td>
-</tr>
-<tr>
 <td style="text-align: left;">membershipType</td>
 <td style="text-align: left;">channelMembershipType</td>
 <td style="text-align: left;">The type of the channel. Can be set during creation and can't be changed. The possible values are: <code>standard</code>, <code>private</code>, <code>unknownFutureValue</code>, <code>shared</code>. The default value is <code>standard</code>. Note that you must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value in this evolvable enum: <code>shared</code>.</td>
 </tr>
 <tr>
-<td style="text-align: left;">createdDateTime</td>
-<td style="text-align: left;">dateTimeOffset</td>
-<td style="text-align: left;">Read only. Timestamp at which the channel was created.</td>
-</tr>
-<tr>
 <td style="text-align: left;">tenantId</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: left;">The ID of the Azure Active Directory tenant.</td>
+</tr>
+<tr>
+<td style="text-align: left;">webUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.</td>
 </tr>
 </tbody>
 </table>
@@ -392,94 +392,14 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Read-only. Unique ID of the message. IDs are unique within a chat/channel/reply-to-message, but might be duplicated in other chats/channels/reply-to-messages.</td>
-</tr>
-<tr>
-<td style="text-align: left;">replyToId</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)</td>
-</tr>
-<tr>
-<td style="text-align: left;">from</td>
-<td style="text-align: left;">chatMessageFromIdentitySet</td>
-<td style="text-align: left;">Details of the sender of the chat message. Can only be set during migration.</td>
-</tr>
-<tr>
-<td style="text-align: left;">etag</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">Read-only. Version number of the chat message.</td>
-</tr>
-<tr>
-<td style="text-align: left;">messageType</td>
-<td style="text-align: left;">chatMessageType</td>
-<td style="text-align: left;">The type of chat message. The possible values are: <code>message</code>, <code>chatEvent</code>, <code>typing</code>, <code>unknownFutureValue</code>, <code>systemEventMessage</code>. Note that you must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value in this evolvable enum: <code>systemEventMessage</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">createdDateTime</td>
-<td style="text-align: left;">dateTimeOffset</td>
-<td style="text-align: left;">Timestamp of when the chat message was created.</td>
-</tr>
-<tr>
-<td style="text-align: left;">lastModifiedDateTime</td>
-<td style="text-align: left;">dateTimeOffset</td>
-<td style="text-align: left;">Read only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.</td>
-</tr>
-<tr>
-<td style="text-align: left;">lastEditedDateTime</td>
-<td style="text-align: left;">dateTimeOffset</td>
-<td style="text-align: left;">Read only. Timestamp when edits to the chat message were made. Triggers an &quot;Edited&quot; flag in the Teams UI. If no edits are made the value is <code>null</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">deletedDateTime</td>
-<td style="text-align: left;">dateTimeOffset</td>
-<td style="text-align: left;">Read only. Timestamp at which the chat message was deleted, or null if not deleted.</td>
-</tr>
-<tr>
-<td style="text-align: left;">subject</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">The subject of the chat message, in plaintext.</td>
-</tr>
-<tr>
-<td style="text-align: left;">body</td>
-<td style="text-align: left;">itemBody</td>
-<td style="text-align: left;">Plaintext/HTML representation of the content of the chat message. Representation is specified by the contentType inside the body. The content is always in HTML if the chat message contains a chatMessageMention.</td>
-</tr>
-<tr>
-<td style="text-align: left;">summary</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.</td>
-</tr>
-<tr>
 <td style="text-align: left;">attachments</td>
 <td style="text-align: left;">chatMessageAttachment collection</td>
 <td style="text-align: left;">References to attached objects like files, tabs, meetings etc.</td>
 </tr>
 <tr>
-<td style="text-align: left;">mentions</td>
-<td style="text-align: left;">chatMessageMention collection</td>
-<td style="text-align: left;">List of entities mentioned in the chat message. Supported entities are: user, bot, team, and channel.</td>
-</tr>
-<tr>
-<td style="text-align: left;">importance</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">The importance of the chat message. The possible values are: <code>normal</code>, <code>high</code>, <code>urgent</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">reactions</td>
-<td style="text-align: left;">chatMessageReaction collection</td>
-<td style="text-align: left;">Reactions for this chat message (for example, Like).</td>
-</tr>
-<tr>
-<td style="text-align: left;">locale</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">Locale of the chat message set by the client. Always set to <code>en-us</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">policyViolation</td>
-<td style="text-align: left;">chatMessagePolicyViolation</td>
-<td style="text-align: left;">Defines the properties of a policy violation set by a data loss prevention (DLP) application.</td>
+<td style="text-align: left;">body</td>
+<td style="text-align: left;">itemBody</td>
+<td style="text-align: left;">Plaintext/HTML representation of the content of the chat message. Representation is specified by the contentType inside the body. The content is always in HTML if the chat message contains a chatMessageMention.</td>
 </tr>
 <tr>
 <td style="text-align: left;">chatId</td>
@@ -492,14 +412,94 @@
 <td style="text-align: left;">If the message was sent in a channel, represents identity of the channel.</td>
 </tr>
 <tr>
-<td style="text-align: left;">webUrl</td>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">dateTimeOffset</td>
+<td style="text-align: left;">Timestamp of when the chat message was created.</td>
+</tr>
+<tr>
+<td style="text-align: left;">deletedDateTime</td>
+<td style="text-align: left;">dateTimeOffset</td>
+<td style="text-align: left;">Read only. Timestamp at which the chat message was deleted, or null if not deleted.</td>
+</tr>
+<tr>
+<td style="text-align: left;">etag</td>
 <td style="text-align: left;">string</td>
-<td style="text-align: left;">Read-only. Link to the message in Microsoft Teams.</td>
+<td style="text-align: left;">Read-only. Version number of the chat message.</td>
 </tr>
 <tr>
 <td style="text-align: left;">eventDetail</td>
 <td style="text-align: left;">eventMessageDetail</td>
-<td style="text-align: left;">Read-only. If present, represents details of an event that happened in a **c</td>
+<td style="text-align: left;">Read-only. If present, represents details of an event that happened in a <strong>chat</strong>, a <strong>channel</strong>, or a <strong>team</strong>, for example, adding new members. For event messages, the <strong>messageType</strong> property will be set to <code>systemEventMessage</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">from</td>
+<td style="text-align: left;">chatMessageFromIdentitySet</td>
+<td style="text-align: left;">Details of the sender of the chat message. Can only be set during migration.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Read-only. Unique ID of the message. IDs are unique within a chat/channel/reply-to-message, but might be duplicated in other chats/channels/reply-to-messages.</td>
+</tr>
+<tr>
+<td style="text-align: left;">importance</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The importance of the chat message. The possible values are: <code>normal</code>, <code>high</code>, <code>urgent</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">dateTimeOffset</td>
+<td style="text-align: left;">Read only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastEditedDateTime</td>
+<td style="text-align: left;">dateTimeOffset</td>
+<td style="text-align: left;">Read only. Timestamp when edits to the chat message were made. Triggers an &quot;Edited&quot; flag in the Teams UI. If no edits are made the value is <code>null</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">locale</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Locale of the chat message set by the client. Always set to <code>en-us</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">mentions</td>
+<td style="text-align: left;">chatMessageMention collection</td>
+<td style="text-align: left;">List of entities mentioned in the chat message. Supported entities are: user, bot, team, and channel.</td>
+</tr>
+<tr>
+<td style="text-align: left;">messageType</td>
+<td style="text-align: left;">chatMessageType</td>
+<td style="text-align: left;">The type of chat message. The possible values are: <code>message</code>, <code>chatEvent</code>, <code>typing</code>, <code>unknownFutureValue</code>, <code>systemEventMessage</code>. Note that you must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value in this evolvable enum: <code>systemEventMessage</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">policyViolation</td>
+<td style="text-align: left;">chatMessagePolicyViolation</td>
+<td style="text-align: left;">Defines the properties of a policy violation set by a data loss prevention (DLP) application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">reactions</td>
+<td style="text-align: left;">chatMessageReaction collection</td>
+<td style="text-align: left;">Reactions for this chat message (for example, Like).</td>
+</tr>
+<tr>
+<td style="text-align: left;">replyToId</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)</td>
+</tr>
+<tr>
+<td style="text-align: left;">subject</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The subject of the chat message, in plaintext.</td>
+</tr>
+<tr>
+<td style="text-align: left;">summary</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.</td>
+</tr>
+<tr>
+<td style="text-align: left;">webUrl</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Read-only. Link to the message in Microsoft Teams.</td>
 </tr>
 </tbody>
 </table>
@@ -514,11 +514,6 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Read-only. Represents the chat message hosted content identifier.</td>
-</tr>
-<tr>
 <td style="text-align: left;">contentBytes</td>
 <td style="text-align: left;">Edm.Binary</td>
 <td style="text-align: left;">Write-only. When posting new chat message hosted content, represents the bytes of the payload. These are represented as a base64Encoded string.</td>
@@ -527,6 +522,11 @@
 <td style="text-align: left;">contentType</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Write-only. When posting new chat message hosted content, represents the type of content, such as image/png.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Read-only. Represents the chat message hosted content identifier.</td>
 </tr>
 </tbody>
 </table>
