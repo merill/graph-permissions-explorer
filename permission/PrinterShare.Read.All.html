@@ -434,14 +434,49 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The document's identifier. Inherited from printerBase. Read-only.</td>
+<td style="text-align: left;">capabilities</td>
+<td style="text-align: left;">printerCapabilities</td>
+<td style="text-align: left;">The capabilities of the printer associated with this printer share. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">defaults</td>
+<td style="text-align: left;">printerDefaults</td>
+<td style="text-align: left;">The printer's default print settings. Inherited from printerBase.</td>
 </tr>
 <tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The name of the printer. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">hasPhysicalDevice</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">True if the printer has a physical device for printing. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The document's identifier. Inherited from printerBase. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isAcceptingJobs</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Whether the printer is currently accepting new print jobs. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isShared</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">True if the printer is shared; false otherwise. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastSeenDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The most recent dateTimeOffset when a printer interacted with Universal Print. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">location</td>
+<td style="text-align: left;">printerLocation</td>
+<td style="text-align: left;">The physical and/or organizational location of the printer. Inherited from printerBase.</td>
 </tr>
 <tr>
 <td style="text-align: left;">manufacturer</td>
@@ -463,41 +498,6 @@
 <td style="text-align: left;">printerStatus</td>
 <td style="text-align: left;">The processing status of the printer, including any errors. Inherited from printerBase.</td>
 </tr>
-<tr>
-<td style="text-align: left;">isShared</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">True if the printer is shared; false otherwise. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">hasPhysicalDevice</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">True if the printer has a physical device for printing. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">isAcceptingJobs</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Whether the printer is currently accepting new print jobs. Inherited from printerBase.</td>
-</tr>
-<tr>
-<td style="text-align: left;">location</td>
-<td style="text-align: left;">printerLocation</td>
-<td style="text-align: left;">The physical and/or organizational location of the printer. Inherited from printerBase.</td>
-</tr>
-<tr>
-<td style="text-align: left;">defaults</td>
-<td style="text-align: left;">printerDefaults</td>
-<td style="text-align: left;">The printer's default print settings. Inherited from printerBase.</td>
-</tr>
-<tr>
-<td style="text-align: left;">capabilities</td>
-<td style="text-align: left;">printerCapabilities</td>
-<td style="text-align: left;">The capabilities of the printer associated with this printer share. Inherited from printerBase.</td>
-</tr>
-<tr>
-<td style="text-align: left;">lastSeenDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The most recent dateTimeOffset when a printer interacted with Universal Print. Read-only.</td>
-</tr>
 </tbody>
 </table>
 <h3 id="printershare-"><a href="https://docs.microsoft.com/graph/api/resources/printershare?view=graph-rest-1.0&amp;tabs=http">printerShare </a></h3>
@@ -511,9 +511,24 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The printerShare's identifier. Inherited from printerBase. Read-only.</td>
+<td style="text-align: left;">allowAllUsers</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the <strong>allowedUsers</strong> and <strong>allowedGroups</strong> navigation properties.</td>
+</tr>
+<tr>
+<td style="text-align: left;">capabilities</td>
+<td style="text-align: left;">printerCapabilities</td>
+<td style="text-align: left;">The capabilities of the printer associated with this printer share. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The DateTimeOffset when the printer share was created. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">defaults</td>
+<td style="text-align: left;">printerDefaults</td>
+<td style="text-align: left;">The default print settings of the printer associated with this printer share. Inherited from printerBase.</td>
 </tr>
 <tr>
 <td style="text-align: left;">displayName</td>
@@ -521,9 +536,19 @@
 <td style="text-align: left;">The name of the printer share that print clients should display. Inherited from printerBase.</td>
 </tr>
 <tr>
-<td style="text-align: left;">createdDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The DateTimeOffset when the printer share was created. Read-only.</td>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The printerShare's identifier. Inherited from printerBase. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isAcceptingJobs</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Whether the printer associated with this printer share is currently accepting new print jobs. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">location</td>
+<td style="text-align: left;">printerLocation</td>
+<td style="text-align: left;">The physical and/or organizational location of the printer associated with this printer share. Inherited from printerBase.</td>
 </tr>
 <tr>
 <td style="text-align: left;">manufacturer</td>
@@ -536,34 +561,9 @@
 <td style="text-align: left;">The model name reported by the printer associated with this printer share. Inherited from printerBase. Read-only.</td>
 </tr>
 <tr>
-<td style="text-align: left;">isAcceptingJobs</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Whether the printer associated with this printer share is currently accepting new print jobs. Inherited from printerBase.</td>
-</tr>
-<tr>
-<td style="text-align: left;">defaults</td>
-<td style="text-align: left;">printerDefaults</td>
-<td style="text-align: left;">The default print settings of the printer associated with this printer share. Inherited from printerBase.</td>
-</tr>
-<tr>
-<td style="text-align: left;">capabilities</td>
-<td style="text-align: left;">printerCapabilities</td>
-<td style="text-align: left;">The capabilities of the printer associated with this printer share. Inherited from printerBase.</td>
-</tr>
-<tr>
-<td style="text-align: left;">location</td>
-<td style="text-align: left;">printerLocation</td>
-<td style="text-align: left;">The physical and/or organizational location of the printer associated with this printer share. Inherited from printerBase.</td>
-</tr>
-<tr>
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">printerStatus</td>
 <td style="text-align: left;">The processing status, including any errors, of the printer associated with this printer share.Inherited from printerBase. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">allowAllUsers</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the **a</td>
 </tr>
 </tbody>
 </table>

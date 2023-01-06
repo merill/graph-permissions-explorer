@@ -1141,14 +1141,14 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">The unique identifier of the activity. Read-only.</td>
-</tr>
-<tr>
 <td style="text-align: left;">access</td>
 <td style="text-align: left;">[accessAction][]</td>
 <td style="text-align: left;">An item was accessed.</td>
+</tr>
+<tr>
+<td style="text-align: left;">activityDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Details about when the activity took place. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">actor</td>
@@ -1156,9 +1156,9 @@
 <td style="text-align: left;">Identity of who performed the action. Read-only.</td>
 </tr>
 <tr>
-<td style="text-align: left;">activityDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Details about when the activity took place. Read-only.</td>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The unique identifier of the activity. Read-only.</td>
 </tr>
 </tbody>
 </table>
@@ -1173,6 +1173,31 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">access</td>
+<td style="text-align: left;">[itemActionStat][]</td>
+<td style="text-align: left;">Statistics about the <strong>access</strong> actions in this interval. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">create</td>
+<td style="text-align: left;">[itemActionStat][]</td>
+<td style="text-align: left;">Statistics about the <strong>create</strong> actions in this interval. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">delete</td>
+<td style="text-align: left;">[itemActionStat][]</td>
+<td style="text-align: left;">Statistics about the <strong>delete</strong> actions in this interval. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">edit</td>
+<td style="text-align: left;">[itemActionStat][]</td>
+<td style="text-align: left;">Statistics about the <strong>edit</strong> actions in this interval. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">endDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">When the interval ends. Read-only.</td>
+</tr>
+<tr>
 <td style="text-align: left;">incompleteData</td>
 <td style="text-align: left;">[incompleteData][]</td>
 <td style="text-align: left;">Indicates that the statistics in this interval are based on incomplete data. Read-only.</td>
@@ -1183,39 +1208,14 @@
 <td style="text-align: left;">Indicates whether the item is &quot;trending.&quot; Read-only.</td>
 </tr>
 <tr>
-<td style="text-align: left;">startDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">When the interval starts. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">endDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">When the interval ends. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">create</td>
-<td style="text-align: left;">[itemActionStat][]</td>
-<td style="text-align: left;">Statistics about the <strong>create</strong> actions in this interval. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">edit</td>
-<td style="text-align: left;">[itemActionStat][]</td>
-<td style="text-align: left;">Statistics about the <strong>edit</strong> actions in this interval. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">delete</td>
-<td style="text-align: left;">[itemActionStat][]</td>
-<td style="text-align: left;">Statistics about the <strong>delete</strong> actions in this interval. Read-only.</td>
-</tr>
-<tr>
 <td style="text-align: left;">move</td>
 <td style="text-align: left;">[itemActionStat][]</td>
 <td style="text-align: left;">Statistics about the <strong>move</strong> actions in this interval. Read-only.</td>
 </tr>
 <tr>
-<td style="text-align: left;">access</td>
-<td style="text-align: left;">[itemActionStat][]</td>
-<td style="text-align: left;">Statistics about the **a</td>
+<td style="text-align: left;">startDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">When the interval starts. Read-only.</td>
 </tr>
 </tbody>
 </table>
@@ -1321,49 +1321,14 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier of the permission among all permissions on the item. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">grantedToV2</td>
-<td style="text-align: left;">[SharePointIdentitySet][]</td>
-<td style="text-align: left;">For user type permissions, the details of the users and applications for this permission. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">grantedToIdentitiesV2</td>
-<td style="text-align: left;">Collection([SharePointIdentitySet][])</td>
-<td style="text-align: left;">For link type permissions, the details of the users to whom permission was granted. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">invitation</td>
-<td style="text-align: left;">[SharingInvitation][]</td>
-<td style="text-align: left;">Details of any associated sharing invitation for this permission. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">inheritedFrom</td>
-<td style="text-align: left;">ItemReference</td>
-<td style="text-align: left;">Provides a reference to the ancestor of the current permission, if it is inherited from an ancestor. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">link</td>
-<td style="text-align: left;">[SharingLink][]</td>
-<td style="text-align: left;">Provides the link details of the current permission, if it is a link type permissions. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">roles</td>
-<td style="text-align: left;">Collection of String</td>
-<td style="text-align: left;">The type of permission, for example, <code>read</code>. See below for the full list of roles. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">shareId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">A unique token that can be used to access this shared item via the <strong>shares</strong> API. Read-only.</td>
-</tr>
-<tr>
 <td style="text-align: left;">expirationDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier of the permission among all permissions on the item. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">hasPassword</td>
@@ -1379,6 +1344,41 @@
 <td style="text-align: left;">grantedToIdentities (deprecated)</td>
 <td style="text-align: left;">Collection(IdentitySet)</td>
 <td style="text-align: left;">For type permissions, the details of the users to whom permission was granted. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">grantedToIdentitiesV2</td>
+<td style="text-align: left;">Collection([SharePointIdentitySet][])</td>
+<td style="text-align: left;">For link type permissions, the details of the users to whom permission was granted. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">grantedToV2</td>
+<td style="text-align: left;">[SharePointIdentitySet][]</td>
+<td style="text-align: left;">For user type permissions, the details of the users and applications for this permission. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">inheritedFrom</td>
+<td style="text-align: left;">ItemReference</td>
+<td style="text-align: left;">Provides a reference to the ancestor of the current permission, if it is inherited from an ancestor. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">invitation</td>
+<td style="text-align: left;">[SharingInvitation][]</td>
+<td style="text-align: left;">Details of any associated sharing invitation for this permission. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">link</td>
+<td style="text-align: left;">[SharingLink][]</td>
+<td style="text-align: left;">Provides the link details of the current permission, if it is a link type permissions. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">roles</td>
+<td style="text-align: left;">Collection of String</td>
+<td style="text-align: left;">The type of permission, for example, <code>read</code>. See below for the full list of roles. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">shareId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A unique token that can be used to access this shared item via the <strong>shares</strong> API. Read-only.</td>
 </tr>
 </tbody>
 </table>
@@ -1472,6 +1472,11 @@
 <td style="text-align: left;">A collection of search results.</td>
 </tr>
 <tr>
+<td style="text-align: left;">queryAlterationResponse</td>
+<td style="text-align: left;">alterationResponse</td>
+<td style="text-align: left;">Provides information related to spelling corrections in the alteration response.</td>
+</tr>
+<tr>
 <td style="text-align: left;">resultTemplates</td>
 <td style="text-align: left;">resultTemplate collection</td>
 <td style="text-align: left;">A dictionary of <strong>resultTemplateIds</strong> and associated values, which include the name and JSON schema of the result templates.</td>
@@ -1480,11 +1485,6 @@
 <td style="text-align: left;">searchTerms</td>
 <td style="text-align: left;">String collection</td>
 <td style="text-align: left;">Contains the search terms sent in the initial search query.</td>
-</tr>
-<tr>
-<td style="text-align: left;">queryAlterationResponse</td>
-<td style="text-align: left;">alterationResponse</td>
-<td style="text-align: left;">Provides information related to spelling corrections in the alteration response.</td>
 </tr>
 </tbody>
 </table>
@@ -1505,9 +1505,9 @@
 <td style="text-align: left;">The app the link is associated with.</td>
 </tr>
 <tr>
-<td style="text-align: left;">type</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The type of the link created.</td>
+<td style="text-align: left;">preventsDownload</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">If true then the user can only use this link to view the item on the web, and cannot use it to download the contents of the item. Only for OneDrive for Business and SharePoint.</td>
 </tr>
 <tr>
 <td style="text-align: left;">scope</td>
@@ -1515,9 +1515,9 @@
 <td style="text-align: left;">The scope of the link represented by this permission. Value <code>anonymous</code> indicates the link is usable by anyone, <code>organization</code> indicates the link is only usable for users signed into the same tenant.</td>
 </tr>
 <tr>
-<td style="text-align: left;">preventsDownload</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">If true then the user can only use this link to view the item on the web, and cannot use it to download the contents of the item. Only for OneDrive for Business and SharePoint.</td>
+<td style="text-align: left;">type</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The type of the link created.</td>
 </tr>
 <tr>
 <td style="text-align: left;">webHtml</td>
@@ -1542,11 +1542,6 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>id</strong></td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">The unique identifier of the item. Read-only.</td>
-</tr>
-<tr>
 <td style="text-align: left;"><strong>createdDateTime</strong></td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">The date and time the item was created. Read-only.</td>
@@ -1565,6 +1560,11 @@
 <td style="text-align: left;"><strong>eTag</strong></td>
 <td style="text-align: left;">string</td>
 <td style="text-align: left;">ETag for the item. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>id</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The unique identifier of the item. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>lastModifiedDateTime</strong></td>
@@ -1610,6 +1610,11 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">content</td>
+<td style="text-align: left;">Stream</td>
+<td style="text-align: left;">The content stream for the thumbnail.</td>
+</tr>
+<tr>
 <td style="text-align: left;">height</td>
 <td style="text-align: left;">Int32</td>
 <td style="text-align: left;">The height of the thumbnail, in pixels.</td>
@@ -1628,11 +1633,6 @@
 <td style="text-align: left;">width</td>
 <td style="text-align: left;">Int32</td>
 <td style="text-align: left;">The width of the thumbnail, in pixels.</td>
-</tr>
-<tr>
-<td style="text-align: left;">content</td>
-<td style="text-align: left;">Stream</td>
-<td style="text-align: left;">The content stream for the thumbnail.</td>
 </tr>
 </tbody>
 </table>

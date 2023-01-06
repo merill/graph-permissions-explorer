@@ -530,14 +530,14 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Read-only. Unique ID of the user.</td>
-</tr>
-<tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: left;">The display name of the user.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Read-only. Unique ID of the user.</td>
 </tr>
 <tr>
 <td style="text-align: left;">roles</td>
@@ -657,6 +657,11 @@
 <td style="text-align: left;">A collection of search results.</td>
 </tr>
 <tr>
+<td style="text-align: left;">queryAlterationResponse</td>
+<td style="text-align: left;">alterationResponse</td>
+<td style="text-align: left;">Provides information related to spelling corrections in the alteration response.</td>
+</tr>
+<tr>
 <td style="text-align: left;">resultTemplates</td>
 <td style="text-align: left;">resultTemplate collection</td>
 <td style="text-align: left;">A dictionary of <strong>resultTemplateIds</strong> and associated values, which include the name and JSON schema of the result templates.</td>
@@ -665,11 +670,6 @@
 <td style="text-align: left;">searchTerms</td>
 <td style="text-align: left;">String collection</td>
 <td style="text-align: left;">Contains the search terms sent in the initial search query.</td>
-</tr>
-<tr>
-<td style="text-align: left;">queryAlterationResponse</td>
-<td style="text-align: left;">alterationResponse</td>
-<td style="text-align: left;">Provides information related to spelling corrections in the alteration response.</td>
 </tr>
 </tbody>
 </table>
@@ -689,14 +689,14 @@
 <td style="text-align: left;">The unique identifier of the team. The group has the same ID as the team. This property is read-only, and is inherited from the base entity type.</td>
 </tr>
 <tr>
-<td style="text-align: left;">classSettings</td>
-<td style="text-align: left;">teamClassSettings</td>
-<td style="text-align: left;">Configure settings of a class. Available only when the team represents a class.</td>
-</tr>
-<tr>
 <td style="text-align: left;">classification</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: left;">An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.</td>
+</tr>
+<tr>
+<td style="text-align: left;">classSettings</td>
+<td style="text-align: left;">teamClassSettings</td>
+<td style="text-align: left;">Configure settings of a class. Available only when the team represents a class.</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>
@@ -776,14 +776,9 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">Unique operation id.</td>
-</tr>
-<tr>
-<td style="text-align: left;">operationType</td>
-<td style="text-align: left;">teamsAsyncOperationType</td>
-<td style="text-align: left;">Denotes which type of operation is being described.</td>
+<td style="text-align: left;">attemptsCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Number of times the operation was attempted before being marked successful or failed.</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>
@@ -791,9 +786,14 @@
 <td style="text-align: left;">Time when the operation was created.</td>
 </tr>
 <tr>
-<td style="text-align: left;">status</td>
-<td style="text-align: left;">teamsAsyncOperationStatus</td>
-<td style="text-align: left;">Operation status.</td>
+<td style="text-align: left;">error</td>
+<td style="text-align: left;">operationError</td>
+<td style="text-align: left;">Any error that causes the async operation to fail.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Unique operation id.</td>
 </tr>
 <tr>
 <td style="text-align: left;">lastActionDateTime</td>
@@ -801,9 +801,14 @@
 <td style="text-align: left;">Time when the async operation was last updated.</td>
 </tr>
 <tr>
-<td style="text-align: left;">attemptsCount</td>
-<td style="text-align: left;">Int32</td>
-<td style="text-align: left;">Number of times the operation was attempted before being marked successful or failed.</td>
+<td style="text-align: left;">operationType</td>
+<td style="text-align: left;">teamsAsyncOperationType</td>
+<td style="text-align: left;">Denotes which type of operation is being described.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">teamsAsyncOperationStatus</td>
+<td style="text-align: left;">Operation status.</td>
 </tr>
 <tr>
 <td style="text-align: left;">targetResourceId</td>
@@ -814,11 +819,6 @@
 <td style="text-align: left;">targetResourceLocation</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: left;">The location of the object that's created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.</td>
-</tr>
-<tr>
-<td style="text-align: left;">error</td>
-<td style="text-align: left;">operationError</td>
-<td style="text-align: left;">Any error that causes the async operation to fail.</td>
 </tr>
 </tbody>
 </table>

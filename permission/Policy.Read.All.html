@@ -1386,14 +1386,14 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">includeApplications</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Can be one of the following: <li> The list of client IDs (<strong>appId</strong>) the policy applies to, unless explicitly excluded (in <strong>excludeApplications</strong>) <li> <code>All</code> <li> <code>Office365</code> - For the list of apps included in <code>Office365</code>, see Conditional Access target apps: Office 365</li></li></li></td>
-</tr>
-<tr>
 <td style="text-align: left;">excludeApplications</td>
 <td style="text-align: left;">String collection</td>
 <td style="text-align: left;">Can be one of the following: <li> The list of client IDs (<strong>appId</strong>) explicitly excluded from the policy.<li> <code>Office365</code> - For the list of apps included in <code>Office365</code>, see Conditional Access target apps: Office 365</li></li></td>
+</tr>
+<tr>
+<td style="text-align: left;">includeApplications</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Can be one of the following: <li> The list of client IDs (<strong>appId</strong>) the policy applies to, unless explicitly excluded (in <strong>excludeApplications</strong>) <li> <code>All</code> <li> <code>Office365</code> - For the list of apps included in <code>Office365</code>, see Conditional Access target apps: Office 365</li></li></li></td>
 </tr>
 <tr>
 <td style="text-align: left;">includeUserActions</td>
@@ -1413,11 +1413,6 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">operator</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Defines the relationship of the grant controls. Possible values: <code>AND</code>, <code>OR</code>.</td>
-</tr>
-<tr>
 <td style="text-align: left;">builtInControls</td>
 <td style="text-align: left;">conditionalAccessGrantControl collection</td>
 <td style="text-align: left;">List of values of built-in controls required by the policy. Possible values: <code>block</code>, <code>mfa</code>, <code>compliantDevice</code>, <code>domainJoinedDevice</code>, <code>approvedApplication</code>, <code>compliantApplication</code>, <code>passwordChange</code>, <code>unknownFutureValue</code>.</td>
@@ -1426,6 +1421,11 @@
 <td style="text-align: left;">customAuthenticationFactors</td>
 <td style="text-align: left;">String collection</td>
 <td style="text-align: left;">List of custom controls IDs required by the policy. For more information, see Custom controls.</td>
+</tr>
+<tr>
+<td style="text-align: left;">operator</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Defines the relationship of the grant controls. Possible values: <code>AND</code>, <code>OR</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">termsOfUse</td>
@@ -1571,9 +1571,14 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">includeUsers</td>
+<td style="text-align: left;">excludeGroups</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">User IDs in scope of policy unless explicitly excluded, or <code>None</code> or <code>All</code> or <code>GuestsOrExternalUsers</code>.</td>
+<td style="text-align: left;">Group IDs excluded from scope of policy.</td>
+</tr>
+<tr>
+<td style="text-align: left;">excludeRoles</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Role IDs excluded from scope of policy.</td>
 </tr>
 <tr>
 <td style="text-align: left;">excludeUsers</td>
@@ -1586,19 +1591,14 @@
 <td style="text-align: left;">Group IDs in scope of policy unless explicitly excluded, or <code>All</code>.</td>
 </tr>
 <tr>
-<td style="text-align: left;">excludeGroups</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Group IDs excluded from scope of policy.</td>
-</tr>
-<tr>
 <td style="text-align: left;">includeRoles</td>
 <td style="text-align: left;">String collection</td>
 <td style="text-align: left;">Role IDs in scope of policy unless explicitly excluded, or <code>All</code>.</td>
 </tr>
 <tr>
-<td style="text-align: left;">excludeRoles</td>
+<td style="text-align: left;">includeUsers</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Role IDs excluded from scope of policy.</td>
+<td style="text-align: left;">User IDs in scope of policy unless explicitly excluded, or <code>None</code> or <code>All</code> or <code>GuestsOrExternalUsers</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -1882,6 +1882,11 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">allowExternalIdToUseEmailOtp</td>
+<td style="text-align: left;">externalEmailOtpState</td>
+<td style="text-align: left;">Determines whether email OTP is usable by external users for authentication. Possible values are: <code>default</code>, <code>enabled</code>, <code>disabled</code>, <code>unknownFutureValue</code>. Tenants in the <code>default</code> state who did not use public preview will automatically have email OTP enabled beginning in October 2021.</td>
+</tr>
+<tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The authentication method policy identifier. Inherited from authenticationMethodConfiguration.</td>
@@ -1890,11 +1895,6 @@
 <td style="text-align: left;">state</td>
 <td style="text-align: left;">authenticationMethodState</td>
 <td style="text-align: left;">Indicates whether this authentication method is enabled or not. Possible values are: <code>enabled</code>, <code>disabled</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">allowExternalIdToUseEmailOtp</td>
-<td style="text-align: left;">externalEmailOtpState</td>
-<td style="text-align: left;">Determines whether email OTP is usable by external users for authentication. Possible values are: <code>default</code>, <code>enabled</code>, <code>disabled</code>, <code>unknownFutureValue</code>. Tenants in the <code>default</code> state who did not use public preview will automatically have email OTP enabled beginning in October 2021.</td>
 </tr>
 </tbody>
 </table>
@@ -2212,11 +2212,6 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Unique identifier for this policy. Read-only.</td>
-</tr>
-<tr>
 <td style="text-align: left;">definition</td>
 <td style="text-align: left;">String collection</td>
 <td style="text-align: left;">A string collection containing a JSON string that defines the rules and settings for this policy. See Properties of a home realm discovery policy definition for more details about the JSON schema for this property. Required.</td>
@@ -2230,6 +2225,11 @@
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Display name for this policy. Required.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for this policy. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">isOrganizationDefault</td>
@@ -2393,14 +2393,14 @@
 <td style="text-align: left;">The authentication method policy identifier.</td>
 </tr>
 <tr>
-<td style="text-align: left;">state</td>
-<td style="text-align: left;">authenticationMethodState</td>
-<td style="text-align: left;">Possible values are: <code>enabled</code>, <code>disabled</code>.</td>
-</tr>
-<tr>
 <td style="text-align: left;">featureSettings</td>
 <td style="text-align: left;">microsoftAuthenticatorFeatureSettings</td>
 <td style="text-align: left;">A collection of Microsoft Authenticator settings such as application context and location context, and whether they are enabled for all users or specific users only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">state</td>
+<td style="text-align: left;">authenticationMethodState</td>
+<td style="text-align: left;">Possible values are: <code>enabled</code>, <code>disabled</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -2760,14 +2760,14 @@
 <td style="text-align: left;">If <code>true</code>, all the passes in the tenant will be restricted to one-time use. If <code>false</code>, passes in the tenant can be created to be either one-time use or reusable.</td>
 </tr>
 <tr>
-<td style="text-align: left;">minimumLifetimeInMinutes</td>
-<td style="text-align: left;">Int</td>
-<td style="text-align: left;">Minimum lifetime in minutes for any Temporary Access Pass created in the tenant. Value can be between 10 and 43200 minutes (equivalent to 30 days).</td>
-</tr>
-<tr>
 <td style="text-align: left;">maximumLifetimeInMinutes</td>
 <td style="text-align: left;">Int</td>
 <td style="text-align: left;">Maximum lifetime in minutes for any Temporary Access Pass created in the tenant. Value can be between 10 and 43200 minutes (equivalent to 30 days).</td>
+</tr>
+<tr>
+<td style="text-align: left;">minimumLifetimeInMinutes</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Minimum lifetime in minutes for any Temporary Access Pass created in the tenant. Value can be between 10 and 43200 minutes (equivalent to 30 days).</td>
 </tr>
 <tr>
 <td style="text-align: left;">state</td>
@@ -2829,11 +2829,6 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Unique identifier for this policy. Read-only.</td>
-</tr>
-<tr>
 <td style="text-align: left;">definition</td>
 <td style="text-align: left;">String collection</td>
 <td style="text-align: left;">A string collection containing a JSON string that defines the rules and settings for this policy. See below for more details about the JSON schema for this property. Required.</td>
@@ -2847,6 +2842,11 @@
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Display name for this policy. Required.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for this policy. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">isOrganizationDefault</td>

@@ -1184,6 +1184,11 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">errorDetails</td>
+<td style="text-align: left;">genericError</td>
+<td style="text-align: left;">An error object indicating the reason for the conversion failure. This value is not present if the conversion succeeded.</td>
+</tr>
+<tr>
 <td style="text-align: left;">sourceId</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The identifier that was converted. This value is the original, un-converted identifier.</td>
@@ -1192,11 +1197,6 @@
 <td style="text-align: left;">targetId</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The converted identifier. This value is not present if the conversion failed.</td>
-</tr>
-<tr>
-<td style="text-align: left;">errorDetails</td>
-<td style="text-align: left;">genericError</td>
-<td style="text-align: left;">An error object indicating the reason for the conversion failure. This value is not present if the conversion succeeded.</td>
 </tr>
 </tbody>
 </table>
@@ -2376,14 +2376,14 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">locale</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">A locale representation for the user, which includes the user's preferred language and country/region. For example, &quot;en-us&quot;. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.</td>
-</tr>
-<tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: left;">A name representing the user's locale in natural language, for example, &quot;English (United States)&quot;.</td>
+</tr>
+<tr>
+<td style="text-align: left;">locale</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">A locale representation for the user, which includes the user's preferred language and country/region. For example, &quot;en-us&quot;. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.</td>
 </tr>
 </tbody>
 </table>
@@ -3603,16 +3603,6 @@
 </thead>
 <tbody>
 <tr>
-<td>id</td>
-<td><code>Edm.String</code></td>
-<td>The identifier of the entity.</td>
-</tr>
-<tr>
-<td>@odata.etag</td>
-<td><code>Edm.String</code></td>
-<td>The change key for the entity.</td>
-</tr>
-<tr>
 <td>availability</td>
 <td>shiftAvailability collection</td>
 <td>Availability of the user to be scheduled for work and its recurrence pattern.</td>
@@ -3623,14 +3613,24 @@
 <td>Timestamp corresponding to when the entity was created.</td>
 </tr>
 <tr>
-<td>lastModifiedDateTime</td>
-<td><code>Edm.DateTimeOffset</code></td>
-<td>Timestamp corresponding to when the entity was last modified.</td>
+<td>id</td>
+<td><code>Edm.String</code></td>
+<td>The identifier of the entity.</td>
 </tr>
 <tr>
 <td>lastModifiedBy</td>
 <td>identitySet</td>
 <td>Identity of the person who last modified the entity.</td>
+</tr>
+<tr>
+<td>lastModifiedDateTime</td>
+<td><code>Edm.DateTimeOffset</code></td>
+<td>Timestamp corresponding to when the entity was last modified.</td>
+</tr>
+<tr>
+<td>@odata.etag</td>
+<td><code>Edm.String</code></td>
+<td>The change key for the entity.</td>
 </tr>
 </tbody>
 </table>
@@ -3727,14 +3727,14 @@
 <td style="text-align: left;">The unique identifier of the team. The group has the same ID as the team. This property is read-only, and is inherited from the base entity type.</td>
 </tr>
 <tr>
-<td style="text-align: left;">classSettings</td>
-<td style="text-align: left;">teamClassSettings</td>
-<td style="text-align: left;">Configure settings of a class. Available only when the team represents a class.</td>
-</tr>
-<tr>
 <td style="text-align: left;">classification</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: left;">An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.</td>
+</tr>
+<tr>
+<td style="text-align: left;">classSettings</td>
+<td style="text-align: left;">teamClassSettings</td>
+<td style="text-align: left;">Configure settings of a class. Available only when the team represents a class.</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>

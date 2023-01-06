@@ -2591,14 +2591,14 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Read-only. Unique ID of the user.</td>
-</tr>
-<tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: left;">The display name of the user.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Read-only. Unique ID of the user.</td>
 </tr>
 <tr>
 <td style="text-align: left;">roles</td>
@@ -3418,9 +3418,9 @@
 <td style="text-align: left;">Additional configuration for the message being sent to the invited user, including customizing message text, language and cc recipient list.</td>
 </tr>
 <tr>
-<td style="text-align: left;">sendInvitationMessage</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates whether an email should be sent to the user being invited. The default is <code>false</code>.</td>
+<td style="text-align: left;">invitedUserType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The userType of the user being invited. By default, this is <code>Guest</code>. You can invite as <code>Member</code> if you are a company administrator.</td>
 </tr>
 <tr>
 <td style="text-align: left;">inviteRedirectUrl</td>
@@ -3433,14 +3433,14 @@
 <td style="text-align: left;">The URL the user can use to redeem their invitation. Read-only.</td>
 </tr>
 <tr>
-<td style="text-align: left;">invitedUserType</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The userType of the user being invited. By default, this is <code>Guest</code>. You can invite as <code>Member</code> if you are a company administrator.</td>
-</tr>
-<tr>
 <td style="text-align: left;">resetRedemption</td>
 <td style="text-align: left;">Boolean</td>
 <td style="text-align: left;">Reset the user's redemption status and reinvite a user while retaining their user identifier, group memberships, and app assignments. This property allows you to enable a user to sign-in using a different email address from the one in the previous invitation. For more information about using this property, see Reset redemption status for a guest user.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sendInvitationMessage</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether an email should be sent to the user being invited. The default is <code>false</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">status</td>
@@ -3571,11 +3571,6 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Unique identifier for the <strong>oAuth2PermissionGrant</strong>. Read-only.</td>
-</tr>
-<tr>
 <td style="text-align: left;">clientId</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The <strong>id</strong> of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports <code>$filter</code> (<code>eq</code> only).</td>
@@ -3584,6 +3579,11 @@
 <td style="text-align: left;">consentType</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Indicates if authorization is granted for the client application to impersonate all users or only a specific user. <em>AllPrincipals</em> indicates authorization to impersonate all users. <em>Principal</em> indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports <code>$filter</code> (<code>eq</code> only).</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for the <strong>oAuth2PermissionGrant</strong>. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">principalId</td>
@@ -3613,11 +3613,6 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">signInType</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Specifies the user sign-in types in your directory, such as <code>emailAddress</code>, <code>userName</code>, <code>federated</code>, or <code>userPrincipalName</code>. <code>federated</code> represents a unique identifier for a user from an issuer, that can be in any format chosen by the issuer. Setting or updating a <code>userPrincipalName</code> identity will update the value of the <strong>userPrincipalName</strong> property on the user object. The validations performed on the <code>userPrincipalName</code> property on the user object, for example, verified domains and acceptable characters, will be performed when setting or updating a <code>userPrincipalName</code> identity. Additional validation is enforced on <strong>issuerAssignedId</strong> when the sign-in type is set to <code>emailAddress</code> or <code>userName</code>. This property can also be set to any custom string.</td>
-</tr>
-<tr>
 <td style="text-align: left;">issuer</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: left;">Specifies the issuer of the identity, for example <code>facebook.com</code>.<br>For local accounts (where <strong>signInType</strong> is not <code>federated</code>), this property is the local B2C tenant default domain name, for example <code>contoso.onmicrosoft.com</code>.<br>For external users from other Azure AD organization, this will be the domain of the federated organization, for example <code>contoso.com</code>.<br><br>Supports <code>$filter</code>. 512 character limit.</td>
@@ -3625,7 +3620,12 @@
 <tr>
 <td style="text-align: left;">issuerAssignedId</td>
 <td style="text-align: left;">string</td>
-<td style="text-align: left;">Specifies the unique identifier assigned to the user by the issuer. The combination of **i</td>
+<td style="text-align: left;">Specifies the unique identifier assigned to the user by the issuer. The combination of <strong>issuer</strong> and <strong>issuerAssignedId</strong> must be unique within the organization. Represents the sign-in name for the user, when <strong>signInType</strong> is set to <code>emailAddress</code> or <code>userName</code> (also known as local accounts).<br>When <strong>signInType</strong> is set to: <ul><li><code>emailAddress</code>, (or a custom string that starts with <code>emailAddress</code> like <code>emailAddress1</code>) <strong>issuerAssignedId</strong> must be a valid email address</li><li><code>userName</code>, <strong>issuerAssignedId</strong> must be a valid local part of an email address</li></ul>Supports <code>$filter</code>. 100 character limit.</td>
+</tr>
+<tr>
+<td style="text-align: left;">signInType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Specifies the user sign-in types in your directory, such as <code>emailAddress</code>, <code>userName</code>, <code>federated</code>, or <code>userPrincipalName</code>. <code>federated</code> represents a unique identifier for a user from an issuer, that can be in any format chosen by the issuer. Setting or updating a <code>userPrincipalName</code> identity will update the value of the **u</td>
 </tr>
 </tbody>
 </table>
@@ -4266,6 +4266,11 @@
 <td>The date and time at which the credential expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
 </tr>
 <tr>
+<td>key</td>
+<td>Binary</td>
+<td>The value for the key credential. Should be a Base-64 encoded value.</td>
+</tr>
+<tr>
 <td>keyId</td>
 <td>Guid</td>
 <td>The unique identifier (GUID) for the key.</td>
@@ -4284,11 +4289,6 @@
 <td>usage</td>
 <td>String</td>
 <td>A string that describes the purpose for which the key can be used. The possible value is <code>Verify</code>.</td>
-</tr>
-<tr>
-<td>key</td>
-<td>Binary</td>
-<td>The value for the key credential. Should be a Base-64 encoded value.</td>
 </tr>
 <tr>
 <td>thumbprint</td>
@@ -5027,14 +5027,14 @@
 <td style="text-align: left;">The unique identifier of the team. The group has the same ID as the team. This property is read-only, and is inherited from the base entity type.</td>
 </tr>
 <tr>
-<td style="text-align: left;">classSettings</td>
-<td style="text-align: left;">teamClassSettings</td>
-<td style="text-align: left;">Configure settings of a class. Available only when the team represents a class.</td>
-</tr>
-<tr>
 <td style="text-align: left;">classification</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: left;">An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.</td>
+</tr>
+<tr>
+<td style="text-align: left;">classSettings</td>
+<td style="text-align: left;">teamClassSettings</td>
+<td style="text-align: left;">Configure settings of a class. Available only when the team represents a class.</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>
@@ -5114,16 +5114,6 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">The catalog app's generated app ID (different from the developer-provided ID in the Microsoft Teams zip app package.</td>
-</tr>
-<tr>
-<td style="text-align: left;">externalId</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.</td>
-</tr>
-<tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: left;">The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.</td>
@@ -5132,6 +5122,16 @@
 <td style="text-align: left;">distributionMethod</td>
 <td style="text-align: left;">teamsAppDistributionMethod</td>
 <td style="text-align: left;">The method of distribution for the app. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">externalId</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The catalog app's generated app ID (different from the developer-provided ID in the Microsoft Teams zip app package.</td>
 </tr>
 </tbody>
 </table>
@@ -5146,19 +5146,9 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
+<td style="text-align: left;">description</td>
 <td style="text-align: left;">string</td>
-<td style="text-align: left;">A unique ID (not the Teams app ID).</td>
-</tr>
-<tr>
-<td style="text-align: left;">teamsAppId</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">The ID from the Teams app manifest.</td>
-</tr>
-<tr>
-<td style="text-align: left;">publishingState</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">The published status of a specific version of a Teams app. Possible values are:<br><code>submitted</code> — The specific version of the Teams app has been submitted and is under review. </br><code>published</code>  — The request to publish the specific version of the Teams app has been approved by the admin and the app is published. <br> <code>rejected</code> — The request to publish the specific version of the Teams app was rejected by the admin.</td>
+<td style="text-align: left;">Verbose description of the application.</td>
 </tr>
 <tr>
 <td style="text-align: left;">displayName</td>
@@ -5166,9 +5156,14 @@
 <td style="text-align: left;">The name of the app provided by the app developer.</td>
 </tr>
 <tr>
-<td style="text-align: left;">version</td>
+<td style="text-align: left;">id</td>
 <td style="text-align: left;">string</td>
-<td style="text-align: left;">The version number of the application.</td>
+<td style="text-align: left;">A unique ID (not the Teams app ID).</td>
+</tr>
+<tr>
+<td style="text-align: left;">publishingState</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The published status of a specific version of a Teams app. Possible values are:<br><code>submitted</code> — The specific version of the Teams app has been submitted and is under review. </br><code>published</code>  — The request to publish the specific version of the Teams app has been approved by the admin and the app is published. <br> <code>rejected</code> — The request to publish the specific version of the Teams app was rejected by the admin.</td>
 </tr>
 <tr>
 <td style="text-align: left;">shortDescription</td>
@@ -5176,9 +5171,14 @@
 <td style="text-align: left;">Short description of the application.</td>
 </tr>
 <tr>
-<td style="text-align: left;">description</td>
+<td style="text-align: left;">teamsAppId</td>
 <td style="text-align: left;">string</td>
-<td style="text-align: left;">Verbose description of the application.</td>
+<td style="text-align: left;">The ID from the Teams app manifest.</td>
+</tr>
+<tr>
+<td style="text-align: left;">version</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The version number of the application.</td>
 </tr>
 </tbody>
 </table>
@@ -5210,14 +5210,9 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">Unique operation id.</td>
-</tr>
-<tr>
-<td style="text-align: left;">operationType</td>
-<td style="text-align: left;">teamsAsyncOperationType</td>
-<td style="text-align: left;">Denotes which type of operation is being described.</td>
+<td style="text-align: left;">attemptsCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Number of times the operation was attempted before being marked successful or failed.</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>
@@ -5225,9 +5220,14 @@
 <td style="text-align: left;">Time when the operation was created.</td>
 </tr>
 <tr>
-<td style="text-align: left;">status</td>
-<td style="text-align: left;">teamsAsyncOperationStatus</td>
-<td style="text-align: left;">Operation status.</td>
+<td style="text-align: left;">error</td>
+<td style="text-align: left;">operationError</td>
+<td style="text-align: left;">Any error that causes the async operation to fail.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Unique operation id.</td>
 </tr>
 <tr>
 <td style="text-align: left;">lastActionDateTime</td>
@@ -5235,9 +5235,14 @@
 <td style="text-align: left;">Time when the async operation was last updated.</td>
 </tr>
 <tr>
-<td style="text-align: left;">attemptsCount</td>
-<td style="text-align: left;">Int32</td>
-<td style="text-align: left;">Number of times the operation was attempted before being marked successful or failed.</td>
+<td style="text-align: left;">operationType</td>
+<td style="text-align: left;">teamsAsyncOperationType</td>
+<td style="text-align: left;">Denotes which type of operation is being described.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">teamsAsyncOperationStatus</td>
+<td style="text-align: left;">Operation status.</td>
 </tr>
 <tr>
 <td style="text-align: left;">targetResourceId</td>
@@ -5248,11 +5253,6 @@
 <td style="text-align: left;">targetResourceLocation</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: left;">The location of the object that's created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.</td>
-</tr>
-<tr>
-<td style="text-align: left;">error</td>
-<td style="text-align: left;">operationError</td>
-<td style="text-align: left;">Any error that causes the async operation to fail.</td>
 </tr>
 </tbody>
 </table>
@@ -5267,9 +5267,9 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">Identifier that uniquely identifies a specific instance of a channel tab. Read only.</td>
+<td style="text-align: left;">configuration</td>
+<td style="text-align: left;">teamsTabConfiguration</td>
+<td style="text-align: left;">Container for custom settings applied to a tab. The tab is considered configured only once this property is set.</td>
 </tr>
 <tr>
 <td style="text-align: left;">displayName</td>
@@ -5277,14 +5277,14 @@
 <td style="text-align: left;">Name of the tab.</td>
 </tr>
 <tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Identifier that uniquely identifies a specific instance of a channel tab. Read only.</td>
+</tr>
+<tr>
 <td style="text-align: left;">webUrl</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: left;">Deep link URL of the tab instance. Read only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">configuration</td>
-<td style="text-align: left;">teamsTabConfiguration</td>
-<td style="text-align: left;">Container for custom settings applied to a tab. The tab is considered configured only once this property is set.</td>
 </tr>
 </tbody>
 </table>

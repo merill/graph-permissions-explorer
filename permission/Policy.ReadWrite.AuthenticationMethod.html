@@ -615,6 +615,11 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">allowExternalIdToUseEmailOtp</td>
+<td style="text-align: left;">externalEmailOtpState</td>
+<td style="text-align: left;">Determines whether email OTP is usable by external users for authentication. Possible values are: <code>default</code>, <code>enabled</code>, <code>disabled</code>, <code>unknownFutureValue</code>. Tenants in the <code>default</code> state who did not use public preview will automatically have email OTP enabled beginning in October 2021.</td>
+</tr>
+<tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The authentication method policy identifier. Inherited from authenticationMethodConfiguration.</td>
@@ -623,11 +628,6 @@
 <td style="text-align: left;">state</td>
 <td style="text-align: left;">authenticationMethodState</td>
 <td style="text-align: left;">Indicates whether this authentication method is enabled or not. Possible values are: <code>enabled</code>, <code>disabled</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">allowExternalIdToUseEmailOtp</td>
-<td style="text-align: left;">externalEmailOtpState</td>
-<td style="text-align: left;">Determines whether email OTP is usable by external users for authentication. Possible values are: <code>default</code>, <code>enabled</code>, <code>disabled</code>, <code>unknownFutureValue</code>. Tenants in the <code>default</code> state who did not use public preview will automatically have email OTP enabled beginning in October 2021.</td>
 </tr>
 </tbody>
 </table>
@@ -711,14 +711,14 @@
 <td style="text-align: left;">The authentication method policy identifier.</td>
 </tr>
 <tr>
-<td style="text-align: left;">state</td>
-<td style="text-align: left;">authenticationMethodState</td>
-<td style="text-align: left;">Possible values are: <code>enabled</code>, <code>disabled</code>.</td>
-</tr>
-<tr>
 <td style="text-align: left;">featureSettings</td>
 <td style="text-align: left;">microsoftAuthenticatorFeatureSettings</td>
 <td style="text-align: left;">A collection of Microsoft Authenticator settings such as application context and location context, and whether they are enabled for all users or specific users only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">state</td>
+<td style="text-align: left;">authenticationMethodState</td>
+<td style="text-align: left;">Possible values are: <code>enabled</code>, <code>disabled</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -846,14 +846,14 @@
 <td style="text-align: left;">If <code>true</code>, all the passes in the tenant will be restricted to one-time use. If <code>false</code>, passes in the tenant can be created to be either one-time use or reusable.</td>
 </tr>
 <tr>
-<td style="text-align: left;">minimumLifetimeInMinutes</td>
-<td style="text-align: left;">Int</td>
-<td style="text-align: left;">Minimum lifetime in minutes for any Temporary Access Pass created in the tenant. Value can be between 10 and 43200 minutes (equivalent to 30 days).</td>
-</tr>
-<tr>
 <td style="text-align: left;">maximumLifetimeInMinutes</td>
 <td style="text-align: left;">Int</td>
 <td style="text-align: left;">Maximum lifetime in minutes for any Temporary Access Pass created in the tenant. Value can be between 10 and 43200 minutes (equivalent to 30 days).</td>
+</tr>
+<tr>
+<td style="text-align: left;">minimumLifetimeInMinutes</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Minimum lifetime in minutes for any Temporary Access Pass created in the tenant. Value can be between 10 and 43200 minutes (equivalent to 30 days).</td>
 </tr>
 <tr>
 <td style="text-align: left;">state</td>

@@ -197,14 +197,9 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">Unique operation id.</td>
-</tr>
-<tr>
-<td style="text-align: left;">operationType</td>
-<td style="text-align: left;">teamsAsyncOperationType</td>
-<td style="text-align: left;">Denotes which type of operation is being described.</td>
+<td style="text-align: left;">attemptsCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Number of times the operation was attempted before being marked successful or failed.</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>
@@ -212,9 +207,14 @@
 <td style="text-align: left;">Time when the operation was created.</td>
 </tr>
 <tr>
-<td style="text-align: left;">status</td>
-<td style="text-align: left;">teamsAsyncOperationStatus</td>
-<td style="text-align: left;">Operation status.</td>
+<td style="text-align: left;">error</td>
+<td style="text-align: left;">operationError</td>
+<td style="text-align: left;">Any error that causes the async operation to fail.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Unique operation id.</td>
 </tr>
 <tr>
 <td style="text-align: left;">lastActionDateTime</td>
@@ -222,9 +222,14 @@
 <td style="text-align: left;">Time when the async operation was last updated.</td>
 </tr>
 <tr>
-<td style="text-align: left;">attemptsCount</td>
-<td style="text-align: left;">Int32</td>
-<td style="text-align: left;">Number of times the operation was attempted before being marked successful or failed.</td>
+<td style="text-align: left;">operationType</td>
+<td style="text-align: left;">teamsAsyncOperationType</td>
+<td style="text-align: left;">Denotes which type of operation is being described.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">teamsAsyncOperationStatus</td>
+<td style="text-align: left;">Operation status.</td>
 </tr>
 <tr>
 <td style="text-align: left;">targetResourceId</td>
@@ -235,11 +240,6 @@
 <td style="text-align: left;">targetResourceLocation</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: left;">The location of the object that's created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.</td>
-</tr>
-<tr>
-<td style="text-align: left;">error</td>
-<td style="text-align: left;">operationError</td>
-<td style="text-align: left;">Any error that causes the async operation to fail.</td>
 </tr>
 </tbody>
 </table>

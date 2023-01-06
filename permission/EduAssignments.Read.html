@@ -392,6 +392,11 @@
 <td style="text-align: left;">Optional field to specify the URL of the channel to post the <strong>assignment</strong> publish notification. If not specified or null, defaults to the <code>General</code> channel. This field only applies to <strong>assignments</strong> where the <strong>assignTo</strong> value is educationAssignmentClassRecipient. Updating the <strong>notificationChannelUrl</strong> isn't allowed after the assignment has been published.</td>
 </tr>
 <tr>
+<td style="text-align: left;">resourcesFolderUrl</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Folder URL where all the file resources for this <strong>assignment</strong> are stored.</td>
+</tr>
+<tr>
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: left;">Status of the <strong>Assignment</strong>.  You can't PATCH this value.  Possible values are: <code>draft</code>, <code>scheduled</code>, <code>published</code>, <code>assigned</code>.</td>
@@ -399,12 +404,7 @@
 <tr>
 <td style="text-align: left;">webUrl</td>
 <td style="text-align: left;">string</td>
-<td style="text-align: left;">The deep link URL for the given <strong>assignment</strong>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">resourcesFolderUrl</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">Folder URL where all the file resources for this **a</td>
+<td style="text-align: left;">The deep link URL for the given **a</td>
 </tr>
 </tbody>
 </table>
@@ -505,12 +505,12 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
+<td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Unique identifier for the category.</td>
 </tr>
 <tr>
-<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Unique identifier for the category.</td>
 </tr>
@@ -527,24 +527,9 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
+<td style="text-align: left;">classCode</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Object identifier. Inherited from entity.</td>
-</tr>
-<tr>
-<td style="text-align: left;">displayName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Name of the class.</td>
-</tr>
-<tr>
-<td style="text-align: left;">mailNickname</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Mail name for sending email to all members, if this is enabled.</td>
-</tr>
-<tr>
-<td style="text-align: left;">description</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Description of the class.</td>
+<td style="text-align: left;">Class code used by the school to identify the class.</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdBy</td>
@@ -552,14 +537,14 @@
 <td style="text-align: left;">Entity who created the class</td>
 </tr>
 <tr>
-<td style="text-align: left;">classCode</td>
+<td style="text-align: left;">description</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Class code used by the school to identify the class.</td>
+<td style="text-align: left;">Description of the class.</td>
 </tr>
 <tr>
-<td style="text-align: left;">externalName</td>
+<td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Name of the class in the syncing system.</td>
+<td style="text-align: left;">Name of the class.</td>
 </tr>
 <tr>
 <td style="text-align: left;">externalId</td>
@@ -577,9 +562,24 @@
 <td style="text-align: left;">The name of the external source this resources was generated from.</td>
 </tr>
 <tr>
+<td style="text-align: left;">externalName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the class in the syncing system.</td>
+</tr>
+<tr>
 <td style="text-align: left;">grade</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Grade level of the class.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Object identifier. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">mailNickname</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Mail name for sending email to all members, if this is enabled.</td>
 </tr>
 <tr>
 <td style="text-align: left;">term</td>
@@ -690,11 +690,6 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Unique identifier for the rubric.</td>
-</tr>
-<tr>
 <td style="text-align: left;">createdBy</td>
 <td style="text-align: left;">identitySet</td>
 <td style="text-align: left;">The user who created this resource.</td>
@@ -718,6 +713,11 @@
 <td style="text-align: left;">grading</td>
 <td style="text-align: left;">educationAssignmentGradeType</td>
 <td style="text-align: left;">The grading type of this rubric -- null for a no-points rubric, or educationAssignmentPointsGradeType for a points rubric.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for the rubric.</td>
 </tr>
 <tr>
 <td style="text-align: left;">lastModifiedBy</td>
@@ -804,9 +804,24 @@
 <td style="text-align: left;">Unique identifier for the submission.</td>
 </tr>
 <tr>
+<td style="text-align: left;">reassignedBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">User who moved the status of this submission to reassigned.</td>
+</tr>
+<tr>
+<td style="text-align: left;">reassignedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Moment in time when the submission was reassigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code></td>
+</tr>
+<tr>
 <td style="text-align: left;">recipient</td>
 <td style="text-align: left;">educationSubmissionRecipient</td>
 <td style="text-align: left;">Who this submission is assigned to.</td>
+</tr>
+<tr>
+<td style="text-align: left;">resourcesFolderUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Folder where all file resources for this submission need to be stored.</td>
 </tr>
 <tr>
 <td style="text-align: left;">returnedBy</td>
@@ -817,11 +832,6 @@
 <td style="text-align: left;">returnedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">Moment in time when the submission was returned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code></td>
-</tr>
-<tr>
-<td style="text-align: left;">resourcesFolderUrl</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Folder where all file resources for this submission need to be stored.</td>
 </tr>
 <tr>
 <td style="text-align: left;">status</td>
@@ -847,16 +857,6 @@
 <td style="text-align: left;">unsubmittedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">Moment in time when the submission was moved from submitted into the working state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code></td>
-</tr>
-<tr>
-<td style="text-align: left;">reassignedBy</td>
-<td style="text-align: left;">identitySet</td>
-<td style="text-align: left;">User who moved the status of this submission to reassigned.</td>
-</tr>
-<tr>
-<td style="text-align: left;">reassignedDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Moment in time when the submission was reassigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code></td>
 </tr>
 </tbody>
 </table>

@@ -1796,14 +1796,14 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">A unique identifier for the <strong>delegatedPermissionClassification</strong> Key. Not nullable. Read-only.</td>
-</tr>
-<tr>
 <td style="text-align: left;">classification</td>
 <td style="text-align: left;">permissionClassificationType</td>
 <td style="text-align: left;">The classification value being given. Possible value: <code>low</code>. Does not support <code>$filter</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A unique identifier for the <strong>delegatedPermissionClassification</strong> Key. Not nullable. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">permissionId</td>
@@ -2007,14 +2007,14 @@
 <td style="text-align: left;">Indicates information about the user or app initiated the activity.</td>
 </tr>
 <tr>
-<td style="text-align: left;">operationType</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Indicates the type of operation that was performed. The possible values include but are not limited to the following: <code>Add</code>, <code>Assign</code>, <code>Update</code>, <code>Unassign</code>, and <code>Delete</code>.</td>
-</tr>
-<tr>
 <td style="text-align: left;">loggedByService</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Indicates information on which service initiated the activity (For example: <code>Self-service Password Management</code>, <code>Core Directory</code>, <code>B2C</code>, <code>Invited Users</code>, <code>Microsoft Identity Manager</code>, <code>Privileged Identity Management</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">operationType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Indicates the type of operation that was performed. The possible values include but are not limited to the following: <code>Add</code>, <code>Assign</code>, <code>Update</code>, <code>Unassign</code>, and <code>Delete</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">result</td>
@@ -2276,14 +2276,14 @@
 <td style="text-align: left;">Specifies the length of time that a password is valid before it must be changed. If the property is not set, a default value of 90 days will be used.</td>
 </tr>
 <tr>
-<td style="text-align: left;">supportedServices</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">The capabilities assigned to the domain. Can include <code>0</code>, <code>1</code> or more of following values: <code>Email</code>, <code>Sharepoint</code>, <code>EmailInternalRelayOnly</code>, <code>OfficeCommunicationsOnline</code>, <code>SharePointDefaultDomain</code>, <code>FullRedelegation</code>, <code>SharePointPublic</code>, <code>OrgIdAuthentication</code>, <code>Yammer</code>, <code>Intune</code>. The values which you can add/remove using Graph API include: <code>Email</code>, <code>OfficeCommunicationsOnline</code>, <code>Yammer</code>. Not nullable.</td>
-</tr>
-<tr>
 <td style="text-align: left;">state</td>
 <td style="text-align: left;">domainState</td>
 <td style="text-align: left;">Status of asynchronous operations scheduled for the domain.</td>
+</tr>
+<tr>
+<td style="text-align: left;">supportedServices</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">The capabilities assigned to the domain. Can include <code>0</code>, <code>1</code> or more of following values: <code>Email</code>, <code>Sharepoint</code>, <code>EmailInternalRelayOnly</code>, <code>OfficeCommunicationsOnline</code>, <code>SharePointDefaultDomain</code>, <code>FullRedelegation</code>, <code>SharePointPublic</code>, <code>OrgIdAuthentication</code>, <code>Yammer</code>, <code>Intune</code>. The values which you can add/remove using Graph API include: <code>Email</code>, <code>OfficeCommunicationsOnline</code>, <code>Yammer</code>. Not nullable.</td>
 </tr>
 </tbody>
 </table>
@@ -2675,11 +2675,6 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Unique identifier for this policy. Read-only.</td>
-</tr>
-<tr>
 <td style="text-align: left;">definition</td>
 <td style="text-align: left;">String collection</td>
 <td style="text-align: left;">A string collection containing a JSON string that defines the rules and settings for this policy. See Properties of a home realm discovery policy definition for more details about the JSON schema for this property. Required.</td>
@@ -2693,6 +2688,11 @@
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Display name for this policy. Required.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for this policy. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">isOrganizationDefault</td>
@@ -2744,11 +2744,6 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Unique identifier for the <strong>oAuth2PermissionGrant</strong>. Read-only.</td>
-</tr>
-<tr>
 <td style="text-align: left;">clientId</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The <strong>id</strong> of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports <code>$filter</code> (<code>eq</code> only).</td>
@@ -2757,6 +2752,11 @@
 <td style="text-align: left;">consentType</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Indicates if authorization is granted for the client application to impersonate all users or only a specific user. <em>AllPrincipals</em> indicates authorization to impersonate all users. <em>Principal</em> indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports <code>$filter</code> (<code>eq</code> only).</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for the <strong>oAuth2PermissionGrant</strong>. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">principalId</td>
@@ -3022,6 +3022,26 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">clientApplicationsFromVerifiedPublisherOnly</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Set to <code>true</code> to only match on client applications with a verified publisher. Set to <code>false</code> to match on any client app, even if it does not have a verified publisher. Default is <code>false</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">clientApplicationIds</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">A list of <strong>appId</strong> values for the client applications to match with, or a list with the single value <code>all</code> to match any client application. Default is the single value <code>all</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">clientApplicationPublisherIds</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">A list of Microsoft Partner Network (MPN) IDs for verified publishers of the client application, or a list with the single value <code>all</code> to match with client apps from any publisher. Default is the single value <code>all</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">clientApplicationTenantIds</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">A list of Azure Active Directory tenant IDs in which the client application is registered, or a list with the single value <code>all</code> to match with client apps registered in any tenant. Default is the single value <code>all</code>.</td>
+</tr>
+<tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The unique identifier for the permission grant condition set. Key. Read-only.</td>
@@ -3032,6 +3052,11 @@
 <td style="text-align: left;">The permission classification for the permission being granted, or <code>all</code> to match with any permission classification (including permissions which are not classified). Default is <code>all</code>.</td>
 </tr>
 <tr>
+<td style="text-align: left;">permissions</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">The list of <strong>id</strong> values for the specific permissions to match with, or a list with the single value <code>all</code> to match with any permission. The <strong>id</strong> of delegated permissions can be found in the <strong>oauth2PermissionScopes</strong> property of the API's <strong>servicePrincipal</strong> object. The <strong>id</strong> of application permissions can be found in the <strong>appRoles</strong> property of the API's <strong>servicePrincipal</strong> object. The <strong>id</strong> of resource-specific application permissions can be found in the <strong>resourceSpecificApplicationPermissions</strong> property of the API's <strong>servicePrincipal</strong> object. Default is the single value <code>all</code>.</td>
+</tr>
+<tr>
 <td style="text-align: left;">permissionType</td>
 <td style="text-align: left;">permissionType</td>
 <td style="text-align: left;">The permission type of the permission being granted. Possible values: <code>application</code> for application permissions (e.g. app roles), or <code>delegated</code> for delegated permissions. The value <code>delegatedUserConsentable</code> indicates delegated permissions which have not been configured by the API publisher to require admin consent—this value may be used in built-in permission grant policies, but cannot be used in custom permission grant policies. Required.</td>
@@ -3039,32 +3064,7 @@
 <tr>
 <td style="text-align: left;">resourceApplication</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The <strong>appId</strong> of the resource application (e.g. the API) for which a permission is being granted, or <code>any</code> to match with any resource application or API. Default is <code>any</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">permissions</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">The list of <strong>id</strong> values for the specific permissions to match with, or a list with the single value <code>all</code> to match with any permission. The <strong>id</strong> of delegated permissions can be found in the <strong>oauth2PermissionScopes</strong> property of the API's <strong>servicePrincipal</strong> object. The <strong>id</strong> of application permissions can be found in the <strong>appRoles</strong> property of the API's <strong>servicePrincipal</strong> object. The <strong>id</strong> of resource-specific application permissions can be found in the <strong>resourceSpecificApplicationPermissions</strong> property of the API's <strong>servicePrincipal</strong> object. Default is the single value <code>all</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">clientApplicationIds</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">A list of <strong>appId</strong> values for the client applications to match with, or a list with the single value <code>all</code> to match any client application. Default is the single value <code>all</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">clientApplicationTenantIds</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">A list of Azure Active Directory tenant IDs in which the client application is registered, or a list with the single value <code>all</code> to match with client apps registered in any tenant. Default is the single value <code>all</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">clientApplicationPublisherIds</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">A list of Microsoft Partner Network (MPN) IDs for verified publishers of the client application, or a list with the single value <code>all</code> to match with client apps from any publisher. Default is the single value <code>all</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">clientApplicationsFromVerifiedPublisherOnly</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Set to <code>true</code> to only match on client applications with a verified publisher. Set to <code>false</code> to match on any client app, even if it does not have a verified publisher. Default is <code>false</code>.</td>
+<td style="text-align: left;">The **a</td>
 </tr>
 </tbody>
 </table>
@@ -3079,11 +3079,6 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the permission grant policy. The <strong>id</strong> prefix <code>microsoft-</code> is reserved for built-in permission grant policies, and may not be used in a custom permission grant policy. Only letters, numbers, hyphens (<code>-</code>) and underscores (<code>_</code>) are allowed. Key. Not nullable. Required on create. Immutable.</td>
-</tr>
-<tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The display name for the permission grant policy.</td>
@@ -3094,14 +3089,19 @@
 <td style="text-align: left;">The description for the permission grant policy.</td>
 </tr>
 <tr>
-<td style="text-align: left;">includes</td>
-<td style="text-align: left;">permissionGrantConditionSet collection</td>
-<td style="text-align: left;">Condition sets which are <em>included</em> in this permission grant policy. Automatically expanded on <code>GET</code>.</td>
-</tr>
-<tr>
 <td style="text-align: left;">excludes</td>
 <td style="text-align: left;">permissionGrantConditionSet collection</td>
-<td style="text-align: left;">Condition sets which are *e</td>
+<td style="text-align: left;">Condition sets which are <em>excluded</em> in this permission grant policy. Automatically expanded on <code>GET</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the permission grant policy. The <strong>id</strong> prefix <code>microsoft-</code> is reserved for built-in permission grant policies, and may not be used in a custom permission grant policy. Only letters, numbers, hyphens (<code>-</code>) and underscores (<code>_</code>) are allowed. Key. Not nullable. Required on create. Immutable.</td>
+</tr>
+<tr>
+<td style="text-align: left;">includes</td>
+<td style="text-align: left;">permissionGrantConditionSet collection</td>
+<td style="text-align: left;">Condition sets which are *i</td>
 </tr>
 </tbody>
 </table>
@@ -3215,11 +3215,6 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">provisioningAction</td>
-<td style="text-align: left;">provisioningAction</td>
-<td style="text-align: left;">Indicates the activity name or the operation name. Possible values are: <code>create</code>, <code>update</code>, <code>delete</code>, <code>stageddelete</code>, <code>disable</code>, <code>other</code> and <code>unknownFutureValue</code>. For a list of activities logged, refer to Azure AD activity list.</td>
-</tr>
-<tr>
 <td style="text-align: left;">activityDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code></td>
@@ -3260,6 +3255,16 @@
 <td style="text-align: left;">Details of each property that was modified in this provisioning action on this object.</td>
 </tr>
 <tr>
+<td style="text-align: left;">provisioningAction</td>
+<td style="text-align: left;">provisioningAction</td>
+<td style="text-align: left;">Indicates the activity name or the operation name. Possible values are: <code>create</code>, <code>update</code>, <code>delete</code>, <code>stageddelete</code>, <code>disable</code>, <code>other</code> and <code>unknownFutureValue</code>. For a list of activities logged, refer to Azure AD activity list.</td>
+</tr>
+<tr>
+<td style="text-align: left;">provisioningStatusInfo</td>
+<td style="text-align: left;">provisioningStatusInfo</td>
+<td style="text-align: left;">Details of provisioning status.</td>
+</tr>
+<tr>
 <td style="text-align: left;">provisioningSteps</td>
 <td style="text-align: left;">provisioningStep collection</td>
 <td style="text-align: left;">Details of each step in provisioning.</td>
@@ -3278,11 +3283,6 @@
 <td style="text-align: left;">sourceSystem</td>
 <td style="text-align: left;">provisioningSystem</td>
 <td style="text-align: left;">Details of source system of the object being provisioned.</td>
-</tr>
-<tr>
-<td style="text-align: left;">provisioningStatusInfo</td>
-<td style="text-align: left;">provisioningStatusInfo</td>
-<td style="text-align: left;">Details of provisioning status.</td>
 </tr>
 <tr>
 <td style="text-align: left;">targetIdentity</td>
@@ -3944,14 +3944,14 @@
 <td style="text-align: left;">The unique identifier of the team. The group has the same ID as the team. This property is read-only, and is inherited from the base entity type.</td>
 </tr>
 <tr>
-<td style="text-align: left;">classSettings</td>
-<td style="text-align: left;">teamClassSettings</td>
-<td style="text-align: left;">Configure settings of a class. Available only when the team represents a class.</td>
-</tr>
-<tr>
 <td style="text-align: left;">classification</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: left;">An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.</td>
+</tr>
+<tr>
+<td style="text-align: left;">classSettings</td>
+<td style="text-align: left;">teamClassSettings</td>
+<td style="text-align: left;">Configure settings of a class. Available only when the team represents a class.</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>
@@ -4031,16 +4031,6 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">The catalog app's generated app ID (different from the developer-provided ID in the Microsoft Teams zip app package.</td>
-</tr>
-<tr>
-<td style="text-align: left;">externalId</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.</td>
-</tr>
-<tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: left;">The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.</td>
@@ -4049,6 +4039,16 @@
 <td style="text-align: left;">distributionMethod</td>
 <td style="text-align: left;">teamsAppDistributionMethod</td>
 <td style="text-align: left;">The method of distribution for the app. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">externalId</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The catalog app's generated app ID (different from the developer-provided ID in the Microsoft Teams zip app package.</td>
 </tr>
 </tbody>
 </table>
@@ -4080,9 +4080,9 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">Identifier that uniquely identifies a specific instance of a channel tab. Read only.</td>
+<td style="text-align: left;">configuration</td>
+<td style="text-align: left;">teamsTabConfiguration</td>
+<td style="text-align: left;">Container for custom settings applied to a tab. The tab is considered configured only once this property is set.</td>
 </tr>
 <tr>
 <td style="text-align: left;">displayName</td>
@@ -4090,14 +4090,14 @@
 <td style="text-align: left;">Name of the tab.</td>
 </tr>
 <tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Identifier that uniquely identifies a specific instance of a channel tab. Read only.</td>
+</tr>
+<tr>
 <td style="text-align: left;">webUrl</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: left;">Deep link URL of the tab instance. Read only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">configuration</td>
-<td style="text-align: left;">teamsTabConfiguration</td>
-<td style="text-align: left;">Container for custom settings applied to a tab. The tab is considered configured only once this property is set.</td>
 </tr>
 </tbody>
 </table>
@@ -4129,11 +4129,6 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Unique identifier for this policy. Read-only.</td>
-</tr>
-<tr>
 <td style="text-align: left;">definition</td>
 <td style="text-align: left;">String collection</td>
 <td style="text-align: left;">A string collection containing a JSON string that defines the rules and settings for this policy. See below for more details about the JSON schema for this property. Required.</td>
@@ -4147,6 +4142,11 @@
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Display name for this policy. Required.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for this policy. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">isOrganizationDefault</td>

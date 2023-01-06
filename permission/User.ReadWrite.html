@@ -1496,6 +1496,11 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">errorDetails</td>
+<td style="text-align: left;">genericError</td>
+<td style="text-align: left;">An error object indicating the reason for the conversion failure. This value is not present if the conversion succeeded.</td>
+</tr>
+<tr>
 <td style="text-align: left;">sourceId</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The identifier that was converted. This value is the original, un-converted identifier.</td>
@@ -1504,11 +1509,6 @@
 <td style="text-align: left;">targetId</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The converted identifier. This value is not present if the conversion failed.</td>
-</tr>
-<tr>
-<td style="text-align: left;">errorDetails</td>
-<td style="text-align: left;">genericError</td>
-<td style="text-align: left;">An error object indicating the reason for the conversion failure. This value is not present if the conversion succeeded.</td>
 </tr>
 </tbody>
 </table>
@@ -2327,14 +2327,14 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">locale</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">A locale representation for the user, which includes the user's preferred language and country/region. For example, &quot;en-us&quot;. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.</td>
-</tr>
-<tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: left;">A name representing the user's locale in natural language, for example, &quot;English (United States)&quot;.</td>
+</tr>
+<tr>
+<td style="text-align: left;">locale</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">A locale representation for the user, which includes the user's preferred language and country/region. For example, &quot;en-us&quot;. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.</td>
 </tr>
 </tbody>
 </table>
@@ -2349,11 +2349,6 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">signInType</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Specifies the user sign-in types in your directory, such as <code>emailAddress</code>, <code>userName</code>, <code>federated</code>, or <code>userPrincipalName</code>. <code>federated</code> represents a unique identifier for a user from an issuer, that can be in any format chosen by the issuer. Setting or updating a <code>userPrincipalName</code> identity will update the value of the <strong>userPrincipalName</strong> property on the user object. The validations performed on the <code>userPrincipalName</code> property on the user object, for example, verified domains and acceptable characters, will be performed when setting or updating a <code>userPrincipalName</code> identity. Additional validation is enforced on <strong>issuerAssignedId</strong> when the sign-in type is set to <code>emailAddress</code> or <code>userName</code>. This property can also be set to any custom string.</td>
-</tr>
-<tr>
 <td style="text-align: left;">issuer</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: left;">Specifies the issuer of the identity, for example <code>facebook.com</code>.<br>For local accounts (where <strong>signInType</strong> is not <code>federated</code>), this property is the local B2C tenant default domain name, for example <code>contoso.onmicrosoft.com</code>.<br>For external users from other Azure AD organization, this will be the domain of the federated organization, for example <code>contoso.com</code>.<br><br>Supports <code>$filter</code>. 512 character limit.</td>
@@ -2361,7 +2356,12 @@
 <tr>
 <td style="text-align: left;">issuerAssignedId</td>
 <td style="text-align: left;">string</td>
-<td style="text-align: left;">Specifies the unique identifier assigned to the user by the issuer. The combination of **i</td>
+<td style="text-align: left;">Specifies the unique identifier assigned to the user by the issuer. The combination of <strong>issuer</strong> and <strong>issuerAssignedId</strong> must be unique within the organization. Represents the sign-in name for the user, when <strong>signInType</strong> is set to <code>emailAddress</code> or <code>userName</code> (also known as local accounts).<br>When <strong>signInType</strong> is set to: <ul><li><code>emailAddress</code>, (or a custom string that starts with <code>emailAddress</code> like <code>emailAddress1</code>) <strong>issuerAssignedId</strong> must be a valid email address</li><li><code>userName</code>, <strong>issuerAssignedId</strong> must be a valid local part of an email address</li></ul>Supports <code>$filter</code>. 100 character limit.</td>
+</tr>
+<tr>
+<td style="text-align: left;">signInType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Specifies the user sign-in types in your directory, such as <code>emailAddress</code>, <code>userName</code>, <code>federated</code>, or <code>userPrincipalName</code>. <code>federated</code> represents a unique identifier for a user from an issuer, that can be in any format chosen by the issuer. Setting or updating a <code>userPrincipalName</code> identity will update the value of the **u</td>
 </tr>
 </tbody>
 </table>

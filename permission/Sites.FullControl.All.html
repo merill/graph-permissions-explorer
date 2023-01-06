@@ -668,49 +668,14 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier of the permission among all permissions on the item. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">grantedToV2</td>
-<td style="text-align: left;">[SharePointIdentitySet][]</td>
-<td style="text-align: left;">For user type permissions, the details of the users and applications for this permission. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">grantedToIdentitiesV2</td>
-<td style="text-align: left;">Collection([SharePointIdentitySet][])</td>
-<td style="text-align: left;">For link type permissions, the details of the users to whom permission was granted. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">invitation</td>
-<td style="text-align: left;">[SharingInvitation][]</td>
-<td style="text-align: left;">Details of any associated sharing invitation for this permission. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">inheritedFrom</td>
-<td style="text-align: left;">ItemReference</td>
-<td style="text-align: left;">Provides a reference to the ancestor of the current permission, if it is inherited from an ancestor. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">link</td>
-<td style="text-align: left;">[SharingLink][]</td>
-<td style="text-align: left;">Provides the link details of the current permission, if it is a link type permissions. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">roles</td>
-<td style="text-align: left;">Collection of String</td>
-<td style="text-align: left;">The type of permission, for example, <code>read</code>. See below for the full list of roles. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">shareId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">A unique token that can be used to access this shared item via the <strong>shares</strong> API. Read-only.</td>
-</tr>
-<tr>
 <td style="text-align: left;">expirationDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier of the permission among all permissions on the item. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">hasPassword</td>
@@ -726,6 +691,41 @@
 <td style="text-align: left;">grantedToIdentities (deprecated)</td>
 <td style="text-align: left;">Collection(IdentitySet)</td>
 <td style="text-align: left;">For type permissions, the details of the users to whom permission was granted. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">grantedToIdentitiesV2</td>
+<td style="text-align: left;">Collection([SharePointIdentitySet][])</td>
+<td style="text-align: left;">For link type permissions, the details of the users to whom permission was granted. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">grantedToV2</td>
+<td style="text-align: left;">[SharePointIdentitySet][]</td>
+<td style="text-align: left;">For user type permissions, the details of the users and applications for this permission. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">inheritedFrom</td>
+<td style="text-align: left;">ItemReference</td>
+<td style="text-align: left;">Provides a reference to the ancestor of the current permission, if it is inherited from an ancestor. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">invitation</td>
+<td style="text-align: left;">[SharingInvitation][]</td>
+<td style="text-align: left;">Details of any associated sharing invitation for this permission. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">link</td>
+<td style="text-align: left;">[SharingLink][]</td>
+<td style="text-align: left;">Provides the link details of the current permission, if it is a link type permissions. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">roles</td>
+<td style="text-align: left;">Collection of String</td>
+<td style="text-align: left;">The type of permission, for example, <code>read</code>. See below for the full list of roles. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">shareId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A unique token that can be used to access this shared item via the <strong>shares</strong> API. Read-only.</td>
 </tr>
 </tbody>
 </table>
@@ -802,11 +802,6 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>id</strong></td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">The unique identifier of the item. Read-only.</td>
-</tr>
-<tr>
 <td style="text-align: left;"><strong>createdDateTime</strong></td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">The date and time the item was created. Read-only.</td>
@@ -825,6 +820,11 @@
 <td style="text-align: left;"><strong>eTag</strong></td>
 <td style="text-align: left;">string</td>
 <td style="text-align: left;">ETag for the item. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>id</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The unique identifier of the item. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>lastModifiedDateTime</strong></td>

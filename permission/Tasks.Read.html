@@ -1310,14 +1310,14 @@
 <td style="text-align: left;">Read-only. ID of the plan. It is 28 characters long and case-sensitive. Format validation is done on the service.</td>
 </tr>
 <tr>
+<td style="text-align: left;">owner (deprecated)</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Use the <strong>container</strong> property instead. ID of the group that owns the plan. After it is set, this property can’t be updated. This property will not return a valid group ID if the container of the plan is not a group.</td>
+</tr>
+<tr>
 <td style="text-align: left;">title</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Required. Title of the plan.</td>
-</tr>
-<tr>
-<td style="text-align: left;">owner (deprecated)</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Use the **c</td>
 </tr>
 </tbody>
 </table>
@@ -1510,11 +1510,6 @@
 <td style="text-align: left;">Percentage of task completion. When set to <code>100</code>, the task is considered completed.</td>
 </tr>
 <tr>
-<td style="text-align: left;">priority</td>
-<td style="text-align: left;">Int32</td>
-<td style="text-align: left;">Priority of the task. The valid range of values is between <code>0</code> and <code>10</code>, with the increasing value being lower priority (<code>0</code> has the highest priority and <code>10</code> has the lowest priority).  Currently, Planner interprets values <code>0</code> and <code>1</code> as &quot;urgent&quot;, <code>2</code>, <code>3</code> and <code>4</code> as &quot;important&quot;, <code>5</code>, <code>6</code>, and <code>7</code> as &quot;medium&quot;, and <code>8</code>, <code>9</code>, and <code>10</code> as &quot;low&quot;.  Additionally, Planner sets the value <code>1</code> for &quot;urgent&quot;, <code>3</code> for &quot;important&quot;, <code>5</code> for &quot;medium&quot;, and <code>9</code> for &quot;low&quot;.</td>
-</tr>
-<tr>
 <td style="text-align: left;">planId</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Plan ID to which the task belongs.</td>
@@ -1523,6 +1518,11 @@
 <td style="text-align: left;">previewType</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">This sets the type of preview that shows up on the task. The possible values are: <code>automatic</code>, <code>noPreview</code>, <code>checklist</code>, <code>description</code>, <code>reference</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">priority</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Priority of the task. The valid range of values is between <code>0</code> and <code>10</code>, with the increasing value being lower priority (<code>0</code> has the highest priority and <code>10</code> has the lowest priority).  Currently, Planner interprets values <code>0</code> and <code>1</code> as &quot;urgent&quot;, <code>2</code>, <code>3</code> and <code>4</code> as &quot;important&quot;, <code>5</code>, <code>6</code>, and <code>7</code> as &quot;medium&quot;, and <code>8</code>, <code>9</code>, and <code>10</code> as &quot;low&quot;.  Additionally, Planner sets the value <code>1</code> for &quot;urgent&quot;, <code>3</code> for &quot;important&quot;, <code>5</code> for &quot;medium&quot;, and <code>9</code> for &quot;low&quot;.</td>
 </tr>
 <tr>
 <td style="text-align: left;">referenceCount</td>

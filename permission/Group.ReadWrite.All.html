@@ -2103,14 +2103,14 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Read-only. Unique ID of the user.</td>
-</tr>
-<tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: left;">The display name of the user.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Read-only. Unique ID of the user.</td>
 </tr>
 <tr>
 <td style="text-align: left;">roles</td>
@@ -2135,24 +2135,9 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Read-only. <br><br>Returned by default.</td>
-</tr>
-<tr>
-<td style="text-align: left;">toRecipients</td>
-<td style="text-align: left;">recipient collection</td>
-<td style="text-align: left;">The To: recipients for the thread. <br><br>Returned only on <code>$select</code>.</td>
-</tr>
-<tr>
 <td style="text-align: left;">ccRecipients</td>
 <td style="text-align: left;">recipient collection</td>
 <td style="text-align: left;">The Cc: recipients for the thread. <br><br>Returned only on <code>$select</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">topic</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated. <br><br>Returned by default.</td>
 </tr>
 <tr>
 <td style="text-align: left;">hasAttachments</td>
@@ -2160,14 +2145,19 @@
 <td style="text-align: left;">Indicates whether any of the posts within this thread has at least one attachment. <br><br>Returned by default.</td>
 </tr>
 <tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Read-only. <br><br>Returned by default.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isLocked</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates if the thread is locked. <br><br>Returned by default.</td>
+</tr>
+<tr>
 <td style="text-align: left;">lastDeliveredDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.<br><br>Returned by default.</td>
-</tr>
-<tr>
-<td style="text-align: left;">uniqueSenders</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">All the users that sent a message to this thread. <br><br>Returned by default.</td>
 </tr>
 <tr>
 <td style="text-align: left;">preview</td>
@@ -2175,9 +2165,19 @@
 <td style="text-align: left;">A short summary from the body of the latest post in this conversation. <br><br>Returned by default.</td>
 </tr>
 <tr>
-<td style="text-align: left;">isLocked</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates if the thread is locked. <br><br>Returned by default.</td>
+<td style="text-align: left;">topic</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated. <br><br>Returned by default.</td>
+</tr>
+<tr>
+<td style="text-align: left;">toRecipients</td>
+<td style="text-align: left;">recipient collection</td>
+<td style="text-align: left;">The To: recipients for the thread. <br><br>Returned only on <code>$select</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">uniqueSenders</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">All the users that sent a message to this thread. <br><br>Returned by default.</td>
 </tr>
 </tbody>
 </table>
@@ -3737,14 +3737,14 @@
 <td style="text-align: left;">Read-only. ID of the plan. It is 28 characters long and case-sensitive. Format validation is done on the service.</td>
 </tr>
 <tr>
+<td style="text-align: left;">owner (deprecated)</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Use the <strong>container</strong> property instead. ID of the group that owns the plan. After it is set, this property can’t be updated. This property will not return a valid group ID if the container of the plan is not a group.</td>
+</tr>
+<tr>
 <td style="text-align: left;">title</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Required. Title of the plan.</td>
-</tr>
-<tr>
-<td style="text-align: left;">owner (deprecated)</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Use the **c</td>
 </tr>
 </tbody>
 </table>
@@ -3916,11 +3916,6 @@
 <td style="text-align: left;">Percentage of task completion. When set to <code>100</code>, the task is considered completed.</td>
 </tr>
 <tr>
-<td style="text-align: left;">priority</td>
-<td style="text-align: left;">Int32</td>
-<td style="text-align: left;">Priority of the task. The valid range of values is between <code>0</code> and <code>10</code>, with the increasing value being lower priority (<code>0</code> has the highest priority and <code>10</code> has the lowest priority).  Currently, Planner interprets values <code>0</code> and <code>1</code> as &quot;urgent&quot;, <code>2</code>, <code>3</code> and <code>4</code> as &quot;important&quot;, <code>5</code>, <code>6</code>, and <code>7</code> as &quot;medium&quot;, and <code>8</code>, <code>9</code>, and <code>10</code> as &quot;low&quot;.  Additionally, Planner sets the value <code>1</code> for &quot;urgent&quot;, <code>3</code> for &quot;important&quot;, <code>5</code> for &quot;medium&quot;, and <code>9</code> for &quot;low&quot;.</td>
-</tr>
-<tr>
 <td style="text-align: left;">planId</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Plan ID to which the task belongs.</td>
@@ -3929,6 +3924,11 @@
 <td style="text-align: left;">previewType</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">This sets the type of preview that shows up on the task. The possible values are: <code>automatic</code>, <code>noPreview</code>, <code>checklist</code>, <code>description</code>, <code>reference</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">priority</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Priority of the task. The valid range of values is between <code>0</code> and <code>10</code>, with the increasing value being lower priority (<code>0</code> has the highest priority and <code>10</code> has the lowest priority).  Currently, Planner interprets values <code>0</code> and <code>1</code> as &quot;urgent&quot;, <code>2</code>, <code>3</code> and <code>4</code> as &quot;important&quot;, <code>5</code>, <code>6</code>, and <code>7</code> as &quot;medium&quot;, and <code>8</code>, <code>9</code>, and <code>10</code> as &quot;low&quot;.  Additionally, Planner sets the value <code>1</code> for &quot;urgent&quot;, <code>3</code> for &quot;important&quot;, <code>5</code> for &quot;medium&quot;, and <code>9</code> for &quot;low&quot;.</td>
 </tr>
 <tr>
 <td style="text-align: left;">referenceCount</td>
@@ -4176,16 +4176,6 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">The unique identifier of the resource-specific permission grant. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">deletedDateTime</td>
-<td style="text-align: left;">dateTimeOffset</td>
-<td style="text-align: left;">Not used.</td>
-</tr>
-<tr>
 <td style="text-align: left;">clientId</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: left;">ID of the Azure AD app that has been granted access. Read-only.</td>
@@ -4194,6 +4184,16 @@
 <td style="text-align: left;">clientAppId</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: left;">ID of the service principal of the Azure AD app that has been granted access. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">deletedDateTime</td>
+<td style="text-align: left;">dateTimeOffset</td>
+<td style="text-align: left;">Not used.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The unique identifier of the resource-specific permission grant. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">resourceAppId</td>
@@ -4488,14 +4488,14 @@
 <td style="text-align: left;">The unique identifier of the team. The group has the same ID as the team. This property is read-only, and is inherited from the base entity type.</td>
 </tr>
 <tr>
-<td style="text-align: left;">classSettings</td>
-<td style="text-align: left;">teamClassSettings</td>
-<td style="text-align: left;">Configure settings of a class. Available only when the team represents a class.</td>
-</tr>
-<tr>
 <td style="text-align: left;">classification</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: left;">An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.</td>
+</tr>
+<tr>
+<td style="text-align: left;">classSettings</td>
+<td style="text-align: left;">teamClassSettings</td>
+<td style="text-align: left;">Configure settings of a class. Available only when the team represents a class.</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>
@@ -4575,16 +4575,6 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">The catalog app's generated app ID (different from the developer-provided ID in the Microsoft Teams zip app package.</td>
-</tr>
-<tr>
-<td style="text-align: left;">externalId</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.</td>
-</tr>
-<tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: left;">The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.</td>
@@ -4593,6 +4583,16 @@
 <td style="text-align: left;">distributionMethod</td>
 <td style="text-align: left;">teamsAppDistributionMethod</td>
 <td style="text-align: left;">The method of distribution for the app. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">externalId</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The catalog app's generated app ID (different from the developer-provided ID in the Microsoft Teams zip app package.</td>
 </tr>
 </tbody>
 </table>
@@ -4624,14 +4624,9 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">Unique operation id.</td>
-</tr>
-<tr>
-<td style="text-align: left;">operationType</td>
-<td style="text-align: left;">teamsAsyncOperationType</td>
-<td style="text-align: left;">Denotes which type of operation is being described.</td>
+<td style="text-align: left;">attemptsCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Number of times the operation was attempted before being marked successful or failed.</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>
@@ -4639,9 +4634,14 @@
 <td style="text-align: left;">Time when the operation was created.</td>
 </tr>
 <tr>
-<td style="text-align: left;">status</td>
-<td style="text-align: left;">teamsAsyncOperationStatus</td>
-<td style="text-align: left;">Operation status.</td>
+<td style="text-align: left;">error</td>
+<td style="text-align: left;">operationError</td>
+<td style="text-align: left;">Any error that causes the async operation to fail.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Unique operation id.</td>
 </tr>
 <tr>
 <td style="text-align: left;">lastActionDateTime</td>
@@ -4649,9 +4649,14 @@
 <td style="text-align: left;">Time when the async operation was last updated.</td>
 </tr>
 <tr>
-<td style="text-align: left;">attemptsCount</td>
-<td style="text-align: left;">Int32</td>
-<td style="text-align: left;">Number of times the operation was attempted before being marked successful or failed.</td>
+<td style="text-align: left;">operationType</td>
+<td style="text-align: left;">teamsAsyncOperationType</td>
+<td style="text-align: left;">Denotes which type of operation is being described.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">teamsAsyncOperationStatus</td>
+<td style="text-align: left;">Operation status.</td>
 </tr>
 <tr>
 <td style="text-align: left;">targetResourceId</td>
@@ -4662,11 +4667,6 @@
 <td style="text-align: left;">targetResourceLocation</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: left;">The location of the object that's created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.</td>
-</tr>
-<tr>
-<td style="text-align: left;">error</td>
-<td style="text-align: left;">operationError</td>
-<td style="text-align: left;">Any error that causes the async operation to fail.</td>
 </tr>
 </tbody>
 </table>
@@ -4681,9 +4681,9 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">Identifier that uniquely identifies a specific instance of a channel tab. Read only.</td>
+<td style="text-align: left;">configuration</td>
+<td style="text-align: left;">teamsTabConfiguration</td>
+<td style="text-align: left;">Container for custom settings applied to a tab. The tab is considered configured only once this property is set.</td>
 </tr>
 <tr>
 <td style="text-align: left;">displayName</td>
@@ -4691,14 +4691,14 @@
 <td style="text-align: left;">Name of the tab.</td>
 </tr>
 <tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Identifier that uniquely identifies a specific instance of a channel tab. Read only.</td>
+</tr>
+<tr>
 <td style="text-align: left;">webUrl</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: left;">Deep link URL of the tab instance. Read only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">configuration</td>
-<td style="text-align: left;">teamsTabConfiguration</td>
-<td style="text-align: left;">Container for custom settings applied to a tab. The tab is considered configured only once this property is set.</td>
 </tr>
 </tbody>
 </table>
@@ -4732,9 +4732,9 @@
 </thead>
 <tbody>
 <tr>
-<td>timeOffReasonId</td>
-<td>string</td>
-<td>ID of the <code>timeOffReason</code> for this <code>timeOffItem</code>. Required.</td>
+<td>endDateTime</td>
+<td>DateTimeOffset</td>
+<td>The end date and time for the <code>timeOffItem</code>. Required. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
 </tr>
 <tr>
 <td>startDateTime</td>
@@ -4742,14 +4742,14 @@
 <td>The start date and time for the <code>timeOffItem</code>. Required. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
 </tr>
 <tr>
-<td>endDateTime</td>
-<td>DateTimeOffset</td>
-<td>The end date and time for the <code>timeOffItem</code>. Required. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
-</tr>
-<tr>
 <td>theme</td>
 <td>scheduleEntityTheme</td>
 <td>Supported colors: white; blue; green; purple; pink; yellow; gray; darkBlue; darkGreen; darkPurple; darkPink; darkYellow.</td>
+</tr>
+<tr>
+<td>timeOffReasonId</td>
+<td>string</td>
+<td>ID of the <code>timeOffReason</code> for this <code>timeOffItem</code>. Required.</td>
 </tr>
 </tbody>
 </table>

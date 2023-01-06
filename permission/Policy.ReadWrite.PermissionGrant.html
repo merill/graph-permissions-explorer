@@ -230,14 +230,14 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">A unique identifier for the <strong>delegatedPermissionClassification</strong> Key. Not nullable. Read-only.</td>
-</tr>
-<tr>
 <td style="text-align: left;">classification</td>
 <td style="text-align: left;">permissionClassificationType</td>
 <td style="text-align: left;">The classification value being given. Possible value: <code>low</code>. Does not support <code>$filter</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A unique identifier for the <strong>delegatedPermissionClassification</strong> Key. Not nullable. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">permissionId</td>
@@ -262,6 +262,26 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">clientApplicationsFromVerifiedPublisherOnly</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Set to <code>true</code> to only match on client applications with a verified publisher. Set to <code>false</code> to match on any client app, even if it does not have a verified publisher. Default is <code>false</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">clientApplicationIds</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">A list of <strong>appId</strong> values for the client applications to match with, or a list with the single value <code>all</code> to match any client application. Default is the single value <code>all</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">clientApplicationPublisherIds</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">A list of Microsoft Partner Network (MPN) IDs for verified publishers of the client application, or a list with the single value <code>all</code> to match with client apps from any publisher. Default is the single value <code>all</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">clientApplicationTenantIds</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">A list of Azure Active Directory tenant IDs in which the client application is registered, or a list with the single value <code>all</code> to match with client apps registered in any tenant. Default is the single value <code>all</code>.</td>
+</tr>
+<tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The unique identifier for the permission grant condition set. Key. Read-only.</td>
@@ -272,6 +292,11 @@
 <td style="text-align: left;">The permission classification for the permission being granted, or <code>all</code> to match with any permission classification (including permissions which are not classified). Default is <code>all</code>.</td>
 </tr>
 <tr>
+<td style="text-align: left;">permissions</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">The list of <strong>id</strong> values for the specific permissions to match with, or a list with the single value <code>all</code> to match with any permission. The <strong>id</strong> of delegated permissions can be found in the <strong>oauth2PermissionScopes</strong> property of the API's <strong>servicePrincipal</strong> object. The <strong>id</strong> of application permissions can be found in the <strong>appRoles</strong> property of the API's <strong>servicePrincipal</strong> object. The <strong>id</strong> of resource-specific application permissions can be found in the <strong>resourceSpecificApplicationPermissions</strong> property of the API's <strong>servicePrincipal</strong> object. Default is the single value <code>all</code>.</td>
+</tr>
+<tr>
 <td style="text-align: left;">permissionType</td>
 <td style="text-align: left;">permissionType</td>
 <td style="text-align: left;">The permission type of the permission being granted. Possible values: <code>application</code> for application permissions (e.g. app roles), or <code>delegated</code> for delegated permissions. The value <code>delegatedUserConsentable</code> indicates delegated permissions which have not been configured by the API publisher to require admin consent—this value may be used in built-in permission grant policies, but cannot be used in custom permission grant policies. Required.</td>
@@ -279,32 +304,7 @@
 <tr>
 <td style="text-align: left;">resourceApplication</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The <strong>appId</strong> of the resource application (e.g. the API) for which a permission is being granted, or <code>any</code> to match with any resource application or API. Default is <code>any</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">permissions</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">The list of <strong>id</strong> values for the specific permissions to match with, or a list with the single value <code>all</code> to match with any permission. The <strong>id</strong> of delegated permissions can be found in the <strong>oauth2PermissionScopes</strong> property of the API's <strong>servicePrincipal</strong> object. The <strong>id</strong> of application permissions can be found in the <strong>appRoles</strong> property of the API's <strong>servicePrincipal</strong> object. The <strong>id</strong> of resource-specific application permissions can be found in the <strong>resourceSpecificApplicationPermissions</strong> property of the API's <strong>servicePrincipal</strong> object. Default is the single value <code>all</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">clientApplicationIds</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">A list of <strong>appId</strong> values for the client applications to match with, or a list with the single value <code>all</code> to match any client application. Default is the single value <code>all</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">clientApplicationTenantIds</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">A list of Azure Active Directory tenant IDs in which the client application is registered, or a list with the single value <code>all</code> to match with client apps registered in any tenant. Default is the single value <code>all</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">clientApplicationPublisherIds</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">A list of Microsoft Partner Network (MPN) IDs for verified publishers of the client application, or a list with the single value <code>all</code> to match with client apps from any publisher. Default is the single value <code>all</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">clientApplicationsFromVerifiedPublisherOnly</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Set to <code>true</code> to only match on client applications with a verified publisher. Set to <code>false</code> to match on any client app, even if it does not have a verified publisher. Default is <code>false</code>.</td>
+<td style="text-align: left;">The **a</td>
 </tr>
 </tbody>
 </table>
@@ -319,11 +319,6 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the permission grant policy. The <strong>id</strong> prefix <code>microsoft-</code> is reserved for built-in permission grant policies, and may not be used in a custom permission grant policy. Only letters, numbers, hyphens (<code>-</code>) and underscores (<code>_</code>) are allowed. Key. Not nullable. Required on create. Immutable.</td>
-</tr>
-<tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The display name for the permission grant policy.</td>
@@ -334,14 +329,19 @@
 <td style="text-align: left;">The description for the permission grant policy.</td>
 </tr>
 <tr>
-<td style="text-align: left;">includes</td>
-<td style="text-align: left;">permissionGrantConditionSet collection</td>
-<td style="text-align: left;">Condition sets which are <em>included</em> in this permission grant policy. Automatically expanded on <code>GET</code>.</td>
-</tr>
-<tr>
 <td style="text-align: left;">excludes</td>
 <td style="text-align: left;">permissionGrantConditionSet collection</td>
-<td style="text-align: left;">Condition sets which are *e</td>
+<td style="text-align: left;">Condition sets which are <em>excluded</em> in this permission grant policy. Automatically expanded on <code>GET</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the permission grant policy. The <strong>id</strong> prefix <code>microsoft-</code> is reserved for built-in permission grant policies, and may not be used in a custom permission grant policy. Only letters, numbers, hyphens (<code>-</code>) and underscores (<code>_</code>) are allowed. Key. Not nullable. Required on create. Immutable.</td>
+</tr>
+<tr>
+<td style="text-align: left;">includes</td>
+<td style="text-align: left;">permissionGrantConditionSet collection</td>
+<td style="text-align: left;">Condition sets which are *i</td>
 </tr>
 </tbody>
 </table>
