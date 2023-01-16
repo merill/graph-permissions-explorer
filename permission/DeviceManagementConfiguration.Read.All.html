@@ -4139,6 +4139,16 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/intune-devices-userexperienceanalyticsdevicetimelineevents-list?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/userExperienceAnalyticsDeviceTimelineEvents</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/intune-devices-userexperienceanalyticsdevicetimelineevents-get?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/userExperienceAnalyticsDeviceTimelineEvents/{userExperienceAnalyticsDeviceTimelineEventsId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/intune-devices-userexperienceanalyticsimpactingprocess-list?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/userExperienceAnalyticsImpactingProcess</a></td>
 </tr>
 <tr>
@@ -4969,6 +4979,11 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/intune-gpanalyticsservice-grouppolicymigrationreport-updatescopetags?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/groupPolicyMigrationReports/{groupPolicyMigrationReportId}/updateScopeTags</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/intune-deviceconfig-hardwareconfiguration-assignhardwareconfiguration?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/hardwareConfigurations/{hardwareConfigurationId}/assignHardwareConfiguration</a></td>
 </tr>
 <tr>
@@ -5150,6 +5165,11 @@
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getdevicenoncompliancereport?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/reports/getDeviceNonComplianceReport</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getdeviceswithoutcompliancepolicyreport?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/reports/getDevicesWithoutCompliancePolicyReport</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -5463,6 +5483,11 @@
 <td style="text-align: left;">wifiHidden</td>
 <td style="text-align: left;">Boolean</td>
 <td style="text-align: left;">Boolean that indicates if hidden wifi networks are enabled</td>
+</tr>
+<tr>
+<td style="text-align: left;">isTeamsDeviceProfile</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Boolean indicating if this profile is an Android AOSP for Teams device profile.</td>
 </tr>
 </tbody>
 </table>
@@ -32135,7 +32160,7 @@
 <tr>
 <td style="text-align: left;">activationLockBypassCode</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Code that allows the Activation Lock on a device to be bypassed. This property is read-only.</td>
+<td style="text-align: left;">The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. Individual GET call with select query options is needed to retrieve actual values. Supports: $select. $Search is not supported. Read-only. This property is read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">emailAddress</td>
@@ -32310,7 +32335,7 @@
 <tr>
 <td style="text-align: left;">ethernetMacAddress</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Ethernet MAC. This property is read-only.</td>
+<td style="text-align: left;">Ethernet MAC. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">physicalMemoryInBytes</td>
@@ -32563,6 +32588,7 @@
 </tr>
 </tbody>
 </table>
+<h3 id="intune-devices-runstate"><a href="https://docs.microsoft.com/graph/api/resources/intune-devices-runstate?view=graph-rest-1.0&amp;tabs=http">intune-devices-runstate</a></h3>
 <h3 id="tenantattachrbac-"><a href="https://docs.microsoft.com/graph/api/resources/intune-devices-tenantattachrbac?view=graph-rest-1.0&amp;tabs=http">tenantAttachRBAC </a></h3>
 <table>
 <thead>
@@ -34193,6 +34219,58 @@
 </tr>
 </tbody>
 </table>
+<h3 id="userexperienceanalyticsdevicetimelineevents-"><a href="https://docs.microsoft.com/graph/api/resources/intune-devices-userexperienceanalyticsdevicetimelineevents?view=graph-rest-1.0&amp;tabs=http">userExperienceAnalyticsDeviceTimelineEvents </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier of the user experience analytics NRT device timeline events object.</td>
+</tr>
+<tr>
+<td style="text-align: left;">deviceId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The id of the device where the event occurred.</td>
+</tr>
+<tr>
+<td style="text-align: left;">eventDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The time the event occured.</td>
+</tr>
+<tr>
+<td style="text-align: left;">eventLevel</td>
+<td style="text-align: left;">deviceEventLevel</td>
+<td style="text-align: left;">The severity level of the event enum. Possible values are: <code>none</code>, <code>verbose</code>, <code>information</code>, <code>warning</code>, <code>error</code> ,<code>critical</code>. Default value: <code>none</code>. Possible values are: <code>none</code>, <code>verbose</code>, <code>information</code>, <code>warning</code>, <code>error</code>, <code>critical</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">eventSource</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The source of the event. Examples include: Intune, Sccm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">eventName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name of the event. Examples include: BootEvent, LogonEvent, AppCrashEvent, AppHangEvent.</td>
+</tr>
+<tr>
+<td style="text-align: left;">eventDetails</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The details provided by the event, format depends on event type.</td>
+</tr>
+<tr>
+<td style="text-align: left;">eventAdditionalInformation</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Placeholder value for future expansion.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="userexperienceanalyticsdevicewithoutcloudidentity-"><a href="https://docs.microsoft.com/graph/api/resources/intune-devices-userexperienceanalyticsdevicewithoutcloudidentity?view=graph-rest-1.0&amp;tabs=http">userExperienceAnalyticsDeviceWithoutCloudIdentity </a></h3>
 <table>
 <thead>
@@ -35396,7 +35474,7 @@
 <tr>
 <td style="text-align: left;">activationLockBypassCode</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Code that allows the Activation Lock on a device to be bypassed. This property is read-only. Inherited from managedDevice</td>
+<td style="text-align: left;">The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. Individual GET call with select query options is needed to retrieve actual values. Supports: $select. $Search is not supported. Read-only. This property is read-only. Inherited from managedDevice</td>
 </tr>
 <tr>
 <td style="text-align: left;">emailAddress</td>
@@ -35621,7 +35699,7 @@
 <tr>
 <td style="text-align: left;">ethernetMacAddress</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Ethernet MAC. This property is read-only. Inherited from managedDevice</td>
+<td style="text-align: left;">Ethernet MAC. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only. Inherited from managedDevice</td>
 </tr>
 <tr>
 <td style="text-align: left;">physicalMemoryInBytes</td>
@@ -35651,7 +35729,7 @@
 <tr>
 <td style="text-align: left;">skuNumber</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">Device sku number, see also: <a href="https://learn.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo">https://learn.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo</a>. Valid values 0 to 2147483647. This property is read-only. Inherited from managedDevice</td>
+<td style="text-align: left;">Device sku number, see also: <a href="https://learn.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo">https://learn.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo</a>. Valid values 0 to 2147483647. This property is read-only. Inherited from managedDevice</td>
 </tr>
 <tr>
 <td style="text-align: left;">managementFeatures</td>
@@ -39779,6 +39857,16 @@
 <td style="text-align: left;">The Default Domain appendix that will be used by the clients</td>
 </tr>
 <tr>
+<td style="text-align: left;">routeIncludes</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">The routes that will be routed by the server</td>
+</tr>
+<tr>
+<td style="text-align: left;">routeExcludes</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Subsets of the routes that will not be routed by the server</td>
+</tr>
+<tr>
 <td style="text-align: left;">splitDNS</td>
 <td style="text-align: left;">String collection</td>
 <td style="text-align: left;">The domains that will be resolved using the provided dns servers</td>
@@ -39870,7 +39958,7 @@
 <tr>
 <td style="text-align: left;">tunnelServerHealthStatus</td>
 <td style="text-align: left;">microsoftTunnelServerHealthStatus</td>
-<td style="text-align: left;">Indicates the server's health Status as of the last evaluation time. Health is evaluated every 60 seconds, and the possible values are: unknown, healthy, unhealthy, warning, offline, upgradeInProgress, upgradeFailed. Possible values are: <code>unknown</code>, <code>healthy</code>, <code>unhealthy</code>, <code>warning</code>, <code>offline</code>, <code>upgradeInProgress</code>, <code>upgradeFailed</code>.</td>
+<td style="text-align: left;">Indicates the server's health Status as of the last evaluation time. Health is evaluated every 60 seconds, and the possible values are: unknown, healthy, unhealthy, warning, offline, upgradeInProgress, upgradeFailed. Possible values are: <code>unknown</code>, <code>healthy</code>, <code>unhealthy</code>, <code>warning</code>, <code>offline</code>, <code>upgradeInProgress</code>, <code>upgradeFailed</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">lastCheckinDateTime</td>
@@ -39907,7 +39995,7 @@
 <tr>
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">microsoftTunnelLogCollectionStatus</td>
-<td style="text-align: left;">The status of log collection. Possible values are: pending, completed, failed. Possible values are: <code>pending</code>, <code>completed</code>, <code>failed</code>.</td>
+<td style="text-align: left;">The status of log collection. Possible values are: pending, completed, failed. Possible values are: <code>pending</code>, <code>completed</code>, <code>failed</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">startDateTime</td>
@@ -40400,7 +40488,7 @@
 <tr>
 <td style="text-align: left;">platformType</td>
 <td style="text-align: left;">enrollmentRestrictionPlatformType</td>
-<td style="text-align: left;">Platform type of the Enrollment Notification. Possible values are: <code>allPlatforms</code>, <code>ios</code>, <code>windows</code>, <code>windowsPhone</code>, <code>android</code>, <code>androidForWork</code>, <code>mac</code>.</td>
+<td style="text-align: left;">Platform type of the Enrollment Notification. Possible values are: <code>allPlatforms</code>, <code>ios</code>, <code>windows</code>, <code>windowsPhone</code>, <code>android</code>, <code>androidForWork</code>, <code>mac</code>, <code>linux</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">templateType</td>
@@ -40492,7 +40580,7 @@
 <tr>
 <td style="text-align: left;">platformType</td>
 <td style="text-align: left;">enrollmentRestrictionPlatformType</td>
-<td style="text-align: left;">Type of platform for which this restriction applies. Possible values are: <code>allPlatforms</code>, <code>ios</code>, <code>windows</code>, <code>windowsPhone</code>, <code>android</code>, <code>androidForWork</code>, <code>mac</code>.</td>
+<td style="text-align: left;">Type of platform for which this restriction applies. Possible values are: <code>allPlatforms</code>, <code>ios</code>, <code>windows</code>, <code>windowsPhone</code>, <code>android</code>, <code>androidForWork</code>, <code>mac</code>, <code>linux</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -41674,7 +41762,7 @@
 <tr>
 <td style="text-align: left;">managedDeviceCount</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The number of vulnerable devices.</td>
+<td style="text-align: left;">The number of vulnerable devices. Valid values 0 to 65536</td>
 </tr>
 <tr>
 <td style="text-align: left;">intendedSettings</td>
@@ -44022,7 +44110,7 @@
 <tr>
 <td style="text-align: left;">remoteAssistanceSessionType</td>
 <td style="text-align: left;">remoteAssistanceSessionType</td>
-<td style="text-align: left;">Type of the remote assistance session that was held. Possible values are: <code>viewOnly</code>, <code>fullControl</code>, <code>elevation</code>. Possible values are: <code>viewOnly</code>, <code>fullControl</code>, <code>elevation</code>.</td>
+<td style="text-align: left;">Type of the remote assistance session that was held. Possible values are: <code>viewOnly</code>, <code>fullControl</code>, <code>elevation</code>. Possible values are: <code>viewOnly</code>, <code>fullControl</code>, <code>elevation</code>, <code>unattended</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">helperEmail</td>
@@ -44103,6 +44191,11 @@
 <td style="text-align: left;">sharerEnrollmentState</td>
 <td style="text-align: left;">enrollmentState</td>
 <td style="text-align: left;">Intune enrollment state of the sharer's device. Possible values are: <code>unknown</code>, <code>enrolled</code>, <code>pendingReset</code>, <code>failed</code>, <code>notContacted</code>, <code>blocked</code>. Possible values are: <code>unknown</code>, <code>enrolled</code>, <code>pendingReset</code>, <code>failed</code>, <code>notContacted</code>, <code>blocked</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sharerDeviceSerialNumber</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Sharer device serial number</td>
 </tr>
 </tbody>
 </table>
@@ -44779,7 +44872,6 @@
 </tbody>
 </table>
 <h3 id="intune-shared-runasaccounttype"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-runasaccounttype?view=graph-rest-1.0&amp;tabs=http">intune-shared-runasaccounttype</a></h3>
-<h3 id="intune-shared-runstate"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-runstate?view=graph-rest-1.0&amp;tabs=http">intune-shared-runstate</a></h3>
 <h3 id="windowsdomainjoinconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-windowsdomainjoinconfiguration?view=graph-rest-1.0&amp;tabs=http">windowsDomainJoinConfiguration </a></h3>
 <table>
 <thead>

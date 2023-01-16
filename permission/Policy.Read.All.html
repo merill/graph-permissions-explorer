@@ -2866,11 +2866,6 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Unique identifier for this policy. Read-only.</td>
-</tr>
-<tr>
 <td style="text-align: left;">definition</td>
 <td style="text-align: left;">String collection</td>
 <td style="text-align: left;">A string collection containing a JSON string that defines the rules and settings for this policy. See below for more details about the JSON schema for this property. Required.</td>
@@ -2884,6 +2879,11 @@
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Display name for this policy. Required.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for this policy. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">isOrganizationDefault</td>
@@ -2952,14 +2952,9 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The identifier for the authentication method policy. The value is always <code>X509Certificate</code>. Inherited from authenticationMethodConfiguration.</td>
-</tr>
-<tr>
-<td style="text-align: left;">state</td>
-<td style="text-align: left;">authenticationMethodState</td>
-<td style="text-align: left;">The possible values are: <code>enabled</code>, <code>disabled</code>. Inherited from authenticationMethodConfiguration.</td>
+<td style="text-align: left;">authenticationModeConfiguration</td>
+<td style="text-align: left;">x509CertificateAuthenticationModeConfiguration</td>
+<td style="text-align: left;">Defines strong authentication configurations. This configuration includes the default authentication mode and the different rules for strong authentication bindings.</td>
 </tr>
 <tr>
 <td style="text-align: left;">certificateUserBindings</td>
@@ -2967,9 +2962,14 @@
 <td style="text-align: left;">Defines fields in the X.509 certificate that map to attributes of the Azure AD user object in order to bind the certificate to the user. The <strong>priority</strong> of the object determines the order in which the binding is carried out. The first binding that matches will be used and the rest ignored.</td>
 </tr>
 <tr>
-<td style="text-align: left;">authenticationModeConfiguration</td>
-<td style="text-align: left;">x509CertificateAuthenticationModeConfiguration</td>
-<td style="text-align: left;">Defines strong authentication configurations. This configuration includes the default authentication mode and the different rules for strong authentication bindings.</td>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier for the authentication method policy. The value is always <code>X509Certificate</code>. Inherited from</td>
+</tr>
+<tr>
+<td style="text-align: left;">state</td>
+<td style="text-align: left;">authenticationMethodState</td>
+<td style="text-align: left;">The possible values are: <code>enabled</code>, <code>disabled</code>. Inherited from authenticationMethodConfiguration.</td>
 </tr>
 </tbody>
 </table>

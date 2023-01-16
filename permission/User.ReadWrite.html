@@ -2356,7 +2356,7 @@
 <tr>
 <td style="text-align: left;">issuerAssignedId</td>
 <td style="text-align: left;">string</td>
-<td style="text-align: left;">Specifies the unique identifier assigned to the user by the issuer. The combination of <strong>issuer</strong> and <strong>issuerAssignedId</strong> must be unique within the organization. Represents the sign-in name for the user, when <strong>signInType</strong> is set to <code>emailAddress</code> or <code>userName</code> (also known as local accounts).<br>When <strong>signInType</strong> is set to: <ul><li><code>emailAddress</code>, (or a custom string that starts with <code>emailAddress</code> like <code>emailAddress1</code>) <strong>issuerAssignedId</strong> must be a valid email address</li><li><code>userName</code>, <strong>issuerAssignedId</strong> must be a valid local part of an email address</li></ul>Supports <code>$filter</code>. 100 character limit.</td>
+<td style="text-align: left;">Specifies the unique identifier assigned to the user by the issuer. The combination of <strong>issuer</strong> and <strong>issuerAssignedId</strong> must be unique within the organization. Represents the sign-in name for the user, when <strong>signInType</strong> is set to <code>emailAddress</code> or <code>userName</code> (also known as local accounts).<br>When <strong>signInType</strong> is set to: <ul><li><code>emailAddress</code>, (or a custom string that starts with <code>emailAddress</code> like <code>emailAddress1</code>) <strong>issuerAssignedId</strong> must be a valid email address</li><li><code>userName</code>, <strong>issuerAssignedId</strong> must begin with alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or _</li></ul>Supports <code>$filter</code>. 64 character limit.</td>
 </tr>
 <tr>
 <td style="text-align: left;">signInType</td>
@@ -2493,6 +2493,11 @@
 <td style="text-align: left;">Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
 </tr>
 <tr>
+<td style="text-align: left;">defaultUsageLocation</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Two-letter ISO 3166 country code indicating the default service usage location of an organization.</td>
+</tr>
+<tr>
 <td style="text-align: left;">deletedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">Represents date and time of when the Azure AD tenant was deleted using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
@@ -2592,7 +2597,7 @@
 <tr>
 <td style="text-align: left;">forceChangePasswordNextSignIn</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;"><code>true</code> if the user must change her password on the next login; otherwise <code>false</code>. If not set, default is <code>false</code>. <strong>NOTE:</strong>  For Azure B2C tenants, set to <code>false</code> and instead use custom policies and user flows to force password reset at first sign in. See Force password reset at first logon.</td>
+<td style="text-align: left;"><code>true</code> if the user must change her password on the next login; otherwise <code>false</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">forceChangePasswordNextSignInWithMfa</td>
@@ -3909,7 +3914,7 @@
 <tr>
 <td style="text-align: left;">passwordProfile</td>
 <td style="text-align: left;">passwordProfile</td>
-<td style="text-align: left;">Specifies the password profile for the user. The profile contains the user’s password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the <strong>passwordPolicies</strong> property. By default, a strong password is required. <strong>NOTE:</strong> For Azure B2C tenants, the <strong>forceChangePasswordNextSignIn</strong> property should be set to <code>false</code> and instead use custom policies and user flows to force password reset at first logon. See Force password reset at first logon.<br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>, and <code>eq</code> on <code>null</code> values).</td>
+<td style="text-align: left;">Specifies the password profile for the user. The profile contains the user’s password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the <strong>passwordPolicies</strong> property. By default, a strong password is required. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>, and <code>eq</code> on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">pastProjects</td>
@@ -3972,14 +3977,14 @@
 <td style="text-align: left;"><strong>Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead.</strong> Represents whether the user should be included in the Outlook global address list. See Known issue.</td>
 </tr>
 <tr>
-<td style="text-align: left;">skills</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">A list for the user to enumerate their skills. <br><br>Returned only on <code>$select</code>.</td>
-</tr>
-<tr>
 <td style="text-align: left;">signInSessionsValidFromDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset. <br><br>Returned only on <code>$select</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">skills</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">A list for the user to enumerate their skills. <br><br>Returned only on <code>$select</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">state</td>
@@ -4113,14 +4118,14 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">contributionToContentDiscoveryDisabled</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">When set to true, the delegate access to the user's trending API is disabled. When set to true, documents in the user's Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.</td>
-</tr>
-<tr>
 <td style="text-align: left;">contributionToContentDiscoveryAsOrganizationDisabled</td>
 <td style="text-align: left;">Boolean</td>
 <td style="text-align: left;">Reflects the organization level setting controlling delegate access to the trending API. When set to true, the organization doesn't have access to Office Delve. The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected for the whole organization. This setting is read-only and can only be changed by administrators in the SharePoint admin center.</td>
+</tr>
+<tr>
+<td style="text-align: left;">contributionToContentDiscoveryDisabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">When set to true, the delegate access to the user's trending API is disabled. When set to true, documents in the user's Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>

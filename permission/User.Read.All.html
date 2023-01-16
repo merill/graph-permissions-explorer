@@ -4130,7 +4130,7 @@
 <tr>
 <td style="text-align: left;">passwordProfile</td>
 <td style="text-align: left;">passwordProfile</td>
-<td style="text-align: left;">Specifies the password profile for the user. The profile contains the user’s password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the <strong>passwordPolicies</strong> property. By default, a strong password is required. <strong>NOTE:</strong> For Azure B2C tenants, the <strong>forceChangePasswordNextSignIn</strong> property should be set to <code>false</code> and instead use custom policies and user flows to force password reset at first logon. See Force password reset at first logon.<br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>, and <code>eq</code> on <code>null</code> values).</td>
+<td style="text-align: left;">Specifies the password profile for the user. The profile contains the user’s password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the <strong>passwordPolicies</strong> property. By default, a strong password is required. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>, and <code>eq</code> on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">pastProjects</td>
@@ -4193,14 +4193,14 @@
 <td style="text-align: left;"><strong>Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead.</strong> Represents whether the user should be included in the Outlook global address list. See Known issue.</td>
 </tr>
 <tr>
-<td style="text-align: left;">skills</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">A list for the user to enumerate their skills. <br><br>Returned only on <code>$select</code>.</td>
-</tr>
-<tr>
 <td style="text-align: left;">signInSessionsValidFromDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset. <br><br>Returned only on <code>$select</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">skills</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">A list for the user to enumerate their skills. <br><br>Returned only on <code>$select</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">state</td>
@@ -4317,14 +4317,14 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">contributionToContentDiscoveryDisabled</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">When set to true, the delegate access to the user's trending API is disabled. When set to true, documents in the user's Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.</td>
-</tr>
-<tr>
 <td style="text-align: left;">contributionToContentDiscoveryAsOrganizationDisabled</td>
 <td style="text-align: left;">Boolean</td>
 <td style="text-align: left;">Reflects the organization level setting controlling delegate access to the trending API. When set to true, the organization doesn't have access to Office Delve. The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected for the whole organization. This setting is read-only and can only be changed by administrators in the SharePoint admin center.</td>
+</tr>
+<tr>
+<td style="text-align: left;">contributionToContentDiscoveryDisabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">When set to true, the delegate access to the user's trending API is disabled. When set to true, documents in the user's Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>

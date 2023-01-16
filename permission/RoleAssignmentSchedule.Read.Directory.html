@@ -217,6 +217,16 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">appScopeId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifier of the app-specific scope when the assignment scope is app-specific.  Either this property or <strong>directoryScopeId</strong> is required. App scopes are scopes that are defined and understood by this application only. Use <code>/</code> for tenant-wide app scopes. Use <strong>directoryScopeId</strong> to limit the scope to particular directory objects, for example, administrative units. Supports $filter (<code>eq</code>, <code>in</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">directoryScopeId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifier of the directory object representing the scope of the assignment.  Either this property or <strong>appScopeId</strong> is required. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use <code>/</code> for tenant-wide scope. Use <strong>appScopeId</strong> to limit the scope to an application only. Supports $filter (<code>eq</code>, <code>in</code>).</td>
+</tr>
+<tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The unique identifier for the role assignment. Key, not nullable, Read-only. Inherited from entity.</td>
@@ -230,16 +240,6 @@
 <td style="text-align: left;">principalId</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Identifier of the principal to which the assignment is granted. Supports $filter (<code>eq</code>, <code>in</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">directoryScopeId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifier of the directory object representing the scope of the assignment.  Either this property or <strong>appScopeId</strong> is required. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use <code>/</code> for tenant-wide scope. Use <strong>appScopeId</strong> to limit the scope to an application only. Supports $filter (<code>eq</code>, <code>in</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">appScopeId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifier of the app-specific scope when the assignment scope is app-specific.  Either this property or **d</td>
 </tr>
 </tbody>
 </table>
