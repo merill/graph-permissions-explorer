@@ -159,6 +159,11 @@
 <tr>
 <td>V1</td>
 <td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpc-getsupportedcloudpcremoteactions?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/virtualEndpoint/cloudPCs/{id}/getSupportedCloudPcRemoteActions</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpccrosscloudgovernmentorganizationmapping-get?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/virtualEndpoint/crossCloudGovernmentOrganizationMapping</a></td>
 </tr>
 <tr>
@@ -283,13 +288,13 @@
 </tr>
 <tr>
 <td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpc-get?view=graph-rest-1.0&amp;tabs=http">GET /me/cloudPCs{id}</a></td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpc-getcloudpclaunchinfo?view=graph-rest-1.0&amp;tabs=http">GET /me/cloudPCs/{cloudPCId}/getCloudPcLaunchInfo</a></td>
 </tr>
 <tr>
 <td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpc-getcloudpclaunchinfo?view=graph-rest-1.0&amp;tabs=http">GET /me/cloudPCs/{cloudPCId}/getCloudPcLaunchInfo</a></td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpc-get?view=graph-rest-1.0&amp;tabs=http">GET /me/cloudPCs/{id}</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -978,6 +983,11 @@
 <td style="text-align: left;">The organizational unit (OU) in which the computer account is created. If left null, the OU that’s configured as the default (a well-known computer object container) in your Active Directory domain (OU) is used. Optional.</td>
 </tr>
 <tr>
+<td style="text-align: left;">virtualNetworkLocation</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Indicates resource location of the virtual target network. Read-only, computed value.</td>
+</tr>
+<tr>
 <td style="text-align: left;">resourceGroupId</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The ID of the target resource group. Required format: <code>/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}</code>.</td>
@@ -1130,6 +1140,28 @@
 <td style="text-align: left;">windowsSettings</td>
 <td style="text-align: left;">cloudPcWindowsSettings</td>
 <td style="text-align: left;">Specific Windows settings to configure while creating Cloud PCs for this provisioning policy.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cloudpcremoteactioncapability-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcremoteactioncapability?view=graph-rest-1.0&amp;tabs=http">cloudPcRemoteActionCapability </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">actionCapability</td>
+<td style="text-align: left;">actionCapability</td>
+<td style="text-align: left;">Indicates the state of the supported action capability to perform a Cloud PC remote action. Possible values are: <code>enabled</code>, <code>disabled</code>. Default value is <code>enabled</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">actionName</td>
+<td style="text-align: left;">cloudPcRemoteActionName</td>
+<td style="text-align: left;">The name of the supported Cloud PC remote action. Possible values are: <code>unknown</code>, <code>restart</code>, <code>rename</code>, <code>restore</code>, <code>resize</code>, <code>reprovision</code>, <code>troubleShoot</code>, <code>changeUserAccountType</code>, <code>placeUnderReview</code>. Default value is <code>unknown</code>.</td>
 </tr>
 </tbody>
 </table>
