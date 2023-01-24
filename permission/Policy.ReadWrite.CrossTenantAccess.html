@@ -109,6 +109,11 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /policies/crossTenantAccessPolicy/partners/{id}/identitySynchronization</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/crosstenantaccesspolicy-get?view=graph-rest-1.0&amp;tabs=http">GET /policies/crossTenantAccessPolicy</a></td>
 </tr>
 <tr>
@@ -129,6 +134,11 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-get?view=graph-rest-1.0&amp;tabs=http">GET /policies/crossTenantAccessPolicy/partners/{id}/identitySynchronization</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/crosstenantaccesspolicy-update?view=graph-rest-1.0&amp;tabs=http">PATCH /policies/crossTenantAccessPolicy</a></td>
 </tr>
 <tr>
@@ -144,12 +154,22 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-update?view=graph-rest-1.0&amp;tabs=http">PATCH /policies/crossTenantAccessPolicy/partners/{id}/identitySynchronization</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationdefault-resettosystemdefault?view=graph-rest-1.0&amp;tabs=http">POST /policies/crossTenantAccessPolicy/default/resetToSystemDefault</a></td>
 </tr>
 <tr>
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/crosstenantaccesspolicy-post-partners?view=graph-rest-1.0&amp;tabs=http">POST /policies/crossTenantAccessPolicy/partners</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-put-identitysynchronization?view=graph-rest-1.0&amp;tabs=http">PUT /policies/crossTenantAccessPolicy/partners/{id}/identitySynchronization</a></td>
 </tr>
 </tbody>
 </table>
@@ -356,6 +376,72 @@
 <td style="text-align: left;">isMfaAccepted</td>
 <td style="text-align: left;">Boolean</td>
 <td style="text-align: left;">Specifies whether MFA from external Azure AD organizations is trusted.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="crosstenantidentitysyncpolicypartner-"><a href="https://docs.microsoft.com/graph/api/resources/crosstenantidentitysyncpolicypartner?view=graph-rest-1.0&amp;tabs=http">crossTenantIdentitySyncPolicyPartner </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Display name for the cross-tenant user synchronization policy. Use the name of the partner Azure AD tenant to easily identify the policy. Optional.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tenantId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Tenant identifier for the partner Azure AD organization. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">userSyncInbound</td>
+<td style="text-align: left;">crossTenantUserSyncInbound</td>
+<td style="text-align: left;">Defines whether users can be synchronized from the partner tenant. Key.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="crosstenantusersyncinbound-"><a href="https://docs.microsoft.com/graph/api/resources/crosstenantusersyncinbound?view=graph-rest-1.0&amp;tabs=http">crossTenantUserSyncInbound </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">isSyncAllowed</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Defines whether user objects should be synchronized from the partner tenant. If set to <code>false</code>, any current user synchronization from the source tenant to the target tenant will stop. There is no impact on existing users that have already been synchronized.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="inboundoutboundpolicyconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/inboundoutboundpolicyconfiguration?view=graph-rest-1.0&amp;tabs=http">inboundOutboundPolicyConfiguration </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">inboundAllowed</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Defines whether external users coming inbound are allowed.</td>
+</tr>
+<tr>
+<td style="text-align: left;">outboundAllowed</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Defines whether internal users are allowed to go outbound.</td>
 </tr>
 </tbody>
 </table>
