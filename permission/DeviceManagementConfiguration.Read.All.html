@@ -4554,6 +4554,11 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/intune-onboarding-user-exportdeviceandappmanagementdata?view=graph-rest-1.0&amp;tabs=http">GET /users/{usersId}/exportDeviceAndAppManagementData</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/intune-mam-user-ismanagedappuserblocked?view=graph-rest-1.0&amp;tabs=http">GET /users/{usersId}/isManagedAppUserBlocked</a></td>
 </tr>
 <tr>
@@ -32527,7 +32532,7 @@
 <tr>
 <td style="text-align: left;">ethernetMacAddress</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Ethernet MAC. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.</td>
+<td style="text-align: left;">Indicates Ethernet MAC Address of the device. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">physicalMemoryInBytes</td>
@@ -35500,6 +35505,11 @@
 <td style="text-align: left;">severity</td>
 <td style="text-align: left;">windowsMalwareSeverity</td>
 <td style="text-align: left;">Severity of the malware. Possible values are: <code>unknown</code>, <code>low</code>, <code>moderate</code>, <code>high</code>, <code>severe</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">catetgory</td>
+<td style="text-align: left;">windowsMalwareCategory</td>
+<td style="text-align: left;">Category of the malware. Possible values are: <code>invalid</code>, <code>adware</code>, <code>spyware</code>, <code>passwordStealer</code>, <code>trojanDownloader</code>, <code>worm</code>, <code>backdoor</code>, <code>remoteAccessTrojan</code>, <code>trojan</code>, <code>emailFlooder</code>, <code>keylogger</code>, <code>dialer</code>, <code>monitoringSoftware</code>, <code>browserModifier</code>, <code>cookie</code>, <code>browserPlugin</code>, <code>aolExploit</code>, <code>nuker</code>, <code>securityDisabler</code>, <code>jokeProgram</code>, <code>hostileActiveXControl</code>, <code>softwareBundler</code>, <code>stealthNotifier</code>, <code>settingsModifier</code>, <code>toolBar</code>, <code>remoteControlSoftware</code>, <code>trojanFtp</code>, <code>potentialUnwantedSoftware</code>, <code>icqExploit</code>, <code>trojanTelnet</code>, <code>exploit</code>, <code>filesharingProgram</code>, <code>malwareCreationTool</code>, <code>remote_Control_Software</code>, <code>tool</code>, <code>trojanDenialOfService</code>, <code>trojanDropper</code>, <code>trojanMassMailer</code>, <code>trojanMonitoringSoftware</code>, <code>trojanProxyServer</code>, <code>virus</code>, <code>known</code>, <code>unknown</code>, <code>spp</code>, <code>behavior</code>, <code>vulnerability</code>, <code>policy</code>, <code>enterpriseUnwantedSoftware</code>, <code>ransom</code>, <code>hipsRule</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">executionState</td>
@@ -40434,6 +40444,23 @@
 </tr>
 </tbody>
 </table>
+<h3 id="deviceandappmanagementdata-"><a href="https://docs.microsoft.com/graph/api/resources/intune-onboarding-deviceandappmanagementdata?view=graph-rest-1.0&amp;tabs=http">deviceAndAppManagementData </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">content</td>
+<td style="text-align: left;">Stream</td>
+<td style="text-align: left;">Not yet documented</td>
+</tr>
+</tbody>
+</table>
 <h3 id="deviceappmanagement-"><a href="https://docs.microsoft.com/graph/api/resources/intune-onboarding-deviceappmanagement?view=graph-rest-1.0&amp;tabs=http">deviceAppManagement </a></h3>
 <table>
 <thead>
@@ -41047,7 +41074,7 @@
 <tr>
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">deviceManagementExchangeConnectorStatus</td>
-<td style="text-align: left;">Exchange Connector Status. Possible values are: <code>none</code>, <code>connectionPending</code>, <code>connected</code>, <code>disconnected</code>.</td>
+<td style="text-align: left;">Exchange Connector Status. Possible values are: <code>none</code>, <code>connectionPending</code>, <code>connected</code>, <code>disconnected</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">primarySmtpAddress</td>
@@ -41067,7 +41094,7 @@
 <tr>
 <td style="text-align: left;">exchangeConnectorType</td>
 <td style="text-align: left;">deviceManagementExchangeConnectorType</td>
-<td style="text-align: left;">The type of Exchange Connector Configured. Possible values are: <code>onPremises</code>, <code>hosted</code>, <code>serviceToService</code>, <code>dedicated</code>.</td>
+<td style="text-align: left;">The type of Exchange Connector Configured. Possible values are: <code>onPremises</code>, <code>hosted</code>, <code>serviceToService</code>, <code>dedicated</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">version</td>
@@ -41178,6 +41205,11 @@
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">DateTime in UTC when PartnerDevices will be marked as NonCompliant</td>
 </tr>
+<tr>
+<td style="text-align: left;">groupsRequiringPartnerEnrollment</td>
+<td style="text-align: left;">deviceManagementPartnerAssignment collection</td>
+<td style="text-align: left;">User groups that specifies whether enrollment is through partner.</td>
+</tr>
 </tbody>
 </table>
 <h3 id="enrollmentconfigurationassignment-"><a href="https://docs.microsoft.com/graph/api/resources/intune-onboarding-enrollmentconfigurationassignment?view=graph-rest-1.0&amp;tabs=http">enrollmentConfigurationAssignment </a></h3>
@@ -41228,6 +41260,16 @@
 <td style="text-align: left;">Data Sync Partner state for this account. Possible values are: <code>unavailable</code>, <code>available</code>, <code>enabled</code>, <code>unresponsive</code>.</td>
 </tr>
 <tr>
+<td style="text-align: left;">androidMobileApplicationManagementEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">When TRUE, inidicates that data from the data sync partner can be used during Mobile Application Management (MAM) evaluations for Android devices. When FALSE, inidicates that data from the data sync partner should not be used during Mobile Application Management (MAM) evaluations for Android devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.</td>
+</tr>
+<tr>
+<td style="text-align: left;">iosMobileApplicationManagementEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">When TRUE, inidicates that data from the data sync partner can be used during Mobile Application Management (MAM) evaluations for IOS devices. When FALSE, inidicates that data from the data sync partner should not be used during Mobile Application Management (MAM) evaluations for IOS devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.</td>
+</tr>
+<tr>
 <td style="text-align: left;">androidEnabled</td>
 <td style="text-align: left;">Boolean</td>
 <td style="text-align: left;">For Android, set whether data from the data sync partner should be used during compliance evaluations</td>
@@ -41236,6 +41278,11 @@
 <td style="text-align: left;">iosEnabled</td>
 <td style="text-align: left;">Boolean</td>
 <td style="text-align: left;">For IOS, get or set whether data from the data sync partner should be used during compliance evaluations</td>
+</tr>
+<tr>
+<td style="text-align: left;">windowsEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">When TRUE, inidicates that data from the data sync partner can be used during compliance evaluations for Windows. When FALSE, inidicates that data from the data sync partner should not be used during compliance evaluations for Windows. Default value is FALSE.</td>
 </tr>
 <tr>
 <td style="text-align: left;">androidDeviceBlockedOnMissingPartnerData</td>
@@ -41248,6 +41295,11 @@
 <td style="text-align: left;">For IOS, set whether Intune must receive data from the data sync partner prior to marking a device compliant</td>
 </tr>
 <tr>
+<td style="text-align: left;">windowsDeviceBlockedOnMissingPartnerData</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">When TRUE, inidicates that Intune must receive data from the data sync partner prior to marking a device compliant for Windows. When FALSE, inidicates that Intune may make a device compliant without receiving data from the data sync partner for Windows. Default value is FALSE.</td>
+</tr>
+<tr>
 <td style="text-align: left;">partnerUnsupportedOsVersionBlocked</td>
 <td style="text-align: left;">Boolean</td>
 <td style="text-align: left;">Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Data Sync Partner</td>
@@ -41256,6 +41308,21 @@
 <td style="text-align: left;">partnerUnresponsivenessThresholdInDays</td>
 <td style="text-align: left;">Int32</td>
 <td style="text-align: left;">Get or Set days the per tenant tolerance to unresponsiveness for this partner integration</td>
+</tr>
+<tr>
+<td style="text-align: left;">allowPartnerToCollectIOSApplicationMetadata</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">When TRUE, indicates the data sync partner may collect metadata about installed applications from Intune for IOS devices. When FALSE, indicates the data sync partner may not collect metadata about installed applications from Intune for IOS devices. Default value is FALSE.</td>
+</tr>
+<tr>
+<td style="text-align: left;">allowPartnerToCollectIOSPersonalApplicationMetadata</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">When TRUE, indicates the data sync partner may collect metadata about personally installed applications from Intune for IOS devices. When FALSE, indicates the data sync partner may not collect metadata about personally installed applications from Intune for IOS devices. Default value is FALSE.</td>
+</tr>
+<tr>
+<td style="text-align: left;">microsoftDefenderForEndpointAttachEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">When TRUE, inidicates that configuration profile management via Microsoft Defender for Endpoint is enabled. When FALSE, inidicates that configuration profile management via Microsoft Defender for Endpoint is disabled. Default value is FALSE.</td>
 </tr>
 </tbody>
 </table>
