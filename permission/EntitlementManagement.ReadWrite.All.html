@@ -862,6 +862,11 @@
 <td style="text-align: left;">The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
 </tr>
 <tr>
+<td style="text-align: left;">questions</td>
+<td style="text-align: left;">accessPackageQuestion collection</td>
+<td style="text-align: left;">Questions that are posed to the  requestor.</td>
+</tr>
+<tr>
 <td style="text-align: left;">requestApprovalSettings</td>
 <td style="text-align: left;">accessPackageAssignmentApprovalSettings</td>
 <td style="text-align: left;">Specifies the settings for approval of requests for an access package assignment through this policy. For example, if approval is required for new requests.</td>
@@ -893,6 +898,11 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align: left;">answers</td>
+<td style="text-align: left;">accessPackageAnswer collection</td>
+<td style="text-align: left;">Answers provided by the requestor to accessPackageQuestions asked of them at the time of request.</td>
+</tr>
 <tr>
 <td style="text-align: left;">completedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
@@ -1022,6 +1032,11 @@
 <td style="text-align: left;">policyId</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The identifier of the policy that these requirements are associated with. This identifier can be used when creating a new assignment request.</td>
+</tr>
+<tr>
+<td style="text-align: left;">questions</td>
+<td style="text-align: left;">accessPackageQuestion collection</td>
+<td style="text-align: left;">Questions that are configured on the policy. The questions can be required or optional; callers can determine whether a question is required or optional based on the <strong>isRequired</strong> property on <strong>accessPackageQuestion</strong>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">schedule</td>
@@ -1163,6 +1178,48 @@
 <td style="text-align: left;">state</td>
 <td style="text-align: left;">accessPackageCatalogState</td>
 <td style="text-align: left;">Has the value <code>published</code> if the access packages are available for management. The possible values are: <code>unpublished</code>, <code>published</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="accesspackagequestion-"><a href="https://docs.microsoft.com/graph/api/resources/accesspackagequestion?view=graph-rest-1.0&amp;tabs=http">accessPackageQuestion </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">ID of the question.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isAnswerEditable</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Specifies whether the requestor is allowed to edit answers to questions for an assignment by posting an update to accessPackageAssignmentRequest.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isRequired</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Whether the requestor is required to supply an answer or not.</td>
+</tr>
+<tr>
+<td style="text-align: left;">localizations</td>
+<td style="text-align: left;">accessPackageLocalizedText collection</td>
+<td style="text-align: left;">The text of the question represented in a format for a specific locale.</td>
+</tr>
+<tr>
+<td style="text-align: left;">text</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The text of the question to show to the requestor.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sequence</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Relative position of this question when displaying a list of questions to the requestor.</td>
 </tr>
 </tbody>
 </table>
