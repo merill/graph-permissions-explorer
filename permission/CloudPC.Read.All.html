@@ -249,6 +249,16 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-list-shareduseserviceplans?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/virtualEndpoint/sharedUseServicePlans</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcshareduseserviceplan-get?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/virtualEndpoint/sharedUseServicePlans/{cloudPcSharedUseServicePlanId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-list-snapshots?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/virtualEndpoint/snapshots</a></td>
 </tr>
 <tr>
@@ -1037,7 +1047,12 @@
 <tr>
 <td style="text-align: left;">enableMEMAutoEnroll</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Specifies whether new Cloud PCs will be automatically enrolled in Microsoft Endpoint Manager(MEM). The default value is <code>false</code>.</td>
+<td style="text-align: left;">Specifies whether new Cloud PCs will be automatically enrolled in Microsoft Endpoint Manager (MEM). The default value is <code>false</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">enableSingleSignOn</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>True</code> if the provisioned Cloud PC can be accessed by single sign-on. <code>False</code> indicates that the provisioned Cloud PC doesn't support this feature. Default value is <code>false</code>. Windows 365 users can use single sign-on to authenticate to Azure Active Directory (Azure AD) with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
@@ -1097,6 +1112,11 @@
 <td style="text-align: left;">Specifies how Cloud PCs will join Azure Active Directory.</td>
 </tr>
 <tr>
+<td style="text-align: left;">enableSingleSignOn</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>True</code> if the provisioned Cloud PC can be accessed by single sign-on. <code>False</code> indicates that the provisioned Cloud PC doesn't support this feature. Default value is <code>false</code>. Windows 365 users can use single sign-on to authenticate to Azure Active Directory (Azure AD) with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.</td>
+</tr>
+<tr>
 <td style="text-align: left;">gracePeriodInHours</td>
 <td style="text-align: left;">Int32</td>
 <td style="text-align: left;">The number of hours to wait before reprovisioning/deprovisioning happens. Read-only.</td>
@@ -1140,6 +1160,11 @@
 <td style="text-align: left;">onPremisesConnectionId</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The ID of the cloudPcOnPremisesConnection. To ensure that Cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the Cloud PC service.</td>
+</tr>
+<tr>
+<td style="text-align: left;">provisioningType</td>
+<td style="text-align: left;">cloudPcProvisioningType</td>
+<td style="text-align: left;">Specifies the type of license used when provisioning Cloud PCs using this policy. By default, the license type is <code>dedicated</code> if the <strong>provisioningType</strong> isn't specified when you create the <strong>cloudPcProvisioningPolicy</strong>. You can't change this property after the <strong>cloudPcProvisioningPolicy</strong> was created. Possible values are: <code>dedicated</code>, <code>shared</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">windowsSettings</td>
@@ -1271,6 +1296,38 @@
 <td style="text-align: left;">vCpuCount</td>
 <td style="text-align: left;">Int32</td>
 <td style="text-align: left;">The number of vCPUs. Read-only.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cloudpcshareduseserviceplan-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcshareduseserviceplan?view=graph-rest-1.0&amp;tabs=http">cloudPcSharedUseServicePlan </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the shared-use service plan.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the shared-use service plan.</td>
+</tr>
+<tr>
+<td style="text-align: left;">totalCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Total number of shared-use service plans purchased by the customer.</td>
+</tr>
+<tr>
+<td style="text-align: left;">usedCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The number of service plans that the account uses.</td>
 </tr>
 </tbody>
 </table>
