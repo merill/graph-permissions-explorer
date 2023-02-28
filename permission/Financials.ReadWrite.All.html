@@ -661,6 +661,150 @@
 </tr>
 </tbody>
 </table>
+<h3 id="items-"><a href="https://docs.microsoft.com/graph/api/resources/dynamics-item?view=graph-rest-1.0&amp;tabs=http">items </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">GUID</td>
+<td style="text-align: left;">The unique ID of the item. Non-editable.</td>
+</tr>
+<tr>
+<td style="text-align: left;">number</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The item number.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Specifies a description of the item.</td>
+</tr>
+<tr>
+<td style="text-align: left;">type</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">The inventory type for the item. 1 = inventory item, 2 = service item. This is a required property.</td>
+</tr>
+<tr>
+<td style="text-align: left;">blocked</td>
+<td style="text-align: left;">boolean</td>
+<td style="text-align: left;">Specifies that transactions with the item cannot be posted, for example, because the item is in quarantine. Set to <strong>true</strong>, if item is blocked.</td>
+</tr>
+<tr>
+<td style="text-align: left;">baseUnitOfMeasureId</td>
+<td style="text-align: left;">GUID</td>
+<td style="text-align: left;">Specifies the ID of the unit of measure.</td>
+</tr>
+<tr>
+<td style="text-align: left;">baseUnitOfMeasure</td>
+<td style="text-align: left;">NAV.UnitOfMeasure</td>
+<td style="text-align: left;">Specifies the unit in which the item is held in inventory.</td>
+</tr>
+<tr>
+<td style="text-align: left;">gtin</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">This is the Global Trade Item Number.</td>
+</tr>
+<tr>
+<td style="text-align: left;">itemCategoryId</td>
+<td style="text-align: left;">GUID</td>
+<td style="text-align: left;">Specifies the category that the item belongs to. Item categories also contain any assigned item attributes.</td>
+</tr>
+<tr>
+<td style="text-align: left;">inventory</td>
+<td style="text-align: left;">decimal</td>
+<td style="text-align: left;">Specifies how many units, such as pieces, boxes, or cans, of the item are in inventory. Read-Only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">unitPrice</td>
+<td style="text-align: left;">decimal</td>
+<td style="text-align: left;">Specifies the price for one unit of the item in the specified currency.</td>
+</tr>
+<tr>
+<td style="text-align: left;">priceIncludesTax</td>
+<td style="text-align: left;">boolean</td>
+<td style="text-align: left;">Specifies that the unitPrice includes tax. Set to <strong>true</strong>, if unitPrice includes tax.</td>
+</tr>
+<tr>
+<td style="text-align: left;">unitCost</td>
+<td style="text-align: left;">decimal</td>
+<td style="text-align: left;">Specifies the cost per unit of the item.</td>
+</tr>
+<tr>
+<td style="text-align: left;">taxGroupId</td>
+<td style="text-align: left;">GUID</td>
+<td style="text-align: left;">Specifies the ID of the Tax Group for the item.</td>
+</tr>
+<tr>
+<td style="text-align: left;">taxGroupCode</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">A Tax Group represents a group of inventory items or resources that are subject to identical tax terms.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">datetime</td>
+<td style="text-align: left;">The last datetime the item was modified. Read-Only.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="paymentterms-"><a href="https://docs.microsoft.com/graph/api/resources/dynamics-paymentterms?view=graph-rest-1.0&amp;tabs=http">paymentTerms </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">calculateDiscountOnCreditMemos</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Specifies whether the discount should be applied to credit memos. <code>True</code> indicates a discount will be given; <code>false</code>* indicates a discount will not be given.</td>
+</tr>
+<tr>
+<td style="text-align: left;">code</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Specifies the payment term code.</td>
+</tr>
+<tr>
+<td style="text-align: left;">discountDateCalculation</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Specifies the formula that is used to calculate the date that a payment must be made in order to obtain a discount.</td>
+</tr>
+<tr>
+<td style="text-align: left;">discountPercent</td>
+<td style="text-align: left;">decimal</td>
+<td style="text-align: left;">Specifies the discount percentage that is applied for early payment of an invoice amount.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Specifies the payment term display name.</td>
+</tr>
+<tr>
+<td style="text-align: left;">dueDateCalculation</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Specifies the formula that is used to calculate the date that a payment must be made.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">GUID</td>
+<td style="text-align: left;">The unique identifier for the <strong>paymentTerms</strong>. Non-editable.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">datetime</td>
+<td style="text-align: left;">The date and time when the **p</td>
+</tr>
+</tbody>
+</table>
 </article>
           </div>
           
