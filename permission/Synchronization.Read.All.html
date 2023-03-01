@@ -91,10 +91,63 @@
 <p>Allows the app to read Azure AD synchronization information, on behalf of the signed-in user.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
-</div>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<table>
+<thead>
+<tr>
+<th>Ver</th>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-1.0&amp;tabs=http">GET /applications/{id}/synchronization/templates/{templateId}/schema</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-list?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/jobs/</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-get?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/jobs/{jobId}/</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/jobs/{jobId}/schema</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/templates/{templateId}/schema</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-list?view=graph-rest-1.0&amp;tabs=http">GET applications/{id}/synchronization/templates</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-get?view=graph-rest-1.0&amp;tabs=http">GET applications/{id}/synchronization/templates/{templateId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-list?view=graph-rest-1.0&amp;tabs=http">GET servicePrincipals/{id}/synchronization/templates</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-get?view=graph-rest-1.0&amp;tabs=http">GET servicePrincipals/{id}/synchronization/templates/{templateId}</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -142,6 +195,118 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the application to read Azure AD synchronization information, without a signed-in user.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="resources">Resources</h2>
+<h3 id="synchronizationjob-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationjob?view=graph-rest-1.0&amp;tabs=http">synchronizationJob </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique synchronization job identifier. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">schedule</td>
+<td style="text-align: left;">synchronizationSchedule</td>
+<td style="text-align: left;">Schedule used to run the job. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">synchronizationStatus</td>
+<td style="text-align: left;">Status of the job, which includes when the job was last run, current job state, and errors.</td>
+</tr>
+<tr>
+<td style="text-align: left;">synchronizationJobSettings</td>
+<td style="text-align: left;">keyValuePair</td>
+<td style="text-align: left;">Settings associated with the job. Some settings are inherited from the template.</td>
+</tr>
+<tr>
+<td style="text-align: left;">templateId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifier of the synchronization template this job is based on.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="synchronizationschema-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationschema?view=graph-rest-1.0&amp;tabs=http">synchronizationSchema </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for the schema.</td>
+</tr>
+<tr>
+<td style="text-align: left;">synchronizationRules</td>
+<td style="text-align: left;">synchronizationRule collection</td>
+<td style="text-align: left;">A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.</td>
+</tr>
+<tr>
+<td style="text-align: left;">version</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The version of the schema, updated automatically with every schema change.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="synchronizationtemplate-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationtemplate?view=graph-rest-1.0&amp;tabs=http">synchronizationTemplate </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique template identifier.</td>
+</tr>
+<tr>
+<td style="text-align: left;">applicationId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifier of the application this template belongs to.</td>
+</tr>
+<tr>
+<td style="text-align: left;">default</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if this template is recommended to be the default for the application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Description of the template.</td>
+</tr>
+<tr>
+<td style="text-align: left;">discoverable</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;"><code>true</code> if this template should appear in the collection of templates available for the application instance (service principal).</td>
+</tr>
+<tr>
+<td style="text-align: left;">factoryTag</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">One of the well-known factory tags supported by the synchronization engine. The <strong>factoryTag</strong> tells the synchronization engine which implementation to use when processing jobs based on this template.</td>
+</tr>
+<tr>
+<td style="text-align: left;">metadata</td>
+<td style="text-align: left;">metadataEntry collection</td>
+<td style="text-align: left;">Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.</td>
 </tr>
 </tbody>
 </table>
