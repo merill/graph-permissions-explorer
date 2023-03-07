@@ -864,7 +864,7 @@
 <tr>
 <td>V1</td>
 <td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-provision-on-demand?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{servicePrincipalsId}/synchronization/jobs/{synchronizationJobId}/provisionOnDemand</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-provisionondemand?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{servicePrincipalsId}/synchronization/jobs/{synchronizationJobId}/provisionOnDemand</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -879,7 +879,7 @@
 <tr>
 <td>V1</td>
 <td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-secrets?view=graph-rest-1.0&amp;tabs=http">PUT /servicePrincipals/{id}/synchronization/secrets</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-serviceprincipal-put-synchronization?view=graph-rest-1.0&amp;tabs=http">PUT /servicePrincipals/{id}/synchronization/secrets</a></td>
 </tr>
 </tbody>
 </table>
@@ -2473,7 +2473,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">type</td>
-<td style="text-align: left;">String</td>
+<td style="text-align: left;">attributeMappingSourceType</td>
 <td style="text-align: left;">The type of this attribute mapping source. Possible values are: <code>Attribute</code>, <code>Constant</code>, <code>Function</code>. Default is <code>Attribute</code>.</td>
 </tr>
 </tbody>
@@ -2494,11 +2494,6 @@
 <td style="text-align: left;">Directory identifier. Not nullable.</td>
 </tr>
 <tr>
-<td style="text-align: left;">metadata</td>
-<td style="text-align: left;">metadataEntry collection</td>
-<td style="text-align: left;">Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.</td>
-</tr>
-<tr>
 <td style="text-align: left;">name</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Name of the directory. Must be unique within the synchronization schema. Not nullable.</td>
@@ -2507,6 +2502,11 @@
 <td style="text-align: left;">objects</td>
 <td style="text-align: left;">objectDefinition collection</td>
 <td style="text-align: left;">Collection of objects supported by the directory.</td>
+</tr>
+<tr>
+<td style="text-align: left;">readOnly</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Whether this object is read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">version</td>
@@ -2521,7 +2521,7 @@
 <tr>
 <td style="text-align: left;">discoverabilities</td>
 <td style="text-align: left;">directoryDefinitionDiscoverabilities</td>
-<td style="text-align: left;">Read only value indicating what type of discovery the app supports. Possible values are: <code>AttributeDataTypes</code>, <code>AttributeNames</code>, <code>AttributeReadOnly</code>, <code>None</code>, <code>ReferenceAttributes</code>, <code>UnknownFutureValue</code>.</td>
+<td style="text-align: left;">Read-only value indicating what type of discovery the app supports. The possible values are: <code>None</code>, <code>AttributeNames</code>, <code>AttributeDataTypes</code>, <code>AttributeReadOnly</code>, <code>ReferenceAttributes</code>, <code>UnknownFutureValue</code>. This is a multi-valued object.</td>
 </tr>
 </tbody>
 </table>
@@ -2586,7 +2586,7 @@
 <tbody>
 <tr>
 <td style="text-align: left;">arity</td>
-<td style="text-align: left;">String</td>
+<td style="text-align: left;">scopeOperatorType</td>
 <td style="text-align: left;">Arity of the operator. Possible values are: <code>Binary</code>, <code>Unary</code>. The default is <code>Binary</code>.</td>
 </tr>
 <tr>
@@ -2601,7 +2601,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">supportedAttributeTypes</td>
-<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">attributeType collection</td>
 <td style="text-align: left;">Attribute types supported by the operator. Possible values are: <code>Boolean</code>, <code>Binary</code>, <code>Reference</code>, <code>Integer</code>, <code>String</code>.</td>
 </tr>
 </tbody>

@@ -4429,11 +4429,6 @@
 <td style="text-align: left;">Directory identifier. Not nullable.</td>
 </tr>
 <tr>
-<td style="text-align: left;">metadata</td>
-<td style="text-align: left;">metadataEntry collection</td>
-<td style="text-align: left;">Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.</td>
-</tr>
-<tr>
 <td style="text-align: left;">name</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Name of the directory. Must be unique within the synchronization schema. Not nullable.</td>
@@ -4442,6 +4437,11 @@
 <td style="text-align: left;">objects</td>
 <td style="text-align: left;">objectDefinition collection</td>
 <td style="text-align: left;">Collection of objects supported by the directory.</td>
+</tr>
+<tr>
+<td style="text-align: left;">readOnly</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Whether this object is read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">version</td>
@@ -4456,7 +4456,7 @@
 <tr>
 <td style="text-align: left;">discoverabilities</td>
 <td style="text-align: left;">directoryDefinitionDiscoverabilities</td>
-<td style="text-align: left;">Read only value indicating what type of discovery the app supports. Possible values are: <code>AttributeDataTypes</code>, <code>AttributeNames</code>, <code>AttributeReadOnly</code>, <code>None</code>, <code>ReferenceAttributes</code>, <code>UnknownFutureValue</code>.</td>
+<td style="text-align: left;">Read-only value indicating what type of discovery the app supports. The possible values are: <code>None</code>, <code>AttributeNames</code>, <code>AttributeDataTypes</code>, <code>AttributeReadOnly</code>, <code>ReferenceAttributes</code>, <code>UnknownFutureValue</code>. This is a multi-valued object.</td>
 </tr>
 </tbody>
 </table>
