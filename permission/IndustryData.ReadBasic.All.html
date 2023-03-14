@@ -91,10 +91,38 @@
 <p>Allows the app to read basic Industry Data service and resource information on behalf of the signed-in user.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
-</div>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<table>
+<thead>
+<tr>
+<th>Ver</th>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/industrydata-filevalidateoperation-list?view=graph-rest-1.0&amp;tabs=http">GET /external/industryData/operations</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/industrydata-filevalidateoperation-get?view=graph-rest-1.0&amp;tabs=http">GET /external/industryData/operations/{fileValidateOperationId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/industrydata-referencedefinition-list?view=graph-rest-1.0&amp;tabs=http">GET /external/industryData/referenceDefinitions</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/industrydata-rolegroup-list?view=graph-rest-1.0&amp;tabs=http">GET /external/industryData/roleGroups</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -142,6 +170,133 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the app to read basic service and resource information without a signed-in user.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="resources">Resources</h2>
+<h3 id="filevalidateoperation-"><a href="https://docs.microsoft.com/graph/api/resources/industrydata-filevalidateoperation?view=graph-rest-1.0&amp;tabs=http">fileValidateOperation </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when this operation was created. Inherited from validateOperation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">errors</td>
+<td style="text-align: left;">microsoft.graph.publicError collection</td>
+<td style="text-align: left;">Set of errors discovered through validation. Inherited from validateOperation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the operation. Inherited from validateOperation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastActionDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the last action was run on this operation. Inherited from validateOperation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">resourceLocation</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The canonical URL of the resource. Inherited from validateOperation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">longRunningOperationStatus</td>
+<td style="text-align: left;">The status of the long-running operation. Inherited from validateOperation. Possible values are: <code>notStarted</code>, <code>running</code>, <code>succeeded</code>, <code>failed</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">statusDetail</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The detail about the status value. Inherited from validateOperation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">validatedFiles</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Set of files validated by the validate operation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">warnings</td>
+<td style="text-align: left;">microsoft.graph.publicError collection</td>
+<td style="text-align: left;">Set of warnings discovered through validation. Inherited from validateOperation.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="referencedefinition-"><a href="https://docs.microsoft.com/graph/api/resources/industrydata-referencedefinition?view=graph-rest-1.0&amp;tabs=http">referenceDefinition </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">code</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The code value for the definition that must be unique within the <strong>referenceType</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the definition was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isDisabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the definition has been disabled.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the definition was most recently changed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">referenceType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The categorical type for a collection of enumerated values.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sortIndex</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The ordering index to present the definitions within a type consistently in user interfaces.</td>
+</tr>
+<tr>
+<td style="text-align: left;">source</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The standards body or organization source which defined the code.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rolegroup-"><a href="https://docs.microsoft.com/graph/api/resources/industrydata-rolegroup?view=graph-rest-1.0&amp;tabs=http">roleGroup </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name of the role group.</td>
+</tr>
+<tr>
+<td style="text-align: left;">roles</td>
+<td style="text-align: left;">microsoft.graph.industryData.roleReferenceValue collection</td>
+<td style="text-align: left;">The set of roles included in the role group.</td>
 </tr>
 </tbody>
 </table>
