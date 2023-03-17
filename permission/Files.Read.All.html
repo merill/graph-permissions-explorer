@@ -388,6 +388,21 @@
 </tr>
 <tr>
 <td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedstoragequota-get?view=graph-rest-1.0&amp;tabs=http">GET /me/settings/storage/quota</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedstoragequota-list-services?view=graph-rest-1.0&amp;tabs=http">GET /me/settings/storage/quota/services</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/servicestoragequotabreakdown-get?view=graph-rest-1.0&amp;tabs=http">GET /me/settings/storage/quota/services/{serviceStorageQuotaBreakdownId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/driveitem-get-content?view=graph-rest-1.0&amp;tabs=http">GET /shares/{shareIdOrEncodedSharingUrl}/driveItem/content</a></td>
 </tr>
@@ -578,6 +593,11 @@
 </tr>
 <tr>
 <td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedstoragequota-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{user-id}/settings/storage/quota</a></td>
+</tr>
+<tr>
+<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/driveitem-get-content?view=graph-rest-1.0&amp;tabs=http">GET /users/{userId}/drive/items/{item-id}/content</a></td>
 </tr>
@@ -600,6 +620,16 @@
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/driveitem-delta?view=graph-rest-1.0&amp;tabs=http">GET /users/{userId}/drive/root/delta</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedstoragequota-list-services?view=graph-rest-1.0&amp;tabs=http">GET /users/{usersId}/settings/storage/quota/services</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/servicestoragequotabreakdown-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{usersId}/settings/storage/quota/services/{serviceStorageQuotaBreakdownId}</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -1498,6 +1528,38 @@
 </tr>
 </tbody>
 </table>
+<h3 id="servicestoragequotabreakdown-"><a href="https://docs.microsoft.com/graph/api/resources/servicestoragequotabreakdown?view=graph-rest-1.0&amp;tabs=http">serviceStorageQuotaBreakdown </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The service breakdown name displayed to users. Localized. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The service breakdown id. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">manageWebUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A URL that can be used in a browser to manage the service breakdown. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">used</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">The number of bytes this service breakdown is consuming. Read-only.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="sharinginvitation-"><a href="https://docs.microsoft.com/graph/api/resources/sharinginvitation?view=graph-rest-1.0&amp;tabs=http">sharingInvitation </a></h3>
 <h3 id="sharinglink-"><a href="https://docs.microsoft.com/graph/api/resources/sharinglink?view=graph-rest-1.0&amp;tabs=http">sharingLink </a></h3>
 <table>
@@ -1680,6 +1742,48 @@
 <td style="text-align: left;">source</td>
 <td style="text-align: left;">Thumbnail</td>
 <td style="text-align: left;">A custom thumbnail image or the original image used to generate other thumbnails.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="unifiedstoragequota-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedstoragequota?view=graph-rest-1.0&amp;tabs=http">unifiedStorageQuota </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The user IF.</td>
+</tr>
+<tr>
+<td style="text-align: left;">manageWebUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A URL that can be used in a browser to manage the breakdown. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">remaining</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">Total space remaining before reaching the quota limit in bytes.</td>
+</tr>
+<tr>
+<td style="text-align: left;">state</td>
+<td style="text-align: left;">usqState</td>
+<td style="text-align: left;">Indicates the state of the storage space. The possible values are: <code>normal</code>, <code>nearing</code>, <code>critical</code>, <code>full</code>, and <code>overLimit</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">total</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">Total allowed storage space in bytes.</td>
+</tr>
+<tr>
+<td style="text-align: left;">used</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">Total space used in bytes.</td>
 </tr>
 </tbody>
 </table>

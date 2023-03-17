@@ -2258,16 +2258,6 @@
 <td style="text-align: left;">The type of action the operation represents. Possible values are: <code>addToReviewSet</code>,<code>applyTags</code>,<code>contentExport</code>,<code>convertToPdf</code>,<code>estimateStatistics</code>, <code>purgeData</code></td>
 </tr>
 <tr>
-<td style="text-align: left;">azureBlobContainer</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The name of the Azure storage location where the export will be stored. This only applies to exports stored in your own Azure storage location.</td>
-</tr>
-<tr>
-<td style="text-align: left;">azureBlobToken</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The SAS token for the Azure storage location.  This only applies to exports stored in your own Azure storage location.</td>
-</tr>
-<tr>
 <td style="text-align: left;">completedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">The date and time the export was completed.</td>
@@ -2288,9 +2278,14 @@
 <td style="text-align: left;">The description provided for the export.</td>
 </tr>
 <tr>
+<td style="text-align: left;">exportFileMetaData</td>
+<td style="text-align: left;">microsoft.graph.security.ediscoveryExportFileMetadata</td>
+<td style="text-align: left;">Contains the properties for an export file metadata, including <strong>downloadUrl</strong>, <strong>fileName</strong>, and <strong>size</strong>. If you export to an Azure storage location, this property returns empty.</td>
+</tr>
+<tr>
 <td style="text-align: left;">exportOptions</td>
 <td style="text-align: left;">microsoft.graph.security.exportOptions</td>
-<td style="text-align: left;">The options provided for the export. For more details, see reviewSet: export. Possible values are: <code>originalFiles</code>, <code>text</code>, <code>pdfReplacement</code>, <code>fileInfo</code>, <code>tags</code>.</td>
+<td style="text-align: left;">The options provided for the export. For more details, see reviewSet: export. Possible values are: <code>originalFiles</code>, <code>text</code>, <code>pdfReplacement</code>, <code>fileInfo</code>, <code>tags</code>. The <code>fileInfo</code> member is deprecated and will stop returning data on April 30th, 2023. Going forward, the summary and load file are always included.</td>
 </tr>
 <tr>
 <td style="text-align: left;">exportStructure</td>
@@ -2321,6 +2316,21 @@
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">microsoft.graph.security.caseOperationStatus</td>
 <td style="text-align: left;">The status of the case operation. Possible values are: <code>notStarted</code>, <code>submissionFailed</code>, <code>running</code>, <code>succeeded</code>, <code>partiallySucceeded</code>, <code>failed</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">azureBlobContainer (deprecated)</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name of the Azure storage location where the export is stored. This only applies to exports stored in your own Azure storage location. The <strong>azureBlobContainer</strong> property is deprecated and will stop returning data on April 30th, 2023.</td>
+</tr>
+<tr>
+<td style="text-align: left;">azureBlobToken (deprecated)</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The SAS token for the Azure storage location.  This only applies to exports stored in your own Azure storage location. The <strong>azureBlobToken</strong> property is deprecated and will stop returning data on April 30th, 2023.</td>
+</tr>
+<tr>
+<td style="text-align: left;">outputFolderId (deprecated)</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The output folder ID. The **o</td>
 </tr>
 </tbody>
 </table>
