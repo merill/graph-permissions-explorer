@@ -274,6 +274,16 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/accesspackagecatalog-list-accesspackagecustomworkflowextensions?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageCatalogs/{catalogId}/accessPackageCustomWorkflowExtensions</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/accesspackageassignmentworkflowextension-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageCatalogs/{catalogId}/accessPackageCustomWorkflowExtensions/{accessPackageCustomWorkflowExtensionId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accesspackagecatalog-list-accesspackageresourceroles?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageCatalogs/{catalogId}/accessPackageResourceRoles?$filter=(originSystem+eq+%27{originSystemType}%27+and+accessPackageResource/id+eq+%27{resourceId}%27)&amp;$expand=accessPackageResource</a></td>
 </tr>
 <tr>
@@ -523,6 +533,11 @@
 </tr>
 <tr>
 <td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/accesspackageassignmentrequest-resume?view=graph-rest-1.0&amp;tabs=http">POST /identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequestId}/resume</a></td>
+</tr>
+<tr>
+<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accesspackageassignmentrequest-cancel?view=graph-rest-1.0&amp;tabs=http">POST /identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{id}/cancel</a></td>
 </tr>
@@ -540,6 +555,11 @@
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/entitlementmanagement-post-accesspackagecatalogs?view=graph-rest-1.0&amp;tabs=http">POST /identityGovernance/entitlementManagement/accessPackageCatalogs</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/accesspackagecatalog-post-accesspackagecustomworkflowextensions?view=graph-rest-1.0&amp;tabs=http">POST /identityGovernance/entitlementManagement/accessPackageCatalogs/{catalogId}/accessPackageCustomWorkflowExtensions</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -1040,6 +1060,68 @@
 </tr>
 </tbody>
 </table>
+<h3 id="accesspackageassignmentrequestworkflowextension-"><a href="https://docs.microsoft.com/graph/api/resources/accesspackageassignmentrequestworkflowextension?view=graph-rest-1.0&amp;tabs=http">accessPackageAssignmentRequestWorkflowExtension </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">authenticationConfiguration</td>
+<td style="text-align: left;">customExtensionAuthenticationConfiguration</td>
+<td style="text-align: left;">Configuration for securing the API call to the logic app. For example, using OAuth client credentials flow. Inherited from customCalloutExtension.</td>
+</tr>
+<tr>
+<td style="text-align: left;">callbackConfiguration</td>
+<td style="text-align: left;">customExtensionCallbackConfiguration</td>
+<td style="text-align: left;">The callback configuration for a custom extension.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The userPrincipalName of the user or identity of the subject that created this resource. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">When the object was created.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Description for the customAccessPackageWorkflowExtension object. Inherited from customCalloutExtension.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Display name for the customAccessPackageWorkflowExtension object. Inherited from customCalloutExtension.</td>
+</tr>
+<tr>
+<td style="text-align: left;">endpointConfiguration</td>
+<td style="text-align: left;">customExtensionEndpointConfiguration</td>
+<td style="text-align: left;">The type and details for configuring the endpoint to call the logic app's workflow. Inherited from customCalloutExtension.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedBy</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The userPrincipalName of the identity that last modified the object.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">When the object was last modified.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="accesspackageassignmentresourcerole-"><a href="https://docs.microsoft.com/graph/api/resources/accesspackageassignmentresourcerole?view=graph-rest-1.0&amp;tabs=http">accessPackageAssignmentResourceRole </a></h3>
 <table>
 <thead>
@@ -1121,6 +1203,68 @@
 <td style="text-align: left;">schedule</td>
 <td style="text-align: left;">entitlementManagementSchedule</td>
 <td style="text-align: left;">When the first review should start and how often it should recur.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="accesspackageassignmentworkflowextension-"><a href="https://docs.microsoft.com/graph/api/resources/accesspackageassignmentworkflowextension?view=graph-rest-1.0&amp;tabs=http">accessPackageAssignmentWorkflowExtension </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">authenticationConfiguration</td>
+<td style="text-align: left;">customExtensionAuthenticationConfiguration</td>
+<td style="text-align: left;">Configuration for securing the API call to the logic app. For example, using OAuth client credentials flow. Inherited from customCalloutExtension.</td>
+</tr>
+<tr>
+<td style="text-align: left;">callbackConfiguration</td>
+<td style="text-align: left;">customExtensionCallbackConfiguration</td>
+<td style="text-align: left;">The callback configuration for a custom extension.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The userPrincipalName of the user or identity of the subject that created this resource. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">When the entity was created.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Description for the customAccessPackageWorkflowExtension object. Inherited from customCalloutExtension.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Display name for the customAccessPackageWorkflowExtension object. Inherited from customCalloutExtension.</td>
+</tr>
+<tr>
+<td style="text-align: left;">endpointConfiguration</td>
+<td style="text-align: left;">customExtensionEndpointConfiguration</td>
+<td style="text-align: left;">The type and details for configuring the endpoint to call the logic app's workflow. Inherited from customCalloutExtension.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedBy</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The userPrincipalName of the identity that last modified the entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">When the entity was last modified.</td>
 </tr>
 </tbody>
 </table>
@@ -1940,7 +2084,67 @@
 </tr>
 </tbody>
 </table>
+<h3 id="customcalloutextension-"><a href="https://docs.microsoft.com/graph/api/resources/customcalloutextension?view=graph-rest-1.0&amp;tabs=http">customCalloutExtension </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">authenticationConfiguration</td>
+<td style="text-align: left;">customExtensionAuthenticationConfiguration</td>
+<td style="text-align: left;">Configuration for securing the API call to the logic app. For example, using OAuth client credentials flow.</td>
+</tr>
+<tr>
+<td style="text-align: left;">clientConfiguration</td>
+<td style="text-align: left;">customExtensionClientConfiguration</td>
+<td style="text-align: left;">HTTP connection settings that define how long Azure AD can wait for a connection to a logic app, how many times you can retry a timed-out connection and the exception scenarios when retries are allowed.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Description for the customCalloutExtension object.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Display name for the customCalloutExtension object.</td>
+</tr>
+<tr>
+<td style="text-align: left;">endpointConfiguration</td>
+<td style="text-align: left;">customExtensionEndpointConfiguration</td>
+<td style="text-align: left;">The type and details for configuring the endpoint to call the logic app's workflow.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifier for the customCalloutExtension object. Inherited from entity.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="customextensionauthenticationconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/customextensionauthenticationconfiguration?view=graph-rest-1.0&amp;tabs=http">customExtensionAuthenticationConfiguration </a></h3>
+<h3 id="customextensioncallbackconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/customextensioncallbackconfiguration?view=graph-rest-1.0&amp;tabs=http">customExtensionCallbackConfiguration </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">timeoutDuration</td>
+<td style="text-align: left;">Duration</td>
+<td style="text-align: left;">The maximum duration in ISO 8601 format that Azure AD will wait for a resume action for the callout it sent to the logic app. The valid range for custom extensions in lifecycle workflows is five minutes to three hours. The valid range for custom extensions in entitlement management is between 5 minutes and 14 days. For example, <code>PT3H</code> refers to three hours, <code>P3D</code> refers to three days, <code>PT10M</code> refers to ten minutes.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="customextensiondata-"><a href="https://docs.microsoft.com/graph/api/resources/customextensiondata?view=graph-rest-1.0&amp;tabs=http">customExtensionData </a></h3>
 <h3 id="customextensionendpointconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/customextensionendpointconfiguration?view=graph-rest-1.0&amp;tabs=http">customExtensionEndpointConfiguration </a></h3>
 <h3 id="directoryobject-"><a href="https://docs.microsoft.com/graph/api/resources/directoryobject?view=graph-rest-1.0&amp;tabs=http">directoryObject </a></h3>
 <table>
