@@ -1178,6 +1178,11 @@
 <td style="text-align: left;">registrationEnforcement</td>
 <td style="text-align: left;">Enforce registration at sign-in time. This property can be used to remind users to set up targeted authentication methods.</td>
 </tr>
+<tr>
+<td style="text-align: left;">policyMigrationState</td>
+<td style="text-align: left;">authenticationMethodsPolicyMigrationState</td>
+<td style="text-align: left;">The state of migration of the authentication methods policy from the legacy multifactor authentication and self-service password reset (SSPR) policies. The possible values are: <br><li><code>premigration</code> - means the authentication methods policy is used for authentication only, legacy policies are respected. <li><code>migrationInProgress</code> - means the authentication methods policy is used for both authentication and SSPR, legacy policies are respected. <li><code>migrationComplete</code> - means the authentication methods policy is used for authentication and SSPR, legacy policies are ignored. <li><code>unknownFutureValue</code> - Evolvable enumeration sentinel value. Do not use.</li></li></li></li></td>
+</tr>
 </tbody>
 </table>
 <h3 id="authenticationstrengthpolicy-"><a href="https://docs.microsoft.com/graph/api/resources/authenticationstrengthpolicy?view=graph-rest-1.0&amp;tabs=http">authenticationStrengthPolicy </a></h3>
@@ -1924,6 +1929,11 @@
 <td style="text-align: left;">Determines whether email OTP is usable by external users for authentication. Possible values are: <code>default</code>, <code>enabled</code>, <code>disabled</code>, <code>unknownFutureValue</code>. Tenants in the <code>default</code> state who did not use public preview will automatically have email OTP enabled beginning in October 2021.</td>
 </tr>
 <tr>
+<td style="text-align: left;">excludeTargets</td>
+<td style="text-align: left;">excludeTarget collection</td>
+<td style="text-align: left;">Groups of users that are excluded from the policy.</td>
+</tr>
+<tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The authentication method policy identifier. Inherited from authenticationMethodConfiguration.</td>
@@ -1972,6 +1982,11 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align: left;">excludeTargets</td>
+<td style="text-align: left;">excludeTarget collection</td>
+<td style="text-align: left;">Groups of users that are excluded from the policy.</td>
+</tr>
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
@@ -2425,6 +2440,11 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">excludeTargets</td>
+<td style="text-align: left;">excludeTarget collection</td>
+<td style="text-align: left;">Groups of users that are excluded from the policy.</td>
+</tr>
+<tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The authentication method policy identifier.</td>
@@ -2787,6 +2807,11 @@
 <td style="text-align: left;">Default lifetime in minutes for a Temporary Access Pass. Value can be any integer between the <strong>minimumLifetimeInMinutes</strong> and <strong>maximumLifetimeInMinutes</strong>.</td>
 </tr>
 <tr>
+<td style="text-align: left;">excludeTargets</td>
+<td style="text-align: left;">excludeTarget collection</td>
+<td style="text-align: left;">Groups of users that are excluded from the policy.</td>
+</tr>
+<tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The identifier of the authentication method policy. Inherited from entity.</td>
@@ -2997,6 +3022,11 @@
 <td style="text-align: left;">certificateUserBindings</td>
 <td style="text-align: left;">x509CertificateUserBinding collection</td>
 <td style="text-align: left;">Defines fields in the X.509 certificate that map to attributes of the Azure AD user object in order to bind the certificate to the user. The <strong>priority</strong> of the object determines the order in which the binding is carried out. The first binding that matches will be used and the rest ignored.</td>
+</tr>
+<tr>
+<td style="text-align: left;">excludeTargets</td>
+<td style="text-align: left;">excludeTarget collection</td>
+<td style="text-align: left;">Groups of users that are excluded from the policy.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
