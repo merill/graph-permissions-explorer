@@ -376,6 +376,11 @@
 <td style="text-align: left;">Int32</td>
 <td style="text-align: left;">The interval in hours at which all workflows running in the tenant should be scheduled for execution. This interval has a minimum value of 1 and a maximum value of 24. The default value is 3 hours.</td>
 </tr>
+<tr>
+<td style="text-align: left;">emailSettings</td>
+<td style="text-align: left;">microsoft.graph.emailSettings</td>
+<td style="text-align: left;">Defines the settings for emails sent out from email-specific tasks within workflows. Accepts 2 parameters<br><br>senderDomain- Defines the domain of who is sending the email. <br>useCompanyBranding- A boolean value that defines if company branding is to be used with the email.</td>
+</tr>
 </tbody>
 </table>
 <h3 id="run-"><a href="https://docs.microsoft.com/graph/api/resources/identitygovernance-run?view=graph-rest-1.0&amp;tabs=http">run </a></h3>
@@ -404,13 +409,18 @@
 <td style="text-align: left;">The number of users that failed in the run execution.</td>
 </tr>
 <tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A unique identifier for the workflow run.</td>
+</tr>
+<tr>
 <td style="text-align: left;">lastUpdatedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">The datetime that the run was last updated.<br><br>Supports <code>$filter</code>(<code>lt</code>, <code>le</code>, <code>gt</code>, <code>ge</code>, <code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">processingStatus</td>
-<td style="text-align: left;">String</td>
+<td style="text-align: left;">microsoft.graph.identityGovernance.lifecycleWorkflowProcessingStatus</td>
 <td style="text-align: left;">The run execution status. The possible values are: <code>queued</code>, <code>inProgress</code>, <code>completed</code>, <code>completedWithErrors</code>, <code>canceled</code>, <code>failed</code>, <code>unknownFutureValue</code>.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
@@ -434,13 +444,18 @@
 <td style="text-align: left;">The total number of users in the workflow execution.</td>
 </tr>
 <tr>
+<td style="text-align: left;">totalTasksCounts</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The total number of tasks in the run execution.</td>
+</tr>
+<tr>
 <td style="text-align: left;">totalUnprocessedTasksCount</td>
 <td style="text-align: left;">Int32</td>
 <td style="text-align: left;">The total number of unprocessed tasks in the run execution.</td>
 </tr>
 <tr>
 <td style="text-align: left;">workflowExecutionType</td>
-<td style="text-align: left;">String</td>
+<td style="text-align: left;">microsoft.graph.identityGovernance.workflowExecutionType</td>
 <td style="text-align: left;">The execution type of the workflows associated with the run. The possible values are: <code>scheduled</code>, <code>onDemand</code>, <code>unknownFutureValue</code>.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 </tbody>
@@ -474,6 +489,16 @@
 <td style="text-align: left;">totalRuns</td>
 <td style="text-align: left;">Int32</td>
 <td style="text-align: left;">The total number of runs for a workflow.</td>
+</tr>
+<tr>
+<td style="text-align: left;">totalTasks</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The total number of tasks processed by a workflow.</td>
+</tr>
+<tr>
+<td style="text-align: left;">totalUsers</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The total number of users processed by a workflow.</td>
 </tr>
 </tbody>
 </table>
@@ -547,7 +572,12 @@
 <tr>
 <td style="text-align: left;">category</td>
 <td style="text-align: left;">microsoft.graph.identityGovernance.lifecycleTaskCategory</td>
-<td style="text-align: left;">The category of the HR function that the tasks created using this definition can be used with. The possible values are: <code>joiner</code>, <code>leaver</code>. This is a multi-valued enumeration whose allowed combinations are <code>joiner</code>, <code>joiner,leaver</code>, or <code>leaver</code>.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>, <code>has</code>) and <code>$orderby</code>.</td>
+<td style="text-align: left;">The category of the HR function that the tasks created using this definition can be used with. The possible values are: <code>joiner</code>, <code>leaver</code>, <code>unknownFutureValue</code>. This is a multi-valued enumeration whose allowed combinations are <code>joiner</code>, <code>joiner,leaver</code>, or <code>leaver</code>.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>, <code>has</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">ContinueOnError</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Defines if the workflow will continue if the task has an error.</td>
 </tr>
 <tr>
 <td style="text-align: left;">description</td>
@@ -779,11 +809,11 @@
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifier used for individually addressing a specific user processing result. Inherited from entity.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
+<td style="text-align: left;">Identifier used for individually addressing a specific user processing result.Inherited from entity.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">processingStatus</td>
-<td style="text-align: left;">String</td>
+<td style="text-align: left;">microsoft.graph.identityGovernance.lifecycleWorkflowProcessingStatus</td>
 <td style="text-align: left;">The workflow execution status. The possible values are: <code>queued</code>, <code>inProgress</code>, <code>completed</code>, <code>completedWithErrors</code>, <code>canceled</code>, <code>failed</code>, <code>unknownFutureValue</code>.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
@@ -808,7 +838,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">workflowExecutionType</td>
-<td style="text-align: left;">String</td>
+<td style="text-align: left;">microsoft.graph.identityGovernance.workflowExecutionType</td>
 <td style="text-align: left;">Describes the execution type of the workflow. The possible values are: <code>scheduled</code>, <code>onDemand</code>, <code>unknownFutureValue</code>.<br><br>Supports <code>$filter</code>(<code>lt</code>, <code>le</code>, <code>gt</code>, <code>ge</code>, <code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
@@ -924,7 +954,7 @@
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the <code>workflowTemplate</code>. Inherited from entity.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
+<td style="text-align: left;">The unique identifier for the <code>workflowTemplate</code>.Inherited from entity.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 </tbody>
 </table>
