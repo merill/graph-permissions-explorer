@@ -2574,7 +2574,32 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getdevicesstatusbypolicyplatformcompliancereport?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/reports/getDevicesStatusByPolicyPlatformComplianceReport</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getdevicesstatusbysettingreport?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/reports/getDevicesStatusBySettingReport</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getdevicestatusbycompliacepolicyreport?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/reports/getDeviceStatusByCompliacePolicyReport</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getdevicestatusbycompliancepolicysettingreport?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/reports/getDeviceStatusByCompliancePolicySettingReport</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getdevicestatussummarybycompliacepolicyreport?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/reports/getDeviceStatusSummaryByCompliacePolicyReport</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getdevicestatussummarybycompliancepolicysettingsreport?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/reports/getDeviceStatusSummaryByCompliancePolicySettingsReport</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -3712,7 +3737,6 @@
 </tr>
 </tbody>
 </table>
-<h3 id="intune-apps-certificatestatus"><a href="https://docs.microsoft.com/graph/api/resources/intune-apps-certificatestatus?view=graph-rest-1.0&amp;tabs=http">intune-apps-certificatestatus</a></h3>
 <h3 id="deviceappmanagement-"><a href="https://docs.microsoft.com/graph/api/resources/intune-apps-deviceappmanagement?view=graph-rest-1.0&amp;tabs=http">deviceAppManagement </a></h3>
 <table>
 <thead>
@@ -8409,37 +8433,37 @@
 <tr>
 <td style="text-align: left;">applicableArchitectures</td>
 <td style="text-align: left;">windowsArchitecture</td>
-<td style="text-align: left;">The Windows architecture(s) for which this app can run on. Possible values are: <code>none</code>, <code>x86</code>, <code>x64</code>, <code>arm</code>, <code>neutral</code>, <code>arm64</code>.</td>
+<td style="text-align: left;">The Windows architecture(s) on which this app can run. Possible values are: <code>none</code>, <code>x86</code>, <code>x64</code>, <code>arm</code>, <code>neutral</code>; default value is <code>none</code>. Possible values are: <code>none</code>, <code>x86</code>, <code>x64</code>, <code>arm</code>, <code>neutral</code>, <code>arm64</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">identityName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The Identity Name.</td>
+<td style="text-align: left;">The identity name of the uploaded app package. For example: &quot;Contoso.DemoApp&quot;.</td>
 </tr>
 <tr>
 <td style="text-align: left;">identityPublisherHash</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The Identity Publisher Hash.</td>
+<td style="text-align: left;">The identity publisher hash of the uploaded app package. This is the hash of the publisher from the manifest. For example: &quot;AB82CD0XYZ&quot;.</td>
 </tr>
 <tr>
 <td style="text-align: left;">identityResourceIdentifier</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The Identity Resource Identifier.</td>
+<td style="text-align: left;">The identity resource identifier of the uploaded app package. For example: &quot;TestResourceId&quot;.</td>
 </tr>
 <tr>
 <td style="text-align: left;">isBundle</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Whether or not the app is a bundle.</td>
+<td style="text-align: left;">When TRUE, indicates that the app is a bundle. When FALSE, indicates that the app is not a bundle. By default, property is set to FALSE.</td>
 </tr>
 <tr>
 <td style="text-align: left;">minimumSupportedOperatingSystem</td>
 <td style="text-align: left;">windowsMinimumOperatingSystem</td>
-<td style="text-align: left;">The value for the minimum applicable operating system.</td>
+<td style="text-align: left;">The value for the minimum applicable operating system. Valid values for a WindowsAppX app include <code>v8_0</code>, <code>v8_1</code> and <code>v10_0</code>. If the app is a bundle, the minimum supported OS has to be at least <code>v8_1</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">identityVersion</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The identity version.</td>
+<td style="text-align: left;">The identity version of the uploaded app package. For example: &quot;1.0.0.0&quot;.</td>
 </tr>
 </tbody>
 </table>
@@ -11086,18 +11110,6 @@
 <th style="text-align: left;">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Key of this setting within the policy which contains it. Automatically generated.</td>
-</tr>
-<tr>
-<td style="text-align: left;">settingInstance</td>
-<td style="text-align: left;">deviceManagementConfigurationSettingInstance</td>
-<td style="text-align: left;">Setting Instance</td>
-</tr>
-</tbody>
 </table>
 <h3 id="devicemanagementconfigurationsettinggroupcollectiondefinition-"><a href="https://docs.microsoft.com/graph/api/resources/intune-mam-devicemanagementconfigurationsettinggroupcollectiondefinition?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationSettingGroupCollectionDefinition </a></h3>
 <table>
@@ -15430,28 +15442,6 @@
 <td style="text-align: left;">dependedOnBy</td>
 <td style="text-align: left;">deviceManagementConfigurationSettingDependedOnBy collection</td>
 <td style="text-align: left;">List of child settings that depend on this setting</td>
-</tr>
-</tbody>
-</table>
-<h3 id="devicemanagementconfigurationsettinginstance-"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationsettinginstance?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationSettingInstance </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">settingDefinitionId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Setting Definition Id</td>
-</tr>
-<tr>
-<td style="text-align: left;">settingInstanceTemplateReference</td>
-<td style="text-align: left;">deviceManagementConfigurationSettingInstanceTemplateReference</td>
-<td style="text-align: left;">Setting Instance Template Reference</td>
 </tr>
 </tbody>
 </table>

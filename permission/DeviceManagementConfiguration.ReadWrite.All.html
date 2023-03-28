@@ -4624,11 +4624,6 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/intune-deviceconfig-endpointprivilegemanagementprovisioningstatus-get?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/endpointPrivilegeManagementProvisioningStatus</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/intune-onboarding-devicemanagementexchangeconnector-list?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/exchangeConnectors</a></td>
 </tr>
 <tr>
@@ -7754,11 +7749,6 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/intune-deviceconfig-endpointprivilegemanagementprovisioningstatus-update?view=graph-rest-1.0&amp;tabs=http">PATCH /deviceManagement/endpointPrivilegeManagementProvisioningStatus</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/intune-onboarding-devicemanagementexchangeconnector-update?view=graph-rest-1.0&amp;tabs=http">PATCH /deviceManagement/exchangeConnectors/{deviceManagementExchangeConnectorId}</a></td>
 </tr>
 <tr>
@@ -10654,7 +10644,32 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getdevicesstatusbypolicyplatformcompliancereport?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/reports/getDevicesStatusByPolicyPlatformComplianceReport</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getdevicesstatusbysettingreport?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/reports/getDevicesStatusBySettingReport</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getdevicestatusbycompliacepolicyreport?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/reports/getDeviceStatusByCompliacePolicyReport</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getdevicestatusbycompliancepolicysettingreport?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/reports/getDeviceStatusByCompliancePolicySettingReport</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getdevicestatussummarybycompliacepolicyreport?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/reports/getDeviceStatusSummaryByCompliacePolicyReport</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getdevicestatussummarybycompliancepolicysettingsreport?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/reports/getDeviceStatusSummaryByCompliancePolicySettingsReport</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -12128,6 +12143,11 @@
 <td style="text-align: left;">state</td>
 <td style="text-align: left;">zebraFotaDeploymentState</td>
 <td style="text-align: left;">See zebraFotaDeploymentState enum for possible values. Possible values are: <code>pendingCreation</code>, <code>createFailed</code>, <code>created</code>, <code>inProgress</code>, <code>completed</code>, <code>pendingCancel</code>, <code>canceled</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">errorCode</td>
+<td style="text-align: left;">zebraFotaErrorCode</td>
+<td style="text-align: left;">An error code indicating the failure reason, when the deployment state is <code>createFailed</code>. Possible values: See zebraFotaErrorCode enum. Possible values are: <code>success</code>, <code>noDevicesFoundInSelectedAadGroups</code>, <code>noIntuneDevicesFoundInSelectedAadGroups</code>, <code>noZebraFotaEnrolledDevicesFoundForCurrentTenant</code>, <code>noZebraFotaEnrolledDevicesFoundInSelectedAadGroups</code>, <code>noZebraFotaDevicesFoundForSelectedDeviceModel</code>, <code>zebraFotaCreateDeploymentRequestFailure</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">totalDevices</td>
@@ -16226,6 +16246,16 @@
 <td style="text-align: left;">Boolean</td>
 <td style="text-align: left;">Prevent app installations from unknown sources in the personal profile.</td>
 </tr>
+<tr>
+<td style="text-align: left;">workProfileAccountUse</td>
+<td style="text-align: left;">androidWorkProfileAccountUse</td>
+<td style="text-align: left;">Control user's ability to add accounts in work profile including Google accounts. Possible values are: <code>allowAllExceptGoogleAccounts</code>, <code>blockAll</code>, <code>allowAll</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">allowedGoogleAccountDomains</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Determine domains allow-list for accounts that can be added to work profile.</td>
+</tr>
 </tbody>
 </table>
 <h3 id="androidforworkgmaileasconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfig-androidforworkgmaileasconfiguration?view=graph-rest-1.0&amp;tabs=http">androidForWorkGmailEasConfiguration </a></h3>
@@ -18064,6 +18094,7 @@
 </tbody>
 </table>
 <h3 id="intune-deviceconfig-androidwifisecuritytype"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfig-androidwifisecuritytype?view=graph-rest-1.0&amp;tabs=http">intune-deviceconfig-androidwifisecuritytype</a></h3>
+<h3 id="intune-deviceconfig-androidworkprofileaccountuse"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfig-androidworkprofileaccountuse?view=graph-rest-1.0&amp;tabs=http">intune-deviceconfig-androidworkprofileaccountuse</a></h3>
 <h3 id="androidworkprofilecertificateprofilebase-"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfig-androidworkprofilecertificateprofilebase?view=graph-rest-1.0&amp;tabs=http">androidWorkProfileCertificateProfileBase </a></h3>
 <table>
 <thead>
@@ -22715,33 +22746,6 @@
 </tbody>
 </table>
 <h3 id="intune-deviceconfig-encryptionstate"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfig-encryptionstate?view=graph-rest-1.0&amp;tabs=http">intune-deviceconfig-encryptionstate</a></h3>
-<h3 id="endpointprivilegemanagementprovisioningstatus-"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfig-endpointprivilegemanagementprovisioningstatus?view=graph-rest-1.0&amp;tabs=http">endpointPrivilegeManagementProvisioningStatus </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">A unique identifier represents Intune Account identifier.</td>
-</tr>
-<tr>
-<td style="text-align: left;">licenseType</td>
-<td style="text-align: left;">licenseType</td>
-<td style="text-align: left;">Indicates whether tenant has a valid Intune Endpoint Privilege Management license. Possible value are : 0 - notPaid, 1 - paid, 2 - trial. See LicenseType enum for more details. Default notPaid. Possible values are: <code>notPaid</code>, <code>paid</code>, <code>trial</code>, <code>unknownFutureValue</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">onboardedToMicrosoftManagedPlatform</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates whether tenant is onboarded to Microsoft Managed Platform - Cloud (MMPC). When set to true, implies tenant is onboarded and when set to false, implies tenant is not onboarded. Default set to false.</td>
-</tr>
-</tbody>
-</table>
 <h3 id="intune-deviceconfig-filevaultstate"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfig-filevaultstate?view=graph-rest-1.0&amp;tabs=http">intune-deviceconfig-filevaultstate</a></h3>
 <h3 id="intune-deviceconfig-firewallcertificaterevocationlistcheckmethodtype"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfig-firewallcertificaterevocationlistcheckmethodtype?view=graph-rest-1.0&amp;tabs=http">intune-deviceconfig-firewallcertificaterevocationlistcheckmethodtype</a></h3>
 <h3 id="intune-deviceconfig-firewallpacketqueueingmethodtype"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfig-firewallpacketqueueingmethodtype?view=graph-rest-1.0&amp;tabs=http">intune-deviceconfig-firewallpacketqueueingmethodtype</a></h3>
@@ -26294,7 +26298,6 @@
 <h3 id="intune-deviceconfig-kioskmodemanagedhomescreenpincomplexity"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfig-kioskmodemanagedhomescreenpincomplexity?view=graph-rest-1.0&amp;tabs=http">intune-deviceconfig-kioskmodemanagedhomescreenpincomplexity</a></h3>
 <h3 id="intune-deviceconfig-kioskmodetype"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfig-kioskmodetype?view=graph-rest-1.0&amp;tabs=http">intune-deviceconfig-kioskmodetype</a></h3>
 <h3 id="intune-deviceconfig-lanmanagerauthenticationlevel"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfig-lanmanagerauthenticationlevel?view=graph-rest-1.0&amp;tabs=http">intune-deviceconfig-lanmanagerauthenticationlevel</a></h3>
-<h3 id="intune-deviceconfig-licensetype"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfig-licensetype?view=graph-rest-1.0&amp;tabs=http">intune-deviceconfig-licensetype</a></h3>
 <h3 id="intune-deviceconfig-localsecurityoptionsadministratorelevationpromptbehaviortype"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfig-localsecurityoptionsadministratorelevationpromptbehaviortype?view=graph-rest-1.0&amp;tabs=http">intune-deviceconfig-localsecurityoptionsadministratorelevationpromptbehaviortype</a></h3>
 <h3 id="intune-deviceconfig-localsecurityoptionsformatandejectofremovablemediaallowedusertype"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfig-localsecurityoptionsformatandejectofremovablemediaallowedusertype?view=graph-rest-1.0&amp;tabs=http">intune-deviceconfig-localsecurityoptionsformatandejectofremovablemediaallowedusertype</a></h3>
 <h3 id="intune-deviceconfig-localsecurityoptionsinformationdisplayedonlockscreentype"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfig-localsecurityoptionsinformationdisplayedonlockscreentype?view=graph-rest-1.0&amp;tabs=http">intune-deviceconfig-localsecurityoptionsinformationdisplayedonlockscreentype</a></h3>
@@ -27593,6 +27596,7 @@
 </tr>
 </tbody>
 </table>
+<h3 id="intune-deviceconfig-macospriority"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfig-macospriority?view=graph-rest-1.0&amp;tabs=http">intune-deviceconfig-macospriority</a></h3>
 <h3 id="macosprivacyaccesscontrolitem-"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfig-macosprivacyaccesscontrolitem?view=graph-rest-1.0&amp;tabs=http">macOSPrivacyAccessControlItem </a></h3>
 <table>
 <thead>
@@ -28112,6 +28116,16 @@
 <td style="text-align: left;">updateTimeWindowUtcOffsetInMinutes</td>
 <td style="text-align: left;">Int32</td>
 <td style="text-align: left;">Minutes indicating UTC offset for each update time window</td>
+</tr>
+<tr>
+<td style="text-align: left;">maxUserDeferralsCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The maximum number of times the system allows the user to postpone an update before it’s installed. Supported values: 0 - 366. Valid values 0 to 365</td>
+</tr>
+<tr>
+<td style="text-align: left;">priority</td>
+<td style="text-align: left;">macOSPriority</td>
+<td style="text-align: left;">The scheduling priority for downloading and preparing the requested update. Default: Low. Possible values: Null, Low, High. Possible values are: <code>low</code>, <code>high</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -30220,6 +30234,11 @@
 <td style="text-align: left;">claims</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Claims associated with this traffic rule.</td>
+</tr>
+<tr>
+<td style="text-align: left;">vpnTrafficDirection</td>
+<td style="text-align: left;">vpnTrafficDirection</td>
+<td style="text-align: left;">Specify whether the rule applies to inbound traffic or outbound traffic. Possible values are: <code>outbound</code>, <code>inbound</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -36970,7 +36989,7 @@
 <tr>
 <td style="text-align: left;">technologies</td>
 <td style="text-align: left;">deviceManagementConfigurationTechnologies</td>
-<td style="text-align: left;">Technologies for this policy. Possible values are: <code>none</code>, <code>mdm</code>, <code>windows10XManagement</code>, <code>configManager</code>, <code>appleRemoteManagement</code>, <code>microsoftSense</code>, <code>exchangeOnline</code>, <code>linuxMdm</code>, <code>enrollment</code>, <code>endpointPrivilegeManagement</code>, <code>unknownFutureValue</code>.</td>
+<td style="text-align: left;">Technologies for this policy. Possible values are: <code>none</code>, <code>mdm</code>, <code>windows10XManagement</code>, <code>configManager</code>, <code>appleRemoteManagement</code>, <code>microsoftSense</code>, <code>exchangeOnline</code>, <code>edgeMAM</code>, <code>linuxMdm</code>, <code>enrollment</code>, <code>endpointPrivilegeManagement</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>
@@ -37074,7 +37093,7 @@
 <tr>
 <td style="text-align: left;">technologies</td>
 <td style="text-align: left;">deviceManagementConfigurationTechnologies</td>
-<td style="text-align: left;">Technologies types, which settings in the category have. Possible values are: <code>none</code>, <code>mdm</code>, <code>windows10XManagement</code>, <code>configManager</code>, <code>appleRemoteManagement</code>, <code>microsoftSense</code>, <code>exchangeOnline</code>, <code>linuxMdm</code>, <code>enrollment</code>, <code>endpointPrivilegeManagement</code>, <code>unknownFutureValue</code>.</td>
+<td style="text-align: left;">Technologies types, which settings in the category have. Possible values are: <code>none</code>, <code>mdm</code>, <code>windows10XManagement</code>, <code>configManager</code>, <code>appleRemoteManagement</code>, <code>microsoftSense</code>, <code>exchangeOnline</code>, <code>edgeMAM</code>, <code>linuxMdm</code>, <code>enrollment</code>, <code>endpointPrivilegeManagement</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">settingUsage</td>
@@ -37225,6 +37244,199 @@
 </tr>
 </tbody>
 </table>
+<h3 id="devicemanagementconfigurationchoicesettingdefinition-"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfigv2-devicemanagementconfigurationchoicesettingdefinition?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationChoiceSettingDefinition </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">applicability</td>
+<td style="text-align: left;">deviceManagementConfigurationSettingApplicability</td>
+<td style="text-align: left;">Details which device setting is applicable on Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">accessTypes</td>
+<td style="text-align: left;">deviceManagementConfigurationSettingAccessTypes</td>
+<td style="text-align: left;">Read/write access mode of the setting Inherited from deviceManagementConfigurationSettingDefinition. Possible values are: <code>none</code>, <code>add</code>, <code>copy</code>, <code>delete</code>, <code>get</code>, <code>replace</code>, <code>execute</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">keywords</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Tokens which to search settings on Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">infoUrls</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">List of links more info for the setting can be found at Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">occurrence</td>
+<td style="text-align: left;">deviceManagementConfigurationSettingOccurrence</td>
+<td style="text-align: left;">Indicates whether the setting is required or not Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">baseUri</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Base CSP Path Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">offsetUri</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Offset CSP Path from Base Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">rootDefinitionId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Root setting definition if the setting is a child setting. Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">categoryId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Specifies the area group under which the setting is configured in a specified configuration service provider (CSP) Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">settingUsage</td>
+<td style="text-align: left;">deviceManagementConfigurationSettingUsage</td>
+<td style="text-align: left;">Setting type, for example, configuration and compliance Inherited from deviceManagementConfigurationSettingDefinition. Possible values are: <code>none</code>, <code>configuration</code>, <code>compliance</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">uxBehavior</td>
+<td style="text-align: left;">deviceManagementConfigurationControlType</td>
+<td style="text-align: left;">Setting control type representation in the UX Inherited from deviceManagementConfigurationSettingDefinition. Possible values are: <code>default</code>, <code>dropdown</code>, <code>smallTextBox</code>, <code>largeTextBox</code>, <code>toggle</code>, <code>multiheaderGrid</code>, <code>contextPane</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">visibility</td>
+<td style="text-align: left;">deviceManagementConfigurationSettingVisibility</td>
+<td style="text-align: left;">Setting visibility scope to UX Inherited from deviceManagementConfigurationSettingDefinition. Possible values are: <code>none</code>, <code>settingsCatalog</code>, <code>template</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">referredSettingInformationList</td>
+<td style="text-align: left;">deviceManagementConfigurationReferredSettingInformation collection</td>
+<td style="text-align: left;">List of referred setting information. Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifier for item Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Description of the item Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">helpText</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Help text of the item Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the item Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Display name of the item Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">version</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Item Version Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">options</td>
+<td style="text-align: left;">deviceManagementConfigurationOptionDefinition collection</td>
+<td style="text-align: left;">Options for the setting that can be selected</td>
+</tr>
+<tr>
+<td style="text-align: left;">defaultOptionId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Default option for choice setting</td>
+</tr>
+</tbody>
+</table>
+<h3 id="intune-deviceconfigv2-devicemanagementconfigurationcontroltype"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfigv2-devicemanagementconfigurationcontroltype?view=graph-rest-1.0&amp;tabs=http">intune-deviceconfigv2-devicemanagementconfigurationcontroltype</a></h3>
+<h3 id="devicemanagementconfigurationdependenton-"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfigv2-devicemanagementconfigurationdependenton?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationDependentOn </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">dependentOn</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifier of parent setting/ parent setting option dependent on</td>
+</tr>
+<tr>
+<td style="text-align: left;">parentSettingId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifier of parent setting/ parent setting id dependent on</td>
+</tr>
+</tbody>
+</table>
+<h3 id="devicemanagementconfigurationoptiondefinition-"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfigv2-devicemanagementconfigurationoptiondefinition?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationOptionDefinition </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">optionValue</td>
+<td style="text-align: left;">deviceManagementConfigurationSettingValue</td>
+<td style="text-align: left;">Value of the option</td>
+</tr>
+<tr>
+<td style="text-align: left;">dependentOn</td>
+<td style="text-align: left;">deviceManagementConfigurationDependentOn collection</td>
+<td style="text-align: left;">List of dependent settings for this option</td>
+</tr>
+<tr>
+<td style="text-align: left;">dependedOnBy</td>
+<td style="text-align: left;">deviceManagementConfigurationSettingDependedOnBy collection</td>
+<td style="text-align: left;">List of Settings that depends on this option</td>
+</tr>
+<tr>
+<td style="text-align: left;">itemId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifier of option</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Description of the option</td>
+</tr>
+<tr>
+<td style="text-align: left;">helpText</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Help text of the option</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the option</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Friendly name of the option</td>
+</tr>
+</tbody>
+</table>
+<h3 id="intune-deviceconfigv2-devicemanagementconfigurationplatforms"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfigv2-devicemanagementconfigurationplatforms?view=graph-rest-1.0&amp;tabs=http">intune-deviceconfigv2-devicemanagementconfigurationplatforms</a></h3>
 <h3 id="devicemanagementconfigurationpolicy-"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfigv2-devicemanagementconfigurationpolicy?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationPolicy </a></h3>
 <table>
 <thead>
@@ -37258,7 +37470,7 @@
 <tr>
 <td style="text-align: left;">technologies</td>
 <td style="text-align: left;">deviceManagementConfigurationTechnologies</td>
-<td style="text-align: left;">Technologies for this policy. Possible values are: <code>none</code>, <code>mdm</code>, <code>windows10XManagement</code>, <code>configManager</code>, <code>appleRemoteManagement</code>, <code>microsoftSense</code>, <code>exchangeOnline</code>, <code>linuxMdm</code>, <code>enrollment</code>, <code>endpointPrivilegeManagement</code>, <code>unknownFutureValue</code>.</td>
+<td style="text-align: left;">Technologies for this policy. Possible values are: <code>none</code>, <code>mdm</code>, <code>windows10XManagement</code>, <code>configManager</code>, <code>appleRemoteManagement</code>, <code>microsoftSense</code>, <code>exchangeOnline</code>, <code>edgeMAM</code>, <code>linuxMdm</code>, <code>enrollment</code>, <code>endpointPrivilegeManagement</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>
@@ -37387,7 +37599,7 @@
 <tr>
 <td style="text-align: left;">technologies</td>
 <td style="text-align: left;">deviceManagementConfigurationTechnologies</td>
-<td style="text-align: left;">Technologies for this template. Possible values are: <code>none</code>, <code>mdm</code>, <code>windows10XManagement</code>, <code>configManager</code>, <code>appleRemoteManagement</code>, <code>microsoftSense</code>, <code>exchangeOnline</code>, <code>linuxMdm</code>, <code>enrollment</code>, <code>endpointPrivilegeManagement</code>, <code>unknownFutureValue</code>.</td>
+<td style="text-align: left;">Technologies for this template. Possible values are: <code>none</code>, <code>mdm</code>, <code>windows10XManagement</code>, <code>configManager</code>, <code>appleRemoteManagement</code>, <code>microsoftSense</code>, <code>exchangeOnline</code>, <code>edgeMAM</code>, <code>linuxMdm</code>, <code>enrollment</code>, <code>endpointPrivilegeManagement</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">templateFamily</td>
@@ -37438,6 +37650,145 @@
 </tr>
 </tbody>
 </table>
+<h3 id="devicemanagementconfigurationredirectsettingdefinition-"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfigv2-devicemanagementconfigurationredirectsettingdefinition?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationRedirectSettingDefinition </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">applicability</td>
+<td style="text-align: left;">deviceManagementConfigurationSettingApplicability</td>
+<td style="text-align: left;">Details which device setting is applicable on Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">accessTypes</td>
+<td style="text-align: left;">deviceManagementConfigurationSettingAccessTypes</td>
+<td style="text-align: left;">Read/write access mode of the setting Inherited from deviceManagementConfigurationSettingDefinition. Possible values are: <code>none</code>, <code>add</code>, <code>copy</code>, <code>delete</code>, <code>get</code>, <code>replace</code>, <code>execute</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">keywords</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Tokens which to search settings on Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">infoUrls</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">List of links more info for the setting can be found at Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">occurrence</td>
+<td style="text-align: left;">deviceManagementConfigurationSettingOccurrence</td>
+<td style="text-align: left;">Indicates whether the setting is required or not Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">baseUri</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Base CSP Path Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">offsetUri</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Offset CSP Path from Base Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">rootDefinitionId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Root setting definition if the setting is a child setting. Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">categoryId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Specifies the area group under which the setting is configured in a specified configuration service provider (CSP) Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">settingUsage</td>
+<td style="text-align: left;">deviceManagementConfigurationSettingUsage</td>
+<td style="text-align: left;">Setting type, for example, configuration and compliance Inherited from deviceManagementConfigurationSettingDefinition. Possible values are: <code>none</code>, <code>configuration</code>, <code>compliance</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">uxBehavior</td>
+<td style="text-align: left;">deviceManagementConfigurationControlType</td>
+<td style="text-align: left;">Setting control type representation in the UX Inherited from deviceManagementConfigurationSettingDefinition. Possible values are: <code>default</code>, <code>dropdown</code>, <code>smallTextBox</code>, <code>largeTextBox</code>, <code>toggle</code>, <code>multiheaderGrid</code>, <code>contextPane</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">visibility</td>
+<td style="text-align: left;">deviceManagementConfigurationSettingVisibility</td>
+<td style="text-align: left;">Setting visibility scope to UX Inherited from deviceManagementConfigurationSettingDefinition. Possible values are: <code>none</code>, <code>settingsCatalog</code>, <code>template</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">referredSettingInformationList</td>
+<td style="text-align: left;">deviceManagementConfigurationReferredSettingInformation collection</td>
+<td style="text-align: left;">List of referred setting information. Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifier for item Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Description of the item Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">helpText</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Help text of the item Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the item Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Display name of the item Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">version</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Item Version Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">deepLink</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A deep link that points to the specific location in the Intune console where feature support must be managed from.</td>
+</tr>
+<tr>
+<td style="text-align: left;">redirectMessage</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A message that explains that clicking the link will redirect the user to a supported page to manage the settings.</td>
+</tr>
+<tr>
+<td style="text-align: left;">redirectReason</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Indicates the reason for redirecting the user to an alternative location in the console.  For example: WiFi profiles are not supported in the settings catalog and must be created with a template policy.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="devicemanagementconfigurationreferredsettinginformation-"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfigv2-devicemanagementconfigurationreferredsettinginformation?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationReferredSettingInformation </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">settingDefinitionId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Setting definition id that is being referred to a setting. Applicable for reusable setting</td>
+</tr>
+</tbody>
+</table>
 <h3 id="devicemanagementconfigurationsetting-"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfigv2-devicemanagementconfigurationsetting?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationSetting </a></h3>
 <table>
 <thead>
@@ -37457,6 +37808,168 @@
 <td style="text-align: left;">settingInstance</td>
 <td style="text-align: left;">deviceManagementConfigurationSettingInstance</td>
 <td style="text-align: left;">Setting Instance</td>
+</tr>
+</tbody>
+</table>
+<h3 id="intune-deviceconfigv2-devicemanagementconfigurationsettingaccesstypes"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfigv2-devicemanagementconfigurationsettingaccesstypes?view=graph-rest-1.0&amp;tabs=http">intune-deviceconfigv2-devicemanagementconfigurationsettingaccesstypes</a></h3>
+<h3 id="devicemanagementconfigurationsettingapplicability-"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfigv2-devicemanagementconfigurationsettingapplicability?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationSettingApplicability </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">description of the setting</td>
+</tr>
+<tr>
+<td style="text-align: left;">platform</td>
+<td style="text-align: left;">deviceManagementConfigurationPlatforms</td>
+<td style="text-align: left;">Platform setting can be applied on. Possible values are: <code>none</code>, <code>android</code>, <code>iOS</code>, <code>macOS</code>, <code>windows10X</code>, <code>windows10</code>, <code>linux</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">deviceMode</td>
+<td style="text-align: left;">deviceManagementConfigurationDeviceMode</td>
+<td style="text-align: left;">Device Mode that setting can be applied on. Possible values are: <code>none</code>, <code>kiosk</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">technologies</td>
+<td style="text-align: left;">deviceManagementConfigurationTechnologies</td>
+<td style="text-align: left;">Which technology channels this setting can be deployed through. Possible values are: <code>none</code>, <code>mdm</code>, <code>windows10XManagement</code>, <code>configManager</code>, <code>appleRemoteManagement</code>, <code>microsoftSense</code>, <code>exchangeOnline</code>, <code>edgeMAM</code>, <code>linuxMdm</code>, <code>enrollment</code>, <code>endpointPrivilegeManagement</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="devicemanagementconfigurationsettingdefinition-"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfigv2-devicemanagementconfigurationsettingdefinition?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationSettingDefinition </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">applicability</td>
+<td style="text-align: left;">deviceManagementConfigurationSettingApplicability</td>
+<td style="text-align: left;">Details which device setting is applicable on</td>
+</tr>
+<tr>
+<td style="text-align: left;">accessTypes</td>
+<td style="text-align: left;">deviceManagementConfigurationSettingAccessTypes</td>
+<td style="text-align: left;">Read/write access mode of the setting. Possible values are: <code>none</code>, <code>add</code>, <code>copy</code>, <code>delete</code>, <code>get</code>, <code>replace</code>, <code>execute</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">keywords</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Tokens which to search settings on</td>
+</tr>
+<tr>
+<td style="text-align: left;">infoUrls</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">List of links more info for the setting can be found at</td>
+</tr>
+<tr>
+<td style="text-align: left;">occurrence</td>
+<td style="text-align: left;">deviceManagementConfigurationSettingOccurrence</td>
+<td style="text-align: left;">Indicates whether the setting is required or not</td>
+</tr>
+<tr>
+<td style="text-align: left;">baseUri</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Base CSP Path</td>
+</tr>
+<tr>
+<td style="text-align: left;">offsetUri</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Offset CSP Path from Base</td>
+</tr>
+<tr>
+<td style="text-align: left;">rootDefinitionId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Root setting definition if the setting is a child setting.</td>
+</tr>
+<tr>
+<td style="text-align: left;">categoryId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)</td>
+</tr>
+<tr>
+<td style="text-align: left;">settingUsage</td>
+<td style="text-align: left;">deviceManagementConfigurationSettingUsage</td>
+<td style="text-align: left;">Setting type, for example, configuration and compliance. Possible values are: <code>none</code>, <code>configuration</code>, <code>compliance</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">uxBehavior</td>
+<td style="text-align: left;">deviceManagementConfigurationControlType</td>
+<td style="text-align: left;">Setting control type representation in the UX. Possible values are: <code>default</code>, <code>dropdown</code>, <code>smallTextBox</code>, <code>largeTextBox</code>, <code>toggle</code>, <code>multiheaderGrid</code>, <code>contextPane</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">visibility</td>
+<td style="text-align: left;">deviceManagementConfigurationSettingVisibility</td>
+<td style="text-align: left;">Setting visibility scope to UX. Possible values are: <code>none</code>, <code>settingsCatalog</code>, <code>template</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">referredSettingInformationList</td>
+<td style="text-align: left;">deviceManagementConfigurationReferredSettingInformation collection</td>
+<td style="text-align: left;">List of referred setting information.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifier for item</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Description of the item</td>
+</tr>
+<tr>
+<td style="text-align: left;">helpText</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Help text of the item</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the item</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Display name of the item</td>
+</tr>
+<tr>
+<td style="text-align: left;">version</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Item Version</td>
+</tr>
+</tbody>
+</table>
+<h3 id="devicemanagementconfigurationsettingdependedonby-"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfigv2-devicemanagementconfigurationsettingdependedonby?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationSettingDependedOnBy </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">dependedOnBy</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifier of child setting that is dependent on the current setting</td>
+</tr>
+<tr>
+<td style="text-align: left;">required</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Value that determines if the child setting is required based on the parent setting's selection</td>
 </tr>
 </tbody>
 </table>
@@ -37592,6 +38105,150 @@
 </tr>
 </tbody>
 </table>
+<h3 id="devicemanagementconfigurationsettinggroupdefinition-"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfigv2-devicemanagementconfigurationsettinggroupdefinition?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationSettingGroupDefinition </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">applicability</td>
+<td style="text-align: left;">deviceManagementConfigurationSettingApplicability</td>
+<td style="text-align: left;">Details which device setting is applicable on Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">accessTypes</td>
+<td style="text-align: left;">deviceManagementConfigurationSettingAccessTypes</td>
+<td style="text-align: left;">Read/write access mode of the setting Inherited from deviceManagementConfigurationSettingDefinition. Possible values are: <code>none</code>, <code>add</code>, <code>copy</code>, <code>delete</code>, <code>get</code>, <code>replace</code>, <code>execute</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">keywords</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Tokens which to search settings on Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">infoUrls</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">List of links more info for the setting can be found at Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">occurrence</td>
+<td style="text-align: left;">deviceManagementConfigurationSettingOccurrence</td>
+<td style="text-align: left;">Indicates whether the setting is required or not Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">baseUri</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Base CSP Path Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">offsetUri</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Offset CSP Path from Base Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">rootDefinitionId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Root setting definition if the setting is a child setting. Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">categoryId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Specifies the area group under which the setting is configured in a specified configuration service provider (CSP) Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">settingUsage</td>
+<td style="text-align: left;">deviceManagementConfigurationSettingUsage</td>
+<td style="text-align: left;">Setting type, for example, configuration and compliance Inherited from deviceManagementConfigurationSettingDefinition. Possible values are: <code>none</code>, <code>configuration</code>, <code>compliance</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">uxBehavior</td>
+<td style="text-align: left;">deviceManagementConfigurationControlType</td>
+<td style="text-align: left;">Setting control type representation in the UX Inherited from deviceManagementConfigurationSettingDefinition. Possible values are: <code>default</code>, <code>dropdown</code>, <code>smallTextBox</code>, <code>largeTextBox</code>, <code>toggle</code>, <code>multiheaderGrid</code>, <code>contextPane</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">visibility</td>
+<td style="text-align: left;">deviceManagementConfigurationSettingVisibility</td>
+<td style="text-align: left;">Setting visibility scope to UX Inherited from deviceManagementConfigurationSettingDefinition. Possible values are: <code>none</code>, <code>settingsCatalog</code>, <code>template</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">referredSettingInformationList</td>
+<td style="text-align: left;">deviceManagementConfigurationReferredSettingInformation collection</td>
+<td style="text-align: left;">List of referred setting information. Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifier for item Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Description of the item Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">helpText</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Help text of the item Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the item Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Display name of the item Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">version</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Item Version Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">childIds</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Dependent child settings to this group of settings</td>
+</tr>
+<tr>
+<td style="text-align: left;">dependentOn</td>
+<td style="text-align: left;">deviceManagementConfigurationDependentOn collection</td>
+<td style="text-align: left;">List of Dependencies for the setting group</td>
+</tr>
+<tr>
+<td style="text-align: left;">dependedOnBy</td>
+<td style="text-align: left;">deviceManagementConfigurationSettingDependedOnBy collection</td>
+<td style="text-align: left;">List of child settings that depend on this setting</td>
+</tr>
+</tbody>
+</table>
+<h3 id="devicemanagementconfigurationsettinginstance-"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfigv2-devicemanagementconfigurationsettinginstance?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationSettingInstance </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">settingDefinitionId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Setting Definition Id</td>
+</tr>
+<tr>
+<td style="text-align: left;">settingInstanceTemplateReference</td>
+<td style="text-align: left;">deviceManagementConfigurationSettingInstanceTemplateReference</td>
+<td style="text-align: left;">Setting Instance Template Reference</td>
+</tr>
+</tbody>
+</table>
 <h3 id="devicemanagementconfigurationsettinginstancetemplate-"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfigv2-devicemanagementconfigurationsettinginstancetemplate?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationSettingInstanceTemplate </a></h3>
 <table>
 <thead>
@@ -37619,6 +38276,28 @@
 </tr>
 </tbody>
 </table>
+<h3 id="devicemanagementconfigurationsettingoccurrence-"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfigv2-devicemanagementconfigurationsettingoccurrence?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationSettingOccurrence </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">minDeviceOccurrence</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Minimum times setting can be set on device. A MinDeviceOccurrence of 0 means setting is optional</td>
+</tr>
+<tr>
+<td style="text-align: left;">maxDeviceOccurrence</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Maximum times setting can be set on device.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="devicemanagementconfigurationsettingtemplate-"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfigv2-devicemanagementconfigurationsettingtemplate?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationSettingTemplate </a></h3>
 <table>
 <thead>
@@ -37641,6 +38320,35 @@
 </tr>
 </tbody>
 </table>
+<h3 id="intune-deviceconfigv2-devicemanagementconfigurationsettingusage"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfigv2-devicemanagementconfigurationsettingusage?view=graph-rest-1.0&amp;tabs=http">intune-deviceconfigv2-devicemanagementconfigurationsettingusage</a></h3>
+<h3 id="devicemanagementconfigurationsettingvalue-"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfigv2-devicemanagementconfigurationsettingvalue?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationSettingValue </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">settingValueTemplateReference</td>
+<td style="text-align: left;">deviceManagementConfigurationSettingValueTemplateReference</td>
+<td style="text-align: left;">Setting value template reference</td>
+</tr>
+</tbody>
+</table>
+<h3 id="devicemanagementconfigurationsettingvaluedefinition-"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfigv2-devicemanagementconfigurationsettingvaluedefinition?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationSettingValueDefinition </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+</table>
+<h3 id="intune-deviceconfigv2-devicemanagementconfigurationsettingvisibility"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfigv2-devicemanagementconfigurationsettingvisibility?view=graph-rest-1.0&amp;tabs=http">intune-deviceconfigv2-devicemanagementconfigurationsettingvisibility</a></h3>
 <h3 id="devicemanagementconfigurationsimplesettingcollectiondefinition-"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfigv2-devicemanagementconfigurationsimplesettingcollectiondefinition?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationSimpleSettingCollectionDefinition </a></h3>
 <table>
 <thead>
@@ -37778,6 +38486,134 @@
 </tr>
 </tbody>
 </table>
+<h3 id="devicemanagementconfigurationsimplesettingdefinition-"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfigv2-devicemanagementconfigurationsimplesettingdefinition?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationSimpleSettingDefinition </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">applicability</td>
+<td style="text-align: left;">deviceManagementConfigurationSettingApplicability</td>
+<td style="text-align: left;">Details which device setting is applicable on Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">accessTypes</td>
+<td style="text-align: left;">deviceManagementConfigurationSettingAccessTypes</td>
+<td style="text-align: left;">Read/write access mode of the setting Inherited from deviceManagementConfigurationSettingDefinition. Possible values are: <code>none</code>, <code>add</code>, <code>copy</code>, <code>delete</code>, <code>get</code>, <code>replace</code>, <code>execute</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">keywords</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Tokens which to search settings on Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">infoUrls</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">List of links more info for the setting can be found at Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">occurrence</td>
+<td style="text-align: left;">deviceManagementConfigurationSettingOccurrence</td>
+<td style="text-align: left;">Indicates whether the setting is required or not Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">baseUri</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Base CSP Path Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">offsetUri</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Offset CSP Path from Base Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">rootDefinitionId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Root setting definition if the setting is a child setting. Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">categoryId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Specifies the area group under which the setting is configured in a specified configuration service provider (CSP) Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">settingUsage</td>
+<td style="text-align: left;">deviceManagementConfigurationSettingUsage</td>
+<td style="text-align: left;">Setting type, for example, configuration and compliance Inherited from deviceManagementConfigurationSettingDefinition. Possible values are: <code>none</code>, <code>configuration</code>, <code>compliance</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">uxBehavior</td>
+<td style="text-align: left;">deviceManagementConfigurationControlType</td>
+<td style="text-align: left;">Setting control type representation in the UX Inherited from deviceManagementConfigurationSettingDefinition. Possible values are: <code>default</code>, <code>dropdown</code>, <code>smallTextBox</code>, <code>largeTextBox</code>, <code>toggle</code>, <code>multiheaderGrid</code>, <code>contextPane</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">visibility</td>
+<td style="text-align: left;">deviceManagementConfigurationSettingVisibility</td>
+<td style="text-align: left;">Setting visibility scope to UX Inherited from deviceManagementConfigurationSettingDefinition. Possible values are: <code>none</code>, <code>settingsCatalog</code>, <code>template</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">referredSettingInformationList</td>
+<td style="text-align: left;">deviceManagementConfigurationReferredSettingInformation collection</td>
+<td style="text-align: left;">List of referred setting information. Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifier for item Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Description of the item Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">helpText</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Help text of the item Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the item Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Display name of the item Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">version</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Item Version Inherited from deviceManagementConfigurationSettingDefinition</td>
+</tr>
+<tr>
+<td style="text-align: left;">valueDefinition</td>
+<td style="text-align: left;">deviceManagementConfigurationSettingValueDefinition</td>
+<td style="text-align: left;">Definition of the value for this setting</td>
+</tr>
+<tr>
+<td style="text-align: left;">defaultValue</td>
+<td style="text-align: left;">deviceManagementConfigurationSettingValue</td>
+<td style="text-align: left;">Default setting value for this setting</td>
+</tr>
+<tr>
+<td style="text-align: left;">dependentOn</td>
+<td style="text-align: left;">deviceManagementConfigurationDependentOn collection</td>
+<td style="text-align: left;">list of parent settings this setting is dependent on</td>
+</tr>
+<tr>
+<td style="text-align: left;">dependedOnBy</td>
+<td style="text-align: left;">deviceManagementConfigurationSettingDependedOnBy collection</td>
+<td style="text-align: left;">list of child settings that depend on this setting</td>
+</tr>
+</tbody>
+</table>
+<h3 id="intune-deviceconfigv2-devicemanagementconfigurationtechnologies"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfigv2-devicemanagementconfigurationtechnologies?view=graph-rest-1.0&amp;tabs=http">intune-deviceconfigv2-devicemanagementconfigurationtechnologies</a></h3>
 <h3 id="intune-deviceconfigv2-devicemanagementconfigurationtemplatefamily"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfigv2-devicemanagementconfigurationtemplatefamily?view=graph-rest-1.0&amp;tabs=http">intune-deviceconfigv2-devicemanagementconfigurationtemplatefamily</a></h3>
 <h3 id="devicemanagementprioritymetadata-"><a href="https://docs.microsoft.com/graph/api/resources/intune-deviceconfigv2-devicemanagementprioritymetadata?view=graph-rest-1.0&amp;tabs=http">deviceManagementPriorityMetaData </a></h3>
 <table>
@@ -38274,6 +39110,11 @@
 <td style="text-align: left;">isAssigned</td>
 <td style="text-align: left;">Boolean</td>
 <td style="text-align: left;">Signifies whether or not the intent is assigned to users</td>
+</tr>
+<tr>
+<td style="text-align: left;">isMigratingToConfigurationPolicy</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Signifies whether or not the intent is being migrated to the configurationPolicies endpoint</td>
 </tr>
 <tr>
 <td style="text-align: left;">lastModifiedDateTime</td>
@@ -47881,18 +48722,6 @@ The input must match the following regular expression: '^(</p>
 <th style="text-align: left;">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Key of this setting within the policy which contains it. Automatically generated.</td>
-</tr>
-<tr>
-<td style="text-align: left;">settingInstance</td>
-<td style="text-align: left;">deviceManagementConfigurationSettingInstance</td>
-<td style="text-align: left;">Setting Instance</td>
-</tr>
-</tbody>
 </table>
 <h3 id="devicemanagementconfigurationsettinggroupcollectiondefinition--1"><a href="https://docs.microsoft.com/graph/api/resources/intune-mam-devicemanagementconfigurationsettinggroupcollectiondefinition?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationSettingGroupCollectionDefinition </a></h3>
 <table>
@@ -52472,7 +53301,7 @@ The input must match the following regular expression: '^(</p>
 <tr>
 <td style="text-align: left;">platform</td>
 <td style="text-align: left;">devicePlatformType</td>
-<td style="text-align: left;">Platform type of the devices on which the Assignment Filter will be applicable. Possible values are: <code>android</code>, <code>androidForWork</code>, <code>iOS</code>, <code>macOS</code>, <code>windowsPhone81</code>, <code>windows81AndLater</code>, <code>windows10AndLater</code>, <code>androidWorkProfile</code>, <code>unknown</code>.</td>
+<td style="text-align: left;">Platform type of the devices on which the Assignment Filter will be applicable. Possible values are: <code>android</code>, <code>androidForWork</code>, <code>iOS</code>, <code>macOS</code>, <code>windowsPhone81</code>, <code>windows81AndLater</code>, <code>windows10AndLater</code>, <code>androidWorkProfile</code>, <code>unknown</code>, <code>androidAOSP</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">rule</td>
@@ -53224,7 +54053,7 @@ The input must match the following regular expression: '^(</p>
 <tr>
 <td style="text-align: left;">platform</td>
 <td style="text-align: left;">devicePlatformType</td>
-<td style="text-align: left;">Platform type of the devices on which the Assignment Filter will be applicable. Inherited from deviceAndAppManagementAssignmentFilter. Possible values are: <code>android</code>, <code>androidForWork</code>, <code>iOS</code>, <code>macOS</code>, <code>windowsPhone81</code>, <code>windows81AndLater</code>, <code>windows10AndLater</code>, <code>androidWorkProfile</code>, <code>unknown</code>.</td>
+<td style="text-align: left;">Platform type of the devices on which the Assignment Filter will be applicable. Inherited from deviceAndAppManagementAssignmentFilter. Possible values are: <code>android</code>, <code>androidForWork</code>, <code>iOS</code>, <code>macOS</code>, <code>windowsPhone81</code>, <code>windows81AndLater</code>, <code>windows10AndLater</code>, <code>androidWorkProfile</code>, <code>unknown</code>, <code>androidAOSP</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">rule</td>
@@ -55162,7 +55991,7 @@ The input must match the following regular expression: '^(</p>
 </tr>
 </tbody>
 </table>
-<h3 id="devicemanagementconfigurationchoicesettingdefinition-"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationchoicesettingdefinition?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationChoiceSettingDefinition </a></h3>
+<h3 id="devicemanagementconfigurationchoicesettingdefinition--1"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationchoicesettingdefinition?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationChoiceSettingDefinition </a></h3>
 <table>
 <thead>
 <tr>
@@ -55280,7 +56109,7 @@ The input must match the following regular expression: '^(</p>
 </tbody>
 </table>
 <h3 id="intune-shared-devicemanagementconfigurationcontroltype"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationcontroltype?view=graph-rest-1.0&amp;tabs=http">intune-shared-devicemanagementconfigurationcontroltype</a></h3>
-<h3 id="devicemanagementconfigurationdependenton-"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationdependenton?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationDependentOn </a></h3>
+<h3 id="devicemanagementconfigurationdependenton--1"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationdependenton?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationDependentOn </a></h3>
 <table>
 <thead>
 <tr>
@@ -55302,7 +56131,7 @@ The input must match the following regular expression: '^(</p>
 </tr>
 </tbody>
 </table>
-<h3 id="devicemanagementconfigurationoptiondefinition-"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationoptiondefinition?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationOptionDefinition </a></h3>
+<h3 id="devicemanagementconfigurationoptiondefinition--1"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationoptiondefinition?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationOptionDefinition </a></h3>
 <table>
 <thead>
 <tr>
@@ -55354,8 +56183,7 @@ The input must match the following regular expression: '^(</p>
 </tr>
 </tbody>
 </table>
-<h3 id="intune-shared-devicemanagementconfigurationplatforms"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationplatforms?view=graph-rest-1.0&amp;tabs=http">intune-shared-devicemanagementconfigurationplatforms</a></h3>
-<h3 id="devicemanagementconfigurationredirectsettingdefinition-"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationredirectsettingdefinition?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationRedirectSettingDefinition </a></h3>
+<h3 id="devicemanagementconfigurationredirectsettingdefinition--1"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationredirectsettingdefinition?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationRedirectSettingDefinition </a></h3>
 <table>
 <thead>
 <tr>
@@ -55477,7 +56305,7 @@ The input must match the following regular expression: '^(</p>
 </tr>
 </tbody>
 </table>
-<h3 id="devicemanagementconfigurationreferredsettinginformation-"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationreferredsettinginformation?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationReferredSettingInformation </a></h3>
+<h3 id="devicemanagementconfigurationreferredsettinginformation--1"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationreferredsettinginformation?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationReferredSettingInformation </a></h3>
 <table>
 <thead>
 <tr>
@@ -55495,7 +56323,7 @@ The input must match the following regular expression: '^(</p>
 </tbody>
 </table>
 <h3 id="intune-shared-devicemanagementconfigurationsettingaccesstypes"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationsettingaccesstypes?view=graph-rest-1.0&amp;tabs=http">intune-shared-devicemanagementconfigurationsettingaccesstypes</a></h3>
-<h3 id="devicemanagementconfigurationsettingapplicability-"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationsettingapplicability?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationSettingApplicability </a></h3>
+<h3 id="devicemanagementconfigurationsettingapplicability--1"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationsettingapplicability?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationSettingApplicability </a></h3>
 <table>
 <thead>
 <tr>
@@ -55527,7 +56355,7 @@ The input must match the following regular expression: '^(</p>
 </tr>
 </tbody>
 </table>
-<h3 id="devicemanagementconfigurationsettingdefinition-"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationsettingdefinition?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationSettingDefinition </a></h3>
+<h3 id="devicemanagementconfigurationsettingdefinition--1"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationsettingdefinition?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationSettingDefinition </a></h3>
 <table>
 <thead>
 <tr>
@@ -55634,7 +56462,7 @@ The input must match the following regular expression: '^(</p>
 </tr>
 </tbody>
 </table>
-<h3 id="devicemanagementconfigurationsettingdependedonby-"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationsettingdependedonby?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationSettingDependedOnBy </a></h3>
+<h3 id="devicemanagementconfigurationsettingdependedonby--1"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationsettingdependedonby?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationSettingDependedOnBy </a></h3>
 <table>
 <thead>
 <tr>
@@ -55656,7 +56484,7 @@ The input must match the following regular expression: '^(</p>
 </tr>
 </tbody>
 </table>
-<h3 id="devicemanagementconfigurationsettinggroupdefinition-"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationsettinggroupdefinition?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationSettingGroupDefinition </a></h3>
+<h3 id="devicemanagementconfigurationsettinggroupdefinition--1"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationsettinggroupdefinition?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationSettingGroupDefinition </a></h3>
 <table>
 <thead>
 <tr>
@@ -55778,29 +56606,7 @@ The input must match the following regular expression: '^(</p>
 </tr>
 </tbody>
 </table>
-<h3 id="devicemanagementconfigurationsettinginstance-"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationsettinginstance?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationSettingInstance </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">settingDefinitionId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Setting Definition Id</td>
-</tr>
-<tr>
-<td style="text-align: left;">settingInstanceTemplateReference</td>
-<td style="text-align: left;">deviceManagementConfigurationSettingInstanceTemplateReference</td>
-<td style="text-align: left;">Setting Instance Template Reference</td>
-</tr>
-</tbody>
-</table>
-<h3 id="devicemanagementconfigurationsettingoccurrence-"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationsettingoccurrence?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationSettingOccurrence </a></h3>
+<h3 id="devicemanagementconfigurationsettingoccurrence--1"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationsettingoccurrence?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationSettingOccurrence </a></h3>
 <table>
 <thead>
 <tr>
@@ -55823,7 +56629,7 @@ The input must match the following regular expression: '^(</p>
 </tbody>
 </table>
 <h3 id="intune-shared-devicemanagementconfigurationsettingusage"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationsettingusage?view=graph-rest-1.0&amp;tabs=http">intune-shared-devicemanagementconfigurationsettingusage</a></h3>
-<h3 id="devicemanagementconfigurationsettingvalue-"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationsettingvalue?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationSettingValue </a></h3>
+<h3 id="devicemanagementconfigurationsettingvalue--1"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationsettingvalue?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationSettingValue </a></h3>
 <table>
 <thead>
 <tr>
@@ -55840,7 +56646,7 @@ The input must match the following regular expression: '^(</p>
 </tr>
 </tbody>
 </table>
-<h3 id="devicemanagementconfigurationsettingvaluedefinition-"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationsettingvaluedefinition?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationSettingValueDefinition </a></h3>
+<h3 id="devicemanagementconfigurationsettingvaluedefinition--1"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationsettingvaluedefinition?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationSettingValueDefinition </a></h3>
 <table>
 <thead>
 <tr>
@@ -55851,7 +56657,7 @@ The input must match the following regular expression: '^(</p>
 </thead>
 </table>
 <h3 id="intune-shared-devicemanagementconfigurationsettingvisibility"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationsettingvisibility?view=graph-rest-1.0&amp;tabs=http">intune-shared-devicemanagementconfigurationsettingvisibility</a></h3>
-<h3 id="devicemanagementconfigurationsimplesettingdefinition-"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationsimplesettingdefinition?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationSimpleSettingDefinition </a></h3>
+<h3 id="devicemanagementconfigurationsimplesettingdefinition--1"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationsimplesettingdefinition?view=graph-rest-1.0&amp;tabs=http">deviceManagementConfigurationSimpleSettingDefinition </a></h3>
 <table>
 <thead>
 <tr>
@@ -55978,7 +56784,6 @@ The input must match the following regular expression: '^(</p>
 </tr>
 </tbody>
 </table>
-<h3 id="intune-shared-devicemanagementconfigurationtechnologies"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementconfigurationtechnologies?view=graph-rest-1.0&amp;tabs=http">intune-shared-devicemanagementconfigurationtechnologies</a></h3>
 <h3 id="devicemanagementderivedcredentialsettings-"><a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementderivedcredentialsettings?view=graph-rest-1.0&amp;tabs=http">deviceManagementDerivedCredentialSettings </a></h3>
 <table>
 <thead>
