@@ -712,6 +712,11 @@
 <td style="text-align: left;"><strong>Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead.</strong> Represents whether the user should be included in the Outlook global address list. See Known issue.</td>
 </tr>
 <tr>
+<td style="text-align: left;">signInActivity</td>
+<td style="text-align: left;">signInActivity</td>
+<td style="text-align: left;">Get the last signed-in date and request ID of the sign-in for a given user. Read-only.<br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>) <em>but</em> not with any other filterable properties. <br><br><strong>Note:</strong> <br><li>Details for this property require an Azure AD Premium P1/P2 license and the <strong>AuditLog.Read.All</strong> permission.<li>There's a known issue with retrieving this property.<li>This property is not returned for a user who has never signed in or last signed in before April 2020.</li></li></li></td>
+</tr>
+<tr>
 <td style="text-align: left;">signInSessionsValidFromDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset. <br><br>Returned only on <code>$select</code>.</td>

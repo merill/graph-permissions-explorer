@@ -1990,7 +1990,7 @@
 <tr>
 <td style="text-align: left;">tags</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Custom strings that can be used to categorize and identify the application. Not nullable. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
+<td style="text-align: left;">Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here will also appear in the <strong>tags</strong> property of any associated service principals.<br><br>Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">tokenEncryptionKeyId</td>
@@ -4263,7 +4263,7 @@
 <tr>
 <td style="text-align: left;">tags</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Custom strings that can be used to categorize and identify the service principal. Not nullable. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
+<td style="text-align: left;">Custom strings that can be used to categorize and identify the service principal. Not nullable. The value is the union of strings set here and on the associated application entity's <strong>tags</strong> property.<br><br>Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">tokenEncryptionKeyId</td>
@@ -5190,6 +5190,11 @@
 <td style="text-align: left;">showInAddressList</td>
 <td style="text-align: left;">Boolean</td>
 <td style="text-align: left;"><strong>Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead.</strong> Represents whether the user should be included in the Outlook global address list. See Known issue.</td>
+</tr>
+<tr>
+<td style="text-align: left;">signInActivity</td>
+<td style="text-align: left;">signInActivity</td>
+<td style="text-align: left;">Get the last signed-in date and request ID of the sign-in for a given user. Read-only.<br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>) <em>but</em> not with any other filterable properties. <br><br><strong>Note:</strong> <br><li>Details for this property require an Azure AD Premium P1/P2 license and the <strong>AuditLog.Read.All</strong> permission.<li>There's a known issue with retrieving this property.<li>This property is not returned for a user who has never signed in or last signed in before April 2020.</li></li></li></td>
 </tr>
 <tr>
 <td style="text-align: left;">signInSessionsValidFromDateTime</td>
