@@ -1587,6 +1587,48 @@
 </tr>
 </tbody>
 </table>
+<h3 id="plannertaskrecurrence-"><a href="https://docs.microsoft.com/graph/api/resources/plannertaskrecurrence?view=graph-rest-1.0&amp;tabs=http">plannerTaskRecurrence </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">nextInSeriesTaskId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The <strong>taskId</strong> of the next task in this series. This value is assigned at the time the next task in the series is created, and is <code>null</code> prior to that time.</td>
+</tr>
+<tr>
+<td style="text-align: left;">occurrenceId</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The 1-based index of this task within the recurrence series. The first task in a series has the value <code>1</code>, the next task in the series has the value <code>2</code>, and so on.</td>
+</tr>
+<tr>
+<td style="text-align: left;">previousInSeriesTaskId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The <strong>taskId</strong> of the previous task in this series. <code>null</code> for the first task in a series since it has no predecessor. All subsequent tasks in the series have a value that corresponds to their predecessors.</td>
+</tr>
+<tr>
+<td style="text-align: left;">recurrenceStartDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when this recurrence series begin. For the first task in a series (<strong>occurrenceId</strong> = <code>1</code>) this value is copied from <strong>schedule.patternStartDateTime</strong>. For subsequent tasks in the series (<strong>occurrenceId</strong> &gt;= <code>2</code>) this value is copied from the previous task and never changes; it preserves the start date of the recurring series. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">schedule</td>
+<td style="text-align: left;">plannerRecurrenceSchedule</td>
+<td style="text-align: left;">The schedule for recurrence. Clients define and edit recurrence by specifying the schedule. If <strong>nextInSeriesTaskId</strong> isn't assigned, clients may terminate the series by assigning <code>null</code> to this property.</td>
+</tr>
+<tr>
+<td style="text-align: left;">seriesId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The recurrence series this task belongs to. A GUID-based value that serves as the unique identifier for a series.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="planneruser-"><a href="https://docs.microsoft.com/graph/api/resources/planneruser?view=graph-rest-1.0&amp;tabs=http">plannerUser </a></h3>
 <table>
 <thead>
