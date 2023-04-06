@@ -311,6 +311,11 @@
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/identitygovernance-workflow-createnewversion?view=graph-rest-1.0&amp;tabs=http">POST /identityGovernance/lifecycleWorkflows/workflows/{workflowId}/createNewVersion</a></td>
 </tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0&amp;tabs=http">POST /identityGovernance/lifecycleWorkflows/workflows/{workflowId}/tasks/{taskId}/taskProcessingResults/{taskProcessingResultsId}/resume</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="delegate-permission">Delegate Permission</h2>
@@ -365,6 +370,33 @@
 </table>
 <h2 id="resources">Resources</h2>
 <h3 id="customextensionauthenticationconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/customextensionauthenticationconfiguration?view=graph-rest-1.0&amp;tabs=http">customExtensionAuthenticationConfiguration </a></h3>
+<h3 id="customextensioncalloutresponse-"><a href="https://docs.microsoft.com/graph/api/resources/customextensioncalloutresponse?view=graph-rest-1.0&amp;tabs=http">customExtensionCalloutResponse </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">data</td>
+<td style="text-align: left;">customExtensionData</td>
+<td style="text-align: left;">Contains the data the external system provides to the custom extension endpoint.</td>
+</tr>
+<tr>
+<td style="text-align: left;">source</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifies the external system or event context related to the response.</td>
+</tr>
+<tr>
+<td style="text-align: left;">type</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Describes the type of event related to the response.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="customextensionclientconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/customextensionclientconfiguration?view=graph-rest-1.0&amp;tabs=http">customExtensionClientConfiguration </a></h3>
 <table>
 <thead>
@@ -480,7 +512,24 @@
 <tr>
 <td style="text-align: left;">authorizedApps</td>
 <td style="text-align: left;">microsoft.graph.application collection</td>
-<td style="text-align: left;">Unique identifier for the application object.</td>
+<td style="text-align: left;">A collection of unique identifiers or **a</td>
+</tr>
+</tbody>
+</table>
+<h3 id="customtaskextensioncallbackdata-"><a href="https://docs.microsoft.com/graph/api/resources/identitygovernance-customtaskextensioncallbackdata?view=graph-rest-1.0&amp;tabs=http">customTaskExtensionCallbackData </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">operationStatus</td>
+<td style="text-align: left;">microsoft.graph.identityGovernance.customTaskExtensionOperationStatus</td>
+<td style="text-align: left;">Operation status that's provided by the Azure Logic App indicating whenever the Azure Logic App has run successfully or not. Supported values: <code>completed</code>, <code>failed</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -1523,7 +1572,7 @@
 <tr>
 <td style="text-align: left;">signInActivity</td>
 <td style="text-align: left;">signInActivity</td>
-<td style="text-align: left;">Get the last signed-in date and request ID of the sign-in for a given user. Read-only.<br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>) <em>but</em> not with any other filterable properties. <br><br><strong>Note:</strong> <br><li>Details for this property require an Azure AD Premium P1/P2 license and the <strong>AuditLog.Read.All</strong> permission.<li>There's a known issue with retrieving this property.<li>This property is not returned for a user who has never signed in or last signed in before April 2020.</li></li></li></td>
+<td style="text-align: left;">Get the last signed-in date and request ID of the sign-in for a given user. Read-only.<br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>) <em>but</em> not with any other filterable properties. <br><br><strong>Note:</strong> <br><li>Details for this property require an Azure AD Premium P1/P2 license and the <strong>AuditLog.Read.All</strong> permission.<li>When you specify <code>$select=signInActivity</code> or <code>$filter=signInActivity</code> while listing users, the maximum page size is 120 users. Requests with <code>$top</code> set higher than 120 will fail. Requests with $top set higher than 120 will fail.<li>This property is not returned for a user who has never signed in or last signed in before April 2020.</li></li></li></td>
 </tr>
 <tr>
 <td style="text-align: left;">signInSessionsValidFromDateTime</td>
