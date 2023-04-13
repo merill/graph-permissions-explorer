@@ -109,7 +109,22 @@
 <tr>
 <td>V1</td>
 <td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/callrecords-callrecord-getpstnblockeduserslog?view=graph-rest-1.0&amp;tabs=http">GET /communications/callRecords/getPstnBlockedUsersLog(fromDateTime={fromDateTime},toDateTime={toDateTime})</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/callrecords-callrecord-getpstncalls?view=graph-rest-1.0&amp;tabs=http">GET /communications/callRecords/getPstnCalls</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/callrecords-callrecord-getpstnonlinemeetingdialoutreport?view=graph-rest-1.0&amp;tabs=http">GET /communications/callRecords/getPstnOnlineMeetingDialoutReport(fromDateTime={fromDateTime},toDateTime={toDateTime})</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/callrecords-callrecord-getsmslog?view=graph-rest-1.0&amp;tabs=http">GET /communications/callRecords/getSmsLog(fromDateTime={fromDateTime},toDateTime={toDateTime})</a></td>
 </tr>
 </tbody>
 </table>
@@ -254,6 +269,58 @@
 </tr>
 </tbody>
 </table>
+<h3 id="pstnblockeduserslogrow-"><a href="https://docs.microsoft.com/graph/api/resources/callrecords-pstnblockeduserslogrow?view=graph-rest-1.0&amp;tabs=http">pstnBlockedUsersLogRow </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">blockDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the user was blocked/unblocked from making PSTN calls. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">blockReason</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The reason why the user is blocked/unblocked from making calls.</td>
+</tr>
+<tr>
+<td style="text-align: left;">remediationId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier (GUID) for the blocking/unblocking action.</td>
+</tr>
+<tr>
+<td style="text-align: left;">userBlockMode</td>
+<td style="text-align: left;">microsoft.graph.callRecords.pstnUserBlockMode</td>
+<td style="text-align: left;">Indicates whether the user is blocked or unblocked from making PSTN calls in Microsoft Teams. The possible values are: <code>blocked</code>, <code>unblocked</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">userDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Display name of the user.</td>
+</tr>
+<tr>
+<td style="text-align: left;">userId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier (GUID) of the user in Azure Active Directory.</td>
+</tr>
+<tr>
+<td style="text-align: left;">userPrincipalName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.</td>
+</tr>
+<tr>
+<td style="text-align: left;">userTelephoneNumber</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">User's blocked number. For details, see E.164.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="pstncalllogrow-"><a href="https://docs.microsoft.com/graph/api/resources/callrecords-pstncalllogrow?view=graph-rest-1.0&amp;tabs=http">pstnCallLogRow </a></h3>
 <table>
 <thead>
@@ -373,6 +440,165 @@
 <td style="text-align: left;">userId</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Calling user's ID in Graph. GUID. This and other user info will be null/empty for bot call types (ucap_in, ucap_out).</td>
+</tr>
+<tr>
+<td style="text-align: left;">userPrincipalName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pstnonlinemeetingdialoutreport-"><a href="https://docs.microsoft.com/graph/api/resources/callrecords-pstnonlinemeetingdialoutreport?view=graph-rest-1.0&amp;tabs=http">pstnOnlineMeetingDialoutReport </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">currency</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Currency used to calculate the cost of the call. For details, see ISO 4217.</td>
+</tr>
+<tr>
+<td style="text-align: left;">destinationContext</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Indicates whether the call was <code>Domestic</code> (within a country or region) or <code>International</code> (outside a country or region) based on the user's location.</td>
+</tr>
+<tr>
+<td style="text-align: left;">totalCallCharge</td>
+<td style="text-align: left;">Decimal</td>
+<td style="text-align: left;">Total costs of all the calls within the selected time range, including call charges and connection fees.</td>
+</tr>
+<tr>
+<td style="text-align: left;">totalCalls</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Total number of dial-out calls within the selected time range.</td>
+</tr>
+<tr>
+<td style="text-align: left;">totalCallSeconds</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Total duration of all the calls within the selected time range, in seconds.</td>
+</tr>
+<tr>
+<td style="text-align: left;">usageLocation</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Country code of the user. For details, see ISO 3166-1 alpha-2.</td>
+</tr>
+<tr>
+<td style="text-align: left;">userDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Display name of the user.</td>
+</tr>
+<tr>
+<td style="text-align: left;">userId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier (GUID) of the user in Azure Active Directory.</td>
+</tr>
+<tr>
+<td style="text-align: left;">userPrincipalName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="smslogrow-"><a href="https://docs.microsoft.com/graph/api/resources/callrecords-smslogrow?view=graph-rest-1.0&amp;tabs=http">smsLogRow </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">callCharge</td>
+<td style="text-align: left;">Decimal</td>
+<td style="text-align: left;">Amount of money or cost of the SMS that is charged.</td>
+</tr>
+<tr>
+<td style="text-align: left;">currency</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Currency used to calculate the cost of the call. For details, see ISO 4217.</td>
+</tr>
+<tr>
+<td style="text-align: left;">destinationContext</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Indicates whether the SMS was <code>Domestic</code> (within a country or region) or <code>International</code> (outside a country or region) based on the user's location.</td>
+</tr>
+<tr>
+<td style="text-align: left;">destinationName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Country or region of a phone number that received the SMS.</td>
+</tr>
+<tr>
+<td style="text-align: left;">destinationNumber</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Partially obfuscated phone number that received the SMS. For details, see E.164.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier (GUID) for the SMS.</td>
+</tr>
+<tr>
+<td style="text-align: left;">licenseCapability</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The license used for the SMS.</td>
+</tr>
+<tr>
+<td style="text-align: left;">otherPartyCountryCode</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">For an outbound SMS, the country code of the receiver; otherwise (inbound SMS) the country code of the sender. For details, see ISO 3166-1 alpha-2.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sentDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the SMS was sent.</td>
+</tr>
+<tr>
+<td style="text-align: left;">smsId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">SMS identifier. Not guaranteed to be unique.</td>
+</tr>
+<tr>
+<td style="text-align: left;">smsType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Type of SMS such as outbound or inbound.</td>
+</tr>
+<tr>
+<td style="text-align: left;">smsUnits</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Number of SMS units sent/received.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sourceNumber</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Partially obfuscated phone number that sent the SMS. For details, see E.164.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tenantCountryCode</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Country code of the tenant. For details, see ISO 3166-1 alpha-2.</td>
+</tr>
+<tr>
+<td style="text-align: left;">userCountryCode</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Country code of the user. For details, see ISO 3166-1 alpha-2.</td>
+</tr>
+<tr>
+<td style="text-align: left;">userDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Display name of the user.</td>
+</tr>
+<tr>
+<td style="text-align: left;">userId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier (GUID) of the user in Azure Active Directory.</td>
 </tr>
 <tr>
 <td style="text-align: left;">userPrincipalName</td>
