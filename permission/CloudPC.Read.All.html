@@ -104,6 +104,11 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/manageddevice-getcloudpcremoteactionresults?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/managedDevices/{managedDeviceId}/getCloudPcRemoteActionResults</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/manageddevice-getcloudpcreviewstatus?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/managedDevices/{managedDeviceId}/getCloudPcReviewStatus</a></td>
 </tr>
 <tr>
@@ -158,7 +163,7 @@
 </tr>
 <tr>
 <td>V1</td>
-<td>D</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpc-getsupportedcloudpcremoteactions?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/virtualEndpoint/cloudPCs/{id}/getSupportedCloudPcRemoteActions</a></td>
 </tr>
 <tr>
@@ -230,6 +235,11 @@
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpcprovisioningpolicy-get?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/virtualEndpoint/provisioningPolicies/{id}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcexportjob-get?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/virtualEndpoint/reports/exportJobs/{cloudPcExportJobId}</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -369,7 +379,7 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpcorganizationsettings-update?view=graph-rest-1.0&amp;tabs=http">PATCH /deviceManagement/virtualEndpoint/organizationSettings</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcreports-post-exportjobs?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/virtualEndpoint/reports/exportJobs</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -776,6 +786,63 @@
 <td style="text-align: left;">version</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The image version. For example, <code>0.0.1</code> and <code>1.5.13</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cloudpcexportjob-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcexportjob?view=graph-rest-1.0&amp;tabs=http">cloudPcExportJob </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">expirationDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the export job expires.</td>
+</tr>
+<tr>
+<td style="text-align: left;">exportJobStatus</td>
+<td style="text-align: left;">cloudPcExportJobStatus</td>
+<td style="text-align: left;">The status of the export job. The possible values are: <code>notStarted</code>, <code>inProgress</code>, <code>completed</code>, <code>unknownFutureValue</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">exportUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The storage account URL of the exported report. It can be used to download the file.</td>
+</tr>
+<tr>
+<td style="text-align: left;">filter</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The filter applied on the report.</td>
+</tr>
+<tr>
+<td style="text-align: left;">format</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The format of the exported report.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the report. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">reportName</td>
+<td style="text-align: left;">cloudPcReportName</td>
+<td style="text-align: left;">The report name. The possible values are: <code>remoteConnectionHistoricalReports</code>, <code>dailyAggregatedRemoteConnectionReports</code>, <code>totalAggregatedRemoteConnectionReports</code>, <code>sharedUseLicenseUsageReport</code>, <code>sharedUseLicenseUsageRealTimeReport</code>, or <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">requestDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the export job was requested.</td>
+</tr>
+<tr>
+<td style="text-align: left;">select</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">The selected columns of the report.</td>
 </tr>
 </tbody>
 </table>
@@ -1212,6 +1279,53 @@
 <td style="text-align: left;">actionName</td>
 <td style="text-align: left;">cloudPcRemoteActionName</td>
 <td style="text-align: left;">The name of the supported Cloud PC remote action. Possible values are: <code>unknown</code>, <code>restart</code>, <code>rename</code>, <code>restore</code>, <code>resize</code>, <code>reprovision</code>, <code>troubleShoot</code>, <code>changeUserAccountType</code>, <code>placeUnderReview</code>. Default value is <code>unknown</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cloudpcremoteactionresult-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcremoteactionresult?view=graph-rest-1.0&amp;tabs=http">cloudPcRemoteActionResult </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">actionName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The specified action. Supported values in the Microsoft Endpoint Manager portal are: <code>Reprovision</code>, <code>Resize</code>, <code>Restore</code>. Supported values in enterprise Cloud PC devices are: <code>Reboot</code>, <code>Rename</code>, <code>Reprovision</code>, <code>Troubleshoot</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">actionState</td>
+<td style="text-align: left;">actionState</td>
+<td style="text-align: left;">State of the action. Possible values are: <code>None</code>, <code>pending</code>, <code>canceled</code>, <code>active</code>, <code>done</code>, <code>failed</code>, <code>notSupported</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">cloudPcId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The ID of the Cloud PC device on which the remote action is performed. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">managedDeviceId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The ID of the Intune managed device on which the remote action is performed. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">startDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastUpdatedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Last update time for action. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.</td>
+</tr>
+<tr>
+<td style="text-align: left;">statusDetails</td>
+<td style="text-align: left;">cloudPcStatusDetails</td>
+<td style="text-align: left;">The details of the Cloud PC status.</td>
 </tr>
 </tbody>
 </table>
