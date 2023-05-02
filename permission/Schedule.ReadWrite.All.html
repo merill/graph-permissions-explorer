@@ -119,7 +119,7 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/timecard-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /teams/{teamId}/schedule/timeCards/{timeCardID}</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/timecard-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /teams/{teamId}/schedule/timeCards/{timeCardId}</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -204,7 +204,7 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/timecard-get?view=graph-rest-1.0&amp;tabs=http">GET /teams/{teamId}/schedule/timeCards/{timecardID}</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/timecard-get?view=graph-rest-1.0&amp;tabs=http">GET /teams/{teamId}/schedule/timeCards/{timeCardId}</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -314,7 +314,7 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/timecard-confirm?view=graph-rest-1.0&amp;tabs=http">POST /teams/{teamId}/schedule/timeCards/{timeCardID}/confirm</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/timecard-confirm?view=graph-rest-1.0&amp;tabs=http">POST /teams/{teamId}/schedule/timeCards/{timeCardId}/confirm</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -568,19 +568,9 @@
 </thead>
 <tbody>
 <tr>
-<td>id</td>
-<td><code>string</code></td>
-<td>ID of the <strong>timeCard</strong>.</td>
-</tr>
-<tr>
-<td>userId</td>
-<td><code>string</code></td>
-<td>User ID to which  the <strong>timeCard</strong> belongs.</td>
-</tr>
-<tr>
-<td>state</td>
-<td><code>timeCardState</code></td>
-<td>The current state of the <strong>timeCard</strong> during its life cycle.Possible values are: <code>clockedIn</code>, <code>onBreak</code>, <code>clockedOut</code>, <code>unknownFutureValue</code>.</td>
+<td>breaks</td>
+<td>timeCardBreak collection</td>
+<td>The list of breaks associated with the <strong>timeCard</strong>.</td>
 </tr>
 <tr>
 <td>clockInEvent</td>
@@ -593,14 +583,39 @@
 <td>The clock-out event of the <strong>timeCard</strong>.</td>
 </tr>
 <tr>
+<td>confirmedBy</td>
+<td>confirmedBy</td>
+<td>Indicates whether this <strong>timeCard</strong> entry is confirmed. Possible values are <code>none</code>, <code>user</code>, <code>manager</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td>createdBy</td>
+<td>identitySet</td>
+<td>Identity of the person who created the entity.</td>
+</tr>
+<tr>
+<td>createdDateTime</td>
+<td>DateTimeOffset</td>
+<td>The timestamp in which the <strong>timeCard</strong> was created.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>Unique identifier for the <strong>timeCard</strong>.</td>
+</tr>
+<tr>
+<td>lastModifiedBy</td>
+<td>identitySet</td>
+<td>Identity of the person who last modified the entity.</td>
+</tr>
+<tr>
+<td>lastModifiedDateTime</td>
+<td>DateTimeOffset</td>
+<td>The timestamp in which the <strong>timeCard</strong> was last modified.</td>
+</tr>
+<tr>
 <td>notes</td>
 <td>itemBody</td>
 <td>Notes about the <strong>timeCard</strong>.</td>
-</tr>
-<tr>
-<td>breaks</td>
-<td>timeCardBreak collection</td>
-<td>The list of breaks associated with the <strong>timeCard</strong>.</td>
 </tr>
 <tr>
 <td>originalEntry</td>
@@ -608,29 +623,14 @@
 <td>The original <strong>timeCardEntry</strong> of the <strong>timeCard</strong>, before user edits.</td>
 </tr>
 <tr>
-<td>confirmedBy</td>
-<td><code>confirmedBy</code></td>
-<td>Indicate if this <strong>timeCard</strong> entry is confirmed. Possible values are <code>none</code>, <code>user</code>, <code>manager</code>, <code>unknownFutureValue</code>.</td>
+<td>state</td>
+<td>timeCardState</td>
+<td>The current state of the <strong>timeCard</strong> during its life cycle.Possible values are: <code>clockedIn</code>, <code>onBreak</code>, <code>clockedOut</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 <tr>
-<td>createdDateTime</td>
-<td><code>Edm.dateTimeOffset</code></td>
-<td>The timestamp in which the <strong>timeCard</strong> was created.</td>
-</tr>
-<tr>
-<td>createdBy</td>
-<td><code>IdentitySet</code></td>
-<td>Identity of the person who created the entity.</td>
-</tr>
-<tr>
-<td>lastModifiedDateTime</td>
-<td><code>dateTimeOffset</code></td>
-<td>The timestamp in which the <strong>timeCard</strong> was last modified.</td>
-</tr>
-<tr>
-<td>lastModifiedBy</td>
-<td><code>IdentitySet</code></td>
-<td>Identity of the person who last modified the entity.</td>
+<td>userId</td>
+<td>String</td>
+<td>User ID to which  the **t</td>
 </tr>
 </tbody>
 </table>
