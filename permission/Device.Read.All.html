@@ -307,6 +307,11 @@
 <td style="text-align: left;">The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
 </tr>
 <tr>
+<td style="text-align: left;">deviceCategory</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">User-defined property set by Intune to automatically add devices to groups and simplify managing devices.</td>
+</tr>
+<tr>
 <td style="text-align: left;">deviceId</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>startsWith</code>).</td>
@@ -317,6 +322,11 @@
 <td style="text-align: left;">For internal use only. Set to <code>null</code>.</td>
 </tr>
 <tr>
+<td style="text-align: left;">deviceOwnership</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Ownership of the device. This property is set by Intune. Possible values are: <code>unknown</code>, <code>company</code>, <code>personal</code>.</td>
+</tr>
+<tr>
 <td style="text-align: left;">deviceVersion</td>
 <td style="text-align: left;">Int32</td>
 <td style="text-align: left;">For internal use only.</td>
@@ -325,6 +335,11 @@
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The display name for the device. Required. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values), <code>$search</code>, and <code>$orderBy</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">enrollmentProfileName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Enrollment profile applied to the device. For example, <code>Apple Device Enrollment Profile</code>, <code>Device enrollment - Corporate device identifiers</code>, or <code>Windows Autopilot profile name</code>. This property is set by Intune.</td>
 </tr>
 <tr>
 <td style="text-align: left;">extensionAttributes</td>
@@ -390,6 +405,11 @@
 <td style="text-align: left;">profileType</td>
 <td style="text-align: left;">deviceProfileType</td>
 <td style="text-align: left;">The profile type of the device. Possible values: <code>RegisteredDevice</code> (default), <code>SecureVM</code>, <code>Printer</code>, <code>Shared</code>, <code>IoT</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">registrationDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time of when the device was registered. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">systemLabels</td>
