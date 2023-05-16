@@ -91,10 +91,28 @@
 <p>Allows the app to read your organization's authentication event listeners on behalf of the signed-in user.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
-</div>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<table>
+<thead>
+<tr>
+<th>Ver</th>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/identitycontainer-list-authenticationeventlisteners?view=graph-rest-1.0&amp;tabs=http">GET /identity/authenticationEventListeners</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/authenticationeventlistener-get?view=graph-rest-1.0&amp;tabs=http">GET /identity/authenticationEventListeners/{authenticationEventListenerId}</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -142,6 +160,76 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the app to read your organization's authentication event listeners without a signed-in user.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="resources">Resources</h2>
+<h3 id="authenticationeventlistener-"><a href="https://docs.microsoft.com/graph/api/resources/authenticationeventlistener?view=graph-rest-1.0&amp;tabs=http">authenticationEventListener </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">authenticationEventsFlowId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the authenticationEventsFlow object.</td>
+</tr>
+<tr>
+<td style="text-align: left;">conditions</td>
+<td style="text-align: left;">authenticationConditions</td>
+<td style="text-align: left;">The conditions on which this authenticationEventListener should trigger.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifier for this authenticationEventListener. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">priority</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The priority of this handler. Between 0 (lower priority) and 1000 (higher priority).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ontokenissuancestartlistener-"><a href="https://docs.microsoft.com/graph/api/resources/ontokenissuancestartlistener?view=graph-rest-1.0&amp;tabs=http">onTokenIssuanceStartListener </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">authenticationEventsFlowId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the authenticationEventsFlow. Inherited from authenticationEventListener.</td>
+</tr>
+<tr>
+<td style="text-align: left;">conditions</td>
+<td style="text-align: left;">authenticationConditions</td>
+<td style="text-align: left;">The conditions on which onTokenIssuanceStartListener should trigger. Inherited from authenticationEventListener.</td>
+</tr>
+<tr>
+<td style="text-align: left;">handler</td>
+<td style="text-align: left;">onTokenIssuanceStartHandler</td>
+<td style="text-align: left;">The handler to invoke when conditions are met for this onTokenIssuanceStartListener.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifier for the onTokenIssuanceStartListener. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">priority</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The priority of this handler. Priority should be set to 500 for onTokenIssuanceStartListeners. Inherited from authenticationEventListener.</td>
 </tr>
 </tbody>
 </table>
