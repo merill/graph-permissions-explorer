@@ -111,6 +111,16 @@
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/authenticationeventlistener-get?view=graph-rest-1.0&amp;tabs=http">GET /identity/authenticationEventListeners/{authenticationEventListenerId}</a></td>
 </tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/identitycontainer-list-authenticationeventsflows?view=graph-rest-1.0&amp;tabs=http">GET /identity/authenticationEventsFlows</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/authenticationeventsflow-get?view=graph-rest-1.0&amp;tabs=http">GET /identity/authenticationEventsFlows/{authenticationEventsFlow-id}</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="delegate-permission">Delegate Permission</h2>
@@ -196,6 +206,211 @@
 </tr>
 </tbody>
 </table>
+<h3 id="authenticationeventsflow-"><a href="https://docs.microsoft.com/graph/api/resources/authenticationeventsflow?view=graph-rest-1.0&amp;tabs=http">authenticationEventsFlow </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the entity. Read-only. Inherited from entity. Auto-generated.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Required. The display name for the events policy.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The description of the events policy.</td>
+</tr>
+<tr>
+<td style="text-align: left;">conditions</td>
+<td style="text-align: left;">authenticationConditions</td>
+<td style="text-align: left;">The conditions representing the context of the authentication request which will be used to decide whether the events policy will be invoked.</td>
+</tr>
+<tr>
+<td style="text-align: left;">priority</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The priority to use for each individual event of the events policy. If multiple competing listeners for an event have the same priority, one is chosen and an error is silently logged. Defaults to 500.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="externalusersselfservicesignupeventsflow-"><a href="https://docs.microsoft.com/graph/api/resources/externalusersselfservicesignupeventsflow?view=graph-rest-1.0&amp;tabs=http">externalUsersSelfServiceSignUpEventsFlow </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the entity. Read-only. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Required. The display name for the events policy. Must be unique. Inherited from authenticationEventsFlow.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Optional. The description of the events policy. Inherited from authenticationEventsFlow.</td>
+</tr>
+<tr>
+<td style="text-align: left;">conditions</td>
+<td style="text-align: left;">authenticationConditions</td>
+<td style="text-align: left;">Optional. The conditions representing the context of the authentication request which is used to decide whether the events policy is invoked. Inherited from authenticationEventsFlow.</td>
+</tr>
+<tr>
+<td style="text-align: left;">priority</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Optional. The priority to use for each individual event of the events policy. If multiple competing listeners for an event have the same priority, one is chosen and an error is silently logged. Default is 500. Inherited from authenticationEventsFlow.</td>
+</tr>
+<tr>
+<td style="text-align: left;">onInteractiveAuthFlowStart</td>
+<td style="text-align: left;">onInteractiveAuthFlowStartHandler</td>
+<td style="text-align: left;">Required. The configuration for what to invoke when an authentication flow is ready to be initiated.</td>
+</tr>
+<tr>
+<td style="text-align: left;">onAuthenticationMethodLoadStart</td>
+<td style="text-align: left;">onAuthenticationMethodLoadStartHandler</td>
+<td style="text-align: left;">Required. The configuration for what to invoke when authentication methods are ready to be presented to the user. Must have at least one identity provider linked.</td>
+</tr>
+<tr>
+<td style="text-align: left;">onAttributeCollection</td>
+<td style="text-align: left;">onAttributeCollectionHandler</td>
+<td style="text-align: left;">The configuration for what to invoke when attributes are ready to be collected from the user.</td>
+</tr>
+<tr>
+<td style="text-align: left;">onUserCreateStart</td>
+<td style="text-align: left;">onUserCreateStartHandler</td>
+<td style="text-align: left;">The configuration for what to invoke during user creation.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="onattributecollectionlistener-"><a href="https://docs.microsoft.com/graph/api/resources/onattributecollectionlistener?view=graph-rest-1.0&amp;tabs=http">onAttributeCollectionListener </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Required. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">conditions</td>
+<td style="text-align: left;">authenticationConditions</td>
+<td style="text-align: left;">Required. Inherited from authenticationEventListener.</td>
+</tr>
+<tr>
+<td style="text-align: left;">priority</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Required. Inherited from authenticationEventListener.</td>
+</tr>
+<tr>
+<td style="text-align: left;">authenticationEventsFlowId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Inherited from authenticationEventListener.</td>
+</tr>
+<tr>
+<td style="text-align: left;">handler</td>
+<td style="text-align: left;">onAttributeCollectionHandler</td>
+<td style="text-align: left;">Required. Configuration for what to invoke if the event resolves to this listener. This lets us define potential handler configurations per-event.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="onauthenticationmethodloadstartlistener-"><a href="https://docs.microsoft.com/graph/api/resources/onauthenticationmethodloadstartlistener?view=graph-rest-1.0&amp;tabs=http">onAuthenticationMethodLoadStartListener </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Required. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">conditions</td>
+<td style="text-align: left;">authenticationConditions</td>
+<td style="text-align: left;">Required. Inherited from authenticationEventListener.</td>
+</tr>
+<tr>
+<td style="text-align: left;">priority</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Required. Inherited from authenticationEventListener.</td>
+</tr>
+<tr>
+<td style="text-align: left;">authenticationEventsFlowId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Inherited from authenticationEventListener.</td>
+</tr>
+<tr>
+<td style="text-align: left;">handler</td>
+<td style="text-align: left;">onAuthenticationMethodLoadStartHandler</td>
+<td style="text-align: left;">Required. Configuration for what to invoke if the event resolves to this listener. This lets us define potential handler configurations per-event.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="oninteractiveauthflowstartlistener-"><a href="https://docs.microsoft.com/graph/api/resources/oninteractiveauthflowstartlistener?view=graph-rest-1.0&amp;tabs=http">onInteractiveAuthFlowStartListener </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Required. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">conditions</td>
+<td style="text-align: left;">authenticationConditions</td>
+<td style="text-align: left;">Required. Inherited from authenticationEventListener.</td>
+</tr>
+<tr>
+<td style="text-align: left;">priority</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Required. Inherited from authenticationEventListener.</td>
+</tr>
+<tr>
+<td style="text-align: left;">authenticationEventsFlowId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Inherited from authenticationEventListener.</td>
+</tr>
+<tr>
+<td style="text-align: left;">handler</td>
+<td style="text-align: left;">onInteractiveAuthFlowStartHandler</td>
+<td style="text-align: left;">Required. Configuration for what to invoke if the event resolves to this listener. This lets us define potential handler configurations per-event.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="ontokenissuancestartlistener-"><a href="https://docs.microsoft.com/graph/api/resources/ontokenissuancestartlistener?view=graph-rest-1.0&amp;tabs=http">onTokenIssuanceStartListener </a></h3>
 <table>
 <thead>
@@ -230,6 +445,43 @@
 <td style="text-align: left;">priority</td>
 <td style="text-align: left;">Int32</td>
 <td style="text-align: left;">The priority of this handler. Priority should be set to 500 for onTokenIssuanceStartListeners. Inherited from authenticationEventListener.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="onusercreatestartlistener-"><a href="https://docs.microsoft.com/graph/api/resources/onusercreatestartlistener?view=graph-rest-1.0&amp;tabs=http">onUserCreateStartListener </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Required. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">conditions</td>
+<td style="text-align: left;">authenticationConditions</td>
+<td style="text-align: left;">Required. Inherited from authenticationEventListener.</td>
+</tr>
+<tr>
+<td style="text-align: left;">priority</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Required. Inherited from authenticationEventListener.</td>
+</tr>
+<tr>
+<td style="text-align: left;">authenticationEventsFlowId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Inherited from authenticationEventListener.</td>
+</tr>
+<tr>
+<td style="text-align: left;">handler</td>
+<td style="text-align: left;">onUserCreateStartHandler</td>
+<td style="text-align: left;">Required. Configuration for what to invoke if the event resolves to this listener. This lets us define potential handler configurations per-event.</td>
 </tr>
 </tbody>
 </table>
