@@ -778,7 +778,7 @@
 <tr>
 <td style="text-align: left;">expirationDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>). Read-only.</td>
+<td style="text-align: left;">Timestamp of when the group is set to expire. Is <code>null</code> for security groups but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>). Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">groupTypes</td>
@@ -1002,14 +1002,14 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">color</td>
+<td style="text-align: left;">categoryColor</td>
+<td style="text-align: left;">A pre-set color constant that characterizes a category, and that is mapped to one of 25 predefined colors. For more details, see the following note.</td>
+</tr>
+<tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">A unique name that identifies a category in the user's mailbox. After a category is created, the name cannot be changed. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">color</td>
-<td style="text-align: left;">categoryColor</td>
-<td style="text-align: left;">A pre-set color constant that characterizes a category, and that is mapped to one of 25 predefined colors. See the note below.</td>
 </tr>
 </tbody>
 </table>
