@@ -1744,6 +1744,99 @@
 </tbody>
 </table>
 <h3 id="internalsponsors"><a href="https://docs.microsoft.com/graph/api/resources/internalsponsors?view=graph-rest-1.0&amp;tabs=http">internalsponsors</a></h3>
+<h3 id="privilegedaccessgroupassignmentschedulerequest-"><a href="https://docs.microsoft.com/graph/api/resources/privilegedaccessgroupassignmentschedulerequest?view=graph-rest-1.0&amp;tabs=http">privilegedAccessGroupAssignmentScheduleRequest </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">accessId</td>
+<td style="text-align: left;">privilegedAccessGroupRelationships</td>
+<td style="text-align: left;">The identifier of a membership or ownership assignment relationship to the group. Required. The possible values are: <code>owner</code>, <code>member</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">action</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Represents the type of operation on the group membership or ownership assignment request. The possible values are: <code>adminAssign</code>, <code>adminUpdate</code>, <code>adminRemove</code>, <code>selfActivate</code>, <code>selfDeactivate</code>, <code>adminExtend</code>, <code>adminRenew</code>. <br><ul><li><code>adminAssign</code>: For administrators to assign group membership or ownership to principals.</li><li><code>adminRemove</code>: For administrators to remove principals from group membership or ownership.</li><li> <code>adminUpdate</code>: For administrators to change existing group membership or ownership assignments.</li><li><code>adminExtend</code>: For administrators to extend expiring assignments.</li><li><code>adminRenew</code>: For administrators to renew expired assignments.</li><li><code>selfActivate</code>: For principals to activate their assignments.</li><li><code>selfDeactivate</code>: For principals to deactivate their active assignments.</li></ul></td>
+</tr>
+<tr>
+<td style="text-align: left;">approvalId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the approval of the request. Inherited from request.</td>
+</tr>
+<tr>
+<td style="text-align: left;">completedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The request completion date time. Inherited from request.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The principal that created this request. Inherited from request. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, and on <code>null</code> values).</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The request creation date time. Inherited from request. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">customData</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Free text field to define any custom data for the request. Not used. Inherited from request.</td>
+</tr>
+<tr>
+<td style="text-align: left;">groupId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the group representing the scope of the membership or ownership assignment through PIM for groups. Required.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the <strong>privilegedAccessGroupAssignmentScheduleRequest</strong> object. Key, not nullable, Read-only. Inherited from entity. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">isValidationOnly</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Determines whether the call is a validation or an actual call. Only set this property if you want to check whether an activation is subject to additional rules like MFA before actually submitting the request.</td>
+</tr>
+<tr>
+<td style="text-align: left;">justification</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A message provided by users and administrators when they create the <strong>privilegedAccessGroupAssignmentScheduleRequest</strong> object.</td>
+</tr>
+<tr>
+<td style="text-align: left;">principalId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the principal whose membership or ownership assignment to the group is managed through PIM for groups. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">scheduleInfo</td>
+<td style="text-align: left;">requestSchedule</td>
+<td style="text-align: left;">The period of the group membership or ownership assignment. Recurring schedules are currently unsupported.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The status of the group membership or ownership assignment request. Inherited from request. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">targetScheduleId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the schedule that's created from the membership or ownership assignment request. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">ticketInfo</td>
+<td style="text-align: left;">ticketInfo</td>
+<td style="text-align: left;">Ticket details linked to the group membership or ownership assignment request including details of the ticket number and ticket system.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="privilegedidentitymanagement-for-groups-api-overview"><a href="https://docs.microsoft.com/graph/api/resources/privilegedidentitymanagement-for-groups-api-overview?view=graph-rest-1.0&amp;tabs=http">privilegedidentitymanagement-for-groups-api-overview</a></h3>
 <h3 id="unifiedroleassignment-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedroleassignment?view=graph-rest-1.0&amp;tabs=http">unifiedRoleAssignment </a></h3>
 <table>
 <thead>

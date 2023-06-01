@@ -103,6 +103,21 @@
 <tbody>
 <tr>
 <td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/approval-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignmentApprovals/{id}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/approval-list-steps?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignmentApprovals/{id}/steps</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/approvalstep-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignmentApprovals/{id}/steps/{id}</a></td>
+</tr>
+<tr>
+<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/privilegedaccessgroup-list-assignmentscheduleinstances?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/privilegedAccess/group/assignmentScheduleInstances?$filter=groupId eq 'groupId'</a></td>
 </tr>
@@ -155,6 +170,11 @@
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/privilegedaccessgroupassignmentschedule-filterbycurrentuser?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/privilegedAccess/group/assignmentSchedules/filterByCurrentUser(on='parameterValue')</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/approvalstep-update?view=graph-rest-1.0&amp;tabs=http">PATCH /identityGovernance/entitlementManagement/accessPackageAssignmentApprovals/{id}/steps/{id}</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -219,6 +239,128 @@
 </tbody>
 </table>
 <h2 id="resources">Resources</h2>
+<h3 id="accesspackageassignmentrequest-"><a href="https://docs.microsoft.com/graph/api/resources/accesspackageassignmentrequest?view=graph-rest-1.0&amp;tabs=http">accessPackageAssignmentRequest </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">answers</td>
+<td style="text-align: left;">accessPackageAnswer collection</td>
+<td style="text-align: left;">Answers provided by the requestor to accessPackageQuestions asked of them at the time of request.</td>
+</tr>
+<tr>
+<td style="text-align: left;">completedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date of the end of processing, either successful or failure, of a request. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only. Supports <code>$filter</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">requestType</td>
+<td style="text-align: left;">accessPackageRequestType</td>
+<td style="text-align: left;">The type of the request. The possible values are: <code>notSpecified</code>, <code>userAdd</code>, <code>UserExtend</code>, <code>userUpdate</code>, <code>userRemove</code>, <code>adminAdd</code>, <code>adminUpdate</code>, <code>adminRemove</code>, <code>systemAdd</code>, <code>systemUpdate</code>, <code>systemRemove</code>, <code>onBehalfAdd</code> (not supported), <code>unknownFutureValue</code>. A request from the user themselves would have requestType of <code>userAdd</code>, <code>userUpdate</code> or <code>userRemove</code>. This property cannot be changed once set.</td>
+</tr>
+<tr>
+<td style="text-align: left;">schedule</td>
+<td style="text-align: left;">entitlementManagementSchedule</td>
+<td style="text-align: left;">The range of dates that access is to be assigned to the requestor. This property cannot be changed once set.</td>
+</tr>
+<tr>
+<td style="text-align: left;">state</td>
+<td style="text-align: left;">accessPackageRequestState</td>
+<td style="text-align: left;">The state of the request. The possible values are: <code>submitted</code>, <code>pendingApproval</code>, <code>delivering</code>, <code>delivered</code>, <code>deliveryFailed</code>, <code>denied</code>, <code>scheduled</code>, <code>canceled</code>, <code>partiallyDelivered</code>, <code>unknownFutureValue</code>. Read-only. Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">More information on the request processing status. Read-only.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="approval-"><a href="https://docs.microsoft.com/graph/api/resources/approval?view=graph-rest-1.0&amp;tabs=http">approval </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifier of the approval decision.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="approvalstep-"><a href="https://docs.microsoft.com/graph/api/resources/approvalstep?view=graph-rest-1.0&amp;tabs=http">approvalStep </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">assignedToMe</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the step is assigned to the calling user to review. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The label provided by the policy creator to identify an approval step. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the step associated with an approval object. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">justification</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The justification associated with the approval step decision.</td>
+</tr>
+<tr>
+<td style="text-align: left;">reviewResult</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The result of this approval record. Possible values include: <code>NotReviewed</code>, <code>Approved</code>, <code>Denied</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">reviewedBy</td>
+<td style="text-align: left;">userIdentity collection</td>
+<td style="text-align: left;">The identifier of the reviewer. <code>00000000-0000-0000-0000-000000000000</code> if the assigned reviewer hasn't reviewed. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">reviewedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when a decision was recorded. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The step status. Possible values: <code>InProgress</code>, <code>Initializing</code>, <code>Completed</code>, <code>Expired</code>. Read-only.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="entitlementmanagement-overview"><a href="https://docs.microsoft.com/graph/api/resources/entitlementmanagement-overview?view=graph-rest-1.0&amp;tabs=http">entitlementmanagement-overview</a></h3>
 <h3 id="privilegedaccessgroupassignmentschedule-"><a href="https://docs.microsoft.com/graph/api/resources/privilegedaccessgroupassignmentschedule?view=graph-rest-1.0&amp;tabs=http">privilegedAccessGroupAssignmentSchedule </a></h3>
 <table>
 <thead>
@@ -435,6 +577,7 @@
 </tr>
 </tbody>
 </table>
+<h3 id="privilegedidentitymanagement-for-groups-api-overview"><a href="https://docs.microsoft.com/graph/api/resources/privilegedidentitymanagement-for-groups-api-overview?view=graph-rest-1.0&amp;tabs=http">privilegedidentitymanagement-for-groups-api-overview</a></h3>
 <h3 id="requestschedule-"><a href="https://docs.microsoft.com/graph/api/resources/requestschedule?view=graph-rest-1.0&amp;tabs=http">requestSchedule </a></h3>
 <table>
 <thead>
