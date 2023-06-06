@@ -91,10 +91,33 @@
 <p>Allows the app to read all virtual events without a signed-in user.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
-</div>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<table>
+<thead>
+<tr>
+<th>Ver</th>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualeventwebinar-get?view=graph-rest-1.0&amp;tabs=http">GET /solutions/virtualEvents/webinars/{webinarId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualeventregistrant-get?view=graph-rest-1.0&amp;tabs=http">GET /solutions/virtualEvents/webinars/{webinarId}/registration/registrants/{registrantId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualeventsession-get?view=graph-rest-1.0&amp;tabs=http">GET /solutions/virtualEvents/webinars/{webinarId}/sessions/{sessionId}</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="application-permission">Application Permission</h2>
 <table>
 <thead>
@@ -115,6 +138,122 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the app to read all virtual events without a signed-in user.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="resources">Resources</h2>
+<h3 id="virtualeventregistrant-"><a href="https://docs.microsoft.com/graph/api/resources/virtualeventregistrant?view=graph-rest-1.0&amp;tabs=http">virtualEventRegistrant </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">cancelationDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Time in UTC when the registrant cancels their registration for the virtual event. Only appears when applicable.</td>
+</tr>
+<tr>
+<td style="text-align: left;">email</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Email address of the registrant.</td>
+</tr>
+<tr>
+<td style="text-align: left;">firstName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">First name of the registrant.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier of the registrant. Read-only. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Last name of the registrant.</td>
+</tr>
+<tr>
+<td style="text-align: left;">registrationDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Time in UTC when the registrant registers for the virtual event.</td>
+</tr>
+<tr>
+<td style="text-align: left;">registrationQuestionAnswers</td>
+<td style="text-align: left;">virtualEventRegistrationQuestionAnswer collection</td>
+<td style="text-align: left;">The registrant's answer to the registration questions.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">virtualEventAttendeeRegistrationStatus</td>
+<td style="text-align: left;">Registration status of the registrant. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">userId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The registrant's AAD user ID. Only appears when the registrant is registered in AAD.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="virtualeventsession-"><a href="https://docs.microsoft.com/graph/api/resources/virtualeventsession?view=graph-rest-1.0&amp;tabs=http">virtualEventSession </a></h3>
+<h3 id="virtualeventwebinar-"><a href="https://docs.microsoft.com/graph/api/resources/virtualeventwebinar?view=graph-rest-1.0&amp;tabs=http">virtualEventWebinar </a></h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>audience</td>
+<td>meetingAudience</td>
+<td>To whom the webinar is visible.</td>
+</tr>
+<tr>
+<td>coOrganizers</td>
+<td>communicationsUserIdentity collection</td>
+<td>Identity information of co-organizers of the webinar.</td>
+</tr>
+<tr>
+<td>createdBy</td>
+<td>communicationsIdentitySet</td>
+<td>Identity information of who created the webinar. Inherited from virtualEvent.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>Description of the webinar. Inherited from virtualEvent.</td>
+</tr>
+<tr>
+<td>displayName</td>
+<td>String</td>
+<td>Display name of the webinar. Inherited from virtualEvent.</td>
+</tr>
+<tr>
+<td>endDateTime</td>
+<td>dateTimeTimeZone</td>
+<td>End time of the webinar. Inherited from virtualEvent.</td>
+</tr>
+<tr>
+<td>startDateTime</td>
+<td>dateTimeTimeZone</td>
+<td>Start time of the webinar. Inherited from virtualEvent.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>Unqiue identifier of the webinar. Inherited from entity.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>virtualEventStatus</td>
+<td>Status of the webinar.</td>
 </tr>
 </tbody>
 </table>

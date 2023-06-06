@@ -151,6 +151,16 @@
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/call-answer?view=graph-rest-1.0&amp;tabs=http">POST /communications/calls/{id}/answer</a></td>
 </tr>
+<tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/participant-startholdmusic?view=graph-rest-1.0&amp;tabs=http">POST /communications/calls/{id}/participants/{id}/startHoldMusic</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/participant-stopholdmusic?view=graph-rest-1.0&amp;tabs=http">POST /communications/calls/{id}/participants/{id}/stopHoldMusic</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="application-permission">Application Permission</h2>
@@ -464,6 +474,58 @@
 </tbody>
 </table>
 <h3 id="meetinginfo-"><a href="https://docs.microsoft.com/graph/api/resources/meetinginfo?view=graph-rest-1.0&amp;tabs=http">meetingInfo </a></h3>
+<h3 id="participant-"><a href="https://docs.microsoft.com/graph/api/resources/participant?view=graph-rest-1.0&amp;tabs=http">participant </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The participant ID.</td>
+</tr>
+<tr>
+<td style="text-align: left;">info</td>
+<td style="text-align: left;">participantInfo</td>
+<td style="text-align: left;">Information about the participant.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isInLobby</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if the participant is in lobby.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isMuted</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if the participant is muted (client or server muted).</td>
+</tr>
+<tr>
+<td style="text-align: left;">mediaStreams</td>
+<td style="text-align: left;">mediaStream collection</td>
+<td style="text-align: left;">The list of media streams.</td>
+</tr>
+<tr>
+<td style="text-align: left;">metadata</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A blob of data provided by the participant in the roster.</td>
+</tr>
+<tr>
+<td style="text-align: left;">recordingInfo</td>
+<td style="text-align: left;">recordingInfo</td>
+<td style="text-align: left;">Information about whether the participant has recording capability.</td>
+</tr>
+<tr>
+<td style="text-align: left;">restrictedExperience</td>
+<td style="text-align: left;">onlineMeetingRestricted</td>
+<td style="text-align: left;">Indicates the reason or reasons media content from this participant is restricted.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="servicehostedmediaconfig-"><a href="https://docs.microsoft.com/graph/api/resources/servicehostedmediaconfig?view=graph-rest-1.0&amp;tabs=http">serviceHostedMediaConfig </a></h3>
 <table>
 <thead>
@@ -478,6 +540,70 @@
 <td style="text-align: left;">preFetchMedia</td>
 <td style="text-align: left;">mediaInfo collection</td>
 <td style="text-align: left;">The list of media to pre-fetch.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="startholdmusicoperation-"><a href="https://docs.microsoft.com/graph/api/resources/startholdmusicoperation?view=graph-rest-1.0&amp;tabs=http">startHoldMusicOperation </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">clientContext</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Inherited from <strong>commsOperation</strong>. Unique client context string. Can have a maximum of 256 characters.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Inherited from <strong>commsOperation</strong>. The server operation ID. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">resultInfo</td>
+<td style="text-align: left;">resultInfo</td>
+<td style="text-align: left;">Inherited from <strong>commsOperation</strong>. The result information.  Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Inherited from **c</td>
+</tr>
+</tbody>
+</table>
+<h3 id="stopholdmusicoperation-"><a href="https://docs.microsoft.com/graph/api/resources/stopholdmusicoperation?view=graph-rest-1.0&amp;tabs=http">stopHoldMusicOperation </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">clientContext</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Inherited from <strong>commsOperation</strong>. Unique client context string. Can have a maximum of 256 characters.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Inherited from <strong>commsOperation</strong>. The server operation ID. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">resultInfo</td>
+<td style="text-align: left;">resultInfo</td>
+<td style="text-align: left;">Inherited from <strong>commsOperation</strong>. The result information.  Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Inherited from **c</td>
 </tr>
 </tbody>
 </table>
