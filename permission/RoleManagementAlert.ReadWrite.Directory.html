@@ -91,10 +91,83 @@
 <p>Allows the app to read and manage the role-based access control (RBAC) alerts for your company's directory, on behalf of the signed-in user. This includes managing alert settings, initiating alert scans, dimissing alerts, remediating alert incidents, and reading alert statuses, alert definitions, alert configurations and incidents that lead to an alert.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
-</div>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<table>
+<thead>
+<tr>
+<th>Ver</th>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/rolemanagementalert-list-alertconfigurations?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/roleManagementAlerts/alertConfigurations?$filter=scopeId eq 'scopeId' and scopeType eq 'scopeType'</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedrolemanagementalertconfiguration-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/roleManagementAlerts/alertConfigurations/{unifiedRoleManagementAlertConfigurationId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/rolemanagementalert-list-alertdefinitions?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/roleManagementAlerts/alertDefinitions?$filter=scopeId eq 'scopeId' and scopeType eq 'scopeType'</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedrolemanagementalertdefinition-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/roleManagementAlerts/alertDefinitions/{unifiedRoleManagementAlertDefinitionId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/rolemanagementalert-list-alerts?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/roleManagementAlerts/alerts?$filter=scopeId eq 'scopeId' and scopeType eq 'scopeType'</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedrolemanagementalert-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/roleManagementAlerts/alerts/{unifiedRoleManagementAlertId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedrolemanagementalert-list-alertincidents?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/roleManagementAlerts/alerts/{unifiedRoleManagementAlertId}/alertIncidents</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedrolemanagementalertincident-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/roleManagementAlerts/alerts/{unifiedRoleManagementAlertId}/alertIncidents/{unifiedRoleManagementAlertIncidentId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/longrunningoperation-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/roleManagementAlerts/operations/{longRunningOperationId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedrolemanagementalertconfiguration-update?view=graph-rest-1.0&amp;tabs=http">PATCH /identityGovernance/roleManagementAlerts/alertConfigurations/{unifiedRoleManagementAlertConfigurationId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedrolemanagementalert-update?view=graph-rest-1.0&amp;tabs=http">PATCH /identityGovernance/roleManagementAlerts/alerts/{unifiedRoleManagementAlertId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedrolemanagementalertincident-remediate?view=graph-rest-1.0&amp;tabs=http">POST /identityGovernance/roleManagementAlerts/alerts/{unifiedRoleManagementAlertId}/alertIncidents/{unifiedRoleManagementAlertIncidentId}/remediate</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedrolemanagementalert-refresh?view=graph-rest-1.0&amp;tabs=http">POST /identityGovernance/roleManagementAlerts/alerts/refresh</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -142,6 +215,763 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the app to read and manage all role-based access control (RBAC) alerts for your company's directory, without a signed-in user. This includes managing alert settings, initiating alert scans, dimissing alerts, remediating alert incidents, and reading alert statuses, alert definitions, alert configurations and incidents that lead to an alert.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="resources">Resources</h2>
+<h3 id="invalidlicensealertconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/invalidlicensealertconfiguration?view=graph-rest-1.0&amp;tabs=http">invalidLicenseAlertConfiguration </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">alertDefinitionId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of an alert definition. Inherited from unifiedRoleManagementAlertConfiguration. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the alert configuration. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if the alert is enabled. Setting it to <code>false</code> disables PIM scanning the tenant to identify instances that trigger this alert. Inherited from unifiedRoleManagementAlertConfiguration.</td>
+</tr>
+<tr>
+<td style="text-align: left;">scopeId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the scope to which the alert is related. Only <code>/</code> is supported to represent the tenant scope. Inherited from unifiedRoleManagementAlertConfiguration. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">scopeType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The type of scope where the alert is created. <code>DirectoryRole</code> is the only currently supported scope type for Azure AD roles. Inherited from unifiedRoleManagementAlertConfiguration.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="invalidlicensealertincident-"><a href="https://docs.microsoft.com/graph/api/resources/invalidlicensealertincident?view=graph-rest-1.0&amp;tabs=http">invalidLicenseAlertIncident </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier for the alert incident. For example, it could be a role assignment ID if the incident represents a role assignment. Inherited from entity. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">tenantLicenseStatus</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Status of the tenant's Azure AD Premium P2 license.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="longrunningoperation-"><a href="https://docs.microsoft.com/graph/api/resources/longrunningoperation?view=graph-rest-1.0&amp;tabs=http">longRunningOperation </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier of the operation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastActionDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">resourceLocation</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">URI of the resource that the operation is performed on.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">longRunningOperationStatus</td>
+<td style="text-align: left;">The status of the operation. The possible values are: <code>notStarted</code>, <code>running</code>, <code>succeeded</code>, <code>failed</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">statusDetail</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Details about the status of the operation.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="nomfaonroleactivationalertconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/nomfaonroleactivationalertconfiguration?view=graph-rest-1.0&amp;tabs=http">noMfaOnRoleActivationAlertConfiguration </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">alertDefinitionId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of an alert definition. Inherited from unifiedRoleManagementAlertConfiguration. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the alert configuration. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if the alert is enabled. Setting it to <code>false</code> disables PIM scanning the tenant to identify instances that trigger this alert. Inherited from unifiedRoleManagementAlertConfiguration.</td>
+</tr>
+<tr>
+<td style="text-align: left;">scopeId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the scope to which the alert is related. Only <code>/</code> is supported to represent the tenant scope. Inherited from unifiedRoleManagementAlertConfiguration. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">scopeType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The type of scope where the alert is created. <code>DirectoryRole</code> is the only currently supported scope type for Azure AD roles. Inherited from unifiedRoleManagementAlertConfiguration.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="nomfaonroleactivationalertincident-"><a href="https://docs.microsoft.com/graph/api/resources/nomfaonroleactivationalertincident?view=graph-rest-1.0&amp;tabs=http">noMfaOnRoleActivationAlertIncident </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier for an alert incident. For example, it could be a role assignment ID if the incident represents a role assignment. Inherited from entity. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">roleDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name of the Azure AD directory role.</td>
+</tr>
+<tr>
+<td style="text-align: left;">roleTemplateId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The globally unique identifier for a directory role.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="redundantassignmentalertconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/redundantassignmentalertconfiguration?view=graph-rest-1.0&amp;tabs=http">redundantAssignmentAlertConfiguration </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">alertDefinitionId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of an alert definition. Inherited from unifiedRoleManagementAlertConfiguration. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">duration</td>
+<td style="text-align: left;">Duration</td>
+<td style="text-align: left;">The number of days without activation to look back on from current timestamp.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the alert configuration. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if the alert is enabled. Setting it to <code>false</code> disables PIM scanning the tenant to identify instances that trigger this alert. Inherited from unifiedRoleManagementAlertConfiguration.</td>
+</tr>
+<tr>
+<td style="text-align: left;">scopeId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the scope to which the alert is related. Only <code>/</code> is supported to represent the tenant scope. Inherited from unifiedRoleManagementAlertConfiguration. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">scopeType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The type of scope where the alert is created. <code>DirectoryRole</code> is the only currently supported scope type for Azure AD roles. Inherited from unifiedRoleManagementAlertConfiguration.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="redundantassignmentalertincident-"><a href="https://docs.microsoft.com/graph/api/resources/redundantassignmentalertincident?view=graph-rest-1.0&amp;tabs=http">redundantAssignmentAlertIncident </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">assigneeDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Display name of the subject that the incident applies to.</td>
+</tr>
+<tr>
+<td style="text-align: left;">assigneeId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the subject that the incident applies to.</td>
+</tr>
+<tr>
+<td style="text-align: left;">assigneeUserPrincipalName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">User principal name of the subject that the incident applies to. Applies to user principals only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier for an alert incident. For example, it could be a role assignment ID if the incident represents a role assignment. Inherited from entity. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastActivationDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time of the last activation of the eligible assignment.</td>
+</tr>
+<tr>
+<td style="text-align: left;">roleDefinitionId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier for the directory role definition that's in scope of this incident.</td>
+</tr>
+<tr>
+<td style="text-align: left;">roleDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name for the directory role.</td>
+</tr>
+<tr>
+<td style="text-align: left;">roleTemplateId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The globally unique identifier for the directory role.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rolesassignedoutsideprivilegedidentitymanagementalertconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/rolesassignedoutsideprivilegedidentitymanagementalertconfiguration?view=graph-rest-1.0&amp;tabs=http">rolesAssignedOutsidePrivilegedIdentityManagementAlertConfiguration </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">alertDefinitionId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of an alert definition. Inherited from unifiedRoleManagementAlertConfiguration. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the alert configuration. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if the alert is enabled. Setting it to <code>false</code> disables PIM scanning the tenant to identify instances that trigger this alert. Inherited from unifiedRoleManagementAlertConfiguration.</td>
+</tr>
+<tr>
+<td style="text-align: left;">scopeId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the scope to which the alert is related. Only <code>/</code> is supported to represent the tenant scope. Inherited from unifiedRoleManagementAlertConfiguration. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">scopeType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The type of scope where the alert is created. <code>DirectoryRole</code> is the only currently supported scope type for Azure AD roles. Inherited from unifiedRoleManagementAlertConfiguration.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sequentialactivationrenewalsalertconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/sequentialactivationrenewalsalertconfiguration?view=graph-rest-1.0&amp;tabs=http">sequentialActivationRenewalsAlertConfiguration </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">alertDefinitionId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of an alert definition. Inherited from unifiedRoleManagementAlertConfiguration. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the alert configuration. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if the alert is enabled. Setting it to <code>false</code> disables PIM scanning the tenant to identify instances that trigger this alert. Inherited from unifiedRoleManagementAlertConfiguration.</td>
+</tr>
+<tr>
+<td style="text-align: left;">scopeId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the scope to which the alert is related. Only <code>/</code> is supported to represent the tenant scope. Inherited from unifiedRoleManagementAlertConfiguration. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">scopeType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The type of scope where the alert is created. <code>DirectoryRole</code> is the only currently supported scope type for Azure AD roles. Inherited from unifiedRoleManagementAlertConfiguration.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sequentialActivationCounterThreshold</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The minimum number of activations within the timeIntervalBetweenActivations period to trigger an alert.</td>
+</tr>
+<tr>
+<td style="text-align: left;">timeIntervalBetweenActivations</td>
+<td style="text-align: left;">Duration</td>
+<td style="text-align: left;">Time interval between activations to trigger an alert.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sequentialactivationrenewalsalertincident-"><a href="https://docs.microsoft.com/graph/api/resources/sequentialactivationrenewalsalertincident?view=graph-rest-1.0&amp;tabs=http">sequentialActivationRenewalsAlertIncident </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">activationCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The length of sequential activation of the same role.</td>
+</tr>
+<tr>
+<td style="text-align: left;">assigneeDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Display name of the subject that the incident applies to.</td>
+</tr>
+<tr>
+<td style="text-align: left;">assigneeId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the subject that the incident applies to.</td>
+</tr>
+<tr>
+<td style="text-align: left;">assigneeUserPrincipalName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">User principal name of the subject that the incident applies to. Applies to user principals.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier for an alert incident. For example, it could be a role assignment id if the incident represents a role assignment Inherited from entity. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">roleDefinitionId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier for the directory role definition that's in scope of this incident.</td>
+</tr>
+<tr>
+<td style="text-align: left;">roleDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name for the directory role.</td>
+</tr>
+<tr>
+<td style="text-align: left;">roleTemplateId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The globally unique identifier for the directory role.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sequenceEndDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">End date time of the sequential activation event.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sequenceStartDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Start date time of the sequential activation event.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="stalesigninalertconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/stalesigninalertconfiguration?view=graph-rest-1.0&amp;tabs=http">staleSignInAlertConfiguration </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">alertDefinitionId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of an alert definition. Inherited from unifiedRoleManagementAlertConfiguration. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">duration</td>
+<td style="text-align: left;">Duration</td>
+<td style="text-align: left;">The number of days to look back from current timestamp within which the account has not signed in.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the alert configuration. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if the alert is enabled. Setting it to <code>false</code> disables PIM scanning the tenant to identify instances that trigger this alert. Inherited from unifiedRoleManagementAlertConfiguration.</td>
+</tr>
+<tr>
+<td style="text-align: left;">scopeId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the scope to which the alert is related. Only <code>/</code> is supported to represent the tenant scope. Inherited from unifiedRoleManagementAlertConfiguration. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">scopeType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The type of scope where the alert is created. <code>DirectoryRole</code> is the only currently supported scope type for Azure AD roles. Inherited from unifiedRoleManagementAlertConfiguration.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="stalesigninalertincident-"><a href="https://docs.microsoft.com/graph/api/resources/stalesigninalertincident?view=graph-rest-1.0&amp;tabs=http">staleSignInAlertIncident </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">assigneeDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Display name of the subject that the incident applies to.</td>
+</tr>
+<tr>
+<td style="text-align: left;">assigneeId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the subject that the incident applies to.</td>
+</tr>
+<tr>
+<td style="text-align: left;">assigneeUserPrincipalName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">User principal name of the subject that the incident applies to. Applies to user principals.</td>
+</tr>
+<tr>
+<td style="text-align: left;">assignmentCreatedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time of assignment creation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier for an alert incident. For example, it could be a role assignment id if the incident represents a role assignment Inherited from entity. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastSignInDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time of last sign in.</td>
+</tr>
+<tr>
+<td style="text-align: left;">roleDefinitionId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier for the directory role definition that's in scope of this incident.</td>
+</tr>
+<tr>
+<td style="text-align: left;">roleDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name for the directory role.</td>
+</tr>
+<tr>
+<td style="text-align: left;">roleTemplateId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The globally unique identifier for the directory role.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="toomanyglobaladminsassignedtotenantalertconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/toomanyglobaladminsassignedtotenantalertconfiguration?view=graph-rest-1.0&amp;tabs=http">tooManyGlobalAdminsAssignedToTenantAlertConfiguration </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">alertDefinitionId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of an alert definition. Inherited from unifiedRoleManagementAlertConfiguration. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">globalAdminCountThreshold</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The threshold for the number of accounts assigned the Global Administrator role in the tenant. Triggers an alert if the number of global administrators in the tenant reaches or crosses this threshold value.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the alert configuration. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if the alert is enabled. Setting it to <code>false</code> disables PIM scanning the tenant to identify instances that trigger this alert. Inherited from unifiedRoleManagementAlertConfiguration.</td>
+</tr>
+<tr>
+<td style="text-align: left;">percentageOfGlobalAdminsOutOfRolesThreshold</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Threshold of the percentage of global administrators out of all the role assignments in the tenant. Triggers an alert if the percentage in the tenant reaches or crosses this threshold value.</td>
+</tr>
+<tr>
+<td style="text-align: left;">scopeId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the scope to which the alert is related. Only <code>/</code> is supported to represent the tenant scope. Inherited from unifiedRoleManagementAlertConfiguration. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">scopeType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The type of scope where the alert is created. <code>DirectoryRole</code> is the only currently supported scope type for Azure AD roles. Inherited from unifiedRoleManagementAlertConfiguration.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="toomanyglobaladminsassignedtotenantalertincident-"><a href="https://docs.microsoft.com/graph/api/resources/toomanyglobaladminsassignedtotenantalertincident?view=graph-rest-1.0&amp;tabs=http">tooManyGlobalAdminsAssignedToTenantAlertIncident </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">assigneeDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Display name of the subject that the incident applies to.</td>
+</tr>
+<tr>
+<td style="text-align: left;">assigneeId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the subject that the incident applies to.</td>
+</tr>
+<tr>
+<td style="text-align: left;">assigneeUserPrincipalName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">User principal name of the subject that the incident applies to. Applies to user principals.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier for the alert incident. For example, it could be a role assignment ID if the incident represents a role assignment. Inherited from entity. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="unifiedrolemanagementalert-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedrolemanagementalert?view=graph-rest-1.0&amp;tabs=http">unifiedRoleManagementAlert </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">alertDefinitionId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of an alert definition. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the alert configuration. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">incidentCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The number of incidents triggered in the tenant and relating to the alert. Can only be a positive integer.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isActive</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>false</code> by default. <code>true</code> if the alert is active.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date time when the alert configuration was updated or new incidents generated.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastScannedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date time when the tenant was last scanned for incidents that trigger this alert.</td>
+</tr>
+<tr>
+<td style="text-align: left;">scopeId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the scope where the alert is related. <code>/</code> is the only supported one for the tenant. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">scopeType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The type of scope where the alert is created. <code>DirectoryRole</code> is the only currently supported scope type for Azure AD roles.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="unifiedrolemanagementalertconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedrolemanagementalertconfiguration?view=graph-rest-1.0&amp;tabs=http">unifiedRoleManagementAlertConfiguration </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">alertDefinitionId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of an alert definition. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the alert configuration. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if the alert is enabled. Setting it to <code>false</code> disables PIM scanning the tenant to identify instances that trigger the alert.</td>
+</tr>
+<tr>
+<td style="text-align: left;">scopeId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the scope to which the alert is related. Only <code>/</code> is supported to represent the tenant scope. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">scopeType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The type of scope where the alert is created. <code>DirectoryRole</code> is the only currently supported scope type for Azure AD roles.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="unifiedrolemanagementalertdefinition-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedrolemanagementalertdefinition?view=graph-rest-1.0&amp;tabs=http">unifiedRoleManagementAlertDefinition </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The description of the alert.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The friendly display name that renders in Privileged Identity Management (PIM) alerts in the Azure portal.</td>
+</tr>
+<tr>
+<td style="text-align: left;">howToPrevent</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Long-form text that indicates the ways to prevent the alert from being triggered in your tenant.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the alert definition. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isConfigurable</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if the alert configuration can be customized in the tenant, and <code>false</code> otherwise. For example, the number and percentage thresholds of the 'There are too many global administrators' alert can be configured by users, while the 'This organization does not have Azure AD Premium P2' cannot be configured, because the criteria is restricted.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isRemediatable</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if the alert can be remediated, and <code>false</code> otherwise.</td>
+</tr>
+<tr>
+<td style="text-align: left;">mitigationSteps</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The methods to mitigate the alert when it's triggered in the tenant. For example, to mitigate the 'There are too many global administrators', you could remove redundant privileged role assignments.</td>
+</tr>
+<tr>
+<td style="text-align: left;">scopeId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the scope where the alert is related. <code>/</code> is the only supported one for the tenant. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">scopeType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The type of scope where the alert is created. <code>DirectoryRole</code> is the only currently supported scope type for Azure AD Roles.</td>
+</tr>
+<tr>
+<td style="text-align: left;">securityImpact</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Security impact of the alert. For example, it could be information leaks or unauthorized access.</td>
+</tr>
+<tr>
+<td style="text-align: left;">severityLevel</td>
+<td style="text-align: left;">alertSeverity</td>
+<td style="text-align: left;">Severity level of the alert. The possible values are: <code>unknown</code>, <code>informational</code>, <code>low</code>, <code>medium</code>, <code>high</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="unifiedrolemanagementalertincident-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedrolemanagementalertincident?view=graph-rest-1.0&amp;tabs=http">unifiedRoleManagementAlertIncident </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the alert incident. Inherited from entity. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
 </tr>
 </tbody>
 </table>
