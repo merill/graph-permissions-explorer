@@ -545,6 +545,11 @@
 <td style="text-align: left;">The results of every partner agent's installation status on Cloud PC.</td>
 </tr>
 <tr>
+<td style="text-align: left;">powerState</td>
+<td style="text-align: left;">cloudPcPowerState</td>
+<td style="text-align: left;">The power state of a Cloud PC. The possible values are: <code>running</code>, <code>poweredOff</code> and <code>unknown</code>. This property only supports shift work Cloud PCs.</td>
+</tr>
+<tr>
 <td style="text-align: left;">provisioningPolicyId</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The provisioning policy ID of the Cloud PC.</td>
@@ -576,8 +581,8 @@
 </tr>
 <tr>
 <td style="text-align: left;">status</td>
-<td style="text-align: left;">cloudPcStatus</td>
-<td style="text-align: left;">The status of the Cloud PC. The possible values are: <code>notProvisioned</code>, <code>provisioning</code>, <code>provisioned</code>, <code>inGracePeriod</code>, <code>deprovisioning</code>, <code>failed</code>, <code>provisionedWithWarnings</code>, <code>resizing</code>, <code>pendingProvision</code>, <code>restoring</code>, and <code>unknownFutureValue</code>. Note that you must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value in this <code>evolvable enum</code>: <code>movingRegion</code>.</td>
+<td style="text-align: left;">microsoft.graph.cloudPcStatus</td>
+<td style="text-align: left;">The status of the Cloud PC. Possible values are: <code>notProvisioned</code>, <code>provisioning</code>, <code>provisioned</code>, <code>upgrading</code>, <code>inGracePeriod</code>, <code>deprovisioning</code>, <code>failed</code>, <code>restoring</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">statusDetails</td>
@@ -837,7 +842,7 @@
 <tr>
 <td style="text-align: left;">reportName</td>
 <td style="text-align: left;">cloudPcReportName</td>
-<td style="text-align: left;">The report name. The possible values are: <code>remoteConnectionHistoricalReports</code>, <code>dailyAggregatedRemoteConnectionReports</code>, <code>totalAggregatedRemoteConnectionReports</code>, <code>sharedUseLicenseUsageReport</code>, <code>sharedUseLicenseUsageRealTimeReport</code> <code>noLicenseAvailableConnectivityFailureReport</code>, or <code>unknownFutureValue</code>.</td>
+<td style="text-align: left;">The report name. The possible values are: <code>remoteConnectionHistoricalReports</code>, <code>dailyAggregatedRemoteConnectionReports</code>, <code>totalAggregatedRemoteConnectionReports</code>, <code>sharedUseLicenseUsageReport</code>, <code>sharedUseLicenseUsageRealTimeReport</code>, <code>unknownFutureValue</code>,  <code>noLicenseAvailableConnectivityFailureReport</code>. Note that you must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value(s) in this evolvable enum: <code> noLicenseAvailableConnectivityFailureReport</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">requestDateTime</td>

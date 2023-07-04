@@ -528,6 +528,16 @@
 </tr>
 <tr>
 <td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpc-bulkresize?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/virtualEndpoint/cloudPCs/bulkResize</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpc-validatebulkresize?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/virtualEndpoint/cloudPCs/validateBulkResize</a></td>
+</tr>
+<tr>
+<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-post-crosscloudgovernmentorganizationmapping?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/virtualEndpoint/crossCloudGovernmentOrganizationMapping</a></td>
 </tr>
@@ -805,6 +815,11 @@
 <td style="text-align: left;">The results of every partner agent's installation status on Cloud PC.</td>
 </tr>
 <tr>
+<td style="text-align: left;">powerState</td>
+<td style="text-align: left;">cloudPcPowerState</td>
+<td style="text-align: left;">The power state of a Cloud PC. The possible values are: <code>running</code>, <code>poweredOff</code> and <code>unknown</code>. This property only supports shift work Cloud PCs.</td>
+</tr>
+<tr>
 <td style="text-align: left;">provisioningPolicyId</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The provisioning policy ID of the Cloud PC.</td>
@@ -836,8 +851,8 @@
 </tr>
 <tr>
 <td style="text-align: left;">status</td>
-<td style="text-align: left;">cloudPcStatus</td>
-<td style="text-align: left;">The status of the Cloud PC. The possible values are: <code>notProvisioned</code>, <code>provisioning</code>, <code>provisioned</code>, <code>inGracePeriod</code>, <code>deprovisioning</code>, <code>failed</code>, <code>provisionedWithWarnings</code>, <code>resizing</code>, <code>pendingProvision</code>, <code>restoring</code>, and <code>unknownFutureValue</code>. Note that you must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value in this <code>evolvable enum</code>: <code>movingRegion</code>.</td>
+<td style="text-align: left;">microsoft.graph.cloudPcStatus</td>
+<td style="text-align: left;">The status of the Cloud PC. Possible values are: <code>notProvisioned</code>, <code>provisioning</code>, <code>provisioned</code>, <code>upgrading</code>, <code>inGracePeriod</code>, <code>deprovisioning</code>, <code>failed</code>, <code>restoring</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">statusDetails</td>
@@ -1161,7 +1176,7 @@
 <tr>
 <td style="text-align: left;">reportName</td>
 <td style="text-align: left;">cloudPcReportName</td>
-<td style="text-align: left;">The report name. The possible values are: <code>remoteConnectionHistoricalReports</code>, <code>dailyAggregatedRemoteConnectionReports</code>, <code>totalAggregatedRemoteConnectionReports</code>, <code>sharedUseLicenseUsageReport</code>, <code>sharedUseLicenseUsageRealTimeReport</code> <code>noLicenseAvailableConnectivityFailureReport</code>, or <code>unknownFutureValue</code>.</td>
+<td style="text-align: left;">The report name. The possible values are: <code>remoteConnectionHistoricalReports</code>, <code>dailyAggregatedRemoteConnectionReports</code>, <code>totalAggregatedRemoteConnectionReports</code>, <code>sharedUseLicenseUsageReport</code>, <code>sharedUseLicenseUsageRealTimeReport</code>, <code>unknownFutureValue</code>,  <code>noLicenseAvailableConnectivityFailureReport</code>. Note that you must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value(s) in this evolvable enum: <code> noLicenseAvailableConnectivityFailureReport</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">requestDateTime</td>
@@ -1709,6 +1724,28 @@
 <td style="text-align: left;">statusDetails</td>
 <td style="text-align: left;">cloudPcStatusDetails</td>
 <td style="text-align: left;">The details of the Cloud PC status.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cloudpcresizevalidationresult-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcresizevalidationresult?view=graph-rest-1.0&amp;tabs=http">cloudPcResizeValidationResult </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">cloudPcId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The cloudPC id that corresponds to its unique identifier.</td>
+</tr>
+<tr>
+<td style="text-align: left;">validationResult</td>
+<td style="text-align: left;">cloudPcResizeValidationCode</td>
+<td style="text-align: left;">Describes a list of the validation result for the Cloud PC resize action. The possible values are: <code>success</code>, <code>cloudPcNotFound</code>, <code>operationCnflict</code>, <code>operationNotSupported</code>, <code>targetLicenseHasAssigned</code>, <code>internalServerError</code>, and <code>unknownFutureValue</code>.</td>
 </tr>
 </tbody>
 </table>
