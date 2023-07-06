@@ -1133,6 +1133,11 @@
 </tr>
 <tr>
 <td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/intune-apps-mobileapp-getpublishingconstraints?view=graph-rest-1.0&amp;tabs=http">GET /deviceAppManagement/mobileApps/getPublishingConstraints</a></td>
+</tr>
+<tr>
+<td>V1</td>
 <td></td>
 <td><a href="https://docs.microsoft.com/graph/api/intune-shared-mobileapp-gettopmobileapps?view=graph-rest-1.0&amp;tabs=http">GET /deviceAppManagement/mobileApps/getTopMobileApps</a></td>
 </tr>
@@ -2460,6 +2465,11 @@
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementexportjob-create?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/reports/exportJobs</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getautopilotdeploymentstatus?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/reports/getAutopilotDeploymentStatus</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -5211,39 +5221,9 @@
 <td style="text-align: left;">Notes for the app. Inherited from mobileApp</td>
 </tr>
 <tr>
-<td style="text-align: left;">uploadState</td>
-<td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The upload state. Possible values are: 0 - <code>Not Ready</code>, 1 - <code>Ready</code>, 2 - <code>Processing</code>. Inherited from mobileApp</td>
-</tr>
-<tr>
 <td style="text-align: left;">publishingState</td>
 <td style="text-align: left;">mobileAppPublishingState</td>
 <td style="text-align: left;">The publishing state for the app. The app cannot be assigned unless the app is published. Inherited from mobileApp. Possible values are: <code>notPublished</code>, <code>processing</code>, <code>published</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">isAssigned</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">The value indicating whether the app is assigned to at least one group. Inherited from mobileApp</td>
-</tr>
-<tr>
-<td style="text-align: left;">roleScopeTagIds</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">List of scope tag ids for this mobile app. Inherited from mobileApp</td>
-</tr>
-<tr>
-<td style="text-align: left;">dependentAppCount</td>
-<td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The total number of dependencies the child app has. Inherited from mobileApp</td>
-</tr>
-<tr>
-<td style="text-align: left;">supersedingAppCount</td>
-<td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The total number of apps this app directly or indirectly supersedes. Inherited from mobileApp</td>
-</tr>
-<tr>
-<td style="text-align: left;">supersededAppCount</td>
-<td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The total number of apps this app is directly or indirectly superseded by. Inherited from mobileApp</td>
 </tr>
 </tbody>
 </table>
@@ -5485,6 +5465,158 @@
 <td style="text-align: left;">publishingState</td>
 <td style="text-align: left;">mobileAppPublishingState</td>
 <td style="text-align: left;">The publishing state for the app. The app cannot be assigned unless the app is published. Inherited from mobileApp. Possible values are: <code>notPublished</code>, <code>processing</code>, <code>published</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="macospkgapp-"><a href="https://docs.microsoft.com/graph/api/resources/intune-apps-macospkgapp?view=graph-rest-1.0&amp;tabs=http">macOSPkgApp </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Key of the entity. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The admin provided or imported title of the app. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The description of the app. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">publisher</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The publisher of the app. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">largeIcon</td>
+<td style="text-align: left;">mimeContent</td>
+<td style="text-align: left;">The large icon, to be displayed in the app details and used for upload of the icon. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the app was created. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the app was last modified. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">isFeatured</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The value indicating whether the app is marked as featured by the admin. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">privacyInformationUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The privacy statement Url. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">informationUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The more information Url. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">owner</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The owner of the app. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">developer</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The developer of the app. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">notes</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Notes for the app. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">uploadState</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The upload state. Possible values are: 0 - <code>Not Ready</code>, 1 - <code>Ready</code>, 2 - <code>Processing</code>. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">publishingState</td>
+<td style="text-align: left;">mobileAppPublishingState</td>
+<td style="text-align: left;">The publishing state for the app. The app cannot be assigned unless the app is published. Inherited from mobileApp. Possible values are: <code>notPublished</code>, <code>processing</code>, <code>published</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isAssigned</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The value indicating whether the app is assigned to at least one group. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">roleScopeTagIds</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">List of scope tag ids for this mobile app. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">dependentAppCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The total number of dependencies the child app has. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">supersedingAppCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The total number of apps this app directly or indirectly supersedes. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">supersededAppCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The total number of apps this app is directly or indirectly superseded by. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">committedContentVersion</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The internal committed content version. Inherited from mobileLobApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">fileName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name of the main Lob application file. Inherited from mobileLobApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">size</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">The total size, including all uploaded files. Inherited from mobileLobApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">primaryBundleId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The primary CFBundleIdentifier of the .pkg.</td>
+</tr>
+<tr>
+<td style="text-align: left;">primaryBundleVersion</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The primary CFBundleVersion of the .pkg.</td>
+</tr>
+<tr>
+<td style="text-align: left;">includedApps</td>
+<td style="text-align: left;">macOSIncludedApp collection</td>
+<td style="text-align: left;">The list of apps expected to be installed by the .pkg.</td>
+</tr>
+<tr>
+<td style="text-align: left;">ignoreVersionDetection</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">A value indicating whether the app's version will be used to detect the app after it is installed on a device. Set this to true for apps that use a self-update feature. Set this to false to install the app when it is not already installed on the device, or if the deploying app's version number does not match the version that's already installed on the device. The default value is false.</td>
+</tr>
+<tr>
+<td style="text-align: left;">minimumSupportedOperatingSystem</td>
+<td style="text-align: left;">macOSMinimumOperatingSystem</td>
+<td style="text-align: left;">The value for the minimum applicable operating system.</td>
 </tr>
 </tbody>
 </table>
@@ -7282,6 +7414,23 @@
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Key of the entity.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mobileapppublishingconstraints-"><a href="https://docs.microsoft.com/graph/api/resources/intune-apps-mobileapppublishingconstraints?view=graph-rest-1.0&amp;tabs=http">mobileAppPublishingConstraints </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">win32LobAppConstraints</td>
+<td style="text-align: left;">win32LobAppPublishingConstraints</td>
+<td style="text-align: left;">Contains properties for Win32 LOB app publishing constraints.</td>
 </tr>
 </tbody>
 </table>
@@ -16405,47 +16554,47 @@
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The key for the WindowsDefenderApplicationControl supplemental policy.</td>
+<td style="text-align: left;">The unique identifier of the Windows Defender Application Control Supplemental Policy. This id is assigned during creation of the policy.</td>
 </tr>
 <tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name of WindowsDefenderApplicationControl supplemental policy.</td>
+<td style="text-align: left;">The display name of the Windows Defender Application Control Supplemental Policy.</td>
 </tr>
 <tr>
 <td style="text-align: left;">description</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The description of WindowsDefenderApplicationControl supplemental policy.</td>
+<td style="text-align: left;">The description of the Windows Defender Application Control Supplemental Policy.</td>
 </tr>
 <tr>
 <td style="text-align: left;">content</td>
 <td style="text-align: left;">Binary</td>
-<td style="text-align: left;">The WindowsDefenderApplicationControl supplemental policy content in byte array format.</td>
+<td style="text-align: left;">Indicates the content of the Windows Defender Application Control Supplemental Policy in byte array format.</td>
 </tr>
 <tr>
 <td style="text-align: left;">contentFileName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The WindowsDefenderApplicationControl supplemental policy content's file name.</td>
+<td style="text-align: left;">Indicates the file name associated with the content of the Windows Defender Application Control Supplemental Policy.</td>
 </tr>
 <tr>
 <td style="text-align: left;">version</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The WindowsDefenderApplicationControl supplemental policy's version.</td>
+<td style="text-align: left;">Indicates the Windows Defender Application Control Supplemental Policy's version.</td>
 </tr>
 <tr>
 <td style="text-align: left;">creationDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time when the WindowsDefenderApplicationControl supplemental policy was uploaded.</td>
+<td style="text-align: left;">Indicates the created date and time when the Windows Defender Application Control Supplemental Policy was uploaded.</td>
 </tr>
 <tr>
 <td style="text-align: left;">lastModifiedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time when the WindowsDefenderApplicationControl supplemental policy was last modified.</td>
+<td style="text-align: left;">Indicates the last modified date and time of the Windows Defender Application Control Supplemental Policy.</td>
 </tr>
 <tr>
 <td style="text-align: left;">roleScopeTagIds</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">List of Scope Tags for this WindowsDefenderApplicationControl supplemental policy entity.</td>
+<td style="text-align: left;">List of Scope Tags for the Windows Defender Application Control Supplemental Policy entity.</td>
 </tr>
 </tbody>
 </table>
