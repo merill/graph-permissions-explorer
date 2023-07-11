@@ -121,16 +121,6 @@
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/team-list-permissiongrants?view=graph-rest-1.0&amp;tabs=http">GET /teams/{team-id}/permissionGrants</a></td>
 </tr>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/team-post-installedapps?view=graph-rest-1.0&amp;tabs=http">POST /teams/{team-id}/installedApps</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/team-teamsappinstallation-upgrade?view=graph-rest-1.0&amp;tabs=http">POST /teams/{team-id}/installedApps/{app-installation-id}/upgrade</a></td>
-</tr>
 </tbody>
 </table>
 <h2 id="delegate-permission">Delegate Permission</h2>
@@ -305,38 +295,6 @@
 </tr>
 </tbody>
 </table>
-<h3 id="teamsapp-"><a href="https://docs.microsoft.com/graph/api/resources/teamsapp?view=graph-rest-1.0&amp;tabs=http">teamsApp </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">displayName</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.</td>
-</tr>
-<tr>
-<td style="text-align: left;">distributionMethod</td>
-<td style="text-align: left;">teamsAppDistributionMethod</td>
-<td style="text-align: left;">The method of distribution for the app. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">externalId</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.</td>
-</tr>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">The catalog app's generated app ID (different from the developer-provided ID in the Microsoft Teams zip app package.</td>
-</tr>
-</tbody>
-</table>
 <h3 id="teamsappinstallation-"><a href="https://docs.microsoft.com/graph/api/resources/teamsappinstallation?view=graph-rest-1.0&amp;tabs=http">teamsAppInstallation </a></h3>
 <table>
 <thead>
@@ -351,6 +309,11 @@
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: left;">A unique ID (not the Teams app ID).</td>
+</tr>
+<tr>
+<td style="text-align: left;">consentedPermissionSet</td>
+<td style="text-align: left;">teamsAppPermissionSet</td>
+<td style="text-align: left;">The set of resource-specific permissions consented to while installing or upgrading the teamsApp.</td>
 </tr>
 </tbody>
 </table>

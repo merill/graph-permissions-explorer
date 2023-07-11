@@ -203,16 +203,6 @@
 </tr>
 <tr>
 <td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/authenticationmethodsroot-list-userregistrationdetails?view=graph-rest-1.0&amp;tabs=http">GET /reports/authenticationMethods/userRegistrationDetails</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/userregistrationdetails-get?view=graph-rest-1.0&amp;tabs=http">GET /reports/authenticationMethods/userRegistrationDetails/{userId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/authenticationoperation-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/authentication/operations/{id}</a></td>
 </tr>
@@ -687,103 +677,6 @@
 <td style="text-align: left;">temporaryAccessPass</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The Temporary Access Pass used to authenticate. Returned only on creation of a new **t</td>
-</tr>
-</tbody>
-</table>
-<h3 id="userregistrationdetails-"><a href="https://docs.microsoft.com/graph/api/resources/userregistrationdetails?view=graph-rest-1.0&amp;tabs=http">userRegistrationDetails </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">defaultMfaMethod</td>
-<td style="text-align: left;">defaultMfaMethodType</td>
-<td style="text-align: left;">The method the user or admin selected as default for performing multi-factor authentication for the user. The possible values are: <code>none</code>, <code>mobilePhone</code>, <code>alternateMobilePhone</code>, <code>officePhone</code>, <code>microsoftAuthenticatorPush</code>, <code>softwareOneTimePasscode</code>, <code>unknownFutureValue</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">User object identifier in Azure AD. Inherited from entity.</td>
-</tr>
-<tr>
-<td style="text-align: left;">isAdmin</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Whether the user has an admin role in the tenant. This value can be used to check the authentication methods that privileged accounts are registered for and capable of.</td>
-</tr>
-<tr>
-<td style="text-align: left;">isMfaCapable</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports <code>$filter</code> (<code>eq</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">isMfaRegistered</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy.  Supports <code>$filter</code> (<code>eq</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">isPasswordlessCapable</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Whether the user has registered a passwordless strong authentication method (including FIDO2, Windows Hello for Business, and Microsoft Authenticator (Passwordless)) that is allowed by the authentication methods policy. Supports <code>$filter</code> (<code>eq</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">isSsprCapable</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Whether the user has registered the required number of authentication methods for self-service password reset and the user is allowed to perform self-service password reset by policy. Supports <code>$filter</code> (<code>eq</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">isSsprEnabled</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Whether the user is allowed to perform self-service password reset by policy. The user may not necessarily have registered the required number of authentication methods for self-service password reset. Supports <code>$filter</code> (<code>eq</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">isSsprRegistered</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Whether the user has registered the required number of authentication methods for self-service password reset. The user may not necessarily be allowed to perform self-service password reset by policy. Supports <code>$filter</code> (<code>eq</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">isSystemPreferredAuthenticationMethodEnabled</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates whether system preferred authentication method is enabled. If enabled, the system dynamically determines the most secure authentication method among the methods registered by the user. Supports <code>$filter</code> (<code>eq</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">lastUpdatedDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time (UTC) when the record was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">methodsRegistered</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Collection of authentication methods registered, such as <code>mobilePhone</code>, <code>email</code>, <code>fido2</code>. Supports <code>$filter</code> (<code>any</code> with <code>eq</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">systemPreferredAuthenticationMethods</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Collection of authentication methods that the system determined to be the most secure authentication methods among the registered methods for second factor authentication. Possible values are: <code>push</code>, <code>oath</code>, <code>voiceMobile</code>, <code>voiceAlternateMobile</code>, <code>voiceOffice</code>, <code>sms</code>, <code>none</code>, <code>unknownFutureValue</code>. Supports <code>$filter</code> (<code>any</code> with <code>eq</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">userDisplayName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The user display name, such as <code>Adele Vance</code>. Supports <code>$filter</code> (<code>eq</code>, <code>startsWith</code>) and <code>$orderBy</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">userPreferredMethodForSecondaryAuthentication</td>
-<td style="text-align: left;">userDefaultAuthenticationMethod</td>
-<td style="text-align: left;">The method the user selected as the default second-factor for performing multi-factor authentication. Possible values are: <code>push</code>, <code>oath</code>, <code>voiceMobile</code>, <code>voiceAlternateMobile</code>, <code>voiceOffice</code>, <code>sms</code>, <code>none</code>, <code>unknownFutureValue</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">userPrincipalName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The user principal name, such as <code>AdeleV@contoso.com</code>. Supports <code>$filter</code> (<code>eq</code>, <code>startsWith</code>) and <code>$orderBy</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">userType</td>
-<td style="text-align: left;">signInUserType</td>
-<td style="text-align: left;">Identifies whether the user is a member or guest in the tenant. The possible values are: <code>member</code>, <code>guest</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 </tbody>
 </table>
