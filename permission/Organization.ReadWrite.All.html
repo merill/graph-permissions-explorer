@@ -118,6 +118,21 @@
 </tr>
 <tr>
 <td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/directory-list-subscriptions?view=graph-rest-1.0&amp;tabs=http">GET /directory/subscriptions</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/companysubscription-get?view=graph-rest-1.0&amp;tabs=http">GET /directory/subscriptions(commerceSubscriptionId='{commerceSubscriptionId}')</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/companysubscription-get?view=graph-rest-1.0&amp;tabs=http">GET /directory/subscriptions/{id}</a></td>
+</tr>
+<tr>
+<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/organization-get?view=graph-rest-1.0&amp;tabs=http">GET /organization</a></td>
 </tr>
@@ -305,6 +320,83 @@
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The unique identifier of the certificate based auth configuration. Read-only.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="companysubscription-"><a href="https://docs.microsoft.com/graph/api/resources/companysubscription?view=graph-rest-1.0&amp;tabs=http">companySubscription </a></h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>commerceSubscriptionId</td>
+<td>String</td>
+<td>The ID of this subscription in the commerce system. Alternate key.</td>
+</tr>
+<tr>
+<td>createdDateTime</td>
+<td>DateTimeOffset</td>
+<td>The date and time when this subscription was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>The unique ID for this subscription. Inherited from entity.</td>
+</tr>
+<tr>
+<td>isTrial</td>
+<td>Boolean</td>
+<td>Whether the subscription is a free trial or purchased.</td>
+</tr>
+<tr>
+<td>nextLifecycleDateTime</td>
+<td>DateTimeOffset</td>
+<td>The date and time when the subscription will move to the next state (as defined by the <strong>status</strong> property) if not renewed by the tenant. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td>ownerId</td>
+<td>String</td>
+<td>The object ID of the account admin.</td>
+</tr>
+<tr>
+<td>ownerTenantId</td>
+<td>String</td>
+<td>The unique identifier for the Microsoft partner tenant that created the subscription on a customer tenant.</td>
+</tr>
+<tr>
+<td>ownerType</td>
+<td>String</td>
+<td>Indicates the entity that <strong>ownerId</strong> belongs to, for example, &quot;User&quot;.</td>
+</tr>
+<tr>
+<td>serviceStatus</td>
+<td>servicePlanInfo collection</td>
+<td>The provisioning status of each service that's included in this subscription.</td>
+</tr>
+<tr>
+<td>skuId</td>
+<td>String</td>
+<td>The object ID of the SKU associated with this subscription.</td>
+</tr>
+<tr>
+<td>skuPartNumber</td>
+<td>String</td>
+<td>The SKU associated with this subscription.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>The status of this subscription. Possible values are: <code>Enabled</code>, <code>Expired</code>, <code>Suspended</code>, <code>Warning</code>, <code>LockedOut</code>.</td>
+</tr>
+<tr>
+<td>totalLicenses</td>
+<td>Int32</td>
+<td>The number of seats included in this subscription.</td>
 </tr>
 </tbody>
 </table>
@@ -710,14 +802,24 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">accountId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique ID of the account this SKU belongs to.</td>
+</tr>
+<tr>
+<td style="text-align: left;">accountName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name of the account this SKU belongs to.</td>
+</tr>
+<tr>
 <td style="text-align: left;">appliesTo</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">For example, &quot;User&quot; or &quot;Company&quot;.</td>
+<td style="text-align: left;">The target class for this SKU. Only SKUs with target class <code>User</code> are assignable. Possible values are: &quot;User&quot;, &quot;Company&quot;.</td>
 </tr>
 <tr>
 <td style="text-align: left;">capabilityStatus</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Possible values are: <code>Enabled</code>, <code>Warning</code>, <code>Suspended</code>, <code>Deleted</code>, <code>LockedOut</code>. The capabilityStatus is <code>Enabled</code> if the <strong>prepaidUnits</strong> property has at least 1 unit that is <strong>enabled</strong>, and <code>LockedOut</code> if the customer cancelled their subscription.</td>
+<td style="text-align: left;"><code>Enabled</code> indicates that the <strong>prepaidUnits</strong> property has at least one unit that is enabled. <code>LockedOut</code> indicates that the customer cancelled their subscription. Possible values are: <code>Enabled</code>, <code>Warning</code>, <code>Suspended</code>, <code>Deleted</code>, <code>LockedOut</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">consumedUnits</td>
@@ -737,7 +839,7 @@
 <tr>
 <td style="text-align: left;">servicePlans</td>
 <td style="text-align: left;">servicePlanInfo collection</td>
-<td style="text-align: left;">Information about the service plans that are available with the SKU. Not nullable</td>
+<td style="text-align: left;">Information about the service plans that are available with the SKU. Not nullable.</td>
 </tr>
 <tr>
 <td style="text-align: left;">skuId</td>
@@ -748,6 +850,11 @@
 <td style="text-align: left;">skuPartNumber</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The SKU part number; for example: &quot;AAD_PREMIUM&quot; or &quot;RMSBASIC&quot;. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.</td>
+</tr>
+<tr>
+<td style="text-align: left;">subscriptionsIds</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">A list of all subscription IDs associated with this SKU.</td>
 </tr>
 </tbody>
 </table>

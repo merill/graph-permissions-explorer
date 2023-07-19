@@ -244,6 +244,11 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-delete-sponsors?view=graph-rest-1.0&amp;tabs=http">DELETE /users/{id}/sponsors/{id}/$ref</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/directory-list-administrativeunits?view=graph-rest-1.0&amp;tabs=http">GET /administrativeUnits</a></td>
 </tr>
 <tr>
@@ -1550,6 +1555,11 @@
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-retryserviceprovisioning?view=graph-rest-1.0&amp;tabs=http">POST /users/{id}/retryServiceProvisioning</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-post-sponsors?view=graph-rest-1.0&amp;tabs=http">POST /users/{id}/sponsors/$ref</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -4265,14 +4275,24 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">accountId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique ID of the account this SKU belongs to.</td>
+</tr>
+<tr>
+<td style="text-align: left;">accountName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name of the account this SKU belongs to.</td>
+</tr>
+<tr>
 <td style="text-align: left;">appliesTo</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">For example, &quot;User&quot; or &quot;Company&quot;.</td>
+<td style="text-align: left;">The target class for this SKU. Only SKUs with target class <code>User</code> are assignable. Possible values are: &quot;User&quot;, &quot;Company&quot;.</td>
 </tr>
 <tr>
 <td style="text-align: left;">capabilityStatus</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Possible values are: <code>Enabled</code>, <code>Warning</code>, <code>Suspended</code>, <code>Deleted</code>, <code>LockedOut</code>. The capabilityStatus is <code>Enabled</code> if the <strong>prepaidUnits</strong> property has at least 1 unit that is <strong>enabled</strong>, and <code>LockedOut</code> if the customer cancelled their subscription.</td>
+<td style="text-align: left;"><code>Enabled</code> indicates that the <strong>prepaidUnits</strong> property has at least one unit that is enabled. <code>LockedOut</code> indicates that the customer cancelled their subscription. Possible values are: <code>Enabled</code>, <code>Warning</code>, <code>Suspended</code>, <code>Deleted</code>, <code>LockedOut</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">consumedUnits</td>
@@ -4292,7 +4312,7 @@
 <tr>
 <td style="text-align: left;">servicePlans</td>
 <td style="text-align: left;">servicePlanInfo collection</td>
-<td style="text-align: left;">Information about the service plans that are available with the SKU. Not nullable</td>
+<td style="text-align: left;">Information about the service plans that are available with the SKU. Not nullable.</td>
 </tr>
 <tr>
 <td style="text-align: left;">skuId</td>
@@ -4303,6 +4323,11 @@
 <td style="text-align: left;">skuPartNumber</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The SKU part number; for example: &quot;AAD_PREMIUM&quot; or &quot;RMSBASIC&quot;. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.</td>
+</tr>
+<tr>
+<td style="text-align: left;">subscriptionsIds</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">A list of all subscription IDs associated with this SKU.</td>
 </tr>
 </tbody>
 </table>
