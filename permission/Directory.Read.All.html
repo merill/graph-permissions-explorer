@@ -219,6 +219,11 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/signin-list?view=graph-rest-1.0&amp;tabs=http">GET /auditLogs/signIns</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/signin-get?view=graph-rest-1.0&amp;tabs=http">GET /auditLogs/signIns/{id}</a></td>
 </tr>
 <tr>
@@ -1025,11 +1030,6 @@
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-delta?view=graph-rest-1.0&amp;tabs=http">GET /users/delta</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/signin-list?view=graph-rest-1.0&amp;tabs=http">GET auditLogs/signIns</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -2021,12 +2021,12 @@
 <tr>
 <td style="text-align: left;">activityDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+<td style="text-align: left;">Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ge</code>, <code>le</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">activityDisplayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Indicates the activity name or the operation name (examples: &quot;Create User&quot; and &quot;Add member to group&quot;). For a list of activities logged, refer to Azure AD audit log categories and activities.</td>
+<td style="text-align: left;">Indicates the activity name or the operation name (examples: &quot;Create User&quot; and &quot;Add member to group&quot;). For a list of activities logged, refer to Azure AD audit log categories and activities. Supports <code>$filter</code> (<code>eq</code>, <code>startswith</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">additionalDetails</td>
@@ -2041,22 +2041,22 @@
 <tr>
 <td style="text-align: left;">correlationId</td>
 <td style="text-align: left;">Guid</td>
-<td style="text-align: left;">Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services.</td>
+<td style="text-align: left;">Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services. Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Indicates the unique ID for the activity. This is a GUID.</td>
+<td style="text-align: left;">Indicates the unique ID for the activity. This is a GUID. Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">initiatedBy</td>
 <td style="text-align: left;">auditActivityInitiator</td>
-<td style="text-align: left;">Indicates information about the user or app initiated the activity.</td>
+<td style="text-align: left;">Indicates information about the user or app initiated the activity. Supports <code>$filter</code> (<code>eq</code>) for <strong>user</strong>/<strong>id</strong>, <strong>user</strong>/<strong>displayName</strong>, <strong>user</strong>/<strong>userPrincipalName</strong>, <strong>app</strong>/<strong>appId</strong>, <strong>app</strong>/<strong>displayName</strong>; and <code>$filter</code> (<code>startswith</code>) for <strong>user</strong>/<strong>userPrincipalName</strong>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">loggedByService</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Indicates information on which service initiated the activity (For example: <code>Self-service Password Management</code>, <code>Core Directory</code>, <code>B2C</code>, <code>Invited Users</code>, <code>Microsoft Identity Manager</code>, <code>Privileged Identity Management</code>.</td>
+<td style="text-align: left;">Indicates information on which service initiated the activity (For example: <code>Self-service Password Management</code>, <code>Core Directory</code>, <code>B2C</code>, <code>Invited Users</code>, <code>Microsoft Identity Manager</code>, <code>Privileged Identity Management</code>. Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">operationType</td>
@@ -2076,7 +2076,7 @@
 <tr>
 <td style="text-align: left;">targetResources</td>
 <td style="text-align: left;">targetResource collection</td>
-<td style="text-align: left;">Indicates information on which resource was changed due to the activity. Target Resource Type can be <code>User</code>, <code>Device</code>, <code>Directory</code>, <code>App</code>, <code>Role</code>, <code>Group</code>, <code>Policy</code> or <code>Other</code>.</td>
+<td style="text-align: left;">Indicates information on which resource was changed due to the activity. Target Resource Type can be <code>User</code>, <code>Device</code>, <code>Directory</code>, <code>App</code>, <code>Role</code>, <code>Group</code>, <code>Policy</code> or <code>Other</code>. Supports <code>$filter</code> (<code>eq</code>) for **i</td>
 </tr>
 </tbody>
 </table>
@@ -2767,7 +2767,7 @@
 <tr>
 <td style="text-align: left;">clientId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The <strong>id</strong> of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports <code>$filter</code> (<code>eq</code> only).</td>
+<td style="text-align: left;">The object <strong>id</strong> (<em>not</em> <strong>appId</strong>) of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports <code>$filter</code> (<code>eq</code> only).</td>
 </tr>
 <tr>
 <td style="text-align: left;">consentType</td>
@@ -3154,17 +3154,17 @@
 <tr>
 <td style="text-align: left;">activityDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code></td>
+<td style="text-align: left;">Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. <br><br> SUpports <code>$filter</code> (<code>eq</code>, <code>gt</code>, <code>lt</code>) and <code>orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">changeId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Unique ID of this change in this cycle.</td>
+<td style="text-align: left;">Unique ID of this change in this cycle. Supports <code>$filter</code> (<code>eq</code>, <code>contains</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">cycleId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Unique ID per job iteration.</td>
+<td style="text-align: left;">Unique ID per job iteration. Supports <code>$filter</code> (<code>eq</code>, <code>contains</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">durationInMilliseconds</td>
@@ -3174,17 +3174,17 @@
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Indicates the unique ID for the activity. This is a read-only GUID.</td>
+<td style="text-align: left;">Indicates the unique ID for the activity. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>contains</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">initiatedBy</td>
 <td style="text-align: left;">initiator</td>
-<td style="text-align: left;">Details of who initiated this provisioning.</td>
+<td style="text-align: left;">Details of who initiated this provisioning. Supports <code>$filter</code> (<code>eq</code>, <code>contains</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">jobId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique ID for the whole provisioning job.</td>
+<td style="text-align: left;">The unique ID for the whole provisioning job. Supports <code>$filter</code> (<code>eq</code>, <code>contains</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">modifiedProperties</td>
@@ -3194,7 +3194,7 @@
 <tr>
 <td style="text-align: left;">provisioningAction</td>
 <td style="text-align: left;">provisioningAction</td>
-<td style="text-align: left;">Indicates the activity name or the operation name. Possible values are: <code>create</code>, <code>update</code>, <code>delete</code>, <code>stageddelete</code>, <code>disable</code>, <code>other</code> and <code>unknownFutureValue</code>. For a list of activities logged, refer to Azure AD activity list.</td>
+<td style="text-align: left;">Indicates the activity name or the operation name. Possible values are: <code>create</code>, <code>update</code>, <code>delete</code>, <code>stageddelete</code>, <code>disable</code>, <code>other</code> and <code>unknownFutureValue</code>. For a list of activities logged, refer to Azure AD activity list. Supports <code>$filter</code> (<code>eq</code>, <code>contains</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">provisioningStatusInfo</td>
@@ -3209,32 +3209,32 @@
 <tr>
 <td style="text-align: left;">servicePrincipal</td>
 <td style="text-align: left;">servicePrincipal collection</td>
-<td style="text-align: left;">Represents the service principal used for provisioning.</td>
+<td style="text-align: left;">Represents the service principal used for provisioning. Supports <code>$filter</code> (<code>eq</code>) for <strong>id</strong> and <strong>name</strong>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">sourceIdentity</td>
 <td style="text-align: left;">provisionedIdentity</td>
-<td style="text-align: left;">Details of source object being provisioned.</td>
+<td style="text-align: left;">Details of source object being provisioned. Supports <code>$filter</code> (<code>eq</code>, <code>contains</code>) for <strong>identityType</strong>, <strong>id</strong>, and <strong>displayName</strong>*.</td>
 </tr>
 <tr>
 <td style="text-align: left;">sourceSystem</td>
 <td style="text-align: left;">provisioningSystem</td>
-<td style="text-align: left;">Details of source system of the object being provisioned.</td>
+<td style="text-align: left;">Details of source system of the object being provisioned. Supports <code>$filter</code> (<code>eq</code>, <code>contains</code>) for <strong>displayName</strong>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">targetIdentity</td>
 <td style="text-align: left;">provisionedIdentity</td>
-<td style="text-align: left;">Details of target object being provisioned.</td>
+<td style="text-align: left;">Details of target object being provisioned. Supports <code>$filter</code> (<code>eq</code>, <code>contains</code>) for <strong>identityType</strong>, <strong>id</strong>, and <strong>displayName</strong>*.</td>
 </tr>
 <tr>
 <td style="text-align: left;">targetSystem</td>
 <td style="text-align: left;">provisioningSystem</td>
-<td style="text-align: left;">Details of target system of the object being provisioned.</td>
+<td style="text-align: left;">Details of target system of the object being provisioned. Supports <code>$filter</code> (<code>eq</code>, <code>contains</code>) for <strong>displayName</strong>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">tenantId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Unique Azure AD tenant ID.</td>
+<td style="text-align: left;">Unique Azure AD tenant ID. Supports <code>$filter</code> (<code>eq</code>, <code>contains</code>).</td>
 </tr>
 </tbody>
 </table>
@@ -3517,12 +3517,12 @@
 <tr>
 <td style="text-align: left;">appDisplayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">App name displayed in the Azure Portal. Supports <code>$filter</code> (<code>eq</code> and <code>startsWith</code> operators only).</td>
+<td style="text-align: left;">App name displayed in the Azure Portal. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>startsWith</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">appId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Unique GUID representing the app ID in the Azure Active Directory. Supports <code>$filter</code> (<code>eq</code> operator only).</td>
+<td style="text-align: left;">Unique GUID representing the app ID in the Azure Active Directory. <br><br> Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">appliedConditionalAccessPolicies</td>
@@ -3532,37 +3532,37 @@
 <tr>
 <td style="text-align: left;">clientAppUsed</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifies the client used for the sign-in activity. Modern authentication clients include <code>Browser</code> and <code>modern clients</code>. Legacy authentication clients include <code>Exchange ActiveSync</code>, <code>IMAP</code>, <code>MAPI</code>, <code>SMTP</code>, <code>POP</code>, and <code>other clients</code>. Supports <code>$filter</code> (<code>eq</code> operator only).</td>
+<td style="text-align: left;">Identifies the client used for the sign-in activity. Modern authentication clients include <code>Browser</code>, <code>modern clients</code>. Legacy authentication clients include <code>Exchange ActiveSync</code>, <code>IMAP</code>, <code>MAPI</code>, <code>SMTP</code>, <code>POP</code>, and <code>other clients</code>. <br><br> Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">conditionalAccessStatus</td>
 <td style="text-align: left;">conditionalAccessStatus</td>
-<td style="text-align: left;">Reports status of an activated conditional access policy. Possible values are: <code>success</code>, <code>failure</code>, <code>notApplied</code>, and <code>unknownFutureValue</code>. Supports <code>$filter</code> (<code>eq</code> operator only).</td>
+<td style="text-align: left;">Reports status of an activated conditional access policy. Possible values are: <code>success</code>, <code>failure</code>, <code>notApplied</code>, and <code>unknownFutureValue</code>. <br><br> Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">correlationId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The request ID sent from the client when the sign-in is initiated; used to troubleshoot sign-in activity. Supports <code>$filter</code> (<code>eq</code> operator only).</td>
+<td style="text-align: left;">The request ID sent from the client when the sign-in is initiated; used to troubleshoot sign-in activity. <br><br> Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Date and time (UTC) the sign-in was initiated. Example: midnight on Jan 1, 2014 is reported as <code>2014-01-01T00:00:00Z</code>. Supports <code>$orderby</code> and <code>$filter</code> (<code>eq</code>, <code>le</code>, and <code>ge</code> operators only).</td>
+<td style="text-align: left;">Date and time (UTC) the sign-in was initiated. Example: midnight on Jan 1, 2014 is reported as <code>2014-01-01T00:00:00Z</code>. <br><br> Supports <code>$orderby</code>, <code>$filter</code> (<code>eq</code>, <code>le</code>, and <code>ge</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">deviceDetail</td>
 <td style="text-align: left;">deviceDetail</td>
-<td style="text-align: left;">Device information from where the sign-in occurred; includes device ID, operating system, and browser. Supports <code>$filter</code> (<code>eq</code> and <code>startsWith</code> operators only) on <strong>browser</strong> and <strong>operatingSytem</strong> properties.</td>
+<td style="text-align: left;">Device information from where the sign-in occurred; includes device ID, operating system, and browser. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>startsWith</code>) on <strong>browser</strong> and <strong>operatingSytem</strong> properties.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Unique ID representing the sign-in activity. Supports <code>$filter</code> (<code>eq</code> operator only).</td>
+<td style="text-align: left;">Unique ID representing the sign-in activity. <br><br> Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">ipAddress</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">IP address of the client used to sign in. Supports <code>$filter</code> (<code>eq</code> and <code>startsWith</code> operators only).</td>
+<td style="text-align: left;">IP address of the client used to sign in. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>startsWith</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">isInteractive</td>
@@ -3572,67 +3572,67 @@
 <tr>
 <td style="text-align: left;">location</td>
 <td style="text-align: left;">signInLocation</td>
-<td style="text-align: left;">Provides the city, state, and country code where the sign-in originated. Supports <code>$filter</code> (<code>eq</code> and <code>startsWith</code> operators only) on <strong>city</strong>, <strong>state</strong>, and <strong>countryOrRegion</strong> properties.</td>
+<td style="text-align: left;">Provides the city, state, and country code where the sign-in originated. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>startsWith</code>) on <strong>city</strong>, <strong>state</strong>, and <strong>countryOrRegion</strong> properties.</td>
 </tr>
 <tr>
 <td style="text-align: left;">resourceDisplayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Name of the resource the user signed into. Supports <code>$filter</code> (<code>eq</code> operator only).</td>
+<td style="text-align: left;">Name of the resource the user signed into. <br><br> Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">resourceId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">ID of the resource that the user signed into. Supports <code>$filter</code> (<code>eq</code> operator only).</td>
+<td style="text-align: left;">ID of the resource that the user signed into. <br><br> Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">riskDetail</td>
 <td style="text-align: left;">riskDetail</td>
-<td style="text-align: left;">Provides the 'reason' behind a specific state of a risky user, sign-in or a risk event. The possible values are: <code>none</code>, <code>adminGeneratedTemporaryPassword</code>, <code>userPerformedSecuredPasswordChange</code>, <code>userPerformedSecuredPasswordReset</code>, <code>adminConfirmedSigninSafe</code>, <code>aiConfirmedSigninSafe</code>, <code>userPassedMFADrivenByRiskBasedPolicy</code>, <code>adminDismissedAllRiskForUser</code>, <code>adminConfirmedSigninCompromised</code>, <code>unknownFutureValue</code>. The value <code>none</code> means that no action has been performed on the user or sign-in so far.  Supports <code>$filter</code> (<code>eq</code> operator only).<br><strong>Note:</strong> Details for this property require an Azure AD Premium P2 license. Other licenses return the value <code>hidden</code>.</td>
+<td style="text-align: left;">Provides the 'reason' behind a specific state of a risky user, sign-in or a risk event. The possible values are: <code>none</code>, <code>adminGeneratedTemporaryPassword</code>, <code>userPerformedSecuredPasswordChange</code>, <code>userPerformedSecuredPasswordReset</code>, <code>adminConfirmedSigninSafe</code>, <code>aiConfirmedSigninSafe</code>, <code>userPassedMFADrivenByRiskBasedPolicy</code>, <code>adminDismissedAllRiskForUser</code>, <code>adminConfirmedSigninCompromised</code>, <code>unknownFutureValue</code>. The value <code>none</code> means that no action has been performed on the user or sign-in so far.  Supports <code>$filter</code> (<code>eq</code>).<br><strong>Note:</strong> Details for this property require an Azure AD Premium P2 license. Other licenses return the value <code>hidden</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">riskEventTypes</td>
 <td style="text-align: left;">riskEventType collection</td>
-<td style="text-align: left;">Risk event types associated with the sign-in. The possible values are: <code>unlikelyTravel</code>, <code>anonymizedIPAddress</code>, <code>maliciousIPAddress</code>, <code>unfamiliarFeatures</code>, <code>malwareInfectedIPAddress</code>, <code>suspiciousIPAddress</code>, <code>leakedCredentials</code>, <code>investigationsThreatIntelligence</code>,  <code>generic</code>, and <code>unknownFutureValue</code>. Supports <code>$filter</code> (<code>eq</code> operator only).</td>
+<td style="text-align: left;">Risk event types associated with the sign-in. The possible values are: <code>unlikelyTravel</code>, <code>anonymizedIPAddress</code>, <code>maliciousIPAddress</code>, <code>unfamiliarFeatures</code>, <code>malwareInfectedIPAddress</code>, <code>suspiciousIPAddress</code>, <code>leakedCredentials</code>, <code>investigationsThreatIntelligence</code>,  <code>generic</code>, and <code>unknownFutureValue</code>. <br><br> Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">riskEventTypes_v2</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">The list of risk event types associated with the sign-in. Possible values: <code>unlikelyTravel</code>, <code>anonymizedIPAddress</code>, <code>maliciousIPAddress</code>, <code>unfamiliarFeatures</code>, <code>malwareInfectedIPAddress</code>, <code>suspiciousIPAddress</code>, <code>leakedCredentials</code>, <code>investigationsThreatIntelligence</code>,  <code>generic</code>, or <code>unknownFutureValue</code>. Supports <code>$filter</code> (<code>eq</code> and <code>startsWith</code> operators only).</td>
+<td style="text-align: left;">The list of risk event types associated with the sign-in. Possible values: <code>unlikelyTravel</code>, <code>anonymizedIPAddress</code>, <code>maliciousIPAddress</code>, <code>unfamiliarFeatures</code>, <code>malwareInfectedIPAddress</code>, <code>suspiciousIPAddress</code>, <code>leakedCredentials</code>, <code>investigationsThreatIntelligence</code>,  <code>generic</code>, or <code>unknownFutureValue</code>. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>startsWith</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">riskLevelAggregated</td>
 <td style="text-align: left;">riskLevel</td>
-<td style="text-align: left;">Aggregated risk level. The possible values are: <code>none</code>, <code>low</code>, <code>medium</code>, <code>high</code>, <code>hidden</code>, and <code>unknownFutureValue</code>. The value <code>hidden</code> means the user or sign-in was not enabled for Azure AD Identity Protection. Supports <code>$filter</code> (<code>eq</code> operator only). <br> <strong>Note:</strong> Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned <code>hidden</code>.</td>
+<td style="text-align: left;">Aggregated risk level. The possible values are: <code>none</code>, <code>low</code>, <code>medium</code>, <code>high</code>, <code>hidden</code>, and <code>unknownFutureValue</code>. The value <code>hidden</code> means the user or sign-in was not enabled for Azure AD Identity Protection. <br><br> Supports <code>$filter</code> (<code>eq</code>). <br> <strong>Note:</strong> Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned <code>hidden</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">riskLevelDuringSignIn</td>
 <td style="text-align: left;">riskLevel</td>
-<td style="text-align: left;">Risk level during sign-in. The possible values are: <code>none</code>, <code>low</code>, <code>medium</code>, <code>high</code>, <code>hidden</code>, and <code>unknownFutureValue</code>. The value <code>hidden</code> means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports <code>$filter</code> (<code>eq</code> operator only). <br><strong>Note:</strong> Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned <code>hidden</code>.</td>
+<td style="text-align: left;">Risk level during sign-in. The possible values are: <code>none</code>, <code>low</code>, <code>medium</code>, <code>high</code>, <code>hidden</code>, and <code>unknownFutureValue</code>. The value <code>hidden</code> means the user or sign-in was not enabled for Azure AD Identity Protection. <br><br> Supports <code>$filter</code> (<code>eq</code>).  <br><strong>Note:</strong> Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned <code>hidden</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">riskState</td>
 <td style="text-align: left;">riskState</td>
-<td style="text-align: left;">Reports status of the risky user, sign-in, or a risk event. The possible values are: <code>none</code>, <code>confirmedSafe</code>, <code>remediated</code>, <code>dismissed</code>, <code>atRisk</code>, <code>confirmedCompromised</code>, <code>unknownFutureValue</code>. Supports <code>$filter</code> (<code>eq</code> operator only).</td>
+<td style="text-align: left;">Reports status of the risky user, sign-in, or a risk event. The possible values are: <code>none</code>, <code>confirmedSafe</code>, <code>remediated</code>, <code>dismissed</code>, <code>atRisk</code>, <code>confirmedCompromised</code>, <code>unknownFutureValue</code>. <br><br> Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">signInStatus</td>
-<td style="text-align: left;">Sign-in status. Includes the error code and description of the error (in case of a sign-in failure). Supports <code>$filter</code> (<code>eq</code> operator only) on <strong>errorCode</strong> property.</td>
+<td style="text-align: left;">Sign-in status. Includes the error code and description of the error (in case of a sign-in failure). <br><br> Supports <code>$filter</code> (<code>eq</code>) on <strong>errorCode</strong> property.</td>
 </tr>
 <tr>
 <td style="text-align: left;">userDisplayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Display name of the user that initiated the sign-in. Supports <code>$filter</code> (<code>eq</code> and <code>startsWith</code> operators only).</td>
+<td style="text-align: left;">Display name of the user that initiated the sign-in. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>startsWith</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">userId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">ID of the user that initiated the sign-in. Supports <code>$filter</code> (<code>eq</code> operator only).</td>
+<td style="text-align: left;">ID of the user that initiated the sign-in. <br><br> Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">userPrincipalName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">User principal name of the user that initiated the sign-in. Supports <code>$filter</code> (<code>eq</code> and <code>startsWith</code> operators only).</td>
+<td style="text-align: left;">User principal name of the user that initiated the sign-in. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>startsWith</code>).</td>
 </tr>
 </tbody>
 </table>
