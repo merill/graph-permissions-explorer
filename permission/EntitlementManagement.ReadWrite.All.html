@@ -144,6 +144,11 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/accesspackage-delete-resourcerolescopes?view=graph-rest-1.0&amp;tabs=http">DELETE /identityGovernance/entitlementManagement/accessPackages/{id}/resourceRoleScopes/{id}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accesspackageassignmentpolicy-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /identityGovernance/entitlementManagement/assignmentPolicies/{accessPackageAssignmentPolicyId}</a></td>
 </tr>
 <tr>
@@ -299,12 +304,22 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/accesspackagecatalog-list-resourceroles?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageCatalogs/{catalogId}/resourceRoles?$filter=(originSystem+eq+%27{originSystemType}%27+and+resource/id+eq+%27{resourceId}%27)&amp;$expand=resource</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accesspackagecatalog-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageCatalogs/{id}</a></td>
 </tr>
 <tr>
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accesspackagecatalog-list-accesspackageresources?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageCatalogs/{id}/accessPackageResources</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/accesspackagecatalog-list-resources?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageCatalogs/{id}/resources</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -335,6 +350,11 @@
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accesspackage-list-accesspackageresourcerolescopes?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackages/{id}?$expand=accessPackageResourceRoleScopes($expand=accessPackageResourceRole,accessPackageResourceScope)</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/accesspackage-list-resourcerolescopes?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackages/{id}?$expand=resourceRoleScopes($expand=role,scope)</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -488,6 +508,11 @@
 </tr>
 <tr>
 <td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/entitlementmanagement-list-resourceenvironments?view=graph-rest-1.0&amp;tabs=http">GET identityGovernance/entitlementManagement/resourceEnvironments?$filter=originSystem eq 'SharePointOnline'</a></td>
+</tr>
+<tr>
+<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/approvalstage-update?view=graph-rest-1.0&amp;tabs=http">PATCH /identityGovernance/entitlementManagement/accessPackageAssignmentApprovals/{accessPackageAssignmentRequestId}/stages/{approvalStageId}</a></td>
 </tr>
@@ -619,6 +644,11 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/accesspackage-post-resourcerolescopes?view=graph-rest-1.0&amp;tabs=http">POST /identityGovernance/entitlementManagement/accessPackages/{id}/resourceRoleScopes</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/entitlementmanagement-post-assignmentpolicies?view=graph-rest-1.0&amp;tabs=http">POST /identityGovernance/entitlementManagement/assignmentPolicies</a></td>
 </tr>
 <tr>
@@ -660,6 +690,11 @@
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/connectedorganization-post-internalsponsors?view=graph-rest-1.0&amp;tabs=http">POST /identityGovernance/entitlementManagement/connectedOrganizations/{id}/internalSponsors/$ref</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/entitlementmanagement-post-resourcerequests?view=graph-rest-1.0&amp;tabs=http">POST /identityGovernance/entitlementManagement/resourceRequests</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -1435,17 +1470,7 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">attributes</td>
-<td style="text-align: left;">accessPackageResourceAttribute collection</td>
-<td style="text-align: left;">Contains information about the attributes to be collected from the requestor and sent to the resource application.</td>
-</tr>
-<tr>
-<td style="text-align: left;">addedBy</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The name of the user or application that first added this resource. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">addedOn</td>
+<td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
 </tr>
@@ -1465,9 +1490,9 @@
 <td style="text-align: left;">Read-only.</td>
 </tr>
 <tr>
-<td style="text-align: left;">isPendingOnboarding</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">True if the resource is not yet available for assignment. Read-only.</td>
+<td style="text-align: left;">modifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">originId</td>
@@ -1478,16 +1503,6 @@
 <td style="text-align: left;">originSystem</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The type of the resource in the origin system, such as <code>SharePointOnline</code>, <code>AadApplication</code> or <code>AadGroup</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">resourceType</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The type of the resource, such as <code>Application</code> if it is an Azure AD connected application, or <code>SharePoint Online Site</code> for a SharePoint Online site.</td>
-</tr>
-<tr>
-<td style="text-align: left;">url</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">A unique resource locator for the resource, such as the URL for signing a user into an application.</td>
 </tr>
 </tbody>
 </table>
@@ -1501,16 +1516,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align: left;">connectionInfo</td>
-<td style="text-align: left;">connectionInfo</td>
-<td style="text-align: left;">Connection information of an environment used to connect to a resource.</td>
-</tr>
-<tr>
-<td style="text-align: left;">createdBy</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name of the user that created this object.</td>
-</tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
@@ -1535,11 +1540,6 @@
 <td style="text-align: left;">isDefaultEnvironment</td>
 <td style="text-align: left;">Boolean</td>
 <td style="text-align: left;">Determines whether this is default environment or not. It is set to <code>true</code> for all static origin systems, such as Azure AD groups and Azure AD Applications.</td>
-</tr>
-<tr>
-<td style="text-align: left;">modifiedBy</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name of the entity that last modified this object.</td>
 </tr>
 <tr>
 <td style="text-align: left;">modifiedDateTime</td>
@@ -1569,14 +1569,9 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">catalogId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique ID of the access package catalog.</td>
-</tr>
-<tr>
-<td style="text-align: left;">expirationDateTime</td>
+<td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code></td>
+<td style="text-align: left;">The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
@@ -1584,29 +1579,14 @@
 <td style="text-align: left;">Read-only.</td>
 </tr>
 <tr>
-<td style="text-align: left;">isValidationOnly</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">If set, does not add the resource.</td>
-</tr>
-<tr>
-<td style="text-align: left;">justification</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The requestor's justification for adding or removing the resource.</td>
-</tr>
-<tr>
-<td style="text-align: left;">requestState</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The outcome of whether the service was able to add the resource to the catalog.  The value is <code>Delivered</code> if the resource was added or removed. Read-Only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">requestStatus</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Read-only.</td>
-</tr>
-<tr>
 <td style="text-align: left;">requestType</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Use <code>AdminAdd</code> to add a resource, if the caller is an administrator or resource owner, <code>AdminUpdate</code> to update a resource, or <code>AdminRemove</code> to remove a resource.</td>
+<td style="text-align: left;">accessPackageRequestType</td>
+<td style="text-align: left;">The type of the request. Use <code>adminAdd</code> to add a resource, if the caller is an administrator or resource owner, <code>adminUpdate</code> to update a resource, or <code>adminRemove</code> to remove a resource.</td>
+</tr>
+<tr>
+<td style="text-align: left;">state</td>
+<td style="text-align: left;">accessPackageRequestState</td>
+<td style="text-align: left;">The outcome of whether the service was able to add the resource to the catalog.  The value is <code>delivered</code> if the resource was added or removed. Read-only.</td>
 </tr>
 </tbody>
 </table>
@@ -1658,11 +1638,6 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">createdBy</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Read-only.</td>
-</tr>
-<tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code></td>
@@ -1671,16 +1646,6 @@
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">modifiedBy</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">modifiedDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code></td>
 </tr>
 </tbody>
 </table>
@@ -1723,16 +1688,6 @@
 <td style="text-align: left;">originSystem</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The origin system for the scope.</td>
-</tr>
-<tr>
-<td style="text-align: left;">roleOriginId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The origin system for the role, if different.</td>
-</tr>
-<tr>
-<td style="text-align: left;">url</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">A resource locator for the scope.</td>
 </tr>
 </tbody>
 </table>
