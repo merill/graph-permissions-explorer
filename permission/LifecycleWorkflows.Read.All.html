@@ -134,22 +134,17 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/identitygovernance-workflow-list-task?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/lifecycleWorkflows/workflow/{workflowId}/tasks</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/identitygovernance-task-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/lifecycleWorkflows/workflow/{workflowId}/tasks/{taskId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-workflows?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/lifecycleWorkflows/workflows</a></td>
 </tr>
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/identitygovernance-userprocessingresult-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/lifecycleWorkflows/workflows/{{workflow_id}}/runs/{runId}/userProcessingResults/{userProcessingResultId}</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/identitygovernance-userprocessingresult-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/lifecycleWorkflows/workflows/{workflow_id}/runs/{runId}/userProcessingResults/{userProcessingResultId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/identitygovernance-workflow-list-userprocessingresults?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/lifecycleWorkflows/workflows/{workflow-id}/userProcessingResults</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -209,6 +204,16 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/identitygovernance-workflow-list-task?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/lifecycleWorkflows/workflows/{workflowId}/tasks</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/identitygovernance-task-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/lifecycleWorkflows/workflows/{workflowId}/tasks/{taskId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/identitygovernance-userprocessingresult-list-taskprocessingresults?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/lifecycleWorkflows/workflows/{workflowId}/userProcessingResults/{userProcessingResultId}/taskProcessingResults</a></td>
 </tr>
 <tr>
@@ -219,12 +224,17 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/identitygovernance-workflowversion-list-tasks?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/lifecycleWorkflows/workflows/{workflowId}/versions/{version number}/tasks</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/identitygovernance-workflowversion-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/lifecycleWorkflows/workflows/{workflowId}/versions/{workflowVersion-versionNumber}</a></td>
 </tr>
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/identitygovernance-workflowversion-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/lifecycleWorkflows/workflows/{workflowId}/versions/{workflowVersionId}</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/identitygovernance-workflowversion-list-tasks?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/lifecycleWorkflows/workflows/{workflowId}/versions/{workflowVersion-versionNumber}/tasks</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/identitygovernance-workflowversion-list-tasks?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/lifecycleWorkflows/workflows/{workflowId}/versions/{workFlowVersion-versionNumber}/tasks</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -235,11 +245,6 @@
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/identitygovernance-workflowtemplate-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/lifecycleWorkflows/workflowTemplates/{workflowTemplateId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/identitygovernance-workflow-list-userprocessingresults?view=graph-rest-1.0&amp;tabs=http">GET /workflow/userProcessingResults</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -856,7 +861,7 @@
 <tr>
 <td style="text-align: left;">category</td>
 <td style="text-align: left;">microsoft.graph.identityGovernance.lifecycleWorkflowCategory</td>
-<td style="text-align: left;">The category of the HR function supported by the workflows created using this template. A workflow can only belong to one category. The possible values are: <code>joiner</code>, <code>leaver</code>, <code>mover</code>, <code>unknownFutureValue</code>. Inherited from workflowBase. Required.<br><br>Supports <code>$filter</code>(<code>eq</code>,<code>ne</code>) and <code>$orderBy</code></td>
+<td style="text-align: left;">The category of the HR function supported by the workflows created using this template. A workflow can only belong to one category. The possible values are: <code>joiner</code>, <code>leaver</code>, <code>mover</code>, <code>unknownFutureValue</code>. Inherited from workflowBase. Required.<br><br>Supports <code>$filter</code>(<code>eq</code>,<code>ne</code>) and <code>$orderby</code></td>
 </tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>
@@ -906,7 +911,7 @@
 <tr>
 <td style="text-align: left;">nextScheduleRunDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date time when the <code>workflow</code> is expected to run next based on the schedule interval, if there are any users matching the execution conditions. <br><br>Supports <code>$filter</code>(<code>lt</code>,<code>gt</code>) and <code>$orderBy</code>.</td>
+<td style="text-align: left;">The date time when the <code>workflow</code> is expected to run next based on the schedule interval, if there are any users matching the execution conditions. <br><br>Supports <code>$filter</code>(<code>lt</code>,<code>gt</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">version</td>

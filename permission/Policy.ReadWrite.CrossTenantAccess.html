@@ -139,6 +139,16 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/multitenantorganizationidentitysyncpolicytemplate-get?view=graph-rest-1.0&amp;tabs=http">GET /policies/crossTenantAccessPolicy/templates/multiTenantOrganizationIdentitySynchronization</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/multitenantorganizationpartnerconfigurationtemplate-get?view=graph-rest-1.0&amp;tabs=http">GET /policies/crossTenantAccessPolicy/templates/multiTenantOrganizationPartnerConfiguration</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/crosstenantaccesspolicy-update?view=graph-rest-1.0&amp;tabs=http">PATCH /policies/crossTenantAccessPolicy</a></td>
 </tr>
 <tr>
@@ -159,12 +169,32 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/multitenantorganizationidentitysyncpolicytemplate-update?view=graph-rest-1.0&amp;tabs=http">PATCH /policies/crossTenantAccessPolicy/templates/multiTenantOrganizationIdentitySynchronization</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/multitenantorganizationpartnerconfigurationtemplate-update?view=graph-rest-1.0&amp;tabs=http">PATCH /policies/crossTenantAccessPolicy/templates/multiTenantOrganizationPartnerConfiguration</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationdefault-resettosystemdefault?view=graph-rest-1.0&amp;tabs=http">POST /policies/crossTenantAccessPolicy/default/resetToSystemDefault</a></td>
 </tr>
 <tr>
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/crosstenantaccesspolicy-post-partners?view=graph-rest-1.0&amp;tabs=http">POST /policies/crossTenantAccessPolicy/partners</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/multitenantorganizationidentitysyncpolicytemplate-resettodefaultsettings?view=graph-rest-1.0&amp;tabs=http">POST /policies/crossTenantAccessPolicy/templates/multiTenantOrganizationIdentitySynchronization/resetToDefaultSettings</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/multitenantorganizationpartnerconfigurationtemplate-resettodefaultsettings?view=graph-rest-1.0&amp;tabs=http">POST /policies/crossTenantAccessPolicy/templates/multiTenantOrganizationPartnerConfiguration/resetToDefaultSettings</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -484,6 +514,85 @@
 <td style="text-align: left;">outboundAllowed</td>
 <td style="text-align: left;">Boolean</td>
 <td style="text-align: left;">Defines whether internal users are allowed to go outbound.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="multitenantorganizationidentitysyncpolicytemplate-"><a href="https://docs.microsoft.com/graph/api/resources/multitenantorganizationidentitysyncpolicytemplate?view=graph-rest-1.0&amp;tabs=http">multiTenantOrganizationIdentitySyncPolicyTemplate </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">ID of the template. Key.</td>
+</tr>
+<tr>
+<td style="text-align: left;">templateApplicationLevel</td>
+<td style="text-align: left;">templateApplicationLevel</td>
+<td style="text-align: left;">Specifies whether the template will be applied to user synchronization settings of certain tenants. The possible values are: <code>none</code>, <code>newPartners</code>, <code>existingPartners</code>, <code>unknownFutureValue</code>. You can also specify multiple values like <code>newPartners,existingPartners</code> (default). <code>none</code> indicates the template isn't applied to any new or existing partner tenants. <code>newPartners</code> indicates the template is applied to new partner tenants. <code>existingPartners</code> indicates the template is applied to existing partner tenants, those who already had partner-specific user synchronization settings in place.</td>
+</tr>
+<tr>
+<td style="text-align: left;">userSyncInbound</td>
+<td style="text-align: left;">crossTenantUserSyncInbound</td>
+<td style="text-align: left;">Defines whether users can be synchronized from the partner tenant.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="multitenantorganizationpartnerconfigurationtemplate-"><a href="https://docs.microsoft.com/graph/api/resources/multitenantorganizationpartnerconfigurationtemplate?view=graph-rest-1.0&amp;tabs=http">multiTenantOrganizationPartnerConfigurationTemplate </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">ID of the template. Key.</td>
+</tr>
+<tr>
+<td style="text-align: left;">automaticUserConsentSettings</td>
+<td style="text-align: left;">inboundOutboundPolicyConfiguration</td>
+<td style="text-align: left;">Determines the partner-specific configuration for automatic user consent settings. Unless configured, the <strong>inboundAllowed</strong> and <strong>outboundAllowed</strong> properties are <code>null</code> and inherit from the default settings, which is always <code>false</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">b2bCollaborationInbound</td>
+<td style="text-align: left;">crossTenantAccessPolicyB2BSetting</td>
+<td style="text-align: left;">Defines your partner-specific configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.</td>
+</tr>
+<tr>
+<td style="text-align: left;">b2bCollaborationOutbound</td>
+<td style="text-align: left;">crossTenantAccessPolicyB2BSetting</td>
+<td style="text-align: left;">Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B collaboration.</td>
+</tr>
+<tr>
+<td style="text-align: left;">b2bDirectConnectInbound</td>
+<td style="text-align: left;">crossTenantAccessPolicyB2BSetting</td>
+<td style="text-align: left;">Defines your partner-specific configuration for users from other organizations accessing your resources via Azure B2B direct connect.</td>
+</tr>
+<tr>
+<td style="text-align: left;">b2bDirectConnectOutbound</td>
+<td style="text-align: left;">crossTenantAccessPolicyB2BSetting</td>
+<td style="text-align: left;">Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B direct connect.</td>
+</tr>
+<tr>
+<td style="text-align: left;">inboundTrust</td>
+<td style="text-align: left;">crossTenantAccessPolicyInboundTrust</td>
+<td style="text-align: left;">Determines the partner-specific configuration for trusting other Conditional Access claims from external Azure AD organizations.</td>
+</tr>
+<tr>
+<td style="text-align: left;">templateApplicationLevel</td>
+<td style="text-align: left;">templateApplicationLevel</td>
+<td style="text-align: left;">Specifies whether the template will be applied to partner configuration settings of certain tenants. The possible values are: <code>none</code>, <code>newPartners</code>, <code>existingPartners</code>, <code>unknownFutureValue</code>. You can also specify multiple values like <code>newPartners,existingPartners</code> (default). <code>none</code> indicates the template isn't applied to any new or existing partner tenants. <code>newPartners</code> indicates the template is applied to new partner tenants. <code>existingPartners</code> indicates the template is applied to existing partner tenants, those who already had partner-specific partner configurations in place.</td>
 </tr>
 </tbody>
 </table>

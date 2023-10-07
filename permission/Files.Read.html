@@ -179,7 +179,7 @@
 <tr>
 <td>V1</td>
 <td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/itemactivity-getbyinterval?view=graph-rest-1.0&amp;tabs=http">GET /drives/{drive-id}/items/{item-id}/getActivitiesByInterval(startDateTime='2017-01-01',endDateTime='2017-01-10',interval='day')</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/itemactivity-getbyinterval?view=graph-rest-1.0&amp;tabs=http">GET /drives/{drive-id}/items/{item-id}/getActivitiesByInterval(startDateTime={startDateTime},endDateTime={endDateTime},interval={interval})</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -220,11 +220,6 @@
 <td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/driveitem-delta?view=graph-rest-1.0&amp;tabs=http">GET /drives/{drive-id}/root/delta</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/driveitem-search?view=graph-rest-1.0&amp;tabs=http">GET /drives/{drive-id}/root/search(q='{search-text}')</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -285,11 +280,6 @@
 <td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-1.0&amp;tabs=http">GET /groups/{group-id}/drive/root:/{item-path}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/driveitem-search?view=graph-rest-1.0&amp;tabs=http">GET /groups/{group-id}/drive/root/search(q='{search-text}')</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -409,11 +399,6 @@
 <tr>
 <td>V1</td>
 <td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/driveitem-search?view=graph-rest-1.0&amp;tabs=http">GET /me/drive/root/search(q='{search-text}')</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/subscriptions-socketio?view=graph-rest-1.0&amp;tabs=http">GET /me/drive/root/subscriptions/socketIo</a></td>
 </tr>
 <tr>
@@ -499,17 +484,7 @@
 <tr>
 <td>V1</td>
 <td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/driveitem-search?view=graph-rest-1.0&amp;tabs=http">GET /sites/{site-id}/drive/root/search(q='{search-text}')</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/itemactivitystat-getactivitybyinterval?view=graph-rest-1.0&amp;tabs=http">GET /sites/{site-id}/getActivitiesByInterval(startDateTime='2016-01-01',endDateTime='2017-05-20',interval='month')</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/itemactivity-getbyinterval?view=graph-rest-1.0&amp;tabs=http">GET /sites/{site-id}/getActivitiesByInterval(startDateTime='2016',endDateTime='2017',interval='month')</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/itemactivity-getbyinterval?view=graph-rest-1.0&amp;tabs=http">GET /sites/{site-id}/getActivitiesByInterval(startDateTime={startDateTime},endDateTime={endDateTime},interval={interval})</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -544,7 +519,7 @@
 <tr>
 <td>V1</td>
 <td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/itemactivity-getbyinterval?view=graph-rest-1.0&amp;tabs=http">GET /sites/{site-id}/lists/{list-id}/items/{item-id}/getActivitiesByInterval(startDateTime='2017-05-01',endDateTime='2017-05-20',interval='week')</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/itemactivity-getbyinterval?view=graph-rest-1.0&amp;tabs=http">GET /sites/{site-id}/lists/{list-id}/items/{item-id}/getActivitiesByInterval(startDateTime={startDateTime},endDateTime={endDateTime},interval={interval})</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -575,6 +550,11 @@
 <td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/subscriptions-socketio?view=graph-rest-1.0&amp;tabs=http">GET /sites/{siteId}/lists/{listId}/drive/root/subscriptions/socketIo</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/recyclebin-list-items?view=graph-rest-1.0&amp;tabs=http">GET /sites/{siteId}/recycleBin/items</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -620,11 +600,6 @@
 <td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{user-id}/drive/root:/{item-path}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/driveitem-search?view=graph-rest-1.0&amp;tabs=http">GET /users/{user-id}/drive/root/search(q='{search-text}')</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -1244,6 +1219,87 @@
 </tbody>
 </table>
 <h3 id="list"><a href="https://docs.microsoft.com/graph/api/resources/list?view=graph-rest-1.0&amp;tabs=http">list</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">Identity of the creator of this item. Read-only. Inherited from baseItem.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the item was created. Read-only. Inherited from baseItem.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The descriptive text for the item. Inherited from baseItem.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The displayable title of the list.</td>
+</tr>
+<tr>
+<td style="text-align: left;">eTag</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">ETag for the item. Inherited from baseItem.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier of the item. Read-only. Inherited from baseItem.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">Identity of the last modifier of this item. Read-only. Inherited from baseItem.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the item was last modified. Read-only. Inherited from baseItem.</td>
+</tr>
+<tr>
+<td style="text-align: left;">list</td>
+<td style="text-align: left;">listInfo</td>
+<td style="text-align: left;">Contains more details about the list.</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name of the item. Read-only. Inherited from baseItem.</td>
+</tr>
+<tr>
+<td style="text-align: left;">parentReference</td>
+<td style="text-align: left;">itemReference</td>
+<td style="text-align: left;">Parent information if the item has a parent. Read-write. Inherited from baseItem.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sharepointIds</td>
+<td style="text-align: left;">sharepointIds</td>
+<td style="text-align: left;">Returns identifiers useful for SharePoint REST compatibility. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">system</td>
+<td style="text-align: left;">systemFacet</td>
+<td style="text-align: left;">If present, indicates that the list is system-managed. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">webUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">URL that displays the item in the browser. Read-only. Inherited from baseItem.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="listitem"><a href="https://docs.microsoft.com/graph/api/resources/listitem?view=graph-rest-1.0&amp;tabs=http">listitem</a></h3>
 <table>
 <thead>
@@ -1274,7 +1330,7 @@
 <tr>
 <td style="text-align: left;">expirationDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.</td>
+<td style="text-align: left;">A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there's no expiration set for this permission. Optional.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
@@ -1309,7 +1365,7 @@
 <tr>
 <td style="text-align: left;">inheritedFrom</td>
 <td style="text-align: left;">ItemReference</td>
-<td style="text-align: left;">Provides a reference to the ancestor of the current permission, if it is inherited from an ancestor. Read-only.</td>
+<td style="text-align: left;">Provides a reference to the ancestor of the current permission, if it's inherited from an ancestor. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">invitation</td>
@@ -1319,7 +1375,7 @@
 <tr>
 <td style="text-align: left;">link</td>
 <td style="text-align: left;">[SharingLink][]</td>
-<td style="text-align: left;">Provides the link details of the current permission, if it is a link type permissions. Read-only.</td>
+<td style="text-align: left;">Provides the link details of the current permission, if it's a link type permission. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">roles</td>
@@ -1333,7 +1389,43 @@
 </tr>
 </tbody>
 </table>
-<h3 id="remoteitem-"><a href="https://docs.microsoft.com/graph/api/resources/remoteitem?view=graph-rest-1.0&amp;tabs=http">remoteItem </a></h3>
+<h3 id="recyclebinitem-"><a href="https://docs.microsoft.com/graph/api/resources/recyclebinitem?view=graph-rest-1.0&amp;tabs=http">recycleBinItem </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">deletedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time when the item was deleted. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">deletedFromLocation</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Relative URL of the list or folder that originally contained the item.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier of the delete transaction. Inherited from baseItem.</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the item. Inherited from baseItem.</td>
+</tr>
+<tr>
+<td style="text-align: left;">size</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">Size of the item in bytes.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="servicestoragequotabreakdown-"><a href="https://docs.microsoft.com/graph/api/resources/servicestoragequotabreakdown?view=graph-rest-1.0&amp;tabs=http">serviceStorageQuotaBreakdown </a></h3>
 <table>
 <thead>
@@ -1499,7 +1591,7 @@
 <tr>
 <td>clientState</td>
 <td>String</td>
-<td>Required. Specifies the value of the <code>clientState</code> property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the <code>clientState</code> property sent with the subscription with the value of the <code>clientState</code> property received with each change notification.</td>
+<td>Optional. Specifies the value of the <code>clientState</code> property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the <code>clientState</code> property sent with the subscription with the value of the <code>clientState</code> property received with each change notification.</td>
 </tr>
 <tr>
 <td>creatorId</td>
@@ -1587,12 +1679,12 @@
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">string</td>
-<td style="text-align: left;">Returns a value that uniquely identifies the table in a given workbook. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and should not be parsed to any other type. Read-only.</td>
+<td style="text-align: left;">Returns a value that uniquely identifies the table in a given workbook. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and shouldn't be parsed to any other type. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">legacyId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Legacy Id used in older Excle clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and should not be parsed to any other type. Read-only.</td>
+<td style="text-align: left;">Legacy ID used in older Excel clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and shouldn't be parsed to any other type. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">name</td>
@@ -1627,7 +1719,7 @@
 <tr>
 <td style="text-align: left;">style</td>
 <td style="text-align: left;">string</td>
-<td style="text-align: left;">Constant value that represents the Table style. The possible values are: TableStyleLight1 thru TableStyleLight21, TableStyleMedium1 thru TableStyleMedium28, TableStyleStyleDark1 thru TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.</td>
+<td style="text-align: left;">Constant value that represents the Table style. The possible values are: TableStyleLight1 through TableStyleLight21, TableStyleMedium1 through TableStyleMedium28, TableStyleStyleDark1 through TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.</td>
 </tr>
 </tbody>
 </table>
@@ -1681,7 +1773,7 @@
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The id within the item. Read-only.</td>
+<td style="text-align: left;">The ID within the item. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">large</td>

@@ -91,10 +91,88 @@
 <p>Allows the app to read and write user's modules and resources on behalf of the signed-in user.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
-</div>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<table>
+<thead>
+<tr>
+<th>Ver</th>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/educationmoduleresource-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /education/classes/{class-id}/modules/{module-id}/resources/{resource-id}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/educationmodule-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /education/classes/{id}/modules/{id}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/educationmoduleresource-get?view=graph-rest-1.0&amp;tabs=http">GET /education/classes/{class-id}/modules/{module-id}/resources/{resource-id}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/educationclass-list-modules?view=graph-rest-1.0&amp;tabs=http">GET /education/classes/{id}/modules</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/educationmodule-get?view=graph-rest-1.0&amp;tabs=http">GET /education/classes/{id}/modules/{id}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/educationmodule-list-resources?view=graph-rest-1.0&amp;tabs=http">GET /education/classes/{id}/modules/{id}/resources</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/educationmodule-update?view=graph-rest-1.0&amp;tabs=http">PATCH /education/classes/{class-id}/modules/{module-id}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/educationmoduleresource-update?view=graph-rest-1.0&amp;tabs=http">PATCH /education/classes/{class-id}/modules/{module-id}/resources/{resource-id}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/educationmodule-post-resources?view=graph-rest-1.0&amp;tabs=http">POST /education/classes/{class-id}/modules/{module-id}/resources</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/educationmodule-setupresourcesfolder?view=graph-rest-1.0&amp;tabs=http">POST /education/classes/{classId}/modules/{moduleId}/setUpResourcesFolder</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/educationclass-post-module?view=graph-rest-1.0&amp;tabs=http">POST /education/classes/{id}/modules</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/educationmodule-pin?view=graph-rest-1.0&amp;tabs=http">POST /education/classes/{id}/modules/{id}/pin</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/educationmodule-publish?view=graph-rest-1.0&amp;tabs=http">POST /education/classes/{id}/modules/{id}/publish</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/educationmodule-unpin?view=graph-rest-1.0&amp;tabs=http">POST /education/classes/{id}/modules/{id}/unpin</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -114,11 +192,496 @@
 </tr>
 <tr>
 <td><strong>Display String</strong></td>
-<td>Read and write your class modules and resources</td>
+<td>Read and write the user's class modules and resources</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the app to read and write user's modules and resources on behalf of the signed-in user.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="resources">Resources</h2>
+<h3 id="educationchannelresource-"><a href="https://docs.microsoft.com/graph/api/resources/educationchannelresource?view=graph-rest-1.0&amp;tabs=http">educationChannelResource </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">url</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">URL of the channel resource.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="educationclass-"><a href="https://docs.microsoft.com/graph/api/resources/educationclass?view=graph-rest-1.0&amp;tabs=http">educationClass </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">classCode</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Class code used by the school to identify the class.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">Entity who created the class</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Description of the class.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the class.</td>
+</tr>
+<tr>
+<td style="text-align: left;">externalId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">ID of the class from the syncing system.</td>
+</tr>
+<tr>
+<td style="text-align: left;">externalSource</td>
+<td style="text-align: left;">educationExternalSource</td>
+<td style="text-align: left;">How this class was created. Possible values are: <code>sis</code>, <code>manual</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">externalSourceDetail</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name of the external source this resources was generated from.</td>
+</tr>
+<tr>
+<td style="text-align: left;">externalName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the class in the syncing system.</td>
+</tr>
+<tr>
+<td style="text-align: left;">grade</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Grade level of the class.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Object identifier. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">mailNickname</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Mail name for sending email to all members, if this is enabled.</td>
+</tr>
+<tr>
+<td style="text-align: left;">term</td>
+<td style="text-align: left;">educationTerm</td>
+<td style="text-align: left;">Term for this class.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="educationexcelresource-"><a href="https://docs.microsoft.com/graph/api/resources/educationexcelresource?view=graph-rest-1.0&amp;tabs=http">educationExcelResource </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the user that created this object.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date time the resoruce was added.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The display name of the resource.</td>
+</tr>
+<tr>
+<td style="text-align: left;">fileUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Pointer to the Excel file object.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The last user to modify the resource.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the resource was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="educationexternalresource-"><a href="https://docs.microsoft.com/graph/api/resources/educationexternalresource?view=graph-rest-1.0&amp;tabs=http">educationExternalResource </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the user that created this object.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date time the resoruce was added.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The display name of the resource.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The last user to modify the resource.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the resource was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">webUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Location of the resource. Required</td>
+</tr>
+</tbody>
+</table>
+<h3 id="educationfileresource-"><a href="https://docs.microsoft.com/graph/api/resources/educationfileresource?view=graph-rest-1.0&amp;tabs=http">educationFileResource </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the user that created this object.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date time the resoruce was added.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The display name of the resource.</td>
+</tr>
+<tr>
+<td style="text-align: left;">fileUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Location on disk of the file resource.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The last user to modify the resource.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the resource was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="educationlinkedassignmentresource-"><a href="https://docs.microsoft.com/graph/api/resources/educationlinkedassignmentresource?view=graph-rest-1.0&amp;tabs=http">educationLinkedAssignmentResource </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">url</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">URL of the actual assignment.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="educationlinkresource-"><a href="https://docs.microsoft.com/graph/api/resources/educationlinkresource?view=graph-rest-1.0&amp;tabs=http">educationLinkResource </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the user that created this object.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date time the resource was added.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The display name of the resource.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The last user to modify the resource.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the resource was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">link</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">URL to the resource.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="educationmediaresource-"><a href="https://docs.microsoft.com/graph/api/resources/educationmediaresource?view=graph-rest-1.0&amp;tabs=http">educationMediaResource </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the user that created this resource.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date time the resoruce was added.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The display name of the user who added resource.</td>
+</tr>
+<tr>
+<td style="text-align: left;">fileUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Location of the file on shared point folder. Required</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The last user to modify the resource</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the resource was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="educationmodule-"><a href="https://docs.microsoft.com/graph/api/resources/educationmodule?view=graph-rest-1.0&amp;tabs=http">educationModule </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The display name of the user that created the <strong>module</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date time the <strong>module</strong> was created.  The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is <code>2014-01-01T00:00:00Z</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Description of the <strong>module</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the <strong>module</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the <strong>module</strong>. Inherited from entity. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isPinned</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the module is pinned or not.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The last user that modified the <strong>module</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date time the <strong>module</strong> was last modified.  The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is <code>2014-01-01T00:00:00Z</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">resourcesFolderUrl</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Folder URL where all the file resources for this <strong>module</strong> are stored.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Status of the **m</td>
+</tr>
+</tbody>
+</table>
+<h3 id="educationmoduleresource-"><a href="https://docs.microsoft.com/graph/api/resources/educationmoduleresource?view=graph-rest-1.0&amp;tabs=http">educationModuleResource </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">ID of this resource. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">resource</td>
+<td style="text-align: left;">educationResource</td>
+<td style="text-align: left;">Resource object that has been associated with this module.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="educationpowerpointresource-"><a href="https://docs.microsoft.com/graph/api/resources/educationpowerpointresource?view=graph-rest-1.0&amp;tabs=http">educationPowerPointResource </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the user that created this object.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date time the resoruce was added.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The display name of the resource.</td>
+</tr>
+<tr>
+<td style="text-align: left;">fileUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Location of the file on disk.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The last user to modify the resource.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the resource was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="educationwordresource-"><a href="https://docs.microsoft.com/graph/api/resources/educationwordresource?view=graph-rest-1.0&amp;tabs=http">educationWordResource </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the user that created this object.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date time the resoruce was added.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The display name of the resource.</td>
+</tr>
+<tr>
+<td style="text-align: left;">fileUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Location of the file on disk.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The last user to modify the resource.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the resource was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
 </tr>
 </tbody>
 </table>

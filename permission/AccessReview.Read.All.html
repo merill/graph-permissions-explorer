@@ -364,12 +364,12 @@
 <tr>
 <td style="text-align: left;"><code>id</code></td>
 <td style="text-align: left;"><code>String</code></td>
-<td style="text-align: left;">The id of the decision within the access review.</td>
+<td style="text-align: left;">The ID of the decision within the access review.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>accessReviewId</code></td>
 <td style="text-align: left;"><code>String</code></td>
-<td style="text-align: left;">The feature-generated id of the access review.</td>
+<td style="text-align: left;">The feature-generated ID of the access review.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>reviewedBy</code></td>
@@ -394,7 +394,7 @@
 <tr>
 <td style="text-align: left;"><code>appliedBy</code></td>
 <td style="text-align: left;">userIdentity</td>
-<td style="text-align: left;">When the review completes, if the results were manually applied, the user identity of the user who applied the decision. If the review was auto-applied, the userPrincipalName is empty.</td>
+<td style="text-align: left;">When the review completes, if the results were manually applied, the user identity of the user who applied the decision. If the review was autoapplied, the userPrincipalName is empty.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>appliedDateTime</code></td>
@@ -593,7 +593,7 @@
 <tr>
 <td style="text-align: left;">backupReviewers (deprecated)</td>
 <td style="text-align: left;">accessReviewReviewerScope collection</td>
-<td style="text-align: left;">This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist.  Supports <code>$select</code>. <br><strong>Note:</strong> This property has been replaced by <strong>fallbackReviewers</strong>. However, specifying either <strong>backupReviewers</strong> or <strong>fallbackReviewers</strong> automatically populates the same values to the other property.</td>
+<td style="text-align: left;">This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers are notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner doesn't exist, or manager is specified as reviewer but a user's manager doesn't exist.  Supports <code>$select</code>. <br><strong>Note:</strong> This property has been replaced by <strong>fallbackReviewers</strong>. However, specifying either <strong>backupReviewers</strong> or <strong>fallbackReviewers</strong> automatically populates the same values to the other property.</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdBy</td>
@@ -613,17 +613,17 @@
 <tr>
 <td style="text-align: left;">descriptionForReviewers</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Description provided  by review creators to provide more context of the review to reviewers. Reviewers will see this description in the email sent to them requesting their review. Email notifications support up to 256 characters. Supports <code>$select</code>.</td>
+<td style="text-align: left;">Description provided  by review creators to provide more context of the review to reviewers. Reviewers see this description in the email sent to them requesting their review. Email notifications support up to 256 characters. Supports <code>$select</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Name of the access review series. Supports <code>$select</code> and <code>$orderBy</code>. Required on create.</td>
+<td style="text-align: left;">Name of the access review series. Supports <code>$select</code> and <code>$orderby</code>. Required on create.</td>
 </tr>
 <tr>
 <td style="text-align: left;">fallbackReviewers</td>
 <td style="text-align: left;">accessReviewReviewerScope collection</td>
-<td style="text-align: left;">This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist. See accessReviewReviewerScope. Replaces <strong>backupReviewers</strong>. Supports <code>$select</code>. <br><br><strong>NOTE:</strong> The value of this property will be ignored if fallback reviewers are assigned through the <strong>stageSettings</strong> property.</td>
+<td style="text-align: left;">This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers are notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner doesn't exist, or manager is specified as reviewer but a user's manager doesn't exist. See accessReviewReviewerScope. Replaces <strong>backupReviewers</strong>. Supports <code>$select</code>. <br><br><strong>NOTE:</strong> The value of this property will be ignored if fallback reviewers are assigned through the <strong>stageSettings</strong> property.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
@@ -633,7 +633,7 @@
 <tr>
 <td style="text-align: left;">instanceEnumerationScope</td>
 <td style="text-align: left;">accessReviewScope</td>
-<td style="text-align: left;">This property is required when scoping a review to guest users' access across all Microsoft 365 groups and determines which Microsoft 365 groups are reviewed. Each group will become a unique <strong>accessReviewInstance</strong> of the access review series.  For supported scopes, see accessReviewScope. Supports <code>$select</code>. For examples of options for configuring instanceEnumerationScope, see Configure the scope of your access review definition using the Microsoft Graph API.</td>
+<td style="text-align: left;">This property is required when scoping a review to guest users' access across all Microsoft 365 groups and determines which Microsoft 365 groups are reviewed. Each group becomes a unique <strong>accessReviewInstance</strong> of the access review series.  For supported scopes, see accessReviewScope. Supports <code>$select</code>. For examples of options for configuring instanceEnumerationScope, see Configure the scope of your access review definition using the Microsoft Graph API.</td>
 </tr>
 <tr>
 <td style="text-align: left;">lastModifiedDateTime</td>
@@ -658,7 +658,7 @@
 <tr>
 <td style="text-align: left;">stageSettings</td>
 <td style="text-align: left;">accessReviewStageSettings collection</td>
-<td style="text-align: left;">Required only for a multi-stage access review to define the stages and their settings. You can break down each review instance into up to three sequential stages, where each stage can have a different set of reviewers, fallback reviewers, and settings. Stages will be created sequentially based on the <strong>dependsOn</strong> property. Optional.  <br><br>When this property is defined, its settings are used instead of the corresponding settings in the accessReviewScheduleDefinition object and its <strong>settings</strong>, <strong>reviewers</strong>, and <strong>fallbackReviewers</strong> properties.</td>
+<td style="text-align: left;">Required only for a multi-stage access review to define the stages and their settings. You can break down each review instance into up to three sequential stages, where each stage can have a different set of reviewers, fallback reviewers, and settings. Stages are created sequentially based on the <strong>dependsOn</strong> property. Optional.  <br><br>When this property is defined, its settings are used instead of the corresponding settings in the accessReviewScheduleDefinition object and its <strong>settings</strong>, <strong>reviewers</strong>, and <strong>fallbackReviewers</strong> properties.</td>
 </tr>
 <tr>
 <td style="text-align: left;">status</td>
@@ -762,7 +762,7 @@
 <tr>
 <td style="text-align: left;">fallbackReviewers</td>
 <td style="text-align: left;">accessReviewReviewerScope collection</td>
-<td style="text-align: left;">This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist.</td>
+<td style="text-align: left;">This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers are notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner doesn't exist, or manager is specified as reviewer but a user's manager doesn't exist.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
@@ -786,7 +786,6 @@
 </tr>
 </tbody>
 </table>
-<h3 id="accessreviewsv2-overview"><a href="https://docs.microsoft.com/graph/api/resources/accessreviewsv2-overview?view=graph-rest-1.0&amp;tabs=http">accessreviewsv2-overview</a></h3>
 <h3 id="businessflowtemplate"><a href="https://docs.microsoft.com/graph/api/resources/businessflowtemplate?view=graph-rest-1.0&amp;tabs=http">businessflowtemplate</a></h3>
 <table>
 <thead>
@@ -822,7 +821,7 @@
 <tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The identity's display name. Note that this may not always be available or up-to-date.</td>
+<td style="text-align: left;">The identity's display name. This may not always be available or up-to-date.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>

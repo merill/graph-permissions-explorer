@@ -1269,16 +1269,6 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/intune-devices-userexperienceanalyticsdevicetimelineevent-list?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/userExperienceAnalyticsDeviceTimelineEvent</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/intune-devices-userexperienceanalyticsdevicetimelineevent-get?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/userExperienceAnalyticsDeviceTimelineEvent/{userExperienceAnalyticsDeviceTimelineEventId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/intune-devices-userexperienceanalyticsdevicetimelineevents-get?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/userExperienceAnalyticsDeviceTimelineEvents/{userExperienceAnalyticsDeviceTimelineEventsId}</a></td>
 </tr>
 <tr>
@@ -2330,6 +2320,11 @@
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementexportjob-create?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/reports/exportJobs</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getautopilotdeploymentdeviceinformation?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/reports/getAutopilotDeploymentDeviceInformation</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -4762,7 +4757,7 @@
 <tr>
 <td style="text-align: left;">action</td>
 <td style="text-align: left;">remoteAction</td>
-<td style="text-align: left;">The action name. Possible values are: <code>unknown</code>, <code>factoryReset</code>, <code>removeCompanyData</code>, <code>resetPasscode</code>, <code>remoteLock</code>, <code>enableLostMode</code>, <code>disableLostMode</code>, <code>locateDevice</code>, <code>rebootNow</code>, <code>recoverPasscode</code>, <code>cleanWindowsDevice</code>, <code>logoutSharedAppleDeviceActiveUser</code>, <code>quickScan</code>, <code>fullScan</code>, <code>windowsDefenderUpdateSignatures</code>, <code>factoryResetKeepEnrollmentData</code>, <code>updateDeviceAccount</code>, <code>automaticRedeployment</code>, <code>shutDown</code>, <code>rotateBitLockerKeys</code>, <code>rotateFileVaultKey</code>, <code>getFileVaultKey</code>, <code>setDeviceName</code>, <code>activateDeviceEsim</code>, <code>deprovision</code>, <code>disable</code>, <code>reenable</code>, <code>moveDeviceToOrganizationalUnit</code>, <code>initiateMobileDeviceManagementKeyRecovery</code>, <code>initiateOnDemandProactiveRemediation</code>, <code>rotateLocalAdminPassword</code>, <code>unknownFutureValue</code>.</td>
+<td style="text-align: left;">The action name. Possible values are: <code>unknown</code>, <code>factoryReset</code>, <code>removeCompanyData</code>, <code>resetPasscode</code>, <code>remoteLock</code>, <code>enableLostMode</code>, <code>disableLostMode</code>, <code>locateDevice</code>, <code>rebootNow</code>, <code>recoverPasscode</code>, <code>cleanWindowsDevice</code>, <code>logoutSharedAppleDeviceActiveUser</code>, <code>quickScan</code>, <code>fullScan</code>, <code>windowsDefenderUpdateSignatures</code>, <code>factoryResetKeepEnrollmentData</code>, <code>updateDeviceAccount</code>, <code>automaticRedeployment</code>, <code>shutDown</code>, <code>rotateBitLockerKeys</code>, <code>rotateFileVaultKey</code>, <code>getFileVaultKey</code>, <code>setDeviceName</code>, <code>activateDeviceEsim</code>, <code>deprovision</code>, <code>disable</code>, <code>reenable</code>, <code>moveDeviceToOrganizationalUnit</code>, <code>initiateMobileDeviceManagementKeyRecovery</code>, <code>initiateOnDemandProactiveRemediation</code>, <code>rotateLocalAdminPassword</code>, <code>unknownFutureValue</code>, <code>launchRemoteHelp</code>, <code>revokeAppleVppLicenses</code>, <code>removeDeviceFirmwareConfigurationInterfaceManagement</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">requestDateTime</td>
@@ -5647,7 +5642,7 @@
 <tr>
 <td style="text-align: left;">activeDevices</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">Number of active devices for using that app over a 14-day period. Valid values -2147483648 to 2147483647</td>
+<td style="text-align: left;">Number of active devices for using that app over a 14-day period. Valid values 0 to 2147483647</td>
 </tr>
 <tr>
 <td style="text-align: left;">appName</td>
@@ -5672,7 +5667,7 @@
 <tr>
 <td style="text-align: left;">batteryUsagePercentage</td>
 <td style="text-align: left;">Double</td>
-<td style="text-align: left;">The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</td>
+<td style="text-align: left;">The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values 0 to 1.79769313486232E+308</td>
 </tr>
 </tbody>
 </table>
@@ -5694,22 +5689,22 @@
 <tr>
 <td style="text-align: left;">activeDevices</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">Number of active devices within the tenant. Valid values -2147483648 to 2147483647</td>
+<td style="text-align: left;">Number of active devices within the tenant. Valid values 0 to 2147483647</td>
 </tr>
 <tr>
 <td style="text-align: left;">batteryCapacityGood</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">Number of devices whose battery maximum capacity is greater than 80%. Valid values -2147483648 to 2147483647</td>
+<td style="text-align: left;">Number of devices whose battery maximum capacity is greater than 80%. Valid values 0 to 2147483647</td>
 </tr>
 <tr>
 <td style="text-align: left;">batteryCapacityFair</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">Number of devices whose battery maximum capacity is greater than 50% but lesser than 80%. Valid values -2147483648 to 2147483647</td>
+<td style="text-align: left;">Number of devices whose battery maximum capacity is greater than 50% but lesser than 80%. Valid values 0 to 2147483647</td>
 </tr>
 <tr>
 <td style="text-align: left;">batteryCapacityPoor</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">Number of devices whose battery maximum capacity is lesser than 50%. Valid values -2147483648 to 2147483647</td>
+<td style="text-align: left;">Number of devices whose battery maximum capacity is lesser than 50%. Valid values 0 to 2147483647</td>
 </tr>
 <tr>
 <td style="text-align: left;">lastRefreshedDateTime</td>
@@ -5761,7 +5756,7 @@
 <tr>
 <td style="text-align: left;">batteryUsagePercentage</td>
 <td style="text-align: left;">Double</td>
-<td style="text-align: left;">The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</td>
+<td style="text-align: left;">The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days. Unit in percentage. Valid values 0 to 1.79769313486232E+308</td>
 </tr>
 </tbody>
 </table>
@@ -5803,22 +5798,32 @@
 <tr>
 <td style="text-align: left;">maxCapacityPercentage</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">Ratio of current capacity and design capacity of the battery with the lowest capacity. Unit in percentage and values range from 0-100. Valid values -2147483648 to 2147483647</td>
+<td style="text-align: left;">Ratio of current capacity and design capacity of the battery with the lowest capacity. Unit in percentage and values range from 0-100. Valid values 0 to 2147483647</td>
 </tr>
 <tr>
 <td style="text-align: left;">estimatedRuntimeInMinutes</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647</td>
+<td style="text-align: left;">The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values 0 to 2147483647</td>
 </tr>
 <tr>
 <td style="text-align: left;">batteryAgeInDays</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">Estimated battery age. Unit in days. Valid values -2147483648 to 2147483647</td>
+<td style="text-align: left;">Estimated battery age. Unit in days. Valid values 0 to 2147483647</td>
+</tr>
+<tr>
+<td style="text-align: left;">fullBatteryDrainCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Number of times the battery has been discharged an amount that equals 100% of its capacity, but not necessarily by discharging it from 100% to 0%. Valid values 0 to 2147483647</td>
+</tr>
+<tr>
+<td style="text-align: left;">deviceBatteryCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Number of batteries in a user device. Valid values 1 to 2147483647</td>
 </tr>
 <tr>
 <td style="text-align: left;">deviceBatteryHealthScore</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">A weighted average of a device’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647</td>
+<td style="text-align: left;">A weighted average of a device’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values 0 to 2147483647</td>
 </tr>
 <tr>
 <td style="text-align: left;">healthStatus</td>
@@ -5855,7 +5860,7 @@
 <tr>
 <td style="text-align: left;">estimatedRuntimeInMinutes</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647</td>
+<td style="text-align: left;">The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values 0 to 2147483647</td>
 </tr>
 </tbody>
 </table>
@@ -5877,7 +5882,7 @@
 <tr>
 <td style="text-align: left;">activeDevices</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">Number of active devices for that model. Valid values -2147483648 to 2147483647</td>
+<td style="text-align: left;">Number of active devices for that model. Valid values 0 to 2147483647</td>
 </tr>
 <tr>
 <td style="text-align: left;">model</td>
@@ -5892,22 +5897,47 @@
 <tr>
 <td style="text-align: left;">averageMaxCapacityPercentage</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values -2147483648 to 2147483647</td>
+<td style="text-align: left;">The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values 0 to 2147483647</td>
 </tr>
 <tr>
 <td style="text-align: left;">averageEstimatedRuntimeInMinutes</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values -2147483648 to 2147483647</td>
+<td style="text-align: left;">The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values 0 to 2147483647</td>
 </tr>
 <tr>
 <td style="text-align: left;">averageBatteryAgeInDays</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values -2147483648 to 2147483647</td>
+<td style="text-align: left;">The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values 0 to 2147483647</td>
+</tr>
+<tr>
+<td style="text-align: left;">meanFullBatteryDrainCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The mean of number of times the battery has been discharged an amount that equals 100% of its capacity for all devices of a given model in a tenant. Valid values 0 to 2147483647</td>
+</tr>
+<tr>
+<td style="text-align: left;">medianMaxCapacityPercentage</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The median of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values 0 to 2147483647</td>
+</tr>
+<tr>
+<td style="text-align: left;">medianEstimatedRuntimeInMinutes</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The median of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values 0 to 2147483647</td>
+</tr>
+<tr>
+<td style="text-align: left;">medianFullBatteryDrainCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The median of number of times the battery has been discharged an amount that equals 100% of its capacity for all devices of a given model in a tenant. Valid values 0 to 2147483647</td>
 </tr>
 <tr>
 <td style="text-align: left;">modelBatteryHealthScore</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647</td>
+<td style="text-align: left;">A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values 0 to 2147483647</td>
+</tr>
+<tr>
+<td style="text-align: left;">modelHealthStatus</td>
+<td style="text-align: left;">userExperienceAnalyticsHealthState</td>
+<td style="text-align: left;">The overall battery health status of a given model in a tenant. Possible values are: <code>unknown</code>, <code>insufficientData</code>, <code>needsAttention</code>, <code>meetingGoals</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -5929,7 +5959,7 @@
 <tr>
 <td style="text-align: left;">activeDevices</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">Number of active devices for that os version. Valid values -2147483648 to 2147483647</td>
+<td style="text-align: left;">Number of active devices for that os version. Valid values 0 to 2147483647</td>
 </tr>
 <tr>
 <td style="text-align: left;">osVersion</td>
@@ -5944,17 +5974,47 @@
 <tr>
 <td style="text-align: left;">averageMaxCapacityPercentage</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The mean of the maximum capacity for all devices running a particular operating system version. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values -2147483648 to 2147483647</td>
+<td style="text-align: left;">The mean of the maximum capacity for all devices running a particular operating system version. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values 0 to 2147483647</td>
 </tr>
 <tr>
 <td style="text-align: left;">averageEstimatedRuntimeInMinutes</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The mean of the estimated runtimes on full charge for all devices running a particular operating system version. Unit in minutes. Valid values -2147483648 to 2147483647</td>
+<td style="text-align: left;">The mean of the estimated runtimes on full charge for all devices running a particular operating system version. Unit in minutes. Valid values 0 to 2147483647</td>
 </tr>
 <tr>
 <td style="text-align: left;">averageBatteryAgeInDays</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The mean of the battery age for all devices running a particular operating system version in a tenant. Unit in days. Valid values -2147483648 to 2147483647</td>
+<td style="text-align: left;">The mean of the battery age for all devices running a particular operating system version in a tenant. Unit in days. Valid values 0 to 2147483647</td>
+</tr>
+<tr>
+<td style="text-align: left;">meanFullBatteryDrainCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The mean of number of times the battery has been discharged an amount that equals 100% of its capacity for all devices running a particular operating system version in a tenant. Valid values 0 to 2147483647</td>
+</tr>
+<tr>
+<td style="text-align: left;">medianMaxCapacityPercentage</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The median of the maximum capacity for all devices running a particular operating system version. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values 0 to 2147483647</td>
+</tr>
+<tr>
+<td style="text-align: left;">medianEstimatedRuntimeInMinutes</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The median of the estimated runtimes on full charge for all devices running a particular operating system version. Unit in minutes. Valid values 0 to 2147483647</td>
+</tr>
+<tr>
+<td style="text-align: left;">medianFullBatteryDrainCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The median of number of times the battery has been discharged an amount that equals 100% of its capacity for all devices running a particular operating system version in a tenant. Valid values 0 to 2147483647</td>
+</tr>
+<tr>
+<td style="text-align: left;">osBatteryHealthScore</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">A weighted average of battery health score across all devices running a particular operating system version. Values range from 0-100. Valid values 0 to 2147483647</td>
+</tr>
+<tr>
+<td style="text-align: left;">osHealthStatus</td>
+<td style="text-align: left;">userExperienceAnalyticsHealthState</td>
+<td style="text-align: left;">The overall battery health status of a given os version in a tenant. Possible values are: <code>unknown</code>, <code>insufficientData</code>, <code>needsAttention</code>, <code>meetingGoals</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -5976,22 +6036,22 @@
 <tr>
 <td style="text-align: left;">activeDevices</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">Number of active devices within the tenant. Valid values -2147483648 to 2147483647</td>
+<td style="text-align: left;">Number of active devices within the tenant. Valid values 0 to 2147483647</td>
 </tr>
 <tr>
 <td style="text-align: left;">batteryRuntimeGood</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">Number of devices  whose active runtime is greater than 5 hours. Valid values -2147483648 to 2147483647</td>
+<td style="text-align: left;">Number of devices  whose active runtime is greater than 5 hours. Valid values 0 to 2147483647</td>
 </tr>
 <tr>
 <td style="text-align: left;">batteryRuntimeFair</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">Number of devices whose active runtime is greater than 3 hours but lesser than 5 hours. Valid values -2147483648 to 2147483647</td>
+<td style="text-align: left;">Number of devices whose active runtime is greater than 3 hours but lesser than 5 hours. Valid values 0 to 2147483647</td>
 </tr>
 <tr>
 <td style="text-align: left;">batteryRuntimePoor</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">Number of devices whose active runtime is lesser than 3 hours. Valid values -2147483648 to 2147483647</td>
+<td style="text-align: left;">Number of devices whose active runtime is lesser than 3 hours. Valid values 0 to 2147483647</td>
 </tr>
 <tr>
 <td style="text-align: left;">lastRefreshedDateTime</td>
@@ -6471,63 +6531,6 @@
 <td style="text-align: left;">totalImpactInMs</td>
 <td style="text-align: left;">Int64</td>
 <td style="text-align: left;">The total impact of startup process on device boot time in milliseconds. Supports: $filter, $select, $OrderBy. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">medianImpactInMs2</td>
-<td style="text-align: left;">Int64</td>
-<td style="text-align: left;">The median impact of startup process on device boot time in milliseconds. Supports: $filter, $select, $OrderBy. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">totalImpactInMs2</td>
-<td style="text-align: left;">Int64</td>
-<td style="text-align: left;">The total impact of startup process on device boot time in milliseconds. Supports: $filter, $select, $OrderBy. Read-only.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="userexperienceanalyticsdevicetimelineevent-"><a href="https://docs.microsoft.com/graph/api/resources/intune-devices-userexperienceanalyticsdevicetimelineevent?view=graph-rest-1.0&amp;tabs=http">userExperienceAnalyticsDeviceTimelineEvent </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier of the user experience analytics NRT device timeline event object.</td>
-</tr>
-<tr>
-<td style="text-align: left;">deviceId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The id of the device where the event occurred.</td>
-</tr>
-<tr>
-<td style="text-align: left;">eventDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The time the event occured.</td>
-</tr>
-<tr>
-<td style="text-align: left;">eventLevel</td>
-<td style="text-align: left;">deviceEventLevel</td>
-<td style="text-align: left;">The severity level of the event enum. Possible values are: none, verbose, information, warning, error ,critical. Default value: none. Possible values are: <code>none</code>, <code>verbose</code>, <code>information</code>, <code>warning</code>, <code>error</code>, <code>critical</code>, <code>unknownFutureValue</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">eventSource</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The source of the event. Examples include: Intune, Sccm.</td>
-</tr>
-<tr>
-<td style="text-align: left;">eventName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The name of the event. Examples include: BootEvent, LogonEvent, AppCrashEvent, AppHangEvent.</td>
-</tr>
-<tr>
-<td style="text-align: left;">eventDetails</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The details provided by the event, format depends on event type.</td>
 </tr>
 </tbody>
 </table>
@@ -8202,6 +8205,11 @@
 <td style="text-align: left;">Device sku family Inherited from managedDevice</td>
 </tr>
 <tr>
+<td style="text-align: left;">securityPatchLevel</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">This indicates the security patch level of the operating system. These special updates contain important security fixes. For iOS/MacOS they are in (a) format. For android its in 2017-08-07 format. This property is read-only. Inherited from managedDevice</td>
+</tr>
+<tr>
 <td style="text-align: left;">skuNumber</td>
 <td style="text-align: left;">Int32</td>
 <td style="text-align: left;">Device sku number, see also: <a href="https://learn.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo">https://learn.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo</a>. Valid values 0 to 2147483647. This property is read-only. Inherited from managedDevice</td>
@@ -8487,7 +8495,7 @@
 <tr>
 <td style="text-align: left;">reportName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Name of the report</td>
+<td style="text-align: left;">Name of the report. This property is read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">filter</td>
@@ -8512,17 +8520,17 @@
 <tr>
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">deviceManagementReportStatus</td>
-<td style="text-align: left;">Status of the cached report. Possible values are: <code>unknown</code>, <code>notStarted</code>, <code>inProgress</code>, <code>completed</code>, <code>failed</code>.</td>
+<td style="text-align: left;">Status of the cached report. This property is read-only. Possible values are: <code>unknown</code>, <code>notStarted</code>, <code>inProgress</code>, <code>completed</code>, <code>failed</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">lastRefreshDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Time that the cached report was last refreshed</td>
+<td style="text-align: left;">Time that the cached report was last refreshed. This property is read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">expirationDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Time that the cached report expires</td>
+<td style="text-align: left;">Time that the cached report expires. This property is read-only.</td>
 </tr>
 </tbody>
 </table>

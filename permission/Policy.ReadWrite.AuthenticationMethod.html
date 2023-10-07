@@ -104,7 +104,7 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/authenticationstrengthpolicy-delete-combinationconfigurations?view=graph-rest-1.0&amp;tabs=http">DELETE /identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicyId}/combinationConfigurations/{authenticationCombinationConfigurationId}/$ref</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/authenticationstrengthpolicy-delete-combinationconfigurations?view=graph-rest-1.0&amp;tabs=http">DELETE /identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicyId}/combinationConfigurations/{authenticationCombinationConfigurationId}</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -115,6 +115,11 @@
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/fido2authenticationmethodconfiguration-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /policies/authenticationMethodsPolicy/authenticationMethodConfigurations/fido2</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/hardwareoathauthenticationmethodconfiguration-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /policies/authenticationMethodsPolicy/authenticationMethodConfigurations/hardwareOath</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -154,7 +159,7 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/authenticationstrengthroot-delete-policies?view=graph-rest-1.0&amp;tabs=http">DELETE /policies/authenticationStrengthPolicies/{authenticationStrengthPolicyId}/$ref</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/authenticationstrengthroot-delete-policies?view=graph-rest-1.0&amp;tabs=http">DELETE /policies/authenticationStrengthPolicies/{authenticationStrengthPolicyId}</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -190,6 +195,11 @@
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/fido2authenticationmethodconfiguration-get?view=graph-rest-1.0&amp;tabs=http">GET /policies/authenticationMethodsPolicy/authenticationMethodConfigurations/fido2</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/hardwareoathauthenticationmethodconfiguration-get?view=graph-rest-1.0&amp;tabs=http">GET /policies/authenticationMethodsPolicy/authenticationMethodConfigurations/hardwareOath</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -244,7 +254,7 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/authenticationstrengthpolicy-findbymethodmode?view=graph-rest-1.0&amp;tabs=http">GET /policies/authenticationStrengthPolicies/findByMethodMode(authenticationMethodModes=[&quot;authenticationMethodMode&quot;])</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/authenticationstrengthpolicy-findbymethodmode?view=graph-rest-1.0&amp;tabs=http">GET /policies/authenticationStrengthPolicies/findByMethodMode(authenticationMethodModes={authenticationMethodMode})</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -265,6 +275,11 @@
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/fido2authenticationmethodconfiguration-update?view=graph-rest-1.0&amp;tabs=http">PATCH /policies/authenticationMethodsPolicy/authenticationMethodConfigurations/fido2</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/hardwareoathauthenticationmethodconfiguration-update?view=graph-rest-1.0&amp;tabs=http">PATCH /policies/authenticationMethodsPolicy/authenticationMethodConfigurations/hardwareOath</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -392,7 +407,7 @@
 <tr>
 <td style="text-align: left;">appliesToCombinations</td>
 <td style="text-align: left;">authenticationMethodModes collection</td>
-<td style="text-align: left;">Which authentication method combinations this configuration applies to. Must be an <strong>allowedCombinations</strong> object that's defined for the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is <code>&quot;fido2&quot;</code>.</td>
+<td style="text-align: left;">Which authentication method combinations this configuration applies to. Must be an <strong>allowedCombinations</strong> object that's defined for the authenticationStrengthPolicy. The only possible value for <code>fido2combinationConfigurations</code> is <code>&quot;fido2&quot;</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
@@ -503,6 +518,33 @@
 </tr>
 </tbody>
 </table>
+<h3 id="authenticationmethodtarget-"><a href="https://docs.microsoft.com/graph/api/resources/authenticationmethodtarget?view=graph-rest-1.0&amp;tabs=http">authenticationMethodTarget </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Object Id of an Azure AD user or group.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isRegistrationRequired</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Determines if the user is enforced to register the authentication method.</td>
+</tr>
+<tr>
+<td style="text-align: left;">targetType</td>
+<td style="text-align: left;">authenticationMethodTargetType</td>
+<td style="text-align: left;">Possible values are: <code>user</code>, <code>group</code>.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="authenticationstrengthpolicy-"><a href="https://docs.microsoft.com/graph/api/resources/authenticationstrengthpolicy?view=graph-rest-1.0&amp;tabs=http">authenticationStrengthPolicy </a></h3>
 <table>
 <thead>
@@ -590,7 +632,7 @@
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The id of the B2C authentication methods policy. This is a read only property and the key.</td>
+<td style="text-align: left;">The ID of the B2C authentication methods policy. This is a read only property and the key.</td>
 </tr>
 <tr>
 <td style="text-align: left;">isEmailPasswordAuthenticationEnabled</td>
@@ -622,7 +664,7 @@
 <tr>
 <td style="text-align: left;">allowExternalIdToUseEmailOtp</td>
 <td style="text-align: left;">externalEmailOtpState</td>
-<td style="text-align: left;">Determines whether email OTP is usable by external users for authentication. Possible values are: <code>default</code>, <code>enabled</code>, <code>disabled</code>, <code>unknownFutureValue</code>. Tenants in the <code>default</code> state who did not use public preview will automatically have email OTP enabled beginning in October 2021.</td>
+<td style="text-align: left;">Determines whether email OTP is usable by external users for authentication. Possible values are: <code>default</code>, <code>enabled</code>, <code>disabled</code>, <code>unknownFutureValue</code>. Tenants in the <code>default</code> state who didn't use public preview have email OTP enabled beginning in October 2021.</td>
 </tr>
 <tr>
 <td style="text-align: left;">excludeTargets</td>
@@ -732,6 +774,33 @@
 </tr>
 </tbody>
 </table>
+<h3 id="hardwareoathauthenticationmethodconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/hardwareoathauthenticationmethodconfiguration?view=graph-rest-1.0&amp;tabs=http">hardwareOathAuthenticationMethodConfiguration </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">excludeTargets</td>
+<td style="text-align: left;">excludeTarget collection</td>
+<td style="text-align: left;">Groups of users that are excluded from the policy. Inherited from authenticationMethodConfiguration.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The authentication method policy identifier. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">state</td>
+<td style="text-align: left;">authenticationMethodState</td>
+<td style="text-align: left;">Possible values are: <code>enabled</code>, <code>disabled</code>. Inherited from authenticationMethodConfiguration.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="microsoftauthenticatorauthenticationmethodconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/microsoftauthenticatorauthenticationmethodconfiguration?view=graph-rest-1.0&amp;tabs=http">microsoftAuthenticatorAuthenticationMethodConfiguration </a></h3>
 <table>
 <thead>
@@ -821,12 +890,12 @@
 <tr>
 <td style="text-align: left;">state</td>
 <td style="text-align: left;">advancedConfigState</td>
-<td style="text-align: left;">Specifies the state of the reportSuspiciousActivitySettings object. The possible values are: <code>default</code>, <code>enabled</code>, <code>disabled</code>, <code>unknownFutureValue</code>. Setting to <code>default</code> will result in a disabled state.</td>
+<td style="text-align: left;">Specifies the state of the reportSuspiciousActivitySettings object. The possible values are: <code>default</code>, <code>enabled</code>, <code>disabled</code>, <code>unknownFutureValue</code>. Setting to <code>default</code> results in a disabled state.</td>
 </tr>
 <tr>
 <td style="text-align: left;">voiceReportingCode</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">Specifies the number the user will enter on their phone to report the MFA prompt as suspicious.</td>
+<td style="text-align: left;">Specifies the number the user enters on their phone to report the MFA prompt as suspicious.</td>
 </tr>
 </tbody>
 </table>
@@ -1083,6 +1152,23 @@
 <td style="text-align: left;">x509CertificateAuthenticationDefaultMode</td>
 <td style="text-align: left;">x509CertificateAuthenticationMode</td>
 <td style="text-align: left;">The type of strong authentication mode. The possible values are: <code>x509CertificateSingleFactor</code>, <code>x509CertificateMultiFactor</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="x509certificateissuerhintsconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/x509certificateissuerhintsconfiguration?view=graph-rest-1.0&amp;tabs=http">x509CertificateIssuerHintsConfiguration </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">state</td>
+<td style="text-align: left;">x509CertificateIssuerHintsState</td>
+<td style="text-align: left;">The possible values are: <code>disabled</code>, <code>enabled</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 </tbody>
 </table>

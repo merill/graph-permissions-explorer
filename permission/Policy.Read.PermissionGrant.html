@@ -121,6 +121,21 @@
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-list-includes?view=graph-rest-1.0&amp;tabs=http">GET /policies/permissionGrantPolicies/{id}/includes</a></td>
 </tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/policyroot-list-permissiongrantpreapprovalpolicies?view=graph-rest-1.0&amp;tabs=http">GET /policies/permissionGrantPreApprovalPolicies</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/permissiongrantpreapprovalpolicy-get?view=graph-rest-1.0&amp;tabs=http">GET /policies/permissionGrantPreApprovalPolicies/{id}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-permissiongrantpreapprovalpolicies?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/permissionGrantPreApprovalPolicies</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="delegate-permission">Delegate Permission</h2>
@@ -187,7 +202,7 @@
 <tr>
 <td style="text-align: left;">clientApplicationsFromVerifiedPublisherOnly</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Set to <code>true</code> to only match on client applications with a verified publisher. Set to <code>false</code> to match on any client app, even if it does not have a verified publisher. Default is <code>false</code>.</td>
+<td style="text-align: left;">Set to <code>true</code> to only match on client applications with a verified publisher. Set to <code>false</code> to match on any client app, even if it doesn't have a verified publisher. Default is <code>false</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">clientApplicationIds</td>
@@ -212,7 +227,7 @@
 <tr>
 <td style="text-align: left;">permissionClassification</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The permission classification for the permission being granted, or <code>all</code> to match with any permission classification (including permissions which are not classified). Default is <code>all</code>.</td>
+<td style="text-align: left;">The permission classification for the permission being granted, or <code>all</code> to match with any permission classification (including permissions that aren't classified). Default is <code>all</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">permissions</td>
@@ -222,7 +237,7 @@
 <tr>
 <td style="text-align: left;">permissionType</td>
 <td style="text-align: left;">permissionType</td>
-<td style="text-align: left;">The permission type of the permission being granted. Possible values: <code>application</code> for application permissions (e.g. app roles), or <code>delegated</code> for delegated permissions. The value <code>delegatedUserConsentable</code> indicates delegated permissions which have not been configured by the API publisher to require admin consent—this value may be used in built-in permission grant policies, but cannot be used in custom permission grant policies. Required.</td>
+<td style="text-align: left;">The permission type of the permission being granted. Possible values: <code>application</code> for application permissions (for example app roles), or <code>delegated</code> for delegated permissions. The value <code>delegatedUserConsentable</code> indicates delegated permissions that haven't been configured by the API publisher to require admin consent—this value may be used in built-in permission grant policies, but can't be used in custom permission grant policies. Required.</td>
 </tr>
 <tr>
 <td style="text-align: left;">resourceApplication</td>
@@ -265,6 +280,225 @@
 <td style="text-align: left;">includes</td>
 <td style="text-align: left;">permissionGrantConditionSet collection</td>
 <td style="text-align: left;">Condition sets which are *i</td>
+</tr>
+</tbody>
+</table>
+<h3 id="permissiongrantpreapprovalpolicy-"><a href="https://docs.microsoft.com/graph/api/resources/permissiongrantpreapprovalpolicy?view=graph-rest-1.0&amp;tabs=http">permissionGrantPreApprovalPolicy </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">conditions</td>
+<td style="text-align: left;">preApprovalDetail collection</td>
+<td style="text-align: left;">A list of condition sets describing the conditions under which the permission to grant consent for the app has been preapproved.</td>
+</tr>
+<tr>
+<td style="text-align: left;">deletedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Null. Inherited from directoryObject.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the permission grant preapproval policy. Inherited from entity.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="serviceprincipal-"><a href="https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-1.0&amp;tabs=http">servicePrincipal </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">accountEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if the service principal account is enabled; otherwise, <code>false</code>. If set to <code>false</code>, then no users will be able to sign in to this app, even if they are assigned to it. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">addIns</td>
+<td style="text-align: left;">addIn collection</td>
+<td style="text-align: left;">Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its &quot;FileHandler&quot; functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.</td>
+</tr>
+<tr>
+<td style="text-align: left;">alternativeNames</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">appDescription</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The description exposed by the associated application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">appDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name exposed by the associated application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">appId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the associated application (its <strong>appId</strong> property). Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>, <code>startsWith</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">applicationTemplateId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier of the applicationTemplate that the servicePrincipal was created from. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>, <code>startsWith</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">appOwnerOrganizationId</td>
+<td style="text-align: left;">Guid</td>
+<td style="text-align: left;">Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>, <code>ge</code>, <code>le</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">appRoleAssignmentRequired</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Specifies whether users or other service principals need to be granted an app role assignment for this service principal before users can sign in or apps can get tokens. The default value is <code>false</code>. Not nullable. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">appRoles</td>
+<td style="text-align: left;">appRole collection</td>
+<td style="text-align: left;">The roles exposed by the application which this service principal represents. For more information see the <strong>appRoles</strong> property definition on the application entity. Not nullable.</td>
+</tr>
+<tr>
+<td style="text-align: left;">customSecurityAttributes</td>
+<td style="text-align: left;">customSecurityAttributeValue</td>
+<td style="text-align: left;">An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>startsWith</code>). Filter value is case sensitive.</td>
+</tr>
+<tr>
+<td style="text-align: left;">deletedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the service principal was deleted. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>) and <code>$search</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">disabledByMicrosoftStatus</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Specifies whether Microsoft has disabled the registered application. Possible values are: <code>null</code> (default value), <code>NotDisabled</code>, and <code>DisabledDueToViolationOfServicesAgreement</code> (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement). <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name for the service principal. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values), <code>$search</code>, and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">homepage</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Home page or landing page of the application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the service principal. Inherited from directoryObject. Key. Not nullable. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">info</td>
+<td style="text-align: left;">informationalUrl</td>
+<td style="text-align: left;">Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, and <code>eq</code> on <code>null</code> values).</td>
+</tr>
+<tr>
+<td style="text-align: left;">keyCredentials</td>
+<td style="text-align: left;">keyCredential collection</td>
+<td style="text-align: left;">The collection of key credentials associated with the service principal. Not nullable. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">loginUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Specifies the URL where the service provider redirects the user to Azure AD to authenticate. Azure AD uses the URL to launch the application from Microsoft 365 or the Azure AD My Apps. When blank, Azure AD performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Azure AD My Apps, or the Azure AD SSO URL.</td>
+</tr>
+<tr>
+<td style="text-align: left;">logoutUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Specifies the URL that will be used by Microsoft's authorization service to logout an user using OpenId Connect front-channel, back-channel or SAML logout protocols.</td>
+</tr>
+<tr>
+<td style="text-align: left;">notes</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Free text field to capture information about the service principal, typically used for operational purposes. Maximum allowed size is 1024 characters.</td>
+</tr>
+<tr>
+<td style="text-align: left;">notificationEmailAddresses</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Specifies the list of email addresses where Azure AD sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Azure AD Gallery applications.</td>
+</tr>
+<tr>
+<td style="text-align: left;">oauth2PermissionScopes</td>
+<td style="text-align: left;">permissionScope collection</td>
+<td style="text-align: left;">The delegated permissions exposed by the application. For more information see the <strong>oauth2PermissionScopes</strong> property on the application entity's <strong>api</strong> property. Not nullable.</td>
+</tr>
+<tr>
+<td style="text-align: left;">passwordCredentials</td>
+<td style="text-align: left;">passwordCredential collection</td>
+<td style="text-align: left;">The collection of password credentials associated with the application. Not nullable.</td>
+</tr>
+<tr>
+<td style="text-align: left;">preferredSingleSignOnMode</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are <code>password</code>, <code>saml</code>, <code>notSupported</code>, and <code>oidc</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">preferredTokenSigningKeyThumbprint</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to <code>saml</code>) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.</td>
+</tr>
+<tr>
+<td style="text-align: left;">replyUrls</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">The URLs that user tokens are sent to for sign in with the associated application, or the redirect URIs that OAuth 2.0 authorization codes and access tokens are sent to for the associated application. Not nullable.</td>
+</tr>
+<tr>
+<td style="text-align: left;">resourceSpecificApplicationPermissions</td>
+<td style="text-align: left;">resourceSpecificPermission collection</td>
+<td style="text-align: left;">The resource-specific application permissions exposed by this application. Currently, resource-specific permissions are only supported for Teams apps accessing to specific chats and teams using Microsoft Graph. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">samlSingleSignOnSettings</td>
+<td style="text-align: left;">samlSingleSignOnSettings</td>
+<td style="text-align: left;">The collection for settings related to saml single sign-on.</td>
+</tr>
+<tr>
+<td style="text-align: left;">servicePrincipalNames</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Contains the list of <strong>identifiersUris</strong>, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,<ul><li>Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the &quot;aud&quot; claim.</li></ul><br>The any operator is required for filter expressions on multi-valued properties. Not nullable. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">servicePrincipalType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifies whether the service principal represents an application, a managed identity, or a legacy application. This is set by Azure AD internally. The <strong>servicePrincipalType</strong> property can be set to three different values: <ul><li><strong>Application</strong> - A service principal that represents an application or service. The <strong>appId</strong> property identifies the associated app registration, and matches the <strong>appId</strong> of an application, possibly from a different tenant. If the associated app registration is missing, tokens are not issued for the service principal.</li><li><strong>ManagedIdentity</strong> - A service principal that represents a managed identity. Service principals representing managed identities can be granted access and permissions, but cannot be updated or modified directly.</li><li><strong>Legacy</strong> - A service principal that represents an app created before app registrations, or through legacy experiences. Legacy service principal can have credentials, service principal names, reply URLs, and other properties which are editable by an authorized user, but does not have an associated app registration. The <strong>appId</strong> value does not associate the service principal with an app registration. The service principal can only be used in the tenant where it was created.</li><li><strong>SocialIdp</strong> - For internal use. </li></ul></td>
+</tr>
+<tr>
+<td style="text-align: left;">signInAudience</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Specifies the Microsoft accounts that are supported for the current application. Read-only. <br><br>Supported values are:<ul><li><code>AzureADMyOrg</code>: Users with a Microsoft work or school account in my organization's Azure AD tenant (single-tenant).</li><li><code>AzureADMultipleOrgs</code>: Users with a Microsoft work or school account in any organization's Azure AD tenant (multi-tenant).</li><li><code>AzureADandPersonalMicrosoftAccount</code>: Users with a personal Microsoft account, or a work or school account in any organization's Azure AD tenant.</li><li><code>PersonalMicrosoftAccount</code>: Users with a personal Microsoft account only.</li></ul></td>
+</tr>
+<tr>
+<td style="text-align: left;">tags</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Custom strings that can be used to categorize and identify the service principal. Not nullable. The value is the union of strings set here and on the associated application entity's <strong>tags</strong> property.<br><br>Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">tokenEncryptionKeyId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.</td>
+</tr>
+<tr>
+<td style="text-align: left;">verifiedPublisher</td>
+<td style="text-align: left;">verifiedPublisher</td>
+<td style="text-align: left;">Specifies the verified publisher of the application which this service principal represents.</td>
 </tr>
 </tbody>
 </table>

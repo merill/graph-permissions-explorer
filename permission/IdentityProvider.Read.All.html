@@ -402,7 +402,7 @@
 <tr>
 <td style="text-align: left;">scope</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Scope defines the information and permissions you are looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users are not able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended, separated by a space. For more details about the scope limitations see RFC6749 Section 3.3. Required.</td>
+<td style="text-align: left;">Scope defines the information and permissions you are looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users are not able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended, separated by a space. For more details about the scope limitations, see RFC6749 Section 3.3. Required.</td>
 </tr>
 </tbody>
 </table>
@@ -424,27 +424,27 @@
 <tr>
 <td style="text-align: left;">clientSecret</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The client secret for the application obtained when registering the application with the identity provider. The clientSecret has a dependency on <strong>responseType</strong>. When <strong>responseType</strong> is <code>code</code>, a secret is required for the auth code exchange. When <strong>responseType</strong> is <code>id_token</code> the secret is not required because there is no code exchange, the <code>id_token</code> is returned directly from the authorization response. This is write-only. A read operation returns &quot;****&quot;. Inherited from identityProvider.</td>
+<td style="text-align: left;">The client secret for the application obtained when registering the application with the identity provider. The clientSecret has a dependency on <strong>responseType</strong>. When <strong>responseType</strong> is <code>code</code>, a secret is required for the auth code exchange. When <strong>responseType</strong> is <code>id_token</code> the secret isn't required because there's no code exchange, the <code>id_token</code> is returned directly from the authorization response. This is write-only. A read operation returns &quot;****&quot;. Inherited from identityProvider.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The ID of the identity provider. It is a required property and is read only after creation.</td>
+<td style="text-align: left;">The ID of the identity provider. It's a required property and is read only after creation.</td>
 </tr>
 <tr>
 <td style="text-align: left;">name</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name of the identity provider. It is a required property and is read only after creation.</td>
+<td style="text-align: left;">The display name of the identity provider. It's a required property and is read only after creation.</td>
 </tr>
 <tr>
 <td style="text-align: left;">type</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The identity provider type. It must be <code>OpenIDConnect</code>.It is a required property and is read only after creation.</td>
+<td style="text-align: left;">The identity provider type. It must be <code>OpenIDConnect</code>. It's a required property and is read only after creation.</td>
 </tr>
 <tr>
 <td style="text-align: left;">claimsMapping</td>
 <td style="text-align: left;">claimsMapping</td>
-<td style="text-align: left;">After the OIDC provider sends an ID token back to Azure AD, Azure AD needs to be able to map the claims from the received token to the claims that Azure AD recognizes and uses. This complex type captures that mapping. It is a required property.</td>
+<td style="text-align: left;">After the OIDC provider sends an ID token back to Azure AD, Azure AD needs to be able to map the claims from the received token to the claims that Azure AD recognizes and uses. This complex type captures that mapping. It's a required property.</td>
 </tr>
 <tr>
 <td style="text-align: left;">domainHint</td>
@@ -454,22 +454,22 @@
 <tr>
 <td style="text-align: left;">metadataUrl</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The URL for the metadata document of the OpenID Connect identity provider. Every OpenID Connect identity provider describes a metadata document that contains most of the information required to perform sign-in. This includes information such as the URLs to use and the location of the service's public signing keys. The OpenID Connect metadata document is always located at an endpoint that ends in .well-known/openid-configuration . For the OpenID Connect identity provider you are looking to add, you will need to provide the metadata URL. It is a required property and is read only after creation.</td>
+<td style="text-align: left;">The URL for the metadata document of the OpenID Connect identity provider. Every OpenID Connect identity provider describes a metadata document that contains most of the information required to perform sign-in. This includes information such as the URLs to use and the location of the service's public signing keys. The OpenID Connect metadata document is always located at an endpoint that ends in a well-known/openid-configuration. For the OpenID Connect identity provider you're looking to add, you need to provide the metadata URL. It's a required property and is read only after creation.</td>
 </tr>
 <tr>
 <td style="text-align: left;">responseMode</td>
 <td style="text-align: left;">openIdConnectResponseMode</td>
-<td style="text-align: left;">The response mode defines the method that should be used to send the data back from the custom identity provider to Azure AD B2C. The following response modes can be used: <code>form_post</code>, <code>query</code>. <code>query</code> response mode means the code or token is returned as a query parameter. <code>form_post</code> response mode is recommended for the best security. The response is transmitted via the HTTP POST method, with the code or token being encoded in the body using the application/x-www-form-urlencoded format. It is a required property.</td>
+<td style="text-align: left;">The response mode defines the method that should be used to send the data back from the custom identity provider to Azure AD B2C. The following response modes can be used: <code>form_post</code>, <code>query</code>. <code>query</code> response mode means the code or token is returned as a query parameter. <code>form_post</code> response mode is recommended for the best security. The response is transmitted via the HTTP POST method, with the code or token being encoded in the body using the application/x-www-form-urlencoded format. It's a required property.</td>
 </tr>
 <tr>
 <td style="text-align: left;">responseType</td>
 <td style="text-align: left;">openIdConnectResponseTypes</td>
-<td style="text-align: left;">response type describes what kind of information is sent back in the initial call to the authorization_endpoint of the custom identity provider. The following response types can be used: <code>code</code> , <code>id_token</code> , <code>token</code>. It is a required property.</td>
+<td style="text-align: left;">response type describes what kind of information is sent back in the initial call to the authorization_endpoint of the custom identity provider. The following response types can be used: <code>code</code> , <code>id_token</code> , <code>token</code>. It's a required property.</td>
 </tr>
 <tr>
 <td style="text-align: left;">scope</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Scope defines the information and permissions you are looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users are not able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended separated by space. For more details about the scope limitations see RFC6749 Section 3.3. It is a required property.</td>
+<td style="text-align: left;">Scope defines the information and permissions you're looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users aren't able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended separated by space. For more information about the scope limitations, see RFC6749 Section 3.3. It's a required property.</td>
 </tr>
 </tbody>
 </table>

@@ -302,7 +302,7 @@
 <tr>
 <td style="text-align: left;">value</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Specifies the value to include in the <code>roles</code> claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are <code>:</code> <code>!</code> <code>#</code> <code>$</code> <code>%</code> <code>&amp;</code> <code>'</code> <code>(</code> <code>)</code> <code>*</code> <code>+</code> <code>,</code> <code>-</code> <code>.</code> <code>/</code> <code>:</code> <code>;</code> <code>&lt;</code> <code>=</code> <code>&gt;</code> <code>?</code> <code>@</code> <code>[</code> <code>]</code> <code>^</code> <code>+</code> <code>_</code> <code>`</code> <code>{</code> <code>|</code> <code>}</code> <code>~</code>, as well as characters in the ranges <code>0-9</code>, <code>A-Z</code> and <code>a-z</code>. Any other character, including the space character, are not allowed. May not begin with <code>.</code>.</td>
+<td style="text-align: left;">Specifies the value to include in the <code>roles</code> claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are <code>:</code> <code>!</code> <code>#</code> <code>$</code> <code>%</code> <code>&amp;</code> <code>'</code> <code>(</code> <code>)</code> <code>*</code> <code>+</code> <code>,</code> <code>-</code> <code>.</code> <code>/</code> <code>:</code> <code>;</code> <code>&lt;</code> <code>=</code> <code>&gt;</code> <code>?</code> <code>@</code> <code>[</code> <code>]</code> <code>^</code> <code>+</code> <code>_</code> <code>`</code> <code>{</code> <code>|</code> <code>}</code> <code>~</code>, and characters in the ranges <code>0-9</code>, <code>A-Z</code> and <code>a-z</code>. Any other character, including the space character, aren't allowed. May not begin with <code>.</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -416,7 +416,7 @@
 <tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name for the group. This property is required when a group is created and cannot be cleared during updates. Maximum length is 256 characters. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values), <code>$search</code>, and <code>$orderBy</code>.</td>
+<td style="text-align: left;">The display name for the group. This property is required when a group is created and cannot be cleared during updates. Maximum length is 256 characters. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values), <code>$search</code>, and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">expirationDateTime</td>
@@ -571,7 +571,7 @@
 <tr>
 <td style="text-align: left;">visibility</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Specifies the group join policy and group content visibility for groups. Possible values are: <code>Private</code>, <code>Public</code>, or <code>HiddenMembership</code>. <code>HiddenMembership</code> can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation.<br> If visibility value is not specified during group creation on Microsoft Graph, a security group is created as <code>Private</code> by default and Microsoft 365 group is <code>Public</code>. Groups assignable to roles are always <code>Private</code>. See group visibility options to learn more. <br><br>Returned by default. Nullable.</td>
+<td style="text-align: left;">Specifies the group join policy and group content visibility for groups. Possible values are: <code>Private</code>, <code>Public</code>, or <code>HiddenMembership</code>. <code>HiddenMembership</code> can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation.<br> If visibility value is not specified during group creation on Microsoft Graph, a security group is created as <code>Private</code> by default and Microsoft 365 group is <code>Public</code>. Groups assignable to roles are always <code>Private</code>. To learn more, see group visibility options. <br><br>Returned by default. Nullable.</td>
 </tr>
 </tbody>
 </table>
@@ -636,6 +636,11 @@
 <td style="text-align: left;">The roles exposed by the application which this service principal represents. For more information see the <strong>appRoles</strong> property definition on the application entity. Not nullable.</td>
 </tr>
 <tr>
+<td style="text-align: left;">customSecurityAttributes</td>
+<td style="text-align: left;">customSecurityAttributeValue</td>
+<td style="text-align: left;">An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>startsWith</code>). Filter value is case sensitive.</td>
+</tr>
+<tr>
 <td style="text-align: left;">deletedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">The date and time the service principal was deleted. Read-only.</td>
@@ -653,7 +658,7 @@
 <tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name for the service principal. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values), <code>$search</code>, and <code>$orderBy</code>.</td>
+<td style="text-align: left;">The display name for the service principal. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values), <code>$search</code>, and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">homepage</td>

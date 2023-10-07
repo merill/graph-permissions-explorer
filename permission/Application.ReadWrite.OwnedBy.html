@@ -129,7 +129,7 @@
 <tr>
 <td>V1</td>
 <td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/application-delete-tokenissuancepolicies?view=graph-rest-1.0&amp;tabs=http">DELETE /applications(appId='{appId}')/tokenIssuancePolicies/$ref</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/application-delete-tokenissuancepolicies?view=graph-rest-1.0&amp;tabs=http">DELETE /applications(appId='{appId}')/tokenIssuancePolicies/{id}/$ref</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -175,11 +175,6 @@
 <td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-delete-tokenissuancepolicies?view=graph-rest-1.0&amp;tabs=http">DELETE /applications/{id}/tokenIssuancePolicies/{id}/$ref</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/application-delete-tokenissuancepolicies?view=graph-rest-1.0&amp;tabs=http">DELETE /applications/{id}/tokenIssuancePolicies/$ref</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -789,6 +784,11 @@
 <tr>
 <td>V1</td>
 <td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/synchronization/jobs/{jobId}/restart</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-post-tokenlifetimepolicies?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/tokenLifetimePolicies/$ref</a></td>
 </tr>
 <tr>
@@ -948,7 +948,7 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
+<td style="text-align: left;">ID</td>
 <td style="text-align: left;">guid</td>
 <td style="text-align: left;"></td>
 </tr>
@@ -992,7 +992,7 @@
 <tr>
 <td style="text-align: left;">preAuthorizedApplications</td>
 <td style="text-align: left;">preAuthorizedApplication collection</td>
-<td style="text-align: left;">Lists the client applications that are pre-authorized with the specified delegated permissions to access this application's APIs. Users are not required to consent to any pre-authorized application (for the permissions specified). However, any additional permissions not listed in preAuthorizedApplications (requested through incremental consent for example) will require user consent.</td>
+<td style="text-align: left;">Lists the client applications that are preauthorized with the specified delegated permissions to access this application's APIs. Users aren't required to consent to any preauthorized application (for the permissions specified). However, any other permissions not listed in preAuthorizedApplications (requested through incremental consent for example) will require user consent.</td>
 </tr>
 <tr>
 <td style="text-align: left;">requestedAccessTokenVersion</td>
@@ -1044,7 +1044,7 @@
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, and <code>eq</code> on <code>null</code> values) and <code>$orderBy</code>.</td>
+<td style="text-align: left;">The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, and <code>eq</code> on <code>null</code> values) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">deletedDateTime</td>
@@ -1064,7 +1064,7 @@
 <tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name for the application. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values), <code>$search</code>, and <code>$orderBy</code>.</td>
+<td style="text-align: left;">The display name for the application. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values), <code>$search</code>, and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">groupMembershipClaims</td>
@@ -1074,7 +1074,7 @@
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Unique identifier for the application object. This property is referred to as <strong>Object ID</strong> in the Azure portal. Inherited from directoryObject. Key. Not nullable. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>).</td>
+<td style="text-align: left;">Unique identifier for the application object. This property is referred to as <strong>Object ID</strong> in the Microsoft Entra admin center. Inherited from directoryObject. Key. Not nullable. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">identifierUris</td>
@@ -1160,6 +1160,11 @@
 <td style="text-align: left;">serviceManagementReference</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">References application or service contact information from a Service or Asset Management database. Nullable.</td>
+</tr>
+<tr>
+<td style="text-align: left;">servicePrincipalLockConfiguration</td>
+<td style="text-align: left;">servicePrincipalLockConfiguration</td>
+<td style="text-align: left;">Specifies whether sensitive properties of a multi-tenant application should be locked for editing after the application is provisioned in a tenant. Nullable. <code>null</code> by default.</td>
 </tr>
 <tr>
 <td style="text-align: left;">signInAudience</td>
@@ -1258,7 +1263,7 @@
 <tr>
 <td style="text-align: left;">value</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Specifies the value to include in the <code>roles</code> claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are <code>:</code> <code>!</code> <code>#</code> <code>$</code> <code>%</code> <code>&amp;</code> <code>'</code> <code>(</code> <code>)</code> <code>*</code> <code>+</code> <code>,</code> <code>-</code> <code>.</code> <code>/</code> <code>:</code> <code>;</code> <code>&lt;</code> <code>=</code> <code>&gt;</code> <code>?</code> <code>@</code> <code>[</code> <code>]</code> <code>^</code> <code>+</code> <code>_</code> <code>`</code> <code>{</code> <code>|</code> <code>}</code> <code>~</code>, as well as characters in the ranges <code>0-9</code>, <code>A-Z</code> and <code>a-z</code>. Any other character, including the space character, are not allowed. May not begin with <code>.</code>.</td>
+<td style="text-align: left;">Specifies the value to include in the <code>roles</code> claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are <code>:</code> <code>!</code> <code>#</code> <code>$</code> <code>%</code> <code>&amp;</code> <code>'</code> <code>(</code> <code>)</code> <code>*</code> <code>+</code> <code>,</code> <code>-</code> <code>.</code> <code>/</code> <code>:</code> <code>;</code> <code>&lt;</code> <code>=</code> <code>&gt;</code> <code>?</code> <code>@</code> <code>[</code> <code>]</code> <code>^</code> <code>+</code> <code>_</code> <code>`</code> <code>{</code> <code>|</code> <code>}</code> <code>~</code>, and characters in the ranges <code>0-9</code>, <code>A-Z</code> and <code>a-z</code>. Any other character, including the space character, aren't allowed. May not begin with <code>.</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -1365,7 +1370,7 @@
 <tr>
 <td style="text-align: left;">classification</td>
 <td style="text-align: left;">permissionClassificationType</td>
-<td style="text-align: left;">The classification value being given. Possible value: <code>low</code>. Does not support <code>$filter</code>.</td>
+<td style="text-align: left;">The classification value being given. Possible value: <code>low</code>. Doesn't support <code>$filter</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
@@ -1375,7 +1380,7 @@
 <tr>
 <td style="text-align: left;">permissionId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier (<strong>id</strong>) for the delegated permission listed in the <strong>oauth2PermissionScopes</strong> collection of the servicePrincipal. Required on create. Does not support <code>$filter</code>.</td>
+<td style="text-align: left;">The unique identifier (<strong>id</strong>) for the delegated permission listed in the <strong>oauth2PermissionScopes</strong> collection of the servicePrincipal. Required on create. Doesn't support <code>$filter</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">permissionName</td>
@@ -1629,12 +1634,12 @@
 <tr>
 <td style="text-align: left;">alternateUrl</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">If you are configuring a traffic manager in front of multiple App Proxy applications, the alternateUrl is the user-friendly URL that will point to the traffic manager.</td>
+<td style="text-align: left;">If you're configuring a traffic manager in front of multiple App Proxy applications, the alternateUrl is the user-friendly URL that points to the traffic manager.</td>
 </tr>
 <tr>
 <td style="text-align: left;">applicationServerTimeout</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The duration the connector will wait for a response from the backend application before closing the connection. Possible values are <code>default</code>, <code>long</code>. When set to default, the backend application timeout has a length of 85 seconds. When set to long, the backend timeout is increased to 180 seconds. Use <code>long</code> if your server takes more than 85 seconds to respond to requests or if you are unable to access the application and the error status is &quot;Backend Timeout&quot;. Default value is <code>default</code>.</td>
+<td style="text-align: left;">The duration the connector waits for a response from the backend application before closing the connection. Possible values are <code>default</code>, <code>long</code>. When set to default, the backend application timeout has a length of 85 seconds. When set to long, the backend timeout is increased to 180 seconds. Use <code>long</code> if your server takes more than 85 seconds to respond to requests or if you are unable to access the application and the error status is &quot;Backend Timeout&quot;. Default value is <code>default</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">applicationType</td>
@@ -1644,7 +1649,7 @@
 <tr>
 <td style="text-align: left;">externalAuthenticationType</td>
 <td style="text-align: left;">externalAuthenticationType</td>
-<td style="text-align: left;">Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Passthru does not require authentication. Possible values are: <code>passthru</code>, <code>aadPreAuthentication</code>.</td>
+<td style="text-align: left;">Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Pass through doesn't require authentication. Possible values are: <code>passthru</code>, <code>aadPreAuthentication</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">externalUrl</td>
@@ -1659,7 +1664,7 @@
 <tr>
 <td style="text-align: left;">isBackendCertificateValidationEnabled</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property will be set to <code>true</code> by default. For all existing apps, the property will be set to <code>false</code>.</td>
+<td style="text-align: left;">Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property is set to <code>true</code> by default. For all existing apps, the property is set to <code>false</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">isHttpOnlyCookieEnabled</td>
@@ -1669,7 +1674,7 @@
 <tr>
 <td style="text-align: left;">isOnPremPublishingEnabled</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates if the application is currently being published via Application Proxy or not. This is pre-set by the system. Read-only.</td>
+<td style="text-align: left;">Indicates if the application is currently being published via Application Proxy or not. This is preset by the system. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">isPersistentCookieEnabled</td>
@@ -1689,7 +1694,7 @@
 <tr>
 <td style="text-align: left;">isTranslateHostHeaderEnabled</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates if the application should translate urls in the reponse headers. Keep this value as <code>true</code> unless your application required the original host header in the authentication request. Default value is <code>true</code>.</td>
+<td style="text-align: left;">Indicates if the application should translate urls in the response headers. Keep this value as <code>true</code> unless your application required the original host header in the authentication request. Default value is <code>true</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">isTranslateLinksInBodyEnabled</td>
@@ -1898,7 +1903,7 @@
 <tr>
 <td>endDateTime</td>
 <td>DateTimeOffset</td>
-<td>The date and time at which the credential expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+<td>The date and time at which the credential expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on January 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
 </tr>
 <tr>
 <td>key</td>
@@ -1913,12 +1918,12 @@
 <tr>
 <td>startDateTime</td>
 <td>DateTimeOffset</td>
-<td>The date and time at which the credential becomes valid. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+<td>The date and time at which the credential becomes valid. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on January 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
 </tr>
 <tr>
 <td>type</td>
 <td>String</td>
-<td>The type of key credential. &quot;AsymmetricX509Cert&quot;.</td>
+<td>The type of key credential. <code>AsymmetricX509Cert</code>.</td>
 </tr>
 <tr>
 <td>usage</td>
@@ -1993,6 +1998,11 @@
 <td style="text-align: left;">The roles exposed by the application which this service principal represents. For more information see the <strong>appRoles</strong> property definition on the application entity. Not nullable.</td>
 </tr>
 <tr>
+<td style="text-align: left;">customSecurityAttributes</td>
+<td style="text-align: left;">customSecurityAttributeValue</td>
+<td style="text-align: left;">An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>startsWith</code>). Filter value is case sensitive.</td>
+</tr>
+<tr>
 <td style="text-align: left;">deletedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">The date and time the service principal was deleted. Read-only.</td>
@@ -2010,7 +2020,7 @@
 <tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name for the service principal. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values), <code>$search</code>, and <code>$orderBy</code>.</td>
+<td style="text-align: left;">The display name for the service principal. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values), <code>$search</code>, and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">homepage</td>
@@ -2243,7 +2253,7 @@
 <tr>
 <td style="text-align: left;">parameters</td>
 <td style="text-align: left;">stringKeyAttributeMappingSourceValuePair collection</td>
-<td style="text-align: left;">If this object represents a function, lists function parameters. Parameters consist of <strong>attributeMappingSource</strong> objects themselves, allowing for complex expressions. If <strong>type</strong> is not <code>Function</code>, this property will be null/empty array.</td>
+<td style="text-align: left;">If this object represents a function, lists function parameters. Parameters consist of <strong>attributeMappingSource</strong> objects themselves, allowing for complex expressions. If <strong>type</strong> isn't <code>Function</code>, this property is null/empty array.</td>
 </tr>
 <tr>
 <td style="text-align: left;">type</td>
@@ -2285,7 +2295,7 @@
 <tr>
 <td style="text-align: left;">version</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Read only value that indicates version discovered. <code>null</code> if discovery has not yet occurred.</td>
+<td style="text-align: left;">Read only value that indicates version discovered. <code>null</code> if discovery hasn't yet occurred.</td>
 </tr>
 <tr>
 <td style="text-align: left;">discoveryDateTime</td>
@@ -2339,12 +2349,12 @@
 <tr>
 <td style="text-align: left;">groups</td>
 <td style="text-align: left;">filterGroup collection</td>
-<td style="text-align: left;">Filter group set used to decide whether given object is in scope for provisioning. <strong>This is the filter which should be used in most cases</strong>. If an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is not satisfied any longer, such object *will get de-provisioned&quot;. An object is considered in scope <em>if ANY of the groups in the collection is evaluated to <code>true</code></em>.</td>
+<td style="text-align: left;">Filter group set used to decide whether given object is in scope for provisioning. <strong>This is the filter which should be used in most cases</strong>. If an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter isn't satisfied any longer, such object *will get deprovisioned&quot;. An object is considered in scope <em>if ANY of the groups in the collection is evaluated to <code>true</code></em>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">inputFilterGroups</td>
 <td style="text-align: left;">filterGroup collection</td>
-<td style="text-align: left;"><code>*Experimental*</code> Filter group set used to filter out objects at the early stage of reading them from the directory. If an object doesn't satisfy this filter it will not be processed further. Important to understand is that if an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is no longer satisfied, such object *w</td>
+<td style="text-align: left;"><code>*Experimental*</code> Filter group set used to filter out objects at the early stage of reading them from the directory. If an object doesn't satisfy this filter, then it will not be processed further. Important to understand is that if an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is no longer satisfied, such object *w</td>
 </tr>
 </tbody>
 </table>
@@ -2681,7 +2691,7 @@
 <tr>
 <td style="text-align: left;">logoutUrl</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Specifies the URL that will be used by Microsoft's authorization service to logout an user using front-channel, back-channel or SAML logout protocols.</td>
+<td style="text-align: left;">Specifies the URL that is used by Microsoft's authorization service to log out a user using front-channel, back-channel or SAML logout protocols.</td>
 </tr>
 <tr>
 <td style="text-align: left;">redirectUris</td>

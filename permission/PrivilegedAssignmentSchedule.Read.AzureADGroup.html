@@ -252,12 +252,12 @@
 <tr>
 <td style="text-align: left;">requestType</td>
 <td style="text-align: left;">accessPackageRequestType</td>
-<td style="text-align: left;">The type of the request. The possible values are: <code>notSpecified</code>, <code>userAdd</code>, <code>UserExtend</code>, <code>userUpdate</code>, <code>userRemove</code>, <code>adminAdd</code>, <code>adminUpdate</code>, <code>adminRemove</code>, <code>systemAdd</code>, <code>systemUpdate</code>, <code>systemRemove</code>, <code>onBehalfAdd</code> (not supported), <code>unknownFutureValue</code>. A request from the user themselves would have requestType of <code>userAdd</code>, <code>userUpdate</code> or <code>userRemove</code>. This property cannot be changed once set.</td>
+<td style="text-align: left;">The type of the request. The possible values are: <code>notSpecified</code>, <code>userAdd</code>, <code>UserExtend</code>, <code>userUpdate</code>, <code>userRemove</code>, <code>adminAdd</code>, <code>adminUpdate</code>, <code>adminRemove</code>, <code>systemAdd</code>, <code>systemUpdate</code>, <code>systemRemove</code>, <code>onBehalfAdd</code> (not supported), <code>unknownFutureValue</code>. A request from the user themselves would have requestType of <code>userAdd</code>, <code>userUpdate</code> or <code>userRemove</code>. This property can't be changed once set.</td>
 </tr>
 <tr>
 <td style="text-align: left;">schedule</td>
 <td style="text-align: left;">entitlementManagementSchedule</td>
-<td style="text-align: left;">The range of dates that access is to be assigned to the requestor. This property cannot be changed once set.</td>
+<td style="text-align: left;">The range of dates that access is to be assigned to the requestor. This property can't be changed once set.</td>
 </tr>
 <tr>
 <td style="text-align: left;">state</td>
@@ -558,6 +558,104 @@
 </tbody>
 </table>
 <h3 id="privilegedidentitymanagement-for-groups-api-overview"><a href="https://docs.microsoft.com/graph/api/resources/privilegedidentitymanagement-for-groups-api-overview?view=graph-rest-1.0&amp;tabs=http">privilegedidentitymanagement-for-groups-api-overview</a></h3>
+<h3 id="privilegedidentitymanagementv3-overview"><a href="https://docs.microsoft.com/graph/api/resources/privilegedidentitymanagementv3-overview?view=graph-rest-1.0&amp;tabs=http">privilegedidentitymanagementv3-overview</a></h3>
+<h3 id="unifiedroleassignmentschedulerequest-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedroleassignmentschedulerequest?view=graph-rest-1.0&amp;tabs=http">unifiedRoleAssignmentScheduleRequest </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">action</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Represents the type of the operation on the role assignment request. The possible values are: <code>adminAssign</code>, <code>adminUpdate</code>, <code>adminRemove</code>, <code>selfActivate</code>, <code>selfDeactivate</code>, <code>adminExtend</code>, <code>adminRenew</code>, <code>selfExtend</code>, <code>selfRenew</code>, <code>unknownFutureValue</code>. <br><ul><li><code>adminAssign</code>: For administrators to assign roles to principals.</li><li><code>adminRemove</code>: For administrators to remove principals from roles.</li><li> <code>adminUpdate</code>: For administrators to change existing role assignments.</li><li><code>adminExtend</code>: For administrators to extend expiring assignments.</li><li><code>adminRenew</code>: For administrators to renew expired assignments.</li><li><code>selfActivate</code>: For principals to activate their assignments.</li><li><code>selfDeactivate</code>: For principals to deactivate their active assignments.</li><li><code>selfExtend</code>: For principals to request to extend their expiring assignments.</li><li><code>selfRenew</code>: For principals to request to renew their expired assignments.</li></ul></td>
+</tr>
+<tr>
+<td style="text-align: left;">approvalId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the approval of the request. Inherited from request.</td>
+</tr>
+<tr>
+<td style="text-align: left;">appScopeId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifier of the app-specific scope when the assignment is scoped to an app. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by this application only. Use <code>/</code> for tenant-wide app scopes. Use <strong>directoryScopeId</strong> to limit the scope to particular directory objects, for example, administrative units. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, and on <code>null</code> values).</td>
+</tr>
+<tr>
+<td style="text-align: left;">completedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The request completion date time. Inherited from request.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The principal that created this request. Inherited from request. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, and on <code>null</code> values).</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The request creation date time. Inherited from request. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">customData</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Free text field to define any custom data for the request. Not used. Inherited from request.</td>
+</tr>
+<tr>
+<td style="text-align: left;">directoryScopeId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use <code>/</code> for tenant-wide scope. Use <strong>appScopeId</strong> to limit the scope to an application only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, and on <code>null</code> values).</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the <strong>unifiedRoleAssignmentScheduleRequest</strong> object. Key, not nullable, Read-only. Inherited from entity. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">isValidationOnly</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Determines whether the call is a validation or an actual call. Only set this property if you want to check whether an activation is subject to additional rules like MFA before actually submitting the request.</td>
+</tr>
+<tr>
+<td style="text-align: left;">justification</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A message provided by users and administrators when create they create the <strong>unifiedRoleAssignmentScheduleRequest</strong> object.</td>
+</tr>
+<tr>
+<td style="text-align: left;">principalId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifier of the principal that has been granted the assignment. Can be a user, role-assignable group, or a service principal. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">roleDefinitionId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifier of the unifiedRoleDefinition object that is being assigned to the principal. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">scheduleInfo</td>
+<td style="text-align: left;">requestSchedule</td>
+<td style="text-align: left;">The period of the role assignment. Recurring schedules are currently unsupported.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The status of the role assignment request. Inherited from request. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">targetScheduleId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifier of the schedule object that's linked to the assignment request. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">ticketInfo</td>
+<td style="text-align: left;">ticketInfo</td>
+<td style="text-align: left;">Ticket details linked to the role assignment request including details of the ticket number and ticket system.</td>
+</tr>
+</tbody>
+</table>
 </article>
           </div>
           

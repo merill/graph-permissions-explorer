@@ -1124,6 +1124,11 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getautopilotdeploymentdeviceinformation?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/reports/getAutopilotDeploymentDeviceInformation</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getautopilotdeploymentstatus?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/reports/getAutopilotDeploymentStatus</a></td>
 </tr>
 <tr>
@@ -3008,27 +3013,27 @@
 <tr>
 <td style="text-align: left;">primaryBundleId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The primary CFBundleIdentifier of the DMG.</td>
+<td style="text-align: left;">The bundleId of the primary .app in the DMG (Apple Disk Image). This maps to the CFBundleIdentifier in the app's bundle configuration.</td>
 </tr>
 <tr>
 <td style="text-align: left;">primaryBundleVersion</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The primary CFBundleVersion of the DMG.</td>
+<td style="text-align: left;">The version of the primary .app in the DMG (Apple Disk Image). This maps to the CFBundleShortVersion in the app's bundle configuration.</td>
 </tr>
 <tr>
 <td style="text-align: left;">includedApps</td>
 <td style="text-align: left;">macOSIncludedApp collection</td>
-<td style="text-align: left;">The list of apps expected to be installed by the DMG.</td>
+<td style="text-align: left;">The list of .apps expected to be installed by the DMG (Apple Disk Image)</td>
 </tr>
 <tr>
 <td style="text-align: left;">ignoreVersionDetection</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">A value indicating whether the app's version will be used to detect the app after it is installed on a device. Set this to true for apps that use a self-update feature. Set this to false to install the app when it is not already installed on the device, or if the deploying app's version number does not match the version that's already installed on the device.</td>
+<td style="text-align: left;">When TRUE, indicates that the app's version will NOT be used to detect if the app is installed on a device. When FALSE, indicates that the app's version will be used to detect if the app is installed on a device. Set this to true for apps that use a self update feature. The default value is FALSE.</td>
 </tr>
 <tr>
 <td style="text-align: left;">minimumSupportedOperatingSystem</td>
 <td style="text-align: left;">macOSMinimumOperatingSystem</td>
-<td style="text-align: left;">The value for the minimum applicable operating system.</td>
+<td style="text-align: left;">ComplexType macOSMinimumOperatingSystem that indicates the minimum operating system applicable for the application.</td>
 </tr>
 </tbody>
 </table>
@@ -3890,6 +3895,133 @@
 <td style="text-align: left;">userPrincipalName</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The user principal name.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="macoswebclip-"><a href="https://docs.microsoft.com/graph/api/resources/intune-apps-macoswebclip?view=graph-rest-1.0&amp;tabs=http">macOSWebClip </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Key of the entity. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The admin provided or imported title of the app. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The description of the app. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">publisher</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The publisher of the app. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">largeIcon</td>
+<td style="text-align: left;">mimeContent</td>
+<td style="text-align: left;">The large icon, to be displayed in the app details and used for upload of the icon. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the app was created. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the app was last modified. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">isFeatured</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The value indicating whether the app is marked as featured by the admin. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">privacyInformationUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The privacy statement Url. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">informationUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The more information Url. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">owner</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The owner of the app. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">developer</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The developer of the app. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">notes</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Notes for the app. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">uploadState</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The upload state. Possible values are: 0 - <code>Not Ready</code>, 1 - <code>Ready</code>, 2 - <code>Processing</code>. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">publishingState</td>
+<td style="text-align: left;">mobileAppPublishingState</td>
+<td style="text-align: left;">The publishing state for the app. The app cannot be assigned unless the app is published. Inherited from mobileApp. Possible values are: <code>notPublished</code>, <code>processing</code>, <code>published</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isAssigned</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The value indicating whether the app is assigned to at least one group. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">roleScopeTagIds</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">List of scope tag ids for this mobile app. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">dependentAppCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The total number of dependencies the child app has. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">supersedingAppCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The total number of apps this app directly or indirectly supersedes. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">supersededAppCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The total number of apps this app is directly or indirectly superseded by. Inherited from mobileApp</td>
+</tr>
+<tr>
+<td style="text-align: left;">appUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The web app URL starting with http:// or https://, such as <a href="https://learn.microsoft.com/mem/.%7C">https://learn.microsoft.com/mem/.|</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">fullScreenEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Whether or not to open the web clip as a full-screen web app. Defaults to false. If TRUE, opens the web clip as a full-screen web app. If FALSE, the web clip opens inside of another app.</td>
+</tr>
+<tr>
+<td style="text-align: left;">preComposedIconEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Whether or not the icon for the app is precomosed. Defaults to false. If TRUE, prevents SpringBoard from adding &quot;shine&quot; to the icon. If FALSE, SpringBoard can add &quot;shine&quot;.</td>
 </tr>
 </tbody>
 </table>
@@ -11666,7 +11798,7 @@
 <tr>
 <td style="text-align: left;">reportName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Name of the report</td>
+<td style="text-align: left;">Name of the report. This property is read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">filter</td>
@@ -11691,17 +11823,17 @@
 <tr>
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">deviceManagementReportStatus</td>
-<td style="text-align: left;">Status of the cached report. Possible values are: <code>unknown</code>, <code>notStarted</code>, <code>inProgress</code>, <code>completed</code>, <code>failed</code>.</td>
+<td style="text-align: left;">Status of the cached report. This property is read-only. Possible values are: <code>unknown</code>, <code>notStarted</code>, <code>inProgress</code>, <code>completed</code>, <code>failed</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">lastRefreshDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Time that the cached report was last refreshed</td>
+<td style="text-align: left;">Time that the cached report was last refreshed. This property is read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">expirationDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Time that the cached report expires</td>
+<td style="text-align: left;">Time that the cached report expires. This property is read-only.</td>
 </tr>
 </tbody>
 </table>

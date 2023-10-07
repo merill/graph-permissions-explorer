@@ -109,7 +109,17 @@
 <tr>
 <td>V1</td>
 <td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/virtualeventregistrant-get?view=graph-rest-1.0&amp;tabs=http">GET /solutions/virtualEvents/webinars/{webinarId}/registration/registrants/{registrantId}</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualeventregistration-list?view=graph-rest-1.0&amp;tabs=http">GET /solutions/virtualEvents/webinars/{webinarId}/registrations</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualeventregistration-get?view=graph-rest-1.0&amp;tabs=http">GET /solutions/virtualEvents/webinars/{webinarId}/registrations/{registrationId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualeventsession-list?view=graph-rest-1.0&amp;tabs=http">GET /solutions/virtualEvents/webinars/{webinarId}/sessions</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -146,7 +156,7 @@
 </tbody>
 </table>
 <h2 id="resources">Resources</h2>
-<h3 id="virtualeventregistrant-"><a href="https://docs.microsoft.com/graph/api/resources/virtualeventregistrant?view=graph-rest-1.0&amp;tabs=http">virtualEventRegistrant </a></h3>
+<h3 id="virtualeventregistration-"><a href="https://docs.microsoft.com/graph/api/resources/virtualeventregistration?view=graph-rest-1.0&amp;tabs=http">virtualEventRegistration </a></h3>
 <table>
 <thead>
 <tr>
@@ -159,7 +169,7 @@
 <tr>
 <td style="text-align: left;">cancelationDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Time in UTC when the registrant cancels their registration for the virtual event. Only appears when applicable.</td>
+<td style="text-align: left;">Date and time when the registrant cancels their registration for the virtual event. Only appears when applicable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">email</td>
@@ -184,7 +194,7 @@
 <tr>
 <td style="text-align: left;">registrationDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Time in UTC when the registrant registers for the virtual event.</td>
+<td style="text-align: left;">Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">registrationQuestionAnswers</td>
@@ -194,12 +204,12 @@
 <tr>
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">virtualEventAttendeeRegistrationStatus</td>
-<td style="text-align: left;">Registration status of the registrant. Read-only.</td>
+<td style="text-align: left;">Registration status of the registrant. Read-only. Possible values are: <code>registered</code>, <code>canceled</code>, <code>waitlisted</code>, <code>pendingApproval</code>, <code>rejectedByOrganizer</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">userId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The registrant's AAD user ID. Only appears when the registrant is registered in AAD.</td>
+<td style="text-align: left;">The registrant's ID in Azure Active Directory (Azure AD). Only appears when the registrant is registered in Azure AD.</td>
 </tr>
 </tbody>
 </table>
@@ -222,7 +232,7 @@
 <tr>
 <td>coOrganizers</td>
 <td>communicationsUserIdentity collection</td>
-<td>Identity information of co-organizers of the webinar.</td>
+<td>Identity information of coorganizers of the webinar.</td>
 </tr>
 <tr>
 <td>createdBy</td>
@@ -252,7 +262,7 @@
 <tr>
 <td>id</td>
 <td>String</td>
-<td>Unqiue identifier of the webinar. Inherited from entity.</td>
+<td>Unique identifier of the webinar. Inherited from entity.</td>
 </tr>
 <tr>
 <td>status</td>

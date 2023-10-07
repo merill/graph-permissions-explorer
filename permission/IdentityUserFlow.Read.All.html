@@ -361,12 +361,12 @@
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The name of the user flow. This is a required value and is immutable after it's created. The name will be prefixed with the value of <code>B2X_1_</code> after creation.</td>
+<td style="text-align: left;">The name of the user flow is a required value and is immutable after it's created. The name will be prefixed with the value of <code>B2X_1_</code> after creation.</td>
 </tr>
 <tr>
 <td style="text-align: left;">userFlowType</td>
 <td style="text-align: left;">userFlowType</td>
-<td style="text-align: left;">The type of user flow. For self-service sign-up user flows, the value can only be <code>signUpOrSignIn</code> and cannot be modified after creation.</td>
+<td style="text-align: left;">The type of user flow. For self-service sign-up user flows, the value can only be <code>signUpOrSignIn</code> and can't be modified after creation.</td>
 </tr>
 <tr>
 <td style="text-align: left;">userFlowTypeVersion</td>
@@ -415,7 +415,12 @@
 <tr>
 <td style="text-align: left;">dataType</td>
 <td style="text-align: left;">identityUserFlowAttributeDataType</td>
-<td style="text-align: left;">The data type of the user flow attribute. This cannot be modified after the custom user flow attribute is created. The supported values for <strong>dataType</strong> are: <code>string</code> , <code>boolean</code> , <code>int64</code> , <code>stringCollection</code> , <code>dateTime</code>.</td>
+<td style="text-align: left;">The data type of the user flow attribute. This can't be modified after the custom user flow attribute is created. The supported values for <strong>dataType</strong> are: <code>string</code> , <code>boolean</code> , <code>int64</code> , <code>stringCollection</code> , <code>dateTime</code>, <code>unknownFutureValue</code>. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the user flow attribute. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">description</td>
@@ -423,19 +428,14 @@
 <td style="text-align: left;">The description of the user flow attribute that's shown to the user at the time of sign-up.</td>
 </tr>
 <tr>
-<td style="text-align: left;">displayName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name of the user flow attribute.</td>
-</tr>
-<tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The identifier of the user flow attribute. This is a read-only attribute that is automatically created.</td>
+<td style="text-align: left;">The identifier of the user flow attribute. This is a read-only attribute that is automatically created. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">userFlowAttributeType</td>
 <td style="text-align: left;">identityUserFlowAttributeType</td>
-<td style="text-align: left;">The type of the user flow attribute. This is a read-only attribute that is automatically set. Depending on the type of attribute, the values for this property will be <code>builtIn</code>, <code>custom</code>, or <code>required</code>.</td>
+<td style="text-align: left;">The type of the user flow attribute. This is a read-only attribute that is automatically set. Depending on the type of attribute, the values for this property are <code>builtIn</code>, <code>custom</code>, <code>required</code>, <code>unknownFutureValue</code>. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
 </tr>
 </tbody>
 </table>
@@ -457,17 +457,17 @@
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The identifier of the identityUserFlowAttributeAssignment. This identifier is immutable after it is created. This is a read-only property.</td>
+<td style="text-align: left;">The identifier of the identityUserFlowAttributeAssignment. This identifier is immutable after it's created and is a read-only property.</td>
 </tr>
 <tr>
 <td style="text-align: left;">isOptional</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Determines whether the identityUserFlowAttribute is optional. <code>true</code> means the user doesn't have to provide a value. <code>false</code> means the user cannot complete sign-up without providing a value.</td>
+<td style="text-align: left;">Determines whether the identityUserFlowAttribute is optional. <code>true</code> means the user doesn't have to provide a value. <code>false</code> means the user can't complete sign-up without providing a value.</td>
 </tr>
 <tr>
 <td style="text-align: left;">requiresVerification</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Determines whether the identityUserFlowAttribute requires verification. This is only used for verifying the user's phone number or email address.</td>
+<td style="text-align: left;">Determines whether the identityUserFlowAttribute requires verification, and is only used for verifying the user's phone number or email address.</td>
 </tr>
 <tr>
 <td style="text-align: left;">userAttributeValues</td>

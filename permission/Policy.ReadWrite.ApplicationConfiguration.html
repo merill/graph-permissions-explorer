@@ -104,7 +104,7 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/application-delete-tokenissuancepolicies?view=graph-rest-1.0&amp;tabs=http">DELETE /applications(appId='{appId}')/tokenIssuancePolicies/$ref</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/application-delete-tokenissuancepolicies?view=graph-rest-1.0&amp;tabs=http">DELETE /applications(appId='{appId}')/tokenIssuancePolicies/{id}/$ref</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -125,11 +125,6 @@
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-delete-tokenissuancepolicies?view=graph-rest-1.0&amp;tabs=http">DELETE /applications/{id}/tokenIssuancePolicies/{id}/$ref</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/application-delete-tokenissuancepolicies?view=graph-rest-1.0&amp;tabs=http">DELETE /applications/{id}/tokenIssuancePolicies/$ref</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -634,7 +629,7 @@
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, and <code>eq</code> on <code>null</code> values) and <code>$orderBy</code>.</td>
+<td style="text-align: left;">The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, and <code>eq</code> on <code>null</code> values) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">deletedDateTime</td>
@@ -654,7 +649,7 @@
 <tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name for the application. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values), <code>$search</code>, and <code>$orderBy</code>.</td>
+<td style="text-align: left;">The display name for the application. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values), <code>$search</code>, and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">groupMembershipClaims</td>
@@ -664,7 +659,7 @@
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Unique identifier for the application object. This property is referred to as <strong>Object ID</strong> in the Azure portal. Inherited from directoryObject. Key. Not nullable. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>).</td>
+<td style="text-align: left;">Unique identifier for the application object. This property is referred to as <strong>Object ID</strong> in the Microsoft Entra admin center. Inherited from directoryObject. Key. Not nullable. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">identifierUris</td>
@@ -750,6 +745,11 @@
 <td style="text-align: left;">serviceManagementReference</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">References application or service contact information from a Service or Asset Management database. Nullable.</td>
+</tr>
+<tr>
+<td style="text-align: left;">servicePrincipalLockConfiguration</td>
+<td style="text-align: left;">servicePrincipalLockConfiguration</td>
+<td style="text-align: left;">Specifies whether sensitive properties of a multi-tenant application should be locked for editing after the application is provisioned in a tenant. Nullable. <code>null</code> by default.</td>
 </tr>
 <tr>
 <td style="text-align: left;">signInAudience</td>
@@ -865,7 +865,7 @@
 <tr>
 <td style="text-align: left;">sourceFilter</td>
 <td style="text-align: left;">authenticationSourceFilter</td>
-<td style="text-align: left;">Filter based on the source of the authentication that is used to determine whether the listener is evaluated. This is currently limited to evaluations based on application the user is authenticating to.</td>
+<td style="text-align: left;">Filter based on the source of the authentication that is used to determine whether the listener is evaluated, and is currently limited to evaluations based on application the user is authenticating to.</td>
 </tr>
 </tbody>
 </table>
@@ -904,12 +904,12 @@
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The name of the user flow. This is a required value and is immutable after it's created. The name will be prefixed with the value of <code>B2X_1_</code> after creation.</td>
+<td style="text-align: left;">The name of the user flow is a required value and is immutable after it's created. The name will be prefixed with the value of <code>B2X_1_</code> after creation.</td>
 </tr>
 <tr>
 <td style="text-align: left;">userFlowType</td>
 <td style="text-align: left;">userFlowType</td>
-<td style="text-align: left;">The type of user flow. For self-service sign-up user flows, the value can only be <code>signUpOrSignIn</code> and cannot be modified after creation.</td>
+<td style="text-align: left;">The type of user flow. For self-service sign-up user flows, the value can only be <code>signUpOrSignIn</code> and can't be modified after creation.</td>
 </tr>
 <tr>
 <td style="text-align: left;">userFlowTypeVersion</td>
@@ -1124,6 +1124,11 @@
 <td style="text-align: left;">The roles exposed by the application which this service principal represents. For more information see the <strong>appRoles</strong> property definition on the application entity. Not nullable.</td>
 </tr>
 <tr>
+<td style="text-align: left;">customSecurityAttributes</td>
+<td style="text-align: left;">customSecurityAttributeValue</td>
+<td style="text-align: left;">An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>startsWith</code>). Filter value is case sensitive.</td>
+</tr>
+<tr>
 <td style="text-align: left;">deletedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">The date and time the service principal was deleted. Read-only.</td>
@@ -1141,7 +1146,7 @@
 <tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name for the service principal. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values), <code>$search</code>, and <code>$orderBy</code>.</td>
+<td style="text-align: left;">The display name for the service principal. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values), <code>$search</code>, and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">homepage</td>

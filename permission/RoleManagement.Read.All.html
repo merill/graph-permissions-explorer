@@ -229,17 +229,7 @@
 <tr>
 <td>V1</td>
 <td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/unifiedroleassignmentschedulerequest-get?view=graph-rest-1.0&amp;tabs=http">GET /roleManagement/directory/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequestId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/unifiedroleassignmentschedulerequest-get?view=graph-rest-1.0&amp;tabs=http">GET /roleManagement/directory/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequestsId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/unifiedroleassignmentschedulerequest-filterbycurrentuser?view=graph-rest-1.0&amp;tabs=http">GET /roleManagement/directory/roleAssignmentScheduleRequests/filterByCurrentUser(on='parameterValue')</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -304,17 +294,7 @@
 <tr>
 <td>V1</td>
 <td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/unifiedroleeligibilityschedulerequest-get?view=graph-rest-1.0&amp;tabs=http">GET /roleManagement/directory/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequestId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/unifiedroleeligibilityschedulerequest-get?view=graph-rest-1.0&amp;tabs=http">GET /roleManagement/directory/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequestsId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/unifiedroleeligibilityschedulerequest-filterbycurrentuser?view=graph-rest-1.0&amp;tabs=http">GET /roleManagement/directory/roleEligibilityScheduleRequests/filterByCurrentUser(on='parameterValue')</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -464,7 +444,12 @@
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Unique identifier for an action within the resource namespace, such as <code>microsoft.insights-programs-update-patch</code>. Cannot include slash character (<code>/</code>). Case insensitive. Required. Supports <code>$filter</code> (<code>eq</code>).</td>
+<td style="text-align: left;">Unique identifier for an action within the resource namespace, such as <code>microsoft.insights-programs-update-patch</code>. can't include slash character (<code>/</code>). Case insensitive. Required. Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">isPrivileged</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Flag indicating if the action is a sensitive resource action. Applies only for actions in the <code>microsoft.directory</code> resource namespace. Read-only. Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">name</td>
@@ -1190,12 +1175,12 @@
 <tr>
 <td style="text-align: left;">isEnabled</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Whether this rule is enabled.</td>
+<td style="text-align: left;">Determines whether this rule is enabled.</td>
 </tr>
 <tr>
 <td style="text-align: left;">target</td>
 <td style="text-align: left;">unifiedRoleManagementPolicyRuleTarget</td>
-<td style="text-align: left;">Defines details of the scope that's targeted by the enablement rule. The details can include the principal type, the role assignment type, and actions affecting a role. Inherited from unifiedRoleManagementPolicyRule. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+<td style="text-align: left;">Defines details of the scope that the enablement rule targets. The details can include the principal type, the role assignment type, and actions affecting a role. Inherited from unifiedRoleManagementPolicyRule. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
 </tr>
 </tbody>
 </table>
@@ -1249,7 +1234,7 @@
 <tr>
 <td style="text-align: left;">maximumDuration</td>
 <td style="text-align: left;">Duration</td>
-<td style="text-align: left;">The maximum duration allowed for eligibility or assignment which is not permanent. Required when <strong>isExpirationRequired</strong> is <code>true</code>.</td>
+<td style="text-align: left;">The maximum duration allowed for eligibility or assignment that isn't permanent. Required when <strong>isExpirationRequired</strong> is <code>true</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">target</td>

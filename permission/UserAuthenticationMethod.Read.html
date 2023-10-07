@@ -357,6 +357,87 @@
 </tbody>
 </table>
 <h3 id="list"><a href="https://docs.microsoft.com/graph/api/resources/list?view=graph-rest-1.0&amp;tabs=http">list</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">Identity of the creator of this item. Read-only. Inherited from baseItem.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the item was created. Read-only. Inherited from baseItem.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The descriptive text for the item. Inherited from baseItem.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The displayable title of the list.</td>
+</tr>
+<tr>
+<td style="text-align: left;">eTag</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">ETag for the item. Inherited from baseItem.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier of the item. Read-only. Inherited from baseItem.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">Identity of the last modifier of this item. Read-only. Inherited from baseItem.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the item was last modified. Read-only. Inherited from baseItem.</td>
+</tr>
+<tr>
+<td style="text-align: left;">list</td>
+<td style="text-align: left;">listInfo</td>
+<td style="text-align: left;">Contains more details about the list.</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name of the item. Read-only. Inherited from baseItem.</td>
+</tr>
+<tr>
+<td style="text-align: left;">parentReference</td>
+<td style="text-align: left;">itemReference</td>
+<td style="text-align: left;">Parent information if the item has a parent. Read-write. Inherited from baseItem.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sharepointIds</td>
+<td style="text-align: left;">sharepointIds</td>
+<td style="text-align: left;">Returns identifiers useful for SharePoint REST compatibility. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">system</td>
+<td style="text-align: left;">systemFacet</td>
+<td style="text-align: left;">If present, indicates that the list is system-managed. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">webUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">URL that displays the item in the browser. Read-only. Inherited from baseItem.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="longrunningoperation-"><a href="https://docs.microsoft.com/graph/api/resources/longrunningoperation?view=graph-rest-1.0&amp;tabs=http">longRunningOperation </a></h3>
 <table>
 <thead>
@@ -412,7 +493,7 @@
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.</td>
+<td style="text-align: left;">The date and time that this app was registered. This property is null if the device isn't registered for passwordless Phone Sign-In.</td>
 </tr>
 <tr>
 <td style="text-align: left;">deviceTag</td>
@@ -530,12 +611,12 @@
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The identifier of this phone registered to this user. Read-only. <br><br>The value of id is one of the following:<ul><li><code>b6332ec1-7057-4abe-9331-3d72feddfe41</code> - where <strong>phoneType</strong> is <code>alternateMobile</code>.</li><li><code>e37fc753-ff3b-4958-9484-eaa9425c82bc</code> - where <strong>phoneType</strong> is <code>office</code>.</li><li><code>3179e48a-750b-4051-897c-87b9720928f7</code> - where <strong>phoneType</strong> is <code>mobile</code>.</li></ul></td>
+<td style="text-align: left;">The identifier of this phone registered to this user. Read-only. <br><br>The value of ID is one of the following:<ul><li><code>b6332ec1-7057-4abe-9331-3d72feddfe41</code> - where <strong>phoneType</strong> is <code>alternateMobile</code>.</li><li><code>e37fc753-ff3b-4958-9484-eaa9425c82bc</code> - where <strong>phoneType</strong> is <code>office</code>.</li><li><code>3179e48a-750b-4051-897c-87b9720928f7</code> - where <strong>phoneType</strong> is <code>mobile</code>.</li></ul></td>
 </tr>
 <tr>
 <td style="text-align: left;">phoneNumber</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The phone number to text or call for authentication. Phone numbers use the format <code>+{country code} {number}x{extension}</code>, with extension optional. For example, <code>+1 5555551234</code> or <code>+1 5555551234x123</code> are valid. Numbers are rejected when creating or updating if they do not match the required format.</td>
+<td style="text-align: left;">The phone number to text or call for authentication. Phone numbers use the format <code>+{country code} {number}x{extension}</code>, with extension optional. For example, <code>+1 5555551234</code> or <code>+1 5555551234x123</code> are valid. Numbers are rejected when creating or updating if they don't match the required format.</td>
 </tr>
 <tr>
 <td style="text-align: left;">phoneType</td>

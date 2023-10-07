@@ -338,7 +338,7 @@
 <tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The Azure AD display name of the customer tenant. Read-only. Supports <code>$orderBy</code>.</td>
+<td style="text-align: left;">The Azure AD display name of the customer tenant. Read-only. Supports <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
@@ -380,17 +380,17 @@
 <tr>
 <td style="text-align: left;">customer</td>
 <td style="text-align: left;">delegatedAdminRelationshipCustomerParticipant</td>
-<td style="text-align: left;">The display name and unique identifier of the customer of the relationship. This is configured either by the partner at the time the relationship is created or by the system after the customer approves the relationship. Cannot be changed by the customer.</td>
+<td style="text-align: left;">The display name and unique identifier of the customer of the relationship. This is configured either by the partner at the time the relationship is created or by the system after the customer approves the relationship. Can't be changed by the customer.</td>
 </tr>
 <tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name of the relationship used for ease of identification. Must be unique across <em>all</em> delegated admin relationships of the partner. This is set by the partner only when the relationship is in the <code>created</code> status and cannot be changed by the customer.</td>
+<td style="text-align: left;">The display name of the relationship used for ease of identification. Must be unique across <em>all</em> delegated admin relationships of the partner and is set by the partner only when the relationship is in the <code>created</code> status and can't be changed by the customer.</td>
 </tr>
 <tr>
 <td style="text-align: left;">duration</td>
 <td style="text-align: left;">Duration</td>
-<td style="text-align: left;">The duration of the relationship in ISO 8601 format. Must be a value between <code>P1D</code> and <code>P2Y</code> inclusive. This is set by the partner only when the relationship is in the <code>created</code> status and cannot be changed by the customer.</td>
+<td style="text-align: left;">The duration of the relationship in ISO 8601 format. Must be a value between <code>P1D</code> and <code>P2Y</code> inclusive. This is set by the partner only when the relationship is in the <code>created</code> status and can't be changed by the customer.</td>
 </tr>
 <tr>
 <td style="text-align: left;">endDateTime</td>
@@ -410,7 +410,7 @@
 <tr>
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">delegatedAdminRelationshipStatus</td>
-<td style="text-align: left;">The status of the relationship. Read Only. The possible values are: <code>activating</code>, <code>active</code>, <code>approvalPending</code>, <code>approved</code>, <code>created</code>, <code>expired</code>, <code>expiring</code>, <code>terminated</code>, <code>terminating</code>, <code>terminationRequested</code>, <code>unknownFutureValue</code>. Supports <code>$orderBy</code>.</td>
+<td style="text-align: left;">The status of the relationship. Read Only. The possible values are: <code>activating</code>, <code>active</code>, <code>approvalPending</code>, <code>approved</code>, <code>created</code>, <code>expired</code>, <code>expiring</code>, <code>terminated</code>, <code>terminating</code>, <code>terminationRequested</code>, <code>unknownFutureValue</code>. Supports <code>$orderby</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -474,7 +474,7 @@
 <tr>
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">longRunningOperationStatus</td>
-<td style="text-align: left;">The status of the operation. Read-only. The possible values are: <code>notStarted</code>, <code>running</code>, <code>succeeded</code>, <code>failed</code>, <code>unknownFutureValue</code>. Read-only. Supports <code>$orderBy</code>.</td>
+<td style="text-align: left;">The status of the operation. Read-only. The possible values are: <code>notStarted</code>, <code>running</code>, <code>succeeded</code>, <code>failed</code>, <code>unknownFutureValue</code>. Read-only. Supports <code>$orderby</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -491,7 +491,7 @@
 <tr>
 <td style="text-align: left;">action</td>
 <td style="text-align: left;">delegatedAdminRelationshipRequestAction</td>
-<td style="text-align: left;">The action to be performed on the delegated admin relationship.</td>
+<td style="text-align: left;">The action to be performed on the delegated admin relationship. The possible values are: <code>lockForApproval</code>, <code>approve</code>, <code>terminate</code>, <code>unknownFutureValue</code>, <code>reject</code>. Note that you must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value(s) in this evolvable enum: <code>reject</code>. For a partner to finalize a relationship in the <code>created</code> <strong>status</strong>, set the <strong>action</strong> to <code>lockForApproval</code>. For a partner to terminate a relationship in the <code>active</code> <strong>status</strong>, set the <strong>action</strong> to <code>terminate</code>. For an indirect reseller to approve a relationship created by an indirect provider in the <code>approvalPending</code> <strong>status</strong>, set the <strong>action</strong> to <code>approve</code>. For an indirect reseller to reject a relationship created by an indirect provider in the <code>approvalPending</code> <strong>status</strong>, set the <strong>action</strong> to <code>reject</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>
@@ -512,6 +512,78 @@
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">delegatedAdminRelationshipRequestStatus</td>
 <td style="text-align: left;">The status of the request. Read-only. The possible values are: <code>created</code>, <code>pending</code>, <code>succeeded</code>, <code>failed</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="resellerdelegatedadminrelationship-"><a href="https://docs.microsoft.com/graph/api/resources/resellerdelegatedadminrelationship?view=graph-rest-1.0&amp;tabs=http">resellerDelegatedAdminRelationship </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">accessDetails</td>
+<td style="text-align: left;">delegatedAdminAccessDetails</td>
+<td style="text-align: left;">The access details that contain the identifiers of the administrative roles that the partner administrator requests in the customer tenant. Inherited from delegatedAdminRelationship.</td>
+</tr>
+<tr>
+<td style="text-align: left;">activatedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the relationship was activated. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Inherited from delegatedAdminRelationship.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the relationship was created. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Inherited from delegatedAdminRelationship.</td>
+</tr>
+<tr>
+<td style="text-align: left;">customer</td>
+<td style="text-align: left;">delegatedAdminRelationshipCustomerParticipant</td>
+<td style="text-align: left;">The display name and unique identifier of the customer of the relationship. This is configured either by the partner at the time the relationship is created or by the system after the customer approves the relationship. Cannot be changed by the customer. Inherited from delegatedAdminRelationship.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the relationship used for ease of identification. Must be unique across <em>all</em> delegated admin relationships of the partner. This is set by the partner only when the relationship is in the <code>created</code> <strong>status</strong> and cannot be changed by the customer. Inherited from delegatedAdminRelationship.</td>
+</tr>
+<tr>
+<td style="text-align: left;">duration</td>
+<td style="text-align: left;">Duration</td>
+<td style="text-align: left;">The duration of the relationship in ISO 8601 format. Must be a value between <code>P1D</code> and <code>P2Y</code> inclusive. This is set by the partner only when the relationship is in the <code>created</code> <strong>status</strong> and cannot be changed by the customer. Inherited from delegatedAdminRelationship.</td>
+</tr>
+<tr>
+<td style="text-align: left;">endDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the <strong>status</strong> of the relationship changes to either <code>terminated</code> or <code>expired</code>. Calculated as <code>endDateTime = activatedDateTime + duration</code>. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Inherited from delegatedAdminRelationship.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier of the relationship. Read-only. Inherited from delegatedAdminRelationship.</td>
+</tr>
+<tr>
+<td style="text-align: left;">indirectProviderTenantId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The tenant ID of the indirect provider partner who created the relationship for the indirect reseller partner.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isPartnerConsentPending</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates the indirect reseller partner consent status. <code>true</code> indicates that the partner has yet to review the relationship; <code>false</code> indicates that the partner has already provided consent by approving or rejecting the relationship.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the relationship was last modified. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Inherited from delegatedAdminRelationship.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">delegatedAdminRelationshipStatus</td>
+<td style="text-align: left;">The status of the relationship. Read-only. The possible values are: <code>activating</code>, <code>active</code>, <code>approvalPending</code>, <code>approved</code>, <code>created</code>, <code>expired</code>, <code>expiring</code>, <code>terminated</code>, <code>terminating</code>, <code>terminationRequested</code>, <code>unknownFutureValue</code>. Supports <code>$orderBy</code>. Inherited from delegatedAdminRelationship.</td>
 </tr>
 </tbody>
 </table>

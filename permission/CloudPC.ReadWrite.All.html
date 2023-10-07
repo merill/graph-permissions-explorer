@@ -589,7 +589,17 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcreports-getconnectionqualityreports?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/virtualEndpoint/reports/getConnectionQualityReports</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpcreports-getdailyaggregatedremoteconnectionreports?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/virtualEndpoint/reports/getDailyAggregatedRemoteConnectionReports</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcreports-getfrontlinereport?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/virtualEndpoint/reports/getFrontlineReport</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -767,7 +777,7 @@
 <tr>
 <td style="text-align: left;">gracePeriodEndDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if the status is <code>inGracePeriod</code>. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+<td style="text-align: left;">The date and time when the grace period ends and reprovisioning or deprovisioning happen. Required only if the status is <code>inGracePeriod</code>. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
@@ -1181,7 +1191,7 @@
 <tr>
 <td style="text-align: left;">reportName</td>
 <td style="text-align: left;">cloudPcReportName</td>
-<td style="text-align: left;">The report name. The possible values are: <code>remoteConnectionHistoricalReports</code>, <code>dailyAggregatedRemoteConnectionReports</code>, <code>totalAggregatedRemoteConnectionReports</code>, <code>sharedUseLicenseUsageReport</code>, <code>sharedUseLicenseUsageRealTimeReport</code>, <code>unknownFutureValue</code>,  <code>noLicenseAvailableConnectivityFailureReport</code>. Note that you must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value(s) in this evolvable enum: <code> noLicenseAvailableConnectivityFailureReport</code>.</td>
+<td style="text-align: left;">The report name. The possible values are: <code>remoteConnectionHistoricalReports</code>, <code>dailyAggregatedRemoteConnectionReports</code>, <code>totalAggregatedRemoteConnectionReports</code>, <code>sharedUseLicenseUsageReport</code>, <code>sharedUseLicenseUsageRealTimeReport</code>, <code>unknownFutureValue</code>,  <code>noLicenseAvailableConnectivityFailureReport</code>, <code>frontlineLicenseUsageReport</code>, <code>frontlineLicenseUsageRealTimeReport</code>,  <code>remoteConnectionQualityReports</code>, <code>inaccessibleCloudPcReports</code>. You must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value(s) in this evolvable enum: <code>noLicenseAvailableConnectivityFailureReport</code>, <code>frontlineLicenseUsageReport</code>, <code>frontlineLicenseUsageRealTimeReport</code>, <code>inaccessibleCloudPcReports</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">requestDateTime</td>
@@ -1406,7 +1416,7 @@
 <tr>
 <td style="text-align: left;">healthCheckStatus</td>
 <td style="text-align: left;">cloudPcOnPremisesConnectionStatus</td>
-<td style="text-align: left;">The status of the most recent health check done on the Azure network connection. For example, if status is <code>passed</code>, the Azure network connection has passed all checks run by the service. Possible values are: <code>pending</code>, <code>running</code>, <code>passed</code>, <code>failed</code>, <code>unknownFutureValue</code>. Read-only.</td>
+<td style="text-align: left;">The status of the most recent health check done on the Azure network connection. For example, if status is <code>passed</code>, the Azure network connection has passed all checks run by the service. Possible values are: <code>pending</code>, <code>running</code>, <code>passed</code>, <code>failed</code>,  <code>warning</code>, <code>informational</code>, <code>unknownFutureValue</code>. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">healthCheckStatusDetails</td>
@@ -1421,12 +1431,12 @@
 <tr>
 <td style="text-align: left;">inUse</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">When <code>true</code>, the Azure network connection is in use. When <code>false</code>, the connection is not in use. You cannot delete a connection that’s in use. Returned only on <code>$select</code>. For an example that shows how to get the <strong>inUse</strong> property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.</td>
+<td style="text-align: left;">When <code>true</code>, the Azure network connection is in use. When <code>false</code>, the connection isn't in use. You can't delete a connection that’s in use. Returned only on <code>$select</code>. For an example that shows how to get the <strong>inUse</strong> property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">managedBy</td>
 <td style="text-align: left;">cloudPcManagementService</td>
-<td style="text-align: left;">Specifies which services manage the Azure network connection. Possible values are: <code>windows365</code>, <code>devBox</code>, <code>unknownFutureValue</code>, <code>rpaBox</code>. Note that you must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value(s) in this evolvable enum: <code>rpaBox</code>. Read-only.</td>
+<td style="text-align: left;">Specifies which services manage the Azure network connection. Possible values are: <code>windows365</code>, <code>devBox</code>, <code>unknownFutureValue</code>, <code>rpaBox</code>. You must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value(s) in this evolvable enum: <code>rpaBox</code>. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">organizationalUnit</td>
@@ -1461,7 +1471,7 @@
 <tr>
 <td style="text-align: left;">type</td>
 <td style="text-align: left;">cloudPcOnPremisesConnectionType</td>
-<td style="text-align: left;">Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is <code>hybridAzureADJoin</code>. Possible values are: <code>azureADJoin</code>, <code>hybridAzureADJoin</code>, <code>unknownFutureValue</code>.</td>
+<td style="text-align: left;">Specifies how the provisioned Cloud PC is joined to Azure Active Directory. Default value is <code>hybridAzureADJoin</code>. Possible values are: <code>azureADJoin</code>, <code>hybridAzureADJoin</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">virtualNetworkId</td>
@@ -1562,7 +1572,7 @@
 <tr>
 <td style="text-align: left;">cloudPcNamingTemplate</td>
 <td style="text-align: left;"><code>Edm.String</code></td>
-<td style="text-align: left;">The template used to name Cloud PCs provisioned using this policy. This can contain custom text and replacement tokens, including %USERNAME:x% and %RAND:x%, which represent the user's name and a randomly generated number, respectively. For example, &quot;CPC-%USERNAME:4%-%RAND:5%&quot; means that the Cloud PC's name will start with &quot;CPC-&quot;, have a four-character username in the middle followed by a &quot;-&quot; character, and end with five random characters. The total length of the text generated by the template can be no more than 15 characters. Supports <code>$filter</code>, <code>$select</code>, <code>$orderBy</code>.</td>
+<td style="text-align: left;">The template used to name Cloud PCs provisioned using this policy. This can contain custom text and replacement tokens, including %USERNAME:x% and %RAND:x%, which represent the user's name and a randomly generated number, respectively. For example, &quot;CPC-%USERNAME:4%-%RAND:5%&quot; means that the Cloud PC's name will start with &quot;CPC-&quot;, have a four-character username in the middle followed by a &quot;-&quot; character, and end with five random characters. The total length of the text generated by the template can be no more than 15 characters. Supports <code>$filter</code>, <code>$select</code>, <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">description</td>
@@ -1745,7 +1755,7 @@
 <tr>
 <td style="text-align: left;">cloudPcId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The cloudPC id that corresponds to its unique identifier.</td>
+<td style="text-align: left;">The cloudPC ID that corresponds to its unique identifier.</td>
 </tr>
 <tr>
 <td style="text-align: left;">validationResult</td>
@@ -1772,7 +1782,7 @@
 <tr>
 <td style="text-align: left;">userRestoreEnabled</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">If <code>true</code>, the user has the ability to use snapshots to restore Cloud PCs. If <code>false</code>, non-admin users cannot use snapshots to restore the Cloud PC.</td>
+<td style="text-align: left;">If <code>true</code>, the user has the ability to use snapshots to restore Cloud PCs. If <code>false</code>, non-admin users can't use snapshots to restore the Cloud PC.</td>
 </tr>
 </tbody>
 </table>
@@ -2046,7 +2056,7 @@
 <tr>
 <td style="text-align: left;">regionGroup</td>
 <td style="text-align: left;">cloudPcRegionGroup</td>
-<td style="text-align: left;">The geographic group this region belongs to. Multiple regions can belong to one region group. For example, the <code>europeUnion</code> region group contains the Northern Europe and Western Europe regions. A customer can select a region group when provisioning a Cloud PC; however, the Cloud PC will be put under one of the regions under the group based on resource capacity. The region with more quota will be chosen. Possible values are: <code>default</code>, <code>australia</code>, <code>canada</code>, <code>usCentral</code>, <code>usEast</code>, <code>usWest</code>, <code>france</code>, <code>germany</code>, <code>europeUnion</code>, <code>unitedKingdom</code>, <code>japan</code>, <code>asia</code>, <code>india</code>, <code>southAmerica</code>, <code>euap</code>, <code>usGovernment</code>, <code>usGovernmentDOD</code>, <code>unknownFutureValue</code>, <code>norway</code>, <code>switzerland</code>，<code>southKorea</code>. Note that you must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value(s) in this evolvable enum: <code>norway</code>, <code>switzerland</code>，<code>southKorea</code>. Read-only.</td>
+<td style="text-align: left;">The geographic group this region belongs to. Multiple regions can belong to one region group. For example, the <code>europeUnion</code> region group contains the Northern Europe and Western Europe regions. A customer can select a region group when provisioning a Cloud PC; however, the Cloud PC is put under one of the regions under the group based on resource capacity. The region with more quota will be chosen. Possible values are: <code>default</code>, <code>australia</code>, <code>canada</code>, <code>usCentral</code>, <code>usEast</code>, <code>usWest</code>, <code>france</code>, <code>germany</code>, <code>europeUnion</code>, <code>unitedKingdom</code>, <code>japan</code>, <code>asia</code>, <code>india</code>, <code>southAmerica</code>, <code>euap</code>, <code>usGovernment</code>, <code>usGovernmentDOD</code>, <code>unknownFutureValue</code>, <code>norway</code>, <code>switzerland</code>，<code>southKorea</code>. You must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value(s) in this evolvable enum: <code>norway</code>, <code>switzerland</code>，<code>southKorea</code>. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">regionStatus</td>
@@ -2056,7 +2066,7 @@
 <tr>
 <td style="text-align: left;">supportedSolution</td>
 <td style="text-align: left;">cloudPcManagementService</td>
-<td style="text-align: left;">The supported service or solution for the region. The possible values are: <code>windows365</code>, <code>devBox</code>, <code>unknownFutureValue</code>, <code>rpaBox</code>. Note that you must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value(s) in this evolvable enum: <code>rpaBox</code>. Read-only.</td>
+<td style="text-align: left;">The supported service or solution for the region. The possible values are: <code>windows365</code>, <code>devBox</code>, <code>unknownFutureValue</code>, <code>rpaBox</code>. You must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value(s) in this evolvable enum: <code>rpaBox</code>. Read-only.</td>
 </tr>
 </tbody>
 </table>
@@ -2672,7 +2682,7 @@
 <tr>
 <td style="text-align: left;">directoryScopeIds</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Ids of the directory objects representing the scopes of the assignment. The scopes of an assignment determine the set of resources for which the principals have been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.</td>
+<td style="text-align: left;">Ids of the directory objects that represent the scopes of the assignment. The scopes of an assignment determine the set of resources for which the principals have been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">displayName</td>
@@ -2682,17 +2692,17 @@
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the unifiedRoleAssignmentMultiple. Key, not nullable, Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">roleDefinitionId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifier of the unifiedRoleDefinition the assignment is for.</td>
+<td style="text-align: left;">The unique identifier for the <strong>unifiedRoleAssignmentMultiple</strong> object. Key, not nullable, Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">principalIds</td>
 <td style="text-align: left;">String collection</td>
 <td style="text-align: left;">Identifiers of the principals to which the assignment is granted.  Supports <code>$filter</code> (<code>any</code> operator only).</td>
+</tr>
+<tr>
+<td style="text-align: left;">roleDefinitionId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifier of the unifiedRoleDefinition the assignment is for.</td>
 </tr>
 </tbody>
 </table>

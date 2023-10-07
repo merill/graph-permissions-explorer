@@ -144,6 +144,11 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-host-list-childhostpairs?view=graph-rest-1.0&amp;tabs=http">GET /security/threatIntelligence/hosts/{hostId}/childHostPairs</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-host-list-components?view=graph-rest-1.0&amp;tabs=http">GET /security/threatIntelligence/hosts/{hostId}/components</a></td>
 </tr>
 <tr>
@@ -179,12 +184,32 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-hostsslcertificate-list-host?view=graph-rest-1.0&amp;tabs=http">GET /security/threatIntelligence/hosts/{hostId}/sslCertificates</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-host-list-subdomains?view=graph-rest-1.0&amp;tabs=http">GET /security/threatIntelligence/hosts/{hostId}/subdomains</a></td>
 </tr>
 <tr>
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-host-list-trackers?view=graph-rest-1.0&amp;tabs=http">GET /security/threatIntelligence/hosts/{hostId}/trackers</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-whoisrecord-get?view=graph-rest-1.0&amp;tabs=http">GET /security/threatIntelligence/hosts/{hostId}/whois</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-whoisrecord-list-history?view=graph-rest-1.0&amp;tabs=http">GET /security/threatIntelligence/hosts/{hostId}/whois/history</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-hostsslcertificate-get?view=graph-rest-1.0&amp;tabs=http">GET /security/threatIntelligence/hostSslCertificates/{hostSslCertificateId}</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -219,6 +244,21 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-sslcertificate-list?view=graph-rest-1.0&amp;tabs=http">GET /security/threatIntelligence/sslCertificates</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-sslcertificate-list?view=graph-rest-1.0&amp;tabs=http">GET /security/threatIntelligence/sslCertificates?$search=&quot;{property_name}:{property_value}&quot;</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-sslcertificate-get?view=graph-rest-1.0&amp;tabs=http">GET /security/threatIntelligence/sslCertificates/{sslCertificateId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-subdomain-get?view=graph-rest-1.0&amp;tabs=http">GET /security/threatIntelligence/subdomains/{subdomainId}</a></td>
 </tr>
 <tr>
@@ -239,7 +279,17 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/security-host-list-childhostpairs?view=graph-rest-1.0&amp;tabs=http">GET threatIntelligence/hosts/{hostId}/childHostPairs</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/security-whoishistoryrecord-get?view=graph-rest-1.0&amp;tabs=http">GET /security/threatIntelligence/whoisHistoryRecord/{whoisHistoryRecordId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-whoisrecord-list?view=graph-rest-1.0&amp;tabs=http">GET /security/threatIntelligence/whoisRecords?$search=&quot;{value}&quot;</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-whoisrecord-list-history?view=graph-rest-1.0&amp;tabs=http">GET /security/threatIntelligence/whoisRecords/{id}/history</a></td>
 </tr>
 </tbody>
 </table>
@@ -386,7 +436,7 @@
 <tr>
 <td style="text-align: left;">firstSeenDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The first date and time this host was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is <code>2014-01-01T00:00:00Z</code>.</td>
+<td style="text-align: left;">The first date and time when this host was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
@@ -396,7 +446,7 @@
 <tr>
 <td style="text-align: left;">lastSeenDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The most recent date and time when this host was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is <code>2014-01-01T00:00:00Z</code>.</td>
+<td style="text-align: left;">The most recent date and time when this host was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -438,7 +488,7 @@
 <tr>
 <td style="text-align: left;">version</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The component version running on the artifact, for example, <code>v8.5</code>. This should not be assumed to be strictly numerical.</td>
+<td style="text-align: left;">The component version running on the artifact, for example, <code>v8.5</code>. This shouldn't be assumed to be strictly numerical.</td>
 </tr>
 </tbody>
 </table>
@@ -492,7 +542,7 @@
 <tr>
 <td style="text-align: left;">firstSeenDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The first date and time that this host was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Inherited from microsoft.graph.security.host.</td>
+<td style="text-align: left;">The first date and time when this host was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Inherited from microsoft.graph.security.host.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
@@ -502,7 +552,7 @@
 <tr>
 <td style="text-align: left;">lastSeenDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The most recent date and time that this host was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is <code>2014-01-01T00:00:00Z</code>. Inherited from microsoft.graph.security.host.</td>
+<td style="text-align: left;">The most recent date and time when this host was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Inherited from microsoft.graph.security.host.</td>
 </tr>
 <tr>
 <td style="text-align: left;">registrant</td>
@@ -529,22 +579,22 @@
 <tr>
 <td style="text-align: left;">firstSeenDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The first date and time when Microsoft Defender Threat Intelligence observed the hostPair. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.</td>
+<td style="text-align: left;">The date and time when Microsoft Defender Threat Intelligence first observed the <strong>hostPair</strong>. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">A system-generated ID for the hostPair.</td>
+<td style="text-align: left;">A system-generated ID for the <strong>hostPair</strong>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">lastSeenDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The last date and time when Microsoft Defender Threat Intelligence observed the hostPair. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.</td>
+<td style="text-align: left;">The date and time when Microsoft Defender Threat Intelligence last observed the <strong>hostPair</strong>. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">linkKind</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The reason the two hosts are identified as hostPairs.</td>
+<td style="text-align: left;">The reason that two hosts are identified as **h</td>
 </tr>
 </tbody>
 </table>
@@ -577,6 +627,38 @@
 <td style="text-align: left;">score</td>
 <td style="text-align: left;">Int32</td>
 <td style="text-align: left;">The calculated score (0-100) of the requested host. A higher value indicates that this host is more likely to be suspicious or malicious.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="hostsslcertificate-"><a href="https://docs.microsoft.com/graph/api/resources/security-hostsslcertificate?view=graph-rest-1.0&amp;tabs=http">hostSslCertificate </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">firstSeenDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The first date and time when this <strong>hostSslCertificate</strong> was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The system-generated ID for this <strong>hostSslCertificate</strong>. Inherited from artifact.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastSeenDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The most recent date and time when this <strong>hostSslCertificate</strong> was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">ports</td>
+<td style="text-align: left;">microsoft.graph.security.hostSslCertificatePort collection</td>
+<td style="text-align: left;">The ports related with this **h</td>
 </tr>
 </tbody>
 </table>
@@ -729,12 +811,12 @@
 <tr>
 <td style="text-align: left;">countryOrRegion</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The country or region for this IP address.</td>
+<td style="text-align: left;">The country/region for this IP address.</td>
 </tr>
 <tr>
 <td style="text-align: left;">firstSeenDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The first date and time when this host was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Inherited from microsoft.graph.security.host.</td>
+<td style="text-align: left;">The first date and time when this host was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Inherited from microsoft.graph.security.host.</td>
 </tr>
 <tr>
 <td style="text-align: left;">hostingProvider</td>
@@ -749,7 +831,7 @@
 <tr>
 <td style="text-align: left;">lastSeenDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The most recent date and time when this host was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Inherited from microsoft.graph.security.host.</td>
+<td style="text-align: left;">The most recent date and time when this host was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Inherited from microsoft.graph.security.host.</td>
 </tr>
 <tr>
 <td style="text-align: left;">netblock</td>
@@ -795,6 +877,125 @@
 </tr>
 </tbody>
 </table>
+<h3 id="sslcertificate-"><a href="https://docs.microsoft.com/graph/api/resources/security-sslcertificate?view=graph-rest-1.0&amp;tabs=http">sslCertificate </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">expirationDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when a certificate expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">fingerprint</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A hash of the certificate calculated on the data and signature.</td>
+</tr>
+<tr>
+<td style="text-align: left;">firstSeenDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The first date and time when this <strong>sslCertificate</strong> was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The system-generated ID for this <strong>sslCertificate</strong>. Inherited from artifact.</td>
+</tr>
+<tr>
+<td style="text-align: left;">issueDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when a certificate was issued. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">issuer</td>
+<td style="text-align: left;">microsoft.graph.security.sslCertificateEntity</td>
+<td style="text-align: left;">The entity that grants this certificate.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastSeenDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The most recent date and time when this <strong>sslCertificate</strong> was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">serialNumber</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The serial number associated with an SSL certificate.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sha1</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A SHA-1 hash of the certificate. <strong>Note:</strong> This is not the signature.</td>
+</tr>
+<tr>
+<td style="text-align: left;">subject</td>
+<td style="text-align: left;">microsoft.graph.security.sslCertificateEntity</td>
+<td style="text-align: left;">The person, site, machine, and so on, this certificate is for.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sslcertificateentity-"><a href="https://docs.microsoft.com/graph/api/resources/security-sslcertificateentity?view=graph-rest-1.0&amp;tabs=http">sslCertificateEntity </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">address</td>
+<td style="text-align: left;">microsoft.graph.physicalAddress</td>
+<td style="text-align: left;">A physical address of the entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">alternateNames</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Alternate names for this entity that are part of the certificate.</td>
+</tr>
+<tr>
+<td style="text-align: left;">commonName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A common name for this entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">email</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">An email for this entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">givenName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">If the entity is a person, this is the person's given name (first name).</td>
+</tr>
+<tr>
+<td style="text-align: left;">organizationName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">If the entity is an organization, this is the name of the organization.</td>
+</tr>
+<tr>
+<td style="text-align: left;">organizationUnitName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">If the entity is an organization, this communicates if a unit in the organization is named on the entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">serialNumber</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A serial number assigned to the entity; usually only available if the entity is the issuer.</td>
+</tr>
+<tr>
+<td style="text-align: left;">surname</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">If the entity is a person, this is the person's surname (last name).</td>
+</tr>
+</tbody>
+</table>
 <h3 id="subdomain-"><a href="https://docs.microsoft.com/graph/api/resources/security-subdomain?view=graph-rest-1.0&amp;tabs=http">subdomain </a></h3>
 <table>
 <thead>
@@ -808,7 +1009,7 @@
 <tr>
 <td style="text-align: left;">firstSeenDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The first date and time when Microsoft Defender Threat Intelligence observed the subdomain. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is <code>2014-01-01T00:00:00Z</code>.</td>
+<td style="text-align: left;">The date and time when Microsoft Defender Threat Intelligence first observed the subdomain. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
@@ -928,6 +1129,252 @@
 <td style="text-align: left;">name</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The name of this vulnerability component.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="whoiscontact-"><a href="https://docs.microsoft.com/graph/api/resources/security-whoiscontact?view=graph-rest-1.0&amp;tabs=http">whoisContact </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">address</td>
+<td style="text-align: left;">microsoft.graph.physicalAddress</td>
+<td style="text-align: left;">The physical address of the entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">email</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The email of this WHOIS contact.</td>
+</tr>
+<tr>
+<td style="text-align: left;">fax</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The fax of this WHOIS contact. No format is guaranteed.</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name of this WHOIS contact.</td>
+</tr>
+<tr>
+<td style="text-align: left;">organization</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The organization of this WHOIS contact.</td>
+</tr>
+<tr>
+<td style="text-align: left;">telephone</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The telephone of this WHOIS contact. No format is guaranteed.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="whoishistoryrecord-"><a href="https://docs.microsoft.com/graph/api/resources/security-whoishistoryrecord?view=graph-rest-1.0&amp;tabs=http">whoisHistoryRecord </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">abuse</td>
+<td style="text-align: left;">microsoft.graph.security.whoisContact</td>
+<td style="text-align: left;">The contact information for the <strong>abuse</strong> contact. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">admin</td>
+<td style="text-align: left;">microsoft.graph.security.whoisContact</td>
+<td style="text-align: left;">The contact information for the <strong>admin</strong> contact. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">billing</td>
+<td style="text-align: left;">microsoft.graph.security.whoisContact</td>
+<td style="text-align: left;">The contact information for the <strong>billing</strong> contact. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">domainStatus</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The domain status for this WHOIS object. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">expirationDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when this WHOIS record expires with the registrar. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">firstSeenDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The first seen date and time of this WHOIS record. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The ID for this WHOIS record object. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastSeenDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The last seen date and time of this WHOIS record. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastUpdateDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when this WHOIS record was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">nameservers</td>
+<td style="text-align: left;">microsoft.graph.security.whoisNameserver collection</td>
+<td style="text-align: left;">The nameservers for this WHOIS object. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">noc</td>
+<td style="text-align: left;">microsoft.graph.security.whoisContact</td>
+<td style="text-align: left;">The contact information for the <strong>noc</strong> contact. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">rawWhoisText</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The raw WHOIS details for this WHOIS object. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">registrant</td>
+<td style="text-align: left;">microsoft.graph.security.whoisContact</td>
+<td style="text-align: left;">The contact information for the <strong>registrant</strong> contact. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">registrar</td>
+<td style="text-align: left;">microsoft.graph.security.whoisContact</td>
+<td style="text-align: left;">The contact information for the <strong>registrar</strong> contact. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">registrationDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when this WHOIS record was registered with a registrar. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">technical</td>
+<td style="text-align: left;">microsoft.graph.security.whoisContact</td>
+<td style="text-align: left;">The contact information for the <strong>technical</strong> contact. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">whoisServer</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The WHOIS server that provides the details. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">zone</td>
+<td style="text-align: left;">microsoft.graph.security.whoisContact</td>
+<td style="text-align: left;">The contact information for the **z</td>
+</tr>
+</tbody>
+</table>
+<h3 id="whoisrecord-"><a href="https://docs.microsoft.com/graph/api/resources/security-whoisrecord?view=graph-rest-1.0&amp;tabs=http">whoisRecord </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">abuse</td>
+<td style="text-align: left;">microsoft.graph.security.whoisContact</td>
+<td style="text-align: left;">The contact information for the <strong>abuse</strong> contact. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">admin</td>
+<td style="text-align: left;">microsoft.graph.security.whoisContact</td>
+<td style="text-align: left;">The contact information for the <strong>admin</strong> contact. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">billing</td>
+<td style="text-align: left;">microsoft.graph.security.whoisContact</td>
+<td style="text-align: left;">The contact information for the <strong>billing</strong> contact. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">domainStatus</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The domain status for this WHOIS object. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">expirationDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when this WHOIS record expires with the registrar. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">firstSeenDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The first seen date and time of this WHOIS record. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The ID for this WHOIS record object. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastSeenDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The last seen date and time of this WHOIS record. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastUpdateDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when this WHOIS record was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">nameservers</td>
+<td style="text-align: left;">microsoft.graph.security.whoisNameserver collection</td>
+<td style="text-align: left;">The nameservers for this WHOIS object. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">noc</td>
+<td style="text-align: left;">microsoft.graph.security.whoisContact</td>
+<td style="text-align: left;">The contact information for the <strong>noc</strong> contact. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">rawWhoisText</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The raw WHOIS details for this WHOIS object. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">registrant</td>
+<td style="text-align: left;">microsoft.graph.security.whoisContact</td>
+<td style="text-align: left;">The contact information for the <strong>registrant</strong> contact. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">registrar</td>
+<td style="text-align: left;">microsoft.graph.security.whoisContact</td>
+<td style="text-align: left;">The contact information for the <strong>registrar</strong> contact. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">registrationDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when this WHOIS record was registered with a registrar. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">technical</td>
+<td style="text-align: left;">microsoft.graph.security.whoisContact</td>
+<td style="text-align: left;">The contact information for the <strong>technical</strong> contact. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">whoisServer</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The WHOIS server that provides the details. Inherited from whoisBaseRecord.</td>
+</tr>
+<tr>
+<td style="text-align: left;">zone</td>
+<td style="text-align: left;">microsoft.graph.security.whoisContact</td>
+<td style="text-align: left;">The contact information for the **z</td>
 </tr>
 </tbody>
 </table>

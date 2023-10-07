@@ -1261,12 +1261,12 @@
 <tr>
 <td style="text-align: left;">ageGroup</td>
 <td style="text-align: left;">ageGroup</td>
-<td style="text-align: left;">Sets the age group of the user. Allowed values: <code>null</code>, <code>Minor</code>, <code>NotAdult</code> and <code>Adult</code>. Refer to the legal age group property definitions for further information. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, and <code>in</code>).</td>
+<td style="text-align: left;">Sets the age group of the user. Allowed values: <code>null</code>, <code>Minor</code>, <code>NotAdult</code> and <code>Adult</code>. For more information, see legal age group property definitions. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, and <code>in</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">assignedLicenses</td>
 <td style="text-align: left;">assignedLicense collection</td>
-<td style="text-align: left;">The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate directly-assigned and inherited licenses. Use the <strong>licenseAssignmentStates</strong> property to identify the directly-assigned and inherited licenses.  Not nullable. Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>/$count eq 0</code>, <code>/$count ne 0</code>).</td>
+<td style="text-align: left;">The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate directly assigned and inherited licenses. Use the <strong>licenseAssignmentStates</strong> property to identify the directly assigned and inherited licenses.  Not nullable. Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>/$count eq 0</code>, <code>/$count ne 0</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">assignedPlans</td>
@@ -1286,12 +1286,12 @@
 <tr>
 <td style="text-align: left;">city</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The city in which the user is located. Maximum length is 128 characters. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
+<td style="text-align: left;">The city where the user is located. Maximum length is 128 characters. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">companyName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.<br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
+<td style="text-align: left;">The name of the company that the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.<br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">consentProvidedForMinor</td>
@@ -1301,7 +1301,7 @@
 <tr>
 <td style="text-align: left;">country</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The country/region in which the user is located; for example, <code>US</code> or <code>UK</code>. Maximum length is 128 characters. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
+<td style="text-align: left;">The country or region where the user is located; for example, <code>US</code> or <code>UK</code>. Maximum length is 128 characters. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>
@@ -1312,6 +1312,11 @@
 <td style="text-align: left;">creationType</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Indicates whether the user account was created through one of the following methods: <br> <ul><li>As a regular school or work account (<code>null</code>). <li>As an external account (<code>Invitation</code>). <li>As a local account for an Azure Active Directory B2C tenant (<code>LocalAccount</code>). <li>Through self-service sign-up by an internal user using email verification (<code>EmailVerified</code>). <li>Through self-service sign-up by an external user signing up through a link that is part of a user flow (<code>SelfServiceSignUp</code>).</li></li></li></li></li></ul> <br>Read-only.<br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">customSecurityAttributes</td>
+<td style="text-align: left;">customSecurityAttributeValue</td>
+<td style="text-align: left;">An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>startsWith</code>). Filter value is case sensitive.</td>
 </tr>
 <tr>
 <td style="text-align: left;">deletedDateTime</td>
@@ -1326,7 +1331,7 @@
 <tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code> , <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values), <code>$orderBy</code>, and <code>$search</code>.</td>
+<td style="text-align: left;">The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code> , <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values), <code>$orderby</code>, and <code>$search</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">employeeHireDate</td>
@@ -1346,7 +1351,7 @@
 <tr>
 <td style="text-align: left;">employeeOrgData</td>
 <td style="text-align: left;">employeeOrgData</td>
-<td style="text-align: left;">Represents organization data (e.g. division and costCenter) associated with a user. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code> , <code>ge</code>, <code>le</code>, <code>in</code>).</td>
+<td style="text-align: left;">Represents organization data (for example, division and costCenter) associated with a user. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code> , <code>ge</code>, <code>le</code>, <code>in</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">employeeType</td>
@@ -1421,12 +1426,12 @@
 <tr>
 <td style="text-align: left;">licenseAssignmentStates</td>
 <td style="text-align: left;">licenseAssignmentState collection</td>
-<td style="text-align: left;">State of license assignments for this user. Also indicates licenses that are directly-assigned and those that the user has inherited through group memberships. Read-only. <br><br>Returned only on <code>$select</code>.</td>
+<td style="text-align: left;">State of license assignments for this user. Also indicates licenses that are directly assigned or the user has inherited through group memberships. Read-only. <br><br>Returned only on <code>$select</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">mail</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The SMTP address for the user, for example, <code>jeff@contoso.onmicrosoft.com</code>. Changes to this property will also update the user's <strong>proxyAddresses</strong> collection to include the value as an SMTP address. This property cannot contain accent characters. <br> <strong>NOTE:</strong> We do not recommend updating this property for Azure AD B2C user profiles. Use the <strong>otherMails</strong> property instead. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, <code>endsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
+<td style="text-align: left;">The SMTP address for the user, for example, <code>jeff@contoso.onmicrosoft.com</code>. Changes to this property will also update the user's <strong>proxyAddresses</strong> collection to include the value as an SMTP address. This property can't contain accent characters. <br> <strong>NOTE:</strong> We don't recommend updating this property for Azure AD B2C user profiles. Use the <strong>otherMails</strong> property instead. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, <code>endsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">mailboxSettings</td>
@@ -1471,7 +1476,7 @@
 <tr>
 <td style="text-align: left;">onPremisesImmutableId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user's <strong>userPrincipalName</strong> (UPN) property. <strong>NOTE:</strong> The <strong>$</strong> and <strong>_</strong> characters cannot be used when specifying this property. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>)..</td>
+<td style="text-align: left;">This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you're using a federated domain for the user's <strong>userPrincipalName</strong> (UPN) property. <strong>NOTE:</strong> The <strong>$</strong> and <strong>_</strong> characters can't be used when specifying this property. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>)..</td>
 </tr>
 <tr>
 <td style="text-align: left;">onPremisesLastSyncDateTime</td>
@@ -1506,12 +1511,12 @@
 <tr>
 <td style="text-align: left;">otherMails</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">A list of additional email addresses for the user; for example: <code>[&quot;bob@contoso.com&quot;, &quot;Robert@fabrikam.com&quot;]</code>. <br>NOTE: This property cannot contain accent characters. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, <code>endsWith</code>, <code>/$count eq 0</code>, <code>/$count ne 0</code>).</td>
+<td style="text-align: left;">A list of additional email addresses for the user; for example: <code>[&quot;bob@contoso.com&quot;, &quot;Robert@fabrikam.com&quot;]</code>. <br>NOTE: This property can't contain accent characters. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, <code>endsWith</code>, <code>/$count eq 0</code>, <code>/$count ne 0</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">passwordPolicies</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Specifies password policies for the user. This value is an enumeration with one possible value being <code>DisableStrongPassword</code>, which allows weaker passwords than the default policy to be specified. <code>DisablePasswordExpiration</code> can also be specified. The two may be specified together; for example: <code>DisablePasswordExpiration, DisableStrongPassword</code>. <br><br>Returned only on <code>$select</code>. For more information on the default password policies, see Azure AD pasword policies. Supports <code>$filter</code> (<code>ne</code>, <code>not</code>, and <code>eq</code> on <code>null</code> values).</td>
+<td style="text-align: left;">Specifies password policies for the user. This value is an enumeration with one possible value being <code>DisableStrongPassword</code>, which allows weaker passwords than the default policy to be specified. <code>DisablePasswordExpiration</code> can also be specified. The two may be specified together; for example: <code>DisablePasswordExpiration, DisableStrongPassword</code>. <br><br>Returned only on <code>$select</code>. For more information on the default password policies, see Azure AD password policies. Supports <code>$filter</code> (<code>ne</code>, <code>not</code>, and <code>eq</code> on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">passwordProfile</td>
@@ -1536,7 +1541,7 @@
 <tr>
 <td style="text-align: left;">preferredLanguage</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The preferred language for the user. Should follow ISO 639-1 Code; for example <code>en-US</code>. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values)</td>
+<td style="text-align: left;">The preferred language for the user. The preferred language format is based on RFC 4646. The name is a combination of an ISO 639 two-letter lowercase culture code associated with the language, and an ISO 3166 two-letter uppercase subculture code associated with the country or region. Example: &quot;en-US&quot;, or &quot;es-ES&quot;. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values)</td>
 </tr>
 <tr>
 <td style="text-align: left;">preferredName</td>
@@ -1551,12 +1556,12 @@
 <tr>
 <td style="text-align: left;">proxyAddresses</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">For example: <code>&quot;SMTP: bob@contoso.com&quot;, &quot;smtp: bob@sales.contoso.com&quot;]</code>. Changes to the <strong>mail</strong> property will also update this collection to include the value as an SMTP address. For more information, see [mail and proxyAddresses properties. The proxy address prefixed with <code>SMTP</code> (capitalized) is the primary proxy address while those prefixed with <code>smtp</code> are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>, <code>endsWith</code>, <code>/$count eq 0</code>, <code>/$count ne 0</code>).</td>
+<td style="text-align: left;">For example: <code>&quot;SMTP: bob@contoso.com&quot;, &quot;smtp: bob@sales.contoso.com&quot;]</code>. Changes to the <strong>mail</strong> property will also update this collection to include the value as an SMTP address. For more information, see [mail and proxyAddresses properties. The proxy address prefixed with <code>SMTP</code> (capitalized) is the primary proxy address while those prefixed with <code>smtp</code> are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>, <code>endsWith</code>, <code>/$count eq 0</code>, <code>/$count ne 0</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">refreshTokensValidFromDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. <br><br>Returned only on <code>$select</code>. Read-only.</td>
+<td style="text-align: left;">Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by making a request to the authorize endpoint. <br><br>Returned only on <code>$select</code>. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">responsibilities</td>
@@ -1586,7 +1591,7 @@
 <tr>
 <td style="text-align: left;">signInSessionsValidFromDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset. <br><br>Returned only on <code>$select</code>.</td>
+<td style="text-align: left;">Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset. <br><br>Returned only on <code>$select</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">skills</td>
@@ -1611,12 +1616,12 @@
 <tr>
 <td style="text-align: left;">usageLocation</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: <code>US</code>, <code>JP</code>, and <code>GB</code>. Not nullable. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
+<td style="text-align: left;">A two letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: <code>US</code>, <code>JP</code>, and <code>GB</code>. Not nullable. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">userPrincipalName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the <strong>verifiedDomains</strong> property of organization.<br>NOTE: This property cannot contain accent characters. Only the following characters are allowed <code>A - Z</code>, <code>a - z</code>, <code>0 - 9</code>, <code> ' . - _ ! # ^ ~</code>. For the complete list of allowed characters, see username policies. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, <code>endsWith</code>) and <code>$orderBy</code>.</td>
+<td style="text-align: left;">The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the <strong>verifiedDomains</strong> property of organization.<br>NOTE: This property can't contain accent characters. Only the following characters are allowed <code>A - Z</code>, <code>a - z</code>, <code>0 - 9</code>, <code> ' . - _ ! # ^ ~</code>. For the complete list of allowed characters, see username policies. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, <code>endsWith</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">userType</td>

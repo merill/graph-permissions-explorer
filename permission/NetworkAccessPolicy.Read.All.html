@@ -139,7 +139,12 @@
 <tr>
 <td>V1</td>
 <td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/networkaccess-policy-list-policyrules?view=graph-rest-1.0&amp;tabs=http">GET /networkaccess/forwardingPolicy/{forwardingPolicyId}/policyRules/</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/networkaccess-policy-list-policyrules?view=graph-rest-1.0&amp;tabs=http">GET /networkaccess/forwardingPolicies/{forwardingPolicyId}/policyRules/</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/networkaccess-policyrule-get?view=graph-rest-1.0&amp;tabs=http">GET /networkaccess/forwardingPolicies/{forwardingPolicyId}/policyRules/{ruleId}</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -169,27 +174,27 @@
 <tr>
 <td>V1</td>
 <td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/networkaccess-reports-entitiessummaries?view=graph-rest-1.0&amp;tabs=http">GET /networkAccess/reports/entitiesSummaries</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/networkaccess-reports-entitiessummaries?view=graph-rest-1.0&amp;tabs=http">GET /networkAccess/reports/entitiesSummaries(startDateTime={startDateTime},endDateTime={endDateTime})</a></td>
 </tr>
 <tr>
 <td>V1</td>
 <td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/networkaccess-reports-getcrosstenantsummary?view=graph-rest-1.0&amp;tabs=http">GET /networkAccess/reports/getCrossTenantSummary</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/networkaccess-reports-getcrosstenantsummary?view=graph-rest-1.0&amp;tabs=http">GET /networkAccess/reports/getCrossTenantSummary(startDateTime={startDateTime},endDateTime={endDateTime},discoveryPivotDateTime={discoveryPivotDateTime})</a></td>
 </tr>
 <tr>
 <td>V1</td>
 <td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/networkaccess-reports-getdestinationsummaries?view=graph-rest-1.0&amp;tabs=http">GET /networkAccess/reports/getDestinationSummaries</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/networkaccess-reports-getdestinationsummaries?view=graph-rest-1.0&amp;tabs=http">GET /networkAccess/reports/getDestinationSummaries(startDateTime={startDateTime},endDateTime={endDateTime},aggregatedBy={aggregatedBy})</a></td>
 </tr>
 <tr>
 <td>V1</td>
 <td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/networkaccess-reports-getdeviceusagesummary?view=graph-rest-1.0&amp;tabs=http">GET /networkAccess/reports/getDeviceUsageSummary</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/networkaccess-reports-getdeviceusagesummary?view=graph-rest-1.0&amp;tabs=http">GET /networkAccess/reports/getDeviceUsageSummary(startDateTime={startDateTime},endDateTime={endDateTime},activityPivotDateTime={activityPivotDateTime})</a></td>
 </tr>
 <tr>
 <td>V1</td>
 <td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/networkaccess-reports-transactionsummaries?view=graph-rest-1.0&amp;tabs=http">GET /networkAccess/reports/transactionSummaries</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/networkaccess-reports-transactionsummaries?view=graph-rest-1.0&amp;tabs=http">GET /networkAccess/reports/transactionSummaries(startDateTime={startDateTime},endDateTime={endDateTime})</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -215,11 +220,6 @@
 <td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/networkaccess-tenantstatus-get?view=graph-rest-1.0&amp;tabs=http">GET /networkAccess/tenantStatus</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/networkaccess-policyrule-get?view=graph-rest-1.0&amp;tabs=http">GET networkAccess/forwardingRule</a></td>
 </tr>
 </tbody>
 </table>
@@ -344,7 +344,7 @@
 <tr>
 <td style="text-align: left;">signalingStatus</td>
 <td style="text-align: left;">microsoft.graph.networkaccess.status</td>
-<td style="text-align: left;">When SignalingStatus is enabled, the Conditional Access policy includes zero trust network access information.The possible values are: <code>enabled</code>, <code>disabled</code>.</td>
+<td style="text-align: left;">When SignalingStatus is enabled, the Conditional Access policy includes zero trust network access information. The possible values are: <code>enabled</code>, <code>disabled</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -568,7 +568,7 @@
 <tr>
 <td style="text-align: left;">userCount</td>
 <td style="text-align: left;">Int64</td>
-<td style="text-align: left;">Count of unique Azure Active Directoy users that were seen.</td>
+<td style="text-align: left;">Count of unique Azure Active Directory users that were seen.</td>
 </tr>
 <tr>
 <td style="text-align: left;">workloadCount</td>
@@ -753,7 +753,7 @@
 <tr>
 <td style="text-align: left;">category</td>
 <td style="text-align: left;">microsoft.graph.networkaccess.forwardingCategory</td>
-<td style="text-align: left;">Defines the category of Office 365 traffic used by a forwarding rule for M365 traffic (e.g., optimized traffic)    .The possible values are: <code>default</code>, <code>optimized</code>, <code>allow</code>.</td>
+<td style="text-align: left;">Defines the category of Office 365 traffic used by a forwarding rule for Microsoft 365 traffic (for example, optimized traffic). The possible values are: <code>default</code>, <code>optimized</code>, <code>allow</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">destinations</td>
@@ -761,7 +761,7 @@
 <td style="text-align: left;">destinations à Maintains the list of potential destinations and destination types that the user could be accessing in the context of a forwarding policy, including IPs and FQDNs/URLs     Inherited from microsoft.graph.networkaccess.forwardingRule.</td>
 </tr>
 <tr>
-<td style="text-align: left;">id</td>
+<td style="text-align: left;">ID</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Identifier. Inherited from microsoft.graph.entity.</td>
 </tr>
@@ -773,17 +773,17 @@
 <tr>
 <td style="text-align: left;">ports</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">The port(s) used by a forwarding rule for M365 traffic are specified to determine the specific network port(s) through which the Microsoft 365 traffic is directed and forwarded.</td>
+<td style="text-align: left;">The port(s) used by a forwarding rule for Microsoft 365 traffic are specified to determine the specific network port(s) through which the Microsoft 365 traffic is directed and forwarded.</td>
 </tr>
 <tr>
 <td style="text-align: left;">protocol</td>
 <td style="text-align: left;">microsoft.graph.networkaccess.networkingProtocol</td>
-<td style="text-align: left;">Defines the networking protocol type used by a forwarding rule for M365 traffic    .The possible values are: <code>ip</code>, <code>icmp</code>, <code>igmp</code>, <code>ggp</code>, <code>ipv4</code>, <code>tcp</code>, <code>pup</code>, <code>udp</code>, <code>idp</code>, <code>ipv6</code>, <code>ipv6RoutingHeader</code>, <code>ipv6FragmentHeader</code>, <code>ipSecEncapsulatingSecurityPayload</code>, <code>ipSecAuthenticationHeader</code>, <code>icmpV6</code>, <code>ipv6NoNextHeader</code>, <code>ipv6DestinationOptions</code>, <code>nd</code>, <code>raw</code>, <code>ipx</code>, <code>spx</code>, <code>spxII</code></td>
+<td style="text-align: left;">Defines the networking protocol type used by a forwarding rule for Microsoft 365 traffic. The possible values are: <code>ip</code>, <code>icmp</code>, <code>igmp</code>, <code>ggp</code>, <code>ipv4</code>, <code>tcp</code>, <code>pup</code>, <code>udp</code>, <code>idp</code>, <code>ipv6</code>, <code>ipv6RoutingHeader</code>, <code>ipv6FragmentHeader</code>, <code>ipSecEncapsulatingSecurityPayload</code>, <code>ipSecAuthenticationHeader</code>, <code>icmpV6</code>, <code>ipv6NoNextHeader</code>, <code>ipv6DestinationOptions</code>, <code>nd</code>, <code>raw</code>, <code>ipx</code>, <code>spx</code>, <code>spxII</code></td>
 </tr>
 <tr>
 <td style="text-align: left;">ruleType</td>
 <td style="text-align: left;">microsoft.graph.networkaccess.networkDestinationType</td>
-<td style="text-align: left;">Destination Type. Inherited from microsoft.graph.networkaccess.forwardingRule.The possible values are: <code>url</code>, <code>fqdn</code>, <code>ipAddress</code>, <code>ipRange</code>, <code>ipSubnet</code>, <code>webCategory</code>.</td>
+<td style="text-align: left;">Destination Type. Inherited from microsoft.graph.networkaccess.forwardingRule. The possible values are: <code>url</code>, <code>fqdn</code>, <code>ipAddress</code>, <code>ipRange</code>, <code>ipSubnet</code>, <code>webCategory</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -979,7 +979,7 @@
 <tr>
 <td style="text-align: left;">ruleType</td>
 <td style="text-align: left;">microsoft.graph.networkaccess.networkDestinationType</td>
-<td style="text-align: left;">Destination Type. Inherited from microsoft.graph.networkaccess.forwardingRule.The possible values are: <code>url</code>, <code>fqdn</code>, <code>ipAddress</code>, <code>ipRange</code>, <code>ipSubnet</code></td>
+<td style="text-align: left;">Destination Type. Inherited from microsoft.graph.networkaccess.forwardingRule. The possible values are: <code>url</code>, <code>fqdn</code>, <code>ipAddress</code>, <code>ipRange</code>, <code>ipSubnet</code></td>
 </tr>
 </tbody>
 </table>
@@ -1001,7 +1001,7 @@
 <tr>
 <td style="text-align: left;">onboardingErrorMessage</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Reflects a message to the user in case of an error.</td>
+<td style="text-align: left;">Reflects a message to the user if there's an error.</td>
 </tr>
 <tr>
 <td style="text-align: left;">onboardingStatus</td>
