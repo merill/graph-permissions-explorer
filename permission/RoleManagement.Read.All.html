@@ -114,11 +114,6 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/policyroot-list-rolemanagementpolicies?view=graph-rest-1.0&amp;tabs=http">GET /policies/roleManagementPolicies?$filter=scopeId eq 'scopeId' and scopeType eq 'scopeType'</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/unifiedrolemanagementpolicy-get?view=graph-rest-1.0&amp;tabs=http">GET /policies/roleManagementPolicies/{unifiedRoleManagementPolicyId}</a></td>
 </tr>
 <tr>
@@ -140,11 +135,6 @@
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/policyroot-list-rolemanagementpolicyassignments?view=graph-rest-1.0&amp;tabs=http">GET /policies/roleManagementPolicyAssignments?$filter=scopeId eq '/' and scopeType eq 'DirectoryRole'</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/policyroot-list-rolemanagementpolicyassignments?view=graph-rest-1.0&amp;tabs=http">GET /policies/roleManagementPolicyAssignments?$filter=scopeId eq 'scopeId' and scopeType eq 'scopeType'</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -1084,7 +1074,7 @@
 <tr>
 <td style="text-align: left;">scopeType</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The type of the scope where the policy is created. One of <code>Directory</code>, <code>DirectoryRole</code>. Required.</td>
+<td style="text-align: left;">The type of the scope where the policy is created. One of <code>Directory</code>, <code>DirectoryRole</code>, <code>Group</code>. Required.</td>
 </tr>
 </tbody>
 </table>
@@ -1138,7 +1128,7 @@
 <tr>
 <td style="text-align: left;">roleDefinitionId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The identifier of the role definition object where the policy applies. If not specified, the policy applies to all roles. Supports $filter (<code>eq</code>).</td>
+<td style="text-align: left;">For Azure AD roles policy, it's the identifier of the role definition object where the policy applies. For PIM for groups membership and ownership, it's either <code>member</code> or <code>owner</code>. Supports $filter (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">scopeId</td>
@@ -1148,7 +1138,7 @@
 <tr>
 <td style="text-align: left;">scopeType</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The type of the scope where the policy is assigned. One of <code>Directory</code>, <code>DirectoryRole</code>. Required.</td>
+<td style="text-align: left;">The type of the scope where the policy is assigned. One of <code>Directory</code>, <code>DirectoryRole</code>, <code>Group</code>. Required.</td>
 </tr>
 </tbody>
 </table>

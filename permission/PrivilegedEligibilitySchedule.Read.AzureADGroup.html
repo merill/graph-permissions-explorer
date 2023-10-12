@@ -104,12 +104,12 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/privilegedaccessgroup-list-eligibilityscheduleinstances?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/privilegedAccess/group/eligibilityScheduleInstances?$filter=groupId eq 'groupId'</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/privilegedaccessgroup-list-eligibilityscheduleinstances?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/privilegedAccess/group/eligibilityScheduleInstances?$filter=groupId eq '{groupId}'</a></td>
 </tr>
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/privilegedaccessgroup-list-eligibilityscheduleinstances?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/privilegedAccess/group/eligibilityScheduleInstances?filter=principalId eq 'principalId'</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/privilegedaccessgroup-list-eligibilityscheduleinstances?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/privilegedAccess/group/eligibilityScheduleInstances?filter=principalId eq '{principalId}'</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -129,12 +129,12 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/privilegedaccessgroup-list-eligibilityschedules?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/privilegedAccess/group/eligibilitySchedules?$filter=groupId eq 'groupId'</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/privilegedaccessgroup-list-eligibilityschedules?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/privilegedAccess/group/eligibilitySchedules?$filter=groupId eq '{groupId}'</a></td>
 </tr>
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/privilegedaccessgroup-list-eligibilityschedules?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/privilegedAccess/group/eligibilitySchedules?filter=principalId eq 'principalId'</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/privilegedaccessgroup-list-eligibilityschedules?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/privilegedAccess/group/eligibilitySchedules?filter=principalId eq '{principalId}'</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -212,7 +212,7 @@
 <tr>
 <td style="text-align: left;">accessId</td>
 <td style="text-align: left;">privilegedAccessGroupRelationships</td>
-<td style="text-align: left;">The identifier of the membership or ownership eligibility to the group that is governed by PIM. Required. The possible values are: <code>owner</code>, <code>member</code>.</td>
+<td style="text-align: left;">The identifier of the membership or ownership eligibility to the group that is governed by PIM. Required. The possible values are: <code>owner</code>, <code>member</code>. Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>
@@ -222,22 +222,22 @@
 <tr>
 <td style="text-align: left;">createdUsing</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The identifier of the access assignment or eligibility request that creates this schedule. Optional. Inherited from privilegedAccessSchedule.</td>
+<td style="text-align: left;">The identifier of the access assignment or eligibility request that creates this schedule. Optional. Inherited from privilegedAccessSchedule. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, and on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">groupId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The identifier of the group representing the scope of the membership or ownership eligibility through PIM for groups. Required.</td>
+<td style="text-align: left;">The identifier of the group representing the scope of the membership or ownership eligibility through PIM for groups. Required. Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The identifier of the schedule. Required. Inherited from entity.</td>
+<td style="text-align: left;">The identifier of the schedule. Required. Inherited from entity. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">memberType</td>
 <td style="text-align: left;">privilegedAccessGroupMemberType</td>
-<td style="text-align: left;">Indicates whether the assignment is derived from a group assignment. It can further imply whether the caller can manage the schedule. Required. The possible values are: <code>direct</code>, <code>group</code>, <code>unknownFutureValue</code>.</td>
+<td style="text-align: left;">Indicates whether the assignment is derived from a group assignment. It can further imply whether the caller can manage the schedule. Required. The possible values are: <code>direct</code>, <code>group</code>, <code>unknownFutureValue</code>. Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">modifiedDateTime</td>
@@ -247,7 +247,7 @@
 <tr>
 <td style="text-align: left;">principalId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The identifier of the principal whose membership or ownership eligibility is granted through PIM for groups. Required.</td>
+<td style="text-align: left;">The identifier of the principal whose membership or ownership eligibility is granted through PIM for groups. Required. Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">scheduleInfo</td>
@@ -257,7 +257,7 @@
 <tr>
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The status of the access assignment or eligibility request. The possible values are: <code>Canceled</code>, <code>Denied</code>, <code>Failed</code>, <code>Granted</code>, <code>PendingAdminDecision</code>, <code>PendingApproval</code>, <code>PendingProvisioning</code>, <code>PendingScheduleCreation</code>, <code>Provisioned</code>, <code>Revoked</code>, and <code>ScheduleCreated</code>. Not nullable. Optional. Inherited from privilegedAccessSchedule.</td>
+<td style="text-align: left;">The status of the access assignment or eligibility request. The possible values are: <code>Canceled</code>, <code>Denied</code>, <code>Failed</code>, <code>Granted</code>, <code>PendingAdminDecision</code>, <code>PendingApproval</code>, <code>PendingProvisioning</code>, <code>PendingScheduleCreation</code>, <code>Provisioned</code>, <code>Revoked</code>, and <code>ScheduleCreated</code>. Not nullable. Optional. Inherited from privilegedAccessSchedule. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
 </tr>
 </tbody>
 </table>
@@ -274,12 +274,12 @@
 <tr>
 <td style="text-align: left;">accessId</td>
 <td style="text-align: left;">privilegedAccessGroupRelationships</td>
-<td style="text-align: left;">The identifier of the membership or ownership eligibility relationship to the group. Required. The possible values are: <code>owner</code>, <code>member</code>.</td>
+<td style="text-align: left;">The identifier of the membership or ownership eligibility relationship to the group. Required. The possible values are: <code>owner</code>, <code>member</code>. Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">eligibilityScheduleId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The identifier of the privilegedAccessGroupEligibilitySchedule from which this instance was created. Required.</td>
+<td style="text-align: left;">The identifier of the privilegedAccessGroupEligibilitySchedule from which this instance was created. Required. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">endDateTime</td>
@@ -289,22 +289,22 @@
 <tr>
 <td style="text-align: left;">groupId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The identifier of the group representing the scope of the membership or ownership eligibility through PIM for groups. Required.</td>
+<td style="text-align: left;">The identifier of the group representing the scope of the membership or ownership eligibility through PIM for groups. Required. Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The identifier of the access assignment schedule instance. Required. Inherited from entity.</td>
+<td style="text-align: left;">The identifier of the access assignment schedule instance. Required. Inherited from entity. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">memberType</td>
 <td style="text-align: left;">privilegedAccessGroupMemberType</td>
-<td style="text-align: left;">Indicates whether the assignment is derived from a group assignment. It can further imply whether the calling principal can manage the assignment schedule. Required. The possible values are: <code>direct</code>, <code>group</code>, <code>unknownFutureValue</code>.</td>
+<td style="text-align: left;">Indicates whether the assignment is derived from a group assignment. It can further imply whether the calling principal can manage the assignment schedule. Required. The possible values are: <code>direct</code>, <code>group</code>, <code>unknownFutureValue</code>. Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">principalId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The identifier of the principal whose membership or ownership eligibility to the group is managed through PIM for groups. Required.</td>
+<td style="text-align: left;">The identifier of the principal whose membership or ownership eligibility to the group is managed through PIM for groups. Required. Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">startDateTime</td>
