@@ -772,7 +772,7 @@
 <tr>
 <td style="text-align: left;">aadDeviceId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The Azure Active Directory (Azure AD) device ID of the Cloud PC.</td>
+<td style="text-align: left;">The Microsoft Entra device ID of the Cloud PC.</td>
 </tr>
 <tr>
 <td style="text-align: left;">connectivityResult</td>
@@ -939,7 +939,7 @@
 <tr>
 <td style="text-align: left;">actor</td>
 <td style="text-align: left;">cloudPcAuditActor</td>
-<td style="text-align: left;">Azure AD user and application associated with the audit event. Read-only.</td>
+<td style="text-align: left;">Microsoft Entra user and application associated with the audit event. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">category</td>
@@ -1144,7 +1144,7 @@
 <tr>
 <td style="text-align: left;">onPremisesConnectionId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The Azure network connection ID that matches the virtual network IT admins want the provisioning policy to use when they create Cloud PCs. You can use this property in both domain join types: <em>Azure AD joined</em> or <em>Hybrid Azure AD joined</em>. If you enter an <strong>onPremisesConnectionId</strong>, leave <strong>regionName</strong> as empty.</td>
+<td style="text-align: left;">The Azure network connection ID that matches the virtual network IT admins want the provisioning policy to use when they create Cloud PCs. You can use this property in both domain join types: <em>Azure AD joined</em> or <em>Hybrid Microsoft Entra joined</em>. If you enter an <strong>onPremisesConnectionId</strong>, leave <strong>regionName</strong> as empty.</td>
 </tr>
 <tr>
 <td style="text-align: left;">regionGroup</td>
@@ -1154,12 +1154,12 @@
 <tr>
 <td style="text-align: left;">regionName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The supported Azure region where the IT admin wants the provisioning policy to create Cloud PCs. The underlying virtual network will be created and managed by the Windows 365 service. This can only be entered if the IT admin chooses Azure AD joined as the domain join type. If you enter a <strong>regionName</strong>, leave <strong>onPremisesConnectionId</strong> as empty.</td>
+<td style="text-align: left;">The supported Azure region where the IT admin wants the provisioning policy to create Cloud PCs. The underlying virtual network will be created and managed by the Windows 365 service. This can only be entered if the IT admin chooses Microsoft Entra joined as the domain join type. If you enter a <strong>regionName</strong>, leave <strong>onPremisesConnectionId</strong> as empty.</td>
 </tr>
 <tr>
 <td style="text-align: left;">type</td>
 <td style="text-align: left;">cloudPcDomainJoinType</td>
-<td style="text-align: left;">Specifies how the provisioned Cloud PC will be joined to Azure AD. If you choose the <code>hybridAzureADJoin</code> type, only provide a value for the **o</td>
+<td style="text-align: left;">Specifies how the provisioned Cloud PC will be joined to Microsoft Entra ID. If you choose the <code>hybridAzureADJoin</code> type, only provide a value for the **o</td>
 </tr>
 </tbody>
 </table>
@@ -1518,7 +1518,7 @@
 <tr>
 <td style="text-align: left;">type</td>
 <td style="text-align: left;">cloudPcOnPremisesConnectionType</td>
-<td style="text-align: left;">Specifies how the provisioned Cloud PC is joined to Azure Active Directory. Default value is <code>hybridAzureADJoin</code>. Possible values are: <code>azureADJoin</code>, <code>hybridAzureADJoin</code>, <code>unknownFutureValue</code>.</td>
+<td style="text-align: left;">Specifies how the provisioned Cloud PC is joined to Microsoft Entra ID. Default value is <code>hybridAzureADJoin</code>. Possible values are: <code>azureADJoin</code>, <code>hybridAzureADJoin</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">virtualNetworkId</td>
@@ -1572,7 +1572,7 @@
 <tr>
 <td style="text-align: left;">enableSingleSignOn</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;"><code>True</code> if the provisioned Cloud PC can be accessed by single sign-on. <code>False</code> indicates that the provisioned Cloud PC doesn't support this feature. Default value is <code>false</code>. Windows 365 users can use single sign-on to authenticate to Azure Active Directory (Azure AD) with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.</td>
+<td style="text-align: left;"><code>True</code> if the provisioned Cloud PC can be accessed by single sign-on. <code>False</code> indicates that the provisioned Cloud PC doesn't support this feature. Default value is <code>false</code>. Windows 365 users can use single sign-on to authenticate to Microsoft Entra ID with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
@@ -1634,12 +1634,12 @@
 <tr>
 <td style="text-align: left;">domainJoinConfiguration</td>
 <td style="text-align: left;">cloudPcDomainJoinConfiguration</td>
-<td style="text-align: left;">Specifies how Cloud PCs will join Azure Active Directory.</td>
+<td style="text-align: left;">Specifies how Cloud PCs will join Microsoft Entra ID.</td>
 </tr>
 <tr>
 <td style="text-align: left;">enableSingleSignOn</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;"><code>True</code> if the provisioned Cloud PC can be accessed by single sign-on. <code>False</code> indicates that the provisioned Cloud PC doesn't support this feature. Default value is <code>false</code>. Windows 365 users can use single sign-on to authenticate to Azure Active Directory (Azure AD) with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.</td>
+<td style="text-align: left;"><code>True</code> if the provisioned Cloud PC can be accessed by single sign-on. <code>False</code> indicates that the provisioned Cloud PC doesn't support this feature. Default value is <code>false</code>. Windows 365 users can use single sign-on to authenticate to Microsoft Entra ID with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.</td>
 </tr>
 <tr>
 <td style="text-align: left;">gracePeriodInHours</td>
@@ -2776,7 +2776,7 @@
 <tr>
 <td style="text-align: left;">isBuiltIn</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Flag indicating whether the role definition is part of the default set included in Azure Active Directory (Azure AD) or a custom definition. Read-only. Supports $filter (<code>eq</code>, <code>in</code>).</td>
+<td style="text-align: left;">Flag indicating whether the role definition is part of the default set included in Microsoft Entra or a custom definition. Read-only. Supports $filter (<code>eq</code>, <code>in</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">isEnabled</td>

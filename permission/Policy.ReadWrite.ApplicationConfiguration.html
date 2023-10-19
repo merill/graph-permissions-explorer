@@ -609,7 +609,7 @@
 <tr>
 <td style="text-align: left;">appId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the application that is assigned to an application by Azure AD. Not nullable. Read-only. Alternate key. Supports <code>$filter</code> (<code>eq</code>).</td>
+<td style="text-align: left;">The unique identifier for the application that is assigned to an application by Microsoft Entra ID. Not nullable. Read-only. Alternate key. Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">applicationTemplateId</td>
@@ -654,7 +654,7 @@
 <tr>
 <td style="text-align: left;">groupMembershipClaims</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Configures the <code>groups</code> claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following valid string values: <code>None</code>, <code>SecurityGroup</code> (for security groups and Azure AD roles), <code>All</code> (this gets all of the security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of).</td>
+<td style="text-align: left;">Configures the <code>groups</code> claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following valid string values: <code>None</code>, <code>SecurityGroup</code> (for security groups and Microsoft Entra roles), <code>All</code> (this gets all of the security groups, distribution groups, and Microsoft Entra directory roles that the signed-in user is a member of).</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
@@ -664,12 +664,12 @@
 <tr>
 <td style="text-align: left;">identifierUris</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you'll reference in your API's code, and it must be globally unique. You can use the default value provided, which is in the form <code>api://&lt;application-client-id&gt;</code>, or specify a more readable URI like <code>https://contoso.com/api</code>. For more information on valid identifierUris patterns and best practices, see Azure AD application registration security best practices. Not nullable. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
+<td style="text-align: left;">Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you'll reference in your API's code, and it must be globally unique. You can use the default value provided, which is in the form <code>api://&lt;application-client-id&gt;</code>, or specify a more readable URI like <code>https://contoso.com/api</code>. For more information on valid identifierUris patterns and best practices, see Microsoft Entra application registration security best practices. Not nullable. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">info</td>
 <td style="text-align: left;">informationalUrl</td>
-<td style="text-align: left;">Basic profile information of the application such as  app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, and <code>eq</code> on <code>null</code> values).</td>
+<td style="text-align: left;">Basic profile information of the application such as  app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Microsoft Entra apps. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, and <code>eq</code> on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">isDeviceOnlyAuthSupported</td>
@@ -679,7 +679,7 @@
 <tr>
 <td style="text-align: left;">isFallbackPublicClient</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is <code>false</code> which means the fallback application type is confidential client such as a web app. There are certain scenarios where Azure AD cannot determine the client application type. For example, the ROPC flow where it is configured without specifying a redirect URI. In those cases Azure AD interprets the application type based on the value of this property.</td>
+<td style="text-align: left;">Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is <code>false</code> which means the fallback application type is confidential client such as a web app. There are certain scenarios where Microsoft Entra ID cannot determine the client application type. For example, the ROPC flow where it is configured without specifying a redirect URI. In those cases Microsoft Entra ID interprets the application type based on the value of this property.</td>
 </tr>
 <tr>
 <td style="text-align: left;">keyCredentials</td>
@@ -699,12 +699,12 @@
 <tr>
 <td style="text-align: left;">oauth2RequiredPostResponse</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Specifies whether, as part of OAuth 2.0 token requests, Azure AD allows POST requests, as opposed to GET requests. The default is <code>false</code>, which specifies that only GET requests are allowed.</td>
+<td style="text-align: left;">Specifies whether, as part of OAuth 2.0 token requests, Microsoft Entra ID allows POST requests, as opposed to GET requests. The default is <code>false</code>, which specifies that only GET requests are allowed.</td>
 </tr>
 <tr>
 <td style="text-align: left;">optionalClaims</td>
 <td style="text-align: left;">optionalClaims</td>
-<td style="text-align: left;">Application developers can configure optional claims in their Azure AD applications to specify the claims that are sent to their application by the Microsoft security token service. For more information, see How to: Provide optional claims to your app.</td>
+<td style="text-align: left;">Application developers can configure optional claims in their Microsoft Entra applications to specify the claims that are sent to their application by the Microsoft security token service. For more information, see How to: Provide optional claims to your app.</td>
 </tr>
 <tr>
 <td style="text-align: left;">parentalControlSettings</td>
@@ -729,7 +729,7 @@
 <tr>
 <td style="text-align: left;">requestSignatureVerification</td>
 <td style="text-align: left;">requestSignatureVerification</td>
-<td style="text-align: left;">Specifies whether this application requires Azure AD to verify the signed authentication requests.</td>
+<td style="text-align: left;">Specifies whether this application requires Microsoft Entra ID to verify the signed authentication requests.</td>
 </tr>
 <tr>
 <td style="text-align: left;">requiredResourceAccess</td>
@@ -769,7 +769,7 @@
 <tr>
 <td style="text-align: left;">tokenEncryptionKeyId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD encrypts all the tokens it emits by using the key this property points to. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.</td>
+<td style="text-align: left;">Specifies the keyId of a public key from the keyCredentials collection. When configured, Microsoft Entra ID encrypts all the tokens it emits by using the key this property points to. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.</td>
 </tr>
 <tr>
 <td style="text-align: left;">verifiedPublisher</td>
@@ -1161,7 +1161,7 @@
 <tr>
 <td style="text-align: left;">info</td>
 <td style="text-align: left;">informationalUrl</td>
-<td style="text-align: left;">Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, and <code>eq</code> on <code>null</code> values).</td>
+<td style="text-align: left;">Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Microsoft Entra apps. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, and <code>eq</code> on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">keyCredentials</td>
@@ -1171,7 +1171,7 @@
 <tr>
 <td style="text-align: left;">loginUrl</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Specifies the URL where the service provider redirects the user to Azure AD to authenticate. Azure AD uses the URL to launch the application from Microsoft 365 or the Azure AD My Apps. When blank, Azure AD performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Azure AD My Apps, or the Azure AD SSO URL.</td>
+<td style="text-align: left;">Specifies the URL where the service provider redirects the user to Microsoft Entra ID to authenticate. Microsoft Entra ID uses the URL to launch the application from Microsoft 365 or the Microsoft Entra My Apps. When blank, Microsoft Entra ID performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Microsoft Entra My Apps, or the Microsoft Entra SSO URL.</td>
 </tr>
 <tr>
 <td style="text-align: left;">logoutUrl</td>
@@ -1186,7 +1186,7 @@
 <tr>
 <td style="text-align: left;">notificationEmailAddresses</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Specifies the list of email addresses where Azure AD sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Azure AD Gallery applications.</td>
+<td style="text-align: left;">Specifies the list of email addresses where Microsoft Entra ID sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Microsoft Entra Gallery applications.</td>
 </tr>
 <tr>
 <td style="text-align: left;">oauth2PermissionScopes</td>
@@ -1201,7 +1201,7 @@
 <tr>
 <td style="text-align: left;">preferredSingleSignOnMode</td>
 <td style="text-align: left;">string</td>
-<td style="text-align: left;">Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are <code>password</code>, <code>saml</code>, <code>notSupported</code>, and <code>oidc</code>.</td>
+<td style="text-align: left;">Specifies the single sign-on mode configured for this application. Microsoft Entra ID uses the preferred single sign-on mode to launch the application from Microsoft 365 or the My Apps portal. The supported values are <code>password</code>, <code>saml</code>, <code>notSupported</code>, and <code>oidc</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">preferredTokenSigningKeyThumbprint</td>
@@ -1226,17 +1226,17 @@
 <tr>
 <td style="text-align: left;">servicePrincipalNames</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Contains the list of <strong>identifiersUris</strong>, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,<ul><li>Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the &quot;aud&quot; claim.</li></ul><br>The any operator is required for filter expressions on multi-valued properties. Not nullable. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
+<td style="text-align: left;">Contains the list of <strong>identifiersUris</strong>, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Microsoft Entra ID. For example,<ul><li>Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the &quot;aud&quot; claim.</li></ul><br>The any operator is required for filter expressions on multi-valued properties. Not nullable. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">servicePrincipalType</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifies whether the service principal represents an application, a managed identity, or a legacy application. This is set by Azure AD internally. The <strong>servicePrincipalType</strong> property can be set to three different values: <ul><li><strong>Application</strong> - A service principal that represents an application or service. The <strong>appId</strong> property identifies the associated app registration, and matches the <strong>appId</strong> of an application, possibly from a different tenant. If the associated app registration is missing, tokens are not issued for the service principal.</li><li><strong>ManagedIdentity</strong> - A service principal that represents a managed identity. Service principals representing managed identities can be granted access and permissions, but cannot be updated or modified directly.</li><li><strong>Legacy</strong> - A service principal that represents an app created before app registrations, or through legacy experiences. Legacy service principal can have credentials, service principal names, reply URLs, and other properties which are editable by an authorized user, but does not have an associated app registration. The <strong>appId</strong> value does not associate the service principal with an app registration. The service principal can only be used in the tenant where it was created.</li><li><strong>SocialIdp</strong> - For internal use. </li></ul></td>
+<td style="text-align: left;">Identifies whether the service principal represents an application, a managed identity, or a legacy application. This is set by Microsoft Entra ID internally. The <strong>servicePrincipalType</strong> property can be set to three different values: <ul><li><strong>Application</strong> - A service principal that represents an application or service. The <strong>appId</strong> property identifies the associated app registration, and matches the <strong>appId</strong> of an application, possibly from a different tenant. If the associated app registration is missing, tokens are not issued for the service principal.</li><li><strong>ManagedIdentity</strong> - A service principal that represents a managed identity. Service principals representing managed identities can be granted access and permissions, but cannot be updated or modified directly.</li><li><strong>Legacy</strong> - A service principal that represents an app created before app registrations, or through legacy experiences. Legacy service principal can have credentials, service principal names, reply URLs, and other properties which are editable by an authorized user, but does not have an associated app registration. The <strong>appId</strong> value does not associate the service principal with an app registration. The service principal can only be used in the tenant where it was created.</li><li><strong>SocialIdp</strong> - For internal use. </li></ul></td>
 </tr>
 <tr>
 <td style="text-align: left;">signInAudience</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Specifies the Microsoft accounts that are supported for the current application. Read-only. <br><br>Supported values are:<ul><li><code>AzureADMyOrg</code>: Users with a Microsoft work or school account in my organization's Azure AD tenant (single-tenant).</li><li><code>AzureADMultipleOrgs</code>: Users with a Microsoft work or school account in any organization's Azure AD tenant (multi-tenant).</li><li><code>AzureADandPersonalMicrosoftAccount</code>: Users with a personal Microsoft account, or a work or school account in any organization's Azure AD tenant.</li><li><code>PersonalMicrosoftAccount</code>: Users with a personal Microsoft account only.</li></ul></td>
+<td style="text-align: left;">Specifies the Microsoft accounts that are supported for the current application. Read-only. <br><br>Supported values are:<ul><li><code>AzureADMyOrg</code>: Users with a Microsoft work or school account in my organization's Microsoft Entra tenant (single-tenant).</li><li><code>AzureADMultipleOrgs</code>: Users with a Microsoft work or school account in any organization's Microsoft Entra tenant (multi-tenant).</li><li><code>AzureADandPersonalMicrosoftAccount</code>: Users with a personal Microsoft account, or a work or school account in any organization's Microsoft Entra tenant.</li><li><code>PersonalMicrosoftAccount</code>: Users with a personal Microsoft account only.</li></ul></td>
 </tr>
 <tr>
 <td style="text-align: left;">tags</td>
@@ -1246,7 +1246,7 @@
 <tr>
 <td style="text-align: left;">tokenEncryptionKeyId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.</td>
+<td style="text-align: left;">Specifies the keyId of a public key from the keyCredentials collection. When configured, Microsoft Entra ID issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.</td>
 </tr>
 <tr>
 <td style="text-align: left;">verifiedPublisher</td>

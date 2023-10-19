@@ -421,7 +421,7 @@
 <tr>
 <td style="text-align: left;">provisioningAction</td>
 <td style="text-align: left;">provisioningAction</td>
-<td style="text-align: left;">Indicates the activity name or the operation name. Possible values are: <code>create</code>, <code>update</code>, <code>delete</code>, <code>stageddelete</code>, <code>disable</code>, <code>other</code> and <code>unknownFutureValue</code>. For a list of activities logged, refer to Azure AD activity list. Supports <code>$filter</code> (<code>eq</code>, <code>contains</code>).</td>
+<td style="text-align: left;">Indicates the activity name or the operation name. Possible values are: <code>create</code>, <code>update</code>, <code>delete</code>, <code>stageddelete</code>, <code>disable</code>, <code>other</code> and <code>unknownFutureValue</code>. For a list of activities logged, refer to Microsoft Entra activity list. Supports <code>$filter</code> (<code>eq</code>, <code>contains</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">provisioningStatusInfo</td>
@@ -461,7 +461,7 @@
 <tr>
 <td style="text-align: left;">tenantId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Unique Azure AD tenant ID. Supports <code>$filter</code> (<code>eq</code>, <code>contains</code>).</td>
+<td style="text-align: left;">Unique Microsoft Entra tenant ID. Supports <code>$filter</code> (<code>eq</code>, <code>contains</code>).</td>
 </tr>
 </tbody>
 </table>
@@ -530,7 +530,7 @@
 <tr>
 <td style="text-align: left;">appId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Unique GUID representing the app ID in the Azure Active Directory. <br><br> Supports <code>$filter</code> (<code>eq</code>).</td>
+<td style="text-align: left;">Unique GUID representing the app ID in the Microsoft Entra ID. <br><br> Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">appliedConditionalAccessPolicies</td>
@@ -595,7 +595,7 @@
 <tr>
 <td style="text-align: left;">riskDetail</td>
 <td style="text-align: left;">riskDetail</td>
-<td style="text-align: left;">Provides the 'reason' behind a specific state of a risky user, sign-in or a risk event. The possible values are: <code>none</code>, <code>adminGeneratedTemporaryPassword</code>, <code>userPerformedSecuredPasswordChange</code>, <code>userPerformedSecuredPasswordReset</code>, <code>adminConfirmedSigninSafe</code>, <code>aiConfirmedSigninSafe</code>, <code>userPassedMFADrivenByRiskBasedPolicy</code>, <code>adminDismissedAllRiskForUser</code>, <code>adminConfirmedSigninCompromised</code>, <code>unknownFutureValue</code>. The value <code>none</code> means that no action has been performed on the user or sign-in so far.  Supports <code>$filter</code> (<code>eq</code>).<br><strong>Note:</strong> Details for this property require an Azure AD Premium P2 license. Other licenses return the value <code>hidden</code>.</td>
+<td style="text-align: left;">Provides the 'reason' behind a specific state of a risky user, sign-in or a risk event. The possible values are: <code>none</code>, <code>adminGeneratedTemporaryPassword</code>, <code>userPerformedSecuredPasswordChange</code>, <code>userPerformedSecuredPasswordReset</code>, <code>adminConfirmedSigninSafe</code>, <code>aiConfirmedSigninSafe</code>, <code>userPassedMFADrivenByRiskBasedPolicy</code>, <code>adminDismissedAllRiskForUser</code>, <code>adminConfirmedSigninCompromised</code>, <code>unknownFutureValue</code>. The value <code>none</code> means that no action has been performed on the user or sign-in so far.  Supports <code>$filter</code> (<code>eq</code>).<br><strong>Note:</strong> Details for this property require a Microsoft Entra ID P2 license. Other licenses return the value <code>hidden</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">riskEventTypes</td>
@@ -610,12 +610,12 @@
 <tr>
 <td style="text-align: left;">riskLevelAggregated</td>
 <td style="text-align: left;">riskLevel</td>
-<td style="text-align: left;">Aggregated risk level. The possible values are: <code>none</code>, <code>low</code>, <code>medium</code>, <code>high</code>, <code>hidden</code>, and <code>unknownFutureValue</code>. The value <code>hidden</code> means the user or sign-in wasn't enabled for Azure AD Identity Protection. <br><br> Supports <code>$filter</code> (<code>eq</code>). <br> <strong>Note:</strong> Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned <code>hidden</code>.</td>
+<td style="text-align: left;">Aggregated risk level. The possible values are: <code>none</code>, <code>low</code>, <code>medium</code>, <code>high</code>, <code>hidden</code>, and <code>unknownFutureValue</code>. The value <code>hidden</code> means the user or sign-in wasn't enabled for Microsoft Entra ID Protection. <br><br> Supports <code>$filter</code> (<code>eq</code>). <br> <strong>Note:</strong> Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned <code>hidden</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">riskLevelDuringSignIn</td>
 <td style="text-align: left;">riskLevel</td>
-<td style="text-align: left;">Risk level during sign-in. The possible values are: <code>none</code>, <code>low</code>, <code>medium</code>, <code>high</code>, <code>hidden</code>, and <code>unknownFutureValue</code>. The value <code>hidden</code> means the user or sign-in wasn't enabled for Azure AD Identity Protection. <br><br> Supports <code>$filter</code> (<code>eq</code>).  <br><strong>Note:</strong> Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned <code>hidden</code>.</td>
+<td style="text-align: left;">Risk level during sign-in. The possible values are: <code>none</code>, <code>low</code>, <code>medium</code>, <code>high</code>, <code>hidden</code>, and <code>unknownFutureValue</code>. The value <code>hidden</code> means the user or sign-in wasn't enabled for Microsoft Entra ID Protection. <br><br> Supports <code>$filter</code> (<code>eq</code>).  <br><strong>Note:</strong> Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned <code>hidden</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">riskState</td>
@@ -657,7 +657,7 @@
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">User object identifier in Azure Active Directory. Inherited from entity.</td>
+<td style="text-align: left;">User object identifier in Microsoft Entra ID. Inherited from entity.</td>
 </tr>
 <tr>
 <td style="text-align: left;">isAdmin</td>

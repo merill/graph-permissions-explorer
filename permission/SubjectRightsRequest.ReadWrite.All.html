@@ -554,7 +554,7 @@
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is <code>null</code> for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code> , <code>ge</code>, <code>le</code>, <code>in</code>).</td>
+<td style="text-align: left;">The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is <code>null</code> for some users created before June 2018 and on-premises users that were synced to Microsoft Entra ID before June 2018. Read-only. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code> , <code>ge</code>, <code>le</code>, <code>in</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">creationType</td>
@@ -589,7 +589,7 @@
 <tr>
 <td style="text-align: left;">employeeLeaveDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time when the user left or will leave the organization. <br><br>To read this property, the calling app must be assigned the <em>User-LifeCycleInfo.Read.All</em> permission. To write this property, the calling app must be assigned the <em>User.Read.All</em> and <em>User-LifeCycleInfo.ReadWrite.All</em> permissions. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: <em>Lifecycle Workflows Administrator</em>, <em>Global Reader</em>, or <em>Global Administrator</em>. To write this property in delegated scenarios, the admin needs the <em>Global Administrator</em> role. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code> , <code>ge</code>, <code>le</code>, <code>in</code>). <br><br>For more information, see Configure the employeeLeaveDateTime property for a user.</td>
+<td style="text-align: left;">The date and time when the user left or will leave the organization. <br><br>To read this property, the calling app must be assigned the <em>User-LifeCycleInfo.Read.All</em> permission. To write this property, the calling app must be assigned the <em>User.Read.All</em> and <em>User-LifeCycleInfo.ReadWrite.All</em> permissions. To read this property in delegated scenarios, the admin needs one of the following Microsoft Entra roles: <em>Lifecycle Workflows Administrator</em>, <em>Global Reader</em>, or <em>Global Administrator</em>. To write this property in delegated scenarios, the admin needs the <em>Global Administrator</em> role. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code> , <code>ge</code>, <code>le</code>, <code>in</code>). <br><br>For more information, see Configure the employeeLeaveDateTime property for a user.</td>
 </tr>
 <tr>
 <td style="text-align: left;">employeeId</td>
@@ -664,7 +664,7 @@
 <tr>
 <td style="text-align: left;">lastPasswordChangeDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The time when this Azure AD user last changed their password or when their password was created, whichever date the latest action was performed. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. <br><br>Returned only on <code>$select</code>.</td>
+<td style="text-align: left;">The time when this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. <br><br>Returned only on <code>$select</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">legalAgeGroupClassification</td>
@@ -709,12 +709,12 @@
 <tr>
 <td style="text-align: left;">onPremisesDistinguishedName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Contains the on-premises Active Directory <code>distinguished name</code> or <code>DN</code>. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. <br><br>Returned only on <code>$select</code>.</td>
+<td style="text-align: left;">Contains the on-premises Active Directory <code>distinguished name</code> or <code>DN</code>. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. <br><br>Returned only on <code>$select</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">onPremisesDomainName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Contains the on-premises <code>domainFQDN</code>, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. <br><br>Returned only on <code>$select</code>.</td>
+<td style="text-align: left;">Contains the on-premises <code>domainFQDN</code>, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. <br><br>Returned only on <code>$select</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">onPremisesExtensionAttributes</td>
@@ -724,7 +724,7 @@
 <tr>
 <td style="text-align: left;">onPremisesImmutableId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you're using a federated domain for the user's <strong>userPrincipalName</strong> (UPN) property. <strong>NOTE:</strong> The <strong>$</strong> and <strong>_</strong> characters can't be used when specifying this property. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>)..</td>
+<td style="text-align: left;">This property is used to associate an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you're using a federated domain for the user's <strong>userPrincipalName</strong> (UPN) property. <strong>NOTE:</strong> The <strong>$</strong> and <strong>_</strong> characters can't be used when specifying this property. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>)..</td>
 </tr>
 <tr>
 <td style="text-align: left;">onPremisesLastSyncDateTime</td>
@@ -739,7 +739,7 @@
 <tr>
 <td style="text-align: left;">onPremisesSamAccountName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Contains the on-premises <code>samAccountName</code> synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>).</td>
+<td style="text-align: left;">Contains the on-premises <code>samAccountName</code> synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">onPremisesSecurityIdentifier</td>
@@ -749,12 +749,12 @@
 <tr>
 <td style="text-align: left;">onPremisesSyncEnabled</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;"><code>true</code> if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>, and <code>eq</code> on <code>null</code> values).</td>
+<td style="text-align: left;"><code>true</code> if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Microsoft Entra ID. Read-only. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>, and <code>eq</code> on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">onPremisesUserPrincipalName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Contains the on-premises <code>userPrincipalName</code> synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>).</td>
+<td style="text-align: left;">Contains the on-premises <code>userPrincipalName</code> synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">otherMails</td>
@@ -764,7 +764,7 @@
 <tr>
 <td style="text-align: left;">passwordPolicies</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Specifies password policies for the user. This value is an enumeration with one possible value being <code>DisableStrongPassword</code>, which allows weaker passwords than the default policy to be specified. <code>DisablePasswordExpiration</code> can also be specified. The two may be specified together; for example: <code>DisablePasswordExpiration, DisableStrongPassword</code>. <br><br>Returned only on <code>$select</code>. For more information on the default password policies, see Azure AD password policies. Supports <code>$filter</code> (<code>ne</code>, <code>not</code>, and <code>eq</code> on <code>null</code> values).</td>
+<td style="text-align: left;">Specifies password policies for the user. This value is an enumeration with one possible value being <code>DisableStrongPassword</code>, which allows weaker passwords than the default policy to be specified. <code>DisablePasswordExpiration</code> can also be specified. The two may be specified together; for example: <code>DisablePasswordExpiration, DisableStrongPassword</code>. <br><br>Returned only on <code>$select</code>. For more information on the default password policies, see Microsoft Entra password policies. Supports <code>$filter</code> (<code>ne</code>, <code>not</code>, and <code>eq</code> on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">passwordProfile</td>
@@ -834,7 +834,7 @@
 <tr>
 <td style="text-align: left;">signInActivity</td>
 <td style="text-align: left;">signInActivity</td>
-<td style="text-align: left;">Get the last signed-in date and request ID of the sign-in for a given user. Read-only.<br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>) <em>but not with any other filterable properties</em>. <br><br><strong>Note:</strong> <br><li>Details for this property require an Azure AD Premium P1/P2 license and the <strong>AuditLog.Read.All</strong> permission.<li>This property is not returned for a user who has never signed in or last signed in before April 2020.</li></li></td>
+<td style="text-align: left;">Get the last signed-in date and request ID of the sign-in for a given user. Read-only.<br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>) <em>but not with any other filterable properties</em>. <br><br><strong>Note:</strong> <br><li>Details for this property require a Microsoft Entra ID P1 or P2 license and the <strong>AuditLog.Read.All</strong> permission.<li>This property is not returned for a user who has never signed in or last signed in before April 2020.</li></li></td>
 </tr>
 <tr>
 <td style="text-align: left;">signInSessionsValidFromDateTime</td>

@@ -2107,7 +2107,7 @@
 <tr>
 <td style="text-align: left;">clientConfiguration</td>
 <td style="text-align: left;">customExtensionClientConfiguration</td>
-<td style="text-align: left;">HTTP connection settings that define how long Azure AD can wait for a connection to a logic app, how many times you can retry a timed-out connection and the exception scenarios when retries are allowed. Inherited from customCalloutExtension.</td>
+<td style="text-align: left;">HTTP connection settings that define how long Microsoft Entra ID can wait for a connection to a logic app, how many times you can retry a timed-out connection and the exception scenarios when retries are allowed. Inherited from customCalloutExtension.</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>
@@ -2762,7 +2762,7 @@
 <tr>
 <td style="text-align: left;">info</td>
 <td style="text-align: left;">informationalUrl</td>
-<td style="text-align: left;">Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, and <code>eq</code> on <code>null</code> values).</td>
+<td style="text-align: left;">Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Microsoft Entra apps. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, and <code>eq</code> on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">keyCredentials</td>
@@ -2772,7 +2772,7 @@
 <tr>
 <td style="text-align: left;">loginUrl</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Specifies the URL where the service provider redirects the user to Azure AD to authenticate. Azure AD uses the URL to launch the application from Microsoft 365 or the Azure AD My Apps. When blank, Azure AD performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Azure AD My Apps, or the Azure AD SSO URL.</td>
+<td style="text-align: left;">Specifies the URL where the service provider redirects the user to Microsoft Entra ID to authenticate. Microsoft Entra ID uses the URL to launch the application from Microsoft 365 or the Microsoft Entra My Apps. When blank, Microsoft Entra ID performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Microsoft Entra My Apps, or the Microsoft Entra SSO URL.</td>
 </tr>
 <tr>
 <td style="text-align: left;">logoutUrl</td>
@@ -2787,7 +2787,7 @@
 <tr>
 <td style="text-align: left;">notificationEmailAddresses</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Specifies the list of email addresses where Azure AD sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Azure AD Gallery applications.</td>
+<td style="text-align: left;">Specifies the list of email addresses where Microsoft Entra ID sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Microsoft Entra Gallery applications.</td>
 </tr>
 <tr>
 <td style="text-align: left;">oauth2PermissionScopes</td>
@@ -2802,7 +2802,7 @@
 <tr>
 <td style="text-align: left;">preferredSingleSignOnMode</td>
 <td style="text-align: left;">string</td>
-<td style="text-align: left;">Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are <code>password</code>, <code>saml</code>, <code>notSupported</code>, and <code>oidc</code>.</td>
+<td style="text-align: left;">Specifies the single sign-on mode configured for this application. Microsoft Entra ID uses the preferred single sign-on mode to launch the application from Microsoft 365 or the My Apps portal. The supported values are <code>password</code>, <code>saml</code>, <code>notSupported</code>, and <code>oidc</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">preferredTokenSigningKeyThumbprint</td>
@@ -2827,17 +2827,17 @@
 <tr>
 <td style="text-align: left;">servicePrincipalNames</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Contains the list of <strong>identifiersUris</strong>, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,<ul><li>Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the &quot;aud&quot; claim.</li></ul><br>The any operator is required for filter expressions on multi-valued properties. Not nullable. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
+<td style="text-align: left;">Contains the list of <strong>identifiersUris</strong>, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Microsoft Entra ID. For example,<ul><li>Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the &quot;aud&quot; claim.</li></ul><br>The any operator is required for filter expressions on multi-valued properties. Not nullable. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">servicePrincipalType</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifies whether the service principal represents an application, a managed identity, or a legacy application. This is set by Azure AD internally. The <strong>servicePrincipalType</strong> property can be set to three different values: <ul><li><strong>Application</strong> - A service principal that represents an application or service. The <strong>appId</strong> property identifies the associated app registration, and matches the <strong>appId</strong> of an application, possibly from a different tenant. If the associated app registration is missing, tokens are not issued for the service principal.</li><li><strong>ManagedIdentity</strong> - A service principal that represents a managed identity. Service principals representing managed identities can be granted access and permissions, but cannot be updated or modified directly.</li><li><strong>Legacy</strong> - A service principal that represents an app created before app registrations, or through legacy experiences. Legacy service principal can have credentials, service principal names, reply URLs, and other properties which are editable by an authorized user, but does not have an associated app registration. The <strong>appId</strong> value does not associate the service principal with an app registration. The service principal can only be used in the tenant where it was created.</li><li><strong>SocialIdp</strong> - For internal use. </li></ul></td>
+<td style="text-align: left;">Identifies whether the service principal represents an application, a managed identity, or a legacy application. This is set by Microsoft Entra ID internally. The <strong>servicePrincipalType</strong> property can be set to three different values: <ul><li><strong>Application</strong> - A service principal that represents an application or service. The <strong>appId</strong> property identifies the associated app registration, and matches the <strong>appId</strong> of an application, possibly from a different tenant. If the associated app registration is missing, tokens are not issued for the service principal.</li><li><strong>ManagedIdentity</strong> - A service principal that represents a managed identity. Service principals representing managed identities can be granted access and permissions, but cannot be updated or modified directly.</li><li><strong>Legacy</strong> - A service principal that represents an app created before app registrations, or through legacy experiences. Legacy service principal can have credentials, service principal names, reply URLs, and other properties which are editable by an authorized user, but does not have an associated app registration. The <strong>appId</strong> value does not associate the service principal with an app registration. The service principal can only be used in the tenant where it was created.</li><li><strong>SocialIdp</strong> - For internal use. </li></ul></td>
 </tr>
 <tr>
 <td style="text-align: left;">signInAudience</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Specifies the Microsoft accounts that are supported for the current application. Read-only. <br><br>Supported values are:<ul><li><code>AzureADMyOrg</code>: Users with a Microsoft work or school account in my organization's Azure AD tenant (single-tenant).</li><li><code>AzureADMultipleOrgs</code>: Users with a Microsoft work or school account in any organization's Azure AD tenant (multi-tenant).</li><li><code>AzureADandPersonalMicrosoftAccount</code>: Users with a personal Microsoft account, or a work or school account in any organization's Azure AD tenant.</li><li><code>PersonalMicrosoftAccount</code>: Users with a personal Microsoft account only.</li></ul></td>
+<td style="text-align: left;">Specifies the Microsoft accounts that are supported for the current application. Read-only. <br><br>Supported values are:<ul><li><code>AzureADMyOrg</code>: Users with a Microsoft work or school account in my organization's Microsoft Entra tenant (single-tenant).</li><li><code>AzureADMultipleOrgs</code>: Users with a Microsoft work or school account in any organization's Microsoft Entra tenant (multi-tenant).</li><li><code>AzureADandPersonalMicrosoftAccount</code>: Users with a personal Microsoft account, or a work or school account in any organization's Microsoft Entra tenant.</li><li><code>PersonalMicrosoftAccount</code>: Users with a personal Microsoft account only.</li></ul></td>
 </tr>
 <tr>
 <td style="text-align: left;">tags</td>
@@ -2847,7 +2847,7 @@
 <tr>
 <td style="text-align: left;">tokenEncryptionKeyId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.</td>
+<td style="text-align: left;">Specifies the keyId of a public key from the keyCredentials collection. When configured, Microsoft Entra ID issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.</td>
 </tr>
 <tr>
 <td style="text-align: left;">verifiedPublisher</td>
@@ -3086,7 +3086,7 @@
 <tr>
 <td style="text-align: left;">isBuiltIn</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Flag indicating whether the role definition is part of the default set included in Azure Active Directory (Azure AD) or a custom definition. Read-only. Supports $filter (<code>eq</code>, <code>in</code>).</td>
+<td style="text-align: left;">Flag indicating whether the role definition is part of the default set included in Microsoft Entra or a custom definition. Read-only. Supports $filter (<code>eq</code>, <code>in</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">isEnabled</td>
@@ -3183,7 +3183,7 @@
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is <code>null</code> for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code> , <code>ge</code>, <code>le</code>, <code>in</code>).</td>
+<td style="text-align: left;">The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is <code>null</code> for some users created before June 2018 and on-premises users that were synced to Microsoft Entra ID before June 2018. Read-only. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code> , <code>ge</code>, <code>le</code>, <code>in</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">creationType</td>
@@ -3218,7 +3218,7 @@
 <tr>
 <td style="text-align: left;">employeeLeaveDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time when the user left or will leave the organization. <br><br>To read this property, the calling app must be assigned the <em>User-LifeCycleInfo.Read.All</em> permission. To write this property, the calling app must be assigned the <em>User.Read.All</em> and <em>User-LifeCycleInfo.ReadWrite.All</em> permissions. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: <em>Lifecycle Workflows Administrator</em>, <em>Global Reader</em>, or <em>Global Administrator</em>. To write this property in delegated scenarios, the admin needs the <em>Global Administrator</em> role. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code> , <code>ge</code>, <code>le</code>, <code>in</code>). <br><br>For more information, see Configure the employeeLeaveDateTime property for a user.</td>
+<td style="text-align: left;">The date and time when the user left or will leave the organization. <br><br>To read this property, the calling app must be assigned the <em>User-LifeCycleInfo.Read.All</em> permission. To write this property, the calling app must be assigned the <em>User.Read.All</em> and <em>User-LifeCycleInfo.ReadWrite.All</em> permissions. To read this property in delegated scenarios, the admin needs one of the following Microsoft Entra roles: <em>Lifecycle Workflows Administrator</em>, <em>Global Reader</em>, or <em>Global Administrator</em>. To write this property in delegated scenarios, the admin needs the <em>Global Administrator</em> role. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code> , <code>ge</code>, <code>le</code>, <code>in</code>). <br><br>For more information, see Configure the employeeLeaveDateTime property for a user.</td>
 </tr>
 <tr>
 <td style="text-align: left;">employeeId</td>
@@ -3293,7 +3293,7 @@
 <tr>
 <td style="text-align: left;">lastPasswordChangeDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The time when this Azure AD user last changed their password or when their password was created, whichever date the latest action was performed. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. <br><br>Returned only on <code>$select</code>.</td>
+<td style="text-align: left;">The time when this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. <br><br>Returned only on <code>$select</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">legalAgeGroupClassification</td>
@@ -3338,12 +3338,12 @@
 <tr>
 <td style="text-align: left;">onPremisesDistinguishedName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Contains the on-premises Active Directory <code>distinguished name</code> or <code>DN</code>. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. <br><br>Returned only on <code>$select</code>.</td>
+<td style="text-align: left;">Contains the on-premises Active Directory <code>distinguished name</code> or <code>DN</code>. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. <br><br>Returned only on <code>$select</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">onPremisesDomainName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Contains the on-premises <code>domainFQDN</code>, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. <br><br>Returned only on <code>$select</code>.</td>
+<td style="text-align: left;">Contains the on-premises <code>domainFQDN</code>, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. <br><br>Returned only on <code>$select</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">onPremisesExtensionAttributes</td>
@@ -3353,7 +3353,7 @@
 <tr>
 <td style="text-align: left;">onPremisesImmutableId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you're using a federated domain for the user's <strong>userPrincipalName</strong> (UPN) property. <strong>NOTE:</strong> The <strong>$</strong> and <strong>_</strong> characters can't be used when specifying this property. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>)..</td>
+<td style="text-align: left;">This property is used to associate an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you're using a federated domain for the user's <strong>userPrincipalName</strong> (UPN) property. <strong>NOTE:</strong> The <strong>$</strong> and <strong>_</strong> characters can't be used when specifying this property. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>)..</td>
 </tr>
 <tr>
 <td style="text-align: left;">onPremisesLastSyncDateTime</td>
@@ -3368,7 +3368,7 @@
 <tr>
 <td style="text-align: left;">onPremisesSamAccountName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Contains the on-premises <code>samAccountName</code> synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>).</td>
+<td style="text-align: left;">Contains the on-premises <code>samAccountName</code> synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">onPremisesSecurityIdentifier</td>
@@ -3378,12 +3378,12 @@
 <tr>
 <td style="text-align: left;">onPremisesSyncEnabled</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;"><code>true</code> if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>, and <code>eq</code> on <code>null</code> values).</td>
+<td style="text-align: left;"><code>true</code> if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Microsoft Entra ID. Read-only. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>, and <code>eq</code> on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">onPremisesUserPrincipalName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Contains the on-premises <code>userPrincipalName</code> synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>).</td>
+<td style="text-align: left;">Contains the on-premises <code>userPrincipalName</code> synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">otherMails</td>
@@ -3393,7 +3393,7 @@
 <tr>
 <td style="text-align: left;">passwordPolicies</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Specifies password policies for the user. This value is an enumeration with one possible value being <code>DisableStrongPassword</code>, which allows weaker passwords than the default policy to be specified. <code>DisablePasswordExpiration</code> can also be specified. The two may be specified together; for example: <code>DisablePasswordExpiration, DisableStrongPassword</code>. <br><br>Returned only on <code>$select</code>. For more information on the default password policies, see Azure AD password policies. Supports <code>$filter</code> (<code>ne</code>, <code>not</code>, and <code>eq</code> on <code>null</code> values).</td>
+<td style="text-align: left;">Specifies password policies for the user. This value is an enumeration with one possible value being <code>DisableStrongPassword</code>, which allows weaker passwords than the default policy to be specified. <code>DisablePasswordExpiration</code> can also be specified. The two may be specified together; for example: <code>DisablePasswordExpiration, DisableStrongPassword</code>. <br><br>Returned only on <code>$select</code>. For more information on the default password policies, see Microsoft Entra password policies. Supports <code>$filter</code> (<code>ne</code>, <code>not</code>, and <code>eq</code> on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">passwordProfile</td>
@@ -3463,7 +3463,7 @@
 <tr>
 <td style="text-align: left;">signInActivity</td>
 <td style="text-align: left;">signInActivity</td>
-<td style="text-align: left;">Get the last signed-in date and request ID of the sign-in for a given user. Read-only.<br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>) <em>but not with any other filterable properties</em>. <br><br><strong>Note:</strong> <br><li>Details for this property require an Azure AD Premium P1/P2 license and the <strong>AuditLog.Read.All</strong> permission.<li>This property is not returned for a user who has never signed in or last signed in before April 2020.</li></li></td>
+<td style="text-align: left;">Get the last signed-in date and request ID of the sign-in for a given user. Read-only.<br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>) <em>but not with any other filterable properties</em>. <br><br><strong>Note:</strong> <br><li>Details for this property require a Microsoft Entra ID P1 or P2 license and the <strong>AuditLog.Read.All</strong> permission.<li>This property is not returned for a user who has never signed in or last signed in before April 2020.</li></li></td>
 </tr>
 <tr>
 <td style="text-align: left;">signInSessionsValidFromDateTime</td>
