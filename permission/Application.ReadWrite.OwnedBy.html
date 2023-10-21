@@ -1484,7 +1484,7 @@
 <tr>
 <td style="text-align: left;">isSyncedFromOnPremises</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.</td>
+<td style="text-align: left;">Indicates if this extension property was synced from on-premises active directory using Microsoft Entra Connect. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">name</td>
@@ -1511,12 +1511,12 @@
 <tr>
 <td style="text-align: left;">audiences</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">The audience that can appear in the external token. This field is mandatory and should be set to <code>api://AzureADTokenExchange</code> for Azure AD. It says what Microsoft identity platform should accept in the <code>aud</code> claim in the incoming token. This value represents Azure AD in your external identity provider and has no fixed value across identity providers - you may need to create a new application registration in your identity provider to serve as the audience of this token. This field can only accept a single value and has a limit of 600 characters. Required.</td>
+<td style="text-align: left;">The audience that can appear in the external token. This field is mandatory and should be set to <code>api://AzureADTokenExchange</code> for Microsoft Entra ID. It says what Microsoft identity platform should accept in the <code>aud</code> claim in the incoming token. This value represents Microsoft Entra ID in your external identity provider and has no fixed value across identity providers - you might need to create a new application registration in your identity provider to serve as the audience of this token. This field can only accept a single value and has a limit of 600 characters. Required.</td>
 </tr>
 <tr>
 <td style="text-align: left;">description</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The un-validated, user-provided description of the federated identity credential. It has a limit of 600 characters. Optional.</td>
+<td style="text-align: left;">The unvalidated description of the federated identity credential, provided by the user. It has a limit of 600 characters. Optional.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
@@ -1526,17 +1526,17 @@
 <tr>
 <td style="text-align: left;">issuer</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The URL of the external identity provider and must match the <code>issuer</code> claim of the external token being exchanged. The combination of the values of <strong>issuer</strong> and <strong>subject</strong> must be unique on the app. It has a limit of 600 characters. Required.</td>
+<td style="text-align: left;">The URL of the external identity provider, which must match the <code>issuer</code> claim of the external token being exchanged. The combination of the values of <strong>issuer</strong> and <strong>subject</strong> must be unique within the app. It has a limit of 600 characters. Required.</td>
 </tr>
 <tr>
 <td style="text-align: left;">name</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">is the unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. It is immutable once created. Required. Not nullable. Supports <code>$filter</code> (<code>eq</code>).</td>
+<td style="text-align: left;">The unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. The string is immutable after it's created. Required. Not nullable. Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">subject</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the <code>sub</code> claim within the token presented to Azure AD. The combination of **i</td>
+<td style="text-align: left;">Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format; each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the <code>sub</code> claim within the token presented to Microsoft Entra ID. The combination of **i</td>
 </tr>
 </tbody>
 </table>
@@ -1583,7 +1583,7 @@
 <tr>
 <td style="text-align: left;">deletedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">For some Azure Active Directory objects (user, group, application), if the object is deleted, it is first logically deleted, and this property is updated with the date and time when the object was deleted. Otherwise this property is <code>null</code>. If the object is restored, this property is updated to <code>null</code>.</td>
+<td style="text-align: left;">For some Microsoft Entra objects (user, group, application), if the object is deleted, it is first logically deleted, and this property is updated with the date and time when the object was deleted. Otherwise this property is <code>null</code>. If the object is restored, this property is updated to <code>null</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">description</td>
@@ -1633,7 +1633,7 @@
 <tr>
 <td style="text-align: left;">isAssignableToRole</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates whether this group can be assigned to an Azure Active Directory role or not. Optional. <br><br>This property can only be set while creating the group and is immutable. If set to <code>true</code>, the <strong>securityEnabled</strong> property must also be set to <code>true</code>, <strong>visibility</strong> must be <code>Hidden</code>, and the group cannot be a dynamic group (that is, <strong>groupTypes</strong> cannot contain <code>DynamicMembership</code>). <br><br>Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the <em>RoleManagement.ReadWrite.Directory</em> permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignments<br><br>Using this feature requires a Azure AD Premium P1 license. Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>).</td>
+<td style="text-align: left;">Indicates whether this group can be assigned to a Microsoft Entra role or not. Optional. <br><br>This property can only be set while creating the group and is immutable. If set to <code>true</code>, the <strong>securityEnabled</strong> property must also be set to <code>true</code>, <strong>visibility</strong> must be <code>Hidden</code>, and the group cannot be a dynamic group (that is, <strong>groupTypes</strong> cannot contain <code>DynamicMembership</code>). <br><br>Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the <em>RoleManagement.ReadWrite.Directory</em> permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignments<br><br>Using this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">isSubscribedByMail</td>
@@ -1683,7 +1683,7 @@
 <tr>
 <td style="text-align: left;">onPremisesSamAccountName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Contains the on-premises <strong>SAM account name</strong> synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.<br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>). Read-only.</td>
+<td style="text-align: left;">Contains the on-premises <strong>SAM account name</strong> synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.<br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>). Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">onPremisesSecurityIdentifier</td>
@@ -1698,7 +1698,7 @@
 <tr>
 <td style="text-align: left;">preferredDataLocation</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling user must be assigned one of the following Azure AD roles: <br><ul><li> Global Administrator <li> User Account Administrator <li>Directory Writer <li> Exchange Administrator <li> SharePoint Administrator </li></li></li></li></li></ul><br> For more information about this property, see OneDrive Online Multi-Geo. <br><br>Nullable. Returned by default.</td>
+<td style="text-align: left;">The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling user must be assigned one of the following Microsoft Entra roles: <br><ul><li> Global Administrator <li> User Account Administrator <li>Directory Writer <li> Exchange Administrator <li> SharePoint Administrator </li></li></li></li></li></ul><br> For more information about this property, see OneDrive Online Multi-Geo. <br><br>Nullable. Returned by default.</td>
 </tr>
 <tr>
 <td style="text-align: left;">preferredLanguage</td>
