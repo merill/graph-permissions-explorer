@@ -139,6 +139,11 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-hostport-get?view=graph-rest-1.0&amp;tabs=http">GET /security/threatIntelligence/hostPorts/{hostPortId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-host-get?view=graph-rest-1.0&amp;tabs=http">GET /security/threatIntelligence/hosts/{hostId}</a></td>
 </tr>
 <tr>
@@ -175,6 +180,11 @@
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-host-list-passivednsreverse?view=graph-rest-1.0&amp;tabs=http">GET /security/threatIntelligence/hosts/{hostId}/passiveDnsReverse</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-host-list-ports?view=graph-rest-1.0&amp;tabs=http">GET /security/threatIntelligence/hosts/{hostId}/ports</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -595,6 +605,68 @@
 <td style="text-align: left;">linkKind</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The reason that two hosts are identified as **h</td>
+</tr>
+</tbody>
+</table>
+<h3 id="hostport-"><a href="https://docs.microsoft.com/graph/api/resources/security-hostport?view=graph-rest-1.0&amp;tabs=http">hostPort </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">banners</td>
+<td style="text-align: left;">microsoft.graph.security.hostPortBanner collection</td>
+<td style="text-align: left;">The <strong>hostPortBanners</strong> retrieved from scanning the port.</td>
+</tr>
+<tr>
+<td style="text-align: left;">firstSeenDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The first date and time when Microsoft Defender Threat Intelligence observed the <strong>hostPort</strong>. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A system-generated ID for the <strong>hostPort</strong>. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastScanDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The last date and time when Microsoft Defender Threat Intelligence scanned the <strong>hostPort</strong>. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastSeenDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The last date and time when Microsoft Defender Threat Intelligence observed the <strong>hostPort</strong>. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">port</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The numerical identifier of the port which is standardized across the internet.</td>
+</tr>
+<tr>
+<td style="text-align: left;">protocol</td>
+<td style="text-align: left;">microsoft.graph.security.hostPortProtocol</td>
+<td style="text-align: left;">The general protocol used to scan the port. The possible values are: <code>tcp</code>, <code>udp</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">services</td>
+<td style="text-align: left;">microsoft.graph.security.hostPortComponent collection</td>
+<td style="text-align: left;">The <strong>hostPortComponents</strong> retrieved from scanning the port.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">microsoft.graph.security.hostPortStatus</td>
+<td style="text-align: left;">The status of the port. The possible values are: <code>open</code>, <code>filtered</code>, <code>closed</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">timesObserved</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The total amount of times that Microsoft Defender Threat Intelligence has observed the **h</td>
 </tr>
 </tbody>
 </table>
