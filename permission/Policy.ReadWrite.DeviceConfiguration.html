@@ -91,28 +91,10 @@
 <p>Allows the app to read and write your organization's device configuration policies on behalf of the signed-in user.  For example, device registration policy can limit initial provisioning controls using quota restrictions, additional authentication and authorization checks.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
-<table>
-<thead>
-<tr>
-<th>Ver</th>
-<th>Type</th>
-<th>Method</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/deviceregistrationpolicy-get?view=graph-rest-1.0&amp;tabs=http">GET /policies/deviceRegistrationPolicy</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/deviceregistrationpolicy-update?view=graph-rest-1.0&amp;tabs=http">PUT /policies/deviceRegistrationPolicy</a></td>
-</tr>
-</tbody>
-</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This permission does not have any graph methods published.</p>
+</div>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -137,140 +119,6 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the app to read and write your organization's device configuration policies on behalf of the signed-in user.  For example, device registration policy can limit initial provisioning controls using quota restrictions, additional authentication and authorization checks.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="resources">Resources</h2>
-<h3 id="azureadjoinpolicy-"><a href="https://docs.microsoft.com/graph/api/resources/azureadjoinpolicy?view=graph-rest-1.0&amp;tabs=http">azureAdJoinPolicy </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">allowedGroups</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">The identifiers of the groups that are in the scope of the policy. Required when the <strong>appliesTo</strong> property is set to <code>selected</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">allowedUsers</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">The identifiers of users that are in the scope of the policy. Required when the <strong>appliesTo</strong> property is set to <code>selected</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">appliesTo</td>
-<td style="text-align: left;">policyScope</td>
-<td style="text-align: left;">Specifies whether to block or allow fine-grained control of the policy scope. The possible values are: <code>0</code> (meaning <code>none</code>), <code>1</code> (meaning <code>all</code>), <code>2</code> (meaning <code>selected</code>), <code>3</code> (meaning <code>unknownFutureValue</code>). <br><br>The default value is <code>1</code>. When set to <code>2</code>, at least one user or group identifier must be specified in either <strong>allowedUsers</strong> or <strong>allowedGroups</strong>.  Setting this property to <code>0</code> or <code>1</code> removes all identifiers in both <strong>allowedUsers</strong> and <strong>allowedGroups</strong>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">isAdminConfigurable</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Specifies whether this policy scope is configurable by the admin. The default value is <code>false</code>. When an admin has enabled Intune (MEM) to manage devices, this property is set to <code>false</code> and **a</td>
-</tr>
-</tbody>
-</table>
-<h3 id="azureadregistrationpolicy-"><a href="https://docs.microsoft.com/graph/api/resources/azureadregistrationpolicy?view=graph-rest-1.0&amp;tabs=http">azureADRegistrationPolicy </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">allowedGroups</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">The identifiers of the groups that are in the scope of the policy. Either this property or <strong>allowedUsers</strong> is required when the <strong>appliesTo</strong> property is set to <code>selected</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">allowedUsers</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">The identifiers of users that are in the scope of the policy. Either this property or <strong>allowedGroups</strong> is required when the <strong>appliesTo</strong> property is set to <code>selected</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">appliesTo</td>
-<td style="text-align: left;">policyScope</td>
-<td style="text-align: left;">Specifies whether to block or allow fine-grained control of the policy scope. The possible values are: <code>0</code> (meaning <code>none</code>), <code>1</code> (meaning <code>all</code>), <code>2</code> (meaning <code>selected</code>), <code>3</code> (meaning <code>unknownFutureValue</code>). <br><br>The default value is <code>1</code>. When set to <code>2</code>, at least one user or group identifier must be specified in either <strong>allowedUsers</strong> or <strong>allowedGroups</strong>.  Setting this property to <code>0</code> or <code>1</code> removes all identifiers in both <strong>allowedUsers</strong> and <strong>allowedGroups</strong>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">isAdminConfigurable</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Specifies whether this policy scope is configurable by the admin. The default value is <code>false</code>. When an admin has enabled Intune (MEM) to manage devices, this property is set to <code>false</code> and **a</td>
-</tr>
-</tbody>
-</table>
-<h3 id="deviceregistrationpolicy-"><a href="https://docs.microsoft.com/graph/api/resources/deviceregistrationpolicy?view=graph-rest-1.0&amp;tabs=http">deviceRegistrationPolicy </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">azureADJoin</td>
-<td style="text-align: left;">azureAdJoinPolicy</td>
-<td style="text-align: left;">Specifies the authorization policy for controlling registration of new devices using <strong>Microsoft Entra join</strong> within your organization. Required. For more information, see What is a device identity?.</td>
-</tr>
-<tr>
-<td style="text-align: left;">azureADRegistration</td>
-<td style="text-align: left;">azureADRegistrationPolicy</td>
-<td style="text-align: left;">Specifies the authorization policy for controlling registration of new devices using <strong>Microsoft Entra registered</strong> within your organization. Required. For more information, see What is a device identity?.</td>
-</tr>
-<tr>
-<td style="text-align: left;">description</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The description of the device registration policy. It's always set to <code>Tenant-wide policy that manages intial provisioning controls using quota restrictions, additional authentication and authorization checks</code>. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">displayName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The name of the device registration policy. It's always set to <code>Device Registration Policy</code>. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The identifier of the device registration policy. It's always set to <code>deviceRegistrationPolicy</code>. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">localAdminPassword</td>
-<td style="text-align: left;">localAdminPasswordSettings</td>
-<td style="text-align: left;">Specifies the setting for <strong>Local Admin Password Solution (LAPS)</strong> within your organization.</td>
-</tr>
-<tr>
-<td style="text-align: left;">multiFactorAuthConfiguration</td>
-<td style="text-align: left;">multiFactorAuthConfiguration</td>
-<td style="text-align: left;">Specifies the authentication policy for a user to complete registration using <strong>Microsoft Entra join</strong> or <strong>Microsoft Entra registered</strong> within your organization. The possible values are: <code>0</code> (meaning <code>notRequired</code>), <code>1</code> (meaning <code>required</code>), and <code>2</code> (meaning <code>unknownFutureValue</code>). The default value is <code>0</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">userDeviceQuota</td>
-<td style="text-align: left;">Int32</td>
-<td style="text-align: left;">Specifies the maximum number of devices that a user can have within your organization before blocking new device registrations. The default value is set to 50. If this property isn't specified during the policy update operation, it's automatically reset to <code>0</code> to indicate that users aren't allowed to join any devices.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="localadminpasswordsettings-"><a href="https://docs.microsoft.com/graph/api/resources/localadminpasswordsettings?view=graph-rest-1.0&amp;tabs=http">localAdminPasswordSettings </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">isEnabled</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Specifies whether this policy scope is configurable by the admin. The default value is <code>false</code>. An admin can set it to true to enable Local Admin Password Solution (LAPS) within their organzation.</td>
 </tr>
 </tbody>
 </table>

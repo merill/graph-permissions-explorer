@@ -104,42 +104,12 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/team-delete-members?view=graph-rest-1.0&amp;tabs=http">DELETE /teams/{team-id}/members/{membership-id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/team-list-members?view=graph-rest-1.0&amp;tabs=http">GET /teams/{team-id}/members</a></td>
 </tr>
 <tr>
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/team-get-members?view=graph-rest-1.0&amp;tabs=http">GET /teams/{team-id}/members/{membership-id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0&amp;tabs=http">PATCH /teams/{id}/channels/{id}/members/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0&amp;tabs=http">PATCH /teams/{id}/members/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/team-update-members?view=graph-rest-1.0&amp;tabs=http">PATCH /teams/{team-id}/members/{membership-id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/team-post-members?view=graph-rest-1.0&amp;tabs=http">POST /teams/{team-id}/members</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0&amp;tabs=http">POST /teams/{team-id}/members/add</a></td>
 </tr>
 </tbody>
 </table>
@@ -238,85 +208,6 @@
 <td style="text-align: left;">visibleHistoryStartDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="actionresultpart-"><a href="https://docs.microsoft.com/graph/api/resources/actionresultpart?view=graph-rest-1.0&amp;tabs=http">actionResultPart </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">error</td>
-<td style="text-align: left;">publicError</td>
-<td style="text-align: left;">The error that occurred, if any, during the course of the bulk operation.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="channel-"><a href="https://docs.microsoft.com/graph/api/resources/channel?view=graph-rest-1.0&amp;tabs=http">channel </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">createdDateTime</td>
-<td style="text-align: left;">dateTimeOffset</td>
-<td style="text-align: left;">Read only. Timestamp at which the channel was created.</td>
-</tr>
-<tr>
-<td style="text-align: left;">description</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Optional textual description for the channel.</td>
-</tr>
-<tr>
-<td style="text-align: left;">displayName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Channel name as it will appear to the user in Microsoft Teams. The maximum length is 50 characters.</td>
-</tr>
-<tr>
-<td style="text-align: left;">email</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The email address for sending messages to the channel. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The channel's unique identifier. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">isFavoriteByDefault</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: <code>false</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">membershipType</td>
-<td style="text-align: left;">channelMembershipType</td>
-<td style="text-align: left;">The type of the channel. Can be set during creation and can't be changed. The possible values are: <code>standard</code>, <code>private</code>, <code>unknownFutureValue</code>, <code>shared</code>. The default value is <code>standard</code>. Note that you must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value in this evolvable enum: <code>shared</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">tenantId</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">The ID of the Microsoft Entra tenant.</td>
-</tr>
-<tr>
-<td style="text-align: left;">webUrl</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">summary</td>
-<td style="text-align: left;">channelSummary</td>
-<td style="text-align: left;">Contains summary information about the channel, including number of owners, members, guests, and an indicator for members from other tenants. The **s</td>
 </tr>
 </tbody>
 </table>

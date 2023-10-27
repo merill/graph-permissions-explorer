@@ -91,58 +91,10 @@
 <p>Allows the application to list and query any shared user profile information associated with the current tenant on behalf of the signed-in user.  It also permits the application to export and remove external user data (e.g. customer content or system-generated logs), for any user associated with the current tenant on behalf of the signed-in user.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
-<table>
-<thead>
-<tr>
-<th>Ver</th>
-<th>Type</th>
-<th>Method</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/directory-list-inboundshareduserprofiles?view=graph-rest-1.0&amp;tabs=http">GET /directory/inboundSharedUserProfiles</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/inboundshareduserprofile-get?view=graph-rest-1.0&amp;tabs=http">GET /directory/inboundSharedUserProfiles/{userId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/directory-list-outboundshareduserprofiles?view=graph-rest-1.0&amp;tabs=http">GET /directory/outboundSharedUserProfiles</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/outboundshareduserprofile-get?view=graph-rest-1.0&amp;tabs=http">GET /directory/outboundSharedUserProfiles/{userId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/outboundshareduserprofile-list-tenants?view=graph-rest-1.0&amp;tabs=http">GET /directory/outboundSharedUserProfiles/{userId}/tenants</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/inboundshareduserprofile-exportpersonaldata?view=graph-rest-1.0&amp;tabs=http">POST /directory/inboundSharedUserProfiles/{userId}/exportPersonalData</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/inboundshareduserprofile-removepersonaldata?view=graph-rest-1.0&amp;tabs=http">POST /directory/inboundSharedUserProfiles/{userId}/removePersonalData</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/tenantreference-removepersonaldata?view=graph-rest-1.0&amp;tabs=http">POST /directory/outboundSharedUserProfiles/{userId}/tenants/{tenantId}/removePersonalData</a></td>
-</tr>
-</tbody>
-</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This permission does not have any graph methods published.</p>
+</div>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -190,73 +142,6 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the application to list and query any shared user profile information associated with the current tenant without a signed-in user.  It also permits the application to export and remove external user data (e.g. customer content or system-generated logs), for any user associated with the current tenant without a signed-in user.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="resources">Resources</h2>
-<h3 id="inboundshareduserprofile-"><a href="https://docs.microsoft.com/graph/api/resources/inboundshareduserprofile?view=graph-rest-1.0&amp;tabs=http">inboundSharedUserProfile </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">displayName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The name displayed in the address book for the user at the time when the sharing record was created. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">homeTenantId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The home tenant id of the external user. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">userId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The object id of the external user. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">userPrincipalName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The user principal name (UPN) of the external user. Read-only.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="outboundshareduserprofile-"><a href="https://docs.microsoft.com/graph/api/resources/outboundshareduserprofile?view=graph-rest-1.0&amp;tabs=http">outboundSharedUserProfile </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">userId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The object id of the external user. Read-only.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="tenantreference-"><a href="https://docs.microsoft.com/graph/api/resources/tenantreference?view=graph-rest-1.0&amp;tabs=http">tenantReference </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">tenantId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The identifier of the Microsoft Entra tenant. Read-only. Key.</td>
 </tr>
 </tbody>
 </table>

@@ -91,38 +91,10 @@
 <p>Allows the app to read programs and program controls that the signed-in user has access to in the organization.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
-<table>
-<thead>
-<tr>
-<th>Ver</th>
-<th>Type</th>
-<th>Method</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/programcontrol-list?view=graph-rest-1.0&amp;tabs=http">GET /programControls</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/programcontroltype-list?view=graph-rest-1.0&amp;tabs=http">GET /programControlTypes</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/program-list?view=graph-rest-1.0&amp;tabs=http">GET /programs</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/program-listcontrols?view=graph-rest-1.0&amp;tabs=http">GET /programs/{programId}/controls</a></td>
-</tr>
-</tbody>
-</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This permission does not have any graph methods published.</p>
+</div>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -170,114 +142,6 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the app to read programs and program controls in the organization, without a signed-in user.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="resources">Resources</h2>
-<h3 id="accessreviews-root"><a href="https://docs.microsoft.com/graph/api/resources/accessreviews-root?view=graph-rest-1.0&amp;tabs=http">accessreviews-root</a></h3>
-<h3 id="program"><a href="https://docs.microsoft.com/graph/api/resources/program?view=graph-rest-1.0&amp;tabs=http">program</a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The feature-assigned identifier of the program.</td>
-</tr>
-<tr>
-<td style="text-align: left;">displayName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The name of the program.  Required on create.</td>
-</tr>
-<tr>
-<td style="text-align: left;">description</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The description of the program.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="programcontrol"><a href="https://docs.microsoft.com/graph/api/resources/programcontrol?view=graph-rest-1.0&amp;tabs=http">programcontrol</a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The feature-assigned identifier of the link between program and control.</td>
-</tr>
-<tr>
-<td style="text-align: left;">programId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The programId of the program this control is a part of. Required on create.</td>
-</tr>
-<tr>
-<td style="text-align: left;">controlId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The controlId of the control, in particular the identifier of an access review. Required on create.</td>
-</tr>
-<tr>
-<td style="text-align: left;">controlTypeId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The programControlType identifies the type of program control - for example, a control linking to guest access reviews. Required on create.</td>
-</tr>
-<tr>
-<td style="text-align: left;">displayName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The name of the control.</td>
-</tr>
-<tr>
-<td style="text-align: left;">status</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The life cycle status of the control.</td>
-</tr>
-<tr>
-<td style="text-align: left;">createdDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The creation date and time of the program control.</td>
-</tr>
-<tr>
-<td style="text-align: left;">owner</td>
-<td style="text-align: left;">userIdentity</td>
-<td style="text-align: left;">The user who created the program control.</td>
-</tr>
-<tr>
-<td style="text-align: left;">resource</td>
-<td style="text-align: left;">programResource</td>
-<td style="text-align: left;">The resource, a group or an app, targeted by this program control's access review.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="programcontroltype"><a href="https://docs.microsoft.com/graph/api/resources/programcontroltype?view=graph-rest-1.0&amp;tabs=http">programcontroltype</a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The feature-assigned identifier of the program control type</td>
-</tr>
-<tr>
-<td style="text-align: left;">displayName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The name of the program control type</td>
 </tr>
 </tbody>
 </table>

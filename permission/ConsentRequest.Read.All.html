@@ -91,48 +91,10 @@
 <p>Allows the app to read consent requests and approvals on behalf of the signed-in user.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
-<table>
-<thead>
-<tr>
-<th>Ver</th>
-<th>Type</th>
-<th>Method</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/appconsentapprovalroute-list-appconsentrequests?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/appConsent/appConsentRequests</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/userconsentrequest-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/appConsent/appConsentRequests/{appconsentrequest-id}/userConsentRequests/{userconsentrequest-id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/appconsentrequest-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/appConsent/appConsentRequests/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/appconsentrequest-list-userconsentrequests?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/appConsent/appConsentRequests/{id}/userConsentRequests</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/userconsentrequest-filterByCurrentUser?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/appConsent/appConsentRequests/{id}/userConsentRequests/filterByCurrentUser(on='parameterValue')</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/appconsentrequest-filterByCurrentUser?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/appConsent/appConsentRequests/filterByCurrentUser(on='parameterValue')</a></td>
-</tr>
-</tbody>
-</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This permission does not have any graph methods published.</p>
+</div>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -180,91 +142,6 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the app to read consent requests and approvals without a signed-in user.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="resources">Resources</h2>
-<h3 id="appconsentrequest-"><a href="https://docs.microsoft.com/graph/api/resources/appconsentrequest?view=graph-rest-1.0&amp;tabs=http">appConsentRequest </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">appDisplayName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name of the app for which consent is requested. Required. Supports <code>$filter</code> (<code>eq</code> only) and <code>$orderby</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">appId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The identifier of the application. Required. Supports <code>$filter</code> (<code>eq</code> only) and <code>$orderby</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The identifier of the app consent request. Required.</td>
-</tr>
-<tr>
-<td style="text-align: left;">pendingScopes</td>
-<td style="text-align: left;">appConsentRequestScope collection</td>
-<td style="text-align: left;">A list of pending scopes waiting for approval. Required.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="userconsentrequest-"><a href="https://docs.microsoft.com/graph/api/resources/userconsentrequest?view=graph-rest-1.0&amp;tabs=http">userConsentRequest </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">approvalId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The id of the approval. This value is equal to the value of the <code>id</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">completedDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time when the <strong>status</strong> of the request was marked as <code>Completed</code>. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">createdBy</td>
-<td style="text-align: left;">identitySet</td>
-<td style="text-align: left;">The user who created the request.</td>
-</tr>
-<tr>
-<td style="text-align: left;">createdDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time when the request was created. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Supports <code>$filter</code> (<code>eq</code> only) and <code>$orderby</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">customData</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Free text field to define any custom data for the user consent request. Not used.</td>
-</tr>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifier of the request.</td>
-</tr>
-<tr>
-<td style="text-align: left;">reason</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The user's justification for requiring access to the app. Supports <code>$filter</code> (<code>eq</code> only) and <code>$orderby</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">status</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The status of the user's app consent request. Possible values are: <code>Initializing</code>, <code>InProgress</code>, <code>Expired</code>, and <code>Completed</code>. Supports <code>$filter</code> (<code>eq</code> only) and <code>$orderby</code>.</td>
 </tr>
 </tbody>
 </table>

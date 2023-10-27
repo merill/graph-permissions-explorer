@@ -154,16 +154,6 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/unifiedroleassignmentmultiple-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /roleManagement/cloudPC/roleAssignments/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/unifiedroledefinition-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /roleManagement/deviceManagement/roleDefinitions/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/intune-rbac-devicemanagement-get?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement</a></td>
 </tr>
 <tr>
@@ -339,26 +329,6 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/rbacapplicationmultiple-list-roleassignments?view=graph-rest-1.0&amp;tabs=http">GET /roleManagement/cloudPc/roleAssignments</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0&amp;tabs=http">GET /roleManagement/cloudPC/roleAssignments/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0&amp;tabs=http">GET /roleManagement/cloudPC/roleDefinitions</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-1.0&amp;tabs=http">GET /roleManagement/cloudPC/roleDefinitions/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/intune-rbac-rbacapplicationmultiple-get?view=graph-rest-1.0&amp;tabs=http">GET /roleManagement/deviceManagement</a></td>
 </tr>
 <tr>
@@ -424,17 +394,7 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/unifiedroleassignmentmultiple-update?view=graph-rest-1.0&amp;tabs=http">PATCH /roleManagement/cloudPC/roleAssignments/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/intune-rbac-rbacapplicationmultiple-update?view=graph-rest-1.0&amp;tabs=http">PATCH /roleManagement/deviceManagement</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/unifiedroledefinition-update?view=graph-rest-1.0&amp;tabs=http">PATCH /roleManagement/deviceManagement/roleDefinitions/{id}</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -505,16 +465,6 @@
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/intune-rbac-rolescopetag-getrolescopetagsbyid?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/roleScopeTags/getRoleScopeTagsById</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/rbacapplicationmultiple-post-roleassignments?view=graph-rest-1.0&amp;tabs=http">POST /roleManagement/cloudPC/roleAssignments</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0&amp;tabs=http">POST /roleManagement/deviceManagement/roleDefinitions</a></td>
 </tr>
 </tbody>
 </table>
@@ -1085,174 +1035,6 @@
 <th style="text-align: left;">Description</th>
 </tr>
 </thead>
-</table>
-<h3 id="unifiedroleassignment-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedroleassignment?view=graph-rest-1.0&amp;tabs=http">unifiedRoleAssignment </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">appScopeId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifier of the app-specific scope when the assignment scope is app-specific.  Either this property or <strong>directoryScopeId</strong> is required. App scopes are scopes that are defined and understood by this application only. Use <code>/</code> for tenant-wide app scopes. Use <strong>directoryScopeId</strong> to limit the scope to particular directory objects, for example, administrative units. Supports $filter (<code>eq</code>, <code>in</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">directoryScopeId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifier of the directory object representing the scope of the assignment.  Either this property or <strong>appScopeId</strong> is required. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use <code>/</code> for tenant-wide scope. Use <strong>appScopeId</strong> to limit the scope to an application only. Supports $filter (<code>eq</code>, <code>in</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the role assignment. Key, not nullable, Read-only. Inherited from entity.</td>
-</tr>
-<tr>
-<td style="text-align: left;">roleDefinitionId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifier of the role definition the assignment is for. Read only. Supports $filter (<code>eq</code>, <code>in</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">principalId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifier of the principal to which the assignment is granted. Supports $filter (<code>eq</code>, <code>in</code>).</td>
-</tr>
-</tbody>
-</table>
-<h3 id="unifiedroleassignmentmultiple-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedroleassignmentmultiple?view=graph-rest-1.0&amp;tabs=http">unifiedRoleAssignmentMultiple </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">appScopeIds</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Ids of the app specific scopes when the assignment scopes are app specific. The scopes of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use <code>/</code> for tenant-wide scope. App scopes are scopes that are defined and understood by this application only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">description</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Description of the role assignment.</td>
-</tr>
-<tr>
-<td style="text-align: left;">directoryScopeIds</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Ids of the directory objects that represent the scopes of the assignment. The scopes of an assignment determine the set of resources for which the principals have been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">displayName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Name of the role assignment. Required.</td>
-</tr>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the <strong>unifiedRoleAssignmentMultiple</strong> object. Key, not nullable, Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">principalIds</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Identifiers of the principals to which the assignment is granted.  Supports <code>$filter</code> (<code>any</code> operator only).</td>
-</tr>
-<tr>
-<td style="text-align: left;">roleDefinitionId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifier of the unifiedRoleDefinition the assignment is for.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="unifiedroledefinition-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedroledefinition?view=graph-rest-1.0&amp;tabs=http">unifiedRoleDefinition </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">description</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The description for the unifiedRoleDefinition. Read-only when <strong>isBuiltIn</strong> is <code>true</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">displayName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name for the unifiedRoleDefinition. Read-only when <strong>isBuiltIn</strong> is <code>true</code>. Required.  Supports $filter (<code>eq</code>, <code>in</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the role definition. Key, not nullable, Read-only. Inherited from entity. Supports $filter (<code>eq</code>, <code>in</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">isBuiltIn</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Flag indicating whether the role definition is part of the default set included in Microsoft Entra or a custom definition. Read-only. Supports $filter (<code>eq</code>, <code>in</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">isEnabled</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Flag indicating whether the role is enabled for assignment. If <code>false</code> the role is not available for assignment. Read-only when <strong>isBuiltIn</strong> is true.</td>
-</tr>
-<tr>
-<td style="text-align: left;">resourceScopes</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">List of the scopes or permissions the role definition applies to. Currently only <code>/</code> is supported. Read-only when <strong>isBuiltIn</strong> is true. <strong>DO NOT USE. This will be deprecated soon. Attach scope to role assignment.</strong></td>
-</tr>
-<tr>
-<td style="text-align: left;">rolePermissions</td>
-<td style="text-align: left;">unifiedRolePermission collection</td>
-<td style="text-align: left;">List of permissions included in the role. Read-only when <strong>isBuiltIn</strong> is <code>true</code>. Required.</td>
-</tr>
-<tr>
-<td style="text-align: left;">templateId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Custom template identifier that can be set when <strong>isBuiltIn</strong> is <code>false</code> but is read-only when <strong>isBuiltIn</strong> is <code>true</code>. This identifier is typically used if one needs an identifier to be the same across different directories.</td>
-</tr>
-<tr>
-<td style="text-align: left;">version</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Indicates version of the role definition. Read-only when **i</td>
-</tr>
-</tbody>
-</table>
-<h3 id="unifiedrolepermission-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedrolepermission?view=graph-rest-1.0&amp;tabs=http">unifiedRolePermission </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">allowedResourceActions</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Set of tasks that can be performed on a resource. Required.</td>
-</tr>
-<tr>
-<td style="text-align: left;">condition</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Optional constraints that must be met for the permission to be effective. Not supported for custom roles.</td>
-</tr>
-<tr>
-<td style="text-align: left;">excludedResourceActions</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Set of tasks that may not be performed on a resource. Not yet supported.</td>
-</tr>
-</tbody>
 </table>
 </article>
           </div>

@@ -91,88 +91,10 @@
 <p>Allows the application to read and update print task definitions without a signed-in user. </p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
-<table>
-<thead>
-<tr>
-<th>Ver</th>
-<th>Type</th>
-<th>Method</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>V1</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/print-delete-taskdefinition?view=graph-rest-1.0&amp;tabs=http">DELETE /print/taskDefinitions/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/print-delete-taskdefinition?view=graph-rest-1.0&amp;tabs=http">DELETE /print/taskDefinitions/{printTaskDefinitionId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/print-list-taskdefinitions?view=graph-rest-1.0&amp;tabs=http">GET /print/taskDefinitions</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/printtaskdefinition-get?view=graph-rest-1.0&amp;tabs=http">GET /print/taskDefinitions/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/printtaskdefinition-list-tasks?view=graph-rest-1.0&amp;tabs=http">GET /print/taskDefinitions/{id}/tasks</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/printtask-get?view=graph-rest-1.0&amp;tabs=http">GET /print/taskDefinitions/{id}/tasks/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/printtaskdefinition-get?view=graph-rest-1.0&amp;tabs=http">GET /print/taskDefinitions/{printTaskDefinitionId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/printtaskdefinition-list-tasks?view=graph-rest-1.0&amp;tabs=http">GET /print/taskDefinitions/{taskDefinitionId}/tasks</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/printtask-get?view=graph-rest-1.0&amp;tabs=http">GET /print/taskDefinitions/{taskDefinitionId}/tasks/{taskId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/print-update-taskdefinition?view=graph-rest-1.0&amp;tabs=http">PATCH /print/taskDefinitions/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/printtaskdefinition-update-task?view=graph-rest-1.0&amp;tabs=http">PATCH /print/taskDefinitions/{id}/tasks/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/print-update-taskdefinition?view=graph-rest-1.0&amp;tabs=http">PATCH /print/taskDefinitions/{printTaskDefinitionId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/printtaskdefinition-update-task?view=graph-rest-1.0&amp;tabs=http">PATCH /print/taskDefinitions/{taskDefinitionId}/tasks/{taskId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/print-post-taskdefinitions?view=graph-rest-1.0&amp;tabs=http">POST /print/taskDefinitions</a></td>
-</tr>
-</tbody>
-</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This permission does not have any graph methods published.</p>
+</div>
 <h2 id="application-permission">Application Permission</h2>
 <table>
 <thead>
@@ -193,61 +115,6 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the application to read and update print task definitions without a signed-in user. </td>
-</tr>
-</tbody>
-</table>
-<h2 id="resources">Resources</h2>
-<h3 id="printtask-"><a href="https://docs.microsoft.com/graph/api/resources/printtask?view=graph-rest-1.0&amp;tabs=http">printTask </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The printTask's identifier. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">status</td>
-<td style="text-align: left;">printTaskStatus</td>
-<td style="text-align: left;">The current execution status of this printTask. <strong>The calling application is responsible for updating this status when processing is finished, unless the related printJob has been redirected to another printer.</strong> Failure to report completion will result in the related print job being blocked from printing and eventually deleted.</td>
-</tr>
-<tr>
-<td style="text-align: left;">parentUrl</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The URL for the print entity that triggered this task. For example, <code>https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}</code>. Read-only.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="printtaskdefinition-"><a href="https://docs.microsoft.com/graph/api/resources/printtaskdefinition?view=graph-rest-1.0&amp;tabs=http">printTaskDefinition </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">createdBy</td>
-<td style="text-align: left;">appIdentity</td>
-<td style="text-align: left;">The application that created the printTaskDefinition. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">displayName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The name of the printTaskDefinition.</td>
-</tr>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The printTaskDefinition's identifier. Read-only.</td>
 </tr>
 </tbody>
 </table>

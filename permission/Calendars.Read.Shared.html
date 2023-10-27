@@ -91,28 +91,10 @@
 <p>Allows the app to read events in all calendars that the user can access, including delegate and shared calendars.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
-<table>
-<thead>
-<tr>
-<th>Ver</th>
-<th>Type</th>
-<th>Method</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/user-list-calendars?view=graph-rest-1.0&amp;tabs=http">GET /me/calendars</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/user-list-calendars?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/calendars</a></td>
-</tr>
-</tbody>
-</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This permission does not have any graph methods published.</p>
+</div>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -137,121 +119,6 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the app to read events in all calendars that the user can access, including delegate and shared calendars.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="resources">Resources</h2>
-<h3 id="calendar-"><a href="https://docs.microsoft.com/graph/api/resources/calendar?view=graph-rest-1.0&amp;tabs=http">calendar </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">allowedOnlineMeetingProviders</td>
-<td style="text-align: left;">onlineMeetingProviderType collection</td>
-<td style="text-align: left;">Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: <code>unknown</code>, <code>skypeForBusiness</code>, <code>skypeForConsumer</code>, <code>teamsForBusiness</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">canEdit</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;"><code>true</code> if the user can write to the calendar, <code>false</code> otherwise. This property is <code>true</code> for the user who created the calendar. This property is also <code>true</code> for a user who has been shared a calendar and granted write access.</td>
-</tr>
-<tr>
-<td style="text-align: left;">canShare</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;"><code>true</code> if the user has the permission to share the calendar, <code>false</code> otherwise. Only the user who created the calendar can share it.</td>
-</tr>
-<tr>
-<td style="text-align: left;">canViewPrivateItems</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;"><code>true</code> if the user can read calendar items that have been marked private, <code>false</code> otherwise.</td>
-</tr>
-<tr>
-<td style="text-align: left;">changeKey</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifies the version of the calendar object. Every time the calendar is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">color</td>
-<td style="text-align: left;">calendarColor</td>
-<td style="text-align: left;">Specifies the color theme to distinguish the calendar from other calendars in a UI. The property values are: <code>auto</code>, <code>lightBlue</code>, <code>lightGreen</code>, <code>lightOrange</code>, <code>lightGray</code>, <code>lightYellow</code>, <code>lightTeal</code>, <code>lightPink</code>, <code>lightBrown</code>, <code>lightRed</code>, <code>maxColor</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">defaultOnlineMeetingProvider</td>
-<td style="text-align: left;">onlineMeetingProviderType</td>
-<td style="text-align: left;">The default online meeting provider for meetings sent from this calendar. Possible values are: <code>unknown</code>, <code>skypeForBusiness</code>, <code>skypeForConsumer</code>, <code>teamsForBusiness</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">hexColor</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The calendar color, expressed in a hex color code of three hexadecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is empty. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The calendar's unique identifier. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">isDefaultCalendar</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;"><code>true</code> if this is the default calendar where new events are created by default, <code>false</code> otherwise.</td>
-</tr>
-<tr>
-<td style="text-align: left;">isRemovable</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates whether this user calendar can be deleted from the user mailbox.</td>
-</tr>
-<tr>
-<td style="text-align: left;">isTallyingResponses</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates whether this user calendar supports tracking of meeting responses. Only meeting invites sent from users' primary calendars support tracking of meeting responses.</td>
-</tr>
-<tr>
-<td style="text-align: left;">name</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The calendar name.</td>
-</tr>
-<tr>
-<td style="text-align: left;">owner</td>
-<td style="text-align: left;">emailAddress</td>
-<td style="text-align: left;">If set, this represents the user who created or added the calendar. For a calendar that the user created or added, the **o</td>
-</tr>
-</tbody>
-</table>
-<h3 id="calendargroup-"><a href="https://docs.microsoft.com/graph/api/resources/calendargroup?view=graph-rest-1.0&amp;tabs=http">calendarGroup </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">name</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The group name.</td>
-</tr>
-<tr>
-<td style="text-align: left;">changeKey</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">classId</td>
-<td style="text-align: left;">Guid</td>
-<td style="text-align: left;">The class identifier. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The group's unique identifier. Read-only.</td>
 </tr>
 </tbody>
 </table>

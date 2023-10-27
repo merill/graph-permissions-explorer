@@ -91,48 +91,10 @@
 <p>Allows the app to read, create and manage the API connectors used in user authentication flows, on behalf of the signed-in user.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
-<table>
-<thead>
-<tr>
-<th>Ver</th>
-<th>Type</th>
-<th>Method</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/identityapiconnector-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /identity/apiConnectors/{identityApiConnectorId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/identityapiconnector-list?view=graph-rest-1.0&amp;tabs=http">GET /identity/apiConnectors/</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/identityapiconnector-get?view=graph-rest-1.0&amp;tabs=http">GET /identity/apiConnectors/{identityApiConnectorId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/identityapiconnector-update?view=graph-rest-1.0&amp;tabs=http">PATCH /identity/apiConnectors/{identityApiConnectorId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/identityapiconnector-create?view=graph-rest-1.0&amp;tabs=http">POST /identity/apiConnectors</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/identityapiconnector-uploadclientcertificate?view=graph-rest-1.0&amp;tabs=http">POST /identity/apiconnectors/{id}/uploadClientCertificate</a></td>
-</tr>
-</tbody>
-</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This permission does not have any graph methods published.</p>
+</div>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -180,110 +142,6 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the app to read, create and manage the API connectors used in user authentication flows, without a signed-in user.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="resources">Resources</h2>
-<h3 id="apiauthenticationconfigurationbase-"><a href="https://docs.microsoft.com/graph/api/resources/apiauthenticationconfigurationbase?view=graph-rest-1.0&amp;tabs=http">apiAuthenticationConfigurationBase </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-</table>
-<h3 id="basicauthentication-"><a href="https://docs.microsoft.com/graph/api/resources/basicauthentication?view=graph-rest-1.0&amp;tabs=http">basicAuthentication </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">password</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The password. It isn't returned in the responses.</td>
-</tr>
-<tr>
-<td style="text-align: left;">username</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The username.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="clientcertificateauthentication-"><a href="https://docs.microsoft.com/graph/api/resources/clientcertificateauthentication?view=graph-rest-1.0&amp;tabs=http">clientCertificateAuthentication </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">certificateList</td>
-<td style="text-align: left;">pkcs12CertificateInformation collection</td>
-<td style="text-align: left;">The list of certificates uploaded for this API connector.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="identityapiconnector-"><a href="https://docs.microsoft.com/graph/api/resources/identityapiconnector?view=graph-rest-1.0&amp;tabs=http">identityApiConnector </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">authenticationConfiguration</td>
-<td style="text-align: left;">apiAuthenticationConfigurationBase</td>
-<td style="text-align: left;">The object which describes the authentication configuration details for calling the API. Basic and PKCS 12 client certificate are supported.</td>
-</tr>
-<tr>
-<td style="text-align: left;">displayName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The name of the API connector.</td>
-</tr>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The randomly generated identifier of the API connector.</td>
-</tr>
-<tr>
-<td style="text-align: left;">targetUrl</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The URL of the API endpoint to call.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="pkcs12certificate-"><a href="https://docs.microsoft.com/graph/api/resources/pkcs12certificate?view=graph-rest-1.0&amp;tabs=http">pkcs12Certificate </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">password</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The password for the pfx file. Required. If no password is used, you must still provide a value of <code>&quot;&quot;</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">pkcs12Value</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Represents the pfx content that is sent. The value should be a base-64 encoded version of the actual certificate content. Required.</td>
 </tr>
 </tbody>
 </table>

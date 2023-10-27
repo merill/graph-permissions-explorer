@@ -91,38 +91,10 @@
 <p>Allows the app to read your organization's conditional access policies on behalf of the signed-in user.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
-<table>
-<thead>
-<tr>
-<th>Ver</th>
-<th>Type</th>
-<th>Method</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/authenticationcontextclassreference-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /identity/conditionalAccess/authenticationContextClassReferences/{authenticationContextClassReferenceId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/authenticationcontextclassreference-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /identity/conditionalAccess/authenticationContextClassReferences/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/conditionalaccessroot-list-authenticationcontextclassreferences?view=graph-rest-1.0&amp;tabs=http">GET /identity/conditionalAccess/authenticationContextClassReferences</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/authenticationcontextclassreference-get?view=graph-rest-1.0&amp;tabs=http">GET /identity/conditionalAccess/authenticationContextClassReferences/{id}</a></td>
-</tr>
-</tbody>
-</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This permission does not have any graph methods published.</p>
+</div>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -170,39 +142,6 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the app to read your organization's conditional access policies, without a signed-in user.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="resources">Resources</h2>
-<h3 id="authenticationcontextclassreference-"><a href="https://docs.microsoft.com/graph/api/resources/authenticationcontextclassreference?view=graph-rest-1.0&amp;tabs=http">authenticationContextClassReference </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">description</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">A short explanation of the policies that are enforced by authenticationContextClassReference. This value should be used to provide secondary text to describe the authentication context class reference when building user-facing admin experiences. For example, a selection UX.</td>
-</tr>
-<tr>
-<td style="text-align: left;">displayName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name is the friendly name of the authenticationContextClassReference object. This value should be used to identify the authentication context class reference when building user-facing admin experiences. For example, a selection UX.</td>
-</tr>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifier used to reference the authentication context class. The ID is used to trigger step-up authentication for the referenced authentication requirements and is the value that will be issued in the <code>acrs</code> claim of an access token. This value in the claim is used to verify that the required authentication context has been satisfied. The allowed values are <code>c1</code> through <code>c25</code>. <br> Supports <code>$filter</code> (<code>eq</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">isAvailable</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates whether the authenticationContextClassReference has been published by the security admin and is ready for use by apps. When it's set to <code>false</code>, it shouldn't be shown in authentication context selection UX, or used to protect app resources. It's shown and available for Conditional Access policy authoring. The default value is <code>false</code>. <br> Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 </tbody>
 </table>

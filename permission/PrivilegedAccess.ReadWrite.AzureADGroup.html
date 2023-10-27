@@ -91,33 +91,10 @@
 <p>Allows the app to request and manage time-based assignment and just-in-time elevation (including scheduled elevation) of Azure AD groups, on behalf of the signed-in user.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
-<table>
-<thead>
-<tr>
-<th>Ver</th>
-<th>Type</th>
-<th>Method</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/governanceroleassignmentrequest-list?view=graph-rest-1.0&amp;tabs=http">GET /privilegedAccess/azureResources/resources/{resourceId}/roleAssignmentRequests</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/governanceroleassignmentrequest-list?view=graph-rest-1.0&amp;tabs=http">GET /privilegedAccess/azureResources/roleAssignmentRequests?$filter=resourceId+eq+'{resourceId}'</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/governanceroleassignmentrequest-cancel?view=graph-rest-1.0&amp;tabs=http">POST /privilegedAccess/azureResources/roleAssignmentRequests/{id}/cancel</a></td>
-</tr>
-</tbody>
-</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This permission does not have any graph methods published.</p>
+</div>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -165,74 +142,6 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the app to request and manage time-based assignment and just-in-time elevation (including scheduled elevation) of Azure AD groups in your organization, without a signed-in user.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="resources">Resources</h2>
-<h3 id="governanceroleassignmentrequest-"><a href="https://docs.microsoft.com/graph/api/resources/governanceroleassignmentrequest?view=graph-rest-1.0&amp;tabs=http">governanceRoleAssignmentRequest </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The identifier of the role assignment request.</td>
-</tr>
-<tr>
-<td style="text-align: left;">resourceId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Required. The unique identifier of the Azure resource that is associated with the role assignment request. Azure resources can include subscriptions, resource groups, virtual machines, and SQL databases.</td>
-</tr>
-<tr>
-<td style="text-align: left;">roleDefinitionId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Required. The identifier of the Azure role definition that the role assignment request is associated with.</td>
-</tr>
-<tr>
-<td style="text-align: left;">subjectId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Required. The unique identifier of the principal or subject that the role assignment request is associated with. Principals can be users, groups, or service principals.</td>
-</tr>
-<tr>
-<td style="text-align: left;">type</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Required. Representing the type of the operation on the role assignment. The possible values are: <code>AdminAdd</code> , <code>UserAdd</code> , <code>AdminUpdate</code> , <code>AdminRemove</code> , <code>UserRemove</code> , <code>UserExtend</code> , <code>AdminExtend</code> , <code>UserRenew</code> , <code>AdminRenew</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">assignmentState</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Required. The state of the assignment. The possible values are: <code>Eligible</code> (for eligible assignment),  <code>Active</code> (if it is directly assigned), <code>Active</code> (by administrators, or activated on an eligible assignment by the users).</td>
-</tr>
-<tr>
-<td style="text-align: left;">requestedDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Read-only. The request create time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code></td>
-</tr>
-<tr>
-<td style="text-align: left;">schedule</td>
-<td style="text-align: left;">governanceSchedule</td>
-<td style="text-align: left;">The schedule object of the role assignment request.</td>
-</tr>
-<tr>
-<td style="text-align: left;">reason</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">A message provided by users and administrators when create the request about why it is needed.</td>
-</tr>
-<tr>
-<td style="text-align: left;">status</td>
-<td style="text-align: left;">governanceRoleAssignmentRequestStatus</td>
-<td style="text-align: left;">The status of the role assignment request.</td>
-</tr>
-<tr>
-<td style="text-align: left;">linkedEligibleRoleAssignmentId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">If this is a request for role activation, it represents the id of the <code>eligible assignment</code> being referred; Otherwise, the value is <code>null</code>.</td>
 </tr>
 </tbody>
 </table>

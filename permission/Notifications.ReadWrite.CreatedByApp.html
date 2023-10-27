@@ -91,23 +91,10 @@
 <p>Allows the app to deliver its notifications on behalf of signed-in users. Also allows the app to read, update, and delete the user's notification items for this app.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
-<table>
-<thead>
-<tr>
-<th>Ver</th>
-<th>Type</th>
-<th>Method</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/user-post-notifications?view=graph-rest-1.0&amp;tabs=http">POST /me/notifications/</a></td>
-</tr>
-</tbody>
-</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This permission does not have any graph methods published.</p>
+</div>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -132,64 +119,6 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the app to deliver its notifications on behalf of signed-in users. Also allows the app to read, update, and delete the user's notification items for this app.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="resources">Resources</h2>
-<h3 id="projectrome-notification"><a href="https://docs.microsoft.com/graph/api/resources/projectrome-notification?view=graph-rest-1.0&amp;tabs=http">projectrome-notification</a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">targetHostName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Represents the host name of the app to which the calling service wants to post the notification, for the given user. If targeting web endpoints (see <strong>targetPolicy.platformTypes</strong>), ensure that <strong>targetHostName</strong> is the same as the name used when creating a subscription on the client side within the application JSON property.</td>
-</tr>
-<tr>
-<td style="text-align: left;">appNotificationId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique ID set by the app server of a notification that is used to identify and target an individual notification.</td>
-</tr>
-<tr>
-<td style="text-align: left;">groupName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The name of the group that this notification belongs to. It is set by the developer for grouping notifications together.</td>
-</tr>
-<tr>
-<td style="text-align: left;">targetPolicy</td>
-<td style="text-align: left;">targetPolicyEndpoints</td>
-<td style="text-align: left;">Target policy object handles notification delivery policy for endpoint types that should be targeted (Windows, iOS, Android and WebPush) for the given user.</td>
-</tr>
-<tr>
-<td style="text-align: left;">payload</td>
-<td style="text-align: left;">payloadTypes</td>
-<td style="text-align: left;">This is the data content of a raw or visual user notification that will be delivered to and consumed by the app client receiving this notification.</td>
-</tr>
-<tr>
-<td style="text-align: left;">displayTimeToLive</td>
-<td style="text-align: left;">Int32</td>
-<td style="text-align: left;">Sets how long (in seconds) this notification content stays in each platform's notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification stays in the user's Windows Action Center.</td>
-</tr>
-<tr>
-<td style="text-align: left;">expirationDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Sets a UTC expiration date and time on a user notification using ISO 8601 format (for example, midnight UTC on Jan 1, 2019 would look like this: <code>'2019-01-01T00:00:00Z'</code>). When time is up, the notification is removed from the Microsoft Graph notification feed store completely and is no longer part of notification history. Max value is 30 days.</td>
-</tr>
-<tr>
-<td style="text-align: left;">priority</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">Indicates the priority of a raw user notification. Visual notifications are sent with high priority by default. Valid values are <code>None</code>, <code>High</code> and <code>Low</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">fallbackPolicy</td>
-<td style="text-align: left;">fallbackpolicy</td>
-<td style="text-align: left;">Optional fallback policy object handles notification fallback policy for iOS endpoints only and is designed to be used for high-priority raw notifications that might not be delivered to devices due to platform specific restrictions (for example battery saver mode).</td>
 </tr>
 </tbody>
 </table>

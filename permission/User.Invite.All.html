@@ -91,23 +91,10 @@
 <p>Allows the app to invite guest users to the organization, on behalf of the signed-in user.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
-<table>
-<thead>
-<tr>
-<th>Ver</th>
-<th>Type</th>
-<th>Method</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/invitation-post?view=graph-rest-1.0&amp;tabs=http">POST /invitations</a></td>
-</tr>
-</tbody>
-</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This permission does not have any graph methods published.</p>
+</div>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -155,91 +142,6 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the app to invite guest users to the organization, without a signed-in user.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="resources">Resources</h2>
-<h3 id="invitation-"><a href="https://docs.microsoft.com/graph/api/resources/invitation?view=graph-rest-1.0&amp;tabs=http">invitation </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">invitedUserDisplayName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name of the user being invited.</td>
-</tr>
-<tr>
-<td style="text-align: left;">invitedUserEmailAddress</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The email address of the user being invited. Required. The following special characters aren't permitted in the email address:<br><ul><li>Tilde (<code>~</code>)</li><li>Exclamation point (<code>!</code>)</li><li>Number sign (<code>#</code>)</li><li>Dollar sign (<code>$</code>)</li><li>Percent (<code>%</code>)</li><li>Circumflex (<code>^</code>)</li><li>Ampersand (<code>&amp;</code>)</li><li>Asterisk (<code>*</code>)</li><li>Parentheses (<code>( )</code>)</li><li>Plus sign (<code>+</code>)</li><li>Equal sign (<code>=</code>)</li><li>Brackets (<code>[ ]</code>)</li><li>Braces (<code>{ }</code>)</li><li>Backslash (<code>\</code>)</li><li>Slash mark (<code>/</code>)</li><li>Pipe (<code>\|</code>)</li><li>Semicolon (<code>;</code>)</li><li>Colon (<code>:</code>)</li><li>Quotation marks (<code>&quot;</code>)</li><li>Angle brackets (<code>&lt; &gt;</code>)</li><li>Question mark (<code>?</code>)</li><li>Comma (<code>,</code>)</li></ul><br>However, the following exceptions apply:<br><ul><li>A period (<code>.</code>) or a hyphen (<code>-</code>) is permitted anywhere in the user name, except at the beginning or end of the name.</li><li>An underscore (<code>_</code>) is permitted anywhere in the user name. This includes at the beginning or end of the name.</li></ul></td>
-</tr>
-<tr>
-<td style="text-align: left;">invitedUserMessageInfo</td>
-<td style="text-align: left;">invitedUserMessageInfo</td>
-<td style="text-align: left;">Additional configuration for the message being sent to the invited user, including customizing message text, language and cc recipient list.</td>
-</tr>
-<tr>
-<td style="text-align: left;">invitedUserType</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The userType of the user being invited. By default, this is <code>Guest</code>. You can invite as <code>Member</code> if you're a company administrator.</td>
-</tr>
-<tr>
-<td style="text-align: left;">inviteRedirectUrl</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The URL the user should be redirected to once the invitation is redeemed. Required.</td>
-</tr>
-<tr>
-<td style="text-align: left;">inviteRedeemUrl</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The URL the user can use to redeem their invitation. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">resetRedemption</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Reset the user's redemption status and reinvite a user while retaining their user identifier, group memberships, and app assignments. This property allows you to enable a user to sign-in using a different email address from the one in the previous invitation. For more information about using this property, see Reset redemption status for a guest user.</td>
-</tr>
-<tr>
-<td style="text-align: left;">sendInvitationMessage</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates whether an email should be sent to the user being invited. The default is <code>false</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">status</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The status of the invitation. Possible values are: <code>PendingAcceptance</code>, <code>Completed</code>, <code>InProgress</code>, and <code>Error</code>.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="invitedusermessageinfo-"><a href="https://docs.microsoft.com/graph/api/resources/invitedusermessageinfo?view=graph-rest-1.0&amp;tabs=http">invitedUserMessageInfo </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">ccRecipients</td>
-<td style="text-align: left;">recipient collection</td>
-<td style="text-align: left;">Additional recipients the invitation message should be sent to. Currently only one additional recipient is supported.</td>
-</tr>
-<tr>
-<td style="text-align: left;">customizedMessageBody</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Customized message body you want to send if you don't want the default message.</td>
-</tr>
-<tr>
-<td style="text-align: left;">messageLanguage</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The language you want to send the default message in. If the customizedMessageBody is specified, this property is ignored, and the message is sent using the customizedMessageBody. The language format should be in ISO 639. The default is en-US.</td>
 </tr>
 </tbody>
 </table>

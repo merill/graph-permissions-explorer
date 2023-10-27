@@ -91,53 +91,10 @@
 <p>Allows the app to read delegated permission grants, on behalf of the signed in user.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
-<table>
-<thead>
-<tr>
-<th>Ver</th>
-<th>Type</th>
-<th>Method</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/user-list-oauth2permissiongrants?view=graph-rest-1.0&amp;tabs=http">GET /me/oauth2PermissionGrants</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/oauth2permissiongrant-list?view=graph-rest-1.0&amp;tabs=http">GET /oauth2PermissionGrants</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/oauth2permissiongrant-get?view=graph-rest-1.0&amp;tabs=http">GET /oauth2PermissionGrants/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/oauth2permissiongrant-delta?view=graph-rest-1.0&amp;tabs=http">GET /oauth2PermissionGrants/delta</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-oauth2permissiongrants?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals(appId='{appId}')/oauth2PermissionGrants</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-oauth2permissiongrants?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/oauth2PermissionGrants</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/user-list-oauth2permissiongrants?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/oauth2PermissionGrants</a></td>
-</tr>
-</tbody>
-</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This permission does not have any graph methods published.</p>
+</div>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -185,49 +142,6 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the app to read all delegated permission grants, without a signed-in user.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="resources">Resources</h2>
-<h3 id="oauth2permissiongrant-"><a href="https://docs.microsoft.com/graph/api/resources/oauth2permissiongrant?view=graph-rest-1.0&amp;tabs=http">oAuth2PermissionGrant </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">clientId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The object <strong>id</strong> (<em>not</em> <strong>appId</strong>) of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports <code>$filter</code> (<code>eq</code> only).</td>
-</tr>
-<tr>
-<td style="text-align: left;">consentType</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Indicates if authorization is granted for the client application to impersonate all users or only a specific user. <em>AllPrincipals</em> indicates authorization to impersonate all users. <em>Principal</em> indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports <code>$filter</code> (<code>eq</code> only).</td>
-</tr>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Unique identifier for the <strong>oAuth2PermissionGrant</strong>. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">principalId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The <strong>id</strong> of the user on behalf of whom the client is authorized to access the resource, when <strong>consentType</strong> is <em>Principal</em>. If <strong>consentType</strong> is <em>AllPrincipals</em> this value is null. Required when <strong>consentType</strong> is <em>Principal</em>. Supports <code>$filter</code> (<code>eq</code> only).</td>
-</tr>
-<tr>
-<td style="text-align: left;">resourceId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The <strong>id</strong> of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user. Supports <code>$filter</code> (<code>eq</code> only).</td>
-</tr>
-<tr>
-<td style="text-align: left;">scope</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, <code>openid User.Read GroupMember.Read.All</code>. Each claim value should match the **v</td>
 </tr>
 </tbody>
 </table>

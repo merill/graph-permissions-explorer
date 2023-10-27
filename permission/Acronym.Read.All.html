@@ -91,23 +91,10 @@
 <p>Allows an app to read all acronyms that the signed-in user can access.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
-<table>
-<thead>
-<tr>
-<th>Ver</th>
-<th>Type</th>
-<th>Method</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/search-query?view=graph-rest-1.0&amp;tabs=http">POST /search/query</a></td>
-</tr>
-</tbody>
-</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This permission does not have any graph methods published.</p>
+</div>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -155,127 +142,6 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows an app to read all acronyms without a signed-in user.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="resources">Resources</h2>
-<h3 id="search-api-overview"><a href="https://docs.microsoft.com/graph/api/resources/search-api-overview?view=graph-rest-1.0&amp;tabs=http">search-api-overview</a></h3>
-<h3 id="searchrequest-"><a href="https://docs.microsoft.com/graph/api/resources/searchrequest?view=graph-rest-1.0&amp;tabs=http">searchRequest </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">aggregationFilters</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Contains one or more filters to obtain search results aggregated and filtered to a specific value of a field. Optional.<br>Build this filter based on a prior search that aggregates by the same field. From the response of the prior search, identify the searchBucket that filters results to the specific value of the field, use the string in its <strong>aggregationFilterToken</strong> property, and build an aggregation filter string in the format <strong>&quot;{field}:\&quot;{aggregationFilterToken}\&quot;&quot;</strong>. <br>If multiple values for the same field need to be provided, use the strings in its <strong>aggregationFilterToken</strong> property and build an aggregation filter string in the format <strong>&quot;{field}:or(\&quot;{aggregationFilterToken1}\&quot;,\&quot;{aggregationFilterToken2}\&quot;)&quot;</strong>. <br>For example, searching and aggregating drive items by file type returns a <strong>searchBucket</strong> for the file type <code>docx</code> in the response. You can conveniently use the <strong>aggregationFilterToken</strong> returned for this <strong>searchBucket</strong> in a subsequent search query and filter matches down to drive items of the <code>docx</code> file type. Example 1 and example 2 show the actual requests and responses.</td>
-</tr>
-<tr>
-<td style="text-align: left;">aggregations</td>
-<td style="text-align: left;">aggregationOption collection</td>
-<td style="text-align: left;">Specifies aggregations (also known as refiners) to be returned alongside search results. Optional.</td>
-</tr>
-<tr>
-<td style="text-align: left;">collapseProperties</td>
-<td style="text-align: left;">collapseProperty collection</td>
-<td style="text-align: left;">Contains the ordered collection of fields and limit to collapse results. Optional.</td>
-</tr>
-<tr>
-<td style="text-align: left;">contentSources</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Contains the connection to be targeted.</td>
-</tr>
-<tr>
-<td style="text-align: left;">enableTopResults</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">This triggers hybrid sort for messages : the first 3 messages are the most relevant. This property is only applicable to entityType=<code>message</code>. Optional.</td>
-</tr>
-<tr>
-<td style="text-align: left;">entityTypes</td>
-<td style="text-align: left;">entityType collection</td>
-<td style="text-align: left;">One or more types of resources expected in the response. Possible values are: <code>event</code>, <code>message</code>, <code>driveItem</code>, <code>externalItem</code>, <code>site</code>, <code>list</code>, <code>listItem</code>, <code>drive</code>, <code>chatMessage</code>, <code>person</code>, <code>acronym</code>, <code>bookmark</code>.  Note that you must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value(s) in this <code>evolvable enum</code>:<code>chatMessage</code>, <code>person</code>, <code>acronym</code>, <code>bookmark</code>. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.</td>
-</tr>
-<tr>
-<td style="text-align: left;">fields</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Contains the fields to be returned for each resource object specified in <strong>entityTypes</strong>, allowing customization of the fields returned by default; otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in <strong>externalItem</strong> from the content that Microsoft Graph connectors bring in. The <strong>fields</strong> property can use the semantic labels applied to properties. For example, if a property is labeled as title, you can retrieve it using the following syntax: <code>label_title</code>. Optional.</td>
-</tr>
-<tr>
-<td style="text-align: left;">from</td>
-<td style="text-align: left;">Int32</td>
-<td style="text-align: left;">Specifies the offset for the search results. Offset 0 returns the very first result. Optional.</td>
-</tr>
-<tr>
-<td style="text-align: left;">query</td>
-<td style="text-align: left;">searchQuery</td>
-<td style="text-align: left;">Contains the query terms. Required.</td>
-</tr>
-<tr>
-<td style="text-align: left;">queryAlterationOptions</td>
-<td style="text-align: left;">searchAlterationOptions</td>
-<td style="text-align: left;">Query alteration options formatted in a JSON blob that contains two optional flags related to spelling correction. Optional.</td>
-</tr>
-<tr>
-<td style="text-align: left;">region</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The geographic location for the search. Required for searches that use application permissions. For details, see Get the region value.</td>
-</tr>
-<tr>
-<td style="text-align: left;">resultTemplateOptions</td>
-<td style="text-align: left;">resultTemplateOption collection</td>
-<td style="text-align: left;">Provides the search result template options to render search results from connectors.</td>
-</tr>
-<tr>
-<td style="text-align: left;">sharePointOneDriveOptions</td>
-<td style="text-align: left;">sharePointOneDriveOptions</td>
-<td style="text-align: left;">Indicates the kind of contents to be searched when a search is performed using application permissions. Optional.</td>
-</tr>
-<tr>
-<td style="text-align: left;">size</td>
-<td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The size of the page to be retrieved. The maximum value is 500. Optional.</td>
-</tr>
-<tr>
-<td style="text-align: left;">sortProperties</td>
-<td style="text-align: left;">sortProperty collection</td>
-<td style="text-align: left;">Contains the ordered collection of fields and direction to sort results. There can be at most 5 sort properties in the collection. Optional.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="searchresponse-"><a href="https://docs.microsoft.com/graph/api/resources/searchresponse?view=graph-rest-1.0&amp;tabs=http">searchResponse </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">hitsContainers</td>
-<td style="text-align: left;">searchHitsContainer collection</td>
-<td style="text-align: left;">A collection of search results.</td>
-</tr>
-<tr>
-<td style="text-align: left;">queryAlterationResponse</td>
-<td style="text-align: left;">alterationResponse</td>
-<td style="text-align: left;">Provides information related to spelling corrections in the alteration response.</td>
-</tr>
-<tr>
-<td style="text-align: left;">resultTemplates</td>
-<td style="text-align: left;">resultTemplate collection</td>
-<td style="text-align: left;">A dictionary of <strong>resultTemplateIds</strong> and associated values, which include the name and JSON schema of the result templates.</td>
-</tr>
-<tr>
-<td style="text-align: left;">searchTerms</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Contains the search terms sent in the initial search query.</td>
 </tr>
 </tbody>
 </table>
