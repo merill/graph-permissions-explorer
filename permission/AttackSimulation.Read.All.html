@@ -109,12 +109,47 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/attacksimulationroot-list-endusernotifications?view=graph-rest-1.0&amp;tabs=http">GET /security/attackSimulation/endUserNotifications?$filter=source eq 'tenant'</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/attacksimulationroot-list-landingpage?view=graph-rest-1.0&amp;tabs=http">GET /security/attackSimulation/landingPages?$filter=source eq 'tenant'</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/landingpage-get?view=graph-rest-1.0&amp;tabs=http">GET /security/attackSimulation/landingPages/{landingPageId}</a></td>
 </tr>
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/attacksimulationroot-list-loginpage?view=graph-rest-1.0&amp;tabs=http">GET /security/attackSimulation/loginPages?$filter=source eq 'tenant'</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/loginpage-get?view=graph-rest-1.0&amp;tabs=http">GET /security/attackSimulation/loginPages/{loginPageId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/attacksimulationoperation-get?view=graph-rest-1.0&amp;tabs=http">GET /security/attackSimulation/operations/{operationsId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/attacksimulationroot-list-payloads?view=graph-rest-1.0&amp;tabs=http">GET /security/attackSimulation/payloads?$filter=source eq 'tenant'</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/payload-get?view=graph-rest-1.0&amp;tabs=http">GET /security/attackSimulation/payloads/{payloadId}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/payloaddetail-get?view=graph-rest-1.0&amp;tabs=http">GET /security/attackSimulation/payloads/{payloadId}/detail</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -125,6 +160,11 @@
 <td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/loginpage-get?view=graph-rest-1.0&amp;tabs=http">GET /security/attackSimulation/simulations/{simulationId}/loginPage</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/attacksimulationroot-list-trainings?view=graph-rest-1.0&amp;tabs=http">GET /security/attackSimulation/trainings</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -189,6 +229,63 @@
 </tbody>
 </table>
 <h2 id="resources">Resources</h2>
+<h3 id="attacksimulationoperation-"><a href="https://docs.microsoft.com/graph/api/resources/attacksimulationoperation?view=graph-rest-1.0&amp;tabs=http">attackSimulationOperation </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Operation created date time. The timestamp represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Inherited from longRunningOperation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the operation. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastActionDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The time of the last action in the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Inherited from longRunningOperation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">percentageCompleted</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Percentage of completion of the respective operation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">resourceLocation</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">URI of the resource location. Inherited from longRunningOperation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">longRunningOperationStatus</td>
+<td style="text-align: left;">Operation status. The possible values are: <code>notStarted</code>, <code>running</code>, <code>succeeded</code>, <code>failed</code>, <code>unknownFutureValue</code>. Inherited from longRunningOperation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">statusDetail</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Status detail of the operation. Inherited from longRunningOperation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tenantId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Tenant identifier.</td>
+</tr>
+<tr>
+<td style="text-align: left;">type</td>
+<td style="text-align: left;">attackSimulationOperationType</td>
+<td style="text-align: left;">The attack simulation operation type. Possible values are: <code>createSimulation</code>, <code>updateSimulation</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="endusernotification-"><a href="https://docs.microsoft.com/graph/api/resources/endusernotification?view=graph-rest-1.0&amp;tabs=http">endUserNotification </a></h3>
 <table>
 <thead>
@@ -380,13 +477,167 @@
 </tr>
 <tr>
 <td style="text-align: left;">source</td>
-<td style="text-align: left;">simulationContentSource</td>
+<td style="text-align: left;">simulationContentStatus</td>
 <td style="text-align: left;">The source of the content. Possible values are: <code>unknown</code>, <code>global</code>, <code>tenant</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">simulationContentStatus</td>
 <td style="text-align: left;">The login page status. Possible values are: <code>unknown</code>, <code>draft</code>, <code>ready</code>, <code>archive</code>, <code>delete</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="payload-"><a href="https://docs.microsoft.com/graph/api/resources/payload?view=graph-rest-1.0&amp;tabs=http">payload </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">brand</td>
+<td style="text-align: left;">payloadBrand</td>
+<td style="text-align: left;">The branch of a payload. Possible values are: <code>unknown</code>, <code>other</code>, <code>americanExpress</code>, <code>capitalOne</code>, <code>dhl</code>, <code>docuSign</code>, <code>dropbox</code>, <code>facebook</code>, <code>firstAmerican</code>, <code>microsoft</code>, <code>netflix</code>, <code>scotiabank</code>, <code>sendGrid</code>, <code>stewartTitle</code>, <code>tesco</code>, <code>wellsFargo</code>, <code>syrinxCloud</code>, <code>adobe</code>, <code>teams</code>, <code>zoom</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">complexity</td>
+<td style="text-align: left;">payloadComplexity</td>
+<td style="text-align: left;">The complexity of a payload. Possible values are: <code>unknown</code>, <code>low</code>, <code>medium</code>, <code>high</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">emailIdentity</td>
+<td style="text-align: left;">Identity of the user who created the attack simulation and training campaign payload.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time when the attack simulation and training campaign payload. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Description of the attack simulation and training campaign payload.</td>
+</tr>
+<tr>
+<td style="text-align: left;">detail</td>
+<td style="text-align: left;">payloadDetail</td>
+<td style="text-align: left;">Additional details about the payload.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Display name of the attack simulation and training campaign payload. Supports <code>$filter</code> and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for the attack simulation and training campaign payload. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">industry</td>
+<td style="text-align: left;">payloadIndustry</td>
+<td style="text-align: left;">Industry of a payload. Possible values are: <code>unknown</code>, <code>other</code>, <code>banking</code>, <code>businessServices</code>, <code>consumerServices</code>, <code>education</code>, <code>energy</code>, <code>construction</code>, <code>consulting</code>, <code>financialServices</code>, <code>government</code>, <code>hospitality</code>, <code>insurance</code>, <code>legal</code>, <code>courierServices</code>, <code>IT</code>, <code>healthcare</code>, <code>manufacturing</code>, <code>retail</code>, <code>telecom</code>, <code>realEstate</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isAutomated</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the attack simulation and training campaign payload was created from an automation flow. Supports <code>$filter</code> and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isControversial</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the payload is controversial.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isCurrentEvent</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the payload is from any recent event.</td>
+</tr>
+<tr>
+<td style="text-align: left;">language</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Payload language.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedBy</td>
+<td style="text-align: left;">emailIdentity</td>
+<td style="text-align: left;">Identity of the user who most recently modified the attack simulation and training campaign payload.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time when the attack simulation and training campaign payload was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">payloadTags</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Free text tags for a payload.</td>
+</tr>
+<tr>
+<td style="text-align: left;">platform</td>
+<td style="text-align: left;">payloadDeliveryPlatform</td>
+<td style="text-align: left;">The payload delivery platform for a simulation. Possible values are: <code>unknown</code>, <code>sms</code>, <code>email</code>, <code>teams</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">predictedCompromiseRate</td>
+<td style="text-align: left;">Double</td>
+<td style="text-align: left;">Predicted probability for a payload to phish a targeted user.</td>
+</tr>
+<tr>
+<td style="text-align: left;">simulationAttackType</td>
+<td style="text-align: left;">simulationAttackType</td>
+<td style="text-align: left;">Attack type of the attack simulation and training campaign. Supports <code>$filter</code> and <code>$orderby</code>. Possible values are: <code>unknown</code>, <code>social</code>, <code>cloud</code>, <code>endpoint</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">source</td>
+<td style="text-align: left;">simulationContentSource</td>
+<td style="text-align: left;">Simulation content source. Supports <code>$filter</code> and <code>$orderby</code>. Possible values are: <code>unknown</code>, <code>global</code>, <code>tenant</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">simulationContentStatus</td>
+<td style="text-align: left;">Simulation content status. Supports <code>$filter</code> and <code>$orderby</code>. Possible values are: <code>unknown</code>, <code>draft</code>, <code>ready</code>, <code>archive</code>, <code>delete</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">technique</td>
+<td style="text-align: left;">simulationAttackTechnique</td>
+<td style="text-align: left;">The social engineering technique used in the attack simulation and training campaign. Supports <code>$filter</code> and <code>$orderby</code>. Possible values are: <code>unknown</code>, <code>credentialHarvesting</code>, <code>attachmentMalware</code>, <code>driveByUrl</code>, <code>linkInAttachment</code>, <code>linkToMalwareFile</code>, <code>unknownFutureValue</code>, <code>oAuthConsentGrant</code>. Note that you must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following values from this evolvable enum: <code>oAuthConsentGrant</code>. For more information on the types of social engineering attack techniques, see simulations.</td>
+</tr>
+<tr>
+<td style="text-align: left;">theme</td>
+<td style="text-align: left;">payloadTheme</td>
+<td style="text-align: left;">The theme of a payload. Possible values are: <code>unknown</code>, <code>other</code>, <code>accountActivation</code>, <code>accountVerification</code>, <code>billing</code>, <code>cleanUpMail</code>, <code>controversial</code>, <code>documentReceived</code>, <code>expense</code>, <code>fax</code>, <code>financeReport</code>, <code>incomingMessages</code>, <code>invoice</code>, <code>itemReceived</code>, <code>loginAlert</code>, <code>mailReceived</code>, <code>password</code>, <code>payment</code>, <code>payroll</code>, <code>personalizedOffer</code>, <code>quarantine</code>, <code>remoteWork</code>, <code>reviewMessage</code>, <code>securityUpdate</code>, <code>serviceSuspended</code>, <code>signatureRequired</code>, <code>upgradeMailboxStorage</code>, <code>verifyMailbox</code>, <code>voicemail</code>, <code>advertisement</code>, <code>employeeEngagement</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="payloaddetail-"><a href="https://docs.microsoft.com/graph/api/resources/payloaddetail?view=graph-rest-1.0&amp;tabs=http">payloadDetail </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">coachmarks</td>
+<td style="text-align: left;">payloadCoachmark collection</td>
+<td style="text-align: left;">Payload coachmark details.</td>
+</tr>
+<tr>
+<td style="text-align: left;">content</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Payload content details.</td>
+</tr>
+<tr>
+<td style="text-align: left;">phishingUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The phishing URL used to target a user.</td>
 </tr>
 </tbody>
 </table>
@@ -403,7 +654,7 @@
 <tr>
 <td style="text-align: left;">availabilityStatus</td>
 <td style="text-align: left;">trainingAvailabilityStatus</td>
-<td style="text-align: left;">Training availability status.Possible values are: <code>unknown</code>, <code>notAvailable</code>, <code>available</code>, <code>archive</code>, <code>delete</code>, <code>unknownFutureValue</code>.</td>
+<td style="text-align: left;">Training availability status. Possible values are: <code>unknown</code>, <code>notAvailable</code>, <code>available</code>, <code>archive</code>, <code>delete</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdBy</td>
@@ -495,7 +746,7 @@
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Date and time when the language details were created.</td>
+<td style="text-align: left;">Date and time when the language details were created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">description</td>
