@@ -242,7 +242,7 @@
 <tr>
 <td style="text-align: left;">allowExternalSenders</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates if people external to the organization can send messages to the group. Default value is <code>false</code>. <br><br>Returned only on <code>$select</code>. Supported only on the Get group API (<code>GET /groups/{ID}</code>).</td>
+<td style="text-align: left;">Indicates if people external to the organization can send messages to the group. The default value is <code>false</code>. <br><br>Returned only on <code>$select</code>. Supported only on the Get group API (<code>GET /groups/{ID}</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">assignedLabels</td>
@@ -287,12 +287,12 @@
 <tr>
 <td style="text-align: left;">expirationDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Timestamp of when the group is set to expire. Is <code>null</code> for security groups but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>). Read-only.</td>
+<td style="text-align: left;">Timestamp of when the group is set to expire. It is <code>null</code> for security groups, but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>). Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">groupTypes</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Specifies the group type and its membership. <br><br>If the collection contains <code>Unified</code>, the group is a Microsoft 365 group; otherwise, it's either a security group or distribution group. For details, see groups overview.<br><br>If the collection includes <code>DynamicMembership</code>, the group has dynamic membership; otherwise, membership is static. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>).</td>
+<td style="text-align: left;">Specifies the group type and its membership. <br><br>If the collection contains <code>Unified</code>, the group is a Microsoft 365 group; otherwise, it's either a security group or a distribution group. For details, see groups overview.<br><br>If the collection includes <code>DynamicMembership</code>, the group has dynamic membership; otherwise, membership is static. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">hasMembersWithLicenseErrors</td>
@@ -307,7 +307,7 @@
 <tr>
 <td style="text-align: left;">hideFromOutlookClients</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">True if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. Default value is <code>false</code>. <br><br>Returned only on <code>$select</code>. Supported only on the Get group API (<code>GET /groups/{ID}</code>).</td>
+<td style="text-align: left;">True if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. The default value is <code>false</code>. <br><br>Returned only on <code>$select</code>. Supported only on the Get group API (<code>GET /groups/{ID}</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
@@ -317,22 +317,22 @@
 <tr>
 <td style="text-align: left;">isArchived</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">When a group is associated with a team this property determines whether the team is in read-only mode.<br>To read this property, use the <code>/group/{groupId}/team</code> endpoint or the Get team API. To update this property, use the archiveTeam and unarchiveTeam APIs.</td>
+<td style="text-align: left;">When a group is associated with a team, this property determines whether the team is in read-only mode.<br>To read this property, use the <code>/group/{groupId}/team</code> endpoint or the Get team API. To update this property, use the archiveTeam and unarchiveTeam APIs.</td>
 </tr>
 <tr>
 <td style="text-align: left;">isAssignableToRole</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates whether this group can be assigned to a Microsoft Entra role or not. Optional. <br><br>This property can only be set while creating the group and is immutable. If set to <code>true</code>, the <strong>securityEnabled</strong> property must also be set to <code>true</code>, <strong>visibility</strong> must be <code>Hidden</code>, and the group cannot be a dynamic group (that is, <strong>groupTypes</strong> cannot contain <code>DynamicMembership</code>). <br><br>Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the <em>RoleManagement.ReadWrite.Directory</em> permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignments<br><br>Using this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>).</td>
+<td style="text-align: left;">Indicates whether this group can be assigned to a Microsoft Entra role. Optional. <br><br>This property can only be set while creating the group and is immutable. If set to <code>true</code>, the <strong>securityEnabled</strong> property must also be set to <code>true</code>, <strong>visibility</strong> must be <code>Hidden</code>, and the group cannot be a dynamic group (that is, <strong>groupTypes</strong> cannot contain <code>DynamicMembership</code>). <br><br>Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the <em>RoleManagement.ReadWrite.Directory</em> permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignments<br><br>Using this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">isSubscribedByMail</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates whether the signed-in user is subscribed to receive email conversations. Default value is <code>true</code>. <br><br>Returned only on <code>$select</code>. Supported only on the Get group API (<code>GET /groups/{ID}</code>).</td>
+<td style="text-align: left;">Indicates whether the signed-in user is subscribed to receive email conversations. The default value is <code>true</code>. <br><br>Returned only on <code>$select</code>. Supported only on the Get group API (<code>GET /groups/{ID}</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">licenseProcessingState</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Indicates status of the group license assignment to all members of the group. Default value is <code>false</code>. Read-only. Possible values: <code>QueuedForProcessing</code>, <code>ProcessingInProgress</code>, and <code>ProcessingComplete</code>.<br><br>Returned only on <code>$select</code>. Read-only.</td>
+<td style="text-align: left;">Indicates the status of the group license assignment to all group members. The default value is <code>false</code>. Read-only. Possible values: <code>QueuedForProcessing</code>, <code>ProcessingInProgress</code>, and <code>ProcessingComplete</code>.<br><br>Returned only on <code>$select</code>. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">mail</td>
@@ -372,12 +372,12 @@
 <tr>
 <td style="text-align: left;">onPremisesSamAccountName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Contains the on-premises <strong>SAM account name</strong> synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.<br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>). Read-only.</td>
+<td style="text-align: left;">Contains the on-premises <strong>SAM account name</strong> synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.<br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>). Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">onPremisesSecurityIdentifier</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code> including on <code>null</code> values). Read-only.</td>
+<td style="text-align: left;">Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code> including on <code>null</code> values). Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">onPremisesSyncEnabled</td>
@@ -392,7 +392,7 @@
 <tr>
 <td style="text-align: left;">preferredLanguage</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example <code>en-US</code>. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
+<td style="text-align: left;">The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example, <code>en-US</code>. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">proxyAddresses</td>
@@ -402,7 +402,7 @@
 <tr>
 <td style="text-align: left;">renewedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>). Read-only.</td>
+<td style="text-align: left;">Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>). Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">resourceBehaviorOptions</td>
@@ -412,7 +412,7 @@
 <tr>
 <td style="text-align: left;">resourceProvisioningOptions</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Specifies the group resources that are provisioned as part of Microsoft 365 group creation, that are not normally part of default group creation. Possible value is <code>Team</code>. For more information, see Set Microsoft 365 group behaviors and provisioning options.</td>
+<td style="text-align: left;">Specifies the group resources provisioned as part of Microsoft 365 group creation that are not normally part of default group creation. The possible value is <code>Team</code>. For more information, see Set Microsoft 365 group behaviors and provisioning options.</td>
 </tr>
 <tr>
 <td style="text-align: left;">securityEnabled</td>
@@ -437,7 +437,7 @@
 <tr>
 <td style="text-align: left;">visibility</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Specifies the group join policy and group content visibility for groups. Possible values are: <code>Private</code>, <code>Public</code>, or <code>HiddenMembership</code>. <code>HiddenMembership</code> can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation.<br> If visibility value is not specified during group creation on Microsoft Graph, a security group is created as <code>Private</code> by default and Microsoft 365 group is <code>Public</code>. Groups assignable to roles are always <code>Private</code>. To learn more, see group visibility options. <br><br>Returned by default. Nullable.</td>
+<td style="text-align: left;">Specifies the group join policy and group content visibility for groups. Possible values are: <code>Private</code>, <code>Public</code>, or <code>HiddenMembership</code>. <code>HiddenMembership</code> can be set only for Microsoft 365 groups when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation.<br> If visibility value is not specified during group creation on Microsoft Graph, a security group is created as <code>Private</code> by default, and the Microsoft 365 group is <code>Public</code>. Groups assignable to roles are always <code>Private</code>. To learn more, see group visibility options. <br><br>Returned by default. Nullable.</td>
 </tr>
 </tbody>
 </table>
