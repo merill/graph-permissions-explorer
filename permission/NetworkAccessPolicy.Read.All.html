@@ -91,10 +91,23 @@
 <p>Allows the app to read your organization's security and routing network access policies on behalf of the signed-in user.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
-</div>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<table>
+<thead>
+<tr>
+<th>Ver</th>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/networkaccess-branchconnectivityconfiguration-get?view=graph-rest-1.0&amp;tabs=http">GET /networkAccess/connectivity/branches/{branchSiteId}/connectivityConfiguration</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -142,6 +155,86 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the app to read your organization's network access policies, without a signed-in user.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="resources">Resources</h2>
+<h3 id="branchconnectivityconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/networkaccess-branchconnectivityconfiguration?view=graph-rest-1.0&amp;tabs=http">branchConnectivityConfiguration </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">branchId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier or a specific reference assigned to a branchSite. Key.</td>
+</tr>
+<tr>
+<td style="text-align: left;">branchName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Display name assigned to a branchSite.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="devicelink-"><a href="https://docs.microsoft.com/graph/api/resources/networkaccess-devicelink?view=graph-rest-1.0&amp;tabs=http">deviceLink </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">bgpConfiguration</td>
+<td style="text-align: left;">microsoft.graph.networkaccess.bgpConfiguration</td>
+<td style="text-align: left;">The border gateway protocol specifies the IP address and ASN for directing traffic from a link to the edge.</td>
+</tr>
+<tr>
+<td style="text-align: left;">bandwidthCapacityInMbps</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">Determines the maximum allowed Mbps (megabits per second) bandwidth from a branch site. The possible values are:<code>250</code>,<code>500</code>,<code>750</code>,<code>1000</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">deviceVendor</td>
+<td style="text-align: left;">microsoft.graph.networkaccess.deviceVendor</td>
+<td style="text-align: left;">Specifies the manufacturer of the deviceLink. The possible values are: <code>barracudaNetworks</code>, <code>checkPoint</code>, <code>ciscoMeraki</code>, <code>citrix</code>, <code>fortinet</code>, <code>hpeAruba</code>, <code>netFoundry</code>, <code>nuage</code>, <code>openSystems</code>, <code>paloAltoNetworks</code>, <code>riverbedTechnology</code>, <code>silverPeak</code>, <code>vmWareSdWan</code>, <code>versa</code>, <code>other</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifier. Inherited from microsoft.graph.entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">ipAddress</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Specifies the client IPv4 of the link</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">last modified time.</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tunnelConfiguration</td>
+<td style="text-align: left;">microsoft.graph.networkaccess.tunnelConfiguration</td>
+<td style="text-align: left;">The connectivity settings, including the protocol, IPSec policy, and preshared key, are specified for establishing connectivity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">version</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Version.</td>
 </tr>
 </tbody>
 </table>
