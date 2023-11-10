@@ -91,10 +91,23 @@
 <p>Allows the application to read documents and list  items in all site collections on behalf of the signed-in user</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
-</div>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<table>
+<thead>
+<tr>
+<th>Ver</th>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/site-delta?view=graph-rest-1.0&amp;tabs=http">GET /sites/delta</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -142,6 +155,91 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the app to read documents and list items in all site collections without a signed in user.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="resources">Resources</h2>
+<h3 id="deleted"><a href="https://docs.microsoft.com/graph/api/resources/deleted?view=graph-rest-1.0&amp;tabs=http">deleted</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">state</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Represents the state of the deleted item.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="site-"><a href="https://docs.microsoft.com/graph/api/resources/site?view=graph-rest-1.0&amp;tabs=http">site </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>createdDateTime</strong></td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the item was created. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>description</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The descriptive text for the site.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>displayName</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The full title for the site. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>eTag</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">ETag for the item. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>id</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The unique identifier of the item. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>lastModifiedDateTime</strong></td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the item was last modified. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>name</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The name / title of the item.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>root</strong></td>
+<td style="text-align: left;">root</td>
+<td style="text-align: left;">If present, indicates that this is the root site in the site collection. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>sharepointIds</strong></td>
+<td style="text-align: left;">sharepointIds</td>
+<td style="text-align: left;">Returns identifiers useful for SharePoint REST compatibility. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>siteCollection</strong></td>
+<td style="text-align: left;">siteCollection</td>
+<td style="text-align: left;">Provides details about the site's site collection. Available only on the root site. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>webUrl</strong></td>
+<td style="text-align: left;">string (url)</td>
+<td style="text-align: left;">URL that displays the item in the browser. Read-only.</td>
 </tr>
 </tbody>
 </table>
