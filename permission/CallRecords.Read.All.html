@@ -91,10 +91,28 @@
 <p>Allows the app to read call records for all calls and online meetings without a signed-in user.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
-</div>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<table>
+<thead>
+<tr>
+<th>Ver</th>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/callrecords-callrecord-list?view=graph-rest-1.0&amp;tabs=http">GET /communications/callRecords</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/callrecords-callrecord-list-participants?view=graph-rest-1.0&amp;tabs=http">GET /communications/callRecords/{id}/participants_v2</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="application-permission">Application Permission</h2>
 <table>
 <thead>
@@ -115,6 +133,91 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the app to read call records for all calls and online meetings without a signed-in user.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="resources">Resources</h2>
+<h3 id="callrecord-"><a href="https://docs.microsoft.com/graph/api/resources/callrecords-callrecord?view=graph-rest-1.0&amp;tabs=http">callRecord </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">endDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">UTC time when the last user left the call. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for the call record. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">joinWebUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Meeting URL associated to the call. May not be available for a peerToPeer call record type.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">UTC time when the call record was created. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">modalities</td>
+<td style="text-align: left;">modality collection</td>
+<td style="text-align: left;">List of all the modalities used in the call. Possible values are: <code>unknown</code>, <code>audio</code>, <code>video</code>, <code>videoBasedScreenSharing</code>, <code>data</code>, <code>screenSharing</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">organizer</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The organizing party's identity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">participants</td>
+<td style="text-align: left;">identitySet collection</td>
+<td style="text-align: left;">List of distinct identities involved in the call.</td>
+</tr>
+<tr>
+<td style="text-align: left;">startDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">type</td>
+<td style="text-align: left;">callType</td>
+<td style="text-align: left;">Indicates the type of the call. Possible values are: <code>unknown</code>, <code>groupCall</code>, <code>peerToPeer</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">version</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">Monotonically increasing version of the call record. Higher version call records with the same id includes additional data compared to the lower version.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="participant-"><a href="https://docs.microsoft.com/graph/api/resources/callrecords-participant?view=graph-rest-1.0&amp;tabs=http">participant </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for the call participant. Inherited from participantBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">identity</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The identity of the call participant. Inherited from participantBase.</td>
 </tr>
 </tbody>
 </table>
