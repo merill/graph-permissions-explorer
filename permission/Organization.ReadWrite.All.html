@@ -91,23 +91,10 @@
 <p>Allows the app to read and write the organization and related resources, on behalf of the signed-in user. Related resources include things like subscribed skus and tenant branding information.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
-<table>
-<thead>
-<tr>
-<th>Ver</th>
-<th>Type</th>
-<th>Method</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/organization-get?view=graph-rest-1.0&amp;tabs=http">GET /organization/{organizationId}</a></td>
-</tr>
-</tbody>
-</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This permission does not have any graph methods published.</p>
+</div>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -155,149 +142,6 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the app to read and write the organization and related resources, without a signed-in user. Related resources include things like subscribed skus and tenant branding information.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="resources">Resources</h2>
-<h3 id="organization-"><a href="https://docs.microsoft.com/graph/api/resources/organization?view=graph-rest-1.0&amp;tabs=http">organization </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">assignedPlans</td>
-<td style="text-align: left;">assignedPlan collection</td>
-<td style="text-align: left;">The collection of service plans associated with the tenant. Not nullable.</td>
-</tr>
-<tr>
-<td style="text-align: left;">businessPhones</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Telephone number for the organization. Although this is a string collection, only one number can be set for this property.</td>
-</tr>
-<tr>
-<td style="text-align: left;">city</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">City name of the address for the organization.</td>
-</tr>
-<tr>
-<td style="text-align: left;">country</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Country/region name of the address for the organization.</td>
-</tr>
-<tr>
-<td style="text-align: left;">countryLetterCode</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Country or region abbreviation for the organization in ISO 3166-2 format.</td>
-</tr>
-<tr>
-<td style="text-align: left;">createdDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">defaultUsageLocation</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Two-letter ISO 3166 country code indicating the default service usage location of an organization.</td>
-</tr>
-<tr>
-<td style="text-align: left;">deletedDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Represents date and time of when the Microsoft Entra tenant was deleted using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">displayName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name for the tenant.</td>
-</tr>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The tenant ID, a unique identifier representing the organization (or tenant). Inherited from directoryObject. Key. Not nullable. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">isMultipleDataLocationsForServicesEnabled</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;"><code>true</code> if organization is Multi-Geo enabled; <strong>false</strong> if organization is not Multi-Geo enabled; <strong>null</strong> (default). Read-only. For more information, see OneDrive Online Multi-Geo.</td>
-</tr>
-<tr>
-<td style="text-align: left;">marketingNotificationEmails</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Not nullable.</td>
-</tr>
-<tr>
-<td style="text-align: left;">onPremisesLastSyncDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">onPremisesSyncEnabled</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;"><code>true</code> if this object is synced from an on-premises directory; <code>false</code> if this object was originally synced from an on-premises directory but is no longer synced. Nullable. <code>null</code> if this object has never been synced from an on-premises directory (default).</td>
-</tr>
-<tr>
-<td style="text-align: left;">partnerTenantType</td>
-<td style="text-align: left;">partnerTenantType</td>
-<td style="text-align: left;">The type of partnership this tenant has with Microsoft. The possible values are: <code>microsoftSupport</code>, <code>syndicatePartner</code>, <code>breadthPartner</code>, <code>breadthPartnerDelegatedAdmin</code>, <code>resellerPartnerDelegatedAdmin</code>, <code>valueAddedResellerPartnerDelegatedAdmin</code>, <code>unknownFutureValue</code>. Nullable. For more information about the possible types, see partnerTenantType values.</td>
-</tr>
-<tr>
-<td style="text-align: left;">postalCode</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Postal code of the address for the organization.</td>
-</tr>
-<tr>
-<td style="text-align: left;">preferredLanguage</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The preferred language for the organization. Should follow ISO 639-1 Code; for example, <code>en</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">privacyProfile</td>
-<td style="text-align: left;">privacyProfile</td>
-<td style="text-align: left;">The privacy profile of an organization.</td>
-</tr>
-<tr>
-<td style="text-align: left;">provisionedPlans</td>
-<td style="text-align: left;">ProvisionedPlan collection</td>
-<td style="text-align: left;">Not nullable.</td>
-</tr>
-<tr>
-<td style="text-align: left;">securityComplianceNotificationMails</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Not nullable.</td>
-</tr>
-<tr>
-<td style="text-align: left;">securityComplianceNotificationPhones</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Not nullable.</td>
-</tr>
-<tr>
-<td style="text-align: left;">state</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">State name of the address for the organization.</td>
-</tr>
-<tr>
-<td style="text-align: left;">street</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Street name of the address for organization.</td>
-</tr>
-<tr>
-<td style="text-align: left;">technicalNotificationMails</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Not nullable.</td>
-</tr>
-<tr>
-<td style="text-align: left;">tenantType</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Not nullable. The tenant type option that was selected when the tenant was created. The possible values are: <li> <code>AAD</code> - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios. <li> <code>AAD B2C</code> A customer identity access management (CIAM) service that serves business-to-consumer (B2C) scenarios.</li></li></td>
-</tr>
-<tr>
-<td style="text-align: left;">verifiedDomains</td>
-<td style="text-align: left;">VerifiedDomain collection</td>
-<td style="text-align: left;">The collection of domains associated with this tenant. Not nullable.</td>
 </tr>
 </tbody>
 </table>

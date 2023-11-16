@@ -104,12 +104,7 @@
 <tr>
 <td>V1</td>
 <td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/todo-post-lists?view=graph-rest-1.0&amp;tabs=http">POST /me/todo/lists</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/todo-post-lists?view=graph-rest-1.0&amp;tabs=http">POST /users/{id|userPrincipalName}/todo/lists</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/plannerplan-movetocontainer?view=graph-rest-1.0&amp;tabs=http">POST https://graph.microsoft.com/beta/planner/plans/planId/moveToContainer</a></td>
 </tr>
 </tbody>
 </table>
@@ -137,7 +132,7 @@
 </tbody>
 </table>
 <h2 id="resources">Resources</h2>
-<h3 id="todotasklist-"><a href="https://docs.microsoft.com/graph/api/resources/todotasklist?view=graph-rest-1.0&amp;tabs=http">todoTaskList </a></h3>
+<h3 id="plannerplan-"><a href="https://docs.microsoft.com/graph/api/resources/plannerplan?view=graph-rest-1.0&amp;tabs=http">plannerPlan </a></h3>
 <table>
 <thead>
 <tr>
@@ -148,29 +143,61 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">displayName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The name of the task list.</td>
+<td style="text-align: left;">container</td>
+<td style="text-align: left;">plannerPlanContainer</td>
+<td style="text-align: left;">Identifies the container of the plan. Specify only the <strong>url</strong>, the <strong>containerId</strong> and <strong>type</strong>, or all properties. After it's set, this property can’t be updated. Required.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">Read-only. The user who created the plan.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code></td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The identifier of the task list, unique in the user's mailbox. Read-only. Inherited from entity</td>
+<td style="text-align: left;">Read-only. ID of the plan. It's 28 characters long and case-sensitive. Format validation is done on the service.</td>
 </tr>
 <tr>
-<td style="text-align: left;">isOwner</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">True if the user is owner of the given task list.</td>
+<td style="text-align: left;">owner (deprecated)</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Use the <strong>container</strong> property instead. ID of the group that owns the plan. After it's set, this property can’t be updated. This property won't return a valid group ID if the container of the plan isn't a group.</td>
 </tr>
 <tr>
-<td style="text-align: left;">isShared</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">True if the task list is shared with other users</td>
+<td style="text-align: left;">title</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Required. Title of the plan.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="plannerplancontainer-"><a href="https://docs.microsoft.com/graph/api/resources/plannerplancontainer?view=graph-rest-1.0&amp;tabs=http">plannerPlanContainer </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">containerId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the resource that contains the plan. Optional.</td>
 </tr>
 <tr>
-<td style="text-align: left;">wellknownListName</td>
-<td style="text-align: left;">wellknownListName</td>
-<td style="text-align: left;">Property indicating the list name if the given list is a well-known list. Possible values are: <code>none</code>, <code>defaultList</code>, <code>flaggedEmails</code>, <code>unknownFutureValue</code>.</td>
+<td style="text-align: left;">type</td>
+<td style="text-align: left;">plannerContainerType</td>
+<td style="text-align: left;">The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: <code>group</code>, <code>unknownFutureValue</code>, <code>roster</code>. Note that you must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value in this evolvable enum: <code>roster</code>. Optional.</td>
+</tr>
+<tr>
+<td style="text-align: left;">url</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The full canonical URL of the container. Optional.</td>
 </tr>
 </tbody>
 </table>
