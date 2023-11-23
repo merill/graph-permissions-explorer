@@ -229,6 +229,16 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/approleassignment-get?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals(appId='{client-servicePrincipal-appId}')/appRoleAssignments/{appRoleAssignment-id}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/approleassignment-get?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{client-serviceprincipal-id}/appRoleAssignments/{appRoleAssignment-id}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-claimsmappingpolicies?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/claimsMappingPolicies</a></td>
 </tr>
 <tr>
@@ -329,7 +339,17 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directoryobject-checkmemberobjects?view=graph-rest-1.0&amp;tabs=http">POST /directoryObjects/{id}/checkMemberObjects</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0&amp;tabs=http">POST /directoryObjects/{id}/getMemberGroups</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0&amp;tabs=http">POST /directoryObjects/{id}/getMemberObjects</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -747,6 +767,63 @@
 <td style="text-align: left;">value</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Specifies the value to include in the <code>roles</code> claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are <code>:</code> <code>!</code> <code>#</code> <code>$</code> <code>%</code> <code>&amp;</code> <code>'</code> <code>(</code> <code>)</code> <code>*</code> <code>+</code> <code>,</code> <code>-</code> <code>.</code> <code>/</code> <code>:</code> <code>;</code> <code>&lt;</code> <code>=</code> <code>&gt;</code> <code>?</code> <code>@</code> <code>[</code> <code>]</code> <code>^</code> <code>+</code> <code>_</code> <code>`</code> <code>{</code> <code>|</code> <code>}</code> <code>~</code>, and characters in the ranges <code>0-9</code>, <code>A-Z</code> and <code>a-z</code>. Any other character, including the space character, aren't allowed. May not begin with <code>.</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="approleassignment-"><a href="https://docs.microsoft.com/graph/api/resources/approleassignment?view=graph-rest-1.0&amp;tabs=http">appRoleAssignment </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">appRoleId</td>
+<td style="text-align: left;">Guid</td>
+<td style="text-align: left;">The identifier (<strong>id</strong>) for the app role which is assigned to the principal. This app role must be exposed in the <strong>appRoles</strong> property on the resource application's service principal (<strong>resourceId</strong>). If the resource application has not declared any app roles, a default app role ID of <code>00000000-0000-0000-0000-000000000000</code> can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The time when the app role assignment was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">deletedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the app role assignment was deleted. Always <code>null</code> for an appRoleAssignment object that hasn't been deleted. Inherited from directoryObject.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A unique identifier for the <strong>appRoleAssignment</strong> key. Not nullable. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">principalDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the user, group, or service principal that was granted the app role assignment. Read-only. Supports <code>$filter</code> (<code>eq</code> and <code>startswith</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">principalId</td>
+<td style="text-align: left;">Guid</td>
+<td style="text-align: left;">The unique identifier (<strong>id</strong>) for the user, security group, or service principal being granted the app role. Security groups with dynamic memberships are supported. Required on create.</td>
+</tr>
+<tr>
+<td style="text-align: left;">principalType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The type of the assigned principal. This can either be <code>User</code>, <code>Group</code>, or <code>ServicePrincipal</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">resourceDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the resource app's service principal to which the assignment is made.</td>
+</tr>
+<tr>
+<td style="text-align: left;">resourceId</td>
+<td style="text-align: left;">Guid</td>
+<td style="text-align: left;">The unique identifier (**i</td>
 </tr>
 </tbody>
 </table>

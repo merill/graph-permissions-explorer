@@ -329,6 +329,16 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0&amp;tabs=http">GET /roleManagement/cloudPC/roleDefinitions</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-1.0&amp;tabs=http">GET /roleManagement/cloudPC/roleDefinitions/{id}</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/intune-rbac-rbacapplicationmultiple-get?view=graph-rest-1.0&amp;tabs=http">GET /roleManagement/deviceManagement</a></td>
 </tr>
 <tr>
@@ -1035,6 +1045,63 @@
 <th style="text-align: left;">Description</th>
 </tr>
 </thead>
+</table>
+<h3 id="unifiedroledefinition-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedroledefinition?view=graph-rest-1.0&amp;tabs=http">unifiedRoleDefinition </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The description for the unifiedRoleDefinition. Read-only when <strong>isBuiltIn</strong> is <code>true</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name for the unifiedRoleDefinition. Read-only when <strong>isBuiltIn</strong> is <code>true</code>. Required.  Supports $filter (<code>eq</code>, <code>in</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the role definition. Key, not nullable, Read-only. Inherited from entity. Supports $filter (<code>eq</code>, <code>in</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">isBuiltIn</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Flag indicating whether the role definition is part of the default set included in Microsoft Entra or a custom definition. Read-only. Supports $filter (<code>eq</code>, <code>in</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">isEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Flag indicating whether the role is enabled for assignment. If <code>false</code> the role is not available for assignment. Read-only when <strong>isBuiltIn</strong> is true.</td>
+</tr>
+<tr>
+<td style="text-align: left;">resourceScopes</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">List of the scopes or permissions the role definition applies to. Currently only <code>/</code> is supported. Read-only when <strong>isBuiltIn</strong> is true. <strong>DO NOT USE. This will be deprecated soon. Attach scope to role assignment.</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">rolePermissions</td>
+<td style="text-align: left;">unifiedRolePermission collection</td>
+<td style="text-align: left;">List of permissions included in the role. Read-only when <strong>isBuiltIn</strong> is <code>true</code>. Required.</td>
+</tr>
+<tr>
+<td style="text-align: left;">templateId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Custom template identifier that can be set when <strong>isBuiltIn</strong> is <code>false</code> but is read-only when <strong>isBuiltIn</strong> is <code>true</code>. This identifier is typically used if one needs an identifier to be the same across different directories.</td>
+</tr>
+<tr>
+<td style="text-align: left;">version</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Indicates version of the role definition. Read-only when **i</td>
+</tr>
+</tbody>
 </table>
 </article>
           </div>
