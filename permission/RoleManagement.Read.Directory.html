@@ -144,12 +144,7 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignments?view=graph-rest-1.0&amp;tabs=http">GET /roleManagement/directory/roleAssignments?$filter=principalId eq '{principal id}'</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignments?view=graph-rest-1.0&amp;tabs=http">GET /roleManagement/directory/roleAssignments?$filter=roleDefinitionId eq '{roleDefinition id}'</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignments?view=graph-rest-1.0&amp;tabs=http">GET /roleManagement/directory/roleAssignments</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -232,27 +227,27 @@
 <tr>
 <td style="text-align: left;">appScopeId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifier of the app-specific scope when the assignment scope is app-specific.  Either this property or <strong>directoryScopeId</strong> is required. App scopes are scopes that are defined and understood by this application only. Use <code>/</code> for tenant-wide app scopes. Use <strong>directoryScopeId</strong> to limit the scope to particular directory objects, for example, administrative units. Supports $filter (<code>eq</code>, <code>in</code>).</td>
+<td style="text-align: left;">Identifier of the app specific scope when the assignment scope is app specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by a resource application only. For the entitlement management provider, use this property to specify a catalog, for example <code>/AccessPackageCatalog/beedadfe-01d5-4025-910b-84abb9369997</code>. Supports <code>$filter</code> (<code>eq</code>, <code>in</code>). For example <code>/roleManagement/entitlementManagement/roleAssignments?$filter=appScopeId eq '/AccessPackageCatalog/{catalog id}'</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">directoryScopeId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifier of the directory object representing the scope of the assignment.  Either this property or <strong>appScopeId</strong> is required. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use <code>/</code> for tenant-wide scope. Use <strong>appScopeId</strong> to limit the scope to an application only. Supports $filter (<code>eq</code>, <code>in</code>).</td>
+<td style="text-align: left;">Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications, unlike app scopes that are defined and understood by a resource application only. Supports <code>$filter</code> (<code>eq</code>, <code>in</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the role assignment. Key, not nullable, Read-only. Inherited from entity.</td>
-</tr>
-<tr>
-<td style="text-align: left;">roleDefinitionId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifier of the role definition the assignment is for. Read only. Supports $filter (<code>eq</code>, <code>in</code>).</td>
+<td style="text-align: left;">The unique identifier for the unifiedRoleAssignment. Key, not nullable, Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">principalId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifier of the principal to which the assignment is granted. Supports $filter (<code>eq</code>, <code>in</code>).</td>
+<td style="text-align: left;">Identifier of the principal to which the assignment is granted. Supported principals are users, role-assignable groups, and service principals. Supports <code>$filter</code> (<code>eq</code>, <code>in</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">roleDefinitionId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifier of the unifiedRoleDefinition the assignment is for. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>in</code>).</td>
 </tr>
 </tbody>
 </table>
