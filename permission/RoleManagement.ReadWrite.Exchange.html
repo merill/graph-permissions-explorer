@@ -91,48 +91,10 @@
 <p>Allows the app to read and manage the role-based access control (RBAC) settings for your organization's Exchange Online service, on behalf of the signed-in user. This includes reading, creating, updating, and deleting Exchange management role definitions, role groups, role group membership, role assignments, management scopes, and role assignment policies.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
-<table>
-<thead>
-<tr>
-<th>Ver</th>
-<th>Type</th>
-<th>Method</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/unifiedroleassignment-delete?view=graph-rest-beta&amp;tabs=http">DELETE /roleManagement/directory/roleAssignments/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/cloudPC/roleDefinitions</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/cloudPC/roleDefinitions/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignments?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/directory/roleAssignments</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/unifiedroleassignment-get?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/directory/roleAssignments/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/rbacapplication-post-roleassignments?view=graph-rest-beta&amp;tabs=http">POST /roleManagement/directory/roleAssignments</a></td>
-</tr>
-</tbody>
-</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This permission does not have any graph methods published.</p>
+</div>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -180,123 +142,6 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the app to read and manage the role-based access control (RBAC) settings for your organization's Exchange Online service, without a signed-in user. This includes reading, creating, updating, and deleting Exchange management role definitions, role groups, role group membership, role assignments, management scopes, and role assignment policies.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="resources">Resources</h2>
-<h3 id="directoryobject-"><a href="https://docs.microsoft.com/graph/api/resources/directoryobject?view=graph-rest-1.0&amp;tabs=http">directoryObject </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">deletedDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Date and time when this object was deleted. Always <code>null</code> when the object hasn't been deleted.</td>
-</tr>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the object. For example, <code>12345678-9abc-def0-1234-56789abcde</code>. The value of the **i</td>
-</tr>
-</tbody>
-</table>
-<h3 id="unifiedroleassignment-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedroleassignment?view=graph-rest-1.0&amp;tabs=http">unifiedRoleAssignment </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">appScopeId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifier of the app specific scope when the assignment scope is app specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by a resource application only. For the entitlement management provider, use this property to specify a catalog. For example, <code>/AccessPackageCatalog/beedadfe-01d5-4025-910b-84abb9369997</code>. Supports <code>$filter</code> (<code>eq</code>, <code>in</code>). For example, <code>/roleManagement/entitlementManagement/roleAssignments?$filter=appScopeId eq '/AccessPackageCatalog/{catalog id}'</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">directoryScopeId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications, unlike app scopes that are defined and understood by a resource application only. Supports <code>$filter</code> (<code>eq</code>, <code>in</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the unifiedRoleAssignment. Key, not nullable, Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">principalId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifier of the principal to which the assignment is granted. Supported principals are users, role-assignable groups, and service principals. Supports <code>$filter</code> (<code>eq</code>, <code>in</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">roleDefinitionId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifier of the unifiedRoleDefinition the assignment is for. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>in</code>).</td>
-</tr>
-</tbody>
-</table>
-<h3 id="unifiedroledefinition-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedroledefinition?view=graph-rest-1.0&amp;tabs=http">unifiedRoleDefinition </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">description</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The description for the unifiedRoleDefinition. Read-only when <strong>isBuiltIn</strong> is <code>true</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">displayName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name for the unifiedRoleDefinition. Read-only when <strong>isBuiltIn</strong> is <code>true</code>. Required.  Supports $filter (<code>eq</code>, <code>in</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the role definition. Key, not nullable, Read-only. Inherited from entity. Supports $filter (<code>eq</code>, <code>in</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">isBuiltIn</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Flag indicating whether the role definition is part of the default set included in Microsoft Entra or a custom definition. Read-only. Supports $filter (<code>eq</code>, <code>in</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">isEnabled</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Flag indicating whether the role is enabled for assignment. If <code>false</code> the role is not available for assignment. Read-only when <strong>isBuiltIn</strong> is true.</td>
-</tr>
-<tr>
-<td style="text-align: left;">resourceScopes</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">List of the scopes or permissions the role definition applies to. Currently only <code>/</code> is supported. Read-only when <strong>isBuiltIn</strong> is true. <strong>DO NOT USE. This will be deprecated soon. Attach scope to role assignment.</strong></td>
-</tr>
-<tr>
-<td style="text-align: left;">rolePermissions</td>
-<td style="text-align: left;">unifiedRolePermission collection</td>
-<td style="text-align: left;">List of permissions included in the role. Read-only when <strong>isBuiltIn</strong> is <code>true</code>. Required.</td>
-</tr>
-<tr>
-<td style="text-align: left;">templateId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Custom template identifier that can be set when <strong>isBuiltIn</strong> is <code>false</code> but is read-only when <strong>isBuiltIn</strong> is <code>true</code>. This identifier is typically used if one needs an identifier to be the same across different directories.</td>
-</tr>
-<tr>
-<td style="text-align: left;">version</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Indicates version of the role definition. Read-only when **i</td>
 </tr>
 </tbody>
 </table>
