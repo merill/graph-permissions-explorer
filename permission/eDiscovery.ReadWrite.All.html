@@ -91,10 +91,38 @@
 <p>Allows the app to read and write eDiscovery objects such as cases, custodians, review sets and other related objects on behalf of the signed-in user.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
-</div>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<table>
+<thead>
+<tr>
+<th>Ver</th>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Beta</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/ediscovery-case-list-legalholds?view=graph-rest-beta&amp;tabs=http">GET /compliance/ediscovery/cases/{caseId}/legalHolds</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/ediscovery-case-list-operations?view=graph-rest-beta&amp;tabs=http">GET /compliance/ediscovery/cases/{caseId}/operations</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/ediscovery-case-list-reviewsets?view=graph-rest-beta&amp;tabs=http">GET /compliance/ediscovery/cases/{caseId}/reviewSets</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/ediscovery-case-post-legalholds?view=graph-rest-beta&amp;tabs=http">POST /compliance/ediscovery/cases/{caseId}/legalHolds</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -142,6 +170,225 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the app to read and write eDiscovery objects such as cases, custodians, review sets and other related objects without a signed-in user.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="resources">Resources</h2>
+<h3 id="case-"><a href="https://docs.microsoft.com/graph/api/resources/ediscovery-case?view=graph-rest-1.0&amp;tabs=http">case </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">closedBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The user who closed the case.</td>
+</tr>
+<tr>
+<td style="text-align: left;">closedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the case was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The user who created the case.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the entity was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The case description.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The case name.</td>
+</tr>
+<tr>
+<td style="text-align: left;">externalId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The external case number for customer reference.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The ID for the eDiscovery case. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The last user who modified the entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The latest date and time when the case was modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">microsoft.graph.ediscovery.caseStatus</td>
+<td style="text-align: left;">The case status. Possible values are <code>unknown</code>, <code>active</code>, <code>pendingDelete</code>, <code>closing</code>, <code>closed</code>, and <code>closedWithError</code>. For details, see the following table.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="caseoperation-"><a href="https://docs.microsoft.com/graph/api/resources/ediscovery-caseoperation?view=graph-rest-1.0&amp;tabs=http">caseOperation </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">action</td>
+<td style="text-align: left;">microsoft.graph.ediscovery.caseAction</td>
+<td style="text-align: left;">The type of action the operation represents. Possible values are: <code>addToReviewSet</code>,<code>applyTags</code>,<code>contentExport</code>,<code>convertToPdf</code>,<code>estimateStatistics</code>, <code>purgeData</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">completedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the operation was completed.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The user that created the operation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the operation was created.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The ID for the operation. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">percentProgress</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The progress of the operation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">resultInfo</td>
+<td style="text-align: left;">resultInfo</td>
+<td style="text-align: left;">Contains success and failure-specific result information.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">microsoft.graph.ediscovery.caseOperationStatus</td>
+<td style="text-align: left;">The status of the case operation. Possible values are: <code>notStarted</code>, <code>submissionFailed</code>, <code>running</code>, <code>succeeded</code>, <code>partiallySucceeded</code>, <code>failed</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="legalhold-"><a href="https://docs.microsoft.com/graph/api/resources/ediscovery-legalhold?view=graph-rest-1.0&amp;tabs=http">legalHold </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">contentQuery</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">KQL query that specifies content to be held in the specified locations. To learn more, see Keyword queries and search conditions for Content Search and eDiscovery.  To hold all content in the specified locations, leave <strong>contentQuery</strong> blank.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The user who created the legal hold.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the legal hold was created.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The legal hold description.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the legal hold.</td>
+</tr>
+<tr>
+<td style="text-align: left;">errors</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Lists any errors that happened while placing the hold.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The ID for the eDiscovery case. Read-only. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the hold is enabled and actively holding content.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">the user who last modified the legal hold.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the legal hold was last modified.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">microsoft.graph.ediscovery.legalHoldStatus</td>
+<td style="text-align: left;">The status of the legal hold. Possible values are: <code>Pending</code>, <code>Error</code>, <code>Success</code>, <code>UnknownFutureValue</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="reviewset-"><a href="https://docs.microsoft.com/graph/api/resources/ediscovery-reviewset?view=graph-rest-1.0&amp;tabs=http">reviewSet </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The user who created the review set. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The datetime when the review set was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The review set name. The name is unique with a maximum limit of 64 characters.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The review set unique identifier. Read-only.</td>
 </tr>
 </tbody>
 </table>

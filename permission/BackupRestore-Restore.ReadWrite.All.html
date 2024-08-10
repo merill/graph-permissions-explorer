@@ -104,6 +104,11 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/backuprestoreroot-list-restorepoints?view=graph-rest-1.0&amp;tabs=http">GET /solutions/backupRestore/restorePoints?$expand=protectionUnit($filter=id eq '{ProtectionUnitID}')&amp;$filter=protectionDateTime lt YYYY-MM-DDTHH:mm:ssZ</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/backuprestoreroot-post-exchangerestoresessions?view=graph-rest-1.0&amp;tabs=http">POST /solutions/backupRestore/exchangeRestoreSessions</a></td>
 </tr>
 <tr>
@@ -436,6 +441,38 @@
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">restoreSessionStatus</td>
 <td style="text-align: left;">Status of the restore session. The value is an aggregated status of the restored artifacts. The possible values are: <code>draft</code>, <code>activating</code>, <code>active</code>, <code>completedWithError</code>, <code>completed</code>, <code>unknownFutureValue</code>, <code>failed</code>. Note that you must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value in this evolvable enum: <code>failed</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="restorepoint-"><a href="https://docs.microsoft.com/graph/api/resources/restorepoint?view=graph-rest-1.0&amp;tabs=http">restorePoint </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">ID of the restore point.</td>
+</tr>
+<tr>
+<td style="text-align: left;">protectionDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date time when the restore point was created.</td>
+</tr>
+<tr>
+<td style="text-align: left;">expirationDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Expiration date time of the restore point.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tags</td>
+<td style="text-align: left;">restorePointTags</td>
+<td style="text-align: left;">The type of the restore point. The possible values are: <code>none</code>, <code>fastRestore</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 </tbody>
 </table>

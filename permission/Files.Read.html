@@ -91,10 +91,28 @@
 <p>Allows the app to read the signed-in user's files.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
-</div>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<table>
+<thead>
+<tr>
+<th>Ver</th>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/workbook-list-tables?view=graph-rest-1.0&amp;tabs=http">GET /me/drive/items/{id}/workbook/tables</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/workbook-list-tables?view=graph-rest-1.0&amp;tabs=http">GET /me/drive/root:/{item-path}:/workbook/tables</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -119,6 +137,74 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the app to read the signed-in user's files.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="resources">Resources</h2>
+<h3 id="workbooktable-"><a href="https://docs.microsoft.com/graph/api/resources/workbooktable?view=graph-rest-1.0&amp;tabs=http">workbookTable </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The unique identifier for the table in the workbook. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and shouldn't be parsed to any other type. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The name of the table.</td>
+</tr>
+<tr>
+<td style="text-align: left;">showHeaders</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the header row is visible or not. This value can be set to show or remove the header row.</td>
+</tr>
+<tr>
+<td style="text-align: left;">showTotals</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the total row is visible or not. This value can be set to show or remove the total row.</td>
+</tr>
+<tr>
+<td style="text-align: left;">style</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">A constant value that represents the Table style. Possible values are: <code>TableStyleLight1</code> through <code>TableStyleLight21</code>, <code>TableStyleMedium1</code> through <code>TableStyleMedium28</code>, <code>TableStyleStyleDark1</code> through <code>TableStyleStyleDark11</code>. A custom user-defined style present in the workbook can also be specified.</td>
+</tr>
+<tr>
+<td style="text-align: left;">highlightFirstColumn</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the first column contains special formatting.</td>
+</tr>
+<tr>
+<td style="text-align: left;">highlightLastColumn</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the last column contains special formatting.</td>
+</tr>
+<tr>
+<td style="text-align: left;">showBandedColumns</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the columns show banded formatting in which odd columns are highlighted differently from even ones to make reading the table easier.</td>
+</tr>
+<tr>
+<td style="text-align: left;">showBandedRows</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the rows show banded formatting in which odd rows are highlighted differently from even ones to make reading the table easier.</td>
+</tr>
+<tr>
+<td style="text-align: left;">showFilterButton</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the filter buttons are visible at the top of each column header. Setting this is only allowed if the table contains a header row.</td>
+</tr>
+<tr>
+<td style="text-align: left;">legacyId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A legacy identifier used in older Excel clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and shouldn't be parsed to any other type. Read-only.</td>
 </tr>
 </tbody>
 </table>

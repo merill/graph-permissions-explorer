@@ -103,6 +103,11 @@
 <td></td>
 <td><a href="https://docs.microsoft.com/graph/api/filestoragecontainer-update?view=graph-rest-1.0&amp;tabs=http">PATCH /storage/fileStorage/containers/{containerId}</a></td>
 </tr>
+<tr>
+<td>V1</td>
+<td></td>
+<td><a href="https://docs.microsoft.com/graph/api/filestoragecontainer-update-permissions?view=graph-rest-1.0&amp;tabs=http">PATCH /storage/fileStorage/containers/{containerId}/permissions/{permissionId}</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="resources">Resources</h2>
@@ -155,6 +160,78 @@
 <td style="text-align: left;">viewpoint</td>
 <td style="text-align: left;">fileStorageContainerViewpoint</td>
 <td style="text-align: left;">Data specific to the current user. Read-only.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="permission-"><a href="https://docs.microsoft.com/graph/api/resources/permission?view=graph-rest-1.0&amp;tabs=http">Permission </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">expirationDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there's no expiration set for this permission. Optional.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier of the permission among all permissions on the item. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">hasPassword</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the password is set for this permission. This property only appears in the response. Optional. Read-only. For OneDrive Personal only..</td>
+</tr>
+<tr>
+<td style="text-align: left;">grantedTo (deprecated)</td>
+<td style="text-align: left;">IdentitySet</td>
+<td style="text-align: left;">For user type permissions, the details of the users and applications for this permission. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">grantedToIdentities (deprecated)</td>
+<td style="text-align: left;">Collection(IdentitySet)</td>
+<td style="text-align: left;">For type permissions, the details of the users to whom permission was granted. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">grantedToIdentitiesV2</td>
+<td style="text-align: left;">Collection([SharePointIdentitySet][])</td>
+<td style="text-align: left;">For link type permissions, the details of the users to whom permission was granted. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">grantedToV2</td>
+<td style="text-align: left;">[SharePointIdentitySet][]</td>
+<td style="text-align: left;">For user type permissions, the details of the users and applications for this permission. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">inheritedFrom</td>
+<td style="text-align: left;">ItemReference</td>
+<td style="text-align: left;">Provides a reference to the ancestor of the current permission, if it's inherited from an ancestor. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">invitation</td>
+<td style="text-align: left;">[SharingInvitation][]</td>
+<td style="text-align: left;">Details of any associated sharing invitation for this permission. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">link</td>
+<td style="text-align: left;">[SharingLink][]</td>
+<td style="text-align: left;">Provides the link details of the current permission, if it's a link type permission. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">roles</td>
+<td style="text-align: left;">Collection of String</td>
+<td style="text-align: left;">The type of permission, for example, <code>read</code>. See below for the full list of roles. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">shareId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A unique token that can be used to access this shared item via the <strong>shares</strong> API. Read-only.</td>
 </tr>
 </tbody>
 </table>

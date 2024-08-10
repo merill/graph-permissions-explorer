@@ -91,10 +91,28 @@
 <p>Allows the app to manage schedule, schedule groups, shifts and associated entities in the Teams or Shifts application on behalf of the signed-in user.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
-</div>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<table>
+<thead>
+<tr>
+<th>Ver</th>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Beta</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/schedule-post-shifts?view=graph-rest-beta&amp;tabs=http">POST /teams/{teamId}/schedule/shifts</a></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/schedule-post-timeoffreasons?view=graph-rest-beta&amp;tabs=http">POST /teams/{teamId}/schedule/timeOffReasons</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -142,6 +160,56 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the app to manage all schedules, schedule groups, shifts and associated entities in the Teams or Shifts application without a signed-in user.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="resources">Resources</h2>
+<h3 id="schedule-"><a href="https://docs.microsoft.com/graph/api/resources/schedule?view=graph-rest-1.0&amp;tabs=http">schedule </a></h3>
+<h3 id="shift-"><a href="https://docs.microsoft.com/graph/api/resources/shift?view=graph-rest-1.0&amp;tabs=http">shift </a></h3>
+<h3 id="timeoffreason-"><a href="https://docs.microsoft.com/graph/api/resources/timeoffreason?view=graph-rest-1.0&amp;tabs=http">timeOffReason </a></h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>createdDateTime</td>
+<td>DateTimeOffset</td>
+<td>The time stamp on which this <strong>timeOffReason</strong> was first created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td>displayName</td>
+<td>String</td>
+<td>The name of the <strong>timeOffReason</strong>. Required.</td>
+</tr>
+<tr>
+<td>iconType</td>
+<td>timeOffReasonIconType</td>
+<td>Supported icon types are: <code>none</code>, <code>car</code>, <code>calendar,</code> <code>running</code>, <code>plane</code>, <code>firstAid</code>, <code>doctor</code>, <code>notWorking</code>, <code>clock</code>, <code>juryDuty</code>, <code>globe</code>, <code>cup</code>, <code>phone</code>, <code>weather</code>, <code>umbrella</code>, <code>piggyBank</code>, <code>dog</code>, <code>cake</code>, <code>trafficCone</code>, <code>pin</code>, <code>sunny</code>. Required.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>Unique identifier for the time-off reason.</td>
+</tr>
+<tr>
+<td>isActive</td>
+<td>Boolean</td>
+<td>Indicates whether the <strong>timeOffReason</strong> can be used when creating new entities or updating existing ones. Required.</td>
+</tr>
+<tr>
+<td>lastModifiedBy</td>
+<td>identitySet</td>
+<td>The identity that last updated this <strong>timeOffReason</strong>.</td>
+</tr>
+<tr>
+<td>lastModifiedDateTime</td>
+<td>DateTimeOffset</td>
+<td>The time stamp on which this **t</td>
 </tr>
 </tbody>
 </table>

@@ -91,10 +91,23 @@
 <p>Allows the app to read and write external items on behalf of a signed-in user. The signed-in user must be an administrator. The app can only read external items of the connection that it is authorized to.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
-</div>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<table>
+<thead>
+<tr>
+<th>Ver</th>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V1</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalitem-addactivities?view=graph-rest-1.0&amp;tabs=http">POST external/connections/{connectionsId}/items/{externalItemId}/addActivities</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -142,6 +155,88 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the app to read and write external items without a signed-in user. The app can only read external items of the connection that it is authorized to.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="resources">Resources</h2>
+<h3 id="externalactivity-"><a href="https://docs.microsoft.com/graph/api/resources/externalconnectors-externalactivity?view=graph-rest-1.0&amp;tabs=http">externalActivity </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">startDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the particular activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">type</td>
+<td style="text-align: left;">microsoft.graph.externalConnectors.externalActivityType</td>
+<td style="text-align: left;">The type of activity performed. The possible values are: <code>viewed</code>, <code>modified</code>, <code>created</code>, <code>commented</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="externalactivityresult-"><a href="https://docs.microsoft.com/graph/api/resources/externalconnectors-externalactivityresult?view=graph-rest-1.0&amp;tabs=http">externalActivityResult </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">error</td>
+<td style="text-align: left;">microsoft.graph.publicError</td>
+<td style="text-align: left;">Error information that explains the failure to process an external activity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">startDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the particular activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Inherited from externalActivity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">type</td>
+<td style="text-align: left;">microsoft.graph.externalConnectors.externalActivityType</td>
+<td style="text-align: left;">The type of activity performed. The possible values are: <code>viewed</code>, <code>modified</code>, <code>created</code>, <code>commented</code>, <code>unknownFutureValue</code>. Inherited from externalActivity.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="externalitem-"><a href="https://docs.microsoft.com/graph/api/resources/externalconnectors-externalitem?view=graph-rest-1.0&amp;tabs=http">externalItem </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">acl</td>
+<td style="text-align: left;">microsoft.graph.externalConnectors.acl collection</td>
+<td style="text-align: left;">An array of access control entries. Each entry specifies the access granted to a user or group. Required.</td>
+</tr>
+<tr>
+<td style="text-align: left;">content</td>
+<td style="text-align: left;">microsoft.graph.externalConnectors.externalItemContent</td>
+<td style="text-align: left;">A plain-text  representation of the contents of the item. The text in this property is full-text indexed. Optional.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Developer-provided unique ID of the item within the containing externalConnection. Must be alphanumeric and a maximum of 128 characters. Required.</td>
+</tr>
+<tr>
+<td style="text-align: left;">properties</td>
+<td style="text-align: left;">microsoft.graph.externalConnectors.properties</td>
+<td style="text-align: left;">A property bag with the properties of the item. The properties MUST conform to the schema defined for the externalConnection. Required.</td>
 </tr>
 </tbody>
 </table>

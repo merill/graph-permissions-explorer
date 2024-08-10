@@ -91,10 +91,23 @@
 <p>Allows the app to read and write organization-wide Microsoft To Do settings on behalf of the signed-in user.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
-</div>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<table>
+<thead>
+<tr>
+<th>Ver</th>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Beta</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/admintodo-update?view=graph-rest-beta&amp;tabs=http">PATCH /admin/todo</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -142,6 +155,56 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the app to read and write organization-wide Microsoft To Do settings, without a signed-in user.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="resources">Resources</h2>
+<h3 id="admintodo-"><a href="https://docs.microsoft.com/graph/api/resources/admintodo?view=graph-rest-1.0&amp;tabs=http">adminTodo </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique ID. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">settings</td>
+<td style="text-align: left;">todoSettings</td>
+<td style="text-align: left;">Company-wide settings for Microsoft Todo.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="todosettings-"><a href="https://docs.microsoft.com/graph/api/resources/todosettings?view=graph-rest-1.0&amp;tabs=http">todoSettings </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">isExternalJoinEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Controls whether users can join lists from users external to your organization.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isExternalShareEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Controls whether users can share lists with external users.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isPushNotificationEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Controls whether push notifications are enabled for your users.</td>
 </tr>
 </tbody>
 </table>
