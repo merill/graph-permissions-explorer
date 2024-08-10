@@ -91,28 +91,10 @@
 <p>Allows the app to read audit logs for events that contain information about custom security attributes, on behalf of the signed-in user.</p>
 </blockquote>
 <h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
-<table>
-<thead>
-<tr>
-<th>Ver</th>
-<th>Type</th>
-<th>Method</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/auditlogroot-list-customsecurityattributeaudits?view=graph-rest-1.0&amp;tabs=http">GET /auditLogs/customSecurityAttributeAudits</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/customsecurityattributeaudit-get?view=graph-rest-1.0&amp;tabs=http">GET /auditLogs/customSecurityAttributeAudits/{customSecurityAttributeAuditId}</a></td>
-</tr>
-</tbody>
-</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This permission does not have any graph methods published.</p>
+</div>
 <h2 id="delegate-permission">Delegate Permission</h2>
 <table>
 <thead>
@@ -160,84 +142,6 @@
 <tr>
 <td><strong>Description</strong></td>
 <td>Allows the app to read all audit logs for events that contain information about custom security attributes, without a signed-in user.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="resources">Resources</h2>
-<h3 id="customsecurityattributeaudit-"><a href="https://docs.microsoft.com/graph/api/resources/customsecurityattributeaudit?view=graph-rest-1.0&amp;tabs=http">customSecurityAttributeAudit </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">activityDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2024 is <code>2024-01-01T00:00:00Z</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ge</code>, <code>le</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">activityDisplayName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Indicates the activity name or the operation name. For example: &quot;Add custom security attribute definition in an attribute set&quot; or &quot;Update attribute values assigned to a user.&quot; For a list of activities logged, refer to Microsoft Entra audit log categories and activities. Supports <code>$filter</code> (<code>eq</code>, <code>startswith</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">additionalDetails</td>
-<td style="text-align: left;">keyValue collection</td>
-<td style="text-align: left;">Indicates additional details on the activity.</td>
-</tr>
-<tr>
-<td style="text-align: left;">category</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Indicates the resource category that's targeted by the activity. Custom security attribute activities are logged in a single category: <code>AttributeManagement</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">correlationId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services.</td>
-</tr>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Indicates the unique ID for the activity. Inherited from entity.</td>
-</tr>
-<tr>
-<td style="text-align: left;">initiatedBy</td>
-<td style="text-align: left;">auditActivityInitiator</td>
-<td style="text-align: left;">Indicates information about the user or app initiated the activity. Supports <code>$filter</code> (<code>eq</code>) for <strong>user/id</strong>, <strong>user/displayName</strong>, <strong>user/userPrincipalName</strong>, <strong>app/appId</strong>, <strong>app/displayName</strong>; and <code>$filter</code> (<code>startswith</code>) for <strong>user/userPrincipalName</strong>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">loggedByService</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Indicates information on which service initiated the activity. For example: <code>Core Directory</code>. Supports <code>$filter</code> (<code>eq</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">operationType</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Indicates the type of operation that was performed. The possible values include but aren't limited to the following: <code>Add</code>, <code>Assign</code>, <code>Update</code>, <code>Unassign</code>, and <code>Delete</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">result</td>
-<td style="text-align: left;">operationResult</td>
-<td style="text-align: left;">Indicates the result of the activity. The possible values are: <code>success</code>, <code>failure</code>, <code>timeout</code>, <code>unknownFutureValue</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">resultReason</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Indicates the reason for failure if the <strong>result</strong> is <code>failure</code> or <code>timeout</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">targetResources</td>
-<td style="text-align: left;">targetResource collection</td>
-<td style="text-align: left;">Indicates information on which resource was changed due to the activity. The target resource type can be <code>User</code>, <code>App</code>, or <code>Other</code>. Supports <code>$filter</code> (<code>eq</code>) for <strong>id</strong> and <strong>displayName</strong>; and <code>$filter</code> (<code>startswith</code>) for <strong>displayName</strong>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">userAgent</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Type of user agent used by a user in the activity.</td>
 </tr>
 </tbody>
 </table>

@@ -104,7 +104,37 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0&amp;tabs=http">GET /teams/{id}/channels/{id}/filesFolder</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/driveitem-removeretentionlabel?view=graph-rest-1.0&amp;tabs=http">DELETE /driveitem/retentionLabel</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/driveitem-removeretentionlabel?view=graph-rest-1.0&amp;tabs=http">DELETE /drives/{drive-id}/items/{item-id}/retentionLabel</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/driveitem-getretentionlabel?view=graph-rest-1.0&amp;tabs=http">GET /driveitem/retentionLabel</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/driveitem-getretentionlabel?view=graph-rest-1.0&amp;tabs=http">GET /drives/{drive-id}/items/{item-id}?$expand=retentionLabel</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/driveitem-getretentionlabel?view=graph-rest-1.0&amp;tabs=http">GET /drives/{drive-id}/items/{item-id}/retentionLabel</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/driveitem-setretentionlabel?view=graph-rest-1.0&amp;tabs=http">PATCH /driveitem/retentionLabel</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/driveitem-setretentionlabel?view=graph-rest-1.0&amp;tabs=http">PATCH /drives/{drive-id}/items/{item-id}/retentionLabel</a></td>
 </tr>
 </tbody>
 </table>
@@ -159,68 +189,6 @@
 </tbody>
 </table>
 <h2 id="resources">Resources</h2>
-<h3 id="channel-"><a href="https://docs.microsoft.com/graph/api/resources/channel?view=graph-rest-1.0&amp;tabs=http">channel </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">createdDateTime</td>
-<td style="text-align: left;">dateTimeOffset</td>
-<td style="text-align: left;">Read only. Timestamp at which the channel was created.</td>
-</tr>
-<tr>
-<td style="text-align: left;">description</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Optional textual description for the channel.</td>
-</tr>
-<tr>
-<td style="text-align: left;">displayName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Channel name as it will appear to the user in Microsoft Teams. The maximum length is 50 characters.</td>
-</tr>
-<tr>
-<td style="text-align: left;">email</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The email address for sending messages to the channel. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The channel's unique identifier. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">isFavoriteByDefault</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: <code>false</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">membershipType</td>
-<td style="text-align: left;">channelMembershipType</td>
-<td style="text-align: left;">The type of the channel. Can be set during creation and can't be changed. The possible values are: <code>standard</code>, <code>private</code>, <code>unknownFutureValue</code>, <code>shared</code>. The default value is <code>standard</code>. Note that you must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value in this evolvable enum: <code>shared</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">tenantId</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">The ID of the Microsoft Entra tenant.</td>
-</tr>
-<tr>
-<td style="text-align: left;">webUrl</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">summary</td>
-<td style="text-align: left;">channelSummary</td>
-<td style="text-align: left;">Contains summary information about the channel, including number of owners, members, guests, and an indicator for members from other tenants. The **s</td>
-</tr>
-</tbody>
-</table>
 <h3 id="driveitem-"><a href="https://docs.microsoft.com/graph/api/resources/driveitem?view=graph-rest-1.0&amp;tabs=http">driveItem </a></h3>
 <table>
 <thead>
@@ -400,6 +368,43 @@
 <td style="text-align: left;">webUrl</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">URL that displays the resource in the browser. Read-only.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="itemretentionlabel-"><a href="https://docs.microsoft.com/graph/api/resources/itemretentionlabel?view=graph-rest-1.0&amp;tabs=http">itemRetentionLabel </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">isLabelAppliedExplicitly</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Specifies whether the label is applied explicitly on the item. <code>True</code> indicates that the label is applied explicitly; otherwise, the label is inherited from its parent. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">labelAppliedBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">Identity of the user who applied the label. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">labelAppliedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the label was applied on the item. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The retention label on the document. Read-write.</td>
+</tr>
+<tr>
+<td style="text-align: left;">retentionSettings</td>
+<td style="text-align: left;">retentionLabelSettings</td>
+<td style="text-align: left;">The retention settings enforced on the item. Read-write.</td>
 </tr>
 </tbody>
 </table>

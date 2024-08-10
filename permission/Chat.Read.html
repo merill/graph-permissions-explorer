@@ -109,47 +109,7 @@
 <tr>
 <td>V1</td>
 <td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/chat-get?view=graph-rest-1.0&amp;tabs=http">GET /chats/{chat-id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/chat-list-members?view=graph-rest-1.0&amp;tabs=http">GET /chats/{chat-id}/members</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/chat-get-members?view=graph-rest-1.0&amp;tabs=http">GET /chats/{chat-id}/members/{membership-id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/chat-list-messages?view=graph-rest-1.0&amp;tabs=http">GET /chats/{chat-id}/messages</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/chat-list-operations?view=graph-rest-1.0&amp;tabs=http">GET /chats/{chat-id}/operations</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/teamsasyncoperation-get?view=graph-rest-1.0&amp;tabs=http">GET /chats/{chat-id}/operations/{operation-id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/conversationmember-get?view=graph-rest-1.0&amp;tabs=http">GET /chats/{id}/members/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/chat-get?view=graph-rest-1.0&amp;tabs=http">GET /me/chats/{chat-id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/chat-list-messages?view=graph-rest-1.0&amp;tabs=http">GET /me/chats/{chat-id}/messages</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -185,26 +145,6 @@
 <td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/chatmessagehostedcontent-get?view=graph-rest-1.0&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/messages/{message-id}/replies/{reply-id}/hostedContents/{hosted-content-id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/chat-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{user-id | user-principal-name}/chats/{chat-id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/chat-list-members?view=graph-rest-1.0&amp;tabs=http">GET /users/{user-id | user-principal-name}/chats/{chat-id}/members</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/chat-get-members?view=graph-rest-1.0&amp;tabs=http">GET /users/{user-id | user-principal-name}/chats/{chat-id}/members/{membership-id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/chat-list-messages?view=graph-rest-1.0&amp;tabs=http">GET /users/{user-id | user-principal-name}/chats/{chat-id}/messages</a></td>
 </tr>
 </tbody>
 </table>
@@ -272,9 +212,14 @@
 <td style="text-align: left;">The channel's unique identifier. Read-only.</td>
 </tr>
 <tr>
+<td style="text-align: left;">isArchived</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the channel is archived. Read-only.</td>
+</tr>
+<tr>
 <td style="text-align: left;">isFavoriteByDefault</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: <code>false</code>.</td>
+<td style="text-align: left;">Indicates whether the channel should be marked as recommended for all members of the team to show in their channel list. <strong>Note:</strong> All recommended channels automatically show in the channels list for education and frontline worker users. The property can only be set programmatically via the Create team method. The default value is <code>false</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">membershipType</td>
@@ -326,7 +271,7 @@
 <tr>
 <td style="text-align: left;">lastUpdatedDateTime</td>
 <td style="text-align: left;">dateTimeOffset</td>
-<td style="text-align: left;">Date and time at which the chat was renamed or list of members were last changed. Read-only.</td>
+<td style="text-align: left;">Date and time at which the chat was renamed or the list of members was last changed. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">onlineMeetingInfo</td>
@@ -346,7 +291,7 @@
 <tr>
 <td style="text-align: left;">viewpoint</td>
 <td style="text-align: left;">chatViewpoint</td>
-<td style="text-align: left;">Represents caller-specific information about the chat, such as last message read date and time. This property is populated only when the request is made in a delegated context.</td>
+<td style="text-align: left;">Represents caller-specific information about the chat, such as the last message read date and time. This property is populated only when the request is made in a delegated context.</td>
 </tr>
 <tr>
 <td style="text-align: left;">webUrl</td>
@@ -638,64 +583,6 @@
 </tr>
 </tbody>
 </table>
-<h3 id="teamsasyncoperation-"><a href="https://docs.microsoft.com/graph/api/resources/teamsasyncoperation?view=graph-rest-1.0&amp;tabs=http">teamsAsyncOperation </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">attemptsCount</td>
-<td style="text-align: left;">Int32</td>
-<td style="text-align: left;">Number of times the operation was attempted before being marked successful or failed.</td>
-</tr>
-<tr>
-<td style="text-align: left;">createdDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Time when the operation was created.</td>
-</tr>
-<tr>
-<td style="text-align: left;">error</td>
-<td style="text-align: left;">operationError</td>
-<td style="text-align: left;">Any error that causes the async operation to fail.</td>
-</tr>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">Unique operation id.</td>
-</tr>
-<tr>
-<td style="text-align: left;">lastActionDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Time when the async operation was last updated.</td>
-</tr>
-<tr>
-<td style="text-align: left;">operationType</td>
-<td style="text-align: left;">teamsAsyncOperationType</td>
-<td style="text-align: left;">Denotes which type of operation is being described.</td>
-</tr>
-<tr>
-<td style="text-align: left;">status</td>
-<td style="text-align: left;">teamsAsyncOperationStatus</td>
-<td style="text-align: left;">Operation status.</td>
-</tr>
-<tr>
-<td style="text-align: left;">targetResourceId</td>
-<td style="text-align: left;">guid</td>
-<td style="text-align: left;">The ID of the object that's created or modified as result of this async operation, typically a team.</td>
-</tr>
-<tr>
-<td style="text-align: left;">targetResourceLocation</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">The location of the object that's created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="webhooks"><a href="https://docs.microsoft.com/graph/api/resources/webhooks?view=graph-rest-1.0&amp;tabs=http">webhooks</a></h3>
 </article>
           </div>
           

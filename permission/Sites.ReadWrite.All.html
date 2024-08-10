@@ -104,7 +104,22 @@
 <tr>
 <td>V1</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/site-list?view=graph-rest-1.0&amp;tabs=http">GET /sites</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/driveitem-removeretentionlabel?view=graph-rest-1.0&amp;tabs=http">DELETE /driveitem/retentionLabel</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/driveitem-removeretentionlabel?view=graph-rest-1.0&amp;tabs=http">DELETE /drives/{drive-id}/items/{item-id}/retentionLabel</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/driveitem-setretentionlabel?view=graph-rest-1.0&amp;tabs=http">PATCH /driveitem/retentionLabel</a></td>
+</tr>
+<tr>
+<td>V1</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/driveitem-setretentionlabel?view=graph-rest-1.0&amp;tabs=http">PATCH /drives/{drive-id}/items/{item-id}/retentionLabel</a></td>
 </tr>
 </tbody>
 </table>
@@ -159,7 +174,7 @@
 </tbody>
 </table>
 <h2 id="resources">Resources</h2>
-<h3 id="site-"><a href="https://docs.microsoft.com/graph/api/resources/site?view=graph-rest-1.0&amp;tabs=http">site </a></h3>
+<h3 id="driveitem-"><a href="https://docs.microsoft.com/graph/api/resources/driveitem?view=graph-rest-1.0&amp;tabs=http">driveItem </a></h3>
 <table>
 <thead>
 <tr>
@@ -170,59 +185,253 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>createdDateTime</strong></td>
+<td style="text-align: left;">audio</td>
+<td style="text-align: left;">[audio][]</td>
+<td style="text-align: left;">Audio metadata, if the item is an audio file. Read-only. Read-only. Only on OneDrive Personal.</td>
+</tr>
+<tr>
+<td style="text-align: left;">bundle</td>
+<td style="text-align: left;">[bundle][]</td>
+<td style="text-align: left;">Bundle metadata, if the item is a bundle. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">content</td>
+<td style="text-align: left;">Stream</td>
+<td style="text-align: left;">The content stream, if the item represents a file.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">[identitySet][]</td>
+<td style="text-align: left;">Identity of the user, device, and application that created the item. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time the item was created. Read-only.</td>
+<td style="text-align: left;">Date and time of item creation. Read-only.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>description</strong></td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">The descriptive text for the site.</td>
+<td style="text-align: left;">cTag</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">An eTag for the content of the item. This eTag isn't changed if only the metadata is changed. <strong>Note</strong> This property isn't returned if the item is a folder. Read-only.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>displayName</strong></td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">The full title for the site. Read-only.</td>
+<td style="text-align: left;">deleted</td>
+<td style="text-align: left;">[deleted][]</td>
+<td style="text-align: left;">Information about the deleted state of the item. Read-only.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>eTag</strong></td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">ETag for the item. Read-only.</td>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Provides a user-visible description of the item. Read-write. Only on OneDrive Personal.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>id</strong></td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">The unique identifier of the item. Read-only.</td>
+<td style="text-align: left;">eTag</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">eTag for the entire item (metadata + content). Read-only.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>lastModifiedDateTime</strong></td>
+<td style="text-align: left;">file</td>
+<td style="text-align: left;">[file][]</td>
+<td style="text-align: left;">File metadata, if the item is a file. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">fileSystemInfo</td>
+<td style="text-align: left;">[fileSystemInfo][]</td>
+<td style="text-align: left;">File system information on client. Read-write.</td>
+</tr>
+<tr>
+<td style="text-align: left;">folder</td>
+<td style="text-align: left;">[folder][]</td>
+<td style="text-align: left;">Folder metadata, if the item is a folder. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier of the item within the Drive. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">image</td>
+<td style="text-align: left;">[image][]</td>
+<td style="text-align: left;">Image metadata, if the item is an image. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedBy</td>
+<td style="text-align: left;">[identitySet][]</td>
+<td style="text-align: left;">Identity of the user, device, and application that last modified the item. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time the item was last modified. Read-only.</td>
+<td style="text-align: left;">Date and time the item was last modified. Read-only.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>name</strong></td>
-<td style="text-align: left;">string</td>
-<td style="text-align: left;">The name / title of the item.</td>
+<td style="text-align: left;">location</td>
+<td style="text-align: left;">[geoCoordinates][]</td>
+<td style="text-align: left;">Location metadata, if the item has location data. Read-only.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>root</strong></td>
+<td style="text-align: left;">malware</td>
+<td style="text-align: left;">[malware][]</td>
+<td style="text-align: left;">Malware metadata, if the item was detected to contain malware. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name of the item (filename and extension). Read-write.</td>
+</tr>
+<tr>
+<td style="text-align: left;">package</td>
+<td style="text-align: left;">[package][]</td>
+<td style="text-align: left;">If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">parentReference</td>
+<td style="text-align: left;">[itemReference][]</td>
+<td style="text-align: left;">Parent information, if the item has a parent. Read-write.</td>
+</tr>
+<tr>
+<td style="text-align: left;">pendingOperations</td>
+<td style="text-align: left;">[pendingOperations][]</td>
+<td style="text-align: left;">If present, indicates that one or more operations that might affect the state of the driveItem are pending completion. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">photo</td>
+<td style="text-align: left;">[photo][]</td>
+<td style="text-align: left;">Photo metadata, if the item is a photo. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">publication</td>
+<td style="text-align: left;">[publicationFacet][]</td>
+<td style="text-align: left;">Provides information about the published or checked-out state of an item, in locations that support such actions. This property isn't returned by default. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">remoteItem</td>
+<td style="text-align: left;">[remoteItem][]</td>
+<td style="text-align: left;">Remote item data, if the item is shared from a drive other than the one being accessed. Read-only.</td>
+</tr>
+<tr>
 <td style="text-align: left;">root</td>
-<td style="text-align: left;">If present, indicates that this is the root site in the site collection. Read-only.</td>
+<td style="text-align: left;">[root][]</td>
+<td style="text-align: left;">If this property is non-null, it indicates that the driveItem is the top-most driveItem in the drive.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>sharepointIds</strong></td>
+<td style="text-align: left;">searchResult</td>
+<td style="text-align: left;">[searchResult][]</td>
+<td style="text-align: left;">Search metadata, if the item is from a search result. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">shared</td>
+<td style="text-align: left;">[shared][]</td>
+<td style="text-align: left;">Indicates that the item was shared with others and provides information about the shared state of the item. Read-only.</td>
+</tr>
+<tr>
 <td style="text-align: left;">sharepointIds</td>
+<td style="text-align: left;">[sharepointIds][]</td>
 <td style="text-align: left;">Returns identifiers useful for SharePoint REST compatibility. Read-only.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>siteCollection</strong></td>
-<td style="text-align: left;">siteCollection</td>
-<td style="text-align: left;">Provides details about the site's site collection. Available only on the root site. Read-only.</td>
+<td style="text-align: left;">size</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">Size of the item in bytes. Read-only.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>webUrl</strong></td>
-<td style="text-align: left;">string (url)</td>
-<td style="text-align: left;">URL that displays the item in the browser. Read-only.</td>
+<td style="text-align: left;">specialFolder</td>
+<td style="text-align: left;">[specialFolder][]</td>
+<td style="text-align: left;">If the current item is also available as a special folder, this facet is returned. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">video</td>
+<td style="text-align: left;">[video][]</td>
+<td style="text-align: left;">Video metadata, if the item is a video. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">webDavUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">WebDAV compatible URL for the item.</td>
+</tr>
+<tr>
+<td style="text-align: left;">webUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">URL that displays the resource in the browser. Read-only.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="itemretentionlabel-"><a href="https://docs.microsoft.com/graph/api/resources/itemretentionlabel?view=graph-rest-1.0&amp;tabs=http">itemRetentionLabel </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">isLabelAppliedExplicitly</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Specifies whether the label is applied explicitly on the item. <code>True</code> indicates that the label is applied explicitly; otherwise, the label is inherited from its parent. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">labelAppliedBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">Identity of the user who applied the label. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">labelAppliedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the label was applied on the item. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The retention label on the document. Read-write.</td>
+</tr>
+<tr>
+<td style="text-align: left;">retentionSettings</td>
+<td style="text-align: left;">retentionLabelSettings</td>
+<td style="text-align: left;">The retention settings enforced on the item. Read-write.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="retentionlabelsettings-"><a href="https://docs.microsoft.com/graph/api/resources/retentionlabelsettings?view=graph-rest-1.0&amp;tabs=http">retentionLabelSettings </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">behaviorDuringRetentionPeriod</td>
+<td style="text-align: left;">microsoft.graph.security.behaviorDuringRetentionPeriod</td>
+<td style="text-align: left;">Describes the item behavior during retention period. Possible values are: <code>doNotRetain</code>, <code>retain</code>, <code>retainAsRecord</code>, <code>retainAsRegulatoryRecord</code>, <code>unknownFutureValue</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isContentUpdateAllowed</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Specifies whether updates to document content are allowed. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isDeleteAllowed</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Specifies whether the document deletion is allowed. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isLabelUpdateAllowed</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Specifies whether you're allowed to change the retention label on the document. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isMetadataUpdateAllowed</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Specifies whether updates to the item metadata (for example, the <strong>Title</strong> field) are blocked. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isRecordLocked</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Specifies whether the item is locked. Read-write.</td>
 </tr>
 </tbody>
 </table>

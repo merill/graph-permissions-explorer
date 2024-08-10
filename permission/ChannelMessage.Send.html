@@ -104,16 +104,6 @@
 <tr>
 <td>V1</td>
 <td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0&amp;tabs=http">POST /teams/{team-id}/channels/{channel-id}/messages</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0&amp;tabs=http">POST /teams/{team-id}/channels/{channel-id}/messages/{message-id}/replies</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/chatmessage-setreaction?view=graph-rest-1.0&amp;tabs=http">POST /teams/{teamId}/channels/{channelId}/messages/{messageId}/replies/{replyId}/setReaction</a></td>
 </tr>
 <tr>
@@ -197,9 +187,14 @@
 <td style="text-align: left;">The channel's unique identifier. Read-only.</td>
 </tr>
 <tr>
+<td style="text-align: left;">isArchived</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the channel is archived. Read-only.</td>
+</tr>
+<tr>
 <td style="text-align: left;">isFavoriteByDefault</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: <code>false</code>.</td>
+<td style="text-align: left;">Indicates whether the channel should be marked as recommended for all members of the team to show in their channel list. <strong>Note:</strong> All recommended channels automatically show in the channels list for education and frontline worker users. The property can only be set programmatically via the Create team method. The default value is <code>false</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">membershipType</td>
@@ -251,7 +246,7 @@
 <tr>
 <td style="text-align: left;">lastUpdatedDateTime</td>
 <td style="text-align: left;">dateTimeOffset</td>
-<td style="text-align: left;">Date and time at which the chat was renamed or list of members were last changed. Read-only.</td>
+<td style="text-align: left;">Date and time at which the chat was renamed or the list of members was last changed. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">onlineMeetingInfo</td>
@@ -271,7 +266,7 @@
 <tr>
 <td style="text-align: left;">viewpoint</td>
 <td style="text-align: left;">chatViewpoint</td>
-<td style="text-align: left;">Represents caller-specific information about the chat, such as last message read date and time. This property is populated only when the request is made in a delegated context.</td>
+<td style="text-align: left;">Represents caller-specific information about the chat, such as the last message read date and time. This property is populated only when the request is made in a delegated context.</td>
 </tr>
 <tr>
 <td style="text-align: left;">webUrl</td>

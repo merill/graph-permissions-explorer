@@ -104,21 +104,6 @@
 <tr>
 <td>V1</td>
 <td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/application-list?view=graph-rest-1.0&amp;tabs=http">GET /applications</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/educationuser-get-user?view=graph-rest-1.0&amp;tabs=http">GET /education/me/user</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/educationuser-get-user?view=graph-rest-1.0&amp;tabs=http">GET /education/users/{id}/user</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/photo/$value</a></td>
 </tr>
 <tr>
@@ -130,11 +115,6 @@
 <td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0&amp;tabs=http">GET /me/contacts/{id}/photo/$value</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/user-list-directreports?view=graph-rest-1.0&amp;tabs=http">GET /me/directReports</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -165,11 +145,6 @@
 <td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/contacts/{id}/photo/$value</a></td>
-</tr>
-<tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/user-list-directreports?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/directReports</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -216,203 +191,6 @@
 </tbody>
 </table>
 <h2 id="resources">Resources</h2>
-<h3 id="application-"><a href="https://docs.microsoft.com/graph/api/resources/application?view=graph-rest-1.0&amp;tabs=http">application </a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">addIns</td>
-<td style="text-align: left;">addIn collection</td>
-<td style="text-align: left;">Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its &quot;FileHandler&quot; functionality. This will let services like Office 365 call the application in the context of a document the user is working on.</td>
-</tr>
-<tr>
-<td style="text-align: left;">api</td>
-<td style="text-align: left;">apiApplication</td>
-<td style="text-align: left;">Specifies settings for an application that implements a web API.</td>
-</tr>
-<tr>
-<td style="text-align: left;">appId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the application that is assigned to an application by Microsoft Entra ID. Not nullable. Read-only. Alternate key. Supports <code>$filter</code> (<code>eq</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">applicationTemplateId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Unique identifier of the applicationTemplate. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ne</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">appRoles</td>
-<td style="text-align: left;">appRole collection</td>
-<td style="text-align: left;">The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.</td>
-</tr>
-<tr>
-<td style="text-align: left;">certification</td>
-<td style="text-align: left;">certification</td>
-<td style="text-align: left;">Specifies the certification status of the application.</td>
-</tr>
-<tr>
-<td style="text-align: left;">createdDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, and <code>eq</code> on <code>null</code> values) and <code>$orderby</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">deletedDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time the application was deleted. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">description</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>) and <code>$search</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">disabledByMicrosoftStatus</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Specifies whether Microsoft has disabled the registered application. Possible values are: <code>null</code> (default value), <code>NotDisabled</code>, and <code>DisabledDueToViolationOfServicesAgreement</code> (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement). <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">displayName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name for the application. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values), <code>$search</code>, and <code>$orderby</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">groupMembershipClaims</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Configures the <code>groups</code> claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following valid string values: <code>None</code>, <code>SecurityGroup</code> (for security groups and Microsoft Entra roles), <code>All</code> (this gets all of the security groups, distribution groups, and Microsoft Entra directory roles that the signed-in user is a member of).</td>
-</tr>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Unique identifier for the application object. This property is referred to as <strong>Object ID</strong> in the Microsoft Entra admin center. Inherited from directoryObject. Key. Not nullable. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">identifierUris</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you'll reference in your API's code, and it must be globally unique. You can use the default value provided, which is in the form <code>api://&lt;application-client-id&gt;</code>, or specify a more readable URI like <code>https://contoso.com/api</code>. For more information on valid identifierUris patterns and best practices, see Microsoft Entra application registration security best practices. Not nullable. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">info</td>
-<td style="text-align: left;">informationalUrl</td>
-<td style="text-align: left;">Basic profile information of the application such as  app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Microsoft Entra apps. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, and <code>eq</code> on <code>null</code> values).</td>
-</tr>
-<tr>
-<td style="text-align: left;">isDeviceOnlyAuthSupported</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Specifies whether this application supports device authentication without a user. The default is <code>false</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">isFallbackPublicClient</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is <code>false</code> which means the fallback application type is confidential client such as a web app. There are certain scenarios where Microsoft Entra ID cannot determine the client application type. For example, the ROPC flow where it is configured without specifying a redirect URI. In those cases Microsoft Entra ID interprets the application type based on the value of this property.</td>
-</tr>
-<tr>
-<td style="text-align: left;">keyCredentials</td>
-<td style="text-align: left;">keyCredential collection</td>
-<td style="text-align: left;">The collection of key credentials associated with the application. Not nullable. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">logo</td>
-<td style="text-align: left;">Stream</td>
-<td style="text-align: left;">The main logo for the application. Not nullable.</td>
-</tr>
-<tr>
-<td style="text-align: left;">notes</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Notes relevant for the management of the application.</td>
-</tr>
-<tr>
-<td style="text-align: left;">oauth2RequiredPostResponse</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Specifies whether, as part of OAuth 2.0 token requests, Microsoft Entra ID allows POST requests, as opposed to GET requests. The default is <code>false</code>, which specifies that only GET requests are allowed.</td>
-</tr>
-<tr>
-<td style="text-align: left;">optionalClaims</td>
-<td style="text-align: left;">optionalClaims</td>
-<td style="text-align: left;">Application developers can configure optional claims in their Microsoft Entra applications to specify the claims that are sent to their application by the Microsoft security token service. For more information, see How to: Provide optional claims to your app.</td>
-</tr>
-<tr>
-<td style="text-align: left;">parentalControlSettings</td>
-<td style="text-align: left;">parentalControlSettings</td>
-<td style="text-align: left;">Specifies parental control settings for an application.</td>
-</tr>
-<tr>
-<td style="text-align: left;">passwordCredentials</td>
-<td style="text-align: left;">passwordCredential collection</td>
-<td style="text-align: left;">The collection of password credentials associated with the application. Not nullable.</td>
-</tr>
-<tr>
-<td style="text-align: left;">publicClient</td>
-<td style="text-align: left;">publicClientApplication</td>
-<td style="text-align: left;">Specifies settings for installed clients such as desktop or mobile devices.</td>
-</tr>
-<tr>
-<td style="text-align: left;">publisherDomain</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The verified publisher domain for the application. Read-only. For more information, see How to: Configure an application's publisher domain. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">requestSignatureVerification</td>
-<td style="text-align: left;">requestSignatureVerification</td>
-<td style="text-align: left;">Specifies whether this application requires Microsoft Entra ID to verify the signed authentication requests.</td>
-</tr>
-<tr>
-<td style="text-align: left;">requiredResourceAccess</td>
-<td style="text-align: left;">requiredResourceAccess collection</td>
-<td style="text-align: left;">Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. <br><br>No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. For more information, see Limits on requested permissions per app. Not nullable. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">samlMetadataUrl</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The URL where the service exposes SAML metadata for federation. This property is valid only for single-tenant applications. Nullable.</td>
-</tr>
-<tr>
-<td style="text-align: left;">serviceManagementReference</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">References application or service contact information from a Service or Asset Management database. Nullable.</td>
-</tr>
-<tr>
-<td style="text-align: left;">servicePrincipalLockConfiguration</td>
-<td style="text-align: left;">servicePrincipalLockConfiguration</td>
-<td style="text-align: left;">Specifies whether sensitive properties of a multi-tenant application should be locked for editing after the application is provisioned in a tenant. Nullable. <code>null</code> by default.</td>
-</tr>
-<tr>
-<td style="text-align: left;">signInAudience</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Specifies the Microsoft accounts that are supported for the current application. The possible values are: <code>AzureADMyOrg</code>, <code>AzureADMultipleOrgs</code>, <code>AzureADandPersonalMicrosoftAccount</code> (default), and <code>PersonalMicrosoftAccount</code>. See more in the table. <br><br>The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. <br><br>The value for this property has implications on other app object properties. As a result, if you change this property, you may need to change other properties first. For more information, see Validation differences for signInAudience.<br><br>Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">spa</td>
-<td style="text-align: left;">spaApplication</td>
-<td style="text-align: left;">Specifies settings for a single-page application, including sign out URLs and redirect URIs for authorization codes and access tokens.</td>
-</tr>
-<tr>
-<td style="text-align: left;">tags</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here will also appear in the <strong>tags</strong> property of any associated service principals.<br><br>Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>) and <code>$search</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">tokenEncryptionKeyId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Specifies the keyId of a public key from the keyCredentials collection. When configured, Microsoft Entra ID encrypts all the tokens it emits by using the key this property points to. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.</td>
-</tr>
-<tr>
-<td style="text-align: left;">verifiedPublisher</td>
-<td style="text-align: left;">verifiedPublisher</td>
-<td style="text-align: left;">Specifies the verified publisher of the application. For more information about how publisher verification helps support application security, trustworthiness, and compliance, see Publisher verification.</td>
-</tr>
-<tr>
-<td style="text-align: left;">web</td>
-<td style="text-align: left;">webApplication</td>
-<td style="text-align: left;">Specifies settings for a web application.</td>
-</tr>
-</tbody>
-</table>
 <h3 id="device-"><a href="https://docs.microsoft.com/graph/api/resources/device?view=graph-rest-1.0&amp;tabs=http">device </a></h3>
 <table>
 <thead>
@@ -426,7 +204,7 @@
 <tr>
 <td style="text-align: left;">accountEnabled</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;"><code>true</code> if the account is enabled; otherwise, <code>false</code>. Required. Default is <code>true</code>. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.</td>
+<td style="text-align: left;"><code>true</code> if the account is enabled; otherwise, <code>false</code>. Required. Default is <code>true</code>. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>). Only callers with at least the Cloud Device Administrator role can set this property.</td>
 </tr>
 <tr>
 <td style="text-align: left;">alternativeSecurityIds</td>
@@ -451,7 +229,7 @@
 <tr>
 <td style="text-align: left;">deviceId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>startsWith</code>).</td>
+<td style="text-align: left;">Unique identifier set by Azure Device Registration Service at the time of registration. This alternate key can be used to reference the device object. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>startsWith</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">deviceMetadata</td>
@@ -461,7 +239,7 @@
 <tr>
 <td style="text-align: left;">deviceOwnership</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Ownership of the device. This property is set by Intune. Possible values are: <code>unknown</code>, <code>company</code>, <code>personal</code>.</td>
+<td style="text-align: left;">Ownership of the device. Intune sets this property. Possible values are: <code>unknown</code>, <code>company</code>, <code>personal</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">deviceVersion</td>
@@ -479,9 +257,14 @@
 <td style="text-align: left;">Enrollment profile applied to the device. For example, <code>Apple Device Enrollment Profile</code>, <code>Device enrollment - Corporate device identifiers</code>, or <code>Windows Autopilot profile name</code>. This property is set by Intune.</td>
 </tr>
 <tr>
+<td style="text-align: left;">enrollmentType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Enrollment type of the device. Intune sets this property. Possible values are: <code>unknown</code>, <code>userEnrollment</code>, <code>deviceEnrollmentManager</code>, <code>appleBulkWithUser</code>, <code>appleBulkWithoutUser</code>, <code>windowsAzureADJoin</code>, <code>windowsBulkUserless</code>, <code>windowsAutoEnrollment</code>, <code>windowsBulkAzureDomainJoin</code>, <code>windowsCoManagement</code>, <code>windowsAzureADJoinUsingDeviceAuth</code>,<code>appleUserEnrollment</code>, <code>appleUserEnrollmentWithServiceAccount</code>. <br><br><strong>NOTE:</strong> This property might return other values apart from those listed.</td>
+</tr>
+<tr>
 <td style="text-align: left;">extensionAttributes</td>
 <td style="text-align: left;">onPremisesExtensionAttributes</td>
-<td style="text-align: left;">Contains extension attributes 1-15 for the device. The individual extension attributes are not selectable. These properties are mastered in cloud and can be set during creation or update of a device object in Microsoft Entra ID. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
+<td style="text-align: left;">Contains extension attributes 1-15 for the device. The individual extension attributes aren't selectable. These properties are mastered in the cloud and can be set during creation or update of a device object in Microsoft Entra ID. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
@@ -504,6 +287,16 @@
 <td style="text-align: left;">Manufacturer of the device. Read-only.</td>
 </tr>
 <tr>
+<td style="text-align: left;">isRooted</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if the device is rooted or jail-broken. This property can only be updated by Intune.</td>
+</tr>
+<tr>
+<td style="text-align: left;">managementType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The management channel of the device. This property is set by Intune. Possible values are: <code>eas</code>, <code>mdm</code>, <code>easMdm</code>, <code>intuneClient</code>, <code>easIntuneClient</code>, <code>configurationManagerClient</code>, <code>configurationManagerClientMdm</code>, <code>configurationManagerClientMdmEas</code>, <code>unknown</code>, <code>jamf</code>, <code>googleCloudDevicePolicyController</code>.</td>
+</tr>
+<tr>
 <td style="text-align: left;">mdmAppId</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Application identifier used to register device into MDM. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>startsWith</code>).</td>
@@ -517,6 +310,11 @@
 <td style="text-align: left;">onPremisesLastSyncDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code> Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">onPremisesSecurityIdentifier</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">onPremisesSyncEnabled</td>
@@ -610,22 +408,22 @@
 <tr>
 <td style="text-align: left;">autoSubscribeNewMembers</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group. Default value is <code>false</code>. <br><br>Returned only on <code>$select</code>. Supported only on the Get group API (<code>GET /groups/{ID}</code>).</td>
+<td style="text-align: left;">Indicates if new members added to the group are autosubscribed to receive email notifications. You can set this property in a PATCH request for the group; don't set it in the initial POST request that creates the group. Default value is <code>false</code>. <br><br>Returned only on <code>$select</code>. Supported only on the Get group API (<code>GET /groups/{ID}</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">classification</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.<br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
+<td style="text-align: left;">Describes a classification for the group (such as low, medium, or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.<br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. <br><br>Returned by default. Read-only.</td>
+<td style="text-align: left;">Timestamp of when the group was created. The value can't be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on January 1, 2014 is <code>2014-01-01T00:00:00Z</code>. <br><br>Returned by default. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">deletedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">For some Microsoft Entra objects (user, group, application), if the object is deleted, it is first logically deleted, and this property is updated with the date and time when the object was deleted. Otherwise this property is <code>null</code>. If the object is restored, this property is updated to <code>null</code>.</td>
+<td style="text-align: left;">For some Microsoft Entra objects (user, group, application), if the object is deleted, it's first logically deleted, and this property is updated with the date and time when the object was deleted. Otherwise this property is <code>null</code>. If the object is restored, this property is updated to <code>null</code>. Inherited from directoryObject.</td>
 </tr>
 <tr>
 <td style="text-align: left;">description</td>
@@ -635,12 +433,12 @@
 <tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name for the group. This property is required when a group is created and cannot be cleared during updates. Maximum length is 256 characters. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values), <code>$search</code>, and <code>$orderby</code>.</td>
+<td style="text-align: left;">The display name for the group. This property is required when a group is created and can't be cleared during updates. Maximum length is 256 characters. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values), <code>$search</code>, and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">expirationDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Timestamp of when the group is set to expire. It is <code>null</code> for security groups, but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>). Read-only.</td>
+<td style="text-align: left;">Timestamp of when the group is set to expire. It's <code>null</code> for security groups, but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on January 1, 2014 is <code>2014-01-01T00:00:00Z</code>. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>). Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">groupTypes</td>
@@ -655,12 +453,12 @@
 <tr>
 <td style="text-align: left;">hideFromAddressLists</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">True if the group is not displayed in certain parts of the Outlook UI: the <strong>Address Book</strong>, address lists for selecting message recipients, and the <strong>Browse Groups</strong> dialog for searching groups; otherwise, false. Default value is <code>false</code>. <br><br>Returned only on <code>$select</code>. Supported only on the Get group API (<code>GET /groups/{ID}</code>).</td>
+<td style="text-align: left;">True if the group isn't displayed in certain parts of the Outlook UI: the <strong>Address Book</strong>, address lists for selecting message recipients, and the <strong>Browse Groups</strong> dialog for searching groups; otherwise, false. The default value is <code>false</code>. <br><br>Returned only on <code>$select</code>. Supported only on the Get group API (<code>GET /groups/{ID}</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">hideFromOutlookClients</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">True if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. The default value is <code>false</code>. <br><br>Returned only on <code>$select</code>. Supported only on the Get group API (<code>GET /groups/{ID}</code>).</td>
+<td style="text-align: left;">True if the group isn't displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. The default value is <code>false</code>. <br><br>Returned only on <code>$select</code>. Supported only on the Get group API (<code>GET /groups/{ID}</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
@@ -675,7 +473,7 @@
 <tr>
 <td style="text-align: left;">isAssignableToRole</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates whether this group can be assigned to a Microsoft Entra role. Optional. <br><br>This property can only be set while creating the group and is immutable. If set to <code>true</code>, the <strong>securityEnabled</strong> property must also be set to <code>true</code>, <strong>visibility</strong> must be <code>Hidden</code>, and the group cannot be a dynamic group (that is, <strong>groupTypes</strong> cannot contain <code>DynamicMembership</code>). <br><br>Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the <em>RoleManagement.ReadWrite.Directory</em> permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignments<br><br>Using this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>).</td>
+<td style="text-align: left;">Indicates whether this group can be assigned to a Microsoft Entra role. Optional. <br><br>This property can only be set while creating the group and is immutable. If set to <code>true</code>, the <strong>securityEnabled</strong> property must also be set to <code>true</code>, <strong>visibility</strong> must be <code>Hidden</code>, and the group can't be a dynamic group (that is, <strong>groupTypes</strong> can't contain <code>DynamicMembership</code>). <br><br>Only callers with at least the Privileged Role Administrator role can set this property. The caller must also be assigned the <em>RoleManagement.ReadWrite.Directory</em> permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignments<br><br>Using this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">isSubscribedByMail</td>
@@ -690,7 +488,7 @@
 <tr>
 <td style="text-align: left;">mail</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The SMTP address for the group, for example, &quot;serviceadmins@contoso.onmicrosoft.com&quot;. <br><br>Returned by default. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
+<td style="text-align: left;">The SMTP address for the group, for example, &quot;serviceadmins@contoso.com&quot;. <br><br>Returned by default. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">mailEnabled</td>
@@ -700,7 +498,7 @@
 <tr>
 <td style="text-align: left;">mailNickname</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: <code> @ () \ [] &quot; ; : &lt;&gt; , SPACE</code>. <br><br>Required. Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
+<td style="text-align: left;">The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following characters: <code> @ () \ [] &quot; ; : &lt;&gt; , SPACE</code>. <br><br>Required. Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">membershipRule</td>
@@ -713,9 +511,19 @@
 <td style="text-align: left;">Indicates whether the dynamic membership processing is on or paused. Possible values are <code>On</code> or <code>Paused</code>. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>).</td>
 </tr>
 <tr>
+<td style="text-align: left;">onPremisesDomainName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Contains the on-premises <strong>domain FQDN</strong>, also called <strong>dnsDomainName</strong> synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.<br><br>Returned by default. Read-only.</td>
+</tr>
+<tr>
 <td style="text-align: left;">onPremisesLastSyncDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. <br><br>Returned by default. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>).</td>
+<td style="text-align: left;">Indicates the last time at which the group was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on January 1, 2014 is <code>2014-01-01T00:00:00Z</code>. <br><br>Returned by default. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">onPremisesNetBiosName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Contains the on-premises <strong>netBios name</strong> synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.<br><br>Returned by default. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">onPremisesProvisioningErrors</td>
@@ -730,17 +538,17 @@
 <tr>
 <td style="text-align: left;">onPremisesSecurityIdentifier</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code> including on <code>null</code> values). Read-only.</td>
+<td style="text-align: left;">Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. Read-only. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code> including on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">onPremisesSyncEnabled</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;"><code>true</code> if this group is synced from an on-premises directory; <code>false</code> if this group was originally synced from an on-premises directory but is no longer synced; <strong>null</strong> if this object has never been synced from an on-premises directory (default). <br><br>Returned by default. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>, and <code>eq</code> on <code>null</code> values).</td>
+<td style="text-align: left;"><code>true</code> if this group is synced from an on-premises directory; <code>false</code> if this group was originally synced from an on-premises directory but is no longer synced; <strong>null</strong> if this object has never synced from an on-premises directory (default). <br><br>Returned by default. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>, and <code>eq</code> on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">preferredDataLocation</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling app must be granted the <em>Directory.ReadWrite.All</em> permission and the user be assigned one of the following Microsoft Entra roles: <br><ul><li> Global Administrator <li> User Account Administrator <li>Directory Writer <li> Exchange Administrator <li> SharePoint Administrator </li></li></li></li></li></ul><br> For more information about this property, see OneDrive Online Multi-Geo. <br><br>Nullable. Returned by default.</td>
+<td style="text-align: left;">The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling app must be granted the <em>Directory.ReadWrite.All</em> permission and the user be assigned at least one of the following Microsoft Entra roles: <br><ul>User Account Administrator <li>Directory Writer <li> Exchange Administrator <li> SharePoint Administrator </li></li></li></ul><br> For more information about this property, see OneDrive Online Multi-Geo. <br><br>Nullable. Returned by default.</td>
 </tr>
 <tr>
 <td style="text-align: left;">preferredLanguage</td>
@@ -755,17 +563,7 @@
 <tr>
 <td style="text-align: left;">renewedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>). Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">resourceBehaviorOptions</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Specifies the group behaviors that can be set for a Microsoft 365 group during creation. This can be set only as part of creation (POST). Possible values are <code>AllowOnlyMembersToPost</code>, <code>HideGroupInOutlook</code>, <code>SubscribeNewGroupMembers</code>, <code>WelcomeEmailDisabled</code>. For more information, see Set Microsoft 365 group behaviors and provisioning options.</td>
-</tr>
-<tr>
-<td style="text-align: left;">resourceProvisioningOptions</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Specifies the group resources provisioned as part of Microsoft 365 group creation that are not normally part of default group creation. The possible value is <code>Team</code>. For more information, see Set Microsoft 365 group behaviors and provisioning options.</td>
+<td style="text-align: left;">Timestamp of when the group was last renewed. This value can't be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on January 1, 2014 is <code>2014-01-01T00:00:00Z</code>. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>). Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">securityEnabled</td>
@@ -775,22 +573,32 @@
 <tr>
 <td style="text-align: left;">securityIdentifier</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Security identifier of the group, used in Windows scenarios. <br><br>Returned by default.</td>
+<td style="text-align: left;">Security identifier of the group, used in Windows scenarios. Read-only. <br><br>Returned by default.</td>
+</tr>
+<tr>
+<td style="text-align: left;">serviceProvisioningErrors</td>
+<td style="text-align: left;">serviceProvisioningError collection</td>
+<td style="text-align: left;">Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a group object. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, for isResolved and serviceInstance).</td>
 </tr>
 <tr>
 <td style="text-align: left;">theme</td>
 <td style="text-align: left;">string</td>
-<td style="text-align: left;">Specifies a Microsoft 365 group's color theme. Possible values are <code>Teal</code>, <code>Purple</code>, <code>Green</code>, <code>Blue</code>, <code>Pink</code>, <code>Orange</code> or <code>Red</code>. <br><br>Returned by default.</td>
+<td style="text-align: left;">Specifies a Microsoft 365 group's color theme. Possible values are <code>Teal</code>, <code>Purple</code>, <code>Green</code>, <code>Blue</code>, <code>Pink</code>, <code>Orange</code>, or <code>Red</code>. <br><br>Returned by default.</td>
+</tr>
+<tr>
+<td style="text-align: left;">uniqueName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier that can be assigned to a group and used as an alternate key. Immutable. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">unseenCount</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">Count of conversations that have received new posts since the signed-in user last visited the group. <br><br>Returned only on <code>$select</code>. Supported only on the Get group API (<code>GET /groups/{ID}</code>).</td>
+<td style="text-align: left;">Count of conversations that received new posts since the signed-in user last visited the group. <br><br>Returned only on <code>$select</code>. Supported only on the Get group API (<code>GET /groups/{ID}</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">visibility</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Specifies the group join policy and group content visibility for groups. Possible values are: <code>Private</code>, <code>Public</code>, or <code>HiddenMembership</code>. <code>HiddenMembership</code> can be set only for Microsoft 365 groups when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation.<br> If visibility value is not specified during group creation on Microsoft Graph, a security group is created as <code>Private</code> by default, and the Microsoft 365 group is <code>Public</code>. Groups assignable to roles are always <code>Private</code>. To learn more, see group visibility options. <br><br>Returned by default. Nullable.</td>
+<td style="text-align: left;">Specifies the group join policy and group content visibility for groups. Possible values are: <code>Private</code>, <code>Public</code>, or <code>HiddenMembership</code>. <code>HiddenMembership</code> can be set only for Microsoft 365 groups when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation.<br> If visibility value isn't specified during group creation on Microsoft Graph, a security group is created as <code>Private</code> by default, and the Microsoft 365 group is <code>Public</code>. Groups assignable to roles are always <code>Private</code>. To learn more, see group visibility options. <br><br>Returned by default. Nullable.</td>
 </tr>
 </tbody>
 </table>
@@ -812,7 +620,7 @@
 <tr>
 <td style="text-align: left;">businessPhones</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Telephone number for the organization. Although this is a string collection, only one number can be set for this property.</td>
+<td style="text-align: left;">Telephone number for the organization. Although this property is a string collection, only one number can be set.</td>
 </tr>
 <tr>
 <td style="text-align: left;">city</td>
@@ -822,7 +630,7 @@
 <tr>
 <td style="text-align: left;">country</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Country/region name of the address for the organization.</td>
+<td style="text-align: left;">Country or region name of the address for the organization.</td>
 </tr>
 <tr>
 <td style="text-align: left;">countryLetterCode</td>
@@ -832,7 +640,7 @@
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
+<td style="text-align: left;">Timestamp of when the organization was created. The value can't be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">defaultUsageLocation</td>
@@ -857,7 +665,7 @@
 <tr>
 <td style="text-align: left;">isMultipleDataLocationsForServicesEnabled</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;"><code>true</code> if organization is Multi-Geo enabled; <strong>false</strong> if organization is not Multi-Geo enabled; <strong>null</strong> (default). Read-only. For more information, see OneDrive Online Multi-Geo.</td>
+<td style="text-align: left;"><code>true</code> if organization is Multi-Geo enabled; <strong>false</strong> if the organization isn't Multi-Geo enabled; <strong>null</strong> (default). Read-only. For more information, see OneDrive Online Multi-Geo.</td>
 </tr>
 <tr>
 <td style="text-align: left;">marketingNotificationEmails</td>
@@ -872,7 +680,7 @@
 <tr>
 <td style="text-align: left;">onPremisesSyncEnabled</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;"><code>true</code> if this object is synced from an on-premises directory; <code>false</code> if this object was originally synced from an on-premises directory but is no longer synced. Nullable. <code>null</code> if this object has never been synced from an on-premises directory (default).</td>
+<td style="text-align: left;"><code>true</code> if this object is synced from an on-premises directory; <code>false</code> if this object was originally synced from an on-premises directory but is no longer synced. Nullable. <code>null</code> if this object isn't synced from on-premises active directory (default).</td>
 </tr>
 <tr>
 <td style="text-align: left;">partnerTenantType</td>
@@ -927,7 +735,7 @@
 <tr>
 <td style="text-align: left;">tenantType</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Not nullable. The tenant type option that was selected when the tenant was created. The possible values are: <li> <code>AAD</code> - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios. <li> <code>AAD B2C</code> A customer identity access management (CIAM) service that serves business-to-consumer (B2C) scenarios.</li></li></td>
+<td style="text-align: left;">Not nullable. Can be one of the following types: <li> <code>AAD</code> - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios. <li> <code>AAD B2C</code> An identity access management (IAM) service that serves business-to-consumer (B2C) scenarios.  <li> <code>CIAM</code> - A customer identity &amp; access management (CIAM) solution that provides an integrated platform to serve consumers, partners, and citizen scenarios.</li></li></li></td>
 </tr>
 <tr>
 <td style="text-align: left;">verifiedDomains</td>
@@ -984,12 +792,17 @@
 <tr>
 <td style="text-align: left;">mail</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The SMTP address for the contact, for example, &quot;jeff@contoso.onmicrosoft.com&quot;. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> for <code>null</code> values).</td>
+<td style="text-align: left;">The SMTP address for the contact, for example, &quot;jeff@contoso.com&quot;. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> for <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">mailNickname</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Email alias (portion of email address pre-pending the @ symbol) for this organizational contact. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> for <code>null</code> values).</td>
+</tr>
+<tr>
+<td style="text-align: left;">serviceProvisioningErrors</td>
+<td style="text-align: left;">serviceProvisioningError collection</td>
+<td style="text-align: left;">Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from an organizational contact object . <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, for isResolved and serviceInstance).</td>
 </tr>
 <tr>
 <td style="text-align: left;">onPremisesLastSyncDateTime</td>
@@ -1063,17 +876,17 @@
 <tr>
 <td style="text-align: left;">accountEnabled</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;"><code>true</code> if the service principal account is enabled; otherwise, <code>false</code>. If set to <code>false</code>, then no users will be able to sign in to this app, even if they are assigned to it. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>).</td>
+<td style="text-align: left;"><code>true</code> if the service principal account is enabled; otherwise, <code>false</code>. If set to <code>false</code>, then no users are able to sign in to this app, even if they're assigned to it. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">addIns</td>
 <td style="text-align: left;">addIn collection</td>
-<td style="text-align: left;">Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its &quot;FileHandler&quot; functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.</td>
+<td style="text-align: left;">Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its &quot;FileHandler&quot; functionality. This lets services like Microsoft 365 call the application in the context of a document the user is working on.</td>
 </tr>
 <tr>
 <td style="text-align: left;">alternativeNames</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
+<td style="text-align: left;">Used to retrieve service principals by subscription, identify resource group and full resource IDs for managed identities. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">appDescription</td>
@@ -1093,12 +906,12 @@
 <tr>
 <td style="text-align: left;">applicationTemplateId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Unique identifier of the applicationTemplate that the servicePrincipal was created from. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>, <code>startsWith</code>).</td>
+<td style="text-align: left;">Unique identifier of the applicationTemplate. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ne</code>). Read-only. <code>null</code> if the service principal wasn't created from an application template.</td>
 </tr>
 <tr>
 <td style="text-align: left;">appOwnerOrganizationId</td>
 <td style="text-align: left;">Guid</td>
-<td style="text-align: left;">Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>, <code>ge</code>, <code>le</code>).</td>
+<td style="text-align: left;">Contains the tenant ID where the application is registered. This is applicable only to service principals backed by applications. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>, <code>ge</code>, <code>le</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">appRoleAssignmentRequired</td>
@@ -1108,7 +921,7 @@
 <tr>
 <td style="text-align: left;">appRoles</td>
 <td style="text-align: left;">appRole collection</td>
-<td style="text-align: left;">The roles exposed by the application which this service principal represents. For more information see the <strong>appRoles</strong> property definition on the application entity. Not nullable.</td>
+<td style="text-align: left;">The roles exposed by the application that's linked to this service principal. For more information, see the <strong>appRoles</strong> property definition on the application entity. Not nullable.</td>
 </tr>
 <tr>
 <td style="text-align: left;">customSecurityAttributes</td>
@@ -1123,12 +936,12 @@
 <tr>
 <td style="text-align: left;">description</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>) and <code>$search</code>.</td>
+<td style="text-align: left;">Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps displays the application description in this field. The maximum allowed size is 1,024 characters. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>) and <code>$search</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">disabledByMicrosoftStatus</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Specifies whether Microsoft has disabled the registered application. Possible values are: <code>null</code> (default value), <code>NotDisabled</code>, and <code>DisabledDueToViolationOfServicesAgreement</code> (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement). <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>).</td>
+<td style="text-align: left;">Specifies whether Microsoft has disabled the registered application. Possible values are: <code>null</code> (default value), <code>NotDisabled</code>, and <code>DisabledDueToViolationOfServicesAgreement</code> (reasons include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement). <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">displayName</td>
@@ -1163,12 +976,12 @@
 <tr>
 <td style="text-align: left;">logoutUrl</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Specifies the URL that will be used by Microsoft's authorization service to logout an user using OpenId Connect front-channel, back-channel or SAML logout protocols.</td>
+<td style="text-align: left;">Specifies the URL that the Microsoft's authorization service uses to sign out a user using OpenID Connect front-channel, back-channel, or SAML sign out protocols.</td>
 </tr>
 <tr>
 <td style="text-align: left;">notes</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Free text field to capture information about the service principal, typically used for operational purposes. Maximum allowed size is 1024 characters.</td>
+<td style="text-align: left;">Free text field to capture information about the service principal, typically used for operational purposes. Maximum allowed size is 1,024 characters.</td>
 </tr>
 <tr>
 <td style="text-align: left;">notificationEmailAddresses</td>
@@ -1178,7 +991,7 @@
 <tr>
 <td style="text-align: left;">oauth2PermissionScopes</td>
 <td style="text-align: left;">permissionScope collection</td>
-<td style="text-align: left;">The delegated permissions exposed by the application. For more information see the <strong>oauth2PermissionScopes</strong> property on the application entity's <strong>api</strong> property. Not nullable.</td>
+<td style="text-align: left;">The delegated permissions exposed by the application. For more information, see the <strong>oauth2PermissionScopes</strong> property on the application entity's <strong>api</strong> property. Not nullable.</td>
 </tr>
 <tr>
 <td style="text-align: left;">passwordCredentials</td>
@@ -1193,7 +1006,7 @@
 <tr>
 <td style="text-align: left;">preferredTokenSigningKeyThumbprint</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to <code>saml</code>) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.</td>
+<td style="text-align: left;">This property can be used on SAML applications (apps that have <strong>preferredSingleSignOnMode</strong> set to <code>saml</code>) to control which certificate is used to sign the SAML responses. For applications that aren't SAML, don't write or otherwise rely on this property.</td>
 </tr>
 <tr>
 <td style="text-align: left;">replyUrls</td>
@@ -1213,17 +1026,17 @@
 <tr>
 <td style="text-align: left;">servicePrincipalNames</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Contains the list of <strong>identifiersUris</strong>, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Microsoft Entra ID. For example,<ul><li>Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the &quot;aud&quot; claim.</li></ul><br>The any operator is required for filter expressions on multi-valued properties. Not nullable. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
+<td style="text-align: left;">Contains the list of <strong>identifiersUris</strong>, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Microsoft Entra ID. For example,<ul><li>Client apps can specify a resource URI that is based on the values of this property to acquire an access token, which is the URI returned in the &quot;aud&quot; claim.</li></ul><br>The any operator is required for filter expressions on multi-valued properties. Not nullable. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">servicePrincipalType</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifies whether the service principal represents an application, a managed identity, or a legacy application. This is set by Microsoft Entra ID internally. The <strong>servicePrincipalType</strong> property can be set to three different values: <ul><li><strong>Application</strong> - A service principal that represents an application or service. The <strong>appId</strong> property identifies the associated app registration, and matches the <strong>appId</strong> of an application, possibly from a different tenant. If the associated app registration is missing, tokens are not issued for the service principal.</li><li><strong>ManagedIdentity</strong> - A service principal that represents a managed identity. Service principals representing managed identities can be granted access and permissions, but cannot be updated or modified directly.</li><li><strong>Legacy</strong> - A service principal that represents an app created before app registrations, or through legacy experiences. Legacy service principal can have credentials, service principal names, reply URLs, and other properties which are editable by an authorized user, but does not have an associated app registration. The <strong>appId</strong> value does not associate the service principal with an app registration. The service principal can only be used in the tenant where it was created.</li><li><strong>SocialIdp</strong> - For internal use. </li></ul></td>
+<td style="text-align: left;">Identifies whether the service principal represents an application, a managed identity, or a legacy application. This is set by Microsoft Entra ID internally. The <strong>servicePrincipalType</strong> property can be set to three different values: <ul><li><strong>Application</strong> - A service principal that represents an application or service. The <strong>appId</strong> property identifies the associated app registration, and matches the <strong>appId</strong> of an application, possibly from a different tenant. If the associated app registration is missing, tokens aren't issued for the service principal.</li><li><strong>ManagedIdentity</strong> - A service principal that represents a managed identity. Service principals representing managed identities can be granted access and permissions, but can't be updated or modified directly.</li><li><strong>Legacy</strong> - A service principal that represents an app created before app registrations, or through legacy experiences. A legacy service principal can have credentials, service principal names, reply URLs, and other properties that are editable by an authorized user, but doesn't have an associated app registration. The <strong>appId</strong> value doesn't associate the service principal with an app registration. The service principal can only be used in the tenant where it was created.</li><li><strong>SocialIdp</strong> - For internal use. </li></ul></td>
 </tr>
 <tr>
 <td style="text-align: left;">signInAudience</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Specifies the Microsoft accounts that are supported for the current application. Read-only. <br><br>Supported values are:<ul><li><code>AzureADMyOrg</code>: Users with a Microsoft work or school account in my organization's Microsoft Entra tenant (single-tenant).</li><li><code>AzureADMultipleOrgs</code>: Users with a Microsoft work or school account in any organization's Microsoft Entra tenant (multi-tenant).</li><li><code>AzureADandPersonalMicrosoftAccount</code>: Users with a personal Microsoft account, or a work or school account in any organization's Microsoft Entra tenant.</li><li><code>PersonalMicrosoftAccount</code>: Users with a personal Microsoft account only.</li></ul></td>
+<td style="text-align: left;">Specifies the Microsoft accounts that are supported for the current application. Read-only. <br><br>Supported values are:<ul><li><code>AzureADMyOrg</code>: Users with a Microsoft work or school account in my organization's Microsoft Entra tenant (single-tenant).</li><li><code>AzureADMultipleOrgs</code>: Users with a Microsoft work or school account in any organization's Microsoft Entra tenant (multitenant).</li><li><code>AzureADandPersonalMicrosoftAccount</code>: Users with a personal Microsoft account, or a work or school account in any organization's Microsoft Entra tenant.</li><li><code>PersonalMicrosoftAccount</code>: Users with a personal Microsoft account only.</li></ul></td>
 </tr>
 <tr>
 <td style="text-align: left;">tags</td>
@@ -1238,7 +1051,7 @@
 <tr>
 <td style="text-align: left;">verifiedPublisher</td>
 <td style="text-align: left;">verifiedPublisher</td>
-<td style="text-align: left;">Specifies the verified publisher of the application which this service principal represents.</td>
+<td style="text-align: left;">Specifies the verified publisher of the application that's linked to this service principal.</td>
 </tr>
 </tbody>
 </table>
@@ -1265,12 +1078,12 @@
 <tr>
 <td style="text-align: left;">ageGroup</td>
 <td style="text-align: left;">ageGroup</td>
-<td style="text-align: left;">Sets the age group of the user. Allowed values: <code>null</code>, <code>Minor</code>, <code>NotAdult</code> and <code>Adult</code>. For more information, see legal age group property definitions. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, and <code>in</code>).</td>
+<td style="text-align: left;">Sets the age group of the user. Allowed values: <code>null</code>, <code>Minor</code>, <code>NotAdult</code>, and <code>Adult</code>. For more information, see legal age group property definitions. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, and <code>in</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">assignedLicenses</td>
 <td style="text-align: left;">assignedLicense collection</td>
-<td style="text-align: left;">The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate directly assigned and inherited licenses. Use the <strong>licenseAssignmentStates</strong> property to identify the directly assigned and inherited licenses.  Not nullable. Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>/$count eq 0</code>, <code>/$count ne 0</code>).</td>
+<td style="text-align: left;">The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate between directly assigned and inherited licenses. Use the <strong>licenseAssignmentStates</strong> property to identify the directly assigned and inherited licenses. Not nullable. Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>/$count eq 0</code>, <code>/$count ne 0</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">assignedPlans</td>
@@ -1280,12 +1093,12 @@
 <tr>
 <td style="text-align: left;">birthday</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. <br><br>Returned only on <code>$select</code>.</td>
+<td style="text-align: left;">The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is <code>2014-01-01T00:00:00Z</code>. <br><br>Returned only on <code>$select</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">businessPhones</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
+<td style="text-align: left;">The telephone numbers for the user. NOTE: Although it's a string collection, only one number can be set for this property. Read-only for users synced from the on-premises directory. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">city</td>
@@ -1295,32 +1108,32 @@
 <tr>
 <td style="text-align: left;">companyName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The name of the company that the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.<br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
+<td style="text-align: left;">The name of the company that the user is associated with. This property can be useful for describing the company that a guest comes from. The maximum length is 64 characters.<br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">consentProvidedForMinor</td>
 <td style="text-align: left;">consentProvidedForMinor</td>
-<td style="text-align: left;">Sets whether consent has been obtained for minors. Allowed values: <code>null</code>, <code>Granted</code>, <code>Denied</code> and <code>NotRequired</code>. Refer to the legal age group property definitions for further information. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, and <code>in</code>).</td>
+<td style="text-align: left;">Sets whether consent was obtained for minors. Allowed values: <code>null</code>, <code>Granted</code>, <code>Denied</code>, and <code>NotRequired</code>. For more information, see legal age group property definitions. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, and <code>in</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">country</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The country or region where the user is located; for example, <code>US</code> or <code>UK</code>. Maximum length is 128 characters. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
+<td style="text-align: left;">The country/region where the user is located; for example, <code>US</code> or <code>UK</code>. Maximum length is 128 characters. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is <code>null</code> for some users created before June 2018 and on-premises users that were synced to Microsoft Entra ID before June 2018. Read-only. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code> , <code>ge</code>, <code>le</code>, <code>in</code>).</td>
+<td style="text-align: left;">The date and time the user was created, in ISO 8601 format and UTC. The value can't be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is <code>null</code> for some users created before June 2018 and on-premises users that were synced to Microsoft Entra ID before June 2018. Read-only. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code> , <code>ge</code>, <code>le</code>, <code>in</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">creationType</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Indicates whether the user account was created through one of the following methods: <br> <ul><li>As a regular school or work account (<code>null</code>). <li>As an external account (<code>Invitation</code>). <li>As a local account for an Azure Active Directory B2C tenant (<code>LocalAccount</code>). <li>Through self-service sign-up by an internal user using email verification (<code>EmailVerified</code>). <li>Through self-service sign-up by an external user signing up through a link that is part of a user flow (<code>SelfServiceSignUp</code>).</li></li></li></li></li></ul> <br>Read-only.<br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>).</td>
+<td style="text-align: left;">Indicates whether the user account was created through one of the following methods: <br> <ul><li>As a regular school or work account (<code>null</code>). <li>As an external account (<code>Invitation</code>). <li>As a local account for an Azure Active Directory B2C tenant (<code>LocalAccount</code>). <li>Through self-service sign-up by an internal user using email verification (<code>EmailVerified</code>). <li>Through self-service sign-up by a guest signing up through a link that is part of a user flow (<code>SelfServiceSignUp</code>).</li></li></li></li></li></ul> <br>Read-only.<br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">customSecurityAttributes</td>
 <td style="text-align: left;">customSecurityAttributeValue</td>
-<td style="text-align: left;">An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>startsWith</code>). Filter value is case sensitive.</td>
+<td style="text-align: left;">An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>startsWith</code>). The filter value is case-sensitive.</td>
 </tr>
 <tr>
 <td style="text-align: left;">deletedDateTime</td>
@@ -1330,22 +1143,22 @@
 <tr>
 <td style="text-align: left;">department</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The name for the department in which the user works. Maximum length is 64 characters. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code> , <code>ge</code>, <code>le</code>, <code>in</code>, and <code>eq</code> on <code>null</code> values).</td>
+<td style="text-align: left;">The name of the department in which the user works. Maximum length is 64 characters. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code> , <code>ge</code>, <code>le</code>, <code>in</code>, and <code>eq</code> on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code> , <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values), <code>$orderby</code>, and <code>$search</code>.</td>
+<td style="text-align: left;">The name displayed in the address book for the user. This value is usually the combination of the user's first name, middle initial, and family name. This property is required when a user is created and it can't be cleared during updates. Maximum length is 256 characters. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code> , <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values), <code>$orderby</code>, and <code>$search</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">employeeHireDate</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time when the user was hired or will start work in case of a future hire. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code> , <code>ge</code>, <code>le</code>, <code>in</code>).</td>
+<td style="text-align: left;">The date and time when the user was hired or will start work in a future hire. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code> , <code>ge</code>, <code>le</code>, <code>in</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">employeeLeaveDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time when the user left or will leave the organization. <br><br>To read this property, the calling app must be assigned the <em>User-LifeCycleInfo.Read.All</em> permission. To write this property, the calling app must be assigned the <em>User.Read.All</em> and <em>User-LifeCycleInfo.ReadWrite.All</em> permissions. To read this property in delegated scenarios, the admin needs one of the following Microsoft Entra roles: <em>Lifecycle Workflows Administrator</em>, <em>Global Reader</em>, or <em>Global Administrator</em>. To write this property in delegated scenarios, the admin needs the <em>Global Administrator</em> role. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code> , <code>ge</code>, <code>le</code>, <code>in</code>). <br><br>For more information, see Configure the employeeLeaveDateTime property for a user.</td>
+<td style="text-align: left;">The date and time when the user left or will leave the organization. <br><br>To read this property, the calling app must be assigned the <em>User-LifeCycleInfo.Read.All</em> permission. To write this property, the calling app must be assigned the <em>User.Read.All</em> and <em>User-LifeCycleInfo.ReadWrite.All</em> permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: <em>Lifecycle Workflows Administrator</em>, <em>Global Reader</em>. To write this property in delegated scenarios, the admin needs the <em>Global Administrator</em> role. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code> , <code>ge</code>, <code>le</code>, <code>in</code>). <br><br>For more information, see Configure the employeeLeaveDateTime property for a user.</td>
 </tr>
 <tr>
 <td style="text-align: left;">employeeId</td>
@@ -1365,7 +1178,7 @@
 <tr>
 <td style="text-align: left;">externalUserState</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">For an external user invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be <code>PendingAcceptance</code> or <code>Accepted</code>, or <code>null</code> for all other users. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code> , <code>in</code>).</td>
+<td style="text-align: left;">For a guest invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be <code>PendingAcceptance</code> or <code>Accepted</code>, or <code>null</code> for all other users. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code> , <code>in</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">externalUserStateChangeDateTime</td>
@@ -1385,7 +1198,7 @@
 <tr>
 <td style="text-align: left;">hireDate</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. <br><br>Returned only on <code>$select</code>. <br> <strong>Note:</strong> This property is specific to SharePoint Online. We recommend using the native <strong>employeeHireDate</strong> property to set and update hire date values using Microsoft Graph APIs.</td>
+<td style="text-align: left;">The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is <code>2014-01-01T00:00:00Z</code>. <br><br>Returned only on <code>$select</code>. <br> <strong>Note:</strong> This property is specific to SharePoint in Microsoft 365. We recommend using the native <strong>employeeHireDate</strong> property to set and update hire date values using Microsoft Graph APIs.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
@@ -1395,12 +1208,12 @@
 <tr>
 <td style="text-align: left;">identities</td>
 <td style="text-align: left;">objectIdentity collection</td>
-<td style="text-align: left;">Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same <strong>signInType</strong> value. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>) including on <code>null</code> values, only where the <strong>signInType</strong> is not <code>userPrincipalName</code>.</td>
+<td style="text-align: left;">Represents the identities that can be used to sign in to this user account. Microsoft (also known as a local account), organizations, or social identity providers such as Facebook, Google, and Microsoft can provide identity and tie it to a user account. It might contain multiple items with the same <strong>signInType</strong> value. <br><br>Returned only on <code>$select</code>. <br><br> Supports <code>$filter</code> (<code>eq</code>) with limitations. <!--Supports `$filter` (`eq`) including on `null` values, only where the **signInType** is not `userPrincipalName`.--></td>
 </tr>
 <tr>
 <td style="text-align: left;">imAddresses</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
+<td style="text-align: left;">The instant message voice-over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">interests</td>
@@ -1410,7 +1223,7 @@
 <tr>
 <td style="text-align: left;">isResourceAccount</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Do not use – reserved for future use.</td>
+<td style="text-align: left;">Don't use – reserved for future use.</td>
 </tr>
 <tr>
 <td style="text-align: left;">jobTitle</td>
@@ -1420,27 +1233,27 @@
 <tr>
 <td style="text-align: left;">lastPasswordChangeDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The time when this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. <br><br>Returned only on <code>$select</code>.</td>
+<td style="text-align: left;">The time when this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The date and time information uses ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. <br><br>Returned only on <code>$select</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">legalAgeGroupClassification</td>
 <td style="text-align: left;">legalAgeGroupClassification</td>
-<td style="text-align: left;">Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on <strong>ageGroup</strong> and <strong>consentProvidedForMinor</strong> properties. Allowed values: <code>null</code>, <code>MinorWithOutParentalConsent</code>, <code>MinorWithParentalConsent</code>, <code>MinorNoParentalConsentRequired</code>, <code>NotAdult</code> and <code>Adult</code>. Refer to the legal age group property definitions for further information. <br><br>Returned only on <code>$select</code>.</td>
+<td style="text-align: left;">Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on <strong>ageGroup</strong> and <strong>consentProvidedForMinor</strong> properties. Allowed values: <code>null</code>, <code>MinorWithOutParentalConsent</code>, <code>MinorWithParentalConsent</code>, <code>MinorNoParentalConsentRequired</code>, <code>NotAdult</code>, and <code>Adult</code>. For more information, see legal age group property definitions. <br><br>Returned only on <code>$select</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">licenseAssignmentStates</td>
 <td style="text-align: left;">licenseAssignmentState collection</td>
-<td style="text-align: left;">State of license assignments for this user. Also indicates licenses that are directly assigned or the user has inherited through group memberships. Read-only. <br><br>Returned only on <code>$select</code>.</td>
+<td style="text-align: left;">State of license assignments for this user. Also indicates licenses that are directly assigned or the user inherited through group memberships. Read-only. <br><br>Returned only on <code>$select</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">mail</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The SMTP address for the user, for example, <code>jeff@contoso.onmicrosoft.com</code>. Changes to this property will also update the user's <strong>proxyAddresses</strong> collection to include the value as an SMTP address. This property can't contain accent characters. <br> <strong>NOTE:</strong> We don't recommend updating this property for Azure AD B2C user profiles. Use the <strong>otherMails</strong> property instead. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, <code>endsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
+<td style="text-align: left;">The SMTP address for the user, for example, <code>jeff@contoso.com</code>. Changes to this property update the user's <strong>proxyAddresses</strong> collection to include the value as an SMTP address. This property can't contain accent characters. <br> <strong>NOTE:</strong> We don't recommend updating this property for Azure AD B2C user profiles. Use the <strong>otherMails</strong> property instead. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, <code>endsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">mailboxSettings</td>
 <td style="text-align: left;">mailboxSettings</td>
-<td style="text-align: left;">Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale and time zone. <br><br>Returned only on <code>$select</code>.</td>
+<td style="text-align: left;">Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. <br><br>Returned only on <code>$select</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">mailNickname</td>
@@ -1450,12 +1263,12 @@
 <tr>
 <td style="text-align: left;">mobilePhone</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values) and <code>$search</code>.</td>
+<td style="text-align: left;">The primary cellular telephone number for the user. Read-only for users synced from the on-premises directory. Maximum length is 64 characters. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values) and <code>$search</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">mySite</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The URL for the user's personal site. <br><br>Returned only on <code>$select</code>.</td>
+<td style="text-align: left;">The URL for the user's site. <br><br>Returned only on <code>$select</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">officeLocation</td>
@@ -1475,17 +1288,17 @@
 <tr>
 <td style="text-align: left;">onPremisesExtensionAttributes</td>
 <td style="text-align: left;">onPremisesExtensionAttributes</td>
-<td style="text-align: left;">Contains extensionAttributes1-15 for the user. These extension attributes are also known as Exchange custom attributes 1-15. <br><li>For an <strong>onPremisesSyncEnabled</strong> user, the source of authority for this set of properties is the on-premises and is read-only. </li><li>For a cloud-only user (where <strong>onPremisesSyncEnabled</strong> is <code>false</code>), these properties can be set during creation or update of a user object.  </li><li>For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell.</li><br> Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>).</td>
+<td style="text-align: left;">Contains extensionAttributes1-15 for the user. These extension attributes are also known as Exchange custom attributes 1-15. <br><li>For an <strong>onPremisesSyncEnabled</strong> user, the source of authority for this set of properties is the on-premises and is read-only. </li><li>For a cloud-only user (where <strong>onPremisesSyncEnabled</strong> is <code>false</code>), these properties can be set during the creation or update of a user object.  </li><li>For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell.</li><br> Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">onPremisesImmutableId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">This property is used to associate an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you're using a federated domain for the user's <strong>userPrincipalName</strong> (UPN) property. <strong>NOTE:</strong> The <strong>$</strong> and <strong>_</strong> characters can't be used when specifying this property. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>)..</td>
+<td style="text-align: left;">This property is used to associate an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you're using a federated domain for the user's <strong>userPrincipalName</strong> (UPN) property. <strong>NOTE:</strong> The <strong>$</strong> and <strong>_</strong> characters can't be used when specifying this property. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">onPremisesLastSyncDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Indicates the last time at which the object was synced with the on-premises directory; for example: <code>2013-02-16T03:04:54Z</code>. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>).</td>
+<td style="text-align: left;">Indicates the last time at which the object was synced with the on-premises directory; for example: <code>2013-02-16T03:04:54Z</code>. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">onPremisesProvisioningErrors</td>
@@ -1500,7 +1313,7 @@
 <tr>
 <td style="text-align: left;">onPremisesSecurityIdentifier</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. <br><br>Returned only on <code>$select</code>.  Supports <code>$filter</code> (<code>eq</code> including on <code>null</code> values).</td>
+<td style="text-align: left;">Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code> including on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">onPremisesSyncEnabled</td>
@@ -1515,12 +1328,12 @@
 <tr>
 <td style="text-align: left;">otherMails</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">A list of additional email addresses for the user; for example: <code>[&quot;bob@contoso.com&quot;, &quot;Robert@fabrikam.com&quot;]</code>. <br>NOTE: This property can't contain accent characters. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, <code>endsWith</code>, <code>/$count eq 0</code>, <code>/$count ne 0</code>).</td>
+<td style="text-align: left;">A list of other email addresses for the user; for example: <code>[&quot;bob@contoso.com&quot;, &quot;Robert@fabrikam.com&quot;]</code>. <br>NOTE: This property can't contain accent characters. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, <code>endsWith</code>, <code>/$count eq 0</code>, <code>/$count ne 0</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">passwordPolicies</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Specifies password policies for the user. This value is an enumeration with one possible value being <code>DisableStrongPassword</code>, which allows weaker passwords than the default policy to be specified. <code>DisablePasswordExpiration</code> can also be specified. The two may be specified together; for example: <code>DisablePasswordExpiration, DisableStrongPassword</code>. <br><br>Returned only on <code>$select</code>. For more information on the default password policies, see Microsoft Entra password policies. Supports <code>$filter</code> (<code>ne</code>, <code>not</code>, and <code>eq</code> on <code>null</code> values).</td>
+<td style="text-align: left;">Specifies password policies for the user. This value is an enumeration with one possible value being <code>DisableStrongPassword</code>, which allows weaker passwords than the default policy to be specified. <code>DisablePasswordExpiration</code> can also be specified. The two might be specified together; for example: <code>DisablePasswordExpiration, DisableStrongPassword</code>. <br><br>Returned only on <code>$select</code>. For more information on the default password policies, see Microsoft Entra password policies. Supports <code>$filter</code> (<code>ne</code>, <code>not</code>, and <code>eq</code> on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">passwordProfile</td>
@@ -1560,12 +1373,12 @@
 <tr>
 <td style="text-align: left;">proxyAddresses</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">For example: <code>&quot;SMTP: bob@contoso.com&quot;, &quot;smtp: bob@sales.contoso.com&quot;]</code>. Changes to the <strong>mail</strong> property will also update this collection to include the value as an SMTP address. For more information, see [mail and proxyAddresses properties. The proxy address prefixed with <code>SMTP</code> (capitalized) is the primary proxy address while those prefixed with <code>smtp</code> are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>, <code>endsWith</code>, <code>/$count eq 0</code>, <code>/$count ne 0</code>).</td>
+<td style="text-align: left;">For example: <code>&quot;SMTP: bob@contoso.com&quot;, &quot;smtp: bob@sales.contoso.com&quot;]</code>. Changes to the <strong>mail</strong> property update this collection to include the value as an SMTP address. For more information, see [mail and proxyAddresses properties. The proxy address prefixed with <code>SMTP</code> (capitalized) is the primary proxy address, while those addresses prefixed with <code>smtp</code> are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>, <code>endsWith</code>, <code>/$count eq 0</code>, <code>/$count ne 0</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">refreshTokensValidFromDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by making a request to the authorize endpoint. <br><br>Returned only on <code>$select</code>. Read-only.</td>
+<td style="text-align: left;">Any refresh tokens or session tokens (session cookies) issued before this time are invalid. Applications get an error when using an invalid refresh or session token to acquire a delegated access token (to access APIs such as Microsoft Graph). If this happens, the application needs to acquire a new refresh token by requesting the authorized endpoint. <br><br>Returned only on <code>$select</code>. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">responsibilities</td>
@@ -1573,9 +1386,14 @@
 <td style="text-align: left;">A list for the user to enumerate their responsibilities. <br><br>Returned only on <code>$select</code>.</td>
 </tr>
 <tr>
+<td style="text-align: left;">serviceProvisioningErrors</td>
+<td style="text-align: left;">serviceProvisioningError collection</td>
+<td style="text-align: left;">Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, for isResolved and serviceInstance).</td>
+</tr>
+<tr>
 <td style="text-align: left;">schools</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">A list for the user to enumerate the schools they have attended. <br><br>Returned only on <code>$select</code>.</td>
+<td style="text-align: left;">A list for the user to enumerate the schools they attended. <br><br>Returned only on <code>$select</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">securityIdentifier</td>
@@ -1590,12 +1408,12 @@
 <tr>
 <td style="text-align: left;">signInActivity</td>
 <td style="text-align: left;">signInActivity</td>
-<td style="text-align: left;">Get the last signed-in date and request ID of the sign-in for a given user. Read-only.<br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>) <em>but not with any other filterable properties</em>. <br><br><strong>Note:</strong> <br><li>Details for this property require a Microsoft Entra ID P1 or P2 license and the <strong>AuditLog.Read.All</strong> permission.<li>This property is not returned for a user who has never signed in or last signed in before April 2020.</li></li></td>
+<td style="text-align: left;">Get the last signed-in date and request ID of the sign-in for a given user. Read-only.<br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>) <em>but not with any other filterable properties</em>. <br><br><strong>Note:</strong> <br><li>Details for this property require a Microsoft Entra ID P1 or P2 license and the <strong>AuditLog.Read.All</strong> permission.<li>This property isn't returned for a user who never signed in or last signed in before April 2020.</li></li></td>
 </tr>
 <tr>
 <td style="text-align: left;">signInSessionsValidFromDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset. <br><br>Returned only on <code>$select</code>.</td>
+<td style="text-align: left;">Any refresh tokens or session tokens (session cookies) issued before this time are invalid. Applications get an error when using an invalid refresh or session token to acquire a delegated access token (to access APIs such as Microsoft Graph). If this happens, the application needs to acquire a new refresh token by requesting the authorized endpoint. Read-only. Use revokeSignInSessions to reset. <br><br>Returned only on <code>$select</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">skills</td>
@@ -1610,7 +1428,7 @@
 <tr>
 <td style="text-align: left;">streetAddress</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The street address of the user's place of business. Maximum length is 1024 characters. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
+<td style="text-align: left;">The street address of the user's place of business. Maximum length is 1,024 characters. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">surname</td>
@@ -1620,17 +1438,17 @@
 <tr>
 <td style="text-align: left;">usageLocation</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">A two letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: <code>US</code>, <code>JP</code>, and <code>GB</code>. Not nullable. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
+<td style="text-align: left;">A two-letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirements to check for availability of services in countries. Examples include: <code>US</code>, <code>JP</code>, and <code>GB</code>. Not nullable. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
 </tr>
 <tr>
 <td style="text-align: left;">userPrincipalName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the <strong>verifiedDomains</strong> property of organization.<br>NOTE: This property can't contain accent characters. Only the following characters are allowed <code>A - Z</code>, <code>a - z</code>, <code>0 - 9</code>, <code> ' . - _ ! # ^ ~</code>. For the complete list of allowed characters, see username policies. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, <code>endsWith</code>) and <code>$orderby</code>.</td>
+<td style="text-align: left;">The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this value should map to the user's email name. The general format is alias@domain, where the domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the <strong>verifiedDomains</strong> property of organization.<br>NOTE: This property can't contain accent characters. Only the following characters are allowed <code>A - Z</code>, <code>a - z</code>, <code>0 - 9</code>, <code> ' . - _ ! # ^ ~</code>. For the complete list of allowed characters, see username policies. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, <code>endsWith</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">userType</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">A string value that can be used to classify user types in your directory, such as <code>Member</code> and <code>Guest</code>. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>, and <code>eq</code> on <code>null</code> values). **N</td>
+<td style="text-align: left;">A string value that can be used to classify user types in your directory. The possible values are <code>Member</code> and <code>Guest</code>. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>, and <code>eq</code> on <code>null</code> values). **N</td>
 </tr>
 </tbody>
 </table>

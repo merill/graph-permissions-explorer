@@ -122,9 +122,9 @@
 <td><a href="https://docs.microsoft.com/graph/api/approvalstage-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignmentApprovals/{accessPackageAssignmentRequestId}/stages/{approvalStageId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
+<td>Beta</td>
 <td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/approval-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignmentApprovals/{id}</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/approval-get?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignmentApprovals/{id}</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -132,14 +132,14 @@
 <td><a href="https://docs.microsoft.com/graph/api/approval-filterbycurrentuser?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignmentApprovals/filterByCurrentUser(on='approver')</a></td>
 </tr>
 <tr>
-<td>V1</td>
+<td>Beta</td>
 <td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0&amp;tabs=http">GET /roleManagement/cloudPC/roleDefinitions</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/cloudPC/roleDefinitions</a></td>
 </tr>
 <tr>
-<td>V1</td>
+<td>Beta</td>
 <td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-1.0&amp;tabs=http">GET /roleManagement/cloudPC/roleDefinitions/{id}</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/cloudPC/roleDefinitions/{id}</a></td>
 </tr>
 <tr>
 <td>V1</td>
@@ -262,7 +262,7 @@
 <tr>
 <td style="text-align: left;">requestType</td>
 <td style="text-align: left;">accessPackageRequestType</td>
-<td style="text-align: left;">The type of the request. The possible values are: <code>notSpecified</code>, <code>userAdd</code>, <code>UserExtend</code>, <code>userUpdate</code>, <code>userRemove</code>, <code>adminAdd</code>, <code>adminUpdate</code>, <code>adminRemove</code>, <code>systemAdd</code>, <code>systemUpdate</code>, <code>systemRemove</code>, <code>onBehalfAdd</code> (not supported), <code>unknownFutureValue</code>. A request from the user themselves would have requestType of <code>userAdd</code>, <code>userUpdate</code> or <code>userRemove</code>. This property can't be changed once set.</td>
+<td style="text-align: left;">The type of the request. The possible values are: <code>notSpecified</code>, <code>userAdd</code>, <code>UserExtend</code>, <code>userUpdate</code>, <code>userRemove</code>, <code>adminAdd</code>, <code>adminUpdate</code>, <code>adminRemove</code>, <code>systemAdd</code>, <code>systemUpdate</code>, <code>systemRemove</code>, <code>onBehalfAdd</code> (not supported), <code>unknownFutureValue</code>. Requests from the user have a <strong>requestType</strong> of <code>userAdd</code>, <code>userUpdate</code>, or <code>userRemove</code>. This property can't be changed once set.</td>
 </tr>
 <tr>
 <td style="text-align: left;">schedule</td>
@@ -294,7 +294,7 @@
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifier of the approval decision. <br><li>In PIM for groups, it is the same identifier as the identifier of the assignment schedule request.</li></td>
+<td style="text-align: left;">Identifier of the approval decision. <br><li>In PIM for groups, it's the same identifier as the identifier of the assignment schedule request.</li></td>
 </tr>
 </tbody>
 </table>
@@ -480,7 +480,7 @@
 <tr>
 <td style="text-align: left;">appScopeId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Identifier of the app specific scope when the assignment scope is app specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by a resource application only. For the entitlement management provider, use this property to specify a catalog, for example <code>/AccessPackageCatalog/beedadfe-01d5-4025-910b-84abb9369997</code>. Supports <code>$filter</code> (<code>eq</code>, <code>in</code>). For example <code>/roleManagement/entitlementManagement/roleAssignments?$filter=appScopeId eq '/AccessPackageCatalog/{catalog id}'</code>.</td>
+<td style="text-align: left;">Identifier of the app specific scope when the assignment scope is app specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by a resource application only. For the entitlement management provider, use this property to specify a catalog. For example, <code>/AccessPackageCatalog/beedadfe-01d5-4025-910b-84abb9369997</code>. Supports <code>$filter</code> (<code>eq</code>, <code>in</code>). For example, <code>/roleManagement/entitlementManagement/roleAssignments?$filter=appScopeId eq '/AccessPackageCatalog/{catalog id}'</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">directoryScopeId</td>
