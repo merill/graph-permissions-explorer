@@ -90,109 +90,143 @@
         <article data-uid="">
 <h1 id="policyreadpermissiongrant">Policy.Read.PermissionGrant</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>Policy.Read.PermissionGrant</code> permission.</p>
 <blockquote>
 <p>Allows the app to read policies related to consent and permission grants for applications, on behalf of the signed-in user.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>9e640839-a198-48fb-8b9a-013fd6f6cbcd</td>
+<td>414de6ea-2d92-462f-b120-6e2a809a6d01</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Read consent and permission grant policies</td>
+<td>Read consent and permission grant policies</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the app to read policies related to consent and permission grants for applications, without a signed-in user.</td>
+<td>Allows the app to read policies related to consent and permission grants for applications, on behalf of the signed-in user.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-list?view=graph-rest-1.0&amp;tabs=http">GET /policies/permissionGrantPolicies</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-get?view=graph-rest-1.0&amp;tabs=http">GET /policies/permissionGrantPolicies/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-list-excludes?view=graph-rest-1.0&amp;tabs=http">GET /policies/permissionGrantPolicies/{id}/excludes</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-list-includes?view=graph-rest-1.0&amp;tabs=http">GET /policies/permissionGrantPolicies/{id}/includes</a></td>
 </tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
+<table>
+<thead>
 <tr>
-<td>Beta</td>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-list?view=graph-rest-beta&amp;tabs=http">GET /policies/permissionGrantPolicies</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-get?view=graph-rest-beta&amp;tabs=http">GET /policies/permissionGrantPolicies/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-list-excludes?view=graph-rest-beta&amp;tabs=http">GET /policies/permissionGrantPolicies/{id}/excludes</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-list-includes?view=graph-rest-beta&amp;tabs=http">GET /policies/permissionGrantPolicies/{id}/includes</a></td>
+</tr>
+<tr>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/policyroot-list-permissiongrantpreapprovalpolicies?view=graph-rest-beta&amp;tabs=http">GET /policies/permissionGrantPreApprovalPolicies</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/permissiongrantpreapprovalpolicy-get?view=graph-rest-beta&amp;tabs=http">GET /policies/permissionGrantPreApprovalPolicies/{id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-permissiongrantpreapprovalpolicies?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/permissionGrantPreApprovalPolicies</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>414de6ea-2d92-462f-b120-6e2a809a6d01</td>
-</tr>
-<tr>
-<td><strong>Consent Type</strong></td>
-<td>Admin</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read consent and permission grant policies</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read policies related to consent and permission grants for applications, on behalf of the signed-in user.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>9e640839-a198-48fb-8b9a-013fd6f6cbcd</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read consent and permission grant policies</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read policies related to consent and permission grants for applications, without a signed-in user.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="permissiongrantconditionset-"><a href="https://docs.microsoft.com/graph/api/resources/permissiongrantconditionset?view=graph-rest-1.0&amp;tabs=http">permissionGrantConditionSet </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_permissionGrantConditionSet1" role="tab" aria-controls="tabpanel_2_permissionGrantConditionSet1" data-tab="permissionGrantConditionSet1" tabindex="0" aria-selected="true">permissionGrantConditionSet</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_permissionGrantPolicy2" role="tab" aria-controls="tabpanel_2_permissionGrantPolicy2" data-tab="permissionGrantPolicy2" tabindex="-1">permissionGrantPolicy</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_permissionGrantPreApprovalPolicy3" role="tab" aria-controls="tabpanel_2_permissionGrantPreApprovalPolicy3" data-tab="permissionGrantPreApprovalPolicy3" tabindex="-1">permissionGrantPreApprovalPolicy</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_servicePrincipal4" role="tab" aria-controls="tabpanel_2_servicePrincipal4" data-tab="servicePrincipal4" tabindex="-1">servicePrincipal</a>
+</li>
+</ul>
+<section id="tabpanel_2_permissionGrantConditionSet1" role="tabpanel" data-tab="permissionGrantConditionSet1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/permissiongrantconditionset?view=graph-rest-1.0&amp;tabs=http">permissionGrantConditionSet</a></p>
 <table>
 <thead>
 <tr>
@@ -249,7 +283,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="permissiongrantpolicy-"><a href="https://docs.microsoft.com/graph/api/resources/permissiongrantpolicy?view=graph-rest-1.0&amp;tabs=http">permissionGrantPolicy </a></h3>
+</section>
+<section id="tabpanel_2_permissionGrantPolicy2" role="tabpanel" data-tab="permissionGrantPolicy2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/permissiongrantpolicy?view=graph-rest-1.0&amp;tabs=http">permissionGrantPolicy</a></p>
 <table>
 <thead>
 <tr>
@@ -286,7 +323,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="permissiongrantpreapprovalpolicy-"><a href="https://docs.microsoft.com/graph/api/resources/permissiongrantpreapprovalpolicy?view=graph-rest-1.0&amp;tabs=http">permissionGrantPreApprovalPolicy </a></h3>
+</section>
+<section id="tabpanel_2_permissionGrantPreApprovalPolicy3" role="tabpanel" data-tab="permissionGrantPreApprovalPolicy3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/permissiongrantpreapprovalpolicy?view=graph-rest-1.0&amp;tabs=http">permissionGrantPreApprovalPolicy</a></p>
 <table>
 <thead>
 <tr>
@@ -313,7 +353,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="serviceprincipal-"><a href="https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-1.0&amp;tabs=http">servicePrincipal </a></h3>
+</section>
+<section id="tabpanel_2_servicePrincipal4" role="tabpanel" data-tab="servicePrincipal4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-1.0&amp;tabs=http">servicePrincipal</a></p>
 <table>
 <thead>
 <tr>
@@ -505,6 +548,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

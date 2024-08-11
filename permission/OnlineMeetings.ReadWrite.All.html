@@ -90,72 +90,135 @@
         <article data-uid="">
 <h1 id="onlinemeetingsreadwriteall">OnlineMeetings.ReadWrite.All</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>OnlineMeetings.ReadWrite.All</code> permission.</p>
 <blockquote>
 <p>Allows the app to read and create online meetings as an application in your organization.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>b8bb2037-6e08-44ac-a4ea-4674e010e2a4</td>
+<td>-</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Read and create online meetings</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the app to read and create online meetings as an application in your organization.</td>
+<td>-</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Beta</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-createorget?view=graph-rest-1.0&amp;tabs=http">POST /me/onlineMeetings/createOrGet</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/meetingregistrant-delete?view=graph-rest-beta&amp;tabs=http">DELETE /users/{userId}/onlineMeetings/{meetingId}/registration/registrants/{id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-getallrecordings?view=graph-rest-beta&amp;tabs=http">GET /users/{usersId}/onlineMeetings/getAllRecordings(meetingOrganizerUserId='{userId}',startDateTime={startDateTime},endDateTime={endDateTime})</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-getalltranscripts?view=graph-rest-beta&amp;tabs=http">GET /users/{usersId}/onlineMeetings/getAllTranscripts(meetingOrganizerUserId='{userId}',startDateTime={startDateTime},endDateTime={endDateTime})</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-createorget?view=graph-rest-1.0&amp;tabs=http">POST /me/onlineMeetings/createOrGet</a></td>
+<td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-createorget?view=graph-rest-beta&amp;tabs=http">POST /me/onlineMeetings/createOrGet</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/meetingregistration-post-registrants?view=graph-rest-beta&amp;tabs=http">POST /users/{userId}/onlineMeetings/{id}/registration/registrants</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>b8bb2037-6e08-44ac-a4ea-4674e010e2a4</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read and create online meetings</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read and create online meetings as an application in your organization.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="callrecording-"><a href="https://docs.microsoft.com/graph/api/resources/callrecording?view=graph-rest-1.0&amp;tabs=http">callRecording </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_callRecording1" role="tab" aria-controls="tabpanel_2_callRecording1" data-tab="callRecording1" tabindex="0" aria-selected="true">callRecording</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_callTranscript2" role="tab" aria-controls="tabpanel_2_callTranscript2" data-tab="callTranscript2" tabindex="-1">callTranscript</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_chatInfo3" role="tab" aria-controls="tabpanel_2_chatInfo3" data-tab="chatInfo3" tabindex="-1">chatInfo</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_meetingParticipants4" role="tab" aria-controls="tabpanel_2_meetingParticipants4" data-tab="meetingParticipants4" tabindex="-1">meetingParticipants</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_meetingregistrant5" role="tab" aria-controls="tabpanel_2_meetingregistrant5" data-tab="meetingregistrant5" tabindex="-1">meetingregistrant</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_meetingregistration6" role="tab" aria-controls="tabpanel_2_meetingregistration6" data-tab="meetingregistration6" tabindex="-1">meetingregistration</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_onlineMeeting7" role="tab" aria-controls="tabpanel_2_onlineMeeting7" data-tab="onlineMeeting7" tabindex="-1">onlineMeeting</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_virtualEventWebinar8" role="tab" aria-controls="tabpanel_2_virtualEventWebinar8" data-tab="virtualEventWebinar8" tabindex="-1">virtualEventWebinar</a>
+</li>
+</ul>
+<section id="tabpanel_2_callRecording1" role="tabpanel" data-tab="callRecording1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/callrecording?view=graph-rest-1.0&amp;tabs=http">callRecording</a></p>
 <table>
 <thead>
 <tr>
@@ -212,7 +275,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="calltranscript-"><a href="https://docs.microsoft.com/graph/api/resources/calltranscript?view=graph-rest-1.0&amp;tabs=http">callTranscript </a></h3>
+</section>
+<section id="tabpanel_2_callTranscript2" role="tabpanel" data-tab="callTranscript2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/calltranscript?view=graph-rest-1.0&amp;tabs=http">callTranscript</a></p>
 <table>
 <thead>
 <tr>
@@ -274,7 +340,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="chatinfo-"><a href="https://docs.microsoft.com/graph/api/resources/chatinfo?view=graph-rest-1.0&amp;tabs=http">chatInfo </a></h3>
+</section>
+<section id="tabpanel_2_chatInfo3" role="tabpanel" data-tab="chatInfo3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/chatinfo?view=graph-rest-1.0&amp;tabs=http">chatInfo</a></p>
 <table>
 <thead>
 <tr>
@@ -301,7 +370,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="meetingparticipants-"><a href="https://docs.microsoft.com/graph/api/resources/meetingparticipants?view=graph-rest-1.0&amp;tabs=http">meetingParticipants </a></h3>
+</section>
+<section id="tabpanel_2_meetingParticipants4" role="tabpanel" data-tab="meetingParticipants4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/meetingparticipants?view=graph-rest-1.0&amp;tabs=http">meetingParticipants</a></p>
 <table>
 <thead>
 <tr>
@@ -323,7 +395,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="meetingregistrant"><a href="https://docs.microsoft.com/graph/api/resources/meetingregistrant?view=graph-rest-1.0&amp;tabs=http">meetingregistrant</a></h3>
+</section>
+<section id="tabpanel_2_meetingregistrant5" role="tabpanel" data-tab="meetingregistrant5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/meetingregistrant?view=graph-rest-1.0&amp;tabs=http">meetingregistrant</a></p>
 <table>
 <thead>
 <tr>
@@ -375,7 +450,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="meetingregistration"><a href="https://docs.microsoft.com/graph/api/resources/meetingregistration?view=graph-rest-1.0&amp;tabs=http">meetingregistration</a></h3>
+</section>
+<section id="tabpanel_2_meetingregistration6" role="tabpanel" data-tab="meetingregistration6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/meetingregistration?view=graph-rest-1.0&amp;tabs=http">meetingregistration</a></p>
 <table>
 <thead>
 <tr>
@@ -427,7 +505,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="onlinemeeting-"><a href="https://docs.microsoft.com/graph/api/resources/onlinemeeting?view=graph-rest-1.0&amp;tabs=http">onlineMeeting </a></h3>
+</section>
+<section id="tabpanel_2_onlineMeeting7" role="tabpanel" data-tab="onlineMeeting7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/onlinemeeting?view=graph-rest-1.0&amp;tabs=http">onlineMeeting</a></p>
 <table>
 <thead>
 <tr>
@@ -569,7 +650,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="virtualeventwebinar-"><a href="https://docs.microsoft.com/graph/api/resources/virtualeventwebinar?view=graph-rest-1.0&amp;tabs=http">virtualEventWebinar </a></h3>
+</section>
+<section id="tabpanel_2_virtualEventWebinar8" role="tabpanel" data-tab="virtualEventWebinar8" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/virtualeventwebinar?view=graph-rest-1.0&amp;tabs=http">virtualEventWebinar</a></p>
 <table>
 <thead>
 <tr>
@@ -631,6 +715,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

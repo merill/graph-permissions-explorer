@@ -90,329 +90,514 @@
         <article data-uid="">
 <h1 id="contactsreadwrite">Contacts.ReadWrite</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>Contacts.ReadWrite</code> permission.</p>
 <blockquote>
 <p>Allows the app to create, read, update, and delete user contacts.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>6918b873-d17a-4dc1-b314-35f528134491</td>
+<td>d56682ec-c09e-4743-aaf4-1a3aac4caa21</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Read and write contacts in all mailboxes</td>
+<td>Have full access to user contacts</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the app to create, read, update, and delete all contacts in all mailboxes without a signed-in user.</td>
+<td>Allows the app to create, read, update, and delete user contacts.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profilephoto-update?view=graph-rest-1.0&amp;tabs=http"></a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contactfolder-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /me/contactFolders/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contact-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /me/contacts/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contactfolder-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /users/{id | userPrincipalName}/contactFolders/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contact-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /users/{id | userPrincipalName}/contacts/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/photo/$value</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-contactfolders?view=graph-rest-1.0&amp;tabs=http">GET /me/contactFolders</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0&amp;tabs=http">GET /me/contactfolders/{contactFolderId}/contacts/{id}/photo/$value</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contactfolder-get?view=graph-rest-1.0&amp;tabs=http">GET /me/contactFolders/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contactfolder-list-childfolders?view=graph-rest-1.0&amp;tabs=http">GET /me/contactFolders/{id}/childFolders</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-1.0&amp;tabs=http">GET /me/contactFolders/{id}/contacts</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0&amp;tabs=http">GET /me/contactFolders/{id}/contacts/delta</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contactfolder-delta?view=graph-rest-1.0&amp;tabs=http">GET /me/contactFolders/delta</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-contacts?view=graph-rest-1.0&amp;tabs=http">GET /me/contacts</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contact-get?view=graph-rest-1.0&amp;tabs=http">GET /me/contacts/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0&amp;tabs=http">GET /me/contacts/{id}/photo/$value</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0&amp;tabs=http">GET /me/photo/$value</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0&amp;tabs=http">GET /team/{id}/photo/$value</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-contactfolders?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/contactFolders</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/contactfolders/{contactFolderId}/contacts/{id}/photo/$value</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contactfolder-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/contactFolders/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contactfolder-list-childfolders?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/contactFolders/{id}/childFolders</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/contactFolders/{id}/contacts</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-contacts?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/contacts</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contact-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/contacts/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/contacts/{id}/photo/$value</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/photo/$value</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0&amp;tabs=http">GET /users/{id}/contactFolders/{id}/contacts/delta</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contactfolder-delta?view=graph-rest-1.0&amp;tabs=http">GET /users/{id}/contactFolders/delta</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-update?view=graph-rest-1.0&amp;tabs=http">PATCH /me/contactfolders/{contactFolderId}/contacts/{id}/photo/$value</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contactfolder-update?view=graph-rest-1.0&amp;tabs=http">PATCH /me/contactFolders/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contact-update?view=graph-rest-1.0&amp;tabs=http">PATCH /me/contacts/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-update?view=graph-rest-1.0&amp;tabs=http">PATCH /me/contacts/{id}/photo/$value</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-update?view=graph-rest-1.0&amp;tabs=http">PATCH /users/{id | userPrincipalName}/contactfolders/{contactFolderId}/contacts/{id}/photo/$value</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contactfolder-update?view=graph-rest-1.0&amp;tabs=http">PATCH /users/{id | userPrincipalName}/contactFolders/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contact-update?view=graph-rest-1.0&amp;tabs=http">PATCH /users/{id | userPrincipalName}/contacts/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-update?view=graph-rest-1.0&amp;tabs=http">PATCH /users/{id | userPrincipalName}/contacts/{id}/photo/$value</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-post-contactfolders?view=graph-rest-1.0&amp;tabs=http">POST /me/contactFolders</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-post-contacts?view=graph-rest-1.0&amp;tabs=http">POST /me/contactFolders/{contactFolderId}/contacts</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contactfolder-post-childfolders?view=graph-rest-1.0&amp;tabs=http">POST /me/contactFolders/{id}/childFolders</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-1.0&amp;tabs=http">POST /me/contactFolders/{id}/contacts</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-post-contacts?view=graph-rest-1.0&amp;tabs=http">POST /me/contacts</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-post-contactfolders?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/contactFolders</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-post-contacts?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/contactFolders/{contactFolderId}/contacts</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contactfolder-post-childfolders?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/contactFolders/{id}/childFolders</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/contactFolders/{id}/contacts</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-post-contacts?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/contacts</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-update?view=graph-rest-1.0&amp;tabs=http">PUT /me/contactfolders/{contactFolderId}/contacts/{id}/photo/$value</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-update?view=graph-rest-1.0&amp;tabs=http">PUT /me/contacts/{id}/photo/$value</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-update?view=graph-rest-1.0&amp;tabs=http">PUT /users/{id | userPrincipalName}/contactfolders/{contactFolderId}/contacts/{id}/photo/$value</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-update?view=graph-rest-1.0&amp;tabs=http">PUT /users/{id | userPrincipalName}/contacts/{id}/photo/$value</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
+<th>Type</th>
+<th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Id</strong></td>
-<td>d56682ec-c09e-4743-aaf4-1a3aac4caa21</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contactfolder-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/contactFolders/{id}</a></td>
 </tr>
 <tr>
-<td><strong>Consent Type</strong></td>
-<td>User</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contact-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/contacts/{id}</a></td>
 </tr>
 <tr>
-<td><strong>Display String</strong></td>
-<td>Have full access to user contacts</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contactfolder-delete?view=graph-rest-beta&amp;tabs=http">DELETE /users/{id | userPrincipalName}/contactFolders/{id}</a></td>
 </tr>
 <tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to create, read, update, and delete user contacts.</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contact-delete?view=graph-rest-beta&amp;tabs=http">DELETE /users/{id | userPrincipalName}/contacts/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/photo/$value</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-contactfolders?view=graph-rest-beta&amp;tabs=http">GET /me/contactFolders</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-beta&amp;tabs=http">GET /me/contactfolders/{contactFolderId}/contacts/{id}/photo/$value</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contactfolder-get?view=graph-rest-beta&amp;tabs=http">GET /me/contactFolders/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contactfolder-list-childfolders?view=graph-rest-beta&amp;tabs=http">GET /me/contactFolders/{id}/childFolders</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-beta&amp;tabs=http">GET /me/contactFolders/{id}/contacts</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contact-delta?view=graph-rest-beta&amp;tabs=http">GET /me/contactFolders/{id}/contacts/delta</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contactfolder-delta?view=graph-rest-beta&amp;tabs=http">GET /me/contactFolders/delta</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-contacts?view=graph-rest-beta&amp;tabs=http">GET /me/contacts</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contact-get?view=graph-rest-beta&amp;tabs=http">GET /me/contacts/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-beta&amp;tabs=http">GET /me/contacts/{id}/photo/$value</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-beta&amp;tabs=http">GET /me/photo/$value</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-beta&amp;tabs=http">GET /team/{id}/photo/$value</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-contactfolders?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/contactFolders</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/contactfolders/{contactFolderId}/contacts/{id}/photo/$value</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contactfolder-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/contactFolders/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contactfolder-list-childfolders?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/contactFolders/{id}/childFolders</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/contactFolders/{id}/contacts</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-contacts?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/contacts</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contact-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/contacts/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/contacts/{id}/photo/$value</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/photo/$value</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contact-delta?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/contactFolders/{id}/contacts/delta</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contactfolder-delta?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/contactFolders/delta</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profilephoto-update?view=graph-rest-beta&amp;tabs=http">PATCH /me/contactfolders/{contactFolderId}/contacts/{id}/photo/$value</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contactfolder-update?view=graph-rest-beta&amp;tabs=http">PATCH /me/contactFolders/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contact-update?view=graph-rest-beta&amp;tabs=http">PATCH /me/contacts/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profilephoto-update?view=graph-rest-beta&amp;tabs=http">PATCH /me/contacts/{id}/photo/$value</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profilephoto-update?view=graph-rest-beta&amp;tabs=http">PATCH /users/{id | userPrincipalName}/contactfolders/{contactFolderId}/contacts/{id}/photo/$value</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contactfolder-update?view=graph-rest-beta&amp;tabs=http">PATCH /users/{id | userPrincipalName}/contactFolders/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contact-update?view=graph-rest-beta&amp;tabs=http">PATCH /users/{id | userPrincipalName}/contacts/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profilephoto-update?view=graph-rest-beta&amp;tabs=http">PATCH /users/{id | userPrincipalName}/contacts/{id}/photo/$value</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-post-contactfolders?view=graph-rest-beta&amp;tabs=http">POST /me/contactFolders</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-post-contacts?view=graph-rest-beta&amp;tabs=http">POST /me/contactFolders/{contactFolderId}/contacts</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contactfolder-post-childfolders?view=graph-rest-beta&amp;tabs=http">POST /me/contactFolders/{id}/childFolders</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-beta&amp;tabs=http">POST /me/contactFolders/{id}/contacts</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-post-contacts?view=graph-rest-beta&amp;tabs=http">POST /me/contacts</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-post-contactfolders?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/contactFolders</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-post-contacts?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/contactFolders/{contactFolderId}/contacts</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contactfolder-post-childfolders?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/contactFolders/{id}/childFolders</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/contactFolders/{id}/contacts</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-post-contacts?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/contacts</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profilephoto-update?view=graph-rest-beta&amp;tabs=http">PUT /me/contactfolders/{contactFolderId}/contacts/{id}/photo/$value</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profilephoto-update?view=graph-rest-beta&amp;tabs=http">PUT /me/contacts/{id}/photo/$value</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profilephoto-update?view=graph-rest-beta&amp;tabs=http">PUT /users/{id | userPrincipalName}/contactfolders/{contactFolderId}/contacts/{id}/photo/$value</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profilephoto-update?view=graph-rest-beta&amp;tabs=http">PUT /users/{id | userPrincipalName}/contacts/{id}/photo/$value</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>6918b873-d17a-4dc1-b314-35f528134491</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read and write contacts in all mailboxes</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to create, read, update, and delete all contacts in all mailboxes without a signed-in user.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="contact-"><a href="https://docs.microsoft.com/graph/api/resources/contact?view=graph-rest-1.0&amp;tabs=http">contact </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_contact1" role="tab" aria-controls="tabpanel_2_contact1" data-tab="contact1" tabindex="0" aria-selected="true">contact</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_contactFolder2" role="tab" aria-controls="tabpanel_2_contactFolder2" data-tab="contactFolder2" tabindex="-1">contactFolder</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_emailAddress3" role="tab" aria-controls="tabpanel_2_emailAddress3" data-tab="emailAddress3" tabindex="-1">emailAddress</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_mailFolder4" role="tab" aria-controls="tabpanel_2_mailFolder4" data-tab="mailFolder4" tabindex="-1">mailFolder</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_phone5" role="tab" aria-controls="tabpanel_2_phone5" data-tab="phone5" tabindex="-1">phone</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_physicalAddress6" role="tab" aria-controls="tabpanel_2_physicalAddress6" data-tab="physicalAddress6" tabindex="-1">physicalAddress</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_profilePhoto7" role="tab" aria-controls="tabpanel_2_profilePhoto7" data-tab="profilePhoto7" tabindex="-1">profilePhoto</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_typedEmailAddress8" role="tab" aria-controls="tabpanel_2_typedEmailAddress8" data-tab="typedEmailAddress8" tabindex="-1">typedEmailAddress</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_website9" role="tab" aria-controls="tabpanel_2_website9" data-tab="website9" tabindex="-1">website</a>
+</li>
+</ul>
+<section id="tabpanel_2_contact1" role="tabpanel" data-tab="contact1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/contact?view=graph-rest-1.0&amp;tabs=http">contact</a></p>
 <table>
 <thead>
 <tr>
@@ -614,7 +799,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="contactfolder-"><a href="https://docs.microsoft.com/graph/api/resources/contactfolder?view=graph-rest-1.0&amp;tabs=http">contactFolder </a></h3>
+</section>
+<section id="tabpanel_2_contactFolder2" role="tabpanel" data-tab="contactFolder2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/contactfolder?view=graph-rest-1.0&amp;tabs=http">contactFolder</a></p>
 <table>
 <thead>
 <tr>
@@ -641,7 +829,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="emailaddress-"><a href="https://docs.microsoft.com/graph/api/resources/emailaddress?view=graph-rest-1.0&amp;tabs=http">emailAddress </a></h3>
+</section>
+<section id="tabpanel_2_emailAddress3" role="tabpanel" data-tab="emailAddress3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/emailaddress?view=graph-rest-1.0&amp;tabs=http">emailAddress</a></p>
 <table>
 <thead>
 <tr>
@@ -663,7 +854,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="mailfolder-"><a href="https://docs.microsoft.com/graph/api/resources/mailfolder?view=graph-rest-1.0&amp;tabs=http">mailFolder </a></h3>
+</section>
+<section id="tabpanel_2_mailFolder4" role="tabpanel" data-tab="mailFolder4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/mailfolder?view=graph-rest-1.0&amp;tabs=http">mailFolder</a></p>
 <table>
 <thead>
 <tr>
@@ -710,7 +904,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="phone-"><a href="https://docs.microsoft.com/graph/api/resources/phone?view=graph-rest-1.0&amp;tabs=http">phone </a></h3>
+</section>
+<section id="tabpanel_2_phone5" role="tabpanel" data-tab="phone5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/phone?view=graph-rest-1.0&amp;tabs=http">phone</a></p>
 <table>
 <thead>
 <tr>
@@ -732,7 +929,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="physicaladdress-"><a href="https://docs.microsoft.com/graph/api/resources/physicaladdress?view=graph-rest-1.0&amp;tabs=http">physicalAddress </a></h3>
+</section>
+<section id="tabpanel_2_physicalAddress6" role="tabpanel" data-tab="physicalAddress6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/physicaladdress?view=graph-rest-1.0&amp;tabs=http">physicalAddress</a></p>
 <table>
 <thead>
 <tr>
@@ -769,7 +969,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="profilephoto-"><a href="https://docs.microsoft.com/graph/api/resources/profilephoto?view=graph-rest-1.0&amp;tabs=http">profilePhoto </a></h3>
+</section>
+<section id="tabpanel_2_profilePhoto7" role="tabpanel" data-tab="profilePhoto7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/profilephoto?view=graph-rest-1.0&amp;tabs=http">profilePhoto</a></p>
 <table>
 <thead>
 <tr>
@@ -796,7 +999,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="typedemailaddress-"><a href="https://docs.microsoft.com/graph/api/resources/typedemailaddress?view=graph-rest-1.0&amp;tabs=http">typedEmailAddress </a></h3>
+</section>
+<section id="tabpanel_2_typedEmailAddress8" role="tabpanel" data-tab="typedEmailAddress8" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/typedemailaddress?view=graph-rest-1.0&amp;tabs=http">typedEmailAddress</a></p>
 <table>
 <thead>
 <tr>
@@ -828,7 +1034,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="website-"><a href="https://docs.microsoft.com/graph/api/resources/website?view=graph-rest-1.0&amp;tabs=http">website </a></h3>
+</section>
+<section id="tabpanel_2_website9" role="tabpanel" data-tab="website9" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/website?view=graph-rest-1.0&amp;tabs=http">website</a></p>
 <table>
 <thead>
 <tr>
@@ -855,6 +1064,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

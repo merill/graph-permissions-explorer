@@ -90,119 +90,186 @@
         <article data-uid="">
 <h1 id="backuprestore-restorereadwriteall">BackupRestore-Restore.ReadWrite.All</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>BackupRestore-Restore.ReadWrite.All</code> permission.</p>
 <blockquote>
 <p>Allows the app to search the backup snapshots for Microsoft 365 resources, and restore Microsoft 365 resources from a backed up snapshot, on behalf of the signed in user.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>bebd0841-a3d8-4313-a51d-731112c8ee41</td>
+<td>9f89e109-94b9-4c9b-b4fc-98cdaa54f574</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Read restore all sessions and start restore sessions from backups</td>
+<td>Read restore sessions and start restore sessions from backups</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the app to search all backup snapshots for Microsoft 365 resources, and restore Microsoft 365 resources from a backed up snapshot, without a signed-in user.</td>
+<td>Allows the app to search the backup snapshots for Microsoft 365 resources, and restore Microsoft 365 resources from a backed up snapshot, on behalf of the signed in user.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/restoresessionbase-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /solutions/backupRestore/restoreSessions/{restoreSessionBaseId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/backuprestoreroot-list-restorepoints?view=graph-rest-1.0&amp;tabs=http">GET /solutions/backupRestore/restorePoints?$expand=protectionUnit($filter=id eq '{ProtectionUnitID}')&amp;$filter=protectionDateTime lt YYYY-MM-DDTHH:mm:ssZ</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/exchangerestoresession-update?view=graph-rest-1.0&amp;tabs=http">PATCH /solutions/backupRestore/exchangeRestoreSessions/{exchangeRestoreSessionId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/onedriveforbusinessrestoresession-update?view=graph-rest-1.0&amp;tabs=http">PATCH /solutions/backupRestore/oneDriveForBusinessRestoreSessions/{oneDriveForBusinessRestoreSessionId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/sharepointrestoresession-update?view=graph-rest-1.0&amp;tabs=http">PATCH /solutions/backupRestore/sharePointRestoreSessions/{sharePointRestoreSessionId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/backuprestoreroot-post-exchangerestoresessions?view=graph-rest-1.0&amp;tabs=http">POST /solutions/backupRestore/exchangeRestoreSessions</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/backuprestoreroot-post-onedriveforbusinessrestoresessions?view=graph-rest-1.0&amp;tabs=http">POST /solutions/backupRestore/oneDriveForBusinessRestoreSessions</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/restoresessionbase-activate?view=graph-rest-1.0&amp;tabs=http">POST /solutions/backupRestore/restoreSessions/{restoreSessionBaseId}/activate</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/backuprestoreroot-post-sharepointrestoresessions?view=graph-rest-1.0&amp;tabs=http">POST /solutions/backupRestore/sharePointRestoreSessions</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
+<th>Type</th>
+<th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Id</strong></td>
-<td>9f89e109-94b9-4c9b-b4fc-98cdaa54f574</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/restoresessionbase-delete?view=graph-rest-beta&amp;tabs=http">DELETE /solutions/backupRestore/restoreSessions/{restoreSessionBaseId}</a></td>
 </tr>
 <tr>
-<td><strong>Consent Type</strong></td>
-<td>Admin</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/backuprestoreroot-list-restorepoints?view=graph-rest-beta&amp;tabs=http">GET /solutions/backupRestore/restorePoints?$expand=protectionUnit($filter=id eq '{ProtectionUnitID}')&amp;$filter=protectionDateTime lt YYYY-MM-DDTHH:mm:ssZ</a></td>
 </tr>
 <tr>
-<td><strong>Display String</strong></td>
-<td>Read restore sessions and start restore sessions from backups</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/exchangerestoresession-update?view=graph-rest-beta&amp;tabs=http">PATCH /solutions/backupRestore/exchangeRestoreSessions/{exchangeRestoreSessionId}</a></td>
 </tr>
 <tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to search the backup snapshots for Microsoft 365 resources, and restore Microsoft 365 resources from a backed up snapshot, on behalf of the signed in user.</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onedriveforbusinessrestoresession-update?view=graph-rest-beta&amp;tabs=http">PATCH /solutions/backupRestore/oneDriveForBusinessRestoreSessions/{oneDriveForBusinessRestoreSessionId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/sharepointrestoresession-update?view=graph-rest-beta&amp;tabs=http">PATCH /solutions/backupRestore/sharePointRestoreSessions/{sharePointRestoreSessionId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/backuprestoreroot-post-exchangerestoresessions?view=graph-rest-beta&amp;tabs=http">POST /solutions/backupRestore/exchangeRestoreSessions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/backuprestoreroot-post-onedriveforbusinessrestoresessions?view=graph-rest-beta&amp;tabs=http">POST /solutions/backupRestore/oneDriveForBusinessRestoreSessions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/restoresessionbase-activate?view=graph-rest-beta&amp;tabs=http">POST /solutions/backupRestore/restoreSessions/{restoreSessionBaseId}/activate</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/backuprestoreroot-post-sharepointrestoresessions?view=graph-rest-beta&amp;tabs=http">POST /solutions/backupRestore/sharePointRestoreSessions</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>bebd0841-a3d8-4313-a51d-731112c8ee41</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read restore all sessions and start restore sessions from backups</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to search all backup snapshots for Microsoft 365 resources, and restore Microsoft 365 resources from a backed up snapshot, without a signed-in user.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="driverestoreartifact-"><a href="https://docs.microsoft.com/graph/api/resources/driverestoreartifact?view=graph-rest-1.0&amp;tabs=http">driveRestoreArtifact </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_driveRestoreArtifact1" role="tab" aria-controls="tabpanel_2_driveRestoreArtifact1" data-tab="driveRestoreArtifact1" tabindex="0" aria-selected="true">driveRestoreArtifact</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_exchangeRestoreSession2" role="tab" aria-controls="tabpanel_2_exchangeRestoreSession2" data-tab="exchangeRestoreSession2" tabindex="-1">exchangeRestoreSession</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_granularMailboxRestoreArtifact3" role="tab" aria-controls="tabpanel_2_granularMailboxRestoreArtifact3" data-tab="granularMailboxRestoreArtifact3" tabindex="-1">granularMailboxRestoreArtifact</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_mailboxRestoreArtifact4" role="tab" aria-controls="tabpanel_2_mailboxRestoreArtifact4" data-tab="mailboxRestoreArtifact4" tabindex="-1">mailboxRestoreArtifact</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_oneDriveForBusinessRestoreSession5" role="tab" aria-controls="tabpanel_2_oneDriveForBusinessRestoreSession5" data-tab="oneDriveForBusinessRestoreSession5" tabindex="-1">oneDriveForBusinessRestoreSession</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_restorePoint6" role="tab" aria-controls="tabpanel_2_restorePoint6" data-tab="restorePoint6" tabindex="-1">restorePoint</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_restoreSessionBase7" role="tab" aria-controls="tabpanel_2_restoreSessionBase7" data-tab="restoreSessionBase7" tabindex="-1">restoreSessionBase</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_sharePointRestoreSession8" role="tab" aria-controls="tabpanel_2_sharePointRestoreSession8" data-tab="sharePointRestoreSession8" tabindex="-1">sharePointRestoreSession</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_siteRestoreArtifact9" role="tab" aria-controls="tabpanel_2_siteRestoreArtifact9" data-tab="siteRestoreArtifact9" tabindex="-1">siteRestoreArtifact</a>
+</li>
+</ul>
+<section id="tabpanel_2_driveRestoreArtifact1" role="tabpanel" data-tab="driveRestoreArtifact1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/driverestoreartifact?view=graph-rest-1.0&amp;tabs=http">driveRestoreArtifact</a></p>
 <table>
 <thead>
 <tr>
@@ -259,7 +326,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="exchangerestoresession-"><a href="https://docs.microsoft.com/graph/api/resources/exchangerestoresession?view=graph-rest-1.0&amp;tabs=http">exchangeRestoreSession </a></h3>
+</section>
+<section id="tabpanel_2_exchangeRestoreSession2" role="tabpanel" data-tab="exchangeRestoreSession2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/exchangerestoresession?view=graph-rest-1.0&amp;tabs=http">exchangeRestoreSession</a></p>
 <table>
 <thead>
 <tr>
@@ -311,7 +381,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="granularmailboxrestoreartifact-"><a href="https://docs.microsoft.com/graph/api/resources/granularmailboxrestoreartifact?view=graph-rest-1.0&amp;tabs=http">granularMailboxRestoreArtifact </a></h3>
+</section>
+<section id="tabpanel_2_granularMailboxRestoreArtifact3" role="tabpanel" data-tab="granularMailboxRestoreArtifact3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/granularmailboxrestoreartifact?view=graph-rest-1.0&amp;tabs=http">granularMailboxRestoreArtifact</a></p>
 <table>
 <thead>
 <tr>
@@ -373,7 +446,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="mailboxrestoreartifact-"><a href="https://docs.microsoft.com/graph/api/resources/mailboxrestoreartifact?view=graph-rest-1.0&amp;tabs=http">mailboxRestoreArtifact </a></h3>
+</section>
+<section id="tabpanel_2_mailboxRestoreArtifact4" role="tabpanel" data-tab="mailboxRestoreArtifact4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/mailboxrestoreartifact?view=graph-rest-1.0&amp;tabs=http">mailboxRestoreArtifact</a></p>
 <table>
 <thead>
 <tr>
@@ -425,7 +501,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="onedriveforbusinessrestoresession-"><a href="https://docs.microsoft.com/graph/api/resources/onedriveforbusinessrestoresession?view=graph-rest-1.0&amp;tabs=http">oneDriveForBusinessRestoreSession </a></h3>
+</section>
+<section id="tabpanel_2_oneDriveForBusinessRestoreSession5" role="tabpanel" data-tab="oneDriveForBusinessRestoreSession5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/onedriveforbusinessrestoresession?view=graph-rest-1.0&amp;tabs=http">oneDriveForBusinessRestoreSession</a></p>
 <table>
 <thead>
 <tr>
@@ -477,7 +556,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="restorepoint-"><a href="https://docs.microsoft.com/graph/api/resources/restorepoint?view=graph-rest-1.0&amp;tabs=http">restorePoint </a></h3>
+</section>
+<section id="tabpanel_2_restorePoint6" role="tabpanel" data-tab="restorePoint6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/restorepoint?view=graph-rest-1.0&amp;tabs=http">restorePoint</a></p>
 <table>
 <thead>
 <tr>
@@ -509,7 +591,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="restoresessionbase-"><a href="https://docs.microsoft.com/graph/api/resources/restoresessionbase?view=graph-rest-1.0&amp;tabs=http">restoreSessionBase </a></h3>
+</section>
+<section id="tabpanel_2_restoreSessionBase7" role="tabpanel" data-tab="restoreSessionBase7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/restoresessionbase?view=graph-rest-1.0&amp;tabs=http">restoreSessionBase</a></p>
 <table>
 <thead>
 <tr>
@@ -561,7 +646,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="sharepointrestoresession-"><a href="https://docs.microsoft.com/graph/api/resources/sharepointrestoresession?view=graph-rest-1.0&amp;tabs=http">sharePointRestoreSession </a></h3>
+</section>
+<section id="tabpanel_2_sharePointRestoreSession8" role="tabpanel" data-tab="sharePointRestoreSession8" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/sharepointrestoresession?view=graph-rest-1.0&amp;tabs=http">sharePointRestoreSession</a></p>
 <table>
 <thead>
 <tr>
@@ -613,7 +701,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="siterestoreartifact-"><a href="https://docs.microsoft.com/graph/api/resources/siterestoreartifact?view=graph-rest-1.0&amp;tabs=http">siteRestoreArtifact </a></h3>
+</section>
+<section id="tabpanel_2_siteRestoreArtifact9" role="tabpanel" data-tab="siteRestoreArtifact9" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/siterestoreartifact?view=graph-rest-1.0&amp;tabs=http">siteRestoreArtifact</a></p>
 <table>
 <thead>
 <tr>
@@ -670,6 +761,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

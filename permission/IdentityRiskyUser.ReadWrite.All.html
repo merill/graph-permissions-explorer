@@ -90,129 +90,137 @@
         <article data-uid="">
 <h1 id="identityriskyuserreadwriteall">IdentityRiskyUser.ReadWrite.All</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>IdentityRiskyUser.ReadWrite.All</code> permission.</p>
 <blockquote>
 <p>Allows the app to read and update identity risky user information for all users in your organization on behalf of the signed-in user. Update operations include dismissing risky users.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>656f6061-f9fe-4807-9708-6a2e0934df76</td>
+<td>e0a7cdbb-08b0-4697-8264-0069786e9674</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Read and write all risky user information</td>
+<td>Read and write risky user information</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the app to read and update identity risky user information for your organization without a signed-in user.  Update operations include dismissing risky users.</td>
+<td>Allows the app to read and update identity risky user information for all users in your organization on behalf of the signed-in user. Update operations include dismissing risky users.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/riskyuser-list-history?view=graph-rest-beta&amp;tabs=http">GET /identityProtection/riskyUsers/{id}/history/</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/riskyuser-list-history?view=graph-rest-1.0&amp;tabs=http">GET /identityProtection/riskyUsers/{riskyUserId}/history</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/riskyuserhistoryitem-get?view=graph-rest-beta&amp;tabs=http">GET /identityProtection/riskyUsers/{userid}/history/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/riskyuser-list-history?view=graph-rest-beta&amp;tabs=http">GET /riskyUsers/{id}/history</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/riskyuserhistoryitem-get?view=graph-rest-beta&amp;tabs=http">GET /riskyUsers/{userid}/history/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/signin-confirmcompromised?view=graph-rest-beta&amp;tabs=http">POST /auditLogs/signIns/confirmCompromised</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/signin-confirmsafe?view=graph-rest-beta&amp;tabs=http">POST /auditLogs/signIns/confirmSafe</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/riskyuser-confirmcompromised?view=graph-rest-1.0&amp;tabs=http">POST /identityProtection/riskyUsers/confirmCompromised</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/riskyuser-dismiss?view=graph-rest-1.0&amp;tabs=http">POST /identityProtection/riskyUsers/dismiss</a></td>
 </tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
+<table>
+<thead>
 <tr>
-<td>Beta</td>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/riskyuser-list-history?view=graph-rest-beta&amp;tabs=http">GET /identityProtection/riskyUsers/{id}/history/</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/riskyuserhistoryitem-get?view=graph-rest-beta&amp;tabs=http">GET /identityProtection/riskyUsers/{userid}/history/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/riskyuser-list-history?view=graph-rest-beta&amp;tabs=http">GET /riskyUsers/{id}/history</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/riskyuserhistoryitem-get?view=graph-rest-beta&amp;tabs=http">GET /riskyUsers/{userid}/history/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/signin-confirmcompromised?view=graph-rest-beta&amp;tabs=http">POST /auditLogs/signIns/confirmCompromised</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/signin-confirmsafe?view=graph-rest-beta&amp;tabs=http">POST /auditLogs/signIns/confirmSafe</a></td>
+</tr>
+<tr>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/riskyusers-confirmcompromised?view=graph-rest-beta&amp;tabs=http">POST /riskyUsers/confirmCompromised</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/riskyusers-dismiss?view=graph-rest-beta&amp;tabs=http">POST /riskyUsers/dismiss</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>e0a7cdbb-08b0-4697-8264-0069786e9674</td>
-</tr>
-<tr>
-<td><strong>Consent Type</strong></td>
-<td>Admin</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read and write risky user information</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read and update identity risky user information for all users in your organization on behalf of the signed-in user. Update operations include dismissing risky users.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>656f6061-f9fe-4807-9708-6a2e0934df76</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read and write all risky user information</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read and update identity risky user information for your organization without a signed-in user.  Update operations include dismissing risky users.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="riskyuser-"><a href="https://docs.microsoft.com/graph/api/resources/riskyuser?view=graph-rest-1.0&amp;tabs=http">riskyUser </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_riskyUser1" role="tab" aria-controls="tabpanel_2_riskyUser1" data-tab="riskyUser1" tabindex="0" aria-selected="true">riskyUser</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_riskyUserHistoryItem2" role="tab" aria-controls="tabpanel_2_riskyUserHistoryItem2" data-tab="riskyUserHistoryItem2" tabindex="-1">riskyUserHistoryItem</a>
+</li>
+</ul>
+<section id="tabpanel_2_riskyUser1" role="tabpanel" data-tab="riskyUser1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/riskyuser?view=graph-rest-1.0&amp;tabs=http">riskyUser</a></p>
 <table>
 <thead>
 <tr>
@@ -269,7 +277,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="riskyuserhistoryitem-"><a href="https://docs.microsoft.com/graph/api/resources/riskyuserhistoryitem?view=graph-rest-1.0&amp;tabs=http">riskyUserHistoryItem </a></h3>
+</section>
+<section id="tabpanel_2_riskyUserHistoryItem2" role="tabpanel" data-tab="riskyUserHistoryItem2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/riskyuserhistoryitem?view=graph-rest-1.0&amp;tabs=http">riskyUserHistoryItem</a></p>
 <table>
 <thead>
 <tr>
@@ -341,6 +352,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

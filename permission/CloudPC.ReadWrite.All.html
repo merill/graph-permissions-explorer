@@ -90,799 +90,949 @@
         <article data-uid="">
 <h1 id="cloudpcreadwriteall">CloudPC.ReadWrite.All</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>CloudPC.ReadWrite.All</code> permission.</p>
 <blockquote>
 <p>Allows the app to read and write the properties of Cloud PCs on behalf of the signed-in user.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>3b4349e1-8cf5-45a3-95b7-69d1751d3e6a</td>
+<td>9d77138f-f0e2-47ba-ab33-cd246c8b79d1</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Read and write Cloud PCs</td>
+<td>Read and write Cloud PCs</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the app to read and write the properties of Cloud PCs, without a signed-in user.</td>
+<td>Allows the app to read and write the properties of Cloud PCs on behalf of the signed-in user.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpcdeviceimage-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /deviceManagement/virtualEndpoint/deviceImages/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpconpremisesconnection-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /deviceManagement/virtualEndpoint/onPremisesConnections/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpcprovisioningpolicy-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /deviceManagement/virtualEndpoint/provisioningPolicies/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpcusersetting-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /deviceManagement/virtualEndpoint/userSettings/{id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/unifiedroleassignmentmultiple-delete?view=graph-rest-beta&amp;tabs=http">DELETE /roleManagement/cloudPC/roleAssignments/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/unifiedroledefinition-delete?view=graph-rest-beta&amp;tabs=http">DELETE /roleManagement/deviceManagement/roleDefinitions/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpc-retrievereviewstatus?view=graph-rest-beta&amp;tabs=http">GET /cloudPCs/{cloudPCId}/retrieveReviewStatus</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/manageddevice-getcloudpcremoteactionresults?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/managedDevices/{managedDeviceId}/getCloudPcRemoteActionResults</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/manageddevice-getcloudpcreviewstatus?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/managedDevices/{managedDeviceId}/getCloudPcReviewStatus</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/devicemanagement-alertrecord-list?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/monitoring/alertRecords</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/devicemanagement-alertrecord-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/monitoring/alertRecords/{alertRecordId}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/devicemanagement-alertrecord-getportalnotifications?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/monitoring/alertRecords/getPortalNotifications</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/devicemanagement-alertrule-list?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/monitoring/alertRules</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/devicemanagement-alertrule-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/monitoring/alertRules/{alertRuleId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-list-auditevents?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/virtualEndpoint/auditEvents</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpcauditevent-get?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/virtualEndpoint/auditEvents/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpcauditevent-getauditactivitytypes?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/virtualEndpoint/auditEvents/getAuditActivityTypes</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-list-bulkactions?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/bulkActions</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpcbulkaction-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/bulkActions/{cloudPcBulkActionId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-list-cloudpcs?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/virtualEndpoint/cloudPCs</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpc-get?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/virtualEndpoint/cloudPCs/{id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpc-getcloudpcconnectivityhistory?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/cloudPCs/{id}/getCloudPcConnectivityHistory</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpc-getsupportedcloudpcremoteactions?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/cloudPCs/{id}/getSupportedCloudPcRemoteActions</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpc-retrievecloudpcremoteactionresults?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/cloudPCs/{id}/retrieveCloudPcRemoteActionResults</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpc-getprovisionedcloudpcs?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/cloudPCs/getProvisionedCloudPCs(groupId='{groupId}',servicePlanId='{servicePlanId}')</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpccrosscloudgovernmentorganizationmapping-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/crossCloudGovernmentOrganizationMapping</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-list-deviceimages?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/virtualEndpoint/deviceImages</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpcdeviceimage-get?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/virtualEndpoint/deviceImages/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpcdeviceimage-getsourceimages?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/virtualEndpoint/deviceImages/getSourceImages</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-list-externalpartnersettings?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/externalPartnerSettings</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpcexternalpartnersetting-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/externalPartnerSettings/{cloudPcExternalPartnerSettingId}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-list-frontlineserviceplans?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/frontLineServicePlans</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpcfrontlineserviceplan-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/frontLineServicePlans/{cloudPcFrontLineServicePlanId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-list-galleryimages?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/virtualEndpoint/galleryImages</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpcgalleryimage-get?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/virtualEndpoint/galleryImages/{id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-geteffectivepermissions?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/getEffectivePermissions</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-list-onpremisesconnections?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/virtualEndpoint/onPremisesConnections</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpconpremisesconnection-get?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/virtualEndpoint/onPremisesConnections/{id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpcorganizationsettings-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/organizationSettings</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-list-provisioningpolicies?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/virtualEndpoint/provisioningPolicies</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpcprovisioningpolicy-get?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/virtualEndpoint/provisioningPolicies/{id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpcexportjob-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/reports/exportJobs/{cloudPcExportJobId}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpcreports-getrealtimeremoteconnectionlatency?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/reports/getRealTimeRemoteConnectionLatency(cloudPcId='id')</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpcreports-getrealtimeremoteconnectionstatus?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/reports/getRealTimeRemoteConnectionStatus(cloudPcId='id')</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-retrievescopedpermissions?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/retrieveScopedPermissions</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-retrievetenantencryptionsetting?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/retrieveTenantEncryptionSetting</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-list-serviceplans?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/servicePlans</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-list-shareduseserviceplans?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/sharedUseServicePlans</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpcshareduseserviceplan-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/sharedUseServicePlans/{cloudPcSharedUseServicePlanId}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-list-snapshots?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/snapshots</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpcsnapshot-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/snapshots/{cloudPcSnapshotId}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpcsnapshot-getstorageaccounts?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/snapshots/getStorageAccounts(subscriptionId='{subscriptionId}')</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpcsnapshot-getsubscriptions?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/snapshots/getSubscriptions</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-list-supportedregions?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/supportedRegions</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-list-usersettings?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/virtualEndpoint/userSettings</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpcusersetting-get?view=graph-rest-1.0&amp;tabs=http">GET /deviceManagement/virtualEndpoint/userSettings/{id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/user-list-cloudpcs?view=graph-rest-beta&amp;tabs=http">GET /me/cloudPCs</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpc-getcloudpclaunchinfo?view=graph-rest-beta&amp;tabs=http">GET /me/cloudPCs/{cloudPCId}/getCloudPcLaunchInfo</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpc-getfrontlinecloudpcaccessstate?view=graph-rest-beta&amp;tabs=http">GET /me/cloudPCs/{cloudPCId}/getFrontlineCloudPcAccessState</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpc-getshiftworkcloudpcaccessstate?view=graph-rest-beta&amp;tabs=http">GET /me/cloudPCs/{cloudPCId}/getShiftWorkCloudPcAccessState</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpc-get?view=graph-rest-beta&amp;tabs=http">GET /me/cloudPCs/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/rbacapplicationmultiple-list-roleassignments?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/cloudPc/roleAssignments</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/cloudPC/roleAssignments/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/cloudPC/roleDefinitions</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/cloudPC/roleDefinitions/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0&amp;tabs=http">GET /roleManagement/directory/roleDefinitions</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-1.0&amp;tabs=http">GET /roleManagement/directory/roleDefinitions/{id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-cloudpcconnections?view=graph-rest-beta&amp;tabs=http">GET /tenantRelationships/managedTenants/cloudPcConnections</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/managedtenants-cloudpcconnection-get?view=graph-rest-beta&amp;tabs=http">GET /tenantRelationships/managedTenants/cloudPcConnections/{cloudPcConnectionId}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-cloudpcdevices?view=graph-rest-beta&amp;tabs=http">GET /tenantRelationships/managedTenants/cloudPcDevices</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/managedtenants-cloudpcdevice-get?view=graph-rest-beta&amp;tabs=http">GET /tenantRelationships/managedTenants/cloudPcDevices/{cloudPcDeviceId}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-cloudpcsoverview?view=graph-rest-beta&amp;tabs=http">GET /tenantRelationships/managedTenants/cloudPcsOverview</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/managedtenants-cloudpcoverview-get?view=graph-rest-beta&amp;tabs=http">GET /tenantRelationships/managedTenants/cloudPcsOverview/{cloudPcOverviewId}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpc-get?view=graph-rest-beta&amp;tabs=http">GET /users/{userId}/cloudPCs/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/devicemanagement-alertrule-update?view=graph-rest-beta&amp;tabs=http">PATCH /deviceManagement/monitoring/alertRules/{alertRuleId}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpcexternalpartnersetting-update?view=graph-rest-beta&amp;tabs=http">PATCH /deviceManagement/virtualEndpoint/externalPartnerSettings/{cloudPcExternalPartnerSettingId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpconpremisesconnection-update?view=graph-rest-1.0&amp;tabs=http">PATCH /deviceManagement/virtualEndpoint/onPremisesConnections/{id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpcorganizationsettings-update?view=graph-rest-beta&amp;tabs=http">PATCH /deviceManagement/virtualEndpoint/organizationSettings</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpcprovisioningpolicy-update?view=graph-rest-1.0&amp;tabs=http">PATCH /deviceManagement/virtualEndpoint/provisioningPolicies/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpcusersetting-update?view=graph-rest-1.0&amp;tabs=http">PATCH /deviceManagement/virtualEndpoint/userSettings/{id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/unifiedroleassignmentmultiple-update?view=graph-rest-beta&amp;tabs=http">PATCH /roleManagement/cloudPC/roleAssignments/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/unifiedroledefinition-update?view=graph-rest-beta&amp;tabs=http">PATCH /roleManagement/deviceManagement/roleDefinitions/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpc-setreviewstatus?view=graph-rest-beta&amp;tabs=http">POST /cloudPCs/{cloudPCId}/setReviewStatus</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/manageddevice-reprovisioncloudpc?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/managedDevices/{managedDeviceId}/reprovisionCloudPc</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/manageddevice-resizecloudpc?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/managedDevices/{managedDeviceId}/resizeCloudPc</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/manageddevice-restorecloudpc?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/managedDevices/{managedDeviceId}/restoreCloudPc</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/manageddevice-setcloudpcreviewstatus?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/managedDevices/{managedDeviceId}/setCloudPcReviewStatus</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/manageddevice-bulkreprovisioncloudpc?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/managedDevices/bulkReprovisionCloudPc</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/manageddevice-bulkrestorecloudpc?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/managedDevices/bulkRestoreCloudPc</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/manageddevice-bulksetcloudpcreviewstatus?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/managedDevices/bulkSetCloudPcReviewStatus</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/devicemanagement-alertrecord-setportalnotificationassent?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/monitoring/alertRecords/{alertRecordId}/setPortalNotificationAsSent</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/devicemanagement-alertrecord-changealertrecordsportalnotificationassent?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/monitoring/alertRecords/changeAlertRecordsPortalNotificationAsSent</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/devicemanagement-alertrule-post?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/monitoring/alertRules</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-post-bulkactions?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/bulkActions</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpc-changeuseraccounttype?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/cloudPCs/{cloudPCId}/changeUserAccountType</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpc-endgraceperiod?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/virtualEndpoint/cloudPCs/{cloudPCId}/endGracePeriod</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpc-poweroff?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/cloudPCs/{cloudPCId}/poweroff</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpc-poweron?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/cloudPCs/{cloudPCId}/poweron</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpc-reboot?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/virtualEndpoint/cloudPCs/{cloudPCId}/reboot</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpc-rename?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/virtualEndpoint/cloudPCs/{cloudPCId}/rename</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpc-troubleshoot?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/virtualEndpoint/cloudPCs/{cloudPCId}/troubleshoot</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpc-createsnapshot?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/cloudPCs/{id}/createSnapshot</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpc-resize?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/cloudPCs/{id}/resize</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpc-restore?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/virtualEndpoint/cloudPCs/{id}/restore</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpc-retrypartneragentinstallation?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/cloudPCs/{id}/retryPartnerAgentInstallation</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpc-endgraceperiod?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/cloudPCs/4b18de4b-ab05-4059-8c61-0323a7df4ced/endGracePeriod</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpc-bulkresize?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/cloudPCs/bulkResize</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpc-validatebulkresize?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/cloudPCs/validateBulkResize</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-post-crosscloudgovernmentorganizationmapping?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/crossCloudGovernmentOrganizationMapping</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-post-deviceimages?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/virtualEndpoint/deviceImages</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpcdeviceimage-reupload?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/deviceImages/{cloudPcDeviceImageId}/reupload</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-post-externalpartnersettings?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/externalPartnerSettings</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-post-onpremisesconnections?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/virtualEndpoint/onPremisesConnections</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpconpremisesconnection-runhealthcheck?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/virtualEndpoint/onPremisesConnections/{id}/runHealthChecks</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpconpremisesconnection-updateaddomainpassword?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/onPremisesConnections/{Id}/UpdateAdDomainPassword</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-post-provisioningpolicies?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/virtualEndpoint/provisioningPolicies</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpcprovisioningpolicy-apply?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/provisioningPolicies/{id}/apply</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpcprovisioningpolicy-assign?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/virtualEndpoint/provisioningPolicies/{id}/assign</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpcprovisioningpolicy-applyconfig?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/provisioningPolicies/applyConfig</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpcreports-post-exportjobs?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/reports/exportJobs</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpcreports-getactionstatusreports?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/reports/getActionStatusReports</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpcreports-getcloudpcrecommendationreports?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/reports/getCloudPcRecommendationReports</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpcreports-getconnectionqualityreports?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/reports/getConnectionQualityReports</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpcreports-getdailyaggregatedremoteconnectionreports?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/reports/getDailyAggregatedRemoteConnectionReports</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpcreports-getfrontlinereport?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/reports/getFrontlineReport</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpcreports-getinaccessiblecloudpcreports?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/reports/getInaccessibleCloudPcReports</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpcreports-getrawremoteconnectionreports?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/reports/getRawRemoteConnectionReports</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpcreports-getremoteconnectionhistoricalreports?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/reports/getRemoteConnectionHistoricalReports</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpcreports-getshareduselicenseusagereport?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/reports/getSharedUseLicenseUsageReport</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpcreports-gettotalaggregatedremoteconnectionreports?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/reports/getTotalAggregatedRemoteConnectionReports</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/cloudpcreports-retrievecrossregiondisasterrecoveryreport?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/reports/retrieveCrossRegionDisasterRecoveryReport</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-post-usersettings?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/virtualEndpoint/userSettings</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpcusersetting-assign?view=graph-rest-1.0&amp;tabs=http">POST /deviceManagement/virtualEndpoint/userSettings/{id}/assign</a></td>
 </tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
+<table>
+<thead>
 <tr>
-<td>Beta</td>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcdeviceimage-delete?view=graph-rest-beta&amp;tabs=http">DELETE /deviceManagement/virtualEndpoint/deviceImages/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpconpremisesconnection-delete?view=graph-rest-beta&amp;tabs=http">DELETE /deviceManagement/virtualEndpoint/onPremisesConnections/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcprovisioningpolicy-delete?view=graph-rest-beta&amp;tabs=http">DELETE /deviceManagement/virtualEndpoint/provisioningPolicies/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcusersetting-delete?view=graph-rest-beta&amp;tabs=http">DELETE /deviceManagement/virtualEndpoint/userSettings/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedroleassignmentmultiple-delete?view=graph-rest-beta&amp;tabs=http">DELETE /roleManagement/cloudPC/roleAssignments/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedroledefinition-delete?view=graph-rest-beta&amp;tabs=http">DELETE /roleManagement/deviceManagement/roleDefinitions/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpc-retrievereviewstatus?view=graph-rest-beta&amp;tabs=http">GET /cloudPCs/{cloudPCId}/retrieveReviewStatus</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/manageddevice-getcloudpcremoteactionresults?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/managedDevices/{managedDeviceId}/getCloudPcRemoteActionResults</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/manageddevice-getcloudpcreviewstatus?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/managedDevices/{managedDeviceId}/getCloudPcReviewStatus</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/devicemanagement-alertrecord-list?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/monitoring/alertRecords</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/devicemanagement-alertrecord-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/monitoring/alertRecords/{alertRecordId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/devicemanagement-alertrecord-getportalnotifications?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/monitoring/alertRecords/getPortalNotifications</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/devicemanagement-alertrule-list?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/monitoring/alertRules</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/devicemanagement-alertrule-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/monitoring/alertRules/{alertRuleId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-list-auditevents?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/auditEvents</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcauditevent-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/auditEvents/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcauditevent-getauditactivitytypes?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/auditEvents/getAuditActivityTypes</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-list-bulkactions?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/bulkActions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcbulkaction-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/bulkActions/{cloudPcBulkActionId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-list-cloudpcs?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/cloudPCs</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpc-getcloudpcconnectivityhistory?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/cloudPCs/{id}/getCloudPcConnectivityHistory</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpc-getsupportedcloudpcremoteactions?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/cloudPCs/{id}/getSupportedCloudPcRemoteActions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpc-retrievecloudpcremoteactionresults?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/cloudPCs/{id}/retrieveCloudPcRemoteActionResults</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpc-getprovisionedcloudpcs?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/cloudPCs/getProvisionedCloudPCs(groupId='{groupId}',servicePlanId='{servicePlanId}')</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpccrosscloudgovernmentorganizationmapping-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/crossCloudGovernmentOrganizationMapping</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-list-deviceimages?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/deviceImages</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcdeviceimage-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/deviceImages/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcdeviceimage-getsourceimages?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/deviceImages/getSourceImages</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-list-externalpartnersettings?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/externalPartnerSettings</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcexternalpartnersetting-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/externalPartnerSettings/{cloudPcExternalPartnerSettingId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-list-frontlineserviceplans?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/frontLineServicePlans</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcfrontlineserviceplan-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/frontLineServicePlans/{cloudPcFrontLineServicePlanId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-list-galleryimages?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/galleryImages</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcgalleryimage-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/galleryImages/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-geteffectivepermissions?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/getEffectivePermissions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-list-onpremisesconnections?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/onPremisesConnections</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpconpremisesconnection-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/onPremisesConnections/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcorganizationsettings-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/organizationSettings</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-list-provisioningpolicies?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/provisioningPolicies</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcprovisioningpolicy-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/provisioningPolicies/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcexportjob-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/reports/exportJobs/{cloudPcExportJobId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcreports-getrealtimeremoteconnectionlatency?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/reports/getRealTimeRemoteConnectionLatency(cloudPcId='id')</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcreports-getrealtimeremoteconnectionstatus?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/reports/getRealTimeRemoteConnectionStatus(cloudPcId='id')</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-retrievescopedpermissions?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/retrieveScopedPermissions</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-retrievetenantencryptionsetting?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/retrieveTenantEncryptionSetting</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-list-serviceplans?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/servicePlans</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-list-shareduseserviceplans?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/sharedUseServicePlans</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcshareduseserviceplan-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/sharedUseServicePlans/{cloudPcSharedUseServicePlanId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-list-snapshots?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/snapshots</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcsnapshot-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/snapshots/{cloudPcSnapshotId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcsnapshot-getstorageaccounts?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/snapshots/getStorageAccounts(subscriptionId='{subscriptionId}')</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcsnapshot-getsubscriptions?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/snapshots/getSubscriptions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-list-supportedregions?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/supportedRegions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-list-usersettings?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/userSettings</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcusersetting-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/virtualEndpoint/userSettings/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-cloudpcs?view=graph-rest-beta&amp;tabs=http">GET /me/cloudPCs</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpc-getcloudpclaunchinfo?view=graph-rest-beta&amp;tabs=http">GET /me/cloudPCs/{cloudPCId}/getCloudPcLaunchInfo</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpc-getfrontlinecloudpcaccessstate?view=graph-rest-beta&amp;tabs=http">GET /me/cloudPCs/{cloudPCId}/getFrontlineCloudPcAccessState</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpc-getshiftworkcloudpcaccessstate?view=graph-rest-beta&amp;tabs=http">GET /me/cloudPCs/{cloudPCId}/getShiftWorkCloudPcAccessState</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpc-get?view=graph-rest-beta&amp;tabs=http">GET /me/cloudPCs/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/rbacapplicationmultiple-list-roleassignments?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/cloudPc/roleAssignments</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/cloudPC/roleAssignments/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/cloudPC/roleDefinitions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/cloudPC/roleDefinitions/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-cloudpcconnections?view=graph-rest-beta&amp;tabs=http">GET /tenantRelationships/managedTenants/cloudPcConnections</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/managedtenants-cloudpcconnection-get?view=graph-rest-beta&amp;tabs=http">GET /tenantRelationships/managedTenants/cloudPcConnections/{cloudPcConnectionId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-cloudpcdevices?view=graph-rest-beta&amp;tabs=http">GET /tenantRelationships/managedTenants/cloudPcDevices</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/managedtenants-cloudpcdevice-get?view=graph-rest-beta&amp;tabs=http">GET /tenantRelationships/managedTenants/cloudPcDevices/{cloudPcDeviceId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-cloudpcsoverview?view=graph-rest-beta&amp;tabs=http">GET /tenantRelationships/managedTenants/cloudPcsOverview</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/managedtenants-cloudpcoverview-get?view=graph-rest-beta&amp;tabs=http">GET /tenantRelationships/managedTenants/cloudPcsOverview/{cloudPcOverviewId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpc-get?view=graph-rest-beta&amp;tabs=http">GET /users/{userId}/cloudPCs/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/devicemanagement-alertrule-update?view=graph-rest-beta&amp;tabs=http">PATCH /deviceManagement/monitoring/alertRules/{alertRuleId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcexternalpartnersetting-update?view=graph-rest-beta&amp;tabs=http">PATCH /deviceManagement/virtualEndpoint/externalPartnerSettings/{cloudPcExternalPartnerSettingId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpconpremisesconnection-update?view=graph-rest-beta&amp;tabs=http">PATCH /deviceManagement/virtualEndpoint/onPremisesConnections/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcorganizationsettings-update?view=graph-rest-beta&amp;tabs=http">PATCH /deviceManagement/virtualEndpoint/organizationSettings</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcprovisioningpolicy-update?view=graph-rest-beta&amp;tabs=http">PATCH /deviceManagement/virtualEndpoint/provisioningPolicies/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcusersetting-update?view=graph-rest-beta&amp;tabs=http">PATCH /deviceManagement/virtualEndpoint/userSettings/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedroleassignmentmultiple-update?view=graph-rest-beta&amp;tabs=http">PATCH /roleManagement/cloudPC/roleAssignments/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedroledefinition-update?view=graph-rest-beta&amp;tabs=http">PATCH /roleManagement/deviceManagement/roleDefinitions/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpc-setreviewstatus?view=graph-rest-beta&amp;tabs=http">POST /cloudPCs/{cloudPCId}/setReviewStatus</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/manageddevice-reprovisioncloudpc?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/managedDevices/{managedDeviceId}/reprovisionCloudPc</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/manageddevice-resizecloudpc?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/managedDevices/{managedDeviceId}/resizeCloudPc</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/manageddevice-restorecloudpc?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/managedDevices/{managedDeviceId}/restoreCloudPc</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/manageddevice-setcloudpcreviewstatus?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/managedDevices/{managedDeviceId}/setCloudPcReviewStatus</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/manageddevice-bulkreprovisioncloudpc?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/managedDevices/bulkReprovisionCloudPc</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/manageddevice-bulkrestorecloudpc?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/managedDevices/bulkRestoreCloudPc</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/manageddevice-bulksetcloudpcreviewstatus?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/managedDevices/bulkSetCloudPcReviewStatus</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/devicemanagement-alertrecord-setportalnotificationassent?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/monitoring/alertRecords/{alertRecordId}/setPortalNotificationAsSent</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/devicemanagement-alertrecord-changealertrecordsportalnotificationassent?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/monitoring/alertRecords/changeAlertRecordsPortalNotificationAsSent</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/devicemanagement-alertrule-post?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/monitoring/alertRules</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-post-bulkactions?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/bulkActions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpc-changeuseraccounttype?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/cloudPCs/{cloudPCId}/changeUserAccountType</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpc-poweroff?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/cloudPCs/{cloudPCId}/poweroff</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpc-poweron?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/cloudPCs/{cloudPCId}/poweron</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpc-createsnapshot?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/cloudPCs/{id}/createSnapshot</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpc-resize?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/cloudPCs/{id}/resize</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpc-restore?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/cloudPCs/{id}/restore</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpc-retrypartneragentinstallation?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/cloudPCs/{id}/retryPartnerAgentInstallation</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpc-endgraceperiod?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/cloudPCs/4b18de4b-ab05-4059-8c61-0323a7df4ced/endGracePeriod</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpc-bulkresize?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/cloudPCs/bulkResize</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpc-validatebulkresize?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/cloudPCs/validateBulkResize</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-post-crosscloudgovernmentorganizationmapping?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/crossCloudGovernmentOrganizationMapping</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-post-deviceimages?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/deviceImages</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcdeviceimage-reupload?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/deviceImages/{cloudPcDeviceImageId}/reupload</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-post-externalpartnersettings?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/externalPartnerSettings</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-post-onpremisesconnections?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/onPremisesConnections</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpconpremisesconnection-runhealthcheck?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/onPremisesConnections/{id}/runHealthChecks</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpconpremisesconnection-updateaddomainpassword?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/onPremisesConnections/{Id}/UpdateAdDomainPassword</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-post-provisioningpolicies?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/provisioningPolicies</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcprovisioningpolicy-apply?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/provisioningPolicies/{id}/apply</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcprovisioningpolicy-assign?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/provisioningPolicies/{id}/assign</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcprovisioningpolicy-applyconfig?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/provisioningPolicies/applyConfig</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcreports-post-exportjobs?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/reports/exportJobs</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcreports-getactionstatusreports?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/reports/getActionStatusReports</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcreports-getcloudpcrecommendationreports?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/reports/getCloudPcRecommendationReports</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcreports-getconnectionqualityreports?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/reports/getConnectionQualityReports</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcreports-getdailyaggregatedremoteconnectionreports?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/reports/getDailyAggregatedRemoteConnectionReports</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcreports-getfrontlinereport?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/reports/getFrontlineReport</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcreports-getinaccessiblecloudpcreports?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/reports/getInaccessibleCloudPcReports</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcreports-getrawremoteconnectionreports?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/reports/getRawRemoteConnectionReports</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcreports-getremoteconnectionhistoricalreports?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/reports/getRemoteConnectionHistoricalReports</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcreports-getshareduselicenseusagereport?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/reports/getSharedUseLicenseUsageReport</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcreports-gettotalaggregatedremoteconnectionreports?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/reports/getTotalAggregatedRemoteConnectionReports</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcreports-retrievecrossregiondisasterrecoveryreport?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/reports/retrieveCrossRegionDisasterRecoveryReport</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualendpoint-post-usersettings?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/userSettings</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/cloudpcusersetting-assign?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/userSettings/{id}/assign</a></td>
+</tr>
+<tr>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpc-reboot?view=graph-rest-beta&amp;tabs=http">POST /me/cloudPCs/{cloudPCId}/reboot</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpc-rename?view=graph-rest-beta&amp;tabs=http">POST /me/cloudPCs/{cloudPCId}/rename</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpc-start?view=graph-rest-beta&amp;tabs=http">POST /me/cloudPCs/{cloudPCId}/start</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpc-stop?view=graph-rest-beta&amp;tabs=http">POST /me/cloudPCs/{cloudPCId}/stop</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpc-troubleshoot?view=graph-rest-beta&amp;tabs=http">POST /me/cloudPCs/{cloudPCId}/troubleshoot</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpc-reprovision?view=graph-rest-beta&amp;tabs=http">POST /me/cloudPCs/{id}/reprovision</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/rbacapplicationmultiple-post-roleassignments?view=graph-rest-beta&amp;tabs=http">POST /roleManagement/cloudPC/roleAssignments</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-beta&amp;tabs=http">POST /roleManagement/deviceManagement/roleDefinitions</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpc-reboot?view=graph-rest-beta&amp;tabs=http">POST /users/{userId}/cloudPCs/{cloudPCId}/reboot</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpc-rename?view=graph-rest-beta&amp;tabs=http">POST /users/{userId}/cloudPCs/{cloudPCId}/rename</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpc-troubleshoot?view=graph-rest-beta&amp;tabs=http">POST /users/{userId}/cloudPCs/{cloudPCId}/troubleshoot</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/cloudpc-reprovision?view=graph-rest-beta&amp;tabs=http">POST /users/{userId}/cloudPCs/{id}/reprovision</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>9d77138f-f0e2-47ba-ab33-cd246c8b79d1</td>
-</tr>
-<tr>
-<td><strong>Consent Type</strong></td>
-<td>Admin</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read and write Cloud PCs</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read and write the properties of Cloud PCs on behalf of the signed-in user.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>3b4349e1-8cf5-45a3-95b7-69d1751d3e6a</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read and write Cloud PCs</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read and write the properties of Cloud PCs, without a signed-in user.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="cloudpc-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpc?view=graph-rest-1.0&amp;tabs=http">cloudPC </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_cloudPC1" role="tab" aria-controls="tabpanel_2_cloudPC1" data-tab="cloudPC1" tabindex="0" aria-selected="true">cloudPC</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcAuditEvent2" role="tab" aria-controls="tabpanel_2_cloudPcAuditEvent2" data-tab="cloudPcAuditEvent2" tabindex="-1">cloudPcAuditEvent</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcBulkAction3" role="tab" aria-controls="tabpanel_2_cloudPcBulkAction3" data-tab="cloudPcBulkAction3" tabindex="-1">cloudPcBulkAction</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcBulkRemoteActionResult4" role="tab" aria-controls="tabpanel_2_cloudPcBulkRemoteActionResult4" data-tab="cloudPcBulkRemoteActionResult4" tabindex="-1">cloudPcBulkRemoteActionResult</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcBulkReprovision5" role="tab" aria-controls="tabpanel_2_cloudPcBulkReprovision5" data-tab="cloudPcBulkReprovision5" tabindex="-1">cloudPcBulkReprovision</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcBulkRestore6" role="tab" aria-controls="tabpanel_2_cloudPcBulkRestore6" data-tab="cloudPcBulkRestore6" tabindex="-1">cloudPcBulkRestore</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcConnectivityEvent7" role="tab" aria-controls="tabpanel_2_cloudPcConnectivityEvent7" data-tab="cloudPcConnectivityEvent7" tabindex="-1">cloudPcConnectivityEvent</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcCrossCloudGovernmentOrganizationMapping8" role="tab" aria-controls="tabpanel_2_cloudPcCrossCloudGovernmentOrganizationMapping8" data-tab="cloudPcCrossCloudGovernmentOrganizationMapping8" tabindex="-1">cloudPcCrossCloudGovernmentOrganizationMapping</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcDeviceImage9" role="tab" aria-controls="tabpanel_2_cloudPcDeviceImage9" data-tab="cloudPcDeviceImage9" tabindex="-1">cloudPcDeviceImage</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcDomainJoinConfiguration10" role="tab" aria-controls="tabpanel_2_cloudPcDomainJoinConfiguration10" data-tab="cloudPcDomainJoinConfiguration10" tabindex="-1">cloudPcDomainJoinConfiguration</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcExportJob11" role="tab" aria-controls="tabpanel_2_cloudPcExportJob11" data-tab="cloudPcExportJob11" tabindex="-1">cloudPcExportJob</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcExternalPartnerSetting12" role="tab" aria-controls="tabpanel_2_cloudPcExternalPartnerSetting12" data-tab="cloudPcExternalPartnerSetting12" tabindex="-1">cloudPcExternalPartnerSetting</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcForensicStorageAccount13" role="tab" aria-controls="tabpanel_2_cloudPcForensicStorageAccount13" data-tab="cloudPcForensicStorageAccount13" tabindex="-1">cloudPcForensicStorageAccount</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcFrontLineServicePlan14" role="tab" aria-controls="tabpanel_2_cloudPcFrontLineServicePlan14" data-tab="cloudPcFrontLineServicePlan14" tabindex="-1">cloudPcFrontLineServicePlan</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcGalleryImage15" role="tab" aria-controls="tabpanel_2_cloudPcGalleryImage15" data-tab="cloudPcGalleryImage15" tabindex="-1">cloudPcGalleryImage</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcLaunchInfo16" role="tab" aria-controls="tabpanel_2_cloudPcLaunchInfo16" data-tab="cloudPcLaunchInfo16" tabindex="-1">cloudPcLaunchInfo</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcOnPremisesConnection17" role="tab" aria-controls="tabpanel_2_cloudPcOnPremisesConnection17" data-tab="cloudPcOnPremisesConnection17" tabindex="-1">cloudPcOnPremisesConnection</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcOnPremisesConnectionStatusDetail18" role="tab" aria-controls="tabpanel_2_cloudPcOnPremisesConnectionStatusDetail18" data-tab="cloudPcOnPremisesConnectionStatusDetail18" tabindex="-1">cloudPcOnPremisesConnectionStatusDetail</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudpconpremisesconnectionstatusdetails19" role="tab" aria-controls="tabpanel_2_cloudpconpremisesconnectionstatusdetails19" data-tab="cloudpconpremisesconnectionstatusdetails19" tabindex="-1">cloudpconpremisesconnectionstatusdetails</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcOrganizationSettings20" role="tab" aria-controls="tabpanel_2_cloudPcOrganizationSettings20" data-tab="cloudPcOrganizationSettings20" tabindex="-1">cloudPcOrganizationSettings</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcProvisioningPolicy21" role="tab" aria-controls="tabpanel_2_cloudPcProvisioningPolicy21" data-tab="cloudPcProvisioningPolicy21" tabindex="-1">cloudPcProvisioningPolicy</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcProvisioningPolicyAssignment22" role="tab" aria-controls="tabpanel_2_cloudPcProvisioningPolicyAssignment22" data-tab="cloudPcProvisioningPolicyAssignment22" tabindex="-1">cloudPcProvisioningPolicyAssignment</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcProvisioningPolicyAutopatch23" role="tab" aria-controls="tabpanel_2_cloudPcProvisioningPolicyAutopatch23" data-tab="cloudPcProvisioningPolicyAutopatch23" tabindex="-1">cloudPcProvisioningPolicyAutopatch</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcRemoteActionCapability24" role="tab" aria-controls="tabpanel_2_cloudPcRemoteActionCapability24" data-tab="cloudPcRemoteActionCapability24" tabindex="-1">cloudPcRemoteActionCapability</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcRemoteActionResult25" role="tab" aria-controls="tabpanel_2_cloudPcRemoteActionResult25" data-tab="cloudPcRemoteActionResult25" tabindex="-1">cloudPcRemoteActionResult</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcResizeValidationResult26" role="tab" aria-controls="tabpanel_2_cloudPcResizeValidationResult26" data-tab="cloudPcResizeValidationResult26" tabindex="-1">cloudPcResizeValidationResult</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcRestorePointSetting27" role="tab" aria-controls="tabpanel_2_cloudPcRestorePointSetting27" data-tab="cloudPcRestorePointSetting27" tabindex="-1">cloudPcRestorePointSetting</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcReviewStatus28" role="tab" aria-controls="tabpanel_2_cloudPcReviewStatus28" data-tab="cloudPcReviewStatus28" tabindex="-1">cloudPcReviewStatus</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcScopedPermission29" role="tab" aria-controls="tabpanel_2_cloudPcScopedPermission29" data-tab="cloudPcScopedPermission29" tabindex="-1">cloudPcScopedPermission</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcServicePlan30" role="tab" aria-controls="tabpanel_2_cloudPcServicePlan30" data-tab="cloudPcServicePlan30" tabindex="-1">cloudPcServicePlan</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudpcshareduseserviceplan31" role="tab" aria-controls="tabpanel_2_cloudpcshareduseserviceplan31" data-tab="cloudpcshareduseserviceplan31" tabindex="-1">cloudpcshareduseserviceplan</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcSnapshot32" role="tab" aria-controls="tabpanel_2_cloudPcSnapshot32" data-tab="cloudPcSnapshot32" tabindex="-1">cloudPcSnapshot</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcSourceDeviceImage33" role="tab" aria-controls="tabpanel_2_cloudPcSourceDeviceImage33" data-tab="cloudPcSourceDeviceImage33" tabindex="-1">cloudPcSourceDeviceImage</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcSubscription34" role="tab" aria-controls="tabpanel_2_cloudPcSubscription34" data-tab="cloudPcSubscription34" tabindex="-1">cloudPcSubscription</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcSupportedRegion35" role="tab" aria-controls="tabpanel_2_cloudPcSupportedRegion35" data-tab="cloudPcSupportedRegion35" tabindex="-1">cloudPcSupportedRegion</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcTenantEncryptionSetting36" role="tab" aria-controls="tabpanel_2_cloudPcTenantEncryptionSetting36" data-tab="cloudPcTenantEncryptionSetting36" tabindex="-1">cloudPcTenantEncryptionSetting</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcUserSetting37" role="tab" aria-controls="tabpanel_2_cloudPcUserSetting37" data-tab="cloudPcUserSetting37" tabindex="-1">cloudPcUserSetting</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcUserSettingAssignment38" role="tab" aria-controls="tabpanel_2_cloudPcUserSettingAssignment38" data-tab="cloudPcUserSettingAssignment38" tabindex="-1">cloudPcUserSettingAssignment</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcWindowsSetting39" role="tab" aria-controls="tabpanel_2_cloudPcWindowsSetting39" data-tab="cloudPcWindowsSetting39" tabindex="-1">cloudPcWindowsSetting</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcWindowsSettings40" role="tab" aria-controls="tabpanel_2_cloudPcWindowsSettings40" data-tab="cloudPcWindowsSettings40" tabindex="-1">cloudPcWindowsSettings</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_alertRecord41" role="tab" aria-controls="tabpanel_2_alertRecord41" data-tab="alertRecord41" tabindex="-1">alertRecord</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_alertRule42" role="tab" aria-controls="tabpanel_2_alertRule42" data-tab="alertRule42" tabindex="-1">alertRule</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_notificationChannel43" role="tab" aria-controls="tabpanel_2_notificationChannel43" data-tab="notificationChannel43" tabindex="-1">notificationChannel</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_portalNotification44" role="tab" aria-controls="tabpanel_2_portalNotification44" data-tab="portalNotification44" tabindex="-1">portalNotification</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_ruleCondition45" role="tab" aria-controls="tabpanel_2_ruleCondition45" data-tab="ruleCondition45" tabindex="-1">ruleCondition</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_ruleThreshold46" role="tab" aria-controls="tabpanel_2_ruleThreshold46" data-tab="ruleThreshold46" tabindex="-1">ruleThreshold</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcConnection47" role="tab" aria-controls="tabpanel_2_cloudPcConnection47" data-tab="cloudPcConnection47" tabindex="-1">cloudPcConnection</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcDevice48" role="tab" aria-controls="tabpanel_2_cloudPcDevice48" data-tab="cloudPcDevice48" tabindex="-1">cloudPcDevice</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cloudPcOverview49" role="tab" aria-controls="tabpanel_2_cloudPcOverview49" data-tab="cloudPcOverview49" tabindex="-1">cloudPcOverview</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_microsoftManagedDesktop50" role="tab" aria-controls="tabpanel_2_microsoftManagedDesktop50" data-tab="microsoftManagedDesktop50" tabindex="-1">microsoftManagedDesktop</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_unifiedRoleAssignment51" role="tab" aria-controls="tabpanel_2_unifiedRoleAssignment51" data-tab="unifiedRoleAssignment51" tabindex="-1">unifiedRoleAssignment</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_unifiedRoleAssignmentMultiple52" role="tab" aria-controls="tabpanel_2_unifiedRoleAssignmentMultiple52" data-tab="unifiedRoleAssignmentMultiple52" tabindex="-1">unifiedRoleAssignmentMultiple</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_unifiedRoleDefinition53" role="tab" aria-controls="tabpanel_2_unifiedRoleDefinition53" data-tab="unifiedRoleDefinition53" tabindex="-1">unifiedRoleDefinition</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_unifiedRolePermission54" role="tab" aria-controls="tabpanel_2_unifiedRolePermission54" data-tab="unifiedRolePermission54" tabindex="-1">unifiedRolePermission</a>
+</li>
+</ul>
+<section id="tabpanel_2_cloudPC1" role="tabpanel" data-tab="cloudPC1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpc?view=graph-rest-1.0&amp;tabs=http">cloudPC</a></p>
 <table>
 <thead>
 <tr>
@@ -969,7 +1119,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcauditevent-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcauditevent?view=graph-rest-1.0&amp;tabs=http">cloudPcAuditEvent </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcAuditEvent2" role="tabpanel" data-tab="cloudPcAuditEvent2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpcauditevent?view=graph-rest-1.0&amp;tabs=http">cloudPcAuditEvent</a></p>
 <table>
 <thead>
 <tr>
@@ -1041,7 +1194,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcbulkaction-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcbulkaction?view=graph-rest-1.0&amp;tabs=http">cloudPcBulkAction </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcBulkAction3" role="tabpanel" data-tab="cloudPcBulkAction3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpcbulkaction?view=graph-rest-1.0&amp;tabs=http">cloudPcBulkAction</a></p>
 <table>
 <thead>
 <tr>
@@ -1093,7 +1249,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcbulkremoteactionresult-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcbulkremoteactionresult?view=graph-rest-1.0&amp;tabs=http">cloudPcBulkRemoteActionResult </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcBulkRemoteActionResult4" role="tabpanel" data-tab="cloudPcBulkRemoteActionResult4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpcbulkremoteactionresult?view=graph-rest-1.0&amp;tabs=http">cloudPcBulkRemoteActionResult</a></p>
 <table>
 <thead>
 <tr>
@@ -1125,7 +1284,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcbulkreprovision-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcbulkreprovision?view=graph-rest-1.0&amp;tabs=http">cloudPcBulkReprovision </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcBulkReprovision5" role="tabpanel" data-tab="cloudPcBulkReprovision5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpcbulkreprovision?view=graph-rest-1.0&amp;tabs=http">cloudPcBulkReprovision</a></p>
 <table>
 <thead>
 <tr>
@@ -1177,7 +1339,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcbulkrestore-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcbulkrestore?view=graph-rest-1.0&amp;tabs=http">cloudPcBulkRestore </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcBulkRestore6" role="tabpanel" data-tab="cloudPcBulkRestore6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpcbulkrestore?view=graph-rest-1.0&amp;tabs=http">cloudPcBulkRestore</a></p>
 <table>
 <thead>
 <tr>
@@ -1239,7 +1404,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcconnectivityevent-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcconnectivityevent?view=graph-rest-1.0&amp;tabs=http">cloudPcConnectivityEvent </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcConnectivityEvent7" role="tabpanel" data-tab="cloudPcConnectivityEvent7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpcconnectivityevent?view=graph-rest-1.0&amp;tabs=http">cloudPcConnectivityEvent</a></p>
 <table>
 <thead>
 <tr>
@@ -1276,7 +1444,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpccrosscloudgovernmentorganizationmapping-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpccrosscloudgovernmentorganizationmapping?view=graph-rest-1.0&amp;tabs=http">cloudPcCrossCloudGovernmentOrganizationMapping </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcCrossCloudGovernmentOrganizationMapping8" role="tabpanel" data-tab="cloudPcCrossCloudGovernmentOrganizationMapping8" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpccrosscloudgovernmentorganizationmapping?view=graph-rest-1.0&amp;tabs=http">cloudPcCrossCloudGovernmentOrganizationMapping</a></p>
 <table>
 <thead>
 <tr>
@@ -1298,7 +1469,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcdeviceimage-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcdeviceimage?view=graph-rest-1.0&amp;tabs=http">cloudPcDeviceImage </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcDeviceImage9" role="tabpanel" data-tab="cloudPcDeviceImage9" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpcdeviceimage?view=graph-rest-1.0&amp;tabs=http">cloudPcDeviceImage</a></p>
 <table>
 <thead>
 <tr>
@@ -1365,7 +1539,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcdomainjoinconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcdomainjoinconfiguration?view=graph-rest-1.0&amp;tabs=http">cloudPcDomainJoinConfiguration </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcDomainJoinConfiguration10" role="tabpanel" data-tab="cloudPcDomainJoinConfiguration10" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpcdomainjoinconfiguration?view=graph-rest-1.0&amp;tabs=http">cloudPcDomainJoinConfiguration</a></p>
 <table>
 <thead>
 <tr>
@@ -1397,7 +1574,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcexportjob-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcexportjob?view=graph-rest-1.0&amp;tabs=http">cloudPcExportJob </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcExportJob11" role="tabpanel" data-tab="cloudPcExportJob11" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpcexportjob?view=graph-rest-1.0&amp;tabs=http">cloudPcExportJob</a></p>
 <table>
 <thead>
 <tr>
@@ -1454,7 +1634,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcexternalpartnersetting-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcexternalpartnersetting?view=graph-rest-1.0&amp;tabs=http">cloudPcExternalPartnerSetting </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcExternalPartnerSetting12" role="tabpanel" data-tab="cloudPcExternalPartnerSetting12" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpcexternalpartnersetting?view=graph-rest-1.0&amp;tabs=http">cloudPcExternalPartnerSetting</a></p>
 <table>
 <thead>
 <tr>
@@ -1496,7 +1679,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcforensicstorageaccount-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcforensicstorageaccount?view=graph-rest-1.0&amp;tabs=http">cloudPcForensicStorageAccount </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcForensicStorageAccount13" role="tabpanel" data-tab="cloudPcForensicStorageAccount13" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpcforensicstorageaccount?view=graph-rest-1.0&amp;tabs=http">cloudPcForensicStorageAccount</a></p>
 <table>
 <thead>
 <tr>
@@ -1518,7 +1704,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcfrontlineserviceplan-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcfrontlineserviceplan?view=graph-rest-1.0&amp;tabs=http">cloudPcFrontLineServicePlan </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcFrontLineServicePlan14" role="tabpanel" data-tab="cloudPcFrontLineServicePlan14" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpcfrontlineserviceplan?view=graph-rest-1.0&amp;tabs=http">cloudPcFrontLineServicePlan</a></p>
 <table>
 <thead>
 <tr>
@@ -1550,7 +1739,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcgalleryimage-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcgalleryimage?view=graph-rest-1.0&amp;tabs=http">cloudPcGalleryImage </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcGalleryImage15" role="tabpanel" data-tab="cloudPcGalleryImage15" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpcgalleryimage?view=graph-rest-1.0&amp;tabs=http">cloudPcGalleryImage</a></p>
 <table>
 <thead>
 <tr>
@@ -1612,7 +1804,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpclaunchinfo-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpclaunchinfo?view=graph-rest-1.0&amp;tabs=http">cloudPcLaunchInfo </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcLaunchInfo16" role="tabpanel" data-tab="cloudPcLaunchInfo16" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpclaunchinfo?view=graph-rest-1.0&amp;tabs=http">cloudPcLaunchInfo</a></p>
 <table>
 <thead>
 <tr>
@@ -1644,7 +1839,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpconpremisesconnection-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpconpremisesconnection?view=graph-rest-1.0&amp;tabs=http">cloudPcOnPremisesConnection </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcOnPremisesConnection17" role="tabpanel" data-tab="cloudPcOnPremisesConnection17" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpconpremisesconnection?view=graph-rest-1.0&amp;tabs=http">cloudPcOnPremisesConnection</a></p>
 <table>
 <thead>
 <tr>
@@ -1741,7 +1939,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpconpremisesconnectionstatusdetail-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpconpremisesconnectionstatusdetail?view=graph-rest-1.0&amp;tabs=http">cloudPcOnPremisesConnectionStatusDetail </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcOnPremisesConnectionStatusDetail18" role="tabpanel" data-tab="cloudPcOnPremisesConnectionStatusDetail18" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpconpremisesconnectionstatusdetail?view=graph-rest-1.0&amp;tabs=http">cloudPcOnPremisesConnectionStatusDetail</a></p>
 <table>
 <thead>
 <tr>
@@ -1768,7 +1969,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpconpremisesconnectionstatusdetails"><a href="https://docs.microsoft.com/graph/api/resources/cloudpconpremisesconnectionstatusdetails?view=graph-rest-1.0&amp;tabs=http">cloudpconpremisesconnectionstatusdetails</a></h3>
+</section>
+<section id="tabpanel_2_cloudpconpremisesconnectionstatusdetails19" role="tabpanel" data-tab="cloudpconpremisesconnectionstatusdetails19" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpconpremisesconnectionstatusdetails?view=graph-rest-1.0&amp;tabs=http">cloudpconpremisesconnectionstatusdetails</a></p>
 <table>
 <thead>
 <tr>
@@ -1795,7 +1999,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcorganizationsettings-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcorganizationsettings?view=graph-rest-1.0&amp;tabs=http">cloudPcOrganizationSettings </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcOrganizationSettings20" role="tabpanel" data-tab="cloudPcOrganizationSettings20" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpcorganizationsettings?view=graph-rest-1.0&amp;tabs=http">cloudPcOrganizationSettings</a></p>
 <table>
 <thead>
 <tr>
@@ -1837,7 +2044,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcprovisioningpolicy-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcprovisioningpolicy?view=graph-rest-1.0&amp;tabs=http">cloudPcProvisioningPolicy </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcProvisioningPolicy21" role="tabpanel" data-tab="cloudPcProvisioningPolicy21" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpcprovisioningpolicy?view=graph-rest-1.0&amp;tabs=http">cloudPcProvisioningPolicy</a></p>
 <table>
 <thead>
 <tr>
@@ -1929,7 +2139,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcprovisioningpolicyassignment-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcprovisioningpolicyassignment?view=graph-rest-1.0&amp;tabs=http">cloudPcProvisioningPolicyAssignment </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcProvisioningPolicyAssignment22" role="tabpanel" data-tab="cloudPcProvisioningPolicyAssignment22" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpcprovisioningpolicyassignment?view=graph-rest-1.0&amp;tabs=http">cloudPcProvisioningPolicyAssignment</a></p>
 <table>
 <thead>
 <tr>
@@ -1951,7 +2164,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcprovisioningpolicyautopatch-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcprovisioningpolicyautopatch?view=graph-rest-1.0&amp;tabs=http">cloudPcProvisioningPolicyAutopatch </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcProvisioningPolicyAutopatch23" role="tabpanel" data-tab="cloudPcProvisioningPolicyAutopatch23" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpcprovisioningpolicyautopatch?view=graph-rest-1.0&amp;tabs=http">cloudPcProvisioningPolicyAutopatch</a></p>
 <table>
 <thead>
 <tr>
@@ -1968,7 +2184,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcremoteactioncapability-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcremoteactioncapability?view=graph-rest-1.0&amp;tabs=http">cloudPcRemoteActionCapability </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcRemoteActionCapability24" role="tabpanel" data-tab="cloudPcRemoteActionCapability24" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpcremoteactioncapability?view=graph-rest-1.0&amp;tabs=http">cloudPcRemoteActionCapability</a></p>
 <table>
 <thead>
 <tr>
@@ -1990,7 +2209,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcremoteactionresult-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcremoteactionresult?view=graph-rest-1.0&amp;tabs=http">cloudPcRemoteActionResult </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcRemoteActionResult25" role="tabpanel" data-tab="cloudPcRemoteActionResult25" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpcremoteactionresult?view=graph-rest-1.0&amp;tabs=http">cloudPcRemoteActionResult</a></p>
 <table>
 <thead>
 <tr>
@@ -2042,7 +2264,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcresizevalidationresult-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcresizevalidationresult?view=graph-rest-1.0&amp;tabs=http">cloudPcResizeValidationResult </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcResizeValidationResult26" role="tabpanel" data-tab="cloudPcResizeValidationResult26" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpcresizevalidationresult?view=graph-rest-1.0&amp;tabs=http">cloudPcResizeValidationResult</a></p>
 <table>
 <thead>
 <tr>
@@ -2064,7 +2289,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcrestorepointsetting-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcrestorepointsetting?view=graph-rest-1.0&amp;tabs=http">cloudPcRestorePointSetting </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcRestorePointSetting27" role="tabpanel" data-tab="cloudPcRestorePointSetting27" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpcrestorepointsetting?view=graph-rest-1.0&amp;tabs=http">cloudPcRestorePointSetting</a></p>
 <table>
 <thead>
 <tr>
@@ -2086,7 +2314,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcreviewstatus-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcreviewstatus?view=graph-rest-1.0&amp;tabs=http">cloudPcReviewStatus </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcReviewStatus28" role="tabpanel" data-tab="cloudPcReviewStatus28" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpcreviewstatus?view=graph-rest-1.0&amp;tabs=http">cloudPcReviewStatus</a></p>
 <table>
 <thead>
 <tr>
@@ -2143,7 +2374,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcscopedpermission-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcscopedpermission?view=graph-rest-1.0&amp;tabs=http">cloudPcScopedPermission </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcScopedPermission29" role="tabpanel" data-tab="cloudPcScopedPermission29" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpcscopedpermission?view=graph-rest-1.0&amp;tabs=http">cloudPcScopedPermission</a></p>
 <table>
 <thead>
 <tr>
@@ -2165,7 +2399,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcserviceplan-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcserviceplan?view=graph-rest-1.0&amp;tabs=http">cloudPcServicePlan </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcServicePlan30" role="tabpanel" data-tab="cloudPcServicePlan30" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpcserviceplan?view=graph-rest-1.0&amp;tabs=http">cloudPcServicePlan</a></p>
 <table>
 <thead>
 <tr>
@@ -2222,7 +2459,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcshareduseserviceplan"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcshareduseserviceplan?view=graph-rest-1.0&amp;tabs=http">cloudpcshareduseserviceplan</a></h3>
+</section>
+<section id="tabpanel_2_cloudpcshareduseserviceplan31" role="tabpanel" data-tab="cloudpcshareduseserviceplan31" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpcshareduseserviceplan?view=graph-rest-1.0&amp;tabs=http">cloudpcshareduseserviceplan</a></p>
 <table>
 <thead>
 <tr>
@@ -2254,7 +2494,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcsnapshot-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcsnapshot?view=graph-rest-1.0&amp;tabs=http">cloudPcSnapshot </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcSnapshot32" role="tabpanel" data-tab="cloudPcSnapshot32" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpcsnapshot?view=graph-rest-1.0&amp;tabs=http">cloudPcSnapshot</a></p>
 <table>
 <thead>
 <tr>
@@ -2301,7 +2544,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcsourcedeviceimage-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcsourcedeviceimage?view=graph-rest-1.0&amp;tabs=http">cloudPcSourceDeviceImage </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcSourceDeviceImage33" role="tabpanel" data-tab="cloudPcSourceDeviceImage33" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpcsourcedeviceimage?view=graph-rest-1.0&amp;tabs=http">cloudPcSourceDeviceImage</a></p>
 <table>
 <thead>
 <tr>
@@ -2333,7 +2579,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcsubscription-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcsubscription?view=graph-rest-1.0&amp;tabs=http">cloudPcSubscription </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcSubscription34" role="tabpanel" data-tab="cloudPcSubscription34" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpcsubscription?view=graph-rest-1.0&amp;tabs=http">cloudPcSubscription</a></p>
 <table>
 <thead>
 <tr>
@@ -2355,7 +2604,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcsupportedregion-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcsupportedregion?view=graph-rest-1.0&amp;tabs=http">cloudPcSupportedRegion </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcSupportedRegion35" role="tabpanel" data-tab="cloudPcSupportedRegion35" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpcsupportedregion?view=graph-rest-1.0&amp;tabs=http">cloudPcSupportedRegion</a></p>
 <table>
 <thead>
 <tr>
@@ -2392,7 +2644,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpctenantencryptionsetting-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpctenantencryptionsetting?view=graph-rest-1.0&amp;tabs=http">cloudPcTenantEncryptionSetting </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcTenantEncryptionSetting36" role="tabpanel" data-tab="cloudPcTenantEncryptionSetting36" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpctenantencryptionsetting?view=graph-rest-1.0&amp;tabs=http">cloudPcTenantEncryptionSetting</a></p>
 <table>
 <thead>
 <tr>
@@ -2414,7 +2669,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcusersetting-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcusersetting?view=graph-rest-1.0&amp;tabs=http">cloudPcUserSetting </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcUserSetting37" role="tabpanel" data-tab="cloudPcUserSetting37" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpcusersetting?view=graph-rest-1.0&amp;tabs=http">cloudPcUserSetting</a></p>
 <table>
 <thead>
 <tr>
@@ -2461,7 +2719,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcusersettingassignment-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcusersettingassignment?view=graph-rest-1.0&amp;tabs=http">cloudPcUserSettingAssignment </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcUserSettingAssignment38" role="tabpanel" data-tab="cloudPcUserSettingAssignment38" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpcusersettingassignment?view=graph-rest-1.0&amp;tabs=http">cloudPcUserSettingAssignment</a></p>
 <table>
 <thead>
 <tr>
@@ -2488,7 +2749,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcwindowssetting-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcwindowssetting?view=graph-rest-1.0&amp;tabs=http">cloudPcWindowsSetting </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcWindowsSetting39" role="tabpanel" data-tab="cloudPcWindowsSetting39" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpcwindowssetting?view=graph-rest-1.0&amp;tabs=http">cloudPcWindowsSetting</a></p>
 <table>
 <thead>
 <tr>
@@ -2505,7 +2769,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcwindowssettings-"><a href="https://docs.microsoft.com/graph/api/resources/cloudpcwindowssettings?view=graph-rest-1.0&amp;tabs=http">cloudPcWindowsSettings </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcWindowsSettings40" role="tabpanel" data-tab="cloudPcWindowsSettings40" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudpcwindowssettings?view=graph-rest-1.0&amp;tabs=http">cloudPcWindowsSettings</a></p>
 <table>
 <thead>
 <tr>
@@ -2522,7 +2789,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="alertrecord-"><a href="https://docs.microsoft.com/graph/api/resources/devicemanagement-alertrecord?view=graph-rest-1.0&amp;tabs=http">alertRecord </a></h3>
+</section>
+<section id="tabpanel_2_alertRecord41" role="tabpanel" data-tab="alertRecord41" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/devicemanagement-alertrecord?view=graph-rest-1.0&amp;tabs=http">alertRecord</a></p>
 <table>
 <thead>
 <tr>
@@ -2584,7 +2854,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="alertrule-"><a href="https://docs.microsoft.com/graph/api/resources/devicemanagement-alertrule?view=graph-rest-1.0&amp;tabs=http">alertRule </a></h3>
+</section>
+<section id="tabpanel_2_alertRule42" role="tabpanel" data-tab="alertRule42" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/devicemanagement-alertrule?view=graph-rest-1.0&amp;tabs=http">alertRule</a></p>
 <table>
 <thead>
 <tr>
@@ -2646,7 +2919,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="notificationchannel-"><a href="https://docs.microsoft.com/graph/api/resources/devicemanagement-notificationchannel?view=graph-rest-1.0&amp;tabs=http">notificationChannel </a></h3>
+</section>
+<section id="tabpanel_2_notificationChannel43" role="tabpanel" data-tab="notificationChannel43" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/devicemanagement-notificationchannel?view=graph-rest-1.0&amp;tabs=http">notificationChannel</a></p>
 <table>
 <thead>
 <tr>
@@ -2668,7 +2944,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="portalnotification-"><a href="https://docs.microsoft.com/graph/api/resources/devicemanagement-portalnotification?view=graph-rest-1.0&amp;tabs=http">portalNotification </a></h3>
+</section>
+<section id="tabpanel_2_portalNotification44" role="tabpanel" data-tab="portalNotification44" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/devicemanagement-portalnotification?view=graph-rest-1.0&amp;tabs=http">portalNotification</a></p>
 <table>
 <thead>
 <tr>
@@ -2720,7 +2999,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="rulecondition-"><a href="https://docs.microsoft.com/graph/api/resources/devicemanagement-rulecondition?view=graph-rest-1.0&amp;tabs=http">ruleCondition </a></h3>
+</section>
+<section id="tabpanel_2_ruleCondition45" role="tabpanel" data-tab="ruleCondition45" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/devicemanagement-rulecondition?view=graph-rest-1.0&amp;tabs=http">ruleCondition</a></p>
 <table>
 <thead>
 <tr>
@@ -2757,7 +3039,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="rulethreshold-"><a href="https://docs.microsoft.com/graph/api/resources/devicemanagement-rulethreshold?view=graph-rest-1.0&amp;tabs=http">ruleThreshold </a></h3>
+</section>
+<section id="tabpanel_2_ruleThreshold46" role="tabpanel" data-tab="ruleThreshold46" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/devicemanagement-rulethreshold?view=graph-rest-1.0&amp;tabs=http">ruleThreshold</a></p>
 <table>
 <thead>
 <tr>
@@ -2784,7 +3069,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcconnection-"><a href="https://docs.microsoft.com/graph/api/resources/managedtenants-cloudpcconnection?view=graph-rest-1.0&amp;tabs=http">cloudPcConnection </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcConnection47" role="tabpanel" data-tab="cloudPcConnection47" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/managedtenants-cloudpcconnection?view=graph-rest-1.0&amp;tabs=http">cloudPcConnection</a></p>
 <table>
 <thead>
 <tr>
@@ -2826,7 +3114,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcdevice-"><a href="https://docs.microsoft.com/graph/api/resources/managedtenants-cloudpcdevice?view=graph-rest-1.0&amp;tabs=http">cloudPcDevice </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcDevice48" role="tabpanel" data-tab="cloudPcDevice48" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/managedtenants-cloudpcdevice?view=graph-rest-1.0&amp;tabs=http">cloudPcDevice</a></p>
 <table>
 <thead>
 <tr>
@@ -2903,7 +3194,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cloudpcoverview-"><a href="https://docs.microsoft.com/graph/api/resources/managedtenants-cloudpcoverview?view=graph-rest-1.0&amp;tabs=http">cloudPcOverview </a></h3>
+</section>
+<section id="tabpanel_2_cloudPcOverview49" role="tabpanel" data-tab="cloudPcOverview49" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/managedtenants-cloudpcoverview?view=graph-rest-1.0&amp;tabs=http">cloudPcOverview</a></p>
 <table>
 <thead>
 <tr>
@@ -3020,7 +3314,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="microsoftmanageddesktop-"><a href="https://docs.microsoft.com/graph/api/resources/microsoftmanageddesktop?view=graph-rest-1.0&amp;tabs=http">microsoftManagedDesktop </a></h3>
+</section>
+<section id="tabpanel_2_microsoftManagedDesktop50" role="tabpanel" data-tab="microsoftManagedDesktop50" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/microsoftmanageddesktop?view=graph-rest-1.0&amp;tabs=http">microsoftManagedDesktop</a></p>
 <table>
 <thead>
 <tr>
@@ -3042,7 +3339,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="unifiedroleassignment-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedroleassignment?view=graph-rest-1.0&amp;tabs=http">unifiedRoleAssignment </a></h3>
+</section>
+<section id="tabpanel_2_unifiedRoleAssignment51" role="tabpanel" data-tab="unifiedRoleAssignment51" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/unifiedroleassignment?view=graph-rest-1.0&amp;tabs=http">unifiedRoleAssignment</a></p>
 <table>
 <thead>
 <tr>
@@ -3079,7 +3379,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="unifiedroleassignmentmultiple-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedroleassignmentmultiple?view=graph-rest-1.0&amp;tabs=http">unifiedRoleAssignmentMultiple </a></h3>
+</section>
+<section id="tabpanel_2_unifiedRoleAssignmentMultiple52" role="tabpanel" data-tab="unifiedRoleAssignmentMultiple52" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/unifiedroleassignmentmultiple?view=graph-rest-1.0&amp;tabs=http">unifiedRoleAssignmentMultiple</a></p>
 <table>
 <thead>
 <tr>
@@ -3126,7 +3429,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="unifiedroledefinition-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedroledefinition?view=graph-rest-1.0&amp;tabs=http">unifiedRoleDefinition </a></h3>
+</section>
+<section id="tabpanel_2_unifiedRoleDefinition53" role="tabpanel" data-tab="unifiedRoleDefinition53" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/unifiedroledefinition?view=graph-rest-1.0&amp;tabs=http">unifiedRoleDefinition</a></p>
 <table>
 <thead>
 <tr>
@@ -3183,7 +3489,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="unifiedrolepermission-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedrolepermission?view=graph-rest-1.0&amp;tabs=http">unifiedRolePermission </a></h3>
+</section>
+<section id="tabpanel_2_unifiedRolePermission54" role="tabpanel" data-tab="unifiedRolePermission54" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/unifiedrolepermission?view=graph-rest-1.0&amp;tabs=http">unifiedRolePermission</a></p>
 <table>
 <thead>
 <tr>
@@ -3210,6 +3519,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

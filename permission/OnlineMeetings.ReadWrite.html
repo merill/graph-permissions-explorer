@@ -90,276 +90,356 @@
         <article data-uid="">
 <h1 id="onlinemeetingsreadwrite">OnlineMeetings.ReadWrite</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>OnlineMeetings.ReadWrite</code> permission.</p>
 <blockquote>
 <p>Allows the app to read and create online meetings on behalf of the signed-in user.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>-</td>
+<td>a65f2972-a4f8-4f5e-afd7-69ccb046d5dc</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>-</td>
+<td>Read and create user's online meetings</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>-</td>
+<td>Allows the app to read and create online meetings on behalf of the signed-in user.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/onlineMeetings/{id}/registration</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /me/onlineMeetings/{meetingId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/onlineMeetings/{meetingId}/registration</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/meetingregistrationquestion-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/onlineMeetings/{meetingId}/registration/customQuestions/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/externalmeetingregistrant-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/onlineMeetings/{meetingId}/registration/registrants/{registrantId}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/virtualappointment-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/onlineMeetings/{onlineMeetingId}/virtualAppointment</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /users/{userId}/onlineMeetings/{meetingId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-beta&amp;tabs=http">DELETE /users/{userId}/onlineMeetings/{meetingId}/registration</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/meetingregistrant-delete?view=graph-rest-beta&amp;tabs=http">DELETE /users/{userId}/onlineMeetings/{meetingId}/registration/registrants/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/externalmeetingregistrant-delete?view=graph-rest-beta&amp;tabs=http">DELETE /users/{userId}/onlineMeetings/{meetingId}/registration/registrants/{registrantId}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/virtualappointment-delete?view=graph-rest-beta&amp;tabs=http">DELETE /users/{userId}/onlineMeetings/{onlineMeetingId}/virtualAppointment</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-beta&amp;tabs=http">GET /me/onlineMeetings/{id}/registration</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/meetingregistration-list-customquestions?view=graph-rest-beta&amp;tabs=http">GET /me/onlineMeetings/{id}/registration/microsoft.graph.meetingRegistration/customQuestions</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/meetingregistration-list-registrants?view=graph-rest-beta&amp;tabs=http">GET /me/onlineMeetings/{id}/registration/registrants</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0&amp;tabs=http">GET /me/onlineMeetings/{meetingId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-beta&amp;tabs=http">GET /me/onlineMeetings/{meetingId}/registration</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/meetingregistrationquestion-get?view=graph-rest-beta&amp;tabs=http">GET /me/onlineMeetings/{meetingId}/registration/customQuestions/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/externalmeetingregistrant-list?view=graph-rest-beta&amp;tabs=http">GET /me/onlineMeetings/{meetingId}/registration/registrants</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/virtualappointment-getvirtualappointmentjoinweburl?view=graph-rest-1.0&amp;tabs=http">GET /me/onlineMeetings/{onlineMeetingId}/getVirtualAppointmentJoinWebUrl</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/virtualappointment-get?view=graph-rest-beta&amp;tabs=http">GET /me/onlineMeetings/{onlineMeetingId}/virtualAppointment</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{userId}/onlineMeetings/{meetingId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-beta&amp;tabs=http">GET /users/{userId}/onlineMeetings/{meetingId}/registration</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/externalmeetingregistrant-list?view=graph-rest-beta&amp;tabs=http">GET /users/{userId}/onlineMeetings/{meetingId}/registration/registrants</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/virtualappointment-getvirtualappointmentjoinweburl?view=graph-rest-1.0&amp;tabs=http">GET /users/{userId}/onlineMeetings/{onlineMeetingId}/getVirtualAppointmentJoinWebUrl</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/virtualappointment-get?view=graph-rest-beta&amp;tabs=http">GET /users/{userId}/onlineMeetings/{onlineMeetingId}/virtualAppointment</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-getallrecordings?view=graph-rest-beta&amp;tabs=http">GET /users/{usersId}/onlineMeetings/getAllRecordings(meetingOrganizerUserId='{userId}',startDateTime={startDateTime},endDateTime={endDateTime})</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-getalltranscripts?view=graph-rest-beta&amp;tabs=http">GET /users/{usersId}/onlineMeetings/getAllTranscripts(meetingOrganizerUserId='{userId}',startDateTime={startDateTime},endDateTime={endDateTime})</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/meetingregistration-update?view=graph-rest-beta&amp;tabs=http">PATCH /me/onlineMeetings/{id}/registration</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-update?view=graph-rest-1.0&amp;tabs=http">PATCH /me/onlineMeetings/{meetingId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/meetingregistrationquestion-update?view=graph-rest-beta&amp;tabs=http">PATCH /me/onlineMeetings/{meetingId}/registration/customQuestions/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/virtualappointment-update?view=graph-rest-beta&amp;tabs=http">PATCH /me/onlineMeetings/{onlineMeetingId}/virtualAppointment</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-update?view=graph-rest-1.0&amp;tabs=http">PATCH /users/{userId}/onlineMeetings/{meetingId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/virtualappointment-update?view=graph-rest-beta&amp;tabs=http">PATCH /users/{userId}/onlineMeetings/{onlineMeetingId}/virtualAppointment</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-post-onlinemeetings?view=graph-rest-1.0&amp;tabs=http">POST /me/onlineMeetings</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/meetingregistration-post?view=graph-rest-beta&amp;tabs=http">POST /me/onlineMeetings/{id}/registration</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/meetingregistration-post-customquestions?view=graph-rest-beta&amp;tabs=http">POST /me/onlineMeetings/{id}/registration/microsoft.graph.meetingRegistration/customQuestions</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/externalmeetingregistration-post?view=graph-rest-beta&amp;tabs=http">POST /me/onlineMeetings/{meetingId}/registration</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/externalmeetingregistrant-post?view=graph-rest-beta&amp;tabs=http">POST /me/onlineMeetings/{meetingId}/registration/registrants</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-createorget?view=graph-rest-1.0&amp;tabs=http">POST /me/onlineMeetings/createOrGet</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-post-onlinemeetings?view=graph-rest-1.0&amp;tabs=http">POST /users/{userId}/onlineMeetings</a></td>
 </tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
+<table>
+<thead>
 <tr>
-<td>Beta</td>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/onlineMeetings/{id}/registration</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/onlineMeetings/{meetingId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/onlineMeetings/{meetingId}/registration</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/meetingregistrationquestion-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/onlineMeetings/{meetingId}/registration/customQuestions/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalmeetingregistrant-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/onlineMeetings/{meetingId}/registration/registrants/{registrantId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualappointment-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/onlineMeetings/{onlineMeetingId}/virtualAppointment</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-delete?view=graph-rest-beta&amp;tabs=http">DELETE /users/{userId}/onlineMeetings/{meetingId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-beta&amp;tabs=http">DELETE /users/{userId}/onlineMeetings/{meetingId}/registration</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/meetingregistrant-delete?view=graph-rest-beta&amp;tabs=http">DELETE /users/{userId}/onlineMeetings/{meetingId}/registration/registrants/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalmeetingregistrant-delete?view=graph-rest-beta&amp;tabs=http">DELETE /users/{userId}/onlineMeetings/{meetingId}/registration/registrants/{registrantId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualappointment-delete?view=graph-rest-beta&amp;tabs=http">DELETE /users/{userId}/onlineMeetings/{onlineMeetingId}/virtualAppointment</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-beta&amp;tabs=http">GET /me/onlineMeetings/{id}/registration</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/meetingregistration-list-customquestions?view=graph-rest-beta&amp;tabs=http">GET /me/onlineMeetings/{id}/registration/microsoft.graph.meetingRegistration/customQuestions</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/meetingregistration-list-registrants?view=graph-rest-beta&amp;tabs=http">GET /me/onlineMeetings/{id}/registration/registrants</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-beta&amp;tabs=http">GET /me/onlineMeetings/{meetingId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-beta&amp;tabs=http">GET /me/onlineMeetings/{meetingId}/registration</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/meetingregistrationquestion-get?view=graph-rest-beta&amp;tabs=http">GET /me/onlineMeetings/{meetingId}/registration/customQuestions/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalmeetingregistrant-list?view=graph-rest-beta&amp;tabs=http">GET /me/onlineMeetings/{meetingId}/registration/registrants</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualappointment-getvirtualappointmentjoinweburl?view=graph-rest-beta&amp;tabs=http">GET /me/onlineMeetings/{onlineMeetingId}/getVirtualAppointmentJoinWebUrl</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualappointment-get?view=graph-rest-beta&amp;tabs=http">GET /me/onlineMeetings/{onlineMeetingId}/virtualAppointment</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-beta&amp;tabs=http">GET /users/{userId}/onlineMeetings/{meetingId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-beta&amp;tabs=http">GET /users/{userId}/onlineMeetings/{meetingId}/registration</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalmeetingregistrant-list?view=graph-rest-beta&amp;tabs=http">GET /users/{userId}/onlineMeetings/{meetingId}/registration/registrants</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualappointment-getvirtualappointmentjoinweburl?view=graph-rest-beta&amp;tabs=http">GET /users/{userId}/onlineMeetings/{onlineMeetingId}/getVirtualAppointmentJoinWebUrl</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualappointment-get?view=graph-rest-beta&amp;tabs=http">GET /users/{userId}/onlineMeetings/{onlineMeetingId}/virtualAppointment</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-getallrecordings?view=graph-rest-beta&amp;tabs=http">GET /users/{usersId}/onlineMeetings/getAllRecordings(meetingOrganizerUserId='{userId}',startDateTime={startDateTime},endDateTime={endDateTime})</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-getalltranscripts?view=graph-rest-beta&amp;tabs=http">GET /users/{usersId}/onlineMeetings/getAllTranscripts(meetingOrganizerUserId='{userId}',startDateTime={startDateTime},endDateTime={endDateTime})</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/meetingregistration-update?view=graph-rest-beta&amp;tabs=http">PATCH /me/onlineMeetings/{id}/registration</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-update?view=graph-rest-beta&amp;tabs=http">PATCH /me/onlineMeetings/{meetingId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/meetingregistrationquestion-update?view=graph-rest-beta&amp;tabs=http">PATCH /me/onlineMeetings/{meetingId}/registration/customQuestions/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualappointment-update?view=graph-rest-beta&amp;tabs=http">PATCH /me/onlineMeetings/{onlineMeetingId}/virtualAppointment</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-update?view=graph-rest-beta&amp;tabs=http">PATCH /users/{userId}/onlineMeetings/{meetingId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/virtualappointment-update?view=graph-rest-beta&amp;tabs=http">PATCH /users/{userId}/onlineMeetings/{onlineMeetingId}/virtualAppointment</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-post-onlinemeetings?view=graph-rest-beta&amp;tabs=http">POST /me/onlineMeetings</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/meetingregistration-post?view=graph-rest-beta&amp;tabs=http">POST /me/onlineMeetings/{id}/registration</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/meetingregistration-post-customquestions?view=graph-rest-beta&amp;tabs=http">POST /me/onlineMeetings/{id}/registration/microsoft.graph.meetingRegistration/customQuestions</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalmeetingregistration-post?view=graph-rest-beta&amp;tabs=http">POST /me/onlineMeetings/{meetingId}/registration</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalmeetingregistrant-post?view=graph-rest-beta&amp;tabs=http">POST /me/onlineMeetings/{meetingId}/registration/registrants</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onlinemeeting-createorget?view=graph-rest-beta&amp;tabs=http">POST /me/onlineMeetings/createOrGet</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-post-onlinemeetings?view=graph-rest-beta&amp;tabs=http">POST /users/{userId}/onlineMeetings</a></td>
+</tr>
+<tr>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/meetingregistration-post-registrants?view=graph-rest-beta&amp;tabs=http">POST /users/{userId}/onlineMeetings/{id}/registration/registrants</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/externalmeetingregistration-post?view=graph-rest-beta&amp;tabs=http">POST /users/{userId}/onlineMeetings/{meetingId}/registration</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/externalmeetingregistrant-post?view=graph-rest-beta&amp;tabs=http">POST /users/{userId}/onlineMeetings/{meetingId}/registration/registrants</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/virtualappointment-put?view=graph-rest-beta&amp;tabs=http">PUT /me/onlineMeetings/{onlineMeetingId}/virtualAppointment</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/virtualappointment-put?view=graph-rest-beta&amp;tabs=http">PUT /users/{userId}/onlineMeetings/{onlineMeetingId}/virtualAppointment</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>a65f2972-a4f8-4f5e-afd7-69ccb046d5dc</td>
-</tr>
-<tr>
-<td><strong>Consent Type</strong></td>
-<td>User</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read and create user's online meetings</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read and create online meetings on behalf of the signed-in user.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="callrecording-"><a href="https://docs.microsoft.com/graph/api/resources/callrecording?view=graph-rest-1.0&amp;tabs=http">callRecording </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_callRecording1" role="tab" aria-controls="tabpanel_2_callRecording1" data-tab="callRecording1" tabindex="0" aria-selected="true">callRecording</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_callTranscript2" role="tab" aria-controls="tabpanel_2_callTranscript2" data-tab="callTranscript2" tabindex="-1">callTranscript</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_chatInfo3" role="tab" aria-controls="tabpanel_2_chatInfo3" data-tab="chatInfo3" tabindex="-1">chatInfo</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_externalmeetingregistrant4" role="tab" aria-controls="tabpanel_2_externalmeetingregistrant4" data-tab="externalmeetingregistrant4" tabindex="-1">externalmeetingregistrant</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_externalmeetingregistration5" role="tab" aria-controls="tabpanel_2_externalmeetingregistration5" data-tab="externalmeetingregistration5" tabindex="-1">externalmeetingregistration</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_joinMeetingIdSettings6" role="tab" aria-controls="tabpanel_2_joinMeetingIdSettings6" data-tab="joinMeetingIdSettings6" tabindex="-1">joinMeetingIdSettings</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_meetingParticipants7" role="tab" aria-controls="tabpanel_2_meetingParticipants7" data-tab="meetingParticipants7" tabindex="-1">meetingParticipants</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_meetingregistrant8" role="tab" aria-controls="tabpanel_2_meetingregistrant8" data-tab="meetingregistrant8" tabindex="-1">meetingregistrant</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_meetingregistration9" role="tab" aria-controls="tabpanel_2_meetingregistration9" data-tab="meetingregistration9" tabindex="-1">meetingregistration</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_meetingRegistrationQuestion10" role="tab" aria-controls="tabpanel_2_meetingRegistrationQuestion10" data-tab="meetingRegistrationQuestion10" tabindex="-1">meetingRegistrationQuestion</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_onlineMeeting11" role="tab" aria-controls="tabpanel_2_onlineMeeting11" data-tab="onlineMeeting11" tabindex="-1">onlineMeeting</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_virtualappointment12" role="tab" aria-controls="tabpanel_2_virtualappointment12" data-tab="virtualappointment12" tabindex="-1">virtualappointment</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_virtualAppointmentSettings13" role="tab" aria-controls="tabpanel_2_virtualAppointmentSettings13" data-tab="virtualAppointmentSettings13" tabindex="-1">virtualAppointmentSettings</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_virtualAppointmentUser14" role="tab" aria-controls="tabpanel_2_virtualAppointmentUser14" data-tab="virtualAppointmentUser14" tabindex="-1">virtualAppointmentUser</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_virtualEventWebinar15" role="tab" aria-controls="tabpanel_2_virtualEventWebinar15" data-tab="virtualEventWebinar15" tabindex="-1">virtualEventWebinar</a>
+</li>
+</ul>
+<section id="tabpanel_2_callRecording1" role="tabpanel" data-tab="callRecording1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/callrecording?view=graph-rest-1.0&amp;tabs=http">callRecording</a></p>
 <table>
 <thead>
 <tr>
@@ -416,7 +496,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="calltranscript-"><a href="https://docs.microsoft.com/graph/api/resources/calltranscript?view=graph-rest-1.0&amp;tabs=http">callTranscript </a></h3>
+</section>
+<section id="tabpanel_2_callTranscript2" role="tabpanel" data-tab="callTranscript2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/calltranscript?view=graph-rest-1.0&amp;tabs=http">callTranscript</a></p>
 <table>
 <thead>
 <tr>
@@ -478,7 +561,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="chatinfo-"><a href="https://docs.microsoft.com/graph/api/resources/chatinfo?view=graph-rest-1.0&amp;tabs=http">chatInfo </a></h3>
+</section>
+<section id="tabpanel_2_chatInfo3" role="tabpanel" data-tab="chatInfo3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/chatinfo?view=graph-rest-1.0&amp;tabs=http">chatInfo</a></p>
 <table>
 <thead>
 <tr>
@@ -505,7 +591,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="externalmeetingregistrant"><a href="https://docs.microsoft.com/graph/api/resources/externalmeetingregistrant?view=graph-rest-1.0&amp;tabs=http">externalmeetingregistrant</a></h3>
+</section>
+<section id="tabpanel_2_externalmeetingregistrant4" role="tabpanel" data-tab="externalmeetingregistrant4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/externalmeetingregistrant?view=graph-rest-1.0&amp;tabs=http">externalmeetingregistrant</a></p>
 <table>
 <thead>
 <tr>
@@ -537,7 +626,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="externalmeetingregistration"><a href="https://docs.microsoft.com/graph/api/resources/externalmeetingregistration?view=graph-rest-1.0&amp;tabs=http">externalmeetingregistration</a></h3>
+</section>
+<section id="tabpanel_2_externalmeetingregistration5" role="tabpanel" data-tab="externalmeetingregistration5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/externalmeetingregistration?view=graph-rest-1.0&amp;tabs=http">externalmeetingregistration</a></p>
 <table>
 <thead>
 <tr>
@@ -554,7 +646,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="joinmeetingidsettings-"><a href="https://docs.microsoft.com/graph/api/resources/joinmeetingidsettings?view=graph-rest-1.0&amp;tabs=http">joinMeetingIdSettings </a></h3>
+</section>
+<section id="tabpanel_2_joinMeetingIdSettings6" role="tabpanel" data-tab="joinMeetingIdSettings6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/joinmeetingidsettings?view=graph-rest-1.0&amp;tabs=http">joinMeetingIdSettings</a></p>
 <table>
 <thead>
 <tr>
@@ -581,7 +676,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="meetingparticipants-"><a href="https://docs.microsoft.com/graph/api/resources/meetingparticipants?view=graph-rest-1.0&amp;tabs=http">meetingParticipants </a></h3>
+</section>
+<section id="tabpanel_2_meetingParticipants7" role="tabpanel" data-tab="meetingParticipants7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/meetingparticipants?view=graph-rest-1.0&amp;tabs=http">meetingParticipants</a></p>
 <table>
 <thead>
 <tr>
@@ -603,7 +701,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="meetingregistrant"><a href="https://docs.microsoft.com/graph/api/resources/meetingregistrant?view=graph-rest-1.0&amp;tabs=http">meetingregistrant</a></h3>
+</section>
+<section id="tabpanel_2_meetingregistrant8" role="tabpanel" data-tab="meetingregistrant8" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/meetingregistrant?view=graph-rest-1.0&amp;tabs=http">meetingregistrant</a></p>
 <table>
 <thead>
 <tr>
@@ -655,7 +756,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="meetingregistration"><a href="https://docs.microsoft.com/graph/api/resources/meetingregistration?view=graph-rest-1.0&amp;tabs=http">meetingregistration</a></h3>
+</section>
+<section id="tabpanel_2_meetingregistration9" role="tabpanel" data-tab="meetingregistration9" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/meetingregistration?view=graph-rest-1.0&amp;tabs=http">meetingregistration</a></p>
 <table>
 <thead>
 <tr>
@@ -707,7 +811,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="meetingregistrationquestion-"><a href="https://docs.microsoft.com/graph/api/resources/meetingregistrationquestion?view=graph-rest-1.0&amp;tabs=http">meetingRegistrationQuestion </a></h3>
+</section>
+<section id="tabpanel_2_meetingRegistrationQuestion10" role="tabpanel" data-tab="meetingRegistrationQuestion10" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/meetingregistrationquestion?view=graph-rest-1.0&amp;tabs=http">meetingRegistrationQuestion</a></p>
 <table>
 <thead>
 <tr>
@@ -744,7 +851,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="onlinemeeting-"><a href="https://docs.microsoft.com/graph/api/resources/onlinemeeting?view=graph-rest-1.0&amp;tabs=http">onlineMeeting </a></h3>
+</section>
+<section id="tabpanel_2_onlineMeeting11" role="tabpanel" data-tab="onlineMeeting11" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/onlinemeeting?view=graph-rest-1.0&amp;tabs=http">onlineMeeting</a></p>
 <table>
 <thead>
 <tr>
@@ -886,7 +996,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="virtualappointment"><a href="https://docs.microsoft.com/graph/api/resources/virtualappointment?view=graph-rest-1.0&amp;tabs=http">virtualappointment</a></h3>
+</section>
+<section id="tabpanel_2_virtualappointment12" role="tabpanel" data-tab="virtualappointment12" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/virtualappointment?view=graph-rest-1.0&amp;tabs=http">virtualappointment</a></p>
 <table>
 <thead>
 <tr>
@@ -923,7 +1036,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="virtualappointmentsettings-"><a href="https://docs.microsoft.com/graph/api/resources/virtualappointmentsettings?view=graph-rest-1.0&amp;tabs=http">virtualAppointmentSettings </a></h3>
+</section>
+<section id="tabpanel_2_virtualAppointmentSettings13" role="tabpanel" data-tab="virtualAppointmentSettings13" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/virtualappointmentsettings?view=graph-rest-1.0&amp;tabs=http">virtualAppointmentSettings</a></p>
 <table>
 <thead>
 <tr>
@@ -940,7 +1056,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="virtualappointmentuser-"><a href="https://docs.microsoft.com/graph/api/resources/virtualappointmentuser?view=graph-rest-1.0&amp;tabs=http">virtualAppointmentUser </a></h3>
+</section>
+<section id="tabpanel_2_virtualAppointmentUser14" role="tabpanel" data-tab="virtualAppointmentUser14" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/virtualappointmentuser?view=graph-rest-1.0&amp;tabs=http">virtualAppointmentUser</a></p>
 <table>
 <thead>
 <tr>
@@ -967,7 +1086,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="virtualeventwebinar-"><a href="https://docs.microsoft.com/graph/api/resources/virtualeventwebinar?view=graph-rest-1.0&amp;tabs=http">virtualEventWebinar </a></h3>
+</section>
+<section id="tabpanel_2_virtualEventWebinar15" role="tabpanel" data-tab="virtualEventWebinar15" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/virtualeventwebinar?view=graph-rest-1.0&amp;tabs=http">virtualEventWebinar</a></p>
 <table>
 <thead>
 <tr>
@@ -1029,6 +1151,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

@@ -90,159 +90,259 @@
         <article data-uid="">
 <h1 id="identityproviderreadwriteall">IdentityProvider.ReadWrite.All</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>IdentityProvider.ReadWrite.All</code> permission.</p>
 <blockquote>
 <p>Allows the app to read and write your organization’s identity (authentication) providers’ properties on behalf of the user.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>90db2b9a-d928-4d33-a4dd-8442ae3d41e4</td>
+<td>f13ce604-1677-429f-90bd-8a10b9f01325</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Read and write identity providers</td>
+<td>Read and write identity providers</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the app to read and write your organization’s identity (authentication) providers’ properties without a signed in user.</td>
+<td>Allows the app to read and write your organization’s identity (authentication) providers’ properties on behalf of the user.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/identityproviderbase-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /identity/identityProviders/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/identityprovider-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /identityProviders/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-delete?view=graph-rest-1.0&amp;tabs=http">DELETE directory/federationConfigurations/{samlOrWsFedExternalDomainFederation ID}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-list-domains?view=graph-rest-1.0&amp;tabs=http">GET /directory/federationConfigurations/microsoft.graph.samlOrWsFedExternalDomainFederation/{samlOrWsFedExternalDomainFederation ID}/domains</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/identitycontainer-list-identityproviders?view=graph-rest-1.0&amp;tabs=http">GET /identity/identityProviders</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/identityproviderbase-get?view=graph-rest-1.0&amp;tabs=http">GET /identity/identityProviders/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/identityproviderbase-availableprovidertypes?view=graph-rest-1.0&amp;tabs=http">GET /identity/identityProviders/availableProviderTypes</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/identityprovider-list?view=graph-rest-1.0&amp;tabs=http">GET /identityProviders</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/identityprovider-get?view=graph-rest-1.0&amp;tabs=http">GET /identityProviders/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/identityprovider-list-availableprovidertypes?view=graph-rest-1.0&amp;tabs=http">GET /identityProviders/availableProviderTypes</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/identityproviderbase-update?view=graph-rest-1.0&amp;tabs=http">PATCH /identity/identityProviders/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/identityprovider-update?view=graph-rest-1.0&amp;tabs=http">PATCH /identityProviders/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-update?view=graph-rest-1.0&amp;tabs=http">PATCH directory/federationConfigurations/graph.samlOrWsFedExternalDomainFederation/{samlOrWsFedExternalDomainFederation ID}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-post-domains?view=graph-rest-1.0&amp;tabs=http">POST /directory/federationConfigurations/{samlOrWsFedExternalDomainFederation ID}/microsoft.graph.samlOrWsFedExternalDomainFederation/domains</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-post?view=graph-rest-1.0&amp;tabs=http">POST /directory/federationConfigurations/microsoft.graph.samlOrWsFedExternalDomainFederation</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/identitycontainer-post-identityproviders?view=graph-rest-1.0&amp;tabs=http">POST /identity/identityProviders</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/identityprovider-post-identityproviders?view=graph-rest-1.0&amp;tabs=http">POST /identityProviders</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
+<th>Type</th>
+<th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Id</strong></td>
-<td>f13ce604-1677-429f-90bd-8a10b9f01325</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/identityproviderbase-delete?view=graph-rest-beta&amp;tabs=http">DELETE /identity/identityProviders/{id}</a></td>
 </tr>
 <tr>
-<td><strong>Consent Type</strong></td>
-<td>Admin</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/identityprovider-delete?view=graph-rest-beta&amp;tabs=http">DELETE /identityProviders/{id}</a></td>
 </tr>
 <tr>
-<td><strong>Display String</strong></td>
-<td>Read and write identity providers</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-delete?view=graph-rest-beta&amp;tabs=http">DELETE directory/federationConfigurations/{samlOrWsFedExternalDomainFederation ID}</a></td>
 </tr>
 <tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read and write your organization’s identity (authentication) providers’ properties on behalf of the user.</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-list-domains?view=graph-rest-beta&amp;tabs=http">GET /directory/federationConfigurations/microsoft.graph.samlOrWsFedExternalDomainFederation/{samlOrWsFedExternalDomainFederation ID}/domains</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/identitycontainer-list-identityproviders?view=graph-rest-beta&amp;tabs=http">GET /identity/identityProviders</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/identityproviderbase-get?view=graph-rest-beta&amp;tabs=http">GET /identity/identityProviders/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/identityproviderbase-availableprovidertypes?view=graph-rest-beta&amp;tabs=http">GET /identity/identityProviders/availableProviderTypes</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/identityprovider-list?view=graph-rest-beta&amp;tabs=http">GET /identityProviders</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/identityprovider-get?view=graph-rest-beta&amp;tabs=http">GET /identityProviders/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/identityprovider-list-availableprovidertypes?view=graph-rest-beta&amp;tabs=http">GET /identityProviders/availableProviderTypes</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/identityproviderbase-update?view=graph-rest-beta&amp;tabs=http">PATCH /identity/identityProviders/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/identityprovider-update?view=graph-rest-beta&amp;tabs=http">PATCH /identityProviders/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-update?view=graph-rest-beta&amp;tabs=http">PATCH directory/federationConfigurations/graph.samlOrWsFedExternalDomainFederation/{samlOrWsFedExternalDomainFederation ID}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-post-domains?view=graph-rest-beta&amp;tabs=http">POST /directory/federationConfigurations/{samlOrWsFedExternalDomainFederation ID}/microsoft.graph.samlOrWsFedExternalDomainFederation/domains</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-post?view=graph-rest-beta&amp;tabs=http">POST /directory/federationConfigurations/microsoft.graph.samlOrWsFedExternalDomainFederation</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/identitycontainer-post-identityproviders?view=graph-rest-beta&amp;tabs=http">POST /identity/identityProviders</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/identityprovider-post-identityproviders?view=graph-rest-beta&amp;tabs=http">POST /identityProviders</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>90db2b9a-d928-4d33-a4dd-8442ae3d41e4</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read and write identity providers</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read and write your organization’s identity (authentication) providers’ properties without a signed in user.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="applemanagedidentityprovider-"><a href="https://docs.microsoft.com/graph/api/resources/applemanagedidentityprovider?view=graph-rest-1.0&amp;tabs=http">appleManagedIdentityProvider </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_appleManagedIdentityProvider1" role="tab" aria-controls="tabpanel_2_appleManagedIdentityProvider1" data-tab="appleManagedIdentityProvider1" tabindex="0" aria-selected="true">appleManagedIdentityProvider</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_builtInIdentityProvider2" role="tab" aria-controls="tabpanel_2_builtInIdentityProvider2" data-tab="builtInIdentityProvider2" tabindex="-1">builtInIdentityProvider</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_claimsMapping3" role="tab" aria-controls="tabpanel_2_claimsMapping3" data-tab="claimsMapping3" tabindex="-1">claimsMapping</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_entity4" role="tab" aria-controls="tabpanel_2_entity4" data-tab="entity4" tabindex="-1">entity</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_externalDomainName5" role="tab" aria-controls="tabpanel_2_externalDomainName5" data-tab="externalDomainName5" tabindex="-1">externalDomainName</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_identityprovider6" role="tab" aria-controls="tabpanel_2_identityprovider6" data-tab="identityprovider6" tabindex="-1">identityprovider</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_identityProviderBase7" role="tab" aria-controls="tabpanel_2_identityProviderBase7" data-tab="identityProviderBase7" tabindex="-1">identityProviderBase</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_openIdConnectIdentityProvider8" role="tab" aria-controls="tabpanel_2_openIdConnectIdentityProvider8" data-tab="openIdConnectIdentityProvider8" tabindex="-1">openIdConnectIdentityProvider</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_openidconnectprovider9" role="tab" aria-controls="tabpanel_2_openidconnectprovider9" data-tab="openidconnectprovider9" tabindex="-1">openidconnectprovider</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_samlOrWsFedExternalDomainFederation10" role="tab" aria-controls="tabpanel_2_samlOrWsFedExternalDomainFederation10" data-tab="samlOrWsFedExternalDomainFederation10" tabindex="-1">samlOrWsFedExternalDomainFederation</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_samlOrWsFedProvider11" role="tab" aria-controls="tabpanel_2_samlOrWsFedProvider11" data-tab="samlOrWsFedProvider11" tabindex="-1">samlOrWsFedProvider</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_socialIdentityProvider12" role="tab" aria-controls="tabpanel_2_socialIdentityProvider12" data-tab="socialIdentityProvider12" tabindex="-1">socialIdentityProvider</a>
+</li>
+</ul>
+<section id="tabpanel_2_appleManagedIdentityProvider1" role="tabpanel" data-tab="appleManagedIdentityProvider1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/applemanagedidentityprovider?view=graph-rest-1.0&amp;tabs=http">appleManagedIdentityProvider</a></p>
 <table>
 <thead>
 <tr>
@@ -284,7 +384,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="builtinidentityprovider-"><a href="https://docs.microsoft.com/graph/api/resources/builtinidentityprovider?view=graph-rest-1.0&amp;tabs=http">builtInIdentityProvider </a></h3>
+</section>
+<section id="tabpanel_2_builtInIdentityProvider2" role="tabpanel" data-tab="builtInIdentityProvider2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/builtinidentityprovider?view=graph-rest-1.0&amp;tabs=http">builtInIdentityProvider</a></p>
 <table>
 <thead>
 <tr>
@@ -311,7 +414,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="claimsmapping-"><a href="https://docs.microsoft.com/graph/api/resources/claimsmapping?view=graph-rest-1.0&amp;tabs=http">claimsMapping </a></h3>
+</section>
+<section id="tabpanel_2_claimsMapping3" role="tabpanel" data-tab="claimsMapping3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/claimsmapping?view=graph-rest-1.0&amp;tabs=http">claimsMapping</a></p>
 <table>
 <thead>
 <tr>
@@ -348,7 +454,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="entity-"><a href="https://docs.microsoft.com/graph/api/resources/entity?view=graph-rest-1.0&amp;tabs=http">entity </a></h3>
+</section>
+<section id="tabpanel_2_entity4" role="tabpanel" data-tab="entity4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/entity?view=graph-rest-1.0&amp;tabs=http">entity</a></p>
 <table>
 <thead>
 <tr>
@@ -365,7 +474,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="externaldomainname-"><a href="https://docs.microsoft.com/graph/api/resources/externaldomainname?view=graph-rest-1.0&amp;tabs=http">externalDomainName </a></h3>
+</section>
+<section id="tabpanel_2_externalDomainName5" role="tabpanel" data-tab="externalDomainName5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/externaldomainname?view=graph-rest-1.0&amp;tabs=http">externalDomainName</a></p>
 <table>
 <thead>
 <tr>
@@ -382,7 +494,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="identityprovider"><a href="https://docs.microsoft.com/graph/api/resources/identityprovider?view=graph-rest-1.0&amp;tabs=http">identityprovider</a></h3>
+</section>
+<section id="tabpanel_2_identityprovider6" role="tabpanel" data-tab="identityprovider6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/identityprovider?view=graph-rest-1.0&amp;tabs=http">identityprovider</a></p>
 <table>
 <thead>
 <tr>
@@ -419,7 +534,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="identityproviderbase-"><a href="https://docs.microsoft.com/graph/api/resources/identityproviderbase?view=graph-rest-1.0&amp;tabs=http">identityProviderBase </a></h3>
+</section>
+<section id="tabpanel_2_identityProviderBase7" role="tabpanel" data-tab="identityProviderBase7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/identityproviderbase?view=graph-rest-1.0&amp;tabs=http">identityProviderBase</a></p>
 <table>
 <thead>
 <tr>
@@ -441,7 +559,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="openidconnectidentityprovider-"><a href="https://docs.microsoft.com/graph/api/resources/openidconnectidentityprovider?view=graph-rest-1.0&amp;tabs=http">openIdConnectIdentityProvider </a></h3>
+</section>
+<section id="tabpanel_2_openIdConnectIdentityProvider8" role="tabpanel" data-tab="openIdConnectIdentityProvider8" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/openidconnectidentityprovider?view=graph-rest-1.0&amp;tabs=http">openIdConnectIdentityProvider</a></p>
 <table>
 <thead>
 <tr>
@@ -503,7 +624,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="openidconnectprovider"><a href="https://docs.microsoft.com/graph/api/resources/openidconnectprovider?view=graph-rest-1.0&amp;tabs=http">openidconnectprovider</a></h3>
+</section>
+<section id="tabpanel_2_openidconnectprovider9" role="tabpanel" data-tab="openidconnectprovider9" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/openidconnectprovider?view=graph-rest-1.0&amp;tabs=http">openidconnectprovider</a></p>
 <table>
 <thead>
 <tr>
@@ -570,7 +694,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="samlorwsfedexternaldomainfederation-"><a href="https://docs.microsoft.com/graph/api/resources/samlorwsfedexternaldomainfederation?view=graph-rest-1.0&amp;tabs=http">samlOrWsFedExternalDomainFederation </a></h3>
+</section>
+<section id="tabpanel_2_samlOrWsFedExternalDomainFederation10" role="tabpanel" data-tab="samlOrWsFedExternalDomainFederation10" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/samlorwsfedexternaldomainfederation?view=graph-rest-1.0&amp;tabs=http">samlOrWsFedExternalDomainFederation</a></p>
 <table>
 <thead>
 <tr>
@@ -617,7 +744,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="samlorwsfedprovider-"><a href="https://docs.microsoft.com/graph/api/resources/samlorwsfedprovider?view=graph-rest-1.0&amp;tabs=http">samlOrWsFedProvider </a></h3>
+</section>
+<section id="tabpanel_2_samlOrWsFedProvider11" role="tabpanel" data-tab="samlOrWsFedProvider11" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/samlorwsfedprovider?view=graph-rest-1.0&amp;tabs=http">samlOrWsFedProvider</a></p>
 <table>
 <thead>
 <tr>
@@ -664,7 +794,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="socialidentityprovider-"><a href="https://docs.microsoft.com/graph/api/resources/socialidentityprovider?view=graph-rest-1.0&amp;tabs=http">socialIdentityProvider </a></h3>
+</section>
+<section id="tabpanel_2_socialIdentityProvider12" role="tabpanel" data-tab="socialIdentityProvider12" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/socialidentityprovider?view=graph-rest-1.0&amp;tabs=http">socialIdentityProvider</a></p>
 <table>
 <thead>
 <tr>
@@ -701,6 +834,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

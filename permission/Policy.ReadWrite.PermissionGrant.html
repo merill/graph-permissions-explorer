@@ -90,184 +90,237 @@
         <article data-uid="">
 <h1 id="policyreadwritepermissiongrant">Policy.ReadWrite.PermissionGrant</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>Policy.ReadWrite.PermissionGrant</code> permission.</p>
 <blockquote>
 <p>Allows the app to manage policies related to consent and permission grants for applications, on behalf of the signed-in user.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>a402ca1c-2696-4531-972d-6e5ee4aa11ea</td>
+<td>2672f8bb-fd5e-42e0-85e1-ec764dd2614e</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Manage consent and permission grant policies</td>
+<td>Manage consent and permission grant policies</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the app to manage policies related to consent and permission grants for applications, without a signed-in user.</td>
+<td>Allows the app to manage policies related to consent and permission grants for applications, on behalf of the signed-in user.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-delegatedpermissionclassifications?view=graph-rest-beta&amp;tabs=http"></a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /policies/permissionGrantPolicies/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-delete-excludes?view=graph-rest-1.0&amp;tabs=http">DELETE /policies/permissionGrantPolicies/{permissiongrantpolicy-id}/excludes/{exclude-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-delete-includes?view=graph-rest-1.0&amp;tabs=http">DELETE /policies/permissionGrantPolicies/{permissiongrantpolicy-id}/includes/{include-id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/permissiongrantpreapprovalpolicy-delete?view=graph-rest-beta&amp;tabs=http">DELETE /policies/permissionGrantPreApprovalPolicies/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-delegatedpermissionclassifications?view=graph-rest-beta&amp;tabs=http">DELETE /servicePrincipals(appId='{appId}')/delegatedPermissionClassifications/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-permissiongrantpreapprovalpolicies?view=graph-rest-beta&amp;tabs=http">DELETE /servicePrincipals/{{ servicePrincipal id }}/permissionGrantPreApprovalPolicies/{{ policy id }}/$ref</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-delegatedpermissionclassifications?view=graph-rest-1.0&amp;tabs=http">DELETE /servicePrincipals/{id}/delegatedPermissionClassifications/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-list?view=graph-rest-1.0&amp;tabs=http">GET /policies/permissionGrantPolicies</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-get?view=graph-rest-1.0&amp;tabs=http">GET /policies/permissionGrantPolicies/{id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/policyroot-list-permissiongrantpreapprovalpolicies?view=graph-rest-beta&amp;tabs=http">GET /policies/permissionGrantPreApprovalPolicies</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/permissiongrantpreapprovalpolicy-get?view=graph-rest-beta&amp;tabs=http">GET /policies/permissionGrantPreApprovalPolicies/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-permissiongrantpreapprovalpolicies?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/permissionGrantPreApprovalPolicies</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-update?view=graph-rest-1.0&amp;tabs=http">PATCH /policies/permissionGrantPolicies/{id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/permissiongrantpreapprovalpolicy-update?view=graph-rest-beta&amp;tabs=http">PATCH /policies/permissionGrantPreApprovalPolicies/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-post-permissiongrantpolicies?view=graph-rest-1.0&amp;tabs=http">POST /policies/permissionGrantPolicies</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-post-excludes?view=graph-rest-1.0&amp;tabs=http">POST /policies/permissionGrantPolicies/{id}/excludes</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-post-includes?view=graph-rest-1.0&amp;tabs=http">POST /policies/permissionGrantPolicies/{id}/includes</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/policyroot-post-permissiongrantpreapprovalpolicies?view=graph-rest-beta&amp;tabs=http">POST /policies/permissionGrantPreApprovalPolicies</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-delegatedpermissionclassifications?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/delegatedPermissionClassifications</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-delegatedpermissionclassifications?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{id}/delegatedPermissionClassifications</a></td>
 </tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
+<table>
+<thead>
 <tr>
-<td>Beta</td>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-delete?view=graph-rest-beta&amp;tabs=http">DELETE /policies/permissionGrantPolicies/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-delete-excludes?view=graph-rest-beta&amp;tabs=http">DELETE /policies/permissionGrantPolicies/{permissiongrantpolicy-id}/excludes/{exclude-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-delete-includes?view=graph-rest-beta&amp;tabs=http">DELETE /policies/permissionGrantPolicies/{permissiongrantpolicy-id}/includes/{include-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/permissiongrantpreapprovalpolicy-delete?view=graph-rest-beta&amp;tabs=http">DELETE /policies/permissionGrantPreApprovalPolicies/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-delegatedpermissionclassifications?view=graph-rest-beta&amp;tabs=http">DELETE /servicePrincipals(appId='{appId}')/delegatedPermissionClassifications/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-permissiongrantpreapprovalpolicies?view=graph-rest-beta&amp;tabs=http">DELETE /servicePrincipals/{{ servicePrincipal id }}/permissionGrantPreApprovalPolicies/{{ policy id }}/$ref</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-delegatedpermissionclassifications?view=graph-rest-beta&amp;tabs=http">DELETE /servicePrincipals/{id}/delegatedPermissionClassifications/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-list?view=graph-rest-beta&amp;tabs=http">GET /policies/permissionGrantPolicies</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-get?view=graph-rest-beta&amp;tabs=http">GET /policies/permissionGrantPolicies/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/policyroot-list-permissiongrantpreapprovalpolicies?view=graph-rest-beta&amp;tabs=http">GET /policies/permissionGrantPreApprovalPolicies</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/permissiongrantpreapprovalpolicy-get?view=graph-rest-beta&amp;tabs=http">GET /policies/permissionGrantPreApprovalPolicies/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-permissiongrantpreapprovalpolicies?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/permissionGrantPreApprovalPolicies</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-update?view=graph-rest-beta&amp;tabs=http">PATCH /policies/permissionGrantPolicies/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/permissiongrantpreapprovalpolicy-update?view=graph-rest-beta&amp;tabs=http">PATCH /policies/permissionGrantPreApprovalPolicies/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-post-permissiongrantpolicies?view=graph-rest-beta&amp;tabs=http">POST /policies/permissionGrantPolicies</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-post-excludes?view=graph-rest-beta&amp;tabs=http">POST /policies/permissionGrantPolicies/{id}/excludes</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-post-includes?view=graph-rest-beta&amp;tabs=http">POST /policies/permissionGrantPolicies/{id}/includes</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/policyroot-post-permissiongrantpreapprovalpolicies?view=graph-rest-beta&amp;tabs=http">POST /policies/permissionGrantPreApprovalPolicies</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-delegatedpermissionclassifications?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/delegatedPermissionClassifications</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-delegatedpermissionclassifications?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/delegatedPermissionClassifications</a></td>
+</tr>
+<tr>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-permissiongrantpreapprovalpolicies?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/permissionGrantPreApprovalPolicies/$ref</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>2672f8bb-fd5e-42e0-85e1-ec764dd2614e</td>
-</tr>
-<tr>
-<td><strong>Consent Type</strong></td>
-<td>Admin</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Manage consent and permission grant policies</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to manage policies related to consent and permission grants for applications, on behalf of the signed-in user.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>a402ca1c-2696-4531-972d-6e5ee4aa11ea</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Manage consent and permission grant policies</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to manage policies related to consent and permission grants for applications, without a signed-in user.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="delegatedpermissionclassification-"><a href="https://docs.microsoft.com/graph/api/resources/delegatedpermissionclassification?view=graph-rest-1.0&amp;tabs=http">delegatedPermissionClassification </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_delegatedPermissionClassification1" role="tab" aria-controls="tabpanel_2_delegatedPermissionClassification1" data-tab="delegatedPermissionClassification1" tabindex="0" aria-selected="true">delegatedPermissionClassification</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_permissionGrantConditionSet2" role="tab" aria-controls="tabpanel_2_permissionGrantConditionSet2" data-tab="permissionGrantConditionSet2" tabindex="-1">permissionGrantConditionSet</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_permissionGrantPolicy3" role="tab" aria-controls="tabpanel_2_permissionGrantPolicy3" data-tab="permissionGrantPolicy3" tabindex="-1">permissionGrantPolicy</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_permissionGrantPreApprovalPolicy4" role="tab" aria-controls="tabpanel_2_permissionGrantPreApprovalPolicy4" data-tab="permissionGrantPreApprovalPolicy4" tabindex="-1">permissionGrantPreApprovalPolicy</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_preApprovalDetail5" role="tab" aria-controls="tabpanel_2_preApprovalDetail5" data-tab="preApprovalDetail5" tabindex="-1">preApprovalDetail</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_servicePrincipal6" role="tab" aria-controls="tabpanel_2_servicePrincipal6" data-tab="servicePrincipal6" tabindex="-1">servicePrincipal</a>
+</li>
+</ul>
+<section id="tabpanel_2_delegatedPermissionClassification1" role="tabpanel" data-tab="delegatedPermissionClassification1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/delegatedpermissionclassification?view=graph-rest-1.0&amp;tabs=http">delegatedPermissionClassification</a></p>
 <table>
 <thead>
 <tr>
@@ -299,7 +352,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="permissiongrantconditionset-"><a href="https://docs.microsoft.com/graph/api/resources/permissiongrantconditionset?view=graph-rest-1.0&amp;tabs=http">permissionGrantConditionSet </a></h3>
+</section>
+<section id="tabpanel_2_permissionGrantConditionSet2" role="tabpanel" data-tab="permissionGrantConditionSet2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/permissiongrantconditionset?view=graph-rest-1.0&amp;tabs=http">permissionGrantConditionSet</a></p>
 <table>
 <thead>
 <tr>
@@ -356,7 +412,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="permissiongrantpolicy-"><a href="https://docs.microsoft.com/graph/api/resources/permissiongrantpolicy?view=graph-rest-1.0&amp;tabs=http">permissionGrantPolicy </a></h3>
+</section>
+<section id="tabpanel_2_permissionGrantPolicy3" role="tabpanel" data-tab="permissionGrantPolicy3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/permissiongrantpolicy?view=graph-rest-1.0&amp;tabs=http">permissionGrantPolicy</a></p>
 <table>
 <thead>
 <tr>
@@ -393,7 +452,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="permissiongrantpreapprovalpolicy-"><a href="https://docs.microsoft.com/graph/api/resources/permissiongrantpreapprovalpolicy?view=graph-rest-1.0&amp;tabs=http">permissionGrantPreApprovalPolicy </a></h3>
+</section>
+<section id="tabpanel_2_permissionGrantPreApprovalPolicy4" role="tabpanel" data-tab="permissionGrantPreApprovalPolicy4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/permissiongrantpreapprovalpolicy?view=graph-rest-1.0&amp;tabs=http">permissionGrantPreApprovalPolicy</a></p>
 <table>
 <thead>
 <tr>
@@ -420,7 +482,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="preapprovaldetail-"><a href="https://docs.microsoft.com/graph/api/resources/preapprovaldetail?view=graph-rest-1.0&amp;tabs=http">preApprovalDetail </a></h3>
+</section>
+<section id="tabpanel_2_preApprovalDetail5" role="tabpanel" data-tab="preApprovalDetail5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/preapprovaldetail?view=graph-rest-1.0&amp;tabs=http">preApprovalDetail</a></p>
 <table>
 <thead>
 <tr>
@@ -447,7 +512,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="serviceprincipal-"><a href="https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-1.0&amp;tabs=http">servicePrincipal </a></h3>
+</section>
+<section id="tabpanel_2_servicePrincipal6" role="tabpanel" data-tab="servicePrincipal6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-1.0&amp;tabs=http">servicePrincipal</a></p>
 <table>
 <thead>
 <tr>
@@ -639,6 +707,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

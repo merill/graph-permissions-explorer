@@ -90,119 +90,176 @@
         <article data-uid="">
 <h1 id="teammemberreadwriteall">TeamMember.ReadWrite.All</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>TeamMember.ReadWrite.All</code> permission.</p>
 <blockquote>
 <p>Add and remove members from teams, on behalf of the signed-in user. Also allows changing a member's role, for example from owner to non-owner.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>0121dc95-1b9f-4aed-8bac-58c5ac466691</td>
+<td>4a06efd2-f825-4e34-813e-82a57b03d1ee</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Add and remove members from all teams</td>
+<td>Add and remove members from teams</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Add and remove members from all teams, without a signed-in user. Also allows changing a team member's role, for example from owner to non-owner.</td>
+<td>Add and remove members from teams, on behalf of the signed-in user. Also allows changing a member's role, for example from owner to non-owner.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/team-delete-members?view=graph-rest-1.0&amp;tabs=http">DELETE /teams/{team-id}/members/{membership-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/team-list-members?view=graph-rest-1.0&amp;tabs=http">GET /teams/{team-id}/members</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/team-get-members?view=graph-rest-1.0&amp;tabs=http">GET /teams/{team-id}/members/{membership-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0&amp;tabs=http">PATCH /teams/{id}/channels/{id}/members/{id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/conversationmember-update?view=graph-rest-beta&amp;tabs=http">PATCH /teams/{id}/members/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0&amp;tabs=http">PATCH /teams/{team-id}/channels/{channel-id}/members/{membership-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/team-update-members?view=graph-rest-1.0&amp;tabs=http">PATCH /teams/{team-id}/members/{membership-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/team-post-members?view=graph-rest-1.0&amp;tabs=http">POST /teams/{team-id}/members</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0&amp;tabs=http">POST /teams/{team-id}/members/add</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
+<th>Type</th>
+<th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Id</strong></td>
-<td>4a06efd2-f825-4e34-813e-82a57b03d1ee</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/team-delete-members?view=graph-rest-beta&amp;tabs=http">DELETE /teams/{team-id}/members/{membership-id}</a></td>
 </tr>
 <tr>
-<td><strong>Consent Type</strong></td>
-<td>Admin</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/team-list-members?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}/members</a></td>
 </tr>
 <tr>
-<td><strong>Display String</strong></td>
-<td>Add and remove members from teams</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/team-get-members?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}/members/{membership-id}</a></td>
 </tr>
 <tr>
-<td><strong>Description</strong></td>
-<td>Add and remove members from teams, on behalf of the signed-in user. Also allows changing a member's role, for example from owner to non-owner.</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/conversationmember-update?view=graph-rest-beta&amp;tabs=http">PATCH /teams/{id}/channels/{id}/members/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/conversationmember-update?view=graph-rest-beta&amp;tabs=http">PATCH /teams/{id}/members/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/channel-update-members?view=graph-rest-beta&amp;tabs=http">PATCH /teams/{team-id}/channels/{channel-id}/members/{membership-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/team-update-members?view=graph-rest-beta&amp;tabs=http">PATCH /teams/{team-id}/members/{membership-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/team-post-members?view=graph-rest-beta&amp;tabs=http">POST /teams/{team-id}/members</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-beta&amp;tabs=http">POST /teams/{team-id}/members/add</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>0121dc95-1b9f-4aed-8bac-58c5ac466691</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Add and remove members from all teams</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Add and remove members from all teams, without a signed-in user. Also allows changing a team member's role, for example from owner to non-owner.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="aaduserconversationmember-"><a href="https://docs.microsoft.com/graph/api/resources/aaduserconversationmember?view=graph-rest-1.0&amp;tabs=http">aadUserConversationMember </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_aadUserConversationMember1" role="tab" aria-controls="tabpanel_2_aadUserConversationMember1" data-tab="aadUserConversationMember1" tabindex="0" aria-selected="true">aadUserConversationMember</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_actionResultPart2" role="tab" aria-controls="tabpanel_2_actionResultPart2" data-tab="actionResultPart2" tabindex="-1">actionResultPart</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_change-notifications-api-overview3" role="tab" aria-controls="tabpanel_2_change-notifications-api-overview3" data-tab="change-notifications-api-overview3" tabindex="-1">change-notifications-api-overview</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_channel4" role="tab" aria-controls="tabpanel_2_channel4" data-tab="channel4" tabindex="-1">channel</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_conversationMember5" role="tab" aria-controls="tabpanel_2_conversationMember5" data-tab="conversationMember5" tabindex="-1">conversationMember</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_team6" role="tab" aria-controls="tabpanel_2_team6" data-tab="team6" tabindex="-1">team</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_user7" role="tab" aria-controls="tabpanel_2_user7" data-tab="user7" tabindex="-1">user</a>
+</li>
+</ul>
+<section id="tabpanel_2_aadUserConversationMember1" role="tabpanel" data-tab="aadUserConversationMember1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/aaduserconversationmember?view=graph-rest-1.0&amp;tabs=http">aadUserConversationMember</a></p>
 <table>
 <thead>
 <tr>
@@ -249,7 +306,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="actionresultpart-"><a href="https://docs.microsoft.com/graph/api/resources/actionresultpart?view=graph-rest-1.0&amp;tabs=http">actionResultPart </a></h3>
+</section>
+<section id="tabpanel_2_actionResultPart2" role="tabpanel" data-tab="actionResultPart2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/actionresultpart?view=graph-rest-1.0&amp;tabs=http">actionResultPart</a></p>
 <table>
 <thead>
 <tr>
@@ -266,8 +326,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="change-notifications-api-overview"><a href="https://docs.microsoft.com/graph/api/resources/change-notifications-api-overview?view=graph-rest-1.0&amp;tabs=http">change-notifications-api-overview</a></h3>
-<h3 id="channel-"><a href="https://docs.microsoft.com/graph/api/resources/channel?view=graph-rest-1.0&amp;tabs=http">channel </a></h3>
+</section>
+<section id="tabpanel_2_change-notifications-api-overview3" role="tabpanel" data-tab="change-notifications-api-overview3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/change-notifications-api-overview?view=graph-rest-1.0&amp;tabs=http">change-notifications-api-overview</a></p>
+</section>
+<section id="tabpanel_2_channel4" role="tabpanel" data-tab="channel4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/channel?view=graph-rest-1.0&amp;tabs=http">channel</a></p>
 <table>
 <thead>
 <tr>
@@ -334,7 +400,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="conversationmember-"><a href="https://docs.microsoft.com/graph/api/resources/conversationmember?view=graph-rest-1.0&amp;tabs=http">conversationMember </a></h3>
+</section>
+<section id="tabpanel_2_conversationMember5" role="tabpanel" data-tab="conversationMember5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/conversationmember?view=graph-rest-1.0&amp;tabs=http">conversationMember</a></p>
 <table>
 <thead>
 <tr>
@@ -366,7 +435,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="team-"><a href="https://docs.microsoft.com/graph/api/resources/team?view=graph-rest-1.0&amp;tabs=http">team </a></h3>
+</section>
+<section id="tabpanel_2_team6" role="tabpanel" data-tab="team6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/team?view=graph-rest-1.0&amp;tabs=http">team</a></p>
 <table>
 <thead>
 <tr>
@@ -463,7 +535,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="user-"><a href="https://docs.microsoft.com/graph/api/resources/user?view=graph-rest-1.0&amp;tabs=http">user </a></h3>
+</section>
+<section id="tabpanel_2_user7" role="tabpanel" data-tab="user7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/user?view=graph-rest-1.0&amp;tabs=http">user</a></p>
 <table>
 <thead>
 <tr>
@@ -860,6 +935,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

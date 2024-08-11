@@ -90,109 +90,163 @@
         <article data-uid="">
 <h1 id="rolemanagementpolicyreaddirectory">RoleManagementPolicy.Read.Directory</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>RoleManagementPolicy.Read.Directory</code> permission.</p>
 <blockquote>
 <p>Allows the app to read policies for privileged role-based access control (RBAC) assignments of your company's directory, on behalf of the signed-in user.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>fdc4c997-9942-4479-bfcb-75a36d1138df</td>
+<td>3de2cdbe-0ff5-47d5-bdee-7f45b4749ead</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Read all policies for privileged role assignments of your company's directory</td>
+<td>Read all policies for privileged role assignments of your company's directory</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the app to read policies for privileged role-based access control (RBAC) assignments of your company's directory, without a signed-in user.</td>
+<td>Allows the app to read policies for privileged role-based access control (RBAC) assignments of your company's directory, on behalf of the signed-in user.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/policyroot-list-rolemanagementpolicies?view=graph-rest-1.0&amp;tabs=http">GET /policies/roleManagementPolicies?$filter=scopeId eq '/' and scopeType eq 'DirectoryRole'</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/unifiedrolemanagementpolicy-get?view=graph-rest-1.0&amp;tabs=http">GET /policies/roleManagementPolicies/{unifiedRoleManagementPolicyId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/unifiedrolemanagementpolicy-list-effectiverules?view=graph-rest-beta&amp;tabs=http">GET /policies/roleManagementPolicies/{unifiedRoleManagementPolicyId}/effectiveRules</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/unifiedrolemanagementpolicy-list-rules?view=graph-rest-1.0&amp;tabs=http">GET /policies/roleManagementPolicies/{unifiedRoleManagementPolicyId}/rules</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/unifiedrolemanagementpolicyrule-get?view=graph-rest-1.0&amp;tabs=http">GET /policies/roleManagementPolicies/{unifiedRoleManagementPolicyId}/rules/{unifiedRoleManagementPolicyRuleId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/policyroot-list-rolemanagementpolicyassignments?view=graph-rest-1.0&amp;tabs=http">GET /policies/roleManagementPolicyAssignments?$filter=scopeId eq '/' and scopeType eq 'DirectoryRole'</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/unifiedrolemanagementpolicyassignment-get?view=graph-rest-1.0&amp;tabs=http">GET /policies/roleManagementPolicyAssignments/{unifiedRoleManagementPolicyAssignmentId}</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
+<th>Type</th>
+<th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Id</strong></td>
-<td>3de2cdbe-0ff5-47d5-bdee-7f45b4749ead</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/policyroot-list-rolemanagementpolicies?view=graph-rest-beta&amp;tabs=http">GET /policies/roleManagementPolicies?$filter=scopeId eq '/' and scopeType eq 'DirectoryRole'</a></td>
 </tr>
 <tr>
-<td><strong>Consent Type</strong></td>
-<td>Admin</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedrolemanagementpolicy-get?view=graph-rest-beta&amp;tabs=http">GET /policies/roleManagementPolicies/{unifiedRoleManagementPolicyId}</a></td>
 </tr>
 <tr>
-<td><strong>Display String</strong></td>
-<td>Read all policies for privileged role assignments of your company's directory</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedrolemanagementpolicy-list-effectiverules?view=graph-rest-beta&amp;tabs=http">GET /policies/roleManagementPolicies/{unifiedRoleManagementPolicyId}/effectiveRules</a></td>
 </tr>
 <tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read policies for privileged role-based access control (RBAC) assignments of your company's directory, on behalf of the signed-in user.</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedrolemanagementpolicy-list-rules?view=graph-rest-beta&amp;tabs=http">GET /policies/roleManagementPolicies/{unifiedRoleManagementPolicyId}/rules</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedrolemanagementpolicyrule-get?view=graph-rest-beta&amp;tabs=http">GET /policies/roleManagementPolicies/{unifiedRoleManagementPolicyId}/rules/{unifiedRoleManagementPolicyRuleId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/policyroot-list-rolemanagementpolicyassignments?view=graph-rest-beta&amp;tabs=http">GET /policies/roleManagementPolicyAssignments?$filter=scopeId eq '/' and scopeType eq 'DirectoryRole'</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedrolemanagementpolicyassignment-get?view=graph-rest-beta&amp;tabs=http">GET /policies/roleManagementPolicyAssignments/{unifiedRoleManagementPolicyAssignmentId}</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>fdc4c997-9942-4479-bfcb-75a36d1138df</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read all policies for privileged role assignments of your company's directory</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read policies for privileged role-based access control (RBAC) assignments of your company's directory, without a signed-in user.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="unifiedrolemanagementpolicy-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedrolemanagementpolicy?view=graph-rest-1.0&amp;tabs=http">unifiedRoleManagementPolicy </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_unifiedRoleManagementPolicy1" role="tab" aria-controls="tabpanel_2_unifiedRoleManagementPolicy1" data-tab="unifiedRoleManagementPolicy1" tabindex="0" aria-selected="true">unifiedRoleManagementPolicy</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_unifiedRoleManagementPolicyApprovalRule2" role="tab" aria-controls="tabpanel_2_unifiedRoleManagementPolicyApprovalRule2" data-tab="unifiedRoleManagementPolicyApprovalRule2" tabindex="-1">unifiedRoleManagementPolicyApprovalRule</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_unifiedRoleManagementPolicyAssignment3" role="tab" aria-controls="tabpanel_2_unifiedRoleManagementPolicyAssignment3" data-tab="unifiedRoleManagementPolicyAssignment3" tabindex="-1">unifiedRoleManagementPolicyAssignment</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_unifiedRoleManagementPolicyAuthenticationContextRule4" role="tab" aria-controls="tabpanel_2_unifiedRoleManagementPolicyAuthenticationContextRule4" data-tab="unifiedRoleManagementPolicyAuthenticationContextRule4" tabindex="-1">unifiedRoleManagementPolicyAuthenticationContextRule</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_unifiedRoleManagementPolicyEnablementRule5" role="tab" aria-controls="tabpanel_2_unifiedRoleManagementPolicyEnablementRule5" data-tab="unifiedRoleManagementPolicyEnablementRule5" tabindex="-1">unifiedRoleManagementPolicyEnablementRule</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_unifiedRoleManagementPolicyExpirationRule6" role="tab" aria-controls="tabpanel_2_unifiedRoleManagementPolicyExpirationRule6" data-tab="unifiedRoleManagementPolicyExpirationRule6" tabindex="-1">unifiedRoleManagementPolicyExpirationRule</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_unifiedRoleManagementPolicyNotificationRule7" role="tab" aria-controls="tabpanel_2_unifiedRoleManagementPolicyNotificationRule7" data-tab="unifiedRoleManagementPolicyNotificationRule7" tabindex="-1">unifiedRoleManagementPolicyNotificationRule</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_unifiedRoleManagementPolicyRule8" role="tab" aria-controls="tabpanel_2_unifiedRoleManagementPolicyRule8" data-tab="unifiedRoleManagementPolicyRule8" tabindex="-1">unifiedRoleManagementPolicyRule</a>
+</li>
+</ul>
+<section id="tabpanel_2_unifiedRoleManagementPolicy1" role="tabpanel" data-tab="unifiedRoleManagementPolicy1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/unifiedrolemanagementpolicy?view=graph-rest-1.0&amp;tabs=http">unifiedRoleManagementPolicy</a></p>
 <table>
 <thead>
 <tr>
@@ -244,7 +298,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="unifiedrolemanagementpolicyapprovalrule-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedrolemanagementpolicyapprovalrule?view=graph-rest-1.0&amp;tabs=http">unifiedRoleManagementPolicyApprovalRule </a></h3>
+</section>
+<section id="tabpanel_2_unifiedRoleManagementPolicyApprovalRule2" role="tabpanel" data-tab="unifiedRoleManagementPolicyApprovalRule2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/unifiedrolemanagementpolicyapprovalrule?view=graph-rest-1.0&amp;tabs=http">unifiedRoleManagementPolicyApprovalRule</a></p>
 <table>
 <thead>
 <tr>
@@ -271,7 +328,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="unifiedrolemanagementpolicyassignment-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedrolemanagementpolicyassignment?view=graph-rest-1.0&amp;tabs=http">unifiedRoleManagementPolicyAssignment </a></h3>
+</section>
+<section id="tabpanel_2_unifiedRoleManagementPolicyAssignment3" role="tabpanel" data-tab="unifiedRoleManagementPolicyAssignment3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/unifiedrolemanagementpolicyassignment?view=graph-rest-1.0&amp;tabs=http">unifiedRoleManagementPolicyAssignment</a></p>
 <table>
 <thead>
 <tr>
@@ -308,7 +368,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="unifiedrolemanagementpolicyauthenticationcontextrule-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedrolemanagementpolicyauthenticationcontextrule?view=graph-rest-1.0&amp;tabs=http">unifiedRoleManagementPolicyAuthenticationContextRule </a></h3>
+</section>
+<section id="tabpanel_2_unifiedRoleManagementPolicyAuthenticationContextRule4" role="tabpanel" data-tab="unifiedRoleManagementPolicyAuthenticationContextRule4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/unifiedrolemanagementpolicyauthenticationcontextrule?view=graph-rest-1.0&amp;tabs=http">unifiedRoleManagementPolicyAuthenticationContextRule</a></p>
 <table>
 <thead>
 <tr>
@@ -340,7 +403,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="unifiedrolemanagementpolicyenablementrule-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedrolemanagementpolicyenablementrule?view=graph-rest-1.0&amp;tabs=http">unifiedRoleManagementPolicyEnablementRule </a></h3>
+</section>
+<section id="tabpanel_2_unifiedRoleManagementPolicyEnablementRule5" role="tabpanel" data-tab="unifiedRoleManagementPolicyEnablementRule5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/unifiedrolemanagementpolicyenablementrule?view=graph-rest-1.0&amp;tabs=http">unifiedRoleManagementPolicyEnablementRule</a></p>
 <table>
 <thead>
 <tr>
@@ -367,7 +433,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="unifiedrolemanagementpolicyexpirationrule-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedrolemanagementpolicyexpirationrule?view=graph-rest-1.0&amp;tabs=http">unifiedRoleManagementPolicyExpirationRule </a></h3>
+</section>
+<section id="tabpanel_2_unifiedRoleManagementPolicyExpirationRule6" role="tabpanel" data-tab="unifiedRoleManagementPolicyExpirationRule6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/unifiedrolemanagementpolicyexpirationrule?view=graph-rest-1.0&amp;tabs=http">unifiedRoleManagementPolicyExpirationRule</a></p>
 <table>
 <thead>
 <tr>
@@ -399,7 +468,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="unifiedrolemanagementpolicynotificationrule-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedrolemanagementpolicynotificationrule?view=graph-rest-1.0&amp;tabs=http">unifiedRoleManagementPolicyNotificationRule </a></h3>
+</section>
+<section id="tabpanel_2_unifiedRoleManagementPolicyNotificationRule7" role="tabpanel" data-tab="unifiedRoleManagementPolicyNotificationRule7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/unifiedrolemanagementpolicynotificationrule?view=graph-rest-1.0&amp;tabs=http">unifiedRoleManagementPolicyNotificationRule</a></p>
 <table>
 <thead>
 <tr>
@@ -446,7 +518,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="unifiedrolemanagementpolicyrule-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedrolemanagementpolicyrule?view=graph-rest-1.0&amp;tabs=http">unifiedRoleManagementPolicyRule </a></h3>
+</section>
+<section id="tabpanel_2_unifiedRoleManagementPolicyRule8" role="tabpanel" data-tab="unifiedRoleManagementPolicyRule8" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/unifiedrolemanagementpolicyrule?view=graph-rest-1.0&amp;tabs=http">unifiedRoleManagementPolicyRule</a></p>
 <table>
 <thead>
 <tr>
@@ -468,6 +543,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

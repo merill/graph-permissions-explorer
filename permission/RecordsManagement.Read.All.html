@@ -90,204 +90,322 @@
         <article data-uid="">
 <h1 id="recordsmanagementreadall">RecordsManagement.Read.All</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>RecordsManagement.Read.All</code> permission.</p>
 <blockquote>
 <p>Allows the application to read any data from Records Management, such as configuration, labels, and policies on behalf of the signed-in user.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>ac3a2b8e-03a3-4da9-9ce0-cbe28bf1accd</td>
+<td>07f995eb-fc67-4522-ad66-2b8ca8ea3efd</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Read Records Management configuration, labels and policies</td>
+<td>Read Records Management configuration, labels, and policies</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the application to read any data from Records Management, such as configuration, labels, and policies without the signed in user.</td>
+<td>Allows the application to read any data from Records Management, such as configuration, labels, and policies on behalf of the signed-in user.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-labelsroot-list-authorities?view=graph-rest-1.0&amp;tabs=http">GET /security/labels/authorities</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-authoritytemplate-get?view=graph-rest-1.0&amp;tabs=http">GET /security/labels/authorities/{authorityTemplateId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-labelsroot-list-categories?view=graph-rest-1.0&amp;tabs=http">GET /security/labels/categories</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-categorytemplate-get?view=graph-rest-1.0&amp;tabs=http">GET /security/labels/categories/{categoryTemplateId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-categorytemplate-list-subcategories?view=graph-rest-1.0&amp;tabs=http">GET /security/labels/categories/{categoryTemplateId}/subcategories</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-subcategorytemplate-get?view=graph-rest-1.0&amp;tabs=http">GET /security/labels/categories/{categoryTemplateId}/subcategories/{subcategoryTemplateId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-labelsroot-list-citations?view=graph-rest-1.0&amp;tabs=http">GET /security/labels/citations</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-citationtemplate-get?view=graph-rest-1.0&amp;tabs=http">GET /security/labels/citations/{citationTemplateId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-labelsroot-list-departments?view=graph-rest-1.0&amp;tabs=http">GET /security/labels/departments</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-departmenttemplate-get?view=graph-rest-1.0&amp;tabs=http">GET /security/labels/departments/{departmentTemplateId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-labelsroot-list-fileplanreferences?view=graph-rest-1.0&amp;tabs=http">GET /security/labels/filePlanReferences</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-fileplanreferencetemplate-get?view=graph-rest-1.0&amp;tabs=http">GET /security/labels/filePlanReferences/{filePlanReferenceTemplateId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-labelsroot-list-retentionlabel?view=graph-rest-1.0&amp;tabs=http">GET /security/labels/retentionLabels</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-retentionlabel-get?view=graph-rest-1.0&amp;tabs=http">GET /security/labels/retentionLabels/{retentionLabelId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-authoritytemplate-get?view=graph-rest-1.0&amp;tabs=http">GET /security/labels/retentionLabels/{retentionLabelId}/descriptors/authorityTemplate</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-categorytemplate-get?view=graph-rest-1.0&amp;tabs=http">GET /security/labels/retentionLabels/{retentionLabelId}/descriptors/categoryTemplate</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-citationtemplate-get?view=graph-rest-1.0&amp;tabs=http">GET /security/labels/retentionLabels/{retentionLabelId}/descriptors/citationTemplate</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-departmenttemplate-get?view=graph-rest-1.0&amp;tabs=http">GET /security/labels/retentionLabels/{retentionLabelId}/descriptors/departmentTemplate</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-fileplanreferencetemplate-get?view=graph-rest-1.0&amp;tabs=http">GET /security/labels/retentionLabels/{retentionLabelId}/descriptors/filePlanReferenceTemplate</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-retentioneventtype-get?view=graph-rest-1.0&amp;tabs=http">GET /security/labels/retentionLabels/{retentionLabelId}/eventType</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-retentionevent-list?view=graph-rest-1.0&amp;tabs=http">GET /security/triggers/retentionEvents</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-retentionevent-get?view=graph-rest-1.0&amp;tabs=http">GET /security/triggers/retentionEvents/{retentionEventId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-retentionlabel-get?view=graph-rest-1.0&amp;tabs=http">GET /security/triggers/retentionEvents/{retentionEventId}/labels/{retentionLabelId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-retentioneventtype-get?view=graph-rest-1.0&amp;tabs=http">GET /security/triggers/retentionEvents/{retentionEventId}/retentionEventType</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-retentioneventtype-list?view=graph-rest-1.0&amp;tabs=http">GET /security/triggerTypes/retentionEventTypes</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-retentioneventtype-get?view=graph-rest-1.0&amp;tabs=http">GET /security/triggerTypes/retentionEventTypes/{retentionEventTypeId}</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
+<th>Type</th>
+<th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Id</strong></td>
-<td>07f995eb-fc67-4522-ad66-2b8ca8ea3efd</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-labelsroot-list-authorities?view=graph-rest-beta&amp;tabs=http">GET /security/labels/authorities</a></td>
 </tr>
 <tr>
-<td><strong>Consent Type</strong></td>
-<td>Admin</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-authoritytemplate-get?view=graph-rest-beta&amp;tabs=http">GET /security/labels/authorities/{authorityTemplateId}</a></td>
 </tr>
 <tr>
-<td><strong>Display String</strong></td>
-<td>Read Records Management configuration, labels, and policies</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-labelsroot-list-categories?view=graph-rest-beta&amp;tabs=http">GET /security/labels/categories</a></td>
 </tr>
 <tr>
-<td><strong>Description</strong></td>
-<td>Allows the application to read any data from Records Management, such as configuration, labels, and policies on behalf of the signed-in user.</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-categorytemplate-get?view=graph-rest-beta&amp;tabs=http">GET /security/labels/categories/{categoryTemplateId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-categorytemplate-list-subcategories?view=graph-rest-beta&amp;tabs=http">GET /security/labels/categories/{categoryTemplateId}/subcategories</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-subcategorytemplate-get?view=graph-rest-beta&amp;tabs=http">GET /security/labels/categories/{categoryTemplateId}/subcategories/{subcategoryTemplateId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-labelsroot-list-citations?view=graph-rest-beta&amp;tabs=http">GET /security/labels/citations</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-citationtemplate-get?view=graph-rest-beta&amp;tabs=http">GET /security/labels/citations/{citationTemplateId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-labelsroot-list-departments?view=graph-rest-beta&amp;tabs=http">GET /security/labels/departments</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-departmenttemplate-get?view=graph-rest-beta&amp;tabs=http">GET /security/labels/departments/{departmentTemplateId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-labelsroot-list-fileplanreferences?view=graph-rest-beta&amp;tabs=http">GET /security/labels/filePlanReferences</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-fileplanreferencetemplate-get?view=graph-rest-beta&amp;tabs=http">GET /security/labels/filePlanReferences/{filePlanReferenceTemplateId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-labelsroot-list-retentionlabel?view=graph-rest-beta&amp;tabs=http">GET /security/labels/retentionLabels</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-retentionlabel-get?view=graph-rest-beta&amp;tabs=http">GET /security/labels/retentionLabels/{retentionLabelId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-authoritytemplate-get?view=graph-rest-beta&amp;tabs=http">GET /security/labels/retentionLabels/{retentionLabelId}/descriptors/authorityTemplate</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-categorytemplate-get?view=graph-rest-beta&amp;tabs=http">GET /security/labels/retentionLabels/{retentionLabelId}/descriptors/categoryTemplate</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-citationtemplate-get?view=graph-rest-beta&amp;tabs=http">GET /security/labels/retentionLabels/{retentionLabelId}/descriptors/citationTemplate</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-departmenttemplate-get?view=graph-rest-beta&amp;tabs=http">GET /security/labels/retentionLabels/{retentionLabelId}/descriptors/departmentTemplate</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-fileplanreferencetemplate-get?view=graph-rest-beta&amp;tabs=http">GET /security/labels/retentionLabels/{retentionLabelId}/descriptors/filePlanReferenceTemplate</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-retentioneventtype-get?view=graph-rest-beta&amp;tabs=http">GET /security/labels/retentionLabels/{retentionLabelId}/eventType</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-retentionevent-list?view=graph-rest-beta&amp;tabs=http">GET /security/triggers/retentionEvents</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-retentionevent-get?view=graph-rest-beta&amp;tabs=http">GET /security/triggers/retentionEvents/{retentionEventId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-retentionlabel-get?view=graph-rest-beta&amp;tabs=http">GET /security/triggers/retentionEvents/{retentionEventId}/labels/{retentionLabelId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-retentioneventtype-get?view=graph-rest-beta&amp;tabs=http">GET /security/triggers/retentionEvents/{retentionEventId}/retentionEventType</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-retentioneventtype-list?view=graph-rest-beta&amp;tabs=http">GET /security/triggerTypes/retentionEventTypes</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-retentioneventtype-get?view=graph-rest-beta&amp;tabs=http">GET /security/triggerTypes/retentionEventTypes/{retentionEventTypeId}</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>ac3a2b8e-03a3-4da9-9ce0-cbe28bf1accd</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read Records Management configuration, labels and policies</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the application to read any data from Records Management, such as configuration, labels, and policies without the signed in user.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="authoritytemplate-"><a href="https://docs.microsoft.com/graph/api/resources/security-authoritytemplate?view=graph-rest-1.0&amp;tabs=http">authorityTemplate </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_authorityTemplate1" role="tab" aria-controls="tabpanel_2_authorityTemplate1" data-tab="authorityTemplate1" tabindex="0" aria-selected="true">authorityTemplate</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_categoryTemplate2" role="tab" aria-controls="tabpanel_2_categoryTemplate2" data-tab="categoryTemplate2" tabindex="-1">categoryTemplate</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_citationTemplate3" role="tab" aria-controls="tabpanel_2_citationTemplate3" data-tab="citationTemplate3" tabindex="-1">citationTemplate</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_departmentTemplate4" role="tab" aria-controls="tabpanel_2_departmentTemplate4" data-tab="departmentTemplate4" tabindex="-1">departmentTemplate</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_filePlanReferenceTemplate5" role="tab" aria-controls="tabpanel_2_filePlanReferenceTemplate5" data-tab="filePlanReferenceTemplate5" tabindex="-1">filePlanReferenceTemplate</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_retentionEvent6" role="tab" aria-controls="tabpanel_2_retentionEvent6" data-tab="retentionEvent6" tabindex="-1">retentionEvent</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_retentionEventType7" role="tab" aria-controls="tabpanel_2_retentionEventType7" data-tab="retentionEventType7" tabindex="-1">retentionEventType</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_retentionLabel8" role="tab" aria-controls="tabpanel_2_retentionLabel8" data-tab="retentionLabel8" tabindex="-1">retentionLabel</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_subcategoryTemplate9" role="tab" aria-controls="tabpanel_2_subcategoryTemplate9" data-tab="subcategoryTemplate9" tabindex="-1">subcategoryTemplate</a>
+</li>
+</ul>
+<section id="tabpanel_2_authorityTemplate1" role="tabpanel" data-tab="authorityTemplate1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-authoritytemplate?view=graph-rest-1.0&amp;tabs=http">authorityTemplate</a></p>
 <table>
 <thead>
 <tr>
@@ -319,7 +437,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="categorytemplate-"><a href="https://docs.microsoft.com/graph/api/resources/security-categorytemplate?view=graph-rest-1.0&amp;tabs=http">categoryTemplate </a></h3>
+</section>
+<section id="tabpanel_2_categoryTemplate2" role="tabpanel" data-tab="categoryTemplate2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-categorytemplate?view=graph-rest-1.0&amp;tabs=http">categoryTemplate</a></p>
 <table>
 <thead>
 <tr>
@@ -351,7 +472,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="citationtemplate-"><a href="https://docs.microsoft.com/graph/api/resources/security-citationtemplate?view=graph-rest-1.0&amp;tabs=http">citationTemplate </a></h3>
+</section>
+<section id="tabpanel_2_citationTemplate3" role="tabpanel" data-tab="citationTemplate3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-citationtemplate?view=graph-rest-1.0&amp;tabs=http">citationTemplate</a></p>
 <table>
 <thead>
 <tr>
@@ -393,7 +517,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="departmenttemplate-"><a href="https://docs.microsoft.com/graph/api/resources/security-departmenttemplate?view=graph-rest-1.0&amp;tabs=http">departmentTemplate </a></h3>
+</section>
+<section id="tabpanel_2_departmentTemplate4" role="tabpanel" data-tab="departmentTemplate4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-departmenttemplate?view=graph-rest-1.0&amp;tabs=http">departmentTemplate</a></p>
 <table>
 <thead>
 <tr>
@@ -425,7 +552,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="fileplanreferencetemplate-"><a href="https://docs.microsoft.com/graph/api/resources/security-fileplanreferencetemplate?view=graph-rest-1.0&amp;tabs=http">filePlanReferenceTemplate </a></h3>
+</section>
+<section id="tabpanel_2_filePlanReferenceTemplate5" role="tabpanel" data-tab="filePlanReferenceTemplate5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-fileplanreferencetemplate?view=graph-rest-1.0&amp;tabs=http">filePlanReferenceTemplate</a></p>
 <table>
 <thead>
 <tr>
@@ -457,7 +587,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="retentionevent-"><a href="https://docs.microsoft.com/graph/api/resources/security-retentionevent?view=graph-rest-1.0&amp;tabs=http">retentionEvent </a></h3>
+</section>
+<section id="tabpanel_2_retentionEvent6" role="tabpanel" data-tab="retentionEvent6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-retentionevent?view=graph-rest-1.0&amp;tabs=http">retentionEvent</a></p>
 <table>
 <thead>
 <tr>
@@ -529,7 +662,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="retentioneventtype-"><a href="https://docs.microsoft.com/graph/api/resources/security-retentioneventtype?view=graph-rest-1.0&amp;tabs=http">retentionEventType </a></h3>
+</section>
+<section id="tabpanel_2_retentionEventType7" role="tabpanel" data-tab="retentionEventType7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-retentioneventtype?view=graph-rest-1.0&amp;tabs=http">retentionEventType</a></p>
 <table>
 <thead>
 <tr>
@@ -576,7 +712,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="retentionlabel-"><a href="https://docs.microsoft.com/graph/api/resources/security-retentionlabel?view=graph-rest-1.0&amp;tabs=http">retentionLabel </a></h3>
+</section>
+<section id="tabpanel_2_retentionLabel8" role="tabpanel" data-tab="retentionLabel8" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-retentionlabel?view=graph-rest-1.0&amp;tabs=http">retentionLabel</a></p>
 <table>
 <thead>
 <tr>
@@ -663,7 +802,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="subcategorytemplate-"><a href="https://docs.microsoft.com/graph/api/resources/security-subcategorytemplate?view=graph-rest-1.0&amp;tabs=http">subcategoryTemplate </a></h3>
+</section>
+<section id="tabpanel_2_subcategoryTemplate9" role="tabpanel" data-tab="subcategoryTemplate9" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-subcategorytemplate?view=graph-rest-1.0&amp;tabs=http">subcategoryTemplate</a></p>
 <table>
 <thead>
 <tr>
@@ -695,6 +837,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

@@ -90,460 +90,636 @@
         <article data-uid="">
 <h1 id="sitesmanageall">Sites.Manage.All</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>Sites.Manage.All</code> permission.</p>
 <blockquote>
 <p>Allows the application to create or delete document libraries and lists in all site collections on behalf of the signed-in user.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>0c0bf378-bf22-4481-8f81-9e89a9b4960a</td>
+<td>65e50fdc-43b7-4915-933e-e8138f11f40a</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Create, edit, and delete items and lists in all site collections</td>
+<td>Create, edit, and delete items and lists in all site collections</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the app to create or delete document libraries and lists in all site collections without a signed in user.</td>
+<td>Allows the application to create or delete document libraries and lists in all site collections on behalf of the signed-in user.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/contenttype-get?view=graph-rest-1.0&amp;tabs=http"></a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/nameditem-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/drive/items/{id}/workbook/names/{name}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/nameditem-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/drive/items/{id}/workbook/worksheets/{id|name}/names/{name}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/nameditem-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/drive/root:/{item-path}:/workbook/names/{name}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/nameditem-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/drive/root:/{item-path}:/workbook/worksheets/{id|name}/names/{name}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/columndefinition-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /sites/{site-id}/columns/{column-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contenttype-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /sites/{site-id}/contentTypes/{contentType-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/columndefinition-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /sites/{site-id}/contentTypes/{contentType-id}/columns/{column-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/columndefinition-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /sites/{site-id}/lists/{list-id}/columns/{column-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contenttype-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /sites/{site-id}/lists/{list-id}/contentTypes/{contentType-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/columndefinition-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /sites/{site-id}/lists/{list-id}/contentTypes/{contentType-id}/columns/{column-id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/list-delete-permissions?view=graph-rest-beta&amp;tabs=http">DELETE /sites/{site-id}/lists/{list-id}/permissions/{permissionId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/documentsetversion-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /sites/{siteId}/lists/{listId}/items/{itemId}/documentSetVersions/{documentSetVersionId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/site-list-columns?view=graph-rest-1.0&amp;tabs=http">GET /sites/{site-id}/columns</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/columndefinition-get?view=graph-rest-1.0&amp;tabs=http">GET /sites/{site-id}/columns/{column-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/site-list-contenttypes?view=graph-rest-1.0&amp;tabs=http">GET /sites/{site-id}/contentTypes</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contenttype-get?view=graph-rest-1.0&amp;tabs=http">GET /sites/{site-id}/contentTypes/{contentType-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contenttype-list-columns?view=graph-rest-1.0&amp;tabs=http">GET /sites/{site-id}/contentTypes/{contentType-id}/columns</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/columndefinition-get?view=graph-rest-1.0&amp;tabs=http">GET /sites/{site-id}/contentTypes/{contentType-id}/columns/{column-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/list-list-columns?view=graph-rest-1.0&amp;tabs=http">GET /sites/{site-id}/lists/{list-id}/columns</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/columndefinition-get?view=graph-rest-1.0&amp;tabs=http">GET /sites/{site-id}/lists/{list-id}/columns/{column-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/list-list-contenttypes?view=graph-rest-1.0&amp;tabs=http">GET /sites/{site-id}/lists/{list-id}/contentTypes</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contenttype-get?view=graph-rest-1.0&amp;tabs=http">GET /sites/{site-id}/lists/{list-id}/contentTypes/{contentType-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contenttype-list-columns?view=graph-rest-1.0&amp;tabs=http">GET /sites/{site-id}/lists/{list-id}/contentTypes/{contentType-id}/columns</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/columndefinition-get?view=graph-rest-1.0&amp;tabs=http">GET /sites/{site-id}/lists/{list-id}/contentTypes/{contentType-id}/columns/{column-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/listitem-get?view=graph-rest-1.0&amp;tabs=http">GET /sites/{site-id}/lists/{list-id}/items/{item-id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/listitem-get?view=graph-rest-beta&amp;tabs=http">GET /sites/{site-id}/lists/{list-id}/items/{item-id}?expand=fields</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/listitem-get?view=graph-rest-beta&amp;tabs=http">GET /sites/{site-id}/lists/{list-id}/items/{item-id}?expand=fields(select=Column1,Column2)</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/listitem-list-permissions?view=graph-rest-beta&amp;tabs=http">GET /sites/{site-id}/lists/{list-id}/items/{item-id}/permissions</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/listitem-get-permissions?view=graph-rest-beta&amp;tabs=http">GET /sites/{site-id}/lists/{list-id}/items/{item-id}/permissions/{permission-id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/list-list-permissions?view=graph-rest-beta&amp;tabs=http">GET /sites/{site-id}/lists/{list-id}/permissions</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/list-get-permissions?view=graph-rest-beta&amp;tabs=http">GET /sites/{site-id}/lists/{list-id}/permissions/</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contenttype-getcompatiblehubcontenttypes?view=graph-rest-1.0&amp;tabs=http">GET /sites/{siteId}/contentTypes/getCompatibleHubContentTypes</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/site-getapplicablecontenttypesforlist?view=graph-rest-1.0&amp;tabs=http">GET /sites/{siteId}/getApplicableContentTypesForList</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contenttype-getcompatiblehubcontenttypes?view=graph-rest-1.0&amp;tabs=http">GET /sites/{siteId}/lists/{listId}/contentTypes/getCompatibleHubContentTypes</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/listitem-list-documentsetversions?view=graph-rest-1.0&amp;tabs=http">GET /sites/{siteId}/lists/{listId}/items/{itemId}/documentSetVersions</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/documentsetversion-get?view=graph-rest-1.0&amp;tabs=http">GET /sites/{siteId}/lists/{listId}/items/{itemId}/documentSetVersions/{documentSetVersionId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/list-list-operations?view=graph-rest-1.0&amp;tabs=http">GET /sites/{siteId}/lists/{listId}/operations</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/richlongrunningoperation-get?view=graph-rest-1.0&amp;tabs=http">GET /sites/{siteId}/lists/{listId}/operations/{richLongRunningOperation-ID}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/site-list-operations?view=graph-rest-1.0&amp;tabs=http">GET /sites/{siteId}/operations</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/richlongrunningoperation-get?view=graph-rest-1.0&amp;tabs=http">GET /sites/{siteId}/operations/{richLongRunningOperation-ID}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/contentmodel-get?view=graph-rest-beta&amp;tabs=http">GET /sites/{sitesId}/contentModels/{contentModelId}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/contentmodel-getapplieddrives?view=graph-rest-beta&amp;tabs=http">GET /sites/{sitesId}/contentModels/{contentModelId}/getAppliedDrives</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/contentmodel-getbyname?view=graph-rest-beta&amp;tabs=http">GET /sites/{sitesId}/contentModels/getByName</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/columndefinition-update?view=graph-rest-1.0&amp;tabs=http">PATCH /sites/{site-id}/columns/{column-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contenttype-update?view=graph-rest-1.0&amp;tabs=http">PATCH /sites/{site-id}/contentTypes/{contentType-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/columndefinition-update?view=graph-rest-1.0&amp;tabs=http">PATCH /sites/{site-id}/contentTypes/{contentType-id}/columns/{column-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/columndefinition-update?view=graph-rest-1.0&amp;tabs=http">PATCH /sites/{site-id}/lists/{list-id}/columns/{column-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contenttype-update?view=graph-rest-1.0&amp;tabs=http">PATCH /sites/{site-id}/lists/{list-id}/contentTypes/{contentType-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/columndefinition-update?view=graph-rest-1.0&amp;tabs=http">PATCH /sites/{site-id}/lists/{list-id}/contentTypes/{contentType-id}/columns/{column-id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/listitem-update-permissions?view=graph-rest-beta&amp;tabs=http">PATCH /sites/{site-id}/lists/{list-id}/items/{item-id}/permissions/{permission-id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/list-update-permissions?view=graph-rest-beta&amp;tabs=http">PATCH /sites/{site-id}/lists/{list-id}/permissions/{permissionId}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/driveitem-post-permissions?view=graph-rest-beta&amp;tabs=http">POST /drives/{drive-id}/items/{item-id}/permissions</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/driveitem-post-permissions?view=graph-rest-beta&amp;tabs=http">POST /groups/{group-id}/drive/items/{item-id}/permissions</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/driveitem-post-permissions?view=graph-rest-beta&amp;tabs=http">POST /me/drive/items/{item-id}/permissions</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/site-post-columns?view=graph-rest-1.0&amp;tabs=http">POST /sites/{site-id}/columns</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/site-post-contenttypes?view=graph-rest-1.0&amp;tabs=http">POST /sites/{site-id}/contentTypes</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contenttype-post-columns?view=graph-rest-1.0&amp;tabs=http">POST /sites/{site-id}/contentTypes/{contentType-id}/columns</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/listitemversion-restore?view=graph-rest-1.0&amp;tabs=http">POST /sites/{site-id}/items/{item-id}/versions/{version-id}/restoreVersion</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/list-create?view=graph-rest-1.0&amp;tabs=http">POST /sites/{site-id}/lists</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/list-post-columns?view=graph-rest-1.0&amp;tabs=http">POST /sites/{site-id}/lists/{list-id}/columns</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contenttype-post-columns?view=graph-rest-1.0&amp;tabs=http">POST /sites/{site-id}/lists/{list-id}/contentTypes/{contentType-id}/columns</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-1.0&amp;tabs=http">POST /sites/{site-id}/lists/{list-id}/contentTypes/addCopy</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/listitem-post-permissions?view=graph-rest-beta&amp;tabs=http">POST /sites/{site-id}/lists/{list-id}/items/{item-id}/permissions</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/listitemversion-restore?view=graph-rest-1.0&amp;tabs=http">POST /sites/{site-id}/lists/{list-id}/items/{item-id}/versions/{version-id}/restoreVersion</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0&amp;tabs=http">POST /sites/{siteId}/contentTypes/{contentTypeId}/associateWithHubSites</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-beta&amp;tabs=http">POST /sites/{siteId}/contentTypes/{contentTypeId}/copyToDefaultContentLocation</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-1.0&amp;tabs=http">POST /sites/{siteId}/contentTypes/{contentTypeId}/copyToDefaultContentLocation </a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contenttype-addcopyfromcontenttypehub?view=graph-rest-1.0&amp;tabs=http">POST /sites/{siteId}/contentTypes/addCopyFromContentTypeHub</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/driveitem-post-permissions?view=graph-rest-beta&amp;tabs=http">POST /sites/{siteId}/drive/items/{itemId}/permissions</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contenttype-addcopyfromcontenttypehub?view=graph-rest-1.0&amp;tabs=http">POST /sites/{siteId}/lists/{listId}/contentTypes/addCopyFromContentTypeHub</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/listitem-post-documentsetversions?view=graph-rest-1.0&amp;tabs=http">POST /sites/{siteId}/lists/{listId}/items/{itemId}/documentSetVersions</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0&amp;tabs=http">POST /sites/{siteId}/lists/{listId}/items/{itemId}/documentSetVersions/{documentSetVersionId}/restore</a></td>
 </tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
+<table>
+<thead>
 <tr>
-<td>Beta</td>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/nameditem-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/drive/items/{id}/workbook/names/{name}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/nameditem-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/drive/items/{id}/workbook/worksheets/{id|name}/names/{name}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/nameditem-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/drive/root:/{item-path}:/workbook/names/{name}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/nameditem-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/drive/root:/{item-path}:/workbook/worksheets/{id|name}/names/{name}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/columndefinition-delete?view=graph-rest-beta&amp;tabs=http">DELETE /sites/{site-id}/columns/{column-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contenttype-delete?view=graph-rest-beta&amp;tabs=http">DELETE /sites/{site-id}/contentTypes/{contentType-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/columndefinition-delete?view=graph-rest-beta&amp;tabs=http">DELETE /sites/{site-id}/contentTypes/{contentType-id}/columns/{column-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/columndefinition-delete?view=graph-rest-beta&amp;tabs=http">DELETE /sites/{site-id}/lists/{list-id}/columns/{column-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contenttype-delete?view=graph-rest-beta&amp;tabs=http">DELETE /sites/{site-id}/lists/{list-id}/contentTypes/{contentType-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/columndefinition-delete?view=graph-rest-beta&amp;tabs=http">DELETE /sites/{site-id}/lists/{list-id}/contentTypes/{contentType-id}/columns/{column-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/list-delete-permissions?view=graph-rest-beta&amp;tabs=http">DELETE /sites/{site-id}/lists/{list-id}/permissions/{permissionId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/documentsetversion-delete?view=graph-rest-beta&amp;tabs=http">DELETE /sites/{siteId}/lists/{listId}/items/{itemId}/documentSetVersions/{documentSetVersionId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/site-list-columns?view=graph-rest-beta&amp;tabs=http">GET /sites/{site-id}/columns</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/columndefinition-get?view=graph-rest-beta&amp;tabs=http">GET /sites/{site-id}/columns/{column-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/site-list-contenttypes?view=graph-rest-beta&amp;tabs=http">GET /sites/{site-id}/contentTypes</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contenttype-get?view=graph-rest-beta&amp;tabs=http">GET /sites/{site-id}/contentTypes/{contentType-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contenttype-list-columns?view=graph-rest-beta&amp;tabs=http">GET /sites/{site-id}/contentTypes/{contentType-id}/columns</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/columndefinition-get?view=graph-rest-beta&amp;tabs=http">GET /sites/{site-id}/contentTypes/{contentType-id}/columns/{column-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/list-list-columns?view=graph-rest-beta&amp;tabs=http">GET /sites/{site-id}/lists/{list-id}/columns</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/columndefinition-get?view=graph-rest-beta&amp;tabs=http">GET /sites/{site-id}/lists/{list-id}/columns/{column-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/list-list-contenttypes?view=graph-rest-beta&amp;tabs=http">GET /sites/{site-id}/lists/{list-id}/contentTypes</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contenttype-get?view=graph-rest-beta&amp;tabs=http">GET /sites/{site-id}/lists/{list-id}/contentTypes/{contentType-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contenttype-list-columns?view=graph-rest-beta&amp;tabs=http">GET /sites/{site-id}/lists/{list-id}/contentTypes/{contentType-id}/columns</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/columndefinition-get?view=graph-rest-beta&amp;tabs=http">GET /sites/{site-id}/lists/{list-id}/contentTypes/{contentType-id}/columns/{column-id}</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/listitem-get?view=graph-rest-beta&amp;tabs=http">GET /sites/{site-id}/lists/{list-id}/items/{item-id}</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/listitem-get?view=graph-rest-beta&amp;tabs=http">GET /sites/{site-id}/lists/{list-id}/items/{item-id}?expand=fields</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/listitem-get?view=graph-rest-beta&amp;tabs=http">GET /sites/{site-id}/lists/{list-id}/items/{item-id}?expand=fields(select=Column1,Column2)</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/listitem-list-permissions?view=graph-rest-beta&amp;tabs=http">GET /sites/{site-id}/lists/{list-id}/items/{item-id}/permissions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/listitem-get-permissions?view=graph-rest-beta&amp;tabs=http">GET /sites/{site-id}/lists/{list-id}/items/{item-id}/permissions/{permission-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/list-list-permissions?view=graph-rest-beta&amp;tabs=http">GET /sites/{site-id}/lists/{list-id}/permissions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/list-get-permissions?view=graph-rest-beta&amp;tabs=http">GET /sites/{site-id}/lists/{list-id}/permissions/</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contenttype-getcompatiblehubcontenttypes?view=graph-rest-beta&amp;tabs=http">GET /sites/{siteId}/contentTypes/getCompatibleHubContentTypes</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/site-getapplicablecontenttypesforlist?view=graph-rest-beta&amp;tabs=http">GET /sites/{siteId}/getApplicableContentTypesForList</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contenttype-getcompatiblehubcontenttypes?view=graph-rest-beta&amp;tabs=http">GET /sites/{siteId}/lists/{listId}/contentTypes/getCompatibleHubContentTypes</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/listitem-list-documentsetversions?view=graph-rest-beta&amp;tabs=http">GET /sites/{siteId}/lists/{listId}/items/{itemId}/documentSetVersions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/documentsetversion-get?view=graph-rest-beta&amp;tabs=http">GET /sites/{siteId}/lists/{listId}/items/{itemId}/documentSetVersions/{documentSetVersionId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/list-list-operations?view=graph-rest-beta&amp;tabs=http">GET /sites/{siteId}/lists/{listId}/operations</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/richlongrunningoperation-get?view=graph-rest-beta&amp;tabs=http">GET /sites/{siteId}/lists/{listId}/operations/{richLongRunningOperation-ID}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/site-list-operations?view=graph-rest-beta&amp;tabs=http">GET /sites/{siteId}/operations</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/richlongrunningoperation-get?view=graph-rest-beta&amp;tabs=http">GET /sites/{siteId}/operations/{richLongRunningOperation-ID}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contentmodel-get?view=graph-rest-beta&amp;tabs=http">GET /sites/{sitesId}/contentModels/{contentModelId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contentmodel-getapplieddrives?view=graph-rest-beta&amp;tabs=http">GET /sites/{sitesId}/contentModels/{contentModelId}/getAppliedDrives</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contentmodel-getbyname?view=graph-rest-beta&amp;tabs=http">GET /sites/{sitesId}/contentModels/getByName</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/columndefinition-update?view=graph-rest-beta&amp;tabs=http">PATCH /sites/{site-id}/columns/{column-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contenttype-update?view=graph-rest-beta&amp;tabs=http">PATCH /sites/{site-id}/contentTypes/{contentType-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/columndefinition-update?view=graph-rest-beta&amp;tabs=http">PATCH /sites/{site-id}/contentTypes/{contentType-id}/columns/{column-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/columndefinition-update?view=graph-rest-beta&amp;tabs=http">PATCH /sites/{site-id}/lists/{list-id}/columns/{column-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contenttype-update?view=graph-rest-beta&amp;tabs=http">PATCH /sites/{site-id}/lists/{list-id}/contentTypes/{contentType-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/columndefinition-update?view=graph-rest-beta&amp;tabs=http">PATCH /sites/{site-id}/lists/{list-id}/contentTypes/{contentType-id}/columns/{column-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/listitem-update-permissions?view=graph-rest-beta&amp;tabs=http">PATCH /sites/{site-id}/lists/{list-id}/items/{item-id}/permissions/{permission-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/list-update-permissions?view=graph-rest-beta&amp;tabs=http">PATCH /sites/{site-id}/lists/{list-id}/permissions/{permissionId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/driveitem-post-permissions?view=graph-rest-beta&amp;tabs=http">POST /drives/{drive-id}/items/{item-id}/permissions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/driveitem-post-permissions?view=graph-rest-beta&amp;tabs=http">POST /groups/{group-id}/drive/items/{item-id}/permissions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/driveitem-post-permissions?view=graph-rest-beta&amp;tabs=http">POST /me/drive/items/{item-id}/permissions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/site-post-columns?view=graph-rest-beta&amp;tabs=http">POST /sites/{site-id}/columns</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/site-post-contenttypes?view=graph-rest-beta&amp;tabs=http">POST /sites/{site-id}/contentTypes</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contenttype-post-columns?view=graph-rest-beta&amp;tabs=http">POST /sites/{site-id}/contentTypes/{contentType-id}/columns</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/listitemversion-restore?view=graph-rest-beta&amp;tabs=http">POST /sites/{site-id}/items/{item-id}/versions/{version-id}/restoreVersion</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/list-create?view=graph-rest-beta&amp;tabs=http">POST /sites/{site-id}/lists</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/list-post-columns?view=graph-rest-beta&amp;tabs=http">POST /sites/{site-id}/lists/{list-id}/columns</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contenttype-post-columns?view=graph-rest-beta&amp;tabs=http">POST /sites/{site-id}/lists/{list-id}/contentTypes/{contentType-id}/columns</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-beta&amp;tabs=http">POST /sites/{site-id}/lists/{list-id}/contentTypes/addCopy</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/listitem-post-permissions?view=graph-rest-beta&amp;tabs=http">POST /sites/{site-id}/lists/{list-id}/items/{item-id}/permissions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/listitemversion-restore?view=graph-rest-beta&amp;tabs=http">POST /sites/{site-id}/lists/{list-id}/items/{item-id}/versions/{version-id}/restoreVersion</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-beta&amp;tabs=http">POST /sites/{siteId}/contentTypes/{contentTypeId}/associateWithHubSites</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-beta&amp;tabs=http">POST /sites/{siteId}/contentTypes/{contentTypeId}/copyToDefaultContentLocation</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contenttype-addcopyfromcontenttypehub?view=graph-rest-beta&amp;tabs=http">POST /sites/{siteId}/contentTypes/addCopyFromContentTypeHub</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/driveitem-post-permissions?view=graph-rest-beta&amp;tabs=http">POST /sites/{siteId}/drive/items/{itemId}/permissions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contenttype-addcopyfromcontenttypehub?view=graph-rest-beta&amp;tabs=http">POST /sites/{siteId}/lists/{listId}/contentTypes/addCopyFromContentTypeHub</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/listitem-post-documentsetversions?view=graph-rest-beta&amp;tabs=http">POST /sites/{siteId}/lists/{listId}/items/{itemId}/documentSetVersions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-beta&amp;tabs=http">POST /sites/{siteId}/lists/{listId}/items/{itemId}/documentSetVersions/{documentSetVersionId}/restore</a></td>
+</tr>
+<tr>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contentmodel-removefromdrive?view=graph-rest-beta&amp;tabs=http">POST /sites/{sitesId}/contentModels/{contentModelId}/removeFromDrive</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/site-post-documentprocessingjobs?view=graph-rest-beta&amp;tabs=http">POST /sites/{sitesId}/documentProcessingJobs</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/list-post-permissions?view=graph-rest-beta&amp;tabs=http">POST /sites/f2d90359-865b-4b6c-8848-d2722dd630e5/lists/1d702d60-503c-4924-abfd-028c65fc89ed/permissions</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/driveitem-post-permissions?view=graph-rest-beta&amp;tabs=http">POST /users/{userId}/drive/items/{itemId}/permissions</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>65e50fdc-43b7-4915-933e-e8138f11f40a</td>
-</tr>
-<tr>
-<td><strong>Consent Type</strong></td>
-<td>User</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Create, edit, and delete items and lists in all site collections</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the application to create or delete document libraries and lists in all site collections on behalf of the signed-in user.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>0c0bf378-bf22-4481-8f81-9e89a9b4960a</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Create, edit, and delete items and lists in all site collections</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to create or delete document libraries and lists in all site collections without a signed in user.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="columndefinition-"><a href="https://docs.microsoft.com/graph/api/resources/columndefinition?view=graph-rest-1.0&amp;tabs=http">columnDefinition </a></h3>
-<h3 id="contentmodel-"><a href="https://docs.microsoft.com/graph/api/resources/contentmodel?view=graph-rest-1.0&amp;tabs=http">contentModel </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_columnDefinition1" role="tab" aria-controls="tabpanel_2_columnDefinition1" data-tab="columnDefinition1" tabindex="0" aria-selected="true">columnDefinition</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_contentModel2" role="tab" aria-controls="tabpanel_2_contentModel2" data-tab="contentModel2" tabindex="-1">contentModel</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_contentModelUsage3" role="tab" aria-controls="tabpanel_2_contentModelUsage3" data-tab="contentModelUsage3" tabindex="-1">contentModelUsage</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_contentType4" role="tab" aria-controls="tabpanel_2_contentType4" data-tab="contentType4" tabindex="-1">contentType</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_documentProcessingJob5" role="tab" aria-controls="tabpanel_2_documentProcessingJob5" data-tab="documentProcessingJob5" tabindex="-1">documentProcessingJob</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_documentSetVersion6" role="tab" aria-controls="tabpanel_2_documentSetVersion6" data-tab="documentSetVersion6" tabindex="-1">documentSetVersion</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_driveItem7" role="tab" aria-controls="tabpanel_2_driveItem7" data-tab="driveItem7" tabindex="-1">driveItem</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_itemReference8" role="tab" aria-controls="tabpanel_2_itemReference8" data-tab="itemReference8" tabindex="-1">itemReference</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_List9" role="tab" aria-controls="tabpanel_2_List9" data-tab="List9" tabindex="-1">List</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_listItem10" role="tab" aria-controls="tabpanel_2_listItem10" data-tab="listItem10" tabindex="-1">listItem</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_Permission11" role="tab" aria-controls="tabpanel_2_Permission11" data-tab="Permission11" tabindex="-1">Permission</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_richLongRunningOperation12" role="tab" aria-controls="tabpanel_2_richLongRunningOperation12" data-tab="richLongRunningOperation12" tabindex="-1">richLongRunningOperation</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_SharePointIds13" role="tab" aria-controls="tabpanel_2_SharePointIds13" data-tab="SharePointIds13" tabindex="-1">SharePointIds</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_site14" role="tab" aria-controls="tabpanel_2_site14" data-tab="site14" tabindex="-1">site</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_workbookNamedItem15" role="tab" aria-controls="tabpanel_2_workbookNamedItem15" data-tab="workbookNamedItem15" tabindex="-1">workbookNamedItem</a>
+</li>
+</ul>
+<section id="tabpanel_2_columnDefinition1" role="tabpanel" data-tab="columnDefinition1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/columndefinition?view=graph-rest-1.0&amp;tabs=http">columnDefinition</a></p>
+</section>
+<section id="tabpanel_2_contentModel2" role="tabpanel" data-tab="contentModel2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/contentmodel?view=graph-rest-1.0&amp;tabs=http">contentModel</a></p>
 <table>
 <thead>
 <tr>
@@ -590,7 +766,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="contentmodelusage-"><a href="https://docs.microsoft.com/graph/api/resources/contentmodelusage?view=graph-rest-1.0&amp;tabs=http">contentModelUsage </a></h3>
+</section>
+<section id="tabpanel_2_contentModelUsage3" role="tabpanel" data-tab="contentModelUsage3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/contentmodelusage?view=graph-rest-1.0&amp;tabs=http">contentModelUsage</a></p>
 <table>
 <thead>
 <tr>
@@ -637,7 +816,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="contenttype-"><a href="https://docs.microsoft.com/graph/api/resources/contenttype?view=graph-rest-1.0&amp;tabs=http">contentType </a></h3>
+</section>
+<section id="tabpanel_2_contentType4" role="tabpanel" data-tab="contentType4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/contenttype?view=graph-rest-1.0&amp;tabs=http">contentType</a></p>
 <table>
 <thead>
 <tr>
@@ -724,7 +906,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="documentprocessingjob-"><a href="https://docs.microsoft.com/graph/api/resources/documentprocessingjob?view=graph-rest-1.0&amp;tabs=http">documentProcessingJob </a></h3>
+</section>
+<section id="tabpanel_2_documentProcessingJob5" role="tabpanel" data-tab="documentProcessingJob5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/documentprocessingjob?view=graph-rest-1.0&amp;tabs=http">documentProcessingJob</a></p>
 <table>
 <thead>
 <tr>
@@ -761,7 +946,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="documentsetversion-"><a href="https://docs.microsoft.com/graph/api/resources/documentsetversion?view=graph-rest-1.0&amp;tabs=http">documentSetVersion </a></h3>
+</section>
+<section id="tabpanel_2_documentSetVersion6" role="tabpanel" data-tab="documentSetVersion6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/documentsetversion?view=graph-rest-1.0&amp;tabs=http">documentSetVersion</a></p>
 <table>
 <thead>
 <tr>
@@ -818,7 +1006,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="driveitem-"><a href="https://docs.microsoft.com/graph/api/resources/driveitem?view=graph-rest-1.0&amp;tabs=http">driveItem </a></h3>
+</section>
+<section id="tabpanel_2_driveItem7" role="tabpanel" data-tab="driveItem7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/driveitem?view=graph-rest-1.0&amp;tabs=http">driveItem</a></p>
 <table>
 <thead>
 <tr>
@@ -1000,7 +1191,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="itemreference-"><a href="https://docs.microsoft.com/graph/api/resources/itemreference?view=graph-rest-1.0&amp;tabs=http">itemReference </a></h3>
+</section>
+<section id="tabpanel_2_itemReference8" role="tabpanel" data-tab="itemReference8" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/itemreference?view=graph-rest-1.0&amp;tabs=http">itemReference</a></p>
 <table>
 <thead>
 <tr>
@@ -1052,7 +1246,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="list-"><a href="https://docs.microsoft.com/graph/api/resources/list?view=graph-rest-1.0&amp;tabs=http">List </a></h3>
+</section>
+<section id="tabpanel_2_List9" role="tabpanel" data-tab="List9" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/list?view=graph-rest-1.0&amp;tabs=http">List</a></p>
 <table>
 <thead>
 <tr>
@@ -1134,7 +1331,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="listitem-"><a href="https://docs.microsoft.com/graph/api/resources/listitem?view=graph-rest-1.0&amp;tabs=http">listItem </a></h3>
+</section>
+<section id="tabpanel_2_listItem10" role="tabpanel" data-tab="listItem10" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/listitem?view=graph-rest-1.0&amp;tabs=http">listItem</a></p>
 <table>
 <thead>
 <tr>
@@ -1151,7 +1351,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="permission-"><a href="https://docs.microsoft.com/graph/api/resources/permission?view=graph-rest-1.0&amp;tabs=http">Permission </a></h3>
+</section>
+<section id="tabpanel_2_Permission11" role="tabpanel" data-tab="Permission11" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/permission?view=graph-rest-1.0&amp;tabs=http">Permission</a></p>
 <table>
 <thead>
 <tr>
@@ -1223,7 +1426,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="richlongrunningoperation-"><a href="https://docs.microsoft.com/graph/api/resources/richlongrunningoperation?view=graph-rest-1.0&amp;tabs=http">richLongRunningOperation </a></h3>
+</section>
+<section id="tabpanel_2_richLongRunningOperation12" role="tabpanel" data-tab="richLongRunningOperation12" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/richlongrunningoperation?view=graph-rest-1.0&amp;tabs=http">richLongRunningOperation</a></p>
 <table>
 <thead>
 <tr>
@@ -1285,7 +1491,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="sharepointids-"><a href="https://docs.microsoft.com/graph/api/resources/sharepointids?view=graph-rest-1.0&amp;tabs=http">SharePointIds </a></h3>
+</section>
+<section id="tabpanel_2_SharePointIds13" role="tabpanel" data-tab="SharePointIds13" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/sharepointids?view=graph-rest-1.0&amp;tabs=http">SharePointIds</a></p>
 <table>
 <thead>
 <tr>
@@ -1332,7 +1541,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="site-"><a href="https://docs.microsoft.com/graph/api/resources/site?view=graph-rest-1.0&amp;tabs=http">site </a></h3>
+</section>
+<section id="tabpanel_2_site14" role="tabpanel" data-tab="site14" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/site?view=graph-rest-1.0&amp;tabs=http">site</a></p>
 <table>
 <thead>
 <tr>
@@ -1404,7 +1616,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="workbooknameditem-"><a href="https://docs.microsoft.com/graph/api/resources/workbooknameditem?view=graph-rest-1.0&amp;tabs=http">workbookNamedItem </a></h3>
+</section>
+<section id="tabpanel_2_workbookNamedItem15" role="tabpanel" data-tab="workbookNamedItem15" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/workbooknameditem?view=graph-rest-1.0&amp;tabs=http">workbookNamedItem</a></p>
 <table>
 <thead>
 <tr>
@@ -1446,6 +1661,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

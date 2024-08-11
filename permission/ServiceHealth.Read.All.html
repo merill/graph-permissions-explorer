@@ -90,99 +90,133 @@
         <article data-uid="">
 <h1 id="servicehealthreadall">ServiceHealth.Read.All</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>ServiceHealth.Read.All</code> permission.</p>
 <blockquote>
 <p>Allows the app to read your tenant's service health information on behalf of the signed-in user. Health information may include service issues or service health overviews.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>79c261e0-fe76-4144-aad5-bdc68fbe4037</td>
+<td>55896846-df78-47a7-aa94-8d3d4442ca7f</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Read service health</td>
+<td>Read service health</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the app to read your tenant's service health information, without a signed-in user. Health information may include service issues or service health overviews.</td>
+<td>Allows the app to read your tenant's service health information on behalf of the signed-in user. Health information may include service issues or service health overviews.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceannouncement-list-healthoverviews?view=graph-rest-1.0&amp;tabs=http">GET /admin/serviceAnnouncement/healthOverviews</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/servicehealth-get?view=graph-rest-1.0&amp;tabs=http">GET /admin/serviceAnnouncement/healthOverviews/{ServiceName}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceannouncement-list-issues?view=graph-rest-1.0&amp;tabs=http">GET /admin/serviceAnnouncement/issues</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/servicehealthissue-get?view=graph-rest-1.0&amp;tabs=http">GET /admin/serviceAnnouncement/issues/{serviceHealthIssueId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/servicehealthissue-incidentreport?view=graph-rest-1.0&amp;tabs=http">GET /admin/serviceAnnouncement/issues/{serviceHealthIssueId}/incidentReport</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
+<th>Type</th>
+<th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Id</strong></td>
-<td>55896846-df78-47a7-aa94-8d3d4442ca7f</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceannouncement-list-healthoverviews?view=graph-rest-beta&amp;tabs=http">GET /admin/serviceAnnouncement/healthOverviews</a></td>
 </tr>
 <tr>
-<td><strong>Consent Type</strong></td>
-<td>Admin</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/servicehealth-get?view=graph-rest-beta&amp;tabs=http">GET /admin/serviceAnnouncement/healthOverviews/{ServiceName}</a></td>
 </tr>
 <tr>
-<td><strong>Display String</strong></td>
-<td>Read service health</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceannouncement-list-issues?view=graph-rest-beta&amp;tabs=http">GET /admin/serviceAnnouncement/issues</a></td>
 </tr>
 <tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read your tenant's service health information on behalf of the signed-in user. Health information may include service issues or service health overviews.</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/servicehealthissue-get?view=graph-rest-beta&amp;tabs=http">GET /admin/serviceAnnouncement/issues/{serviceHealthIssueId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/servicehealthissue-incidentreport?view=graph-rest-beta&amp;tabs=http">GET /admin/serviceAnnouncement/issues/{serviceHealthIssueId}/incidentReport</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>79c261e0-fe76-4144-aad5-bdc68fbe4037</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read service health</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read your tenant's service health information, without a signed-in user. Health information may include service issues or service health overviews.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="servicehealth-"><a href="https://docs.microsoft.com/graph/api/resources/servicehealth?view=graph-rest-1.0&amp;tabs=http">serviceHealth </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_serviceHealth1" role="tab" aria-controls="tabpanel_2_serviceHealth1" data-tab="serviceHealth1" tabindex="0" aria-selected="true">serviceHealth</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_serviceHealthIssue2" role="tab" aria-controls="tabpanel_2_serviceHealthIssue2" data-tab="serviceHealthIssue2" tabindex="-1">serviceHealthIssue</a>
+</li>
+</ul>
+<section id="tabpanel_2_serviceHealth1" role="tabpanel" data-tab="serviceHealth1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/servicehealth?view=graph-rest-1.0&amp;tabs=http">serviceHealth</a></p>
 <table>
 <thead>
 <tr>
@@ -209,7 +243,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="servicehealthissue-"><a href="https://docs.microsoft.com/graph/api/resources/servicehealthissue?view=graph-rest-1.0&amp;tabs=http">serviceHealthIssue </a></h3>
+</section>
+<section id="tabpanel_2_serviceHealthIssue2" role="tabpanel" data-tab="serviceHealthIssue2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/servicehealthissue?view=graph-rest-1.0&amp;tabs=http">serviceHealthIssue</a></p>
 <table>
 <thead>
 <tr>
@@ -296,6 +333,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

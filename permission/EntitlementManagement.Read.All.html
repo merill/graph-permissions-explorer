@@ -90,414 +90,526 @@
         <article data-uid="">
 <h1 id="entitlementmanagementreadall">EntitlementManagement.Read.All</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>EntitlementManagement.Read.All</code> permission.</p>
 <blockquote>
 <p>Allows the app to read access packages and related entitlement management resources on behalf of the signed-in user.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>c74fd47d-ed3c-45c3-9a9e-b8676de685d2</td>
+<td>5449aa12-1393-4ea2-a7c7-d0e06c1a56b2</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Read all entitlement management resources</td>
+<td>Read all entitlement management resources</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the app to read access packages and related entitlement management resources without a signed-in user.</td>
+<td>Allows the app to read access packages and related entitlement management resources on behalf of the signed-in user.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/approval-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignmentApprovals/{accessPackageAssignmentRequestId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/approval-list-stages?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignmentApprovals/{accessPackageAssignmentRequestId}/stages</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/approvalstage-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignmentApprovals/{accessPackageAssignmentRequestId}/stages/{approvalStageId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/approval-get?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignmentApprovals/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/approval-list-steps?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignmentApprovals/{id}/steps</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/approvalstep-get?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignmentApprovals/{id}/steps/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/entitlementmanagement-list-accesspackageassignmentpolicies?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignmentPolicies</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/accesspackageassignmentpolicy-get?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignmentPolicies/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/entitlementmanagement-list-accesspackageassignmentrequests?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignmentRequests</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/accesspackageassignmentrequest-get?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/accesspackageassignmentrequest-filterbycurrentuser?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignmentRequests/filterByCurrentUser(on='parameterValue')</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/entitlementmanagement-list-accesspackageassignmentresourceroles?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/accesspackageassignmentresourcerole-get?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/entitlementmanagement-list-accesspackageassignments?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignments</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/accesspackageassignment-additionalaccess?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignments/additionalAccess(accessPackageId='parameterValue',incompatibleAccessPackageId='parameterValue')</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/accesspackageassignment-filterbycurrentuser?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignments/filterByCurrentUser(on='parameterValue')</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/entitlementmanagement-list-accesspackagecatalogs?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageCatalogs</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/accesspackagecatalog-list-accesspackagecustomworkflowextensions?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageCatalogs/{catalogId}/accessPackageCustomWorkflowExtensions</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-get?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageCatalogs/{catalogId}/accessPackageCustomWorkflowExtensions/{accessPackageCustomWorkflowExtensionId}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/accesspackagecatalog-list-accesspackageresourceroles?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageCatalogs/{catalogId}/accessPackageResourceRoles?$filter=(originSystem+eq+%27{originSystemType}%27+and+accessPackageResource/id+eq+%27{resourceId}%27)&amp;$expand=accessPackageResource</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/accesspackagecatalog-list-customaccesspackageworkflowextensions?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageCatalogs/{catalogId}/customAccessPackageWorkflowExtensions</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/customaccesspackageworkflowextension-get?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageCatalogs/{catalogId}/customAccessPackageWorkflowExtensions/{customAccessPackageWorkflowExtensionId}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/accesspackagecatalog-get?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageCatalogs/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/accesspackagecatalog-list-accesspackageresources?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageCatalogs/{id}/accessPackageResources</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/accesspackageresourceenvironment-get?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageResourceEnvironments/{accessPackageResourceEnvironmentId}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/entitlementmanagement-list-accesspackageresourcerequests?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageResourceRequests</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/entitlementmanagement-list-accesspackages?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackages</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accesspackage-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackages/{accessPackageId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/accesspackage-get?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackages/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/accesspackage-list-accesspackageresourcerolescopes?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackages/{id}?$expand=accessPackageResourceRoleScopes($expand=accessPackageResourceRole,accessPackageResourceScope)</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accesspackage-list-resourcerolescopes?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackages/{id}?$expand=resourceRoleScopes($expand=role,scope)</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accesspackage-list-accesspackagesincompatiblewith?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackages/{id}/accessPackagesIncompatibleWith</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accesspackage-list-incompatibleaccesspackages?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackages/{id}/incompatibleAccessPackages</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accesspackage-list-incompatiblegroups?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackages/{id}/incompatibleGroups</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accesspackage-filterbycurrentuser?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackages/filterByCurrentUser(on='allowedRequestor')</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/entitlementmanagement-list-assignmentpolicies?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/assignmentPolicies</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accesspackageassignmentpolicy-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/assignmentPolicies/{accessPackageAssignmentPolicyId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/entitlementmanagement-list-assignmentrequests?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/assignmentRequests</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accesspackageassignmentrequest-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequestId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accesspackageassignmentrequest-filterbycurrentuser?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/assignmentRequests/filterByCurrentUser(on='parameterValue')</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/entitlementmanagement-list-assignments?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/assignments</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accesspackageassignment-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/assignments/{accessPackageAssignmentId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accesspackageassignment-additionalaccess?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/assignments/additionalAccess(accessPackageId='parameterValue',incompatibleAccessPackageId='parameterValue')</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accesspackageassignment-filterbycurrentuser?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/assignments/filterByCurrentUser(on='parameterValue')</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/entitlementmanagement-list-catalogs?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/catalogs</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accesspackagecatalog-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/catalogs/{accessPackageCatalogId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accesspackagecatalog-list-accesspackagecustomworkflowextensions?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/catalogs/{catalogId}/customWorkflowExtensions</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/catalogs/{catalogId}/customWorkflowExtensions/{accessPackageCustomWorkflowExtensionId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accesspackagecatalog-list-resourceroles?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/catalogs/{catalogId}/resourceRoles?$filter=(originSystem+eq+%27{originSystemType}%27+and+resource/id+eq+%27{resourceId}%27)&amp;$expand=resource</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accesspackagecatalog-list-resources?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/catalogs/{id}/resources</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/entitlementmanagement-list-connectedorganizations?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/connectedOrganizations</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/connectedorganization-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganizationId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/connectedorganization-get?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/connectedOrganizations/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/connectedorganization-list-externalsponsors?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/connectedOrganizations/{id}/externalSponsors</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/connectedorganization-list-internalsponsors?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/connectedOrganizations/{id}/internalSponsors</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/entitlementmanagement-list-resourcerequests?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/resourceRequests</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/entitlementmanagementsettings-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/settings</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/cloudPC/roleDefinitions</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/cloudPC/roleDefinitions/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignments?view=graph-rest-1.0&amp;tabs=http">GET /roleManagement/directory/roleAssignments</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/unifiedroleassignment-get?view=graph-rest-1.0&amp;tabs=http">GET /roleManagement/directory/roleAssignments/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0&amp;tabs=http">GET /roleManagement/directory/roleDefinitions</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-1.0&amp;tabs=http">GET /roleManagement/directory/roleDefinitions/{id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/entitlementmanagement-list-accesspackageresourceenvironment?view=graph-rest-beta&amp;tabs=http">GET identityGovernance/entitlementManagement/accessPackageResourceEnvironments?$filter=originSystem eq 'SharePointOnline'</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/entitlementmanagement-list-resourceenvironments?view=graph-rest-1.0&amp;tabs=http">GET identityGovernance/entitlementManagement/resourceEnvironments?$filter=originSystem eq 'SharePointOnline'</a></td>
 </tr>
 <tr>
-<td>Beta</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/accesspackage-getapplicablepolicyrequirements?view=graph-rest-1.0&amp;tabs=http">POST /identityGovernance/entitlementManagement/accessPackages/{accessPackageId}/getApplicablePolicyRequirements</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/approval-get?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignmentApprovals/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/approval-list-steps?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignmentApprovals/{id}/steps</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/approvalstep-get?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignmentApprovals/{id}/steps/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/entitlementmanagement-list-accesspackageassignmentpolicies?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignmentPolicies</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/accesspackageassignmentpolicy-get?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignmentPolicies/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/entitlementmanagement-list-accesspackageassignmentrequests?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignmentRequests</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/accesspackageassignmentrequest-get?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/accesspackageassignmentrequest-filterbycurrentuser?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignmentRequests/filterByCurrentUser(on='parameterValue')</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/entitlementmanagement-list-accesspackageassignmentresourceroles?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/accesspackageassignmentresourcerole-get?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/entitlementmanagement-list-accesspackageassignments?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignments</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/accesspackageassignment-additionalaccess?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignments/additionalAccess(accessPackageId='parameterValue',incompatibleAccessPackageId='parameterValue')</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/accesspackageassignment-filterbycurrentuser?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignments/filterByCurrentUser(on='parameterValue')</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/entitlementmanagement-list-accesspackagecatalogs?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageCatalogs</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/accesspackagecatalog-list-accesspackagecustomworkflowextensions?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageCatalogs/{catalogId}/accessPackageCustomWorkflowExtensions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-get?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageCatalogs/{catalogId}/accessPackageCustomWorkflowExtensions/{accessPackageCustomWorkflowExtensionId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/accesspackagecatalog-list-accesspackageresourceroles?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageCatalogs/{catalogId}/accessPackageResourceRoles?$filter=(originSystem+eq+%27{originSystemType}%27+and+accessPackageResource/id+eq+%27{resourceId}%27)&amp;$expand=accessPackageResource</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/accesspackagecatalog-list-customaccesspackageworkflowextensions?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageCatalogs/{catalogId}/customAccessPackageWorkflowExtensions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/customaccesspackageworkflowextension-get?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageCatalogs/{catalogId}/customAccessPackageWorkflowExtensions/{customAccessPackageWorkflowExtensionId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/accesspackagecatalog-get?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageCatalogs/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/accesspackagecatalog-list-accesspackageresources?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageCatalogs/{id}/accessPackageResources</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/accesspackageresourceenvironment-get?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageResourceEnvironments/{accessPackageResourceEnvironmentId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/entitlementmanagement-list-accesspackageresourcerequests?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageResourceRequests</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/entitlementmanagement-list-accesspackages?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackages</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/accesspackage-get?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackages/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/accesspackage-list-accesspackageresourcerolescopes?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackages/{id}?$expand=accessPackageResourceRoleScopes($expand=accessPackageResourceRole,accessPackageResourceScope)</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/accesspackage-list-accesspackagesincompatiblewith?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackages/{id}/accessPackagesIncompatibleWith</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/accesspackage-list-incompatibleaccesspackages?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackages/{id}/incompatibleAccessPackages</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/accesspackage-list-incompatiblegroups?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackages/{id}/incompatibleGroups</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/accesspackage-filterbycurrentuser?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackages/filterByCurrentUser(on='allowedRequestor')</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/entitlementmanagement-list-assignmentrequests?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/assignmentRequests</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/accesspackageassignmentrequest-get?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequestId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/accesspackageassignmentrequest-filterbycurrentuser?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/assignmentRequests/filterByCurrentUser(on='parameterValue')</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/entitlementmanagement-list-connectedorganizations?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/connectedOrganizations</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/connectedorganization-get?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/connectedOrganizations/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/connectedorganization-list-externalsponsors?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/connectedOrganizations/{id}/externalSponsors</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/connectedorganization-list-internalsponsors?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/connectedOrganizations/{id}/internalSponsors</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/entitlementmanagementsettings-get?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/settings</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/cloudPC/roleDefinitions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/cloudPC/roleDefinitions/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignments?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/directory/roleAssignments</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedroleassignment-get?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/directory/roleAssignments/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/entitlementmanagement-list-accesspackageresourceenvironment?view=graph-rest-beta&amp;tabs=http">GET identityGovernance/entitlementManagement/accessPackageResourceEnvironments?$filter=originSystem eq 'SharePointOnline'</a></td>
+</tr>
+<tr>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/accesspackagecatalog-post-accesspackagecustomworkflowextensions?view=graph-rest-beta&amp;tabs=http">POST /identityGovernance/entitlementManagement/accessPackageCatalogs/{catalogId}/accessPackageCustomWorkflowExtensions</a></td>
 </tr>
 <tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/accesspackage-getapplicablepolicyrequirements?view=graph-rest-1.0&amp;tabs=http">POST /identityGovernance/entitlementManagement/accessPackages/{accessPackageId}/getApplicablePolicyRequirements</a></td>
-</tr>
-<tr>
-<td>Beta</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accesspackage-getapplicablepolicyrequirements?view=graph-rest-beta&amp;tabs=http">POST /identityGovernance/entitlementManagement/accessPackages/{id}/getApplicablePolicyRequirements</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>5449aa12-1393-4ea2-a7c7-d0e06c1a56b2</td>
-</tr>
-<tr>
-<td><strong>Consent Type</strong></td>
-<td>Admin</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read all entitlement management resources</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read access packages and related entitlement management resources on behalf of the signed-in user.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>c74fd47d-ed3c-45c3-9a9e-b8676de685d2</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read all entitlement management resources</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read access packages and related entitlement management resources without a signed-in user.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="accesspackage-"><a href="https://docs.microsoft.com/graph/api/resources/accesspackage?view=graph-rest-1.0&amp;tabs=http">accessPackage </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_accessPackage1" role="tab" aria-controls="tabpanel_2_accessPackage1" data-tab="accessPackage1" tabindex="0" aria-selected="true">accessPackage</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_accessPackageAssignment2" role="tab" aria-controls="tabpanel_2_accessPackageAssignment2" data-tab="accessPackageAssignment2" tabindex="-1">accessPackageAssignment</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_accesspackageassignment-accesspackageassignmentfilterbycurrentuseroptions3" role="tab" aria-controls="tabpanel_2_accesspackageassignment-accesspackageassignmentfilterbycurrentuseroptions3" data-tab="accesspackageassignment-accesspackageassignmentfilterbycurrentuseroptions3" tabindex="-1">accesspackageassignment-accesspackageassignmentfilterbycurrentuseroptions</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_accessPackageAssignmentPolicy4" role="tab" aria-controls="tabpanel_2_accessPackageAssignmentPolicy4" data-tab="accessPackageAssignmentPolicy4" tabindex="-1">accessPackageAssignmentPolicy</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_accessPackageAssignmentRequest5" role="tab" aria-controls="tabpanel_2_accessPackageAssignmentRequest5" data-tab="accessPackageAssignmentRequest5" tabindex="-1">accessPackageAssignmentRequest</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_accesspackageassignmentrequest-accesspackageassignmentrequestfilterbycurrentuseroptions6" role="tab" aria-controls="tabpanel_2_accesspackageassignmentrequest-accesspackageassignmentrequestfilterbycurrentuseroptions6" data-tab="accesspackageassignmentrequest-accesspackageassignmentrequestfilterbycurrentuseroptions6" tabindex="-1">accesspackageassignmentrequest-accesspackageassignmentrequestfilterbycurrentuseroptions</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_accessPackageAssignmentRequestRequirements7" role="tab" aria-controls="tabpanel_2_accessPackageAssignmentRequestRequirements7" data-tab="accessPackageAssignmentRequestRequirements7" tabindex="-1">accessPackageAssignmentRequestRequirements</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_accessPackageAssignmentRequestWorkflowExtension8" role="tab" aria-controls="tabpanel_2_accessPackageAssignmentRequestWorkflowExtension8" data-tab="accessPackageAssignmentRequestWorkflowExtension8" tabindex="-1">accessPackageAssignmentRequestWorkflowExtension</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_accessPackageAssignmentResourceRole9" role="tab" aria-controls="tabpanel_2_accessPackageAssignmentResourceRole9" data-tab="accessPackageAssignmentResourceRole9" tabindex="-1">accessPackageAssignmentResourceRole</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_accessPackageAssignmentWorkflowExtension10" role="tab" aria-controls="tabpanel_2_accessPackageAssignmentWorkflowExtension10" data-tab="accessPackageAssignmentWorkflowExtension10" tabindex="-1">accessPackageAssignmentWorkflowExtension</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_accessPackageCatalog11" role="tab" aria-controls="tabpanel_2_accessPackageCatalog11" data-tab="accessPackageCatalog11" tabindex="-1">accessPackageCatalog</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_accessPackageResource12" role="tab" aria-controls="tabpanel_2_accessPackageResource12" data-tab="accessPackageResource12" tabindex="-1">accessPackageResource</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_accessPackageResourceEnvironment13" role="tab" aria-controls="tabpanel_2_accessPackageResourceEnvironment13" data-tab="accessPackageResourceEnvironment13" tabindex="-1">accessPackageResourceEnvironment</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_accessPackageResourceRequest14" role="tab" aria-controls="tabpanel_2_accessPackageResourceRequest14" data-tab="accessPackageResourceRequest14" tabindex="-1">accessPackageResourceRequest</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_accessPackageResourceRole15" role="tab" aria-controls="tabpanel_2_accessPackageResourceRole15" data-tab="accessPackageResourceRole15" tabindex="-1">accessPackageResourceRole</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_accessPackageResourceRoleScope16" role="tab" aria-controls="tabpanel_2_accessPackageResourceRoleScope16" data-tab="accessPackageResourceRoleScope16" tabindex="-1">accessPackageResourceRoleScope</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_accessPackageResourceScope17" role="tab" aria-controls="tabpanel_2_accessPackageResourceScope17" data-tab="accessPackageResourceScope17" tabindex="-1">accessPackageResourceScope</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_approval18" role="tab" aria-controls="tabpanel_2_approval18" data-tab="approval18" tabindex="-1">approval</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_approvalStage19" role="tab" aria-controls="tabpanel_2_approvalStage19" data-tab="approvalStage19" tabindex="-1">approvalStage</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_approvalStep20" role="tab" aria-controls="tabpanel_2_approvalStep20" data-tab="approvalStep20" tabindex="-1">approvalStep</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_connectedOrganization21" role="tab" aria-controls="tabpanel_2_connectedOrganization21" data-tab="connectedOrganization21" tabindex="-1">connectedOrganization</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_customaccesspackageworkflowextension22" role="tab" aria-controls="tabpanel_2_customaccesspackageworkflowextension22" data-tab="customaccesspackageworkflowextension22" tabindex="-1">customaccesspackageworkflowextension</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_customExtensionAuthenticationConfiguration23" role="tab" aria-controls="tabpanel_2_customExtensionAuthenticationConfiguration23" data-tab="customExtensionAuthenticationConfiguration23" tabindex="-1">customExtensionAuthenticationConfiguration</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_customExtensionCallbackConfiguration24" role="tab" aria-controls="tabpanel_2_customExtensionCallbackConfiguration24" data-tab="customExtensionCallbackConfiguration24" tabindex="-1">customExtensionCallbackConfiguration</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_customExtensionEndpointConfiguration25" role="tab" aria-controls="tabpanel_2_customExtensionEndpointConfiguration25" data-tab="customExtensionEndpointConfiguration25" tabindex="-1">customExtensionEndpointConfiguration</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_directoryObject26" role="tab" aria-controls="tabpanel_2_directoryObject26" data-tab="directoryObject26" tabindex="-1">directoryObject</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_entitlementmanagement-overview27" role="tab" aria-controls="tabpanel_2_entitlementmanagement-overview27" data-tab="entitlementmanagement-overview27" tabindex="-1">entitlementmanagement-overview</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_entitlementManagementSettings28" role="tab" aria-controls="tabpanel_2_entitlementManagementSettings28" data-tab="entitlementManagementSettings28" tabindex="-1">entitlementManagementSettings</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_externalsponsors29" role="tab" aria-controls="tabpanel_2_externalsponsors29" data-tab="externalsponsors29" tabindex="-1">externalsponsors</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_group30" role="tab" aria-controls="tabpanel_2_group30" data-tab="group30" tabindex="-1">group</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_internalsponsors31" role="tab" aria-controls="tabpanel_2_internalsponsors31" data-tab="internalsponsors31" tabindex="-1">internalsponsors</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_privilegedAccessGroupAssignmentScheduleRequest32" role="tab" aria-controls="tabpanel_2_privilegedAccessGroupAssignmentScheduleRequest32" data-tab="privilegedAccessGroupAssignmentScheduleRequest32" tabindex="-1">privilegedAccessGroupAssignmentScheduleRequest</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_privilegedidentitymanagement-for-groups-api-overview33" role="tab" aria-controls="tabpanel_2_privilegedidentitymanagement-for-groups-api-overview33" data-tab="privilegedidentitymanagement-for-groups-api-overview33" tabindex="-1">privilegedidentitymanagement-for-groups-api-overview</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_privilegedidentitymanagementv3-overview34" role="tab" aria-controls="tabpanel_2_privilegedidentitymanagementv3-overview34" data-tab="privilegedidentitymanagementv3-overview34" tabindex="-1">privilegedidentitymanagementv3-overview</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_unifiedRoleAssignment35" role="tab" aria-controls="tabpanel_2_unifiedRoleAssignment35" data-tab="unifiedRoleAssignment35" tabindex="-1">unifiedRoleAssignment</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_unifiedRoleAssignmentScheduleRequest36" role="tab" aria-controls="tabpanel_2_unifiedRoleAssignmentScheduleRequest36" data-tab="unifiedRoleAssignmentScheduleRequest36" tabindex="-1">unifiedRoleAssignmentScheduleRequest</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_unifiedRoleDefinition37" role="tab" aria-controls="tabpanel_2_unifiedRoleDefinition37" data-tab="unifiedRoleDefinition37" tabindex="-1">unifiedRoleDefinition</a>
+</li>
+</ul>
+<section id="tabpanel_2_accessPackage1" role="tabpanel" data-tab="accessPackage1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/accesspackage?view=graph-rest-1.0&amp;tabs=http">accessPackage</a></p>
 <table>
 <thead>
 <tr>
@@ -539,7 +651,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="accesspackageassignment-"><a href="https://docs.microsoft.com/graph/api/resources/accesspackageassignment?view=graph-rest-1.0&amp;tabs=http">accessPackageAssignment </a></h3>
+</section>
+<section id="tabpanel_2_accessPackageAssignment2" role="tabpanel" data-tab="accessPackageAssignment2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/accesspackageassignment?view=graph-rest-1.0&amp;tabs=http">accessPackageAssignment</a></p>
 <table>
 <thead>
 <tr>
@@ -581,8 +696,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="accesspackageassignment-accesspackageassignmentfilterbycurrentuseroptions"><a href="https://docs.microsoft.com/graph/api/resources/accesspackageassignment-accesspackageassignmentfilterbycurrentuseroptions?view=graph-rest-1.0&amp;tabs=http">accesspackageassignment-accesspackageassignmentfilterbycurrentuseroptions</a></h3>
-<h3 id="accesspackageassignmentpolicy-"><a href="https://docs.microsoft.com/graph/api/resources/accesspackageassignmentpolicy?view=graph-rest-1.0&amp;tabs=http">accessPackageAssignmentPolicy </a></h3>
+</section>
+<section id="tabpanel_2_accesspackageassignment-accesspackageassignmentfilterbycurrentuseroptions3" role="tabpanel" data-tab="accesspackageassignment-accesspackageassignmentfilterbycurrentuseroptions3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/accesspackageassignment-accesspackageassignmentfilterbycurrentuseroptions?view=graph-rest-1.0&amp;tabs=http">accesspackageassignment-accesspackageassignmentfilterbycurrentuseroptions</a></p>
+</section>
+<section id="tabpanel_2_accessPackageAssignmentPolicy4" role="tabpanel" data-tab="accessPackageAssignmentPolicy4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/accesspackageassignmentpolicy?view=graph-rest-1.0&amp;tabs=http">accessPackageAssignmentPolicy</a></p>
 <table>
 <thead>
 <tr>
@@ -654,7 +775,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="accesspackageassignmentrequest-"><a href="https://docs.microsoft.com/graph/api/resources/accesspackageassignmentrequest?view=graph-rest-1.0&amp;tabs=http">accessPackageAssignmentRequest </a></h3>
+</section>
+<section id="tabpanel_2_accessPackageAssignmentRequest5" role="tabpanel" data-tab="accessPackageAssignmentRequest5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/accesspackageassignmentrequest?view=graph-rest-1.0&amp;tabs=http">accessPackageAssignmentRequest</a></p>
 <table>
 <thead>
 <tr>
@@ -711,8 +835,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="accesspackageassignmentrequest-accesspackageassignmentrequestfilterbycurrentuseroptions"><a href="https://docs.microsoft.com/graph/api/resources/accesspackageassignmentrequest-accesspackageassignmentrequestfilterbycurrentuseroptions?view=graph-rest-1.0&amp;tabs=http">accesspackageassignmentrequest-accesspackageassignmentrequestfilterbycurrentuseroptions</a></h3>
-<h3 id="accesspackageassignmentrequestrequirements-"><a href="https://docs.microsoft.com/graph/api/resources/accesspackageassignmentrequestrequirements?view=graph-rest-1.0&amp;tabs=http">accessPackageAssignmentRequestRequirements </a></h3>
+</section>
+<section id="tabpanel_2_accesspackageassignmentrequest-accesspackageassignmentrequestfilterbycurrentuseroptions6" role="tabpanel" data-tab="accesspackageassignmentrequest-accesspackageassignmentrequestfilterbycurrentuseroptions6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/accesspackageassignmentrequest-accesspackageassignmentrequestfilterbycurrentuseroptions?view=graph-rest-1.0&amp;tabs=http">accesspackageassignmentrequest-accesspackageassignmentrequestfilterbycurrentuseroptions</a></p>
+</section>
+<section id="tabpanel_2_accessPackageAssignmentRequestRequirements7" role="tabpanel" data-tab="accessPackageAssignmentRequestRequirements7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/accesspackageassignmentrequestrequirements?view=graph-rest-1.0&amp;tabs=http">accessPackageAssignmentRequestRequirements</a></p>
 <table>
 <thead>
 <tr>
@@ -764,7 +894,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="accesspackageassignmentrequestworkflowextension-"><a href="https://docs.microsoft.com/graph/api/resources/accesspackageassignmentrequestworkflowextension?view=graph-rest-1.0&amp;tabs=http">accessPackageAssignmentRequestWorkflowExtension </a></h3>
+</section>
+<section id="tabpanel_2_accessPackageAssignmentRequestWorkflowExtension8" role="tabpanel" data-tab="accessPackageAssignmentRequestWorkflowExtension8" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/accesspackageassignmentrequestworkflowextension?view=graph-rest-1.0&amp;tabs=http">accessPackageAssignmentRequestWorkflowExtension</a></p>
 <table>
 <thead>
 <tr>
@@ -831,7 +964,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="accesspackageassignmentresourcerole-"><a href="https://docs.microsoft.com/graph/api/resources/accesspackageassignmentresourcerole?view=graph-rest-1.0&amp;tabs=http">accessPackageAssignmentResourceRole </a></h3>
+</section>
+<section id="tabpanel_2_accessPackageAssignmentResourceRole9" role="tabpanel" data-tab="accessPackageAssignmentResourceRole9" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/accesspackageassignmentresourcerole?view=graph-rest-1.0&amp;tabs=http">accessPackageAssignmentResourceRole</a></p>
 <table>
 <thead>
 <tr>
@@ -863,7 +999,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="accesspackageassignmentworkflowextension-"><a href="https://docs.microsoft.com/graph/api/resources/accesspackageassignmentworkflowextension?view=graph-rest-1.0&amp;tabs=http">accessPackageAssignmentWorkflowExtension </a></h3>
+</section>
+<section id="tabpanel_2_accessPackageAssignmentWorkflowExtension10" role="tabpanel" data-tab="accessPackageAssignmentWorkflowExtension10" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/accesspackageassignmentworkflowextension?view=graph-rest-1.0&amp;tabs=http">accessPackageAssignmentWorkflowExtension</a></p>
 <table>
 <thead>
 <tr>
@@ -930,7 +1069,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="accesspackagecatalog-"><a href="https://docs.microsoft.com/graph/api/resources/accesspackagecatalog?view=graph-rest-1.0&amp;tabs=http">accessPackageCatalog </a></h3>
+</section>
+<section id="tabpanel_2_accessPackageCatalog11" role="tabpanel" data-tab="accessPackageCatalog11" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/accesspackagecatalog?view=graph-rest-1.0&amp;tabs=http">accessPackageCatalog</a></p>
 <table>
 <thead>
 <tr>
@@ -982,7 +1124,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="accesspackageresource-"><a href="https://docs.microsoft.com/graph/api/resources/accesspackageresource?view=graph-rest-1.0&amp;tabs=http">accessPackageResource </a></h3>
+</section>
+<section id="tabpanel_2_accessPackageResource12" role="tabpanel" data-tab="accessPackageResource12" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/accesspackageresource?view=graph-rest-1.0&amp;tabs=http">accessPackageResource</a></p>
 <table>
 <thead>
 <tr>
@@ -1034,7 +1179,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="accesspackageresourceenvironment-"><a href="https://docs.microsoft.com/graph/api/resources/accesspackageresourceenvironment?view=graph-rest-1.0&amp;tabs=http">accessPackageResourceEnvironment </a></h3>
+</section>
+<section id="tabpanel_2_accessPackageResourceEnvironment13" role="tabpanel" data-tab="accessPackageResourceEnvironment13" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/accesspackageresourceenvironment?view=graph-rest-1.0&amp;tabs=http">accessPackageResourceEnvironment</a></p>
 <table>
 <thead>
 <tr>
@@ -1091,7 +1239,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="accesspackageresourcerequest-"><a href="https://docs.microsoft.com/graph/api/resources/accesspackageresourcerequest?view=graph-rest-1.0&amp;tabs=http">accessPackageResourceRequest </a></h3>
+</section>
+<section id="tabpanel_2_accessPackageResourceRequest14" role="tabpanel" data-tab="accessPackageResourceRequest14" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/accesspackageresourcerequest?view=graph-rest-1.0&amp;tabs=http">accessPackageResourceRequest</a></p>
 <table>
 <thead>
 <tr>
@@ -1123,7 +1274,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="accesspackageresourcerole-"><a href="https://docs.microsoft.com/graph/api/resources/accesspackageresourcerole?view=graph-rest-1.0&amp;tabs=http">accessPackageResourceRole </a></h3>
+</section>
+<section id="tabpanel_2_accessPackageResourceRole15" role="tabpanel" data-tab="accessPackageResourceRole15" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/accesspackageresourcerole?view=graph-rest-1.0&amp;tabs=http">accessPackageResourceRole</a></p>
 <table>
 <thead>
 <tr>
@@ -1160,7 +1314,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="accesspackageresourcerolescope-"><a href="https://docs.microsoft.com/graph/api/resources/accesspackageresourcerolescope?view=graph-rest-1.0&amp;tabs=http">accessPackageResourceRoleScope </a></h3>
+</section>
+<section id="tabpanel_2_accessPackageResourceRoleScope16" role="tabpanel" data-tab="accessPackageResourceRoleScope16" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/accesspackageresourcerolescope?view=graph-rest-1.0&amp;tabs=http">accessPackageResourceRoleScope</a></p>
 <table>
 <thead>
 <tr>
@@ -1182,7 +1339,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="accesspackageresourcescope-"><a href="https://docs.microsoft.com/graph/api/resources/accesspackageresourcescope?view=graph-rest-1.0&amp;tabs=http">accessPackageResourceScope </a></h3>
+</section>
+<section id="tabpanel_2_accessPackageResourceScope17" role="tabpanel" data-tab="accessPackageResourceScope17" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/accesspackageresourcescope?view=graph-rest-1.0&amp;tabs=http">accessPackageResourceScope</a></p>
 <table>
 <thead>
 <tr>
@@ -1224,7 +1384,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="approval-"><a href="https://docs.microsoft.com/graph/api/resources/approval?view=graph-rest-1.0&amp;tabs=http">approval </a></h3>
+</section>
+<section id="tabpanel_2_approval18" role="tabpanel" data-tab="approval18" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/approval?view=graph-rest-1.0&amp;tabs=http">approval</a></p>
 <table>
 <thead>
 <tr>
@@ -1241,7 +1404,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="approvalstage-"><a href="https://docs.microsoft.com/graph/api/resources/approvalstage?view=graph-rest-1.0&amp;tabs=http">approvalStage </a></h3>
+</section>
+<section id="tabpanel_2_approvalStage19" role="tabpanel" data-tab="approvalStage19" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/approvalstage?view=graph-rest-1.0&amp;tabs=http">approvalStage</a></p>
 <table>
 <thead>
 <tr>
@@ -1293,7 +1459,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="approvalstep-"><a href="https://docs.microsoft.com/graph/api/resources/approvalstep?view=graph-rest-1.0&amp;tabs=http">approvalStep </a></h3>
+</section>
+<section id="tabpanel_2_approvalStep20" role="tabpanel" data-tab="approvalStep20" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/approvalstep?view=graph-rest-1.0&amp;tabs=http">approvalStep</a></p>
 <table>
 <thead>
 <tr>
@@ -1345,7 +1514,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="connectedorganization-"><a href="https://docs.microsoft.com/graph/api/resources/connectedorganization?view=graph-rest-1.0&amp;tabs=http">connectedOrganization </a></h3>
+</section>
+<section id="tabpanel_2_connectedOrganization21" role="tabpanel" data-tab="connectedOrganization21" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/connectedorganization?view=graph-rest-1.0&amp;tabs=http">connectedOrganization</a></p>
 <table>
 <thead>
 <tr>
@@ -1392,7 +1564,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="customaccesspackageworkflowextension"><a href="https://docs.microsoft.com/graph/api/resources/customaccesspackageworkflowextension?view=graph-rest-1.0&amp;tabs=http">customaccesspackageworkflowextension</a></h3>
+</section>
+<section id="tabpanel_2_customaccesspackageworkflowextension22" role="tabpanel" data-tab="customaccesspackageworkflowextension22" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/customaccesspackageworkflowextension?view=graph-rest-1.0&amp;tabs=http">customaccesspackageworkflowextension</a></p>
 <table>
 <thead>
 <tr>
@@ -1444,8 +1619,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="customextensionauthenticationconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/customextensionauthenticationconfiguration?view=graph-rest-1.0&amp;tabs=http">customExtensionAuthenticationConfiguration </a></h3>
-<h3 id="customextensioncallbackconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/customextensioncallbackconfiguration?view=graph-rest-1.0&amp;tabs=http">customExtensionCallbackConfiguration </a></h3>
+</section>
+<section id="tabpanel_2_customExtensionAuthenticationConfiguration23" role="tabpanel" data-tab="customExtensionAuthenticationConfiguration23" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/customextensionauthenticationconfiguration?view=graph-rest-1.0&amp;tabs=http">customExtensionAuthenticationConfiguration</a></p>
+</section>
+<section id="tabpanel_2_customExtensionCallbackConfiguration24" role="tabpanel" data-tab="customExtensionCallbackConfiguration24" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/customextensioncallbackconfiguration?view=graph-rest-1.0&amp;tabs=http">customExtensionCallbackConfiguration</a></p>
 <table>
 <thead>
 <tr>
@@ -1462,8 +1643,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="customextensionendpointconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/customextensionendpointconfiguration?view=graph-rest-1.0&amp;tabs=http">customExtensionEndpointConfiguration </a></h3>
-<h3 id="directoryobject-"><a href="https://docs.microsoft.com/graph/api/resources/directoryobject?view=graph-rest-1.0&amp;tabs=http">directoryObject </a></h3>
+</section>
+<section id="tabpanel_2_customExtensionEndpointConfiguration25" role="tabpanel" data-tab="customExtensionEndpointConfiguration25" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/customextensionendpointconfiguration?view=graph-rest-1.0&amp;tabs=http">customExtensionEndpointConfiguration</a></p>
+</section>
+<section id="tabpanel_2_directoryObject26" role="tabpanel" data-tab="directoryObject26" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/directoryobject?view=graph-rest-1.0&amp;tabs=http">directoryObject</a></p>
 <table>
 <thead>
 <tr>
@@ -1485,8 +1672,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="entitlementmanagement-overview"><a href="https://docs.microsoft.com/graph/api/resources/entitlementmanagement-overview?view=graph-rest-1.0&amp;tabs=http">entitlementmanagement-overview</a></h3>
-<h3 id="entitlementmanagementsettings-"><a href="https://docs.microsoft.com/graph/api/resources/entitlementmanagementsettings?view=graph-rest-1.0&amp;tabs=http">entitlementManagementSettings </a></h3>
+</section>
+<section id="tabpanel_2_entitlementmanagement-overview27" role="tabpanel" data-tab="entitlementmanagement-overview27" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/entitlementmanagement-overview?view=graph-rest-1.0&amp;tabs=http">entitlementmanagement-overview</a></p>
+</section>
+<section id="tabpanel_2_entitlementManagementSettings28" role="tabpanel" data-tab="entitlementManagementSettings28" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/entitlementmanagementsettings?view=graph-rest-1.0&amp;tabs=http">entitlementManagementSettings</a></p>
 <table>
 <thead>
 <tr>
@@ -1513,8 +1706,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="externalsponsors"><a href="https://docs.microsoft.com/graph/api/resources/externalsponsors?view=graph-rest-1.0&amp;tabs=http">externalsponsors</a></h3>
-<h3 id="group-"><a href="https://docs.microsoft.com/graph/api/resources/group?view=graph-rest-1.0&amp;tabs=http">group </a></h3>
+</section>
+<section id="tabpanel_2_externalsponsors29" role="tabpanel" data-tab="externalsponsors29" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/externalsponsors?view=graph-rest-1.0&amp;tabs=http">externalsponsors</a></p>
+</section>
+<section id="tabpanel_2_group30" role="tabpanel" data-tab="group30" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/group?view=graph-rest-1.0&amp;tabs=http">group</a></p>
 <table>
 <thead>
 <tr>
@@ -1736,8 +1935,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="internalsponsors"><a href="https://docs.microsoft.com/graph/api/resources/internalsponsors?view=graph-rest-1.0&amp;tabs=http">internalsponsors</a></h3>
-<h3 id="privilegedaccessgroupassignmentschedulerequest-"><a href="https://docs.microsoft.com/graph/api/resources/privilegedaccessgroupassignmentschedulerequest?view=graph-rest-1.0&amp;tabs=http">privilegedAccessGroupAssignmentScheduleRequest </a></h3>
+</section>
+<section id="tabpanel_2_internalsponsors31" role="tabpanel" data-tab="internalsponsors31" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/internalsponsors?view=graph-rest-1.0&amp;tabs=http">internalsponsors</a></p>
+</section>
+<section id="tabpanel_2_privilegedAccessGroupAssignmentScheduleRequest32" role="tabpanel" data-tab="privilegedAccessGroupAssignmentScheduleRequest32" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/privilegedaccessgroupassignmentschedulerequest?view=graph-rest-1.0&amp;tabs=http">privilegedAccessGroupAssignmentScheduleRequest</a></p>
 <table>
 <thead>
 <tr>
@@ -1829,9 +2034,18 @@
 </tr>
 </tbody>
 </table>
-<h3 id="privilegedidentitymanagement-for-groups-api-overview"><a href="https://docs.microsoft.com/graph/api/resources/privilegedidentitymanagement-for-groups-api-overview?view=graph-rest-1.0&amp;tabs=http">privilegedidentitymanagement-for-groups-api-overview</a></h3>
-<h3 id="privilegedidentitymanagementv3-overview"><a href="https://docs.microsoft.com/graph/api/resources/privilegedidentitymanagementv3-overview?view=graph-rest-1.0&amp;tabs=http">privilegedidentitymanagementv3-overview</a></h3>
-<h3 id="unifiedroleassignment-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedroleassignment?view=graph-rest-1.0&amp;tabs=http">unifiedRoleAssignment </a></h3>
+</section>
+<section id="tabpanel_2_privilegedidentitymanagement-for-groups-api-overview33" role="tabpanel" data-tab="privilegedidentitymanagement-for-groups-api-overview33" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/privilegedidentitymanagement-for-groups-api-overview?view=graph-rest-1.0&amp;tabs=http">privilegedidentitymanagement-for-groups-api-overview</a></p>
+</section>
+<section id="tabpanel_2_privilegedidentitymanagementv3-overview34" role="tabpanel" data-tab="privilegedidentitymanagementv3-overview34" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/privilegedidentitymanagementv3-overview?view=graph-rest-1.0&amp;tabs=http">privilegedidentitymanagementv3-overview</a></p>
+</section>
+<section id="tabpanel_2_unifiedRoleAssignment35" role="tabpanel" data-tab="unifiedRoleAssignment35" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/unifiedroleassignment?view=graph-rest-1.0&amp;tabs=http">unifiedRoleAssignment</a></p>
 <table>
 <thead>
 <tr>
@@ -1868,7 +2082,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="unifiedroleassignmentschedulerequest-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedroleassignmentschedulerequest?view=graph-rest-1.0&amp;tabs=http">unifiedRoleAssignmentScheduleRequest </a></h3>
+</section>
+<section id="tabpanel_2_unifiedRoleAssignmentScheduleRequest36" role="tabpanel" data-tab="unifiedRoleAssignmentScheduleRequest36" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/unifiedroleassignmentschedulerequest?view=graph-rest-1.0&amp;tabs=http">unifiedRoleAssignmentScheduleRequest</a></p>
 <table>
 <thead>
 <tr>
@@ -1965,7 +2182,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="unifiedroledefinition-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedroledefinition?view=graph-rest-1.0&amp;tabs=http">unifiedRoleDefinition </a></h3>
+</section>
+<section id="tabpanel_2_unifiedRoleDefinition37" role="tabpanel" data-tab="unifiedRoleDefinition37" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/unifiedroledefinition?view=graph-rest-1.0&amp;tabs=http">unifiedRoleDefinition</a></p>
 <table>
 <thead>
 <tr>
@@ -2022,6 +2242,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

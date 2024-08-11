@@ -90,174 +90,219 @@
         <article data-uid="">
 <h1 id="approleassignmentreadwriteall">AppRoleAssignment.ReadWrite.All</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>AppRoleAssignment.ReadWrite.All</code> permission.</p>
 <blockquote>
 <p>Allows the app to manage permission grants for application permissions to any API (including Microsoft Graph) and application assignments for any app, on behalf of the signed-in user.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>06b708a9-e830-4db3-a914-8e69da51d44f</td>
+<td>84bccea3-f856-4a8a-967b-dbe0a3d53a64</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Manage app permission grants and app role assignments</td>
+<td>Manage app permission grants and app role assignments</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the app to manage permission grants for application permissions to any API (including Microsoft Graph) and application assignments for any app, without a signed-in user.</td>
+<td>Allows the app to manage permission grants for application permissions to any API (including Microsoft Graph) and application assignments for any app, on behalf of the signed-in user.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-beta&amp;tabs=http"></a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/user-list-approleassignedresources?view=graph-rest-beta&amp;tabs=http">ConsistencyLevel: eventual</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-delete-approleassignments?view=graph-rest-1.0&amp;tabs=http">DELETE /groups/{id}/appRoleAssignments/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-approleassignedto?view=graph-rest-1.0&amp;tabs=http">DELETE /servicePrincipals(appId='{appId}')/appRoleAssignedTo/{appRoleAssignment-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-approleassignments?view=graph-rest-1.0&amp;tabs=http">DELETE /servicePrincipals(appId='{appId}')/appRoleAssignments/{appRoleAssignment-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-approleassignedto?view=graph-rest-1.0&amp;tabs=http">DELETE /servicePrincipals/{id}/appRoleAssignedTo/{appRoleAssignment-id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-approleassignedto?view=graph-rest-beta&amp;tabs=http">DELETE /servicePrincipals/{resource-SP-id}/appRoleAssignedTo/{appRoleAssignment-id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-approleassignments?view=graph-rest-1.0&amp;tabs=http">DELETE /servicePrincipals/{servicePrincipal-id}/appRoleAssignments/{appRoleAssignment-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-delete-approleassignments?view=graph-rest-1.0&amp;tabs=http">DELETE /users/{id}/appRoleAssignments/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-list-approleassignments?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/appRoleAssignments</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/user-list-approleassignedresources?view=graph-rest-beta&amp;tabs=http">GET /me/appRoleAssignedResources</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-approleassignments?view=graph-rest-1.0&amp;tabs=http">GET /me/appRoleAssignments</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-approleassignments?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/appRoleAssignments</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/user-list-approleassignedresources?view=graph-rest-beta&amp;tabs=http">GET /users/{userId}/appRoleAssignedResources</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-post-approleassignments?view=graph-rest-1.0&amp;tabs=http">POST /groups/{groupId}/appRoleAssignments</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/appRoleAssignedTo</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignments?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/appRoleAssignments</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{id}/appRoleAssignedTo</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignments?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{id}/appRoleAssignments</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-post-approleassignments?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/appRoleAssignments</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
+<th>Type</th>
+<th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Id</strong></td>
-<td>84bccea3-f856-4a8a-967b-dbe0a3d53a64</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-delete-approleassignments?view=graph-rest-beta&amp;tabs=http">DELETE /groups/{id}/appRoleAssignments/{id}</a></td>
 </tr>
 <tr>
-<td><strong>Consent Type</strong></td>
-<td>Admin</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-approleassignedto?view=graph-rest-beta&amp;tabs=http">DELETE /servicePrincipals/{resource-SP-id}/appRoleAssignedTo/{appRoleAssignment-id}</a></td>
 </tr>
 <tr>
-<td><strong>Display String</strong></td>
-<td>Manage app permission grants and app role assignments</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-approleassignments?view=graph-rest-beta&amp;tabs=http">DELETE /servicePrincipals/{servicePrincipal-id}/appRoleAssignments/{appRoleAssignment-id}</a></td>
 </tr>
 <tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to manage permission grants for application permissions to any API (including Microsoft Graph) and application assignments for any app, on behalf of the signed-in user.</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-delete-approleassignments?view=graph-rest-beta&amp;tabs=http">DELETE /users/{id}/appRoleAssignments/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-list-approleassignments?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/appRoleAssignments</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-approleassignedresources?view=graph-rest-beta&amp;tabs=http">GET /me/appRoleAssignedResources</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-approleassignments?view=graph-rest-beta&amp;tabs=http">GET /me/appRoleAssignments</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-approleassignments?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/appRoleAssignments</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-approleassignedresources?view=graph-rest-beta&amp;tabs=http">GET /users/{userId}/appRoleAssignedResources</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-post-approleassignments?view=graph-rest-beta&amp;tabs=http">POST /groups/{groupId}/appRoleAssignments</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/appRoleAssignedTo</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignments?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/appRoleAssignments</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/appRoleAssignedTo</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignments?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/appRoleAssignments</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-post-approleassignments?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/appRoleAssignments</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>06b708a9-e830-4db3-a914-8e69da51d44f</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Manage app permission grants and app role assignments</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to manage permission grants for application permissions to any API (including Microsoft Graph) and application assignments for any app, without a signed-in user.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="approle-"><a href="https://docs.microsoft.com/graph/api/resources/approle?view=graph-rest-1.0&amp;tabs=http">appRole </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_appRole1" role="tab" aria-controls="tabpanel_2_appRole1" data-tab="appRole1" tabindex="0" aria-selected="true">appRole</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_appRoleAssignment2" role="tab" aria-controls="tabpanel_2_appRoleAssignment2" data-tab="appRoleAssignment2" tabindex="-1">appRoleAssignment</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_group3" role="tab" aria-controls="tabpanel_2_group3" data-tab="group3" tabindex="-1">group</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_servicePrincipal4" role="tab" aria-controls="tabpanel_2_servicePrincipal4" data-tab="servicePrincipal4" tabindex="-1">servicePrincipal</a>
+</li>
+</ul>
+<section id="tabpanel_2_appRole1" role="tabpanel" data-tab="appRole1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/approle?view=graph-rest-1.0&amp;tabs=http">appRole</a></p>
 <table>
 <thead>
 <tr>
@@ -304,7 +349,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="approleassignment-"><a href="https://docs.microsoft.com/graph/api/resources/approleassignment?view=graph-rest-1.0&amp;tabs=http">appRoleAssignment </a></h3>
+</section>
+<section id="tabpanel_2_appRoleAssignment2" role="tabpanel" data-tab="appRoleAssignment2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/approleassignment?view=graph-rest-1.0&amp;tabs=http">appRoleAssignment</a></p>
 <table>
 <thead>
 <tr>
@@ -361,7 +409,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="group-"><a href="https://docs.microsoft.com/graph/api/resources/group?view=graph-rest-1.0&amp;tabs=http">group </a></h3>
+</section>
+<section id="tabpanel_2_group3" role="tabpanel" data-tab="group3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/group?view=graph-rest-1.0&amp;tabs=http">group</a></p>
 <table>
 <thead>
 <tr>
@@ -583,7 +634,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="serviceprincipal-"><a href="https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-1.0&amp;tabs=http">servicePrincipal </a></h3>
+</section>
+<section id="tabpanel_2_servicePrincipal4" role="tabpanel" data-tab="servicePrincipal4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-1.0&amp;tabs=http">servicePrincipal</a></p>
 <table>
 <thead>
 <tr>
@@ -775,6 +829,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

@@ -90,174 +90,267 @@
         <article data-uid="">
 <h1 id="domainreadwriteall">Domain.ReadWrite.All</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>Domain.ReadWrite.All</code> permission.</p>
 <blockquote>
 <p>Allows the app to read and write all domain properties on behalf of the signed-in user. Also allows the app to add, verify and remove domains.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>7e05723c-0bb0-42da-be95-ae9f08a6e53c</td>
+<td>0b5d694c-a244-4bde-86e6-eb5cd07730fe</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Read and write domains</td>
+<td>Read and write domains</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the app to read and write all domain properties without a signed in user.  Also allows the app to add,  verify and remove domains.</td>
+<td>Allows the app to read and write all domain properties on behalf of the signed-in user. Also allows the app to add, verify and remove domains.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/internaldomainfederation-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /domains/{domainsId}/federationConfiguration/{internalDomainFederationId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/domain-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /domains/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-delete?view=graph-rest-1.0&amp;tabs=http">DELETE directory/federationConfigurations/{samlOrWsFedExternalDomainFederation ID}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-list?view=graph-rest-1.0&amp;tabs=http">GET /directory/federationConfigurations/graph.samlOrWsFedExternalDomainFederation</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-get?view=graph-rest-1.0&amp;tabs=http">GET /directory/federationConfigurations/graph.samlOrWsFedExternalDomainFederation?$filter=domains/any(x: x/id eq 'domainName-value')</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/domain-list?view=graph-rest-1.0&amp;tabs=http">GET /domains</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/domain-list-federationconfiguration?view=graph-rest-1.0&amp;tabs=http">GET /domains/{domainsId}/federationConfiguration</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/internaldomainfederation-get?view=graph-rest-1.0&amp;tabs=http">GET /domains/{domainsId}/federationConfiguration/{internalDomainFederationId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/domain-get?view=graph-rest-1.0&amp;tabs=http">GET /domains/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/domain-list-domainnamereferences?view=graph-rest-1.0&amp;tabs=http">GET /domains/{id}/domainNameReferences</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/domain-list-serviceconfigurationrecords?view=graph-rest-1.0&amp;tabs=http">GET /domains/{id}/serviceConfigurationRecords</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/domain-list-verificationdnsrecords?view=graph-rest-1.0&amp;tabs=http">GET /domains/{id}/verificationDnsRecords</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/domain-list-rootdomain?view=graph-rest-beta&amp;tabs=http">GET /domains/contoso.com/rootDomain</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/internaldomainfederation-update?view=graph-rest-1.0&amp;tabs=http">PATCH /domains/{domainsId}/federationConfiguration/{internalDomainFederationId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/domain-update?view=graph-rest-1.0&amp;tabs=http">PATCH /domains/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/domain-post-domains?view=graph-rest-1.0&amp;tabs=http">POST /domains</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/domain-post-federationconfiguration?view=graph-rest-1.0&amp;tabs=http">POST /domains/{domainsId}/federationConfiguration</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/domain-forcedelete?view=graph-rest-1.0&amp;tabs=http">POST /domains/{id}/forceDelete</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/domain-promote?view=graph-rest-1.0&amp;tabs=http">POST /domains/{id}/promote</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/domain-verify?view=graph-rest-1.0&amp;tabs=http">POST /domains/{id}/verify</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
+<th>Type</th>
+<th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Id</strong></td>
-<td>0b5d694c-a244-4bde-86e6-eb5cd07730fe</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/internaldomainfederation-delete?view=graph-rest-beta&amp;tabs=http">DELETE /domains/{domainsId}/federationConfiguration/{internalDomainFederationId}</a></td>
 </tr>
 <tr>
-<td><strong>Consent Type</strong></td>
-<td>Admin</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/domain-delete?view=graph-rest-beta&amp;tabs=http">DELETE /domains/{id}</a></td>
 </tr>
 <tr>
-<td><strong>Display String</strong></td>
-<td>Read and write domains</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-delete?view=graph-rest-beta&amp;tabs=http">DELETE directory/federationConfigurations/{samlOrWsFedExternalDomainFederation ID}</a></td>
 </tr>
 <tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read and write all domain properties on behalf of the signed-in user. Also allows the app to add, verify and remove domains.</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-list?view=graph-rest-beta&amp;tabs=http">GET /directory/federationConfigurations/graph.samlOrWsFedExternalDomainFederation</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-get?view=graph-rest-beta&amp;tabs=http">GET /directory/federationConfigurations/graph.samlOrWsFedExternalDomainFederation?$filter=domains/any(x: x/id eq 'domainName-value')</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/domain-list?view=graph-rest-beta&amp;tabs=http">GET /domains</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/domain-list-federationconfiguration?view=graph-rest-beta&amp;tabs=http">GET /domains/{domainsId}/federationConfiguration</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/internaldomainfederation-get?view=graph-rest-beta&amp;tabs=http">GET /domains/{domainsId}/federationConfiguration/{internalDomainFederationId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/domain-get?view=graph-rest-beta&amp;tabs=http">GET /domains/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/domain-list-domainnamereferences?view=graph-rest-beta&amp;tabs=http">GET /domains/{id}/domainNameReferences</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/domain-list-serviceconfigurationrecords?view=graph-rest-beta&amp;tabs=http">GET /domains/{id}/serviceConfigurationRecords</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/domain-list-verificationdnsrecords?view=graph-rest-beta&amp;tabs=http">GET /domains/{id}/verificationDnsRecords</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/domain-list-rootdomain?view=graph-rest-beta&amp;tabs=http">GET /domains/contoso.com/rootDomain</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/internaldomainfederation-update?view=graph-rest-beta&amp;tabs=http">PATCH /domains/{domainsId}/federationConfiguration/{internalDomainFederationId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/domain-update?view=graph-rest-beta&amp;tabs=http">PATCH /domains/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/domain-post-domains?view=graph-rest-beta&amp;tabs=http">POST /domains</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/domain-post-federationconfiguration?view=graph-rest-beta&amp;tabs=http">POST /domains/{domainsId}/federationConfiguration</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/domain-forcedelete?view=graph-rest-beta&amp;tabs=http">POST /domains/{id}/forceDelete</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/domain-promote?view=graph-rest-beta&amp;tabs=http">POST /domains/{id}/promote</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/domain-verify?view=graph-rest-beta&amp;tabs=http">POST /domains/{id}/verify</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>7e05723c-0bb0-42da-be95-ae9f08a6e53c</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read and write domains</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read and write all domain properties without a signed in user.  Also allows the app to add,  verify and remove domains.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="directoryobject-"><a href="https://docs.microsoft.com/graph/api/resources/directoryobject?view=graph-rest-1.0&amp;tabs=http">directoryObject </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_directoryObject1" role="tab" aria-controls="tabpanel_2_directoryObject1" data-tab="directoryObject1" tabindex="0" aria-selected="true">directoryObject</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_domain2" role="tab" aria-controls="tabpanel_2_domain2" data-tab="domain2" tabindex="-1">domain</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_domainDnsRecord3" role="tab" aria-controls="tabpanel_2_domainDnsRecord3" data-tab="domainDnsRecord3" tabindex="-1">domainDnsRecord</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_externalDomainName4" role="tab" aria-controls="tabpanel_2_externalDomainName4" data-tab="externalDomainName4" tabindex="-1">externalDomainName</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_internalDomainFederation5" role="tab" aria-controls="tabpanel_2_internalDomainFederation5" data-tab="internalDomainFederation5" tabindex="-1">internalDomainFederation</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_samlOrWsFedExternalDomainFederation6" role="tab" aria-controls="tabpanel_2_samlOrWsFedExternalDomainFederation6" data-tab="samlOrWsFedExternalDomainFederation6" tabindex="-1">samlOrWsFedExternalDomainFederation</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_samlOrWsFedProvider7" role="tab" aria-controls="tabpanel_2_samlOrWsFedProvider7" data-tab="samlOrWsFedProvider7" tabindex="-1">samlOrWsFedProvider</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_signingCertificateUpdateStatus8" role="tab" aria-controls="tabpanel_2_signingCertificateUpdateStatus8" data-tab="signingCertificateUpdateStatus8" tabindex="-1">signingCertificateUpdateStatus</a>
+</li>
+</ul>
+<section id="tabpanel_2_directoryObject1" role="tabpanel" data-tab="directoryObject1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/directoryobject?view=graph-rest-1.0&amp;tabs=http">directoryObject</a></p>
 <table>
 <thead>
 <tr>
@@ -279,7 +372,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="domain-"><a href="https://docs.microsoft.com/graph/api/resources/domain?view=graph-rest-1.0&amp;tabs=http">domain </a></h3>
+</section>
+<section id="tabpanel_2_domain2" role="tabpanel" data-tab="domain2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/domain?view=graph-rest-1.0&amp;tabs=http">domain</a></p>
 <table>
 <thead>
 <tr>
@@ -351,7 +447,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="domaindnsrecord-"><a href="https://docs.microsoft.com/graph/api/resources/domaindnsrecord?view=graph-rest-1.0&amp;tabs=http">domainDnsRecord </a></h3>
+</section>
+<section id="tabpanel_2_domainDnsRecord3" role="tabpanel" data-tab="domainDnsRecord3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/domaindnsrecord?view=graph-rest-1.0&amp;tabs=http">domainDnsRecord</a></p>
 <table>
 <thead>
 <tr>
@@ -393,7 +492,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="externaldomainname-"><a href="https://docs.microsoft.com/graph/api/resources/externaldomainname?view=graph-rest-1.0&amp;tabs=http">externalDomainName </a></h3>
+</section>
+<section id="tabpanel_2_externalDomainName4" role="tabpanel" data-tab="externalDomainName4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/externaldomainname?view=graph-rest-1.0&amp;tabs=http">externalDomainName</a></p>
 <table>
 <thead>
 <tr>
@@ -410,7 +512,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="internaldomainfederation-"><a href="https://docs.microsoft.com/graph/api/resources/internaldomainfederation?view=graph-rest-1.0&amp;tabs=http">internalDomainFederation </a></h3>
+</section>
+<section id="tabpanel_2_internalDomainFederation5" role="tabpanel" data-tab="internalDomainFederation5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/internaldomainfederation?view=graph-rest-1.0&amp;tabs=http">internalDomainFederation</a></p>
 <table>
 <thead>
 <tr>
@@ -492,7 +597,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="samlorwsfedexternaldomainfederation-"><a href="https://docs.microsoft.com/graph/api/resources/samlorwsfedexternaldomainfederation?view=graph-rest-1.0&amp;tabs=http">samlOrWsFedExternalDomainFederation </a></h3>
+</section>
+<section id="tabpanel_2_samlOrWsFedExternalDomainFederation6" role="tabpanel" data-tab="samlOrWsFedExternalDomainFederation6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/samlorwsfedexternaldomainfederation?view=graph-rest-1.0&amp;tabs=http">samlOrWsFedExternalDomainFederation</a></p>
 <table>
 <thead>
 <tr>
@@ -539,7 +647,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="samlorwsfedprovider-"><a href="https://docs.microsoft.com/graph/api/resources/samlorwsfedprovider?view=graph-rest-1.0&amp;tabs=http">samlOrWsFedProvider </a></h3>
+</section>
+<section id="tabpanel_2_samlOrWsFedProvider7" role="tabpanel" data-tab="samlOrWsFedProvider7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/samlorwsfedprovider?view=graph-rest-1.0&amp;tabs=http">samlOrWsFedProvider</a></p>
 <table>
 <thead>
 <tr>
@@ -586,7 +697,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="signingcertificateupdatestatus-"><a href="https://docs.microsoft.com/graph/api/resources/signingcertificateupdatestatus?view=graph-rest-1.0&amp;tabs=http">signingCertificateUpdateStatus </a></h3>
+</section>
+<section id="tabpanel_2_signingCertificateUpdateStatus8" role="tabpanel" data-tab="signingCertificateUpdateStatus8" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/signingcertificateupdatestatus?view=graph-rest-1.0&amp;tabs=http">signingCertificateUpdateStatus</a></p>
 <table>
 <thead>
 <tr>
@@ -608,6 +722,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

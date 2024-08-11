@@ -90,100 +90,152 @@
         <article data-uid="">
 <h1 id="partnerbillingreadall">PartnerBilling.Read.All</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>PartnerBilling.Read.All</code> permission.</p>
 <blockquote>
 <p>Allows the app to read all of billing data from Microsoft for your company's tenant, on behalf of the signed-in user. This includes reading billed and unbilled Usage and Invoice reconciliation data.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>7c3e1994-38ff-4412-a99b-9369f6bb7706</td>
+<td>8804798e-5934-4e30-8ce3-ef88257cecd4</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Read all billing data for your company's tenant</td>
+<td>Read all billing data for your company's tenant</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the app to read all of billing data from Microsoft for your company's tenant, without a signed-in user. This includes reading billed and unbilled azure usage and invoice reconciliation data.</td>
+<td>Allows the app to read all of billing data from Microsoft for your company's tenant, on behalf of the signed-in user. This includes reading billed and unbilled Usage and Invoice reconciliation data.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/partners-billing-manifest-get?view=graph-rest-1.0&amp;tabs=http">GET /reports/partners/billing/manifests/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/partners-billing-operation-get?view=graph-rest-1.0&amp;tabs=http">GET /reports/partners/billing/operations/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/partners-billing-billedreconciliation-export?view=graph-rest-1.0&amp;tabs=http">POST /reports/partners/billing/reconciliation/billed/export</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/partners-billing-billedusage-export?view=graph-rest-1.0&amp;tabs=http">POST /reports/partners/billing/usage/billed/export</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/partners-billing-unbilledusage-export?view=graph-rest-1.0&amp;tabs=http">POST /reports/partners/billing/usage/unbilled/export</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
+<th>Type</th>
+<th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Id</strong></td>
-<td>8804798e-5934-4e30-8ce3-ef88257cecd4</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/partners-billing-manifest-get?view=graph-rest-beta&amp;tabs=http">GET /reports/partners/billing/manifests/{id}</a></td>
 </tr>
 <tr>
-<td><strong>Consent Type</strong></td>
-<td>Admin</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/partners-billing-operation-get?view=graph-rest-beta&amp;tabs=http">GET /reports/partners/billing/operations/{id}</a></td>
 </tr>
 <tr>
-<td><strong>Display String</strong></td>
-<td>Read all billing data for your company's tenant</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/partners-billing-billedreconciliation-export?view=graph-rest-beta&amp;tabs=http">POST /reports/partners/billing/reconciliation/billed/export</a></td>
 </tr>
 <tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read all of billing data from Microsoft for your company's tenant, on behalf of the signed-in user. This includes reading billed and unbilled Usage and Invoice reconciliation data.</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/partners-billing-billedusage-export?view=graph-rest-beta&amp;tabs=http">POST /reports/partners/billing/usage/billed/export</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/partners-billing-unbilledusage-export?view=graph-rest-beta&amp;tabs=http">POST /reports/partners/billing/usage/unbilled/export</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>7c3e1994-38ff-4412-a99b-9369f6bb7706</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read all billing data for your company's tenant</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read all of billing data from Microsoft for your company's tenant, without a signed-in user. This includes reading billed and unbilled azure usage and invoice reconciliation data.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="partners-billing-attributeset"><a href="https://docs.microsoft.com/graph/api/resources/partners-billing-attributeset?view=graph-rest-1.0&amp;tabs=http">partners-billing-attributeset</a></h3>
-<h3 id="exportsuccessoperation-"><a href="https://docs.microsoft.com/graph/api/resources/partners-billing-exportsuccessoperation?view=graph-rest-1.0&amp;tabs=http">exportSuccessOperation </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_partners-billing-attributeset1" role="tab" aria-controls="tabpanel_2_partners-billing-attributeset1" data-tab="partners-billing-attributeset1" tabindex="0" aria-selected="true">partners-billing-attributeset</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_exportSuccessOperation2" role="tab" aria-controls="tabpanel_2_exportSuccessOperation2" data-tab="exportSuccessOperation2" tabindex="-1">exportSuccessOperation</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_failedOperation3" role="tab" aria-controls="tabpanel_2_failedOperation3" data-tab="failedOperation3" tabindex="-1">failedOperation</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_manifest4" role="tab" aria-controls="tabpanel_2_manifest4" data-tab="manifest4" tabindex="-1">manifest</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_operation5" role="tab" aria-controls="tabpanel_2_operation5" data-tab="operation5" tabindex="-1">operation</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_runningOperation6" role="tab" aria-controls="tabpanel_2_runningOperation6" data-tab="runningOperation6" tabindex="-1">runningOperation</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_unbilledUsage7" role="tab" aria-controls="tabpanel_2_unbilledUsage7" data-tab="unbilledUsage7" tabindex="-1">unbilledUsage</a>
+</li>
+</ul>
+<section id="tabpanel_2_partners-billing-attributeset1" role="tabpanel" data-tab="partners-billing-attributeset1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/partners-billing-attributeset?view=graph-rest-1.0&amp;tabs=http">partners-billing-attributeset</a></p>
+</section>
+<section id="tabpanel_2_exportSuccessOperation2" role="tabpanel" data-tab="exportSuccessOperation2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/partners-billing-exportsuccessoperation?view=graph-rest-1.0&amp;tabs=http">exportSuccessOperation</a></p>
 <table>
 <thead>
 <tr>
@@ -215,7 +267,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="failedoperation-"><a href="https://docs.microsoft.com/graph/api/resources/partners-billing-failedoperation?view=graph-rest-1.0&amp;tabs=http">failedOperation </a></h3>
+</section>
+<section id="tabpanel_2_failedOperation3" role="tabpanel" data-tab="failedOperation3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/partners-billing-failedoperation?view=graph-rest-1.0&amp;tabs=http">failedOperation</a></p>
 <table>
 <thead>
 <tr>
@@ -247,7 +302,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="manifest-"><a href="https://docs.microsoft.com/graph/api/resources/partners-billing-manifest?view=graph-rest-1.0&amp;tabs=http">manifest </a></h3>
+</section>
+<section id="tabpanel_2_manifest4" role="tabpanel" data-tab="manifest4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/partners-billing-manifest?view=graph-rest-1.0&amp;tabs=http">manifest</a></p>
 <table>
 <thead>
 <tr>
@@ -314,7 +372,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="operation-"><a href="https://docs.microsoft.com/graph/api/resources/partners-billing-operation?view=graph-rest-1.0&amp;tabs=http">operation </a></h3>
+</section>
+<section id="tabpanel_2_operation5" role="tabpanel" data-tab="operation5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/partners-billing-operation?view=graph-rest-1.0&amp;tabs=http">operation</a></p>
 <table>
 <thead>
 <tr>
@@ -346,7 +407,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="runningoperation-"><a href="https://docs.microsoft.com/graph/api/resources/partners-billing-runningoperation?view=graph-rest-1.0&amp;tabs=http">runningOperation </a></h3>
+</section>
+<section id="tabpanel_2_runningOperation6" role="tabpanel" data-tab="runningOperation6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/partners-billing-runningoperation?view=graph-rest-1.0&amp;tabs=http">runningOperation</a></p>
 <table>
 <thead>
 <tr>
@@ -378,7 +442,12 @@
 </tr>
 </tbody>
 </table>
-<h3 id="unbilledusage-"><a href="https://docs.microsoft.com/graph/api/resources/partners-billing-unbilledusage?view=graph-rest-1.0&amp;tabs=http">unbilledUsage </a></h3>
+</section>
+<section id="tabpanel_2_unbilledUsage7" role="tabpanel" data-tab="unbilledUsage7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/partners-billing-unbilledusage?view=graph-rest-1.0&amp;tabs=http">unbilledUsage</a></p>
+</section>
+</div>
 
 </article>
 

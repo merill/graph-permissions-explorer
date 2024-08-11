@@ -90,199 +90,327 @@
         <article data-uid="">
 <h1 id="eventlistenerreadwriteall">EventListener.ReadWrite.All</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>EventListener.ReadWrite.All</code> permission.</p>
 <blockquote>
 <p>Allows the app to read or write your organization's authentication event listeners on behalf of the signed-in user.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>0edf5e9e-4ce8-468a-8432-d08631d18c43</td>
+<td>d11625a6-fe21-4fc6-8d3d-063eba5525ad</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Read and write all authentication event listeners</td>
+<td>Read and write your organization's authentication event listeners</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the app to read or write your organization's authentication event listeners without a signed-in user.</td>
+<td>Allows the app to read or write your organization's authentication event listeners on behalf of the signed-in user.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/authenticationeventlistener-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /identity/authenticationEventListeners/{authenticationEventListenerId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/authenticationeventsflow-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /identity/authenticationEventsFlows/{authenticationEventsFlow-id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/authenticationeventsflow-delete?view=graph-rest-beta&amp;tabs=http">DELETE /identity/authenticationEventsFlows/{authenticationEventsFlow-id}/</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/authenticationconditionapplication-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /identity/authenticationEventsFlows/{authenticationEventsFlow-id}/conditions/applications/includeApplications/{appId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/onattributecollectionexternalusersselfservicesignup-delete-attributes?view=graph-rest-1.0&amp;tabs=http">DELETE /identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection/microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp/attributes/{attributeId}/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/onauthenticationmethodloadstartexternalusersselfservicesignup-delete-identityproviders?view=graph-rest-1.0&amp;tabs=http">DELETE /identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart/microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp/{identityProviders-id}/$ref</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/onauthenticationmethodloadstartexternalusersselfservicesignup-delete-identityproviders?view=graph-rest-beta&amp;tabs=http">DELETE /identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart/microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp/identityProviders/$ref</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/identitycontainer-list-authenticationeventlisteners?view=graph-rest-1.0&amp;tabs=http">GET /identity/authenticationEventListeners</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/authenticationeventlistener-get?view=graph-rest-1.0&amp;tabs=http">GET /identity/authenticationEventListeners/{authenticationEventListenerId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/onattributecollectionstartcustomextension-get?view=graph-rest-beta&amp;tabs=http">GET /identity/authenticationEventListeners/{listenerId}/microsoft.graph.onAttributeCollectionStartListener/handler/microsoft.graph.onAttributeCollectionStartCustomExtensionHandler/customExtension</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/onattributecollectionsubmitcustomextension-get?view=graph-rest-beta&amp;tabs=http">GET /identity/authenticationEventListeners/{listenerId}/microsoft.graph.onAttributeCollectionSubmitListener/handler/microsoft.graph.onAttributeCollectionSubmitCustomExtensionHandler/customExtension</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/identitycontainer-list-authenticationeventsflows?view=graph-rest-1.0&amp;tabs=http">GET /identity/authenticationEventsFlows</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/authenticationeventsflow-get?view=graph-rest-1.0&amp;tabs=http">GET /identity/authenticationEventsFlows/{authenticationEventsFlow-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/authenticationconditionsapplications-list-includeapplications?view=graph-rest-1.0&amp;tabs=http">GET /identity/authenticationEventsFlows/{authenticationEventsFlow-id}/conditions/applications/includeApplications/</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/onattributecollectionexternalusersselfservicesignup-list-attributes?view=graph-rest-1.0&amp;tabs=http">GET /identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection/microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp/attributes/</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/onauthenticationmethodloadstartexternalusersselfservicesignup-list-identityproviders?view=graph-rest-1.0&amp;tabs=http">GET /identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart/microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp/identityProviders/</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/authenticationeventlistener-update?view=graph-rest-1.0&amp;tabs=http">PATCH /identity/authenticationEventListeners/{authenticationEventListenerId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/authenticationeventsflow-update?view=graph-rest-1.0&amp;tabs=http">PATCH /identity/authenticationEventsFlows/{authenticationEventsFlow-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/identitycontainer-post-authenticationeventlisteners?view=graph-rest-1.0&amp;tabs=http">POST /identity/authenticationEventListeners</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/identitycontainer-post-authenticationeventsflows?view=graph-rest-1.0&amp;tabs=http">POST /identity/authenticationEventsFlows</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/authenticationconditionsapplications-post-includeapplications?view=graph-rest-1.0&amp;tabs=http">POST /identity/authenticationEventsFlows/{authenticationEventsFlow-id}/conditions/applications/includeApplications</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/onattributecollectionexternalusersselfservicesignup-post-attributes?view=graph-rest-1.0&amp;tabs=http">POST /identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection/microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp/attributes/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/onauthenticationmethodloadstartexternalusersselfservicesignup-post-identityproviders?view=graph-rest-1.0&amp;tabs=http">POST /identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart/microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp/identityProviders/$ref</a></td>
 </tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
+<table>
+<thead>
 <tr>
-<td>Beta</td>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/authenticationeventlistener-delete?view=graph-rest-beta&amp;tabs=http">DELETE /identity/authenticationEventListeners/{authenticationEventListenerId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/authenticationeventsflow-delete?view=graph-rest-beta&amp;tabs=http">DELETE /identity/authenticationEventsFlows/{authenticationEventsFlow-id}/</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/authenticationconditionapplication-delete?view=graph-rest-beta&amp;tabs=http">DELETE /identity/authenticationEventsFlows/{authenticationEventsFlow-id}/conditions/applications/includeApplications/{appId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onattributecollectionexternalusersselfservicesignup-delete-attributes?view=graph-rest-beta&amp;tabs=http">DELETE /identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection/microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp/attributes/{attributeId}/$ref</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onauthenticationmethodloadstartexternalusersselfservicesignup-delete-identityproviders?view=graph-rest-beta&amp;tabs=http">DELETE /identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart/microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp/identityProviders/$ref</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/identitycontainer-list-authenticationeventlisteners?view=graph-rest-beta&amp;tabs=http">GET /identity/authenticationEventListeners</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/authenticationeventlistener-get?view=graph-rest-beta&amp;tabs=http">GET /identity/authenticationEventListeners/{authenticationEventListenerId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onattributecollectionstartcustomextension-get?view=graph-rest-beta&amp;tabs=http">GET /identity/authenticationEventListeners/{listenerId}/microsoft.graph.onAttributeCollectionStartListener/handler/microsoft.graph.onAttributeCollectionStartCustomExtensionHandler/customExtension</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onattributecollectionsubmitcustomextension-get?view=graph-rest-beta&amp;tabs=http">GET /identity/authenticationEventListeners/{listenerId}/microsoft.graph.onAttributeCollectionSubmitListener/handler/microsoft.graph.onAttributeCollectionSubmitCustomExtensionHandler/customExtension</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/identitycontainer-list-authenticationeventsflows?view=graph-rest-beta&amp;tabs=http">GET /identity/authenticationEventsFlows</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/authenticationeventsflow-get?view=graph-rest-beta&amp;tabs=http">GET /identity/authenticationEventsFlows/{authenticationEventsFlow-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/authenticationconditionsapplications-list-includeapplications?view=graph-rest-beta&amp;tabs=http">GET /identity/authenticationEventsFlows/{authenticationEventsFlow-id}/conditions/applications/includeApplications/</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onattributecollectionexternalusersselfservicesignup-list-attributes?view=graph-rest-beta&amp;tabs=http">GET /identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection/microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp/attributes/</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onauthenticationmethodloadstartexternalusersselfservicesignup-list-identityproviders?view=graph-rest-beta&amp;tabs=http">GET /identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart/microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp/identityProviders/</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/authenticationeventlistener-update?view=graph-rest-beta&amp;tabs=http">PATCH /identity/authenticationEventListeners/{authenticationEventListenerId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/authenticationeventsflow-update?view=graph-rest-beta&amp;tabs=http">PATCH /identity/authenticationEventsFlows/{authenticationEventsFlow-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/identitycontainer-post-authenticationeventlisteners?view=graph-rest-beta&amp;tabs=http">POST /identity/authenticationEventListeners</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/identitycontainer-post-authenticationeventsflows?view=graph-rest-beta&amp;tabs=http">POST /identity/authenticationEventsFlows</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/authenticationconditionsapplications-post-includeapplications?view=graph-rest-beta&amp;tabs=http">POST /identity/authenticationEventsFlows/{authenticationEventsFlow-id}/conditions/applications/includeApplications</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onattributecollectionexternalusersselfservicesignup-post-attributes?view=graph-rest-beta&amp;tabs=http">POST /identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection/microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp/attributes/$ref</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onauthenticationmethodloadstartexternalusersselfservicesignup-post-identityproviders?view=graph-rest-beta&amp;tabs=http">POST /identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart/microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp/identityProviders/$ref</a></td>
+</tr>
+<tr>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/onattributecollectionstartcustomextension-update?view=graph-rest-beta&amp;tabs=http">PUT /identity/authenticationEventListeners/{listenerId}/microsoft.graph.onAttributeCollectionStartListener/handler/microsoft.graph.onAttributeCollectionStartCustomExtensionHandler/customExtension/$ref</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/onattributecollectionsubmitcustomextension-update?view=graph-rest-beta&amp;tabs=http">PUT /identity/authenticationEventListeners/{listenerId}/microsoft.graph.onAttributeCollectionSubmitListener/handler/microsoft.graph.onAttributeCollectionSubmitCustomExtensionHandler/customExtension/$ref</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>d11625a6-fe21-4fc6-8d3d-063eba5525ad</td>
-</tr>
-<tr>
-<td><strong>Consent Type</strong></td>
-<td>Admin</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read and write your organization's authentication event listeners</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read or write your organization's authentication event listeners on behalf of the signed-in user.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>0edf5e9e-4ce8-468a-8432-d08631d18c43</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read and write all authentication event listeners</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read or write your organization's authentication event listeners without a signed-in user.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="authenticationconditionapplication-"><a href="https://docs.microsoft.com/graph/api/resources/authenticationconditionapplication?view=graph-rest-1.0&amp;tabs=http">authenticationConditionApplication </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_authenticationConditionApplication1" role="tab" aria-controls="tabpanel_2_authenticationConditionApplication1" data-tab="authenticationConditionApplication1" tabindex="0" aria-selected="true">authenticationConditionApplication</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_authenticationConditions2" role="tab" aria-controls="tabpanel_2_authenticationConditions2" data-tab="authenticationConditions2" tabindex="-1">authenticationConditions</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_authenticationEventListener3" role="tab" aria-controls="tabpanel_2_authenticationEventListener3" data-tab="authenticationEventListener3" tabindex="-1">authenticationEventListener</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_authenticationEventsFlow4" role="tab" aria-controls="tabpanel_2_authenticationEventsFlow4" data-tab="authenticationEventsFlow4" tabindex="-1">authenticationEventsFlow</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_customAuthenticationExtension5" role="tab" aria-controls="tabpanel_2_customAuthenticationExtension5" data-tab="customAuthenticationExtension5" tabindex="-1">customAuthenticationExtension</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_externalUsersSelfServiceSignUpEventsFlow6" role="tab" aria-controls="tabpanel_2_externalUsersSelfServiceSignUpEventsFlow6" data-tab="externalUsersSelfServiceSignUpEventsFlow6" tabindex="-1">externalUsersSelfServiceSignUpEventsFlow</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_identityProviderBase7" role="tab" aria-controls="tabpanel_2_identityProviderBase7" data-tab="identityProviderBase7" tabindex="-1">identityProviderBase</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_identityUserFlowAttribute8" role="tab" aria-controls="tabpanel_2_identityUserFlowAttribute8" data-tab="identityUserFlowAttribute8" tabindex="-1">identityUserFlowAttribute</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_onAttributeCollectionHandler9" role="tab" aria-controls="tabpanel_2_onAttributeCollectionHandler9" data-tab="onAttributeCollectionHandler9" tabindex="-1">onAttributeCollectionHandler</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_onAttributeCollectionListener10" role="tab" aria-controls="tabpanel_2_onAttributeCollectionListener10" data-tab="onAttributeCollectionListener10" tabindex="-1">onAttributeCollectionListener</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_onAttributeCollectionStartCustomExtension11" role="tab" aria-controls="tabpanel_2_onAttributeCollectionStartCustomExtension11" data-tab="onAttributeCollectionStartCustomExtension11" tabindex="-1">onAttributeCollectionStartCustomExtension</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_onAttributeCollectionStartHandler12" role="tab" aria-controls="tabpanel_2_onAttributeCollectionStartHandler12" data-tab="onAttributeCollectionStartHandler12" tabindex="-1">onAttributeCollectionStartHandler</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_onAttributeCollectionStartListener13" role="tab" aria-controls="tabpanel_2_onAttributeCollectionStartListener13" data-tab="onAttributeCollectionStartListener13" tabindex="-1">onAttributeCollectionStartListener</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_onAttributeCollectionSubmitCustomExtension14" role="tab" aria-controls="tabpanel_2_onAttributeCollectionSubmitCustomExtension14" data-tab="onAttributeCollectionSubmitCustomExtension14" tabindex="-1">onAttributeCollectionSubmitCustomExtension</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_onAttributeCollectionSubmitHandler15" role="tab" aria-controls="tabpanel_2_onAttributeCollectionSubmitHandler15" data-tab="onAttributeCollectionSubmitHandler15" tabindex="-1">onAttributeCollectionSubmitHandler</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_onAttributeCollectionSubmitListener16" role="tab" aria-controls="tabpanel_2_onAttributeCollectionSubmitListener16" data-tab="onAttributeCollectionSubmitListener16" tabindex="-1">onAttributeCollectionSubmitListener</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_onAuthenticationMethodLoadStartHandler17" role="tab" aria-controls="tabpanel_2_onAuthenticationMethodLoadStartHandler17" data-tab="onAuthenticationMethodLoadStartHandler17" tabindex="-1">onAuthenticationMethodLoadStartHandler</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_onAuthenticationMethodLoadStartListener18" role="tab" aria-controls="tabpanel_2_onAuthenticationMethodLoadStartListener18" data-tab="onAuthenticationMethodLoadStartListener18" tabindex="-1">onAuthenticationMethodLoadStartListener</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_onInteractiveAuthFlowStartHandler19" role="tab" aria-controls="tabpanel_2_onInteractiveAuthFlowStartHandler19" data-tab="onInteractiveAuthFlowStartHandler19" tabindex="-1">onInteractiveAuthFlowStartHandler</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_onInteractiveAuthFlowStartListener20" role="tab" aria-controls="tabpanel_2_onInteractiveAuthFlowStartListener20" data-tab="onInteractiveAuthFlowStartListener20" tabindex="-1">onInteractiveAuthFlowStartListener</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_onTokenIssuanceStartHandler21" role="tab" aria-controls="tabpanel_2_onTokenIssuanceStartHandler21" data-tab="onTokenIssuanceStartHandler21" tabindex="-1">onTokenIssuanceStartHandler</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_onTokenIssuanceStartListener22" role="tab" aria-controls="tabpanel_2_onTokenIssuanceStartListener22" data-tab="onTokenIssuanceStartListener22" tabindex="-1">onTokenIssuanceStartListener</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_onUserCreateStartHandler23" role="tab" aria-controls="tabpanel_2_onUserCreateStartHandler23" data-tab="onUserCreateStartHandler23" tabindex="-1">onUserCreateStartHandler</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_onUserCreateStartListener24" role="tab" aria-controls="tabpanel_2_onUserCreateStartListener24" data-tab="onUserCreateStartListener24" tabindex="-1">onUserCreateStartListener</a>
+</li>
+</ul>
+<section id="tabpanel_2_authenticationConditionApplication1" role="tabpanel" data-tab="authenticationConditionApplication1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/authenticationconditionapplication?view=graph-rest-1.0&amp;tabs=http">authenticationConditionApplication</a></p>
 <table>
 <thead>
 <tr>
@@ -299,7 +427,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="authenticationconditions-"><a href="https://docs.microsoft.com/graph/api/resources/authenticationconditions?view=graph-rest-1.0&amp;tabs=http">authenticationConditions </a></h3>
+</section>
+<section id="tabpanel_2_authenticationConditions2" role="tabpanel" data-tab="authenticationConditions2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/authenticationconditions?view=graph-rest-1.0&amp;tabs=http">authenticationConditions</a></p>
 <table>
 <thead>
 <tr>
@@ -316,7 +447,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="authenticationeventlistener-"><a href="https://docs.microsoft.com/graph/api/resources/authenticationeventlistener?view=graph-rest-1.0&amp;tabs=http">authenticationEventListener </a></h3>
+</section>
+<section id="tabpanel_2_authenticationEventListener3" role="tabpanel" data-tab="authenticationEventListener3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/authenticationeventlistener?view=graph-rest-1.0&amp;tabs=http">authenticationEventListener</a></p>
 <table>
 <thead>
 <tr>
@@ -343,7 +477,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="authenticationeventsflow-"><a href="https://docs.microsoft.com/graph/api/resources/authenticationeventsflow?view=graph-rest-1.0&amp;tabs=http">authenticationEventsFlow </a></h3>
+</section>
+<section id="tabpanel_2_authenticationEventsFlow4" role="tabpanel" data-tab="authenticationEventsFlow4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/authenticationeventsflow?view=graph-rest-1.0&amp;tabs=http">authenticationEventsFlow</a></p>
 <table>
 <thead>
 <tr>
@@ -375,7 +512,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="customauthenticationextension-"><a href="https://docs.microsoft.com/graph/api/resources/customauthenticationextension?view=graph-rest-1.0&amp;tabs=http">customAuthenticationExtension </a></h3>
+</section>
+<section id="tabpanel_2_customAuthenticationExtension5" role="tabpanel" data-tab="customAuthenticationExtension5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/customauthenticationextension?view=graph-rest-1.0&amp;tabs=http">customAuthenticationExtension</a></p>
 <table>
 <thead>
 <tr>
@@ -417,7 +557,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="externalusersselfservicesignupeventsflow-"><a href="https://docs.microsoft.com/graph/api/resources/externalusersselfservicesignupeventsflow?view=graph-rest-1.0&amp;tabs=http">externalUsersSelfServiceSignUpEventsFlow </a></h3>
+</section>
+<section id="tabpanel_2_externalUsersSelfServiceSignUpEventsFlow6" role="tabpanel" data-tab="externalUsersSelfServiceSignUpEventsFlow6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/externalusersselfservicesignupeventsflow?view=graph-rest-1.0&amp;tabs=http">externalUsersSelfServiceSignUpEventsFlow</a></p>
 <table>
 <thead>
 <tr>
@@ -469,7 +612,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="identityproviderbase-"><a href="https://docs.microsoft.com/graph/api/resources/identityproviderbase?view=graph-rest-1.0&amp;tabs=http">identityProviderBase </a></h3>
+</section>
+<section id="tabpanel_2_identityProviderBase7" role="tabpanel" data-tab="identityProviderBase7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/identityproviderbase?view=graph-rest-1.0&amp;tabs=http">identityProviderBase</a></p>
 <table>
 <thead>
 <tr>
@@ -491,7 +637,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="identityuserflowattribute-"><a href="https://docs.microsoft.com/graph/api/resources/identityuserflowattribute?view=graph-rest-1.0&amp;tabs=http">identityUserFlowAttribute </a></h3>
+</section>
+<section id="tabpanel_2_identityUserFlowAttribute8" role="tabpanel" data-tab="identityUserFlowAttribute8" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/identityuserflowattribute?view=graph-rest-1.0&amp;tabs=http">identityUserFlowAttribute</a></p>
 <table>
 <thead>
 <tr>
@@ -528,8 +677,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="onattributecollectionhandler-"><a href="https://docs.microsoft.com/graph/api/resources/onattributecollectionhandler?view=graph-rest-1.0&amp;tabs=http">onAttributeCollectionHandler </a></h3>
-<h3 id="onattributecollectionlistener-"><a href="https://docs.microsoft.com/graph/api/resources/onattributecollectionlistener?view=graph-rest-1.0&amp;tabs=http">onAttributeCollectionListener </a></h3>
+</section>
+<section id="tabpanel_2_onAttributeCollectionHandler9" role="tabpanel" data-tab="onAttributeCollectionHandler9" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/onattributecollectionhandler?view=graph-rest-1.0&amp;tabs=http">onAttributeCollectionHandler</a></p>
+</section>
+<section id="tabpanel_2_onAttributeCollectionListener10" role="tabpanel" data-tab="onAttributeCollectionListener10" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/onattributecollectionlistener?view=graph-rest-1.0&amp;tabs=http">onAttributeCollectionListener</a></p>
 <table>
 <thead>
 <tr>
@@ -561,7 +716,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="onattributecollectionstartcustomextension-"><a href="https://docs.microsoft.com/graph/api/resources/onattributecollectionstartcustomextension?view=graph-rest-1.0&amp;tabs=http">onAttributeCollectionStartCustomExtension </a></h3>
+</section>
+<section id="tabpanel_2_onAttributeCollectionStartCustomExtension11" role="tabpanel" data-tab="onAttributeCollectionStartCustomExtension11" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/onattributecollectionstartcustomextension?view=graph-rest-1.0&amp;tabs=http">onAttributeCollectionStartCustomExtension</a></p>
 <table>
 <thead>
 <tr>
@@ -603,8 +761,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="onattributecollectionstarthandler-"><a href="https://docs.microsoft.com/graph/api/resources/onattributecollectionstarthandler?view=graph-rest-1.0&amp;tabs=http">onAttributeCollectionStartHandler </a></h3>
-<h3 id="onattributecollectionstartlistener-"><a href="https://docs.microsoft.com/graph/api/resources/onattributecollectionstartlistener?view=graph-rest-1.0&amp;tabs=http">onAttributeCollectionStartListener </a></h3>
+</section>
+<section id="tabpanel_2_onAttributeCollectionStartHandler12" role="tabpanel" data-tab="onAttributeCollectionStartHandler12" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/onattributecollectionstarthandler?view=graph-rest-1.0&amp;tabs=http">onAttributeCollectionStartHandler</a></p>
+</section>
+<section id="tabpanel_2_onAttributeCollectionStartListener13" role="tabpanel" data-tab="onAttributeCollectionStartListener13" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/onattributecollectionstartlistener?view=graph-rest-1.0&amp;tabs=http">onAttributeCollectionStartListener</a></p>
 <table>
 <thead>
 <tr>
@@ -641,7 +805,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="onattributecollectionsubmitcustomextension-"><a href="https://docs.microsoft.com/graph/api/resources/onattributecollectionsubmitcustomextension?view=graph-rest-1.0&amp;tabs=http">onAttributeCollectionSubmitCustomExtension </a></h3>
+</section>
+<section id="tabpanel_2_onAttributeCollectionSubmitCustomExtension14" role="tabpanel" data-tab="onAttributeCollectionSubmitCustomExtension14" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/onattributecollectionsubmitcustomextension?view=graph-rest-1.0&amp;tabs=http">onAttributeCollectionSubmitCustomExtension</a></p>
 <table>
 <thead>
 <tr>
@@ -683,8 +850,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="onattributecollectionsubmithandler-"><a href="https://docs.microsoft.com/graph/api/resources/onattributecollectionsubmithandler?view=graph-rest-1.0&amp;tabs=http">onAttributeCollectionSubmitHandler </a></h3>
-<h3 id="onattributecollectionsubmitlistener-"><a href="https://docs.microsoft.com/graph/api/resources/onattributecollectionsubmitlistener?view=graph-rest-1.0&amp;tabs=http">onAttributeCollectionSubmitListener </a></h3>
+</section>
+<section id="tabpanel_2_onAttributeCollectionSubmitHandler15" role="tabpanel" data-tab="onAttributeCollectionSubmitHandler15" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/onattributecollectionsubmithandler?view=graph-rest-1.0&amp;tabs=http">onAttributeCollectionSubmitHandler</a></p>
+</section>
+<section id="tabpanel_2_onAttributeCollectionSubmitListener16" role="tabpanel" data-tab="onAttributeCollectionSubmitListener16" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/onattributecollectionsubmitlistener?view=graph-rest-1.0&amp;tabs=http">onAttributeCollectionSubmitListener</a></p>
 <table>
 <thead>
 <tr>
@@ -721,8 +894,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="onauthenticationmethodloadstarthandler-"><a href="https://docs.microsoft.com/graph/api/resources/onauthenticationmethodloadstarthandler?view=graph-rest-1.0&amp;tabs=http">onAuthenticationMethodLoadStartHandler </a></h3>
-<h3 id="onauthenticationmethodloadstartlistener-"><a href="https://docs.microsoft.com/graph/api/resources/onauthenticationmethodloadstartlistener?view=graph-rest-1.0&amp;tabs=http">onAuthenticationMethodLoadStartListener </a></h3>
+</section>
+<section id="tabpanel_2_onAuthenticationMethodLoadStartHandler17" role="tabpanel" data-tab="onAuthenticationMethodLoadStartHandler17" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/onauthenticationmethodloadstarthandler?view=graph-rest-1.0&amp;tabs=http">onAuthenticationMethodLoadStartHandler</a></p>
+</section>
+<section id="tabpanel_2_onAuthenticationMethodLoadStartListener18" role="tabpanel" data-tab="onAuthenticationMethodLoadStartListener18" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/onauthenticationmethodloadstartlistener?view=graph-rest-1.0&amp;tabs=http">onAuthenticationMethodLoadStartListener</a></p>
 <table>
 <thead>
 <tr>
@@ -754,8 +933,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="oninteractiveauthflowstarthandler-"><a href="https://docs.microsoft.com/graph/api/resources/oninteractiveauthflowstarthandler?view=graph-rest-1.0&amp;tabs=http">onInteractiveAuthFlowStartHandler </a></h3>
-<h3 id="oninteractiveauthflowstartlistener-"><a href="https://docs.microsoft.com/graph/api/resources/oninteractiveauthflowstartlistener?view=graph-rest-1.0&amp;tabs=http">onInteractiveAuthFlowStartListener </a></h3>
+</section>
+<section id="tabpanel_2_onInteractiveAuthFlowStartHandler19" role="tabpanel" data-tab="onInteractiveAuthFlowStartHandler19" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/oninteractiveauthflowstarthandler?view=graph-rest-1.0&amp;tabs=http">onInteractiveAuthFlowStartHandler</a></p>
+</section>
+<section id="tabpanel_2_onInteractiveAuthFlowStartListener20" role="tabpanel" data-tab="onInteractiveAuthFlowStartListener20" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/oninteractiveauthflowstartlistener?view=graph-rest-1.0&amp;tabs=http">onInteractiveAuthFlowStartListener</a></p>
 <table>
 <thead>
 <tr>
@@ -787,8 +972,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="ontokenissuancestarthandler-"><a href="https://docs.microsoft.com/graph/api/resources/ontokenissuancestarthandler?view=graph-rest-1.0&amp;tabs=http">onTokenIssuanceStartHandler </a></h3>
-<h3 id="ontokenissuancestartlistener-"><a href="https://docs.microsoft.com/graph/api/resources/ontokenissuancestartlistener?view=graph-rest-1.0&amp;tabs=http">onTokenIssuanceStartListener </a></h3>
+</section>
+<section id="tabpanel_2_onTokenIssuanceStartHandler21" role="tabpanel" data-tab="onTokenIssuanceStartHandler21" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/ontokenissuancestarthandler?view=graph-rest-1.0&amp;tabs=http">onTokenIssuanceStartHandler</a></p>
+</section>
+<section id="tabpanel_2_onTokenIssuanceStartListener22" role="tabpanel" data-tab="onTokenIssuanceStartListener22" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/ontokenissuancestartlistener?view=graph-rest-1.0&amp;tabs=http">onTokenIssuanceStartListener</a></p>
 <table>
 <thead>
 <tr>
@@ -815,8 +1006,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="onusercreatestarthandler-"><a href="https://docs.microsoft.com/graph/api/resources/onusercreatestarthandler?view=graph-rest-1.0&amp;tabs=http">onUserCreateStartHandler </a></h3>
-<h3 id="onusercreatestartlistener-"><a href="https://docs.microsoft.com/graph/api/resources/onusercreatestartlistener?view=graph-rest-1.0&amp;tabs=http">onUserCreateStartListener </a></h3>
+</section>
+<section id="tabpanel_2_onUserCreateStartHandler23" role="tabpanel" data-tab="onUserCreateStartHandler23" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/onusercreatestarthandler?view=graph-rest-1.0&amp;tabs=http">onUserCreateStartHandler</a></p>
+</section>
+<section id="tabpanel_2_onUserCreateStartListener24" role="tabpanel" data-tab="onUserCreateStartListener24" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/onusercreatestartlistener?view=graph-rest-1.0&amp;tabs=http">onUserCreateStartListener</a></p>
 <table>
 <thead>
 <tr>
@@ -848,6 +1045,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

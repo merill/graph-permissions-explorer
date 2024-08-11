@@ -90,219 +90,314 @@
         <article data-uid="">
 <h1 id="schedulereadall">Schedule.Read.All</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>Schedule.Read.All</code> permission.</p>
 <blockquote>
 <p>Allows the app to read schedule, schedule groups, shifts and associated entities in the Teams or Shifts application on behalf of the signed-in user.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>7b2ebf90-d836-437f-b90d-7b62722c4456</td>
+<td>fccf6dd8-5706-49fa-811f-69e2e1b585d0</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Read all schedule items</td>
+<td>Read user schedule items</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the app to read all schedules, schedule groups, shifts and associated entities in the Teams or Shifts application without a signed-in user.</td>
+<td>Allows the app to read schedule, schedule groups, shifts and associated entities in the Teams or Shifts application on behalf of the signed-in user.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/shift-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /teams/{teamId}/schedule/shifts/{shiftId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/team-getopenshifts?view=graph-rest-beta&amp;tabs=http">GET /me/joinedTeams/getOpenShifts</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/team-getshifts?view=graph-rest-beta&amp;tabs=http">GET /me/joinedTeams/getShifts</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/team-gettimesoff?view=graph-rest-beta&amp;tabs=http">GET /me/joinedTeams/getTimesOff</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/shiftsroledefinition-get?view=graph-rest-beta&amp;tabs=http">GET /team/{teamId}/schedule/shiftsRoleDefinitions/{roleId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/openshiftchangerequest-list?view=graph-rest-1.0&amp;tabs=http">GET /teams/{id}/schedule/openShiftChangeRequests</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/openshiftchangerequest-get?view=graph-rest-1.0&amp;tabs=http">GET /teams/{id}/schedule/openShiftChangeRequests/{openShiftsChangeRequestId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/openshift-list?view=graph-rest-1.0&amp;tabs=http">GET /teams/{id}/schedule/openShifts</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/openshift-get?view=graph-rest-1.0&amp;tabs=http">GET /teams/{id}/schedule/openShifts/{openShiftId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/schedule-get?view=graph-rest-1.0&amp;tabs=http">GET /teams/{teamId}/schedule</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/offershiftrequest-get?view=graph-rest-1.0&amp;tabs=http">GET /teams/{teamId}/schedule/offerShiftRequests/{offerShiftRequestId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/schedule-list-schedulinggroups?view=graph-rest-1.0&amp;tabs=http">GET /teams/{teamId}/schedule/schedulingGroups</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/schedulinggroup-get?view=graph-rest-1.0&amp;tabs=http">GET /teams/{teamId}/schedule/schedulingGroups/{schedulingGroupId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/schedule-list-shifts?view=graph-rest-1.0&amp;tabs=http">GET /teams/{teamId}/schedule/shifts</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/shift-get?view=graph-rest-1.0&amp;tabs=http">GET /teams/{teamId}/schedule/shifts/{shiftId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/swapshiftschangerequest-get?view=graph-rest-1.0&amp;tabs=http">GET /teams/{teamId}/schedule/swapShiftsChangeRequests</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/timecard-list?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamId}/schedule/timeCards</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/timecard-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamId}/schedule/timeCards/{timeCardId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/schedule-list-timeoffreasons?view=graph-rest-1.0&amp;tabs=http">GET /teams/{teamId}/schedule/timeOffReasons</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/timeoffreason-get?view=graph-rest-1.0&amp;tabs=http">GET /teams/{teamId}/schedule/timeOffReasons/{timeOffReasonId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/timeoffrequest-list?view=graph-rest-1.0&amp;tabs=http">GET /teams/{teamId}/schedule/timeOffRequests</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/timeoffrequest-get?view=graph-rest-1.0&amp;tabs=http">GET /teams/{teamId}/schedule/timeOffRequests/{timeOffRequestId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/schedule-list-timesoff?view=graph-rest-1.0&amp;tabs=http">GET /teams/{teamId}/schedule/timesOff</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/timeoff-get?view=graph-rest-1.0&amp;tabs=http">GET /teams/{teamId}/schedule/timesOff/{timeOffId}</a></td>
 </tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
+<table>
+<thead>
 <tr>
-<td>Beta</td>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/shift-delete?view=graph-rest-beta&amp;tabs=http">DELETE /teams/{teamId}/schedule/shifts/{shiftId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/team-getopenshifts?view=graph-rest-beta&amp;tabs=http">GET /me/joinedTeams/getOpenShifts</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/team-getshifts?view=graph-rest-beta&amp;tabs=http">GET /me/joinedTeams/getShifts</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/team-gettimesoff?view=graph-rest-beta&amp;tabs=http">GET /me/joinedTeams/getTimesOff</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/shiftsroledefinition-get?view=graph-rest-beta&amp;tabs=http">GET /team/{teamId}/schedule/shiftsRoleDefinitions/{roleId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/openshiftchangerequest-list?view=graph-rest-beta&amp;tabs=http">GET /teams/{id}/schedule/openShiftChangeRequests</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/openshiftchangerequest-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{id}/schedule/openShiftChangeRequests/{openShiftsChangeRequestId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/openshift-list?view=graph-rest-beta&amp;tabs=http">GET /teams/{id}/schedule/openShifts</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/openshift-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{id}/schedule/openShifts/{openShiftId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/schedule-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamId}/schedule</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/offershiftrequest-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamId}/schedule/offerShiftRequests/{offerShiftRequestId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/schedule-list-schedulinggroups?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamId}/schedule/schedulingGroups</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/schedulinggroup-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamId}/schedule/schedulingGroups/{schedulingGroupId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/schedule-list-shifts?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamId}/schedule/shifts</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/shift-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamId}/schedule/shifts/{shiftId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/swapshiftschangerequest-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamId}/schedule/swapShiftsChangeRequests</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/timecard-list?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamId}/schedule/timeCards</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/timecard-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamId}/schedule/timeCards/{timeCardId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/schedule-list-timeoffreasons?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamId}/schedule/timeOffReasons</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/timeoffreason-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamId}/schedule/timeOffReasons/{timeOffReasonId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/timeoffrequest-list?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamId}/schedule/timeOffRequests</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/timeoffrequest-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamId}/schedule/timeOffRequests/{timeOffRequestId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/schedule-list-timesoff?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamId}/schedule/timesOff</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/timeoff-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamId}/schedule/timesOff/{timeOffId}</a></td>
+</tr>
+<tr>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/daynote-list?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamsId}/schedule/dayNotes</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/daynote-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamsId}/schedule/dayNotes/{dayNoteId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/team-getopenshifts?view=graph-rest-beta&amp;tabs=http">GET /users/{id | user-principal-name}/joinedTeams/getOpenShifts</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/team-getshifts?view=graph-rest-beta&amp;tabs=http">GET /users/{id | user-principal-name}/joinedTeams/getShifts</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/team-gettimesoff?view=graph-rest-beta&amp;tabs=http">GET /users/{id | user-principal-name}/joinedTeams/getTimesOff</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>fccf6dd8-5706-49fa-811f-69e2e1b585d0</td>
-</tr>
-<tr>
-<td><strong>Consent Type</strong></td>
-<td>Admin</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read user schedule items</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read schedule, schedule groups, shifts and associated entities in the Teams or Shifts application on behalf of the signed-in user.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>7b2ebf90-d836-437f-b90d-7b62722c4456</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read all schedule items</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read all schedules, schedule groups, shifts and associated entities in the Teams or Shifts application without a signed-in user.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="daynote-"><a href="https://docs.microsoft.com/graph/api/resources/daynote?view=graph-rest-1.0&amp;tabs=http">dayNote </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_dayNote1" role="tab" aria-controls="tabpanel_2_dayNote1" data-tab="dayNote1" tabindex="0" aria-selected="true">dayNote</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_offerShiftRequest2" role="tab" aria-controls="tabpanel_2_offerShiftRequest2" data-tab="offerShiftRequest2" tabindex="-1">offerShiftRequest</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_openShift3" role="tab" aria-controls="tabpanel_2_openShift3" data-tab="openShift3" tabindex="-1">openShift</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_openShiftChangeRequest4" role="tab" aria-controls="tabpanel_2_openShiftChangeRequest4" data-tab="openShiftChangeRequest4" tabindex="-1">openShiftChangeRequest</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_schedule5" role="tab" aria-controls="tabpanel_2_schedule5" data-tab="schedule5" tabindex="-1">schedule</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_schedulingGroup6" role="tab" aria-controls="tabpanel_2_schedulingGroup6" data-tab="schedulingGroup6" tabindex="-1">schedulingGroup</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_shift7" role="tab" aria-controls="tabpanel_2_shift7" data-tab="shift7" tabindex="-1">shift</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_shiftsRoleDefinition8" role="tab" aria-controls="tabpanel_2_shiftsRoleDefinition8" data-tab="shiftsRoleDefinition8" tabindex="-1">shiftsRoleDefinition</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_swapShiftsChangeRequest9" role="tab" aria-controls="tabpanel_2_swapShiftsChangeRequest9" data-tab="swapShiftsChangeRequest9" tabindex="-1">swapShiftsChangeRequest</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_timeCard10" role="tab" aria-controls="tabpanel_2_timeCard10" data-tab="timeCard10" tabindex="-1">timeCard</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_timeOff11" role="tab" aria-controls="tabpanel_2_timeOff11" data-tab="timeOff11" tabindex="-1">timeOff</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_timeOffReason12" role="tab" aria-controls="tabpanel_2_timeOffReason12" data-tab="timeOffReason12" tabindex="-1">timeOffReason</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_timeOffRequest13" role="tab" aria-controls="tabpanel_2_timeOffRequest13" data-tab="timeOffRequest13" tabindex="-1">timeOffRequest</a>
+</li>
+</ul>
+<section id="tabpanel_2_dayNote1" role="tabpanel" data-tab="dayNote1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/daynote?view=graph-rest-1.0&amp;tabs=http">dayNote</a></p>
 <table>
 <thead>
 <tr>
@@ -334,7 +429,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="offershiftrequest-"><a href="https://docs.microsoft.com/graph/api/resources/offershiftrequest?view=graph-rest-1.0&amp;tabs=http">offerShiftRequest </a></h3>
+</section>
+<section id="tabpanel_2_offerShiftRequest2" role="tabpanel" data-tab="offerShiftRequest2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/offershiftrequest?view=graph-rest-1.0&amp;tabs=http">offerShiftRequest</a></p>
 <table>
 <thead>
 <tr>
@@ -366,7 +464,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="openshift-"><a href="https://docs.microsoft.com/graph/api/resources/openshift?view=graph-rest-1.0&amp;tabs=http">openShift </a></h3>
+</section>
+<section id="tabpanel_2_openShift3" role="tabpanel" data-tab="openShift3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/openshift?view=graph-rest-1.0&amp;tabs=http">openShift</a></p>
 <table>
 <thead>
 <tr>
@@ -393,7 +494,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="openshiftchangerequest-"><a href="https://docs.microsoft.com/graph/api/resources/openshiftchangerequest?view=graph-rest-1.0&amp;tabs=http">openShiftChangeRequest </a></h3>
+</section>
+<section id="tabpanel_2_openShiftChangeRequest4" role="tabpanel" data-tab="openShiftChangeRequest4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/openshiftchangerequest?view=graph-rest-1.0&amp;tabs=http">openShiftChangeRequest</a></p>
 <table>
 <thead>
 <tr>
@@ -410,10 +514,22 @@
 </tr>
 </tbody>
 </table>
-<h3 id="schedule-"><a href="https://docs.microsoft.com/graph/api/resources/schedule?view=graph-rest-1.0&amp;tabs=http">schedule </a></h3>
-<h3 id="schedulinggroup-"><a href="https://docs.microsoft.com/graph/api/resources/schedulinggroup?view=graph-rest-1.0&amp;tabs=http">schedulingGroup </a></h3>
-<h3 id="shift-"><a href="https://docs.microsoft.com/graph/api/resources/shift?view=graph-rest-1.0&amp;tabs=http">shift </a></h3>
-<h3 id="shiftsroledefinition-"><a href="https://docs.microsoft.com/graph/api/resources/shiftsroledefinition?view=graph-rest-1.0&amp;tabs=http">shiftsRoleDefinition </a></h3>
+</section>
+<section id="tabpanel_2_schedule5" role="tabpanel" data-tab="schedule5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/schedule?view=graph-rest-1.0&amp;tabs=http">schedule</a></p>
+</section>
+<section id="tabpanel_2_schedulingGroup6" role="tabpanel" data-tab="schedulingGroup6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/schedulinggroup?view=graph-rest-1.0&amp;tabs=http">schedulingGroup</a></p>
+</section>
+<section id="tabpanel_2_shift7" role="tabpanel" data-tab="shift7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/shift?view=graph-rest-1.0&amp;tabs=http">shift</a></p>
+</section>
+<section id="tabpanel_2_shiftsRoleDefinition8" role="tabpanel" data-tab="shiftsRoleDefinition8" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/shiftsroledefinition?view=graph-rest-1.0&amp;tabs=http">shiftsRoleDefinition</a></p>
 <table>
 <thead>
 <tr>
@@ -445,7 +561,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="swapshiftschangerequest-"><a href="https://docs.microsoft.com/graph/api/resources/swapshiftschangerequest?view=graph-rest-1.0&amp;tabs=http">swapShiftsChangeRequest </a></h3>
+</section>
+<section id="tabpanel_2_swapShiftsChangeRequest9" role="tabpanel" data-tab="swapShiftsChangeRequest9" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/swapshiftschangerequest?view=graph-rest-1.0&amp;tabs=http">swapShiftsChangeRequest</a></p>
 <table>
 <thead>
 <tr>
@@ -462,7 +581,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="timecard-"><a href="https://docs.microsoft.com/graph/api/resources/timecard?view=graph-rest-1.0&amp;tabs=http">timeCard </a></h3>
+</section>
+<section id="tabpanel_2_timeCard10" role="tabpanel" data-tab="timeCard10" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/timecard?view=graph-rest-1.0&amp;tabs=http">timeCard</a></p>
 <table>
 <thead>
 <tr>
@@ -539,8 +661,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="timeoff-"><a href="https://docs.microsoft.com/graph/api/resources/timeoff?view=graph-rest-1.0&amp;tabs=http">timeOff </a></h3>
-<h3 id="timeoffreason-"><a href="https://docs.microsoft.com/graph/api/resources/timeoffreason?view=graph-rest-1.0&amp;tabs=http">timeOffReason </a></h3>
+</section>
+<section id="tabpanel_2_timeOff11" role="tabpanel" data-tab="timeOff11" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/timeoff?view=graph-rest-1.0&amp;tabs=http">timeOff</a></p>
+</section>
+<section id="tabpanel_2_timeOffReason12" role="tabpanel" data-tab="timeOffReason12" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/timeoffreason?view=graph-rest-1.0&amp;tabs=http">timeOffReason</a></p>
 <table>
 <thead>
 <tr>
@@ -587,7 +715,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="timeoffrequest-"><a href="https://docs.microsoft.com/graph/api/resources/timeoffrequest?view=graph-rest-1.0&amp;tabs=http">timeOffRequest </a></h3>
+</section>
+<section id="tabpanel_2_timeOffRequest13" role="tabpanel" data-tab="timeOffRequest13" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/timeoffrequest?view=graph-rest-1.0&amp;tabs=http">timeOffRequest</a></p>
 <table>
 <thead>
 <tr>
@@ -614,6 +745,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

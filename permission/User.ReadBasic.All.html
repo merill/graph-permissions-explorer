@@ -90,674 +90,766 @@
         <article data-uid="">
 <h1 id="userreadbasicall">User.ReadBasic.All</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>User.ReadBasic.All</code> permission.</p>
 <blockquote>
 <p>Allows the app to read a basic set of profile properties of other users in your organization on behalf of the signed-in user. This includes display name, first and last name, email address and photo.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>97235f07-e226-4f63-ace3-39588e11d3a1</td>
+<td>b340eb25-3456-403f-be2f-af7a0d370277</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Read all users' basic profiles</td>
+<td>Read all users' basic profiles</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the app to read a basic set of profile properties of other users in your organization without a signed-in user. Includes display name, first and last name, email address, open extensions, and photo.</td>
+<td>Allows the app to read a basic set of profile properties of other users in your organization on behalf of the signed-in user. This includes display name, first and last name, email address and photo.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>V1</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/outlookuser-supportedtimezones?view=graph-rest-1.0&amp;tabs=http"></a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/personannotation-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/profile/notes/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/personresponsibility-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/responsibilities/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/personannotation-delete?view=graph-rest-beta&amp;tabs=http">DELETE /users/{id | userPrincipalName}/profile/notes/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/personresponsibility-delete?view=graph-rest-beta&amp;tabs=http">DELETE /users/{id | userPrincipalName}/responsibilities/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/photo/$value</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-get?view=graph-rest-1.0&amp;tabs=http">GET /me</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0&amp;tabs=http">GET /me/contactfolders/{contactFolderId}/contacts/{id}/photo/$value</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0&amp;tabs=http">GET /me/contacts/{id}/photo/$value</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-directreports?view=graph-rest-1.0&amp;tabs=http">GET /me/directReports</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/user-findroomlists?view=graph-rest-beta&amp;tabs=http">GET /me/findRoomLists</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/user-findrooms?view=graph-rest-beta&amp;tabs=http">GET /me/findRooms</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/outlookuser-supportedlanguages?view=graph-rest-1.0&amp;tabs=http">GET /me/outlook/supportedLanguages</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/outlookuser-supportedtimezones?view=graph-rest-1.0&amp;tabs=http">GET /me/outlook/supportedTimeZones</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/outlookuser-supportedtimezones?view=graph-rest-1.0&amp;tabs=http">GET /me/outlook/supportedTimeZones(TimeZoneStandard=microsoft.graph.timeZoneStandard'{timezone_format}')</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0&amp;tabs=http">GET /me/photo/$value</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-accounts?view=graph-rest-beta&amp;tabs=http">GET /me/profile/account</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/useraccountinformation-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/account/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-addresses?view=graph-rest-beta&amp;tabs=http">GET /me/profile/addresses</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/itemaddress-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/addresses/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-anniversaries?view=graph-rest-beta&amp;tabs=http">GET /me/profile/anniversaries</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/personanniversary-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/anniversaries/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-awards?view=graph-rest-beta&amp;tabs=http">GET /me/profile/awards</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/personaward-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/awards/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-certifications?view=graph-rest-beta&amp;tabs=http">GET /me/profile/certifications</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/personcertification-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/certifications/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-educationalactivities?view=graph-rest-beta&amp;tabs=http">GET /me/profile/educationalActivities</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/educationalactivity-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/educationalActivities/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-emails?view=graph-rest-beta&amp;tabs=http">GET /me/profile/emails</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/itememail-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/emails/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-interests?view=graph-rest-beta&amp;tabs=http">GET /me/profile/interests</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/personinterest-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/interests/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-languages?view=graph-rest-beta&amp;tabs=http">GET /me/profile/languages</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/languageproficiency-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/languages/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-names?view=graph-rest-beta&amp;tabs=http">GET /me/profile/names</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/personname-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/names/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-notes?view=graph-rest-beta&amp;tabs=http">GET /me/profile/notes</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/personannotation-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/notes/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-patents?view=graph-rest-beta&amp;tabs=http">GET /me/profile/patents</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/itempatent-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/patents/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-phones?view=graph-rest-beta&amp;tabs=http">GET /me/profile/phones</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/itemphone-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/phones/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-positions?view=graph-rest-beta&amp;tabs=http">GET /me/profile/positions</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/workposition-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/positions/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-projects?view=graph-rest-beta&amp;tabs=http">GET /me/profile/projects</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/projectparticipation-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/projects/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-publications?view=graph-rest-beta&amp;tabs=http">GET /me/profile/publications</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/itempublication-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/publications/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-skills?view=graph-rest-beta&amp;tabs=http">GET /me/profile/skills</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/skillproficiency-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/skills/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-webaccounts?view=graph-rest-beta&amp;tabs=http">GET /me/profile/webAccounts</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/webaccount-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/webAccounts/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-websites?view=graph-rest-beta&amp;tabs=http">GET /me/profile/websites</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/personwebsite-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/websites/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-responsibilities?view=graph-rest-beta&amp;tabs=http">GET /me/responsibilities</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/personresponsibility-get?view=graph-rest-beta&amp;tabs=http">GET /me/responsibilities/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0&amp;tabs=http">GET /team/{id}/photo/$value</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list?view=graph-rest-1.0&amp;tabs=http">GET /users</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/contactfolders/{contactFolderId}/contacts/{id}/photo/$value</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/contacts/{id}/photo/$value</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-directreports?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/directReports</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/photo/$value</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-accounts?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/account</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/useraccountinformation-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/account/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-addresses?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/addresses</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/itemaddress-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/addresses/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-anniversaries?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/anniversaries</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/personanniversary-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/anniversaries/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-awards?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/awards</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/personaward-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/awards/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-certifications?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/certifications</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/personcertification-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/certifications/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-educationalactivities?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/educationalActivities</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/educationalactivity-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/educationalActivities/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-emails?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/emails</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/itememail-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/emails/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-interests?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/interests</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/personinterest-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/interests/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-languages?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/languages</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/languageproficiency-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/languages/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-names?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/names</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/personname-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/names/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-notes?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/notes</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/personannotation-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/notes/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-patents?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/patents</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/itempatent-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/patents/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-phones?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/phones</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-positions?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/positions</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/workposition-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/positions/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-projects?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/projects</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/projectparticipation-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/projects/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-publications?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/publications</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/itempublication-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/publications/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-skills?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/skills</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/skillproficiency-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/skills/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-webaccounts?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/webAccounts</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/webaccount-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/webAccounts/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-websites?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/websites</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/personwebsite-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/websites/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-list-responsibilities?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/responsibilities</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/personresponsibility-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/responsibilities/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/user-findroomlists?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/findRoomLists</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/user-findrooms?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/findRooms</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/outlookuser-supportedlanguages?view=graph-rest-1.0&amp;tabs=http">GET /users/{id|userPrincipalName}/outlook/supportedLanguages</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/outlookuser-supportedtimezones?view=graph-rest-1.0&amp;tabs=http">GET /users/{id|userPrincipalName}/outlook/supportedTimeZones</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/outlookuser-supportedtimezones?view=graph-rest-1.0&amp;tabs=http">GET /users/{id|userPrincipalName}/outlook/supportedTimeZones(TimeZoneStandard=microsoft.graph.timeZoneStandard'{timezone_format}')</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/itemphone-get?view=graph-rest-beta&amp;tabs=http">GET /users/{userId}/profile/phones/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/personannotation-update?view=graph-rest-beta&amp;tabs=http">PATCH /me/profile/notes/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/personresponsibility-update?view=graph-rest-beta&amp;tabs=http">PATCH /me/responsibilities/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/personannotation-update?view=graph-rest-beta&amp;tabs=http">PATCH /users/{id | userPrincipalName}/profile/notes/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/personresponsibility-update?view=graph-rest-beta&amp;tabs=http">PATCH /users/{id | userPrincipalName}/responsibilities/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0&amp;tabs=http">POST /directoryObjects/{id}/checkMemberGroups</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0&amp;tabs=http">POST /directoryObjects/{id}/getMemberGroups</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-post-names?view=graph-rest-beta&amp;tabs=http">POST /me/profile/names</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-translateexchangeids?view=graph-rest-1.0&amp;tabs=http">POST /me/translateExchangeIds</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/profile-post-names?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/profile/names</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-translateexchangeids?view=graph-rest-1.0&amp;tabs=http">POST /users/{id|userPrincipalName}/translateExchangeIds</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
+<th>Type</th>
+<th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Id</strong></td>
-<td>b340eb25-3456-403f-be2f-af7a0d370277</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/personannotation-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/profile/notes/{id}</a></td>
 </tr>
 <tr>
-<td><strong>Consent Type</strong></td>
-<td>User</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/personresponsibility-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/responsibilities/{id}</a></td>
 </tr>
 <tr>
-<td><strong>Display String</strong></td>
-<td>Read all users' basic profiles</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/personannotation-delete?view=graph-rest-beta&amp;tabs=http">DELETE /users/{id | userPrincipalName}/profile/notes/{id}</a></td>
 </tr>
 <tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read a basic set of profile properties of other users in your organization on behalf of the signed-in user. This includes display name, first and last name, email address and photo.</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/personresponsibility-delete?view=graph-rest-beta&amp;tabs=http">DELETE /users/{id | userPrincipalName}/responsibilities/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/photo/$value</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-get?view=graph-rest-beta&amp;tabs=http">GET /me</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-beta&amp;tabs=http">GET /me/contactfolders/{contactFolderId}/contacts/{id}/photo/$value</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-beta&amp;tabs=http">GET /me/contacts/{id}/photo/$value</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-directreports?view=graph-rest-beta&amp;tabs=http">GET /me/directReports</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-findroomlists?view=graph-rest-beta&amp;tabs=http">GET /me/findRoomLists</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-findrooms?view=graph-rest-beta&amp;tabs=http">GET /me/findRooms</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/outlookuser-supportedlanguages?view=graph-rest-beta&amp;tabs=http">GET /me/outlook/supportedLanguages</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/outlookuser-supportedtimezones?view=graph-rest-beta&amp;tabs=http">GET /me/outlook/supportedTimeZones</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/outlookuser-supportedtimezones?view=graph-rest-beta&amp;tabs=http">GET /me/outlook/supportedTimeZones(TimeZoneStandard=microsoft.graph.timeZoneStandard'{timezone_format}')</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-beta&amp;tabs=http">GET /me/photo/$value</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-accounts?view=graph-rest-beta&amp;tabs=http">GET /me/profile/account</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/useraccountinformation-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/account/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-addresses?view=graph-rest-beta&amp;tabs=http">GET /me/profile/addresses</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/itemaddress-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/addresses/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-anniversaries?view=graph-rest-beta&amp;tabs=http">GET /me/profile/anniversaries</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/personanniversary-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/anniversaries/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-awards?view=graph-rest-beta&amp;tabs=http">GET /me/profile/awards</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/personaward-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/awards/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-certifications?view=graph-rest-beta&amp;tabs=http">GET /me/profile/certifications</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/personcertification-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/certifications/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-educationalactivities?view=graph-rest-beta&amp;tabs=http">GET /me/profile/educationalActivities</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/educationalactivity-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/educationalActivities/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-emails?view=graph-rest-beta&amp;tabs=http">GET /me/profile/emails</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/itememail-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/emails/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-interests?view=graph-rest-beta&amp;tabs=http">GET /me/profile/interests</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/personinterest-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/interests/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-languages?view=graph-rest-beta&amp;tabs=http">GET /me/profile/languages</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/languageproficiency-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/languages/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-names?view=graph-rest-beta&amp;tabs=http">GET /me/profile/names</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/personname-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/names/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-notes?view=graph-rest-beta&amp;tabs=http">GET /me/profile/notes</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/personannotation-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/notes/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-patents?view=graph-rest-beta&amp;tabs=http">GET /me/profile/patents</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/itempatent-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/patents/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-phones?view=graph-rest-beta&amp;tabs=http">GET /me/profile/phones</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/itemphone-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/phones/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-positions?view=graph-rest-beta&amp;tabs=http">GET /me/profile/positions</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/workposition-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/positions/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-projects?view=graph-rest-beta&amp;tabs=http">GET /me/profile/projects</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/projectparticipation-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/projects/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-publications?view=graph-rest-beta&amp;tabs=http">GET /me/profile/publications</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/itempublication-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/publications/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-skills?view=graph-rest-beta&amp;tabs=http">GET /me/profile/skills</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/skillproficiency-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/skills/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-webaccounts?view=graph-rest-beta&amp;tabs=http">GET /me/profile/webAccounts</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/webaccount-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/webAccounts/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-websites?view=graph-rest-beta&amp;tabs=http">GET /me/profile/websites</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/personwebsite-get?view=graph-rest-beta&amp;tabs=http">GET /me/profile/websites/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-responsibilities?view=graph-rest-beta&amp;tabs=http">GET /me/responsibilities</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/personresponsibility-get?view=graph-rest-beta&amp;tabs=http">GET /me/responsibilities/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-beta&amp;tabs=http">GET /team/{id}/photo/$value</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list?view=graph-rest-beta&amp;tabs=http">GET /users</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/contactfolders/{contactFolderId}/contacts/{id}/photo/$value</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/contacts/{id}/photo/$value</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-directreports?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/directReports</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/photo/$value</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-accounts?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/account</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/useraccountinformation-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/account/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-addresses?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/addresses</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/itemaddress-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/addresses/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-anniversaries?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/anniversaries</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/personanniversary-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/anniversaries/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-awards?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/awards</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/personaward-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/awards/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-certifications?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/certifications</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/personcertification-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/certifications/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-educationalactivities?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/educationalActivities</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/educationalactivity-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/educationalActivities/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-emails?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/emails</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/itememail-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/emails/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-interests?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/interests</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/personinterest-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/interests/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-languages?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/languages</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/languageproficiency-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/languages/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-names?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/names</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/personname-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/names/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-notes?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/notes</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/personannotation-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/notes/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-patents?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/patents</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/itempatent-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/patents/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-phones?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/phones</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-positions?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/positions</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/workposition-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/positions/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-projects?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/projects</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/projectparticipation-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/projects/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-publications?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/publications</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/itempublication-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/publications/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-skills?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/skills</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/skillproficiency-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/skills/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-webaccounts?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/webAccounts</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/webaccount-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/webAccounts/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-websites?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/websites</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/personwebsite-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/profile/websites/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-list-responsibilities?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/responsibilities</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/personresponsibility-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/responsibilities/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-findroomlists?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/findRoomLists</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-findrooms?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/findRooms</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/outlookuser-supportedlanguages?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/outlook/supportedLanguages</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/outlookuser-supportedtimezones?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/outlook/supportedTimeZones</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/outlookuser-supportedtimezones?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/outlook/supportedTimeZones(TimeZoneStandard=microsoft.graph.timeZoneStandard'{timezone_format}')</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/itemphone-get?view=graph-rest-beta&amp;tabs=http">GET /users/{userId}/profile/phones/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/personannotation-update?view=graph-rest-beta&amp;tabs=http">PATCH /me/profile/notes/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/personresponsibility-update?view=graph-rest-beta&amp;tabs=http">PATCH /me/responsibilities/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/personannotation-update?view=graph-rest-beta&amp;tabs=http">PATCH /users/{id | userPrincipalName}/profile/notes/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/personresponsibility-update?view=graph-rest-beta&amp;tabs=http">PATCH /users/{id | userPrincipalName}/responsibilities/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-beta&amp;tabs=http">POST /directoryObjects/{id}/checkMemberGroups</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-beta&amp;tabs=http">POST /directoryObjects/{id}/getMemberGroups</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-post-names?view=graph-rest-beta&amp;tabs=http">POST /me/profile/names</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-translateexchangeids?view=graph-rest-beta&amp;tabs=http">POST /me/translateExchangeIds</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profile-post-names?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/profile/names</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-translateexchangeids?view=graph-rest-beta&amp;tabs=http">POST /users/{id|userPrincipalName}/translateExchangeIds</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>97235f07-e226-4f63-ace3-39588e11d3a1</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read all users' basic profiles</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read a basic set of profile properties of other users in your organization without a signed-in user. Includes display name, first and last name, email address, open extensions, and photo.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="convertidresult-"><a href="https://docs.microsoft.com/graph/api/resources/convertidresult?view=graph-rest-1.0&amp;tabs=http">convertIdResult </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_convertIdResult1" role="tab" aria-controls="tabpanel_2_convertIdResult1" data-tab="convertIdResult1" tabindex="0" aria-selected="true">convertIdResult</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_device2" role="tab" aria-controls="tabpanel_2_device2" data-tab="device2" tabindex="-1">device</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_directoryObject3" role="tab" aria-controls="tabpanel_2_directoryObject3" data-tab="directoryObject3" tabindex="-1">directoryObject</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_educationalActivity4" role="tab" aria-controls="tabpanel_2_educationalActivity4" data-tab="educationalActivity4" tabindex="-1">educationalActivity</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_emailAddress5" role="tab" aria-controls="tabpanel_2_emailAddress5" data-tab="emailAddress5" tabindex="-1">emailAddress</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_entity6" role="tab" aria-controls="tabpanel_2_entity6" data-tab="entity6" tabindex="-1">entity</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_group7" role="tab" aria-controls="tabpanel_2_group7" data-tab="group7" tabindex="-1">group</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_inferenceData8" role="tab" aria-controls="tabpanel_2_inferenceData8" data-tab="inferenceData8" tabindex="-1">inferenceData</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_itemAddress9" role="tab" aria-controls="tabpanel_2_itemAddress9" data-tab="itemAddress9" tabindex="-1">itemAddress</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_itemBody10" role="tab" aria-controls="tabpanel_2_itemBody10" data-tab="itemBody10" tabindex="-1">itemBody</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_itemEmail11" role="tab" aria-controls="tabpanel_2_itemEmail11" data-tab="itemEmail11" tabindex="-1">itemEmail</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_itemFacet12" role="tab" aria-controls="tabpanel_2_itemFacet12" data-tab="itemFacet12" tabindex="-1">itemFacet</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_itemPatent13" role="tab" aria-controls="tabpanel_2_itemPatent13" data-tab="itemPatent13" tabindex="-1">itemPatent</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_itemPhone14" role="tab" aria-controls="tabpanel_2_itemPhone14" data-tab="itemPhone14" tabindex="-1">itemPhone</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_itemPublication15" role="tab" aria-controls="tabpanel_2_itemPublication15" data-tab="itemPublication15" tabindex="-1">itemPublication</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_languageProficiency16" role="tab" aria-controls="tabpanel_2_languageProficiency16" data-tab="languageProficiency16" tabindex="-1">languageProficiency</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_localeInfo17" role="tab" aria-controls="tabpanel_2_localeInfo17" data-tab="localeInfo17" tabindex="-1">localeInfo</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_orgContact18" role="tab" aria-controls="tabpanel_2_orgContact18" data-tab="orgContact18" tabindex="-1">orgContact</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_personAnniversary19" role="tab" aria-controls="tabpanel_2_personAnniversary19" data-tab="personAnniversary19" tabindex="-1">personAnniversary</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_personAnnotation20" role="tab" aria-controls="tabpanel_2_personAnnotation20" data-tab="personAnnotation20" tabindex="-1">personAnnotation</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_personAward21" role="tab" aria-controls="tabpanel_2_personAward21" data-tab="personAward21" tabindex="-1">personAward</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_personCertification22" role="tab" aria-controls="tabpanel_2_personCertification22" data-tab="personCertification22" tabindex="-1">personCertification</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_personInterest23" role="tab" aria-controls="tabpanel_2_personInterest23" data-tab="personInterest23" tabindex="-1">personInterest</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_personName24" role="tab" aria-controls="tabpanel_2_personName24" data-tab="personName24" tabindex="-1">personName</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_personResponsibility25" role="tab" aria-controls="tabpanel_2_personResponsibility25" data-tab="personResponsibility25" tabindex="-1">personResponsibility</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_personWebsite26" role="tab" aria-controls="tabpanel_2_personWebsite26" data-tab="personWebsite26" tabindex="-1">personWebsite</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_profile27" role="tab" aria-controls="tabpanel_2_profile27" data-tab="profile27" tabindex="-1">profile</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_profilePhoto28" role="tab" aria-controls="tabpanel_2_profilePhoto28" data-tab="profilePhoto28" tabindex="-1">profilePhoto</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_projectParticipation29" role="tab" aria-controls="tabpanel_2_projectParticipation29" data-tab="projectParticipation29" tabindex="-1">projectParticipation</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_servicePrincipal30" role="tab" aria-controls="tabpanel_2_servicePrincipal30" data-tab="servicePrincipal30" tabindex="-1">servicePrincipal</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_skillProficiency31" role="tab" aria-controls="tabpanel_2_skillProficiency31" data-tab="skillProficiency31" tabindex="-1">skillProficiency</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_timeZoneInformation32" role="tab" aria-controls="tabpanel_2_timeZoneInformation32" data-tab="timeZoneInformation32" tabindex="-1">timeZoneInformation</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_user33" role="tab" aria-controls="tabpanel_2_user33" data-tab="user33" tabindex="-1">user</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_userAccountInformation34" role="tab" aria-controls="tabpanel_2_userAccountInformation34" data-tab="userAccountInformation34" tabindex="-1">userAccountInformation</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_webAccount35" role="tab" aria-controls="tabpanel_2_webAccount35" data-tab="webAccount35" tabindex="-1">webAccount</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_workPosition36" role="tab" aria-controls="tabpanel_2_workPosition36" data-tab="workPosition36" tabindex="-1">workPosition</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_yomiPersonName37" role="tab" aria-controls="tabpanel_2_yomiPersonName37" data-tab="yomiPersonName37" tabindex="-1">yomiPersonName</a>
+</li>
+</ul>
+<section id="tabpanel_2_convertIdResult1" role="tabpanel" data-tab="convertIdResult1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/convertidresult?view=graph-rest-1.0&amp;tabs=http">convertIdResult</a></p>
 <table>
 <thead>
 <tr>
@@ -784,7 +876,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="device-"><a href="https://docs.microsoft.com/graph/api/resources/device?view=graph-rest-1.0&amp;tabs=http">device </a></h3>
+</section>
+<section id="tabpanel_2_device2" role="tabpanel" data-tab="device2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/device?view=graph-rest-1.0&amp;tabs=http">device</a></p>
 <table>
 <thead>
 <tr>
@@ -951,7 +1046,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="directoryobject-"><a href="https://docs.microsoft.com/graph/api/resources/directoryobject?view=graph-rest-1.0&amp;tabs=http">directoryObject </a></h3>
+</section>
+<section id="tabpanel_2_directoryObject3" role="tabpanel" data-tab="directoryObject3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/directoryobject?view=graph-rest-1.0&amp;tabs=http">directoryObject</a></p>
 <table>
 <thead>
 <tr>
@@ -973,7 +1071,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="educationalactivity-"><a href="https://docs.microsoft.com/graph/api/resources/educationalactivity?view=graph-rest-1.0&amp;tabs=http">educationalActivity </a></h3>
+</section>
+<section id="tabpanel_2_educationalActivity4" role="tabpanel" data-tab="educationalActivity4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/educationalactivity?view=graph-rest-1.0&amp;tabs=http">educationalActivity</a></p>
 <table>
 <thead>
 <tr>
@@ -1050,7 +1151,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="emailaddress-"><a href="https://docs.microsoft.com/graph/api/resources/emailaddress?view=graph-rest-1.0&amp;tabs=http">emailAddress </a></h3>
+</section>
+<section id="tabpanel_2_emailAddress5" role="tabpanel" data-tab="emailAddress5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/emailaddress?view=graph-rest-1.0&amp;tabs=http">emailAddress</a></p>
 <table>
 <thead>
 <tr>
@@ -1072,7 +1176,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="entity-"><a href="https://docs.microsoft.com/graph/api/resources/entity?view=graph-rest-1.0&amp;tabs=http">entity </a></h3>
+</section>
+<section id="tabpanel_2_entity6" role="tabpanel" data-tab="entity6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/entity?view=graph-rest-1.0&amp;tabs=http">entity</a></p>
 <table>
 <thead>
 <tr>
@@ -1089,7 +1196,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="group-"><a href="https://docs.microsoft.com/graph/api/resources/group?view=graph-rest-1.0&amp;tabs=http">group </a></h3>
+</section>
+<section id="tabpanel_2_group7" role="tabpanel" data-tab="group7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/group?view=graph-rest-1.0&amp;tabs=http">group</a></p>
 <table>
 <thead>
 <tr>
@@ -1311,7 +1421,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="inferencedata-"><a href="https://docs.microsoft.com/graph/api/resources/inferencedata?view=graph-rest-1.0&amp;tabs=http">inferenceData </a></h3>
+</section>
+<section id="tabpanel_2_inferenceData8" role="tabpanel" data-tab="inferenceData8" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/inferencedata?view=graph-rest-1.0&amp;tabs=http">inferenceData</a></p>
 <table>
 <thead>
 <tr>
@@ -1333,7 +1446,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="itemaddress-"><a href="https://docs.microsoft.com/graph/api/resources/itemaddress?view=graph-rest-1.0&amp;tabs=http">itemAddress </a></h3>
+</section>
+<section id="tabpanel_2_itemAddress9" role="tabpanel" data-tab="itemAddress9" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/itemaddress?view=graph-rest-1.0&amp;tabs=http">itemAddress</a></p>
 <table>
 <thead>
 <tr>
@@ -1400,7 +1516,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="itembody-"><a href="https://docs.microsoft.com/graph/api/resources/itembody?view=graph-rest-1.0&amp;tabs=http">itemBody </a></h3>
+</section>
+<section id="tabpanel_2_itemBody10" role="tabpanel" data-tab="itemBody10" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/itembody?view=graph-rest-1.0&amp;tabs=http">itemBody</a></p>
 <table>
 <thead>
 <tr>
@@ -1422,7 +1541,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="itememail-"><a href="https://docs.microsoft.com/graph/api/resources/itememail?view=graph-rest-1.0&amp;tabs=http">itemEmail </a></h3>
+</section>
+<section id="tabpanel_2_itemEmail11" role="tabpanel" data-tab="itemEmail11" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/itememail?view=graph-rest-1.0&amp;tabs=http">itemEmail</a></p>
 <table>
 <thead>
 <tr>
@@ -1489,7 +1611,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="itemfacet-"><a href="https://docs.microsoft.com/graph/api/resources/itemfacet?view=graph-rest-1.0&amp;tabs=http">itemFacet </a></h3>
+</section>
+<section id="tabpanel_2_itemFacet12" role="tabpanel" data-tab="itemFacet12" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/itemfacet?view=graph-rest-1.0&amp;tabs=http">itemFacet</a></p>
 <table>
 <thead>
 <tr>
@@ -1546,7 +1671,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="itempatent-"><a href="https://docs.microsoft.com/graph/api/resources/itempatent?view=graph-rest-1.0&amp;tabs=http">itemPatent </a></h3>
+</section>
+<section id="tabpanel_2_itemPatent13" role="tabpanel" data-tab="itemPatent13" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/itempatent?view=graph-rest-1.0&amp;tabs=http">itemPatent</a></p>
 <table>
 <thead>
 <tr>
@@ -1633,7 +1761,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="itemphone-"><a href="https://docs.microsoft.com/graph/api/resources/itemphone?view=graph-rest-1.0&amp;tabs=http">itemPhone </a></h3>
+</section>
+<section id="tabpanel_2_itemPhone14" role="tabpanel" data-tab="itemPhone14" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/itemphone?view=graph-rest-1.0&amp;tabs=http">itemPhone</a></p>
 <table>
 <thead>
 <tr>
@@ -1700,7 +1831,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="itempublication-"><a href="https://docs.microsoft.com/graph/api/resources/itempublication?view=graph-rest-1.0&amp;tabs=http">itemPublication </a></h3>
+</section>
+<section id="tabpanel_2_itemPublication15" role="tabpanel" data-tab="itemPublication15" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/itempublication?view=graph-rest-1.0&amp;tabs=http">itemPublication</a></p>
 <table>
 <thead>
 <tr>
@@ -1782,7 +1916,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="languageproficiency-"><a href="https://docs.microsoft.com/graph/api/resources/languageproficiency?view=graph-rest-1.0&amp;tabs=http">languageProficiency </a></h3>
+</section>
+<section id="tabpanel_2_languageProficiency16" role="tabpanel" data-tab="languageProficiency16" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/languageproficiency?view=graph-rest-1.0&amp;tabs=http">languageProficiency</a></p>
 <table>
 <thead>
 <tr>
@@ -1859,7 +1996,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="localeinfo-"><a href="https://docs.microsoft.com/graph/api/resources/localeinfo?view=graph-rest-1.0&amp;tabs=http">localeInfo </a></h3>
+</section>
+<section id="tabpanel_2_localeInfo17" role="tabpanel" data-tab="localeInfo17" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/localeinfo?view=graph-rest-1.0&amp;tabs=http">localeInfo</a></p>
 <table>
 <thead>
 <tr>
@@ -1881,7 +2021,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="orgcontact-"><a href="https://docs.microsoft.com/graph/api/resources/orgcontact?view=graph-rest-1.0&amp;tabs=http">orgContact </a></h3>
+</section>
+<section id="tabpanel_2_orgContact18" role="tabpanel" data-tab="orgContact18" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/orgcontact?view=graph-rest-1.0&amp;tabs=http">orgContact</a></p>
 <table>
 <thead>
 <tr>
@@ -1973,7 +2116,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="personanniversary-"><a href="https://docs.microsoft.com/graph/api/resources/personanniversary?view=graph-rest-1.0&amp;tabs=http">personAnniversary </a></h3>
+</section>
+<section id="tabpanel_2_personAnniversary19" role="tabpanel" data-tab="personAnniversary19" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/personanniversary?view=graph-rest-1.0&amp;tabs=http">personAnniversary</a></p>
 <table>
 <thead>
 <tr>
@@ -2035,7 +2181,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="personannotation-"><a href="https://docs.microsoft.com/graph/api/resources/personannotation?view=graph-rest-1.0&amp;tabs=http">personAnnotation </a></h3>
+</section>
+<section id="tabpanel_2_personAnnotation20" role="tabpanel" data-tab="personAnnotation20" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/personannotation?view=graph-rest-1.0&amp;tabs=http">personAnnotation</a></p>
 <table>
 <thead>
 <tr>
@@ -2097,7 +2246,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="personaward-"><a href="https://docs.microsoft.com/graph/api/resources/personaward?view=graph-rest-1.0&amp;tabs=http">personAward </a></h3>
+</section>
+<section id="tabpanel_2_personAward21" role="tabpanel" data-tab="personAward21" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/personaward?view=graph-rest-1.0&amp;tabs=http">personAward</a></p>
 <table>
 <thead>
 <tr>
@@ -2179,7 +2331,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="personcertification-"><a href="https://docs.microsoft.com/graph/api/resources/personcertification?view=graph-rest-1.0&amp;tabs=http">personCertification </a></h3>
+</section>
+<section id="tabpanel_2_personCertification22" role="tabpanel" data-tab="personCertification22" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/personcertification?view=graph-rest-1.0&amp;tabs=http">personCertification</a></p>
 <table>
 <thead>
 <tr>
@@ -2281,7 +2436,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="personinterest-"><a href="https://docs.microsoft.com/graph/api/resources/personinterest?view=graph-rest-1.0&amp;tabs=http">personInterest </a></h3>
+</section>
+<section id="tabpanel_2_personInterest23" role="tabpanel" data-tab="personInterest23" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/personinterest?view=graph-rest-1.0&amp;tabs=http">personInterest</a></p>
 <table>
 <thead>
 <tr>
@@ -2358,7 +2516,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="personname-"><a href="https://docs.microsoft.com/graph/api/resources/personname?view=graph-rest-1.0&amp;tabs=http">personName </a></h3>
+</section>
+<section id="tabpanel_2_personName24" role="tabpanel" data-tab="personName24" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/personname?view=graph-rest-1.0&amp;tabs=http">personName</a></p>
 <table>
 <thead>
 <tr>
@@ -2465,7 +2626,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="personresponsibility-"><a href="https://docs.microsoft.com/graph/api/resources/personresponsibility?view=graph-rest-1.0&amp;tabs=http">personResponsibility </a></h3>
+</section>
+<section id="tabpanel_2_personResponsibility25" role="tabpanel" data-tab="personResponsibility25" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/personresponsibility?view=graph-rest-1.0&amp;tabs=http">personResponsibility</a></p>
 <table>
 <thead>
 <tr>
@@ -2537,7 +2701,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="personwebsite-"><a href="https://docs.microsoft.com/graph/api/resources/personwebsite?view=graph-rest-1.0&amp;tabs=http">personWebsite </a></h3>
+</section>
+<section id="tabpanel_2_personWebsite26" role="tabpanel" data-tab="personWebsite26" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/personwebsite?view=graph-rest-1.0&amp;tabs=http">personWebsite</a></p>
 <table>
 <thead>
 <tr>
@@ -2569,7 +2736,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="profile-"><a href="https://docs.microsoft.com/graph/api/resources/profile?view=graph-rest-1.0&amp;tabs=http">profile </a></h3>
+</section>
+<section id="tabpanel_2_profile27" role="tabpanel" data-tab="profile27" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/profile?view=graph-rest-1.0&amp;tabs=http">profile</a></p>
 <table>
 <thead>
 <tr>
@@ -2586,7 +2756,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="profilephoto-"><a href="https://docs.microsoft.com/graph/api/resources/profilephoto?view=graph-rest-1.0&amp;tabs=http">profilePhoto </a></h3>
+</section>
+<section id="tabpanel_2_profilePhoto28" role="tabpanel" data-tab="profilePhoto28" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/profilephoto?view=graph-rest-1.0&amp;tabs=http">profilePhoto</a></p>
 <table>
 <thead>
 <tr>
@@ -2613,7 +2786,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="projectparticipation-"><a href="https://docs.microsoft.com/graph/api/resources/projectparticipation?view=graph-rest-1.0&amp;tabs=http">projectParticipation </a></h3>
+</section>
+<section id="tabpanel_2_projectParticipation29" role="tabpanel" data-tab="projectParticipation29" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/projectparticipation?view=graph-rest-1.0&amp;tabs=http">projectParticipation</a></p>
 <table>
 <thead>
 <tr>
@@ -2700,7 +2876,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="serviceprincipal-"><a href="https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-1.0&amp;tabs=http">servicePrincipal </a></h3>
+</section>
+<section id="tabpanel_2_servicePrincipal30" role="tabpanel" data-tab="servicePrincipal30" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-1.0&amp;tabs=http">servicePrincipal</a></p>
 <table>
 <thead>
 <tr>
@@ -2892,7 +3071,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="skillproficiency-"><a href="https://docs.microsoft.com/graph/api/resources/skillproficiency?view=graph-rest-1.0&amp;tabs=http">skillProficiency </a></h3>
+</section>
+<section id="tabpanel_2_skillProficiency31" role="tabpanel" data-tab="skillProficiency31" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/skillproficiency?view=graph-rest-1.0&amp;tabs=http">skillProficiency</a></p>
 <table>
 <thead>
 <tr>
@@ -2969,7 +3151,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="timezoneinformation-"><a href="https://docs.microsoft.com/graph/api/resources/timezoneinformation?view=graph-rest-1.0&amp;tabs=http">timeZoneInformation </a></h3>
+</section>
+<section id="tabpanel_2_timeZoneInformation32" role="tabpanel" data-tab="timeZoneInformation32" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/timezoneinformation?view=graph-rest-1.0&amp;tabs=http">timeZoneInformation</a></p>
 <table>
 <thead>
 <tr>
@@ -2991,7 +3176,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="user-"><a href="https://docs.microsoft.com/graph/api/resources/user?view=graph-rest-1.0&amp;tabs=http">user </a></h3>
+</section>
+<section id="tabpanel_2_user33" role="tabpanel" data-tab="user33" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/user?view=graph-rest-1.0&amp;tabs=http">user</a></p>
 <table>
 <thead>
 <tr>
@@ -3388,7 +3576,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="useraccountinformation-"><a href="https://docs.microsoft.com/graph/api/resources/useraccountinformation?view=graph-rest-1.0&amp;tabs=http">userAccountInformation </a></h3>
+</section>
+<section id="tabpanel_2_userAccountInformation34" role="tabpanel" data-tab="userAccountInformation34" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/useraccountinformation?view=graph-rest-1.0&amp;tabs=http">userAccountInformation</a></p>
 <table>
 <thead>
 <tr>
@@ -3460,7 +3651,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="webaccount-"><a href="https://docs.microsoft.com/graph/api/resources/webaccount?view=graph-rest-1.0&amp;tabs=http">webAccount </a></h3>
+</section>
+<section id="tabpanel_2_webAccount35" role="tabpanel" data-tab="webAccount35" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/webaccount?view=graph-rest-1.0&amp;tabs=http">webAccount</a></p>
 <table>
 <thead>
 <tr>
@@ -3537,7 +3731,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="workposition-"><a href="https://docs.microsoft.com/graph/api/resources/workposition?view=graph-rest-1.0&amp;tabs=http">workPosition </a></h3>
+</section>
+<section id="tabpanel_2_workPosition36" role="tabpanel" data-tab="workPosition36" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/workposition?view=graph-rest-1.0&amp;tabs=http">workPosition</a></p>
 <table>
 <thead>
 <tr>
@@ -3614,7 +3811,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="yomipersonname-"><a href="https://docs.microsoft.com/graph/api/resources/yomipersonname?view=graph-rest-1.0&amp;tabs=http">yomiPersonName </a></h3>
+</section>
+<section id="tabpanel_2_yomiPersonName37" role="tabpanel" data-tab="yomiPersonName37" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/yomipersonname?view=graph-rest-1.0&amp;tabs=http">yomiPersonName</a></p>
 <table>
 <thead>
 <tr>
@@ -3651,6 +3851,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

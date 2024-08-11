@@ -90,184 +90,210 @@
         <article data-uid="">
 <h1 id="termstorereadall">TermStore.Read.All</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>TermStore.Read.All</code> permission.</p>
 <blockquote>
 <p>Allows the app to read the term store data that the signed-in user has access to. This includes all sets, groups and terms in the term store.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>ea047cc2-df29-4f3e-83a3-205de61501ca</td>
+<td>297f747b-0005-475b-8fef-c890f5152b38</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Read all term store data</td>
+<td>Read term store data</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the app to read all term store data, without a signed-in user. This includes all sets, groups and terms in the term store.</td>
+<td>Allows the app to read the term store data that the signed-in user has access to. This includes all sets, groups and terms in the term store.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/termstore-store-get?view=graph-rest-1.0&amp;tabs=http">GET /sites/{site-id}/termStore</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/termstore-list-groups?view=graph-rest-1.0&amp;tabs=http">GET /sites/{site-id}/termStore/groups</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/termstore-group-get?view=graph-rest-1.0&amp;tabs=http">GET /sites/{site-id}/termStore/groups/{group-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/termstore-term-get?view=graph-rest-1.0&amp;tabs=http">GET /sites/{site-id}/termStore/groups/{group-id}/sets/{set-id}/terms/{term-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/termstore-set-get?view=graph-rest-1.0&amp;tabs=http">GET /sites/{site-id}/termStore/sets/{set-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/termstore-term-list-children?view=graph-rest-1.0&amp;tabs=http">GET /sites/{site-id}/termStore/sets/{set-id}/children</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/termstore-term-list-relations?view=graph-rest-1.0&amp;tabs=http">GET /sites/{site-id}/termStore/sets/{set-id}/relations</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/termstore-term-get?view=graph-rest-1.0&amp;tabs=http">GET /sites/{site-id}/termStore/sets/{set-id}/terms/{term-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/termstore-term-list-children?view=graph-rest-1.0&amp;tabs=http">GET /sites/{site-id}/termStore/sets/{set-id}/terms/{term-id}/children</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/termstore-term-list-relations?view=graph-rest-1.0&amp;tabs=http">GET /sites/{site-id}/termStore/sets/{set-id}/terms/{term-id}/relations</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/termstore-store-get?view=graph-rest-beta&amp;tabs=http">GET /termStore</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/termstore-list-groups?view=graph-rest-beta&amp;tabs=http">GET /termStore/groups</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/termstore-group-get?view=graph-rest-beta&amp;tabs=http">GET /termStore/groups/{group-id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/termstore-term-get?view=graph-rest-beta&amp;tabs=http">GET /termStore/groups/{group-id}/sets/{set-id}/terms/{term-id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/termstore-group-list-sets?view=graph-rest-beta&amp;tabs=http">GET /termStore/groups/{groupId}/sets</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/termstore-set-get?view=graph-rest-beta&amp;tabs=http">GET /termStore/sets/{set-id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/termstore-term-get?view=graph-rest-beta&amp;tabs=http">GET /termStore/sets/{set-id}/terms/{term-id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/termstore-term-list-children?view=graph-rest-beta&amp;tabs=http">GET /termStore/sets/{setId}/children</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/termstore-term-list-relations?view=graph-rest-beta&amp;tabs=http">GET /termStore/sets/{setId}/relations</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/termstore-term-list-children?view=graph-rest-beta&amp;tabs=http">GET /termStore/sets/{setId}/terms/{termId}/children</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/termstore-term-list-relations?view=graph-rest-beta&amp;tabs=http">GET /termStore/sets/{setId}/terms/{termId}/relations</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/termstore-group-list-sets?view=graph-rest-1.0&amp;tabs=http">GET sites/{site-id}/termStore/groups/{group-id}/sets</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
+<th>Type</th>
+<th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Id</strong></td>
-<td>297f747b-0005-475b-8fef-c890f5152b38</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/termstore-store-get?view=graph-rest-beta&amp;tabs=http">GET /sites/{site-id}/termStore</a></td>
 </tr>
 <tr>
-<td><strong>Consent Type</strong></td>
-<td>Admin</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/termstore-group-get?view=graph-rest-beta&amp;tabs=http">GET /sites/{site-id}/termStore/groups/{group-id}</a></td>
 </tr>
 <tr>
-<td><strong>Display String</strong></td>
-<td>Read term store data</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/termstore-term-get?view=graph-rest-beta&amp;tabs=http">GET /sites/{site-id}/termStore/groups/{group-id}/sets/{set-id}/terms/{term-id}</a></td>
 </tr>
 <tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read the term store data that the signed-in user has access to. This includes all sets, groups and terms in the term store.</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/termstore-set-get?view=graph-rest-beta&amp;tabs=http">GET /sites/{site-id}/termStore/sets/{set-id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/termstore-term-get?view=graph-rest-beta&amp;tabs=http">GET /sites/{site-id}/termStore/sets/{set-id}/terms/{term-id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/termstore-store-get?view=graph-rest-beta&amp;tabs=http">GET /termStore</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/termstore-list-groups?view=graph-rest-beta&amp;tabs=http">GET /termStore/groups</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/termstore-group-get?view=graph-rest-beta&amp;tabs=http">GET /termStore/groups/{group-id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/termstore-term-get?view=graph-rest-beta&amp;tabs=http">GET /termStore/groups/{group-id}/sets/{set-id}/terms/{term-id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/termstore-group-list-sets?view=graph-rest-beta&amp;tabs=http">GET /termStore/groups/{groupId}/sets</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/termstore-set-get?view=graph-rest-beta&amp;tabs=http">GET /termStore/sets/{set-id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/termstore-term-get?view=graph-rest-beta&amp;tabs=http">GET /termStore/sets/{set-id}/terms/{term-id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/termstore-term-list-children?view=graph-rest-beta&amp;tabs=http">GET /termStore/sets/{setId}/children</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/termstore-term-list-relations?view=graph-rest-beta&amp;tabs=http">GET /termStore/sets/{setId}/relations</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/termstore-term-list-children?view=graph-rest-beta&amp;tabs=http">GET /termStore/sets/{setId}/terms/{termId}/children</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/termstore-term-list-relations?view=graph-rest-beta&amp;tabs=http">GET /termStore/sets/{setId}/terms/{termId}/relations</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>ea047cc2-df29-4f3e-83a3-205de61501ca</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read all term store data</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read all term store data, without a signed-in user. This includes all sets, groups and terms in the term store.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="group-"><a href="https://docs.microsoft.com/graph/api/resources/termstore-group?view=graph-rest-1.0&amp;tabs=http">Group </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_Group1" role="tab" aria-controls="tabpanel_2_Group1" data-tab="Group1" tabindex="0" aria-selected="true">Group</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_relation2" role="tab" aria-controls="tabpanel_2_relation2" data-tab="relation2" tabindex="-1">relation</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_set3" role="tab" aria-controls="tabpanel_2_set3" data-tab="set3" tabindex="-1">set</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_store4" role="tab" aria-controls="tabpanel_2_store4" data-tab="store4" tabindex="-1">store</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_term5" role="tab" aria-controls="tabpanel_2_term5" data-tab="term5" tabindex="-1">term</a>
+</li>
+</ul>
+<section id="tabpanel_2_Group1" role="tabpanel" data-tab="Group1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/termstore-group?view=graph-rest-1.0&amp;tabs=http">Group</a></p>
 <table>
 <thead>
 <tr>
@@ -309,7 +335,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="relation-"><a href="https://docs.microsoft.com/graph/api/resources/termstore-relation?view=graph-rest-1.0&amp;tabs=http">relation </a></h3>
+</section>
+<section id="tabpanel_2_relation2" role="tabpanel" data-tab="relation2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/termstore-relation?view=graph-rest-1.0&amp;tabs=http">relation</a></p>
 <table>
 <thead>
 <tr>
@@ -331,7 +360,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="set-"><a href="https://docs.microsoft.com/graph/api/resources/termstore-set?view=graph-rest-1.0&amp;tabs=http">set </a></h3>
+</section>
+<section id="tabpanel_2_set3" role="tabpanel" data-tab="set3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/termstore-set?view=graph-rest-1.0&amp;tabs=http">set</a></p>
 <table>
 <thead>
 <tr>
@@ -368,7 +400,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="store-"><a href="https://docs.microsoft.com/graph/api/resources/termstore-store?view=graph-rest-1.0&amp;tabs=http">store </a></h3>
+</section>
+<section id="tabpanel_2_store4" role="tabpanel" data-tab="store4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/termstore-store?view=graph-rest-1.0&amp;tabs=http">store</a></p>
 <table>
 <thead>
 <tr>
@@ -395,7 +430,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="term-"><a href="https://docs.microsoft.com/graph/api/resources/termstore-term?view=graph-rest-1.0&amp;tabs=http">term </a></h3>
+</section>
+<section id="tabpanel_2_term5" role="tabpanel" data-tab="term5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/termstore-term?view=graph-rest-1.0&amp;tabs=http">term</a></p>
 <table>
 <thead>
 <tr>
@@ -437,6 +475,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

@@ -90,619 +90,776 @@
         <article data-uid="">
 <h1 id="tasksread">Tasks.Read</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>Tasks.Read</code> permission.</p>
 <blockquote>
 <p>Allows the app to read the signed-in user’s tasks and task lists, including any shared with the user. Doesn't include permission to create, delete, or update anything.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>-</td>
+<td>f45671fb-e0fe-4b4b-be20-3d3ce43f1bcb</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>-</td>
+<td>Read user's tasks and task lists</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>-</td>
+<td>Allows the app to read the signed-in user’s tasks and task lists, including any shared with the user. Doesn't include permission to create, delete, or update anything.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/basetask-get?view=graph-rest-beta&amp;tabs=http"></a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/todotasklist-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /me/todo/lists/{todoTaskListId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/todotasklist-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /users/{id|userPrincipalName}/todo/lists/{todoTaskListId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/planneruser-list-plans?view=graph-rest-1.0&amp;tabs=http">GET /drive/root/createdByUser/planner/plans</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/planneruser-list-tasks?view=graph-rest-1.0&amp;tabs=http">GET /drive/root/createdByUser/planner/tasks</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/plannergroup-list-plans?view=graph-rest-1.0&amp;tabs=http">GET /groups/{group-id}/planner/plans</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/plannerplan-delta?view=graph-rest-beta&amp;tabs=http">GET /groups/{group-id}/planner/plans/delta</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/outlookuser-list-taskfolders?view=graph-rest-beta&amp;tabs=http">GET /me/outlook/taskFolders</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/outlooktaskfolder-get?view=graph-rest-beta&amp;tabs=http">GET /me/outlook/taskFolders/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/outlooktaskfolder-list-tasks?view=graph-rest-beta&amp;tabs=http">GET /me/outlook/taskFolders/{id}/tasks</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/outlookuser-list-taskgroups?view=graph-rest-beta&amp;tabs=http">GET /me/outlook/taskGroups</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/outlooktaskgroup-get?view=graph-rest-beta&amp;tabs=http">GET /me/outlook/taskGroups/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/outlooktaskgroup-list-taskfolders?view=graph-rest-beta&amp;tabs=http">GET /me/outlook/taskGroups/{id}/taskFolders</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/outlooktaskfolder-get?view=graph-rest-beta&amp;tabs=http">GET /me/outlook/taskGroups/{id}/taskFolders/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/outlooktaskfolder-list-tasks?view=graph-rest-beta&amp;tabs=http">GET /me/outlook/taskGroups/{id}/taskFolders/{id}/tasks</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/outlookuser-list-tasks?view=graph-rest-beta&amp;tabs=http">GET /me/outlook/tasks</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/outlooktask-get?view=graph-rest-beta&amp;tabs=http">GET /me/outlook/tasks/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/outlooktask-list-attachments?view=graph-rest-beta&amp;tabs=http">GET /me/outlook/tasks/{id}/attachments</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/planneruser-get?view=graph-rest-beta&amp;tabs=http">GET /me/planner</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-delta?view=graph-rest-beta&amp;tabs=http">GET /me/planner/all/delta</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-favoriteplans?view=graph-rest-beta&amp;tabs=http">GET /me/planner/favoritePlans</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-mydaytasks?view=graph-rest-beta&amp;tabs=http">GET /me/planner/myDayTasks</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/planneruser-list-plans?view=graph-rest-1.0&amp;tabs=http">GET /me/planner/plans</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-recentplans?view=graph-rest-beta&amp;tabs=http">GET /me/planner/recentPlans</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/planneruser-list-tasks?view=graph-rest-1.0&amp;tabs=http">GET /me/planner/tasks</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/plannertask-delta?view=graph-rest-beta&amp;tabs=http">GET /me/planner/tasks/delta</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/basetask-get?view=graph-rest-beta&amp;tabs=http">GET /me/tasks/alltasks/{baseTaskId}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/tasks-list-lists?view=graph-rest-beta&amp;tabs=http">GET /me/tasks/lists</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/basetasklist-get?view=graph-rest-beta&amp;tabs=http">GET /me/tasks/lists/{baseTaskListId}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/basetasklist-list-tasks?view=graph-rest-beta&amp;tabs=http">GET /me/tasks/lists/{baseTaskListId}/tasks</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/basetask-get?view=graph-rest-beta&amp;tabs=http">GET /me/tasks/lists/{baseTaskListId}/tasks/{baseTaskId}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/basetask-list-checklistitems?view=graph-rest-beta&amp;tabs=http">GET /me/tasks/lists/{baseTaskListId}/tasks/{baseTaskId}/checklistItems</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/basetask-list-linkedresources?view=graph-rest-beta&amp;tabs=http">GET /me/tasks/lists/{baseTaskListId}/tasks/{baseTaskId}/linkedResources</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/linkedresource_v2-get?view=graph-rest-beta&amp;tabs=http">GET /me/tasks/lists/{baseTaskListId}/tasks/{baseTaskId}/linkedResources/{linkedResourceId}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/basetask-delta?view=graph-rest-beta&amp;tabs=http">GET /me/tasks/lists/{baseTaskListId}/tasks/delta</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/basetasklist-delta?view=graph-rest-beta&amp;tabs=http">GET /me/tasks/lists/delta</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/todo-list-lists?view=graph-rest-1.0&amp;tabs=http">GET /me/todo/lists</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/taskfileattachment-get?view=graph-rest-1.0&amp;tabs=http">GET /me/todo/lists/{id}/tasks/{id}/attachments/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/todotask-delta?view=graph-rest-1.0&amp;tabs=http">GET /me/todo/lists/{id}/tasks/delta</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/todotasklist-get?view=graph-rest-1.0&amp;tabs=http">GET /me/todo/lists/{todoTaskListId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/todotasklist-list-tasks?view=graph-rest-1.0&amp;tabs=http">GET /me/todo/lists/{todoTaskListId}/tasks</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/todotask-get?view=graph-rest-1.0&amp;tabs=http">GET /me/todo/lists/{todoTaskListId}/tasks/{taskId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/todotask-list-linkedresources?view=graph-rest-1.0&amp;tabs=http">GET /me/todo/lists/{todoTaskListId}/tasks/{taskId}/linkedResources</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/linkedresource-get?view=graph-rest-1.0&amp;tabs=http">GET /me/todo/lists/{todoTaskListId}/tasks/{taskId}/linkedResources/{linkedResourcesId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/todotask-list-attachments?view=graph-rest-1.0&amp;tabs=http">GET /me/todo/lists/{todoTaskListId}/tasks/{todoTaskId}/attachments</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/todotask-list-checklistitems?view=graph-rest-1.0&amp;tabs=http">GET /me/todo/lists/{todoTaskListId}/tasks/{todoTaskId}/checklistItems</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/checklistitem-get?view=graph-rest-1.0&amp;tabs=http">GET /me/todo/lists/{todoTaskListId}/tasks/{todoTaskId}/checklistItems/{checklistItemId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/planner-list-buckets?view=graph-rest-1.0&amp;tabs=http">GET /planner/buckets</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/plannerbucket-get?view=graph-rest-1.0&amp;tabs=http">GET /planner/buckets/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/plannerbucket-list-tasks?view=graph-rest-1.0&amp;tabs=http">GET /planner/buckets/{id}/tasks</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/planner-list-plans?view=graph-rest-1.0&amp;tabs=http">GET /planner/plans</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/plannerplandetails-get?view=graph-rest-1.0&amp;tabs=http">GET /planner/plans/{id}/details</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/plannerplan-get?view=graph-rest-1.0&amp;tabs=http">GET /planner/plans/{plan-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/plannerplan-list-buckets?view=graph-rest-1.0&amp;tabs=http">GET /planner/plans/{plan-id}/buckets</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/plannerbucket-delta?view=graph-rest-beta&amp;tabs=http">GET /planner/plans/{plan-id}/buckets/delta</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/plannerplan-list-tasks?view=graph-rest-1.0&amp;tabs=http">GET /planner/plans/{plan-id}/tasks</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/plannerroster-get?view=graph-rest-beta&amp;tabs=http">GET /planner/rosters/{plannerRosterId}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/plannerroster-list-members?view=graph-rest-beta&amp;tabs=http">GET /planner/rosters/{plannerRosterId}/members</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/plannerrostermember-get?view=graph-rest-beta&amp;tabs=http">GET /planner/rosters/{plannerRosterId}/members/{plannerRosterMemberId}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/plannerroster-list-plans?view=graph-rest-beta&amp;tabs=http">GET /planner/rosters/{plannerRosterId}/plans</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/plannerplan-delta?view=graph-rest-beta&amp;tabs=http">GET /planner/rosters/{plannerRosterId}/plans/delta</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/planner-list-tasks?view=graph-rest-1.0&amp;tabs=http">GET /planner/tasks</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/plannertask-get?view=graph-rest-1.0&amp;tabs=http">GET /planner/tasks/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0&amp;tabs=http">GET /planner/tasks/{id}/assignedToTaskBoardFormat</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-1.0&amp;tabs=http">GET /planner/tasks/{id}/bucketTaskBoardFormat</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0&amp;tabs=http">GET /planner/tasks/{id}/details</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-1.0&amp;tabs=http">GET /planner/tasks/{id}/progressTaskBoardFormat</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/plannertask-delta?view=graph-rest-beta&amp;tabs=http">GET /planner/tasks/delta</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/basetask-list-checklistitems?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/tasks/lists/{baseTaskListId}/tasks/{baseTaskId}/checklistItems</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/basetask-list-linkedresources?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/tasks/lists/{baseTaskListId}/tasks/{baseTaskId}/linkedResources</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/linkedresource_v2-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/tasks/lists/{baseTaskListId}/tasks/{baseTaskId}/linkedResources/{linkedResourceId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/todotask-list-checklistitems?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/todo/lists/{todoTaskListId}/tasks/{todoTaskId}/checklistItems</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/checklistitem-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/todo/lists/{todoTaskListId}/tasks/{todoTaskId}/checklistItems/{checklistItemId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/planneruser-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/planner</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-delta?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/planner/all/delta</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-favoriteplans?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/planner/favoritePlans</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-mydaytasks?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/planner/myDayTasks</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/planneruser-list-plans?view=graph-rest-1.0&amp;tabs=http">GET /users/{id}/planner/plans</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-recentplans?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/planner/recentPlans</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/planneruser-list-tasks?view=graph-rest-1.0&amp;tabs=http">GET /users/{id}/planner/tasks</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/todotask-list-attachments?view=graph-rest-1.0&amp;tabs=http">GET /users/{id}/todo/lists/{id}/tasks/{id}/attachments</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/taskfileattachment-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{id}/todo/lists/{id}/tasks/{id}/attachments/{id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/outlookuser-list-taskfolders?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/outlook/taskFolders</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/outlooktaskfolder-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/outlook/taskFolders/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/outlooktaskfolder-list-tasks?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/outlook/taskFolders/{id}/tasks</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/outlookuser-list-taskgroups?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/outlook/taskGroups</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/outlooktaskgroup-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/outlook/taskGroups/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/outlooktaskgroup-list-taskfolders?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/outlook/taskGroups/{id}/taskFolders</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/outlooktaskfolder-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/outlook/taskGroups/{id}/taskFolders/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/outlooktaskfolder-list-tasks?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/outlook/taskGroups/{id}/taskFolders/{id}/tasks</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/outlookuser-list-tasks?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/outlook/tasks</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/outlooktask-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/outlook/tasks/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/outlooktask-list-attachments?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/outlook/tasks/{id}/attachments</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/todo-list-lists?view=graph-rest-1.0&amp;tabs=http">GET /users/{id|userPrincipalName}/todo/lists</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/todotasklist-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{id|userPrincipalName}/todo/lists/{todoTaskListId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/todotasklist-list-tasks?view=graph-rest-1.0&amp;tabs=http">GET /users/{id|userPrincipalName}/todo/lists/{todoTaskListId}/tasks</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/todotask-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{id|userPrincipalName}/todo/lists/{todoTaskListId}/tasks/{taskId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/todotask-list-linkedresources?view=graph-rest-1.0&amp;tabs=http">GET /users/{id|userPrincipalName}/todo/lists/{todoTaskListId}/tasks/{taskId}/linkedResources</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/linkedresource-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{id|userPrincipalName}/todo/lists/{todoTaskListId}/tasks/{taskId}/linkedResources/{linkedResourcesId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/todotask-delta?view=graph-rest-1.0&amp;tabs=http">GET /users/{id|userPrincipalName}/todo/lists/{todoTaskListId}/tasks/delta</a></td>
 </tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
+<table>
+<thead>
 <tr>
-<td>Beta</td>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/todotasklist-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/todo/lists/{todoTaskListId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/todotasklist-delete?view=graph-rest-beta&amp;tabs=http">DELETE /users/{id|userPrincipalName}/todo/lists/{todoTaskListId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-plans?view=graph-rest-beta&amp;tabs=http">GET /drive/root/createdByUser/planner/plans</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/plannergroup-list-plans?view=graph-rest-beta&amp;tabs=http">GET /groups/{group-id}/planner/plans</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/plannerplan-delta?view=graph-rest-beta&amp;tabs=http">GET /groups/{group-id}/planner/plans/delta</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/outlookuser-list-taskfolders?view=graph-rest-beta&amp;tabs=http">GET /me/outlook/taskFolders</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/outlooktaskfolder-get?view=graph-rest-beta&amp;tabs=http">GET /me/outlook/taskFolders/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/outlooktaskfolder-list-tasks?view=graph-rest-beta&amp;tabs=http">GET /me/outlook/taskFolders/{id}/tasks</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/outlookuser-list-taskgroups?view=graph-rest-beta&amp;tabs=http">GET /me/outlook/taskGroups</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/outlooktaskgroup-get?view=graph-rest-beta&amp;tabs=http">GET /me/outlook/taskGroups/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/outlooktaskgroup-list-taskfolders?view=graph-rest-beta&amp;tabs=http">GET /me/outlook/taskGroups/{id}/taskFolders</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/outlooktaskfolder-get?view=graph-rest-beta&amp;tabs=http">GET /me/outlook/taskGroups/{id}/taskFolders/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/outlooktaskfolder-list-tasks?view=graph-rest-beta&amp;tabs=http">GET /me/outlook/taskGroups/{id}/taskFolders/{id}/tasks</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/outlookuser-list-tasks?view=graph-rest-beta&amp;tabs=http">GET /me/outlook/tasks</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/outlooktask-get?view=graph-rest-beta&amp;tabs=http">GET /me/outlook/tasks/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/outlooktask-list-attachments?view=graph-rest-beta&amp;tabs=http">GET /me/outlook/tasks/{id}/attachments</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planneruser-get?view=graph-rest-beta&amp;tabs=http">GET /me/planner</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-delta?view=graph-rest-beta&amp;tabs=http">GET /me/planner/all/delta</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-favoriteplans?view=graph-rest-beta&amp;tabs=http">GET /me/planner/favoritePlans</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-mydaytasks?view=graph-rest-beta&amp;tabs=http">GET /me/planner/myDayTasks</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-plans?view=graph-rest-beta&amp;tabs=http">GET /me/planner/plans</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-recentplans?view=graph-rest-beta&amp;tabs=http">GET /me/planner/recentPlans</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-tasks?view=graph-rest-beta&amp;tabs=http">GET /me/planner/tasks</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/plannertask-delta?view=graph-rest-beta&amp;tabs=http">GET /me/planner/tasks/delta</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/basetask-get?view=graph-rest-beta&amp;tabs=http">GET /me/tasks/alltasks/{baseTaskId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/tasks-list-lists?view=graph-rest-beta&amp;tabs=http">GET /me/tasks/lists</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/basetasklist-get?view=graph-rest-beta&amp;tabs=http">GET /me/tasks/lists/{baseTaskListId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/basetasklist-list-tasks?view=graph-rest-beta&amp;tabs=http">GET /me/tasks/lists/{baseTaskListId}/tasks</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/basetask-get?view=graph-rest-beta&amp;tabs=http">GET /me/tasks/lists/{baseTaskListId}/tasks/{baseTaskId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/basetask-list-checklistitems?view=graph-rest-beta&amp;tabs=http">GET /me/tasks/lists/{baseTaskListId}/tasks/{baseTaskId}/checklistItems</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/basetask-list-linkedresources?view=graph-rest-beta&amp;tabs=http">GET /me/tasks/lists/{baseTaskListId}/tasks/{baseTaskId}/linkedResources</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/linkedresource_v2-get?view=graph-rest-beta&amp;tabs=http">GET /me/tasks/lists/{baseTaskListId}/tasks/{baseTaskId}/linkedResources/{linkedResourceId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/basetask-delta?view=graph-rest-beta&amp;tabs=http">GET /me/tasks/lists/{baseTaskListId}/tasks/delta</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/basetasklist-delta?view=graph-rest-beta&amp;tabs=http">GET /me/tasks/lists/delta</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/todo-list-lists?view=graph-rest-beta&amp;tabs=http">GET /me/todo/lists</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/taskfileattachment-get?view=graph-rest-beta&amp;tabs=http">GET /me/todo/lists/{id}/tasks/{id}/attachments/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/todotask-delta?view=graph-rest-beta&amp;tabs=http">GET /me/todo/lists/{id}/tasks/delta</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/todotasklist-get?view=graph-rest-beta&amp;tabs=http">GET /me/todo/lists/{todoTaskListId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/todotasklist-list-tasks?view=graph-rest-beta&amp;tabs=http">GET /me/todo/lists/{todoTaskListId}/tasks</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/todotask-get?view=graph-rest-beta&amp;tabs=http">GET /me/todo/lists/{todoTaskListId}/tasks/{taskId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/todotask-list-linkedresources?view=graph-rest-beta&amp;tabs=http">GET /me/todo/lists/{todoTaskListId}/tasks/{taskId}/linkedResources</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/linkedresource-get?view=graph-rest-beta&amp;tabs=http">GET /me/todo/lists/{todoTaskListId}/tasks/{taskId}/linkedResources/{linkedResourcesId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/todotask-list-attachments?view=graph-rest-beta&amp;tabs=http">GET /me/todo/lists/{todoTaskListId}/tasks/{todoTaskId}/attachments</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/todotask-list-checklistitems?view=graph-rest-beta&amp;tabs=http">GET /me/todo/lists/{todoTaskListId}/tasks/{todoTaskId}/checklistItems</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/checklistitem-get?view=graph-rest-beta&amp;tabs=http">GET /me/todo/lists/{todoTaskListId}/tasks/{todoTaskId}/checklistItems/{checklistItemId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planner-list-buckets?view=graph-rest-beta&amp;tabs=http">GET /planner/buckets</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/plannerbucket-get?view=graph-rest-beta&amp;tabs=http">GET /planner/buckets/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/plannerbucket-list-tasks?view=graph-rest-beta&amp;tabs=http">GET /planner/buckets/{id}/tasks</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planner-list-plans?view=graph-rest-beta&amp;tabs=http">GET /planner/plans</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/plannerplandetails-get?view=graph-rest-beta&amp;tabs=http">GET /planner/plans/{id}/details</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/plannerplan-get?view=graph-rest-beta&amp;tabs=http">GET /planner/plans/{plan-id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/plannerplan-list-buckets?view=graph-rest-beta&amp;tabs=http">GET /planner/plans/{plan-id}/buckets</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/plannerbucket-delta?view=graph-rest-beta&amp;tabs=http">GET /planner/plans/{plan-id}/buckets/delta</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/plannerplan-list-tasks?view=graph-rest-beta&amp;tabs=http">GET /planner/plans/{plan-id}/tasks</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/plannerroster-get?view=graph-rest-beta&amp;tabs=http">GET /planner/rosters/{plannerRosterId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/plannerroster-list-members?view=graph-rest-beta&amp;tabs=http">GET /planner/rosters/{plannerRosterId}/members</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/plannerrostermember-get?view=graph-rest-beta&amp;tabs=http">GET /planner/rosters/{plannerRosterId}/members/{plannerRosterMemberId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/plannerroster-list-plans?view=graph-rest-beta&amp;tabs=http">GET /planner/rosters/{plannerRosterId}/plans</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/plannerplan-delta?view=graph-rest-beta&amp;tabs=http">GET /planner/rosters/{plannerRosterId}/plans/delta</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planner-list-tasks?view=graph-rest-beta&amp;tabs=http">GET /planner/tasks</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/plannertask-get?view=graph-rest-beta&amp;tabs=http">GET /planner/tasks/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-beta&amp;tabs=http">GET /planner/tasks/{id}/assignedToTaskBoardFormat</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-beta&amp;tabs=http">GET /planner/tasks/{id}/bucketTaskBoardFormat</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-beta&amp;tabs=http">GET /planner/tasks/{id}/details</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-beta&amp;tabs=http">GET /planner/tasks/{id}/progressTaskBoardFormat</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/plannertask-delta?view=graph-rest-beta&amp;tabs=http">GET /planner/tasks/delta</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/basetask-list-checklistitems?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/tasks/lists/{baseTaskListId}/tasks/{baseTaskId}/checklistItems</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/basetask-list-linkedresources?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/tasks/lists/{baseTaskListId}/tasks/{baseTaskId}/linkedResources</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/linkedresource_v2-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/tasks/lists/{baseTaskListId}/tasks/{baseTaskId}/linkedResources/{linkedResourceId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/todotask-list-checklistitems?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/todo/lists/{todoTaskListId}/tasks/{todoTaskId}/checklistItems</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/checklistitem-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/todo/lists/{todoTaskListId}/tasks/{todoTaskId}/checklistItems/{checklistItemId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planneruser-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/planner</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-delta?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/planner/all/delta</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-favoriteplans?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/planner/favoritePlans</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-mydaytasks?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/planner/myDayTasks</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-plans?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/planner/plans</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-recentplans?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/planner/recentPlans</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-tasks?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/planner/tasks</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/todotask-list-attachments?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/todo/lists/{id}/tasks/{id}/attachments</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/taskfileattachment-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/todo/lists/{id}/tasks/{id}/attachments/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/outlookuser-list-taskfolders?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/outlook/taskFolders</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/outlooktaskfolder-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/outlook/taskFolders/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/outlooktaskfolder-list-tasks?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/outlook/taskFolders/{id}/tasks</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/outlookuser-list-taskgroups?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/outlook/taskGroups</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/outlooktaskgroup-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/outlook/taskGroups/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/outlooktaskgroup-list-taskfolders?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/outlook/taskGroups/{id}/taskFolders</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/outlooktaskfolder-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/outlook/taskGroups/{id}/taskFolders/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/outlooktaskfolder-list-tasks?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/outlook/taskGroups/{id}/taskFolders/{id}/tasks</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/outlookuser-list-tasks?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/outlook/tasks</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/outlooktask-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/outlook/tasks/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/outlooktask-list-attachments?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/outlook/tasks/{id}/attachments</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/todo-list-lists?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/todo/lists</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/todotasklist-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/todo/lists/{todoTaskListId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/todotasklist-list-tasks?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/todo/lists/{todoTaskListId}/tasks</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/todotask-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/todo/lists/{todoTaskListId}/tasks/{taskId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/todotask-list-linkedresources?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/todo/lists/{todoTaskListId}/tasks/{taskId}/linkedResources</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/linkedresource-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/todo/lists/{todoTaskListId}/tasks/{taskId}/linkedResources/{linkedResourcesId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/todotask-delta?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/todo/lists/{todoTaskListId}/tasks/delta</a></td>
+</tr>
+<tr>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/basetask-get?view=graph-rest-beta&amp;tabs=http">GET /users/{userId|userPrincipalName}/tasks/alltasks/{baseTaskId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/tasks-list-lists?view=graph-rest-beta&amp;tabs=http">GET /users/{userId|userPrincipalName}/tasks/lists</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/basetasklist-get?view=graph-rest-beta&amp;tabs=http">GET /users/{userId|userPrincipalName}/tasks/lists/{baseTaskListId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/basetasklist-list-tasks?view=graph-rest-beta&amp;tabs=http">GET /users/{userId|userPrincipalName}/tasks/lists/{baseTaskListId}/tasks</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/basetask-get?view=graph-rest-beta&amp;tabs=http">GET /users/{userId|userPrincipalName}/tasks/lists/{baseTaskListId}/tasks/{baseTaskId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/basetask-delta?view=graph-rest-beta&amp;tabs=http">GET /users/{userId|userPrincipalName}/tasks/lists/{baseTaskListId}/tasks/delta</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/basetasklist-delta?view=graph-rest-beta&amp;tabs=http">GET /users/{userId|userPrincipalName}/tasks/lists/delta</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/planneruser-list-rosterplans?view=graph-rest-beta&amp;tabs=http">GET /users/{usersId}/planner/rosterPlans</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/plannerplan-movetocontainer?view=graph-rest-beta&amp;tabs=http">POST /planner/plans/{planId}/moveToContainer</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>f45671fb-e0fe-4b4b-be20-3d3ce43f1bcb</td>
-</tr>
-<tr>
-<td><strong>Consent Type</strong></td>
-<td>User</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read user's tasks and task lists</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read the signed-in user’s tasks and task lists, including any shared with the user. Doesn't include permission to create, delete, or update anything.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="attachment-"><a href="https://docs.microsoft.com/graph/api/resources/attachment?view=graph-rest-1.0&amp;tabs=http">attachment </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_attachment1" role="tab" aria-controls="tabpanel_2_attachment1" data-tab="attachment1" tabindex="0" aria-selected="true">attachment</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_basetask2" role="tab" aria-controls="tabpanel_2_basetask2" data-tab="basetask2" tabindex="-1">basetask</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_basetasklist3" role="tab" aria-controls="tabpanel_2_basetasklist3" data-tab="basetasklist3" tabindex="-1">basetasklist</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_checklistItem4" role="tab" aria-controls="tabpanel_2_checklistItem4" data-tab="checklistItem4" tabindex="-1">checklistItem</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_group5" role="tab" aria-controls="tabpanel_2_group5" data-tab="group5" tabindex="-1">group</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_linkedResource6" role="tab" aria-controls="tabpanel_2_linkedResource6" data-tab="linkedResource6" tabindex="-1">linkedResource</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_linkedresourcev27" role="tab" aria-controls="tabpanel_2_linkedresourcev27" data-tab="linkedresourcev27" tabindex="-1">linkedresource_v2</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_outlooktask8" role="tab" aria-controls="tabpanel_2_outlooktask8" data-tab="outlooktask8" tabindex="-1">outlooktask</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_outlooktaskfolder9" role="tab" aria-controls="tabpanel_2_outlooktaskfolder9" data-tab="outlooktaskfolder9" tabindex="-1">outlooktaskfolder</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_outlooktaskgroup10" role="tab" aria-controls="tabpanel_2_outlooktaskgroup10" data-tab="outlooktaskgroup10" tabindex="-1">outlooktaskgroup</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_planner-overview11" role="tab" aria-controls="tabpanel_2_planner-overview11" data-tab="planner-overview11" tabindex="-1">planner-overview</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_plannerAssignedToTaskBoardTaskFormat12" role="tab" aria-controls="tabpanel_2_plannerAssignedToTaskBoardTaskFormat12" data-tab="plannerAssignedToTaskBoardTaskFormat12" tabindex="-1">plannerAssignedToTaskBoardTaskFormat</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_plannerBucket13" role="tab" aria-controls="tabpanel_2_plannerBucket13" data-tab="plannerBucket13" tabindex="-1">plannerBucket</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_plannerBucketTaskBoardTaskFormat14" role="tab" aria-controls="tabpanel_2_plannerBucketTaskBoardTaskFormat14" data-tab="plannerBucketTaskBoardTaskFormat14" tabindex="-1">plannerBucketTaskBoardTaskFormat</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_plannerPlan15" role="tab" aria-controls="tabpanel_2_plannerPlan15" data-tab="plannerPlan15" tabindex="-1">plannerPlan</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_plannerPlanContainer16" role="tab" aria-controls="tabpanel_2_plannerPlanContainer16" data-tab="plannerPlanContainer16" tabindex="-1">plannerPlanContainer</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_plannerPlanDetails17" role="tab" aria-controls="tabpanel_2_plannerPlanDetails17" data-tab="plannerPlanDetails17" tabindex="-1">plannerPlanDetails</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_plannerProgressTaskBoardTaskFormat18" role="tab" aria-controls="tabpanel_2_plannerProgressTaskBoardTaskFormat18" data-tab="plannerProgressTaskBoardTaskFormat18" tabindex="-1">plannerProgressTaskBoardTaskFormat</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_plannerRoster19" role="tab" aria-controls="tabpanel_2_plannerRoster19" data-tab="plannerRoster19" tabindex="-1">plannerRoster</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_plannerRosterMember20" role="tab" aria-controls="tabpanel_2_plannerRosterMember20" data-tab="plannerRosterMember20" tabindex="-1">plannerRosterMember</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_plannerTask21" role="tab" aria-controls="tabpanel_2_plannerTask21" data-tab="plannerTask21" tabindex="-1">plannerTask</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_plannerTaskDetails22" role="tab" aria-controls="tabpanel_2_plannerTaskDetails22" data-tab="plannerTaskDetails22" tabindex="-1">plannerTaskDetails</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_plannerUser23" role="tab" aria-controls="tabpanel_2_plannerUser23" data-tab="plannerUser23" tabindex="-1">plannerUser</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_taskFileAttachment24" role="tab" aria-controls="tabpanel_2_taskFileAttachment24" data-tab="taskFileAttachment24" tabindex="-1">taskFileAttachment</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_todoTask25" role="tab" aria-controls="tabpanel_2_todoTask25" data-tab="todoTask25" tabindex="-1">todoTask</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_todoTaskList26" role="tab" aria-controls="tabpanel_2_todoTaskList26" data-tab="todoTaskList26" tabindex="-1">todoTaskList</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_user27" role="tab" aria-controls="tabpanel_2_user27" data-tab="user27" tabindex="-1">user</a>
+</li>
+</ul>
+<section id="tabpanel_2_attachment1" role="tabpanel" data-tab="attachment1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/attachment?view=graph-rest-1.0&amp;tabs=http">attachment</a></p>
 <table>
 <thead>
 <tr>
@@ -744,7 +901,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="basetask"><a href="https://docs.microsoft.com/graph/api/resources/basetask?view=graph-rest-1.0&amp;tabs=http">basetask</a></h3>
+</section>
+<section id="tabpanel_2_basetask2" role="tabpanel" data-tab="basetask2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/basetask?view=graph-rest-1.0&amp;tabs=http">basetask</a></p>
 <table>
 <thead>
 <tr>
@@ -821,7 +981,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="basetasklist"><a href="https://docs.microsoft.com/graph/api/resources/basetasklist?view=graph-rest-1.0&amp;tabs=http">basetasklist</a></h3>
+</section>
+<section id="tabpanel_2_basetasklist3" role="tabpanel" data-tab="basetasklist3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/basetasklist?view=graph-rest-1.0&amp;tabs=http">basetasklist</a></p>
 <table>
 <thead>
 <tr>
@@ -843,7 +1006,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="checklistitem-"><a href="https://docs.microsoft.com/graph/api/resources/checklistitem?view=graph-rest-1.0&amp;tabs=http">checklistItem </a></h3>
+</section>
+<section id="tabpanel_2_checklistItem4" role="tabpanel" data-tab="checklistItem4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/checklistitem?view=graph-rest-1.0&amp;tabs=http">checklistItem</a></p>
 <table>
 <thead>
 <tr>
@@ -880,7 +1046,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="group-"><a href="https://docs.microsoft.com/graph/api/resources/group?view=graph-rest-1.0&amp;tabs=http">group </a></h3>
+</section>
+<section id="tabpanel_2_group5" role="tabpanel" data-tab="group5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/group?view=graph-rest-1.0&amp;tabs=http">group</a></p>
 <table>
 <thead>
 <tr>
@@ -1102,7 +1271,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="linkedresource-"><a href="https://docs.microsoft.com/graph/api/resources/linkedresource?view=graph-rest-1.0&amp;tabs=http">linkedResource </a></h3>
+</section>
+<section id="tabpanel_2_linkedResource6" role="tabpanel" data-tab="linkedResource6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/linkedresource?view=graph-rest-1.0&amp;tabs=http">linkedResource</a></p>
 <table>
 <thead>
 <tr>
@@ -1139,7 +1311,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="linkedresource_v2"><a href="https://docs.microsoft.com/graph/api/resources/linkedresource_v2?view=graph-rest-1.0&amp;tabs=http">linkedresource_v2</a></h3>
+</section>
+<section id="tabpanel_2_linkedresourcev27" role="tabpanel" data-tab="linkedresourcev27" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/linkedresource_v2?view=graph-rest-1.0&amp;tabs=http">linkedresource_v2</a></p>
 <table>
 <thead>
 <tr>
@@ -1176,7 +1351,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="outlooktask"><a href="https://docs.microsoft.com/graph/api/resources/outlooktask?view=graph-rest-1.0&amp;tabs=http">outlooktask</a></h3>
+</section>
+<section id="tabpanel_2_outlooktask8" role="tabpanel" data-tab="outlooktask8" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/outlooktask?view=graph-rest-1.0&amp;tabs=http">outlooktask</a></p>
 <table>
 <thead>
 <tr>
@@ -1288,7 +1466,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="outlooktaskfolder"><a href="https://docs.microsoft.com/graph/api/resources/outlooktaskfolder?view=graph-rest-1.0&amp;tabs=http">outlooktaskfolder</a></h3>
+</section>
+<section id="tabpanel_2_outlooktaskfolder9" role="tabpanel" data-tab="outlooktaskfolder9" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/outlooktaskfolder?view=graph-rest-1.0&amp;tabs=http">outlooktaskfolder</a></p>
 <table>
 <thead>
 <tr>
@@ -1325,7 +1506,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="outlooktaskgroup"><a href="https://docs.microsoft.com/graph/api/resources/outlooktaskgroup?view=graph-rest-1.0&amp;tabs=http">outlooktaskgroup</a></h3>
+</section>
+<section id="tabpanel_2_outlooktaskgroup10" role="tabpanel" data-tab="outlooktaskgroup10" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/outlooktaskgroup?view=graph-rest-1.0&amp;tabs=http">outlooktaskgroup</a></p>
 <table>
 <thead>
 <tr>
@@ -1362,8 +1546,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="planner-overview"><a href="https://docs.microsoft.com/graph/api/resources/planner-overview?view=graph-rest-1.0&amp;tabs=http">planner-overview</a></h3>
-<h3 id="plannerassignedtotaskboardtaskformat-"><a href="https://docs.microsoft.com/graph/api/resources/plannerassignedtotaskboardtaskformat?view=graph-rest-1.0&amp;tabs=http">plannerAssignedToTaskBoardTaskFormat </a></h3>
+</section>
+<section id="tabpanel_2_planner-overview11" role="tabpanel" data-tab="planner-overview11" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/planner-overview?view=graph-rest-1.0&amp;tabs=http">planner-overview</a></p>
+</section>
+<section id="tabpanel_2_plannerAssignedToTaskBoardTaskFormat12" role="tabpanel" data-tab="plannerAssignedToTaskBoardTaskFormat12" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannerassignedtotaskboardtaskformat?view=graph-rest-1.0&amp;tabs=http">plannerAssignedToTaskBoardTaskFormat</a></p>
 <table>
 <thead>
 <tr>
@@ -1390,7 +1580,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="plannerbucket-"><a href="https://docs.microsoft.com/graph/api/resources/plannerbucket?view=graph-rest-1.0&amp;tabs=http">plannerBucket </a></h3>
+</section>
+<section id="tabpanel_2_plannerBucket13" role="tabpanel" data-tab="plannerBucket13" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannerbucket?view=graph-rest-1.0&amp;tabs=http">plannerBucket</a></p>
 <table>
 <thead>
 <tr>
@@ -1422,7 +1615,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="plannerbuckettaskboardtaskformat-"><a href="https://docs.microsoft.com/graph/api/resources/plannerbuckettaskboardtaskformat?view=graph-rest-1.0&amp;tabs=http">plannerBucketTaskBoardTaskFormat </a></h3>
+</section>
+<section id="tabpanel_2_plannerBucketTaskBoardTaskFormat14" role="tabpanel" data-tab="plannerBucketTaskBoardTaskFormat14" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannerbuckettaskboardtaskformat?view=graph-rest-1.0&amp;tabs=http">plannerBucketTaskBoardTaskFormat</a></p>
 <table>
 <thead>
 <tr>
@@ -1444,7 +1640,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="plannerplan-"><a href="https://docs.microsoft.com/graph/api/resources/plannerplan?view=graph-rest-1.0&amp;tabs=http">plannerPlan </a></h3>
+</section>
+<section id="tabpanel_2_plannerPlan15" role="tabpanel" data-tab="plannerPlan15" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannerplan?view=graph-rest-1.0&amp;tabs=http">plannerPlan</a></p>
 <table>
 <thead>
 <tr>
@@ -1486,7 +1685,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="plannerplancontainer-"><a href="https://docs.microsoft.com/graph/api/resources/plannerplancontainer?view=graph-rest-1.0&amp;tabs=http">plannerPlanContainer </a></h3>
+</section>
+<section id="tabpanel_2_plannerPlanContainer16" role="tabpanel" data-tab="plannerPlanContainer16" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannerplancontainer?view=graph-rest-1.0&amp;tabs=http">plannerPlanContainer</a></p>
 <table>
 <thead>
 <tr>
@@ -1513,7 +1715,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="plannerplandetails-"><a href="https://docs.microsoft.com/graph/api/resources/plannerplandetails?view=graph-rest-1.0&amp;tabs=http">plannerPlanDetails </a></h3>
+</section>
+<section id="tabpanel_2_plannerPlanDetails17" role="tabpanel" data-tab="plannerPlanDetails17" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannerplandetails?view=graph-rest-1.0&amp;tabs=http">plannerPlanDetails</a></p>
 <table>
 <thead>
 <tr>
@@ -1540,7 +1745,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="plannerprogresstaskboardtaskformat-"><a href="https://docs.microsoft.com/graph/api/resources/plannerprogresstaskboardtaskformat?view=graph-rest-1.0&amp;tabs=http">plannerProgressTaskBoardTaskFormat </a></h3>
+</section>
+<section id="tabpanel_2_plannerProgressTaskBoardTaskFormat18" role="tabpanel" data-tab="plannerProgressTaskBoardTaskFormat18" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannerprogresstaskboardtaskformat?view=graph-rest-1.0&amp;tabs=http">plannerProgressTaskBoardTaskFormat</a></p>
 <table>
 <thead>
 <tr>
@@ -1562,7 +1770,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="plannerroster-"><a href="https://docs.microsoft.com/graph/api/resources/plannerroster?view=graph-rest-1.0&amp;tabs=http">plannerRoster </a></h3>
+</section>
+<section id="tabpanel_2_plannerRoster19" role="tabpanel" data-tab="plannerRoster19" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannerroster?view=graph-rest-1.0&amp;tabs=http">plannerRoster</a></p>
 <table>
 <thead>
 <tr>
@@ -1584,7 +1795,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="plannerrostermember-"><a href="https://docs.microsoft.com/graph/api/resources/plannerrostermember?view=graph-rest-1.0&amp;tabs=http">plannerRosterMember </a></h3>
+</section>
+<section id="tabpanel_2_plannerRosterMember20" role="tabpanel" data-tab="plannerRosterMember20" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannerrostermember?view=graph-rest-1.0&amp;tabs=http">plannerRosterMember</a></p>
 <table>
 <thead>
 <tr>
@@ -1616,7 +1830,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="plannertask-"><a href="https://docs.microsoft.com/graph/api/resources/plannertask?view=graph-rest-1.0&amp;tabs=http">plannerTask </a></h3>
+</section>
+<section id="tabpanel_2_plannerTask21" role="tabpanel" data-tab="plannerTask21" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannertask?view=graph-rest-1.0&amp;tabs=http">plannerTask</a></p>
 <table>
 <thead>
 <tr>
@@ -1738,7 +1955,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="plannertaskdetails-"><a href="https://docs.microsoft.com/graph/api/resources/plannertaskdetails?view=graph-rest-1.0&amp;tabs=http">plannerTaskDetails </a></h3>
+</section>
+<section id="tabpanel_2_plannerTaskDetails22" role="tabpanel" data-tab="plannerTaskDetails22" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannertaskdetails?view=graph-rest-1.0&amp;tabs=http">plannerTaskDetails</a></p>
 <table>
 <thead>
 <tr>
@@ -1775,7 +1995,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="planneruser-"><a href="https://docs.microsoft.com/graph/api/resources/planneruser?view=graph-rest-1.0&amp;tabs=http">plannerUser </a></h3>
+</section>
+<section id="tabpanel_2_plannerUser23" role="tabpanel" data-tab="plannerUser23" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/planneruser?view=graph-rest-1.0&amp;tabs=http">plannerUser</a></p>
 <table>
 <thead>
 <tr>
@@ -1792,7 +2015,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="taskfileattachment-"><a href="https://docs.microsoft.com/graph/api/resources/taskfileattachment?view=graph-rest-1.0&amp;tabs=http">taskFileAttachment </a></h3>
+</section>
+<section id="tabpanel_2_taskFileAttachment24" role="tabpanel" data-tab="taskFileAttachment24" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/taskfileattachment?view=graph-rest-1.0&amp;tabs=http">taskFileAttachment</a></p>
 <table>
 <thead>
 <tr>
@@ -1834,7 +2060,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="todotask-"><a href="https://docs.microsoft.com/graph/api/resources/todotask?view=graph-rest-1.0&amp;tabs=http">todoTask </a></h3>
+</section>
+<section id="tabpanel_2_todoTask25" role="tabpanel" data-tab="todoTask25" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/todotask?view=graph-rest-1.0&amp;tabs=http">todoTask</a></p>
 <table>
 <thead>
 <tr>
@@ -1926,7 +2155,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="todotasklist-"><a href="https://docs.microsoft.com/graph/api/resources/todotasklist?view=graph-rest-1.0&amp;tabs=http">todoTaskList </a></h3>
+</section>
+<section id="tabpanel_2_todoTaskList26" role="tabpanel" data-tab="todoTaskList26" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/todotasklist?view=graph-rest-1.0&amp;tabs=http">todoTaskList</a></p>
 <table>
 <thead>
 <tr>
@@ -1963,7 +2195,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="user-"><a href="https://docs.microsoft.com/graph/api/resources/user?view=graph-rest-1.0&amp;tabs=http">user </a></h3>
+</section>
+<section id="tabpanel_2_user27" role="tabpanel" data-tab="user27" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/user?view=graph-rest-1.0&amp;tabs=http">user</a></p>
 <table>
 <thead>
 <tr>
@@ -2360,6 +2595,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

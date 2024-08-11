@@ -90,149 +90,174 @@
         <article data-uid="">
 <h1 id="externalconnectionreadwriteownedby">ExternalConnection.ReadWrite.OwnedBy</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>ExternalConnection.ReadWrite.OwnedBy</code> permission.</p>
 <blockquote>
 <p>Allows the app to read and write settings of external connections on behalf of a signed-in user. The signed-in user must be an administrator. The app can only read and write settings of connections that it is authorized to.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>f431331c-49a6-499f-be1c-62af19c34a9d</td>
+<td>4082ad95-c812-4f02-be92-780c4c4f1830</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Read and write external connections</td>
+<td>Read and write external connections</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the app to read and write external connections without a signed-in user. The app can only read and write external connections that it is authorized to, or it can create new external connections.</td>
+<td>Allows the app to read and write settings of external connections on behalf of a signed-in user. The signed-in user must be an administrator. The app can only read and write settings of connections that it is authorized to.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /external/connections/{connectionsId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-delete?view=graph-rest-beta&amp;tabs=http">DELETE /external/connections/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-list?view=graph-rest-1.0&amp;tabs=http">GET /external/connections</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-connectionoperation-get?view=graph-rest-beta&amp;tabs=http">GET /external/connections/{connection-id}/operations/{operation-id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-get?view=graph-rest-1.0&amp;tabs=http">GET /external/connections/{connectionsId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/externalconnectors-connectionoperation-get?view=graph-rest-1.0&amp;tabs=http">GET /external/connections/{connectionsId}/operations/{connectionOperationId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/externalconnectors-schema-get?view=graph-rest-1.0&amp;tabs=http">GET /external/connections/{connectionsId}/schema</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-get?view=graph-rest-beta&amp;tabs=http">GET /external/connections/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-connectionquota-get?view=graph-rest-beta&amp;tabs=http">GET /external/connections/{id}/quota</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-schema-get?view=graph-rest-beta&amp;tabs=http">GET /external/connections/{id}/schema</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-schema-update?view=graph-rest-beta&amp;tabs=http">PATCH /external/connections/{connectionId}/schema</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-update?view=graph-rest-1.0&amp;tabs=http">PATCH /external/connections/{connectionsId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-update?view=graph-rest-beta&amp;tabs=http">PATCH /external/connections/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-patch-schema?view=graph-rest-1.0&amp;tabs=http">PATCH /external/connections/{id}/schema</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/externalconnectors-external-post-connections?view=graph-rest-1.0&amp;tabs=http">POST /external/connections</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
+<th>Type</th>
+<th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Id</strong></td>
-<td>4082ad95-c812-4f02-be92-780c4c4f1830</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-delete?view=graph-rest-beta&amp;tabs=http">DELETE /external/connections/{id}</a></td>
 </tr>
 <tr>
-<td><strong>Consent Type</strong></td>
-<td>Admin</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-list?view=graph-rest-beta&amp;tabs=http">GET /external/connections</a></td>
 </tr>
 <tr>
-<td><strong>Display String</strong></td>
-<td>Read and write external connections</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-connectionoperation-get?view=graph-rest-beta&amp;tabs=http">GET /external/connections/{connection-id}/operations/{operation-id}</a></td>
 </tr>
 <tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read and write settings of external connections on behalf of a signed-in user. The signed-in user must be an administrator. The app can only read and write settings of connections that it is authorized to.</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-get?view=graph-rest-beta&amp;tabs=http">GET /external/connections/{id}</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-connectionquota-get?view=graph-rest-beta&amp;tabs=http">GET /external/connections/{id}/quota</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-schema-get?view=graph-rest-beta&amp;tabs=http">GET /external/connections/{id}/schema</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-schema-update?view=graph-rest-beta&amp;tabs=http">PATCH /external/connections/{connectionId}/schema</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-update?view=graph-rest-beta&amp;tabs=http">PATCH /external/connections/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-patch-schema?view=graph-rest-beta&amp;tabs=http">PATCH /external/connections/{id}/schema</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/externalconnectors-external-post-connections?view=graph-rest-beta&amp;tabs=http">POST /external/connections</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>f431331c-49a6-499f-be1c-62af19c34a9d</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read and write external connections</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read and write external connections without a signed-in user. The app can only read and write external connections that it is authorized to, or it can create new external connections.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="configuration-"><a href="https://docs.microsoft.com/graph/api/resources/externalconnectors-configuration?view=graph-rest-1.0&amp;tabs=http">configuration </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_configuration1" role="tab" aria-controls="tabpanel_2_configuration1" data-tab="configuration1" tabindex="0" aria-selected="true">configuration</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_connectionOperation2" role="tab" aria-controls="tabpanel_2_connectionOperation2" data-tab="connectionOperation2" tabindex="-1">connectionOperation</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_connectionQuota3" role="tab" aria-controls="tabpanel_2_connectionQuota3" data-tab="connectionQuota3" tabindex="-1">connectionQuota</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_externalConnection4" role="tab" aria-controls="tabpanel_2_externalConnection4" data-tab="externalConnection4" tabindex="-1">externalConnection</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_schema5" role="tab" aria-controls="tabpanel_2_schema5" data-tab="schema5" tabindex="-1">schema</a>
+</li>
+</ul>
+<section id="tabpanel_2_configuration1" role="tabpanel" data-tab="configuration1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/externalconnectors-configuration?view=graph-rest-1.0&amp;tabs=http">configuration</a></p>
 <table>
 <thead>
 <tr>
@@ -249,7 +274,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="connectionoperation-"><a href="https://docs.microsoft.com/graph/api/resources/externalconnectors-connectionoperation?view=graph-rest-1.0&amp;tabs=http">connectionOperation </a></h3>
+</section>
+<section id="tabpanel_2_connectionOperation2" role="tabpanel" data-tab="connectionOperation2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/externalconnectors-connectionoperation?view=graph-rest-1.0&amp;tabs=http">connectionOperation</a></p>
 <table>
 <thead>
 <tr>
@@ -276,7 +304,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="connectionquota-"><a href="https://docs.microsoft.com/graph/api/resources/externalconnectors-connectionquota?view=graph-rest-1.0&amp;tabs=http">connectionQuota </a></h3>
+</section>
+<section id="tabpanel_2_connectionQuota3" role="tabpanel" data-tab="connectionQuota3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/externalconnectors-connectionquota?view=graph-rest-1.0&amp;tabs=http">connectionQuota</a></p>
 <table>
 <thead>
 <tr>
@@ -293,7 +324,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="externalconnection-"><a href="https://docs.microsoft.com/graph/api/resources/externalconnectors-externalconnection?view=graph-rest-1.0&amp;tabs=http">externalConnection </a></h3>
+</section>
+<section id="tabpanel_2_externalConnection4" role="tabpanel" data-tab="externalConnection4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/externalconnectors-externalconnection?view=graph-rest-1.0&amp;tabs=http">externalConnection</a></p>
 <table>
 <thead>
 <tr>
@@ -345,7 +379,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="schema-"><a href="https://docs.microsoft.com/graph/api/resources/externalconnectors-schema?view=graph-rest-1.0&amp;tabs=http">schema </a></h3>
+</section>
+<section id="tabpanel_2_schema5" role="tabpanel" data-tab="schema5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/externalconnectors-schema?view=graph-rest-1.0&amp;tabs=http">schema</a></p>
 <table>
 <thead>
 <tr>
@@ -367,6 +404,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

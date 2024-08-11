@@ -90,774 +90,1237 @@
         <article data-uid="">
 <h1 id="groupreadall">Group.Read.All</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>Group.Read.All</code> permission.</p>
 <blockquote>
 <p>Allows the app to list groups, and to read their properties and all group memberships on behalf of the signed-in user.  Also allows the app to read calendar, conversations, files, and other group content for all groups the signed-in user can access.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>5b567255-7703-4780-807c-7be8301ae99b</td>
+<td>5f8c59db-677d-491f-a6b8-5f174b11ec1d</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Read all groups</td>
+<td>Read all groups</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the app to read group properties and memberships, and read conversations for all groups, without a signed-in user.</td>
+<td>Allows the app to list groups, and to read their properties and all group memberships on behalf of the signed-in user.  Also allows the app to read calendar, conversations, files, and other group content for all groups the signed-in user can access.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/conversationthread-get?view=graph-rest-1.0&amp;tabs=http"></a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/orgcontact-list-directreports?view=graph-rest-1.0&amp;tabs=http">GET /contacts/{id}/directReports</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/orgcontact-get-manager?view=graph-rest-1.0&amp;tabs=http">GET /contacts/{id}/manager</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/orgcontact-list-memberof?view=graph-rest-1.0&amp;tabs=http">GET /contacts/{id}/memberOf</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/orgcontact-list-transitivememberof?view=graph-rest-1.0&amp;tabs=http">GET /contacts/{id}/transitiveMemberOf</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/planneruser-list-plans?view=graph-rest-1.0&amp;tabs=http">GET /drive/root/createdByUser/planner/plans</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/planneruser-list-tasks?view=graph-rest-1.0&amp;tabs=http">GET /drive/root/createdByUser/planner/tasks</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-1.0&amp;tabs=http">GET /drives/{drive-id}/items/{item-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-1.0&amp;tabs=http">GET /drives/{drive-id}/root:/{item-path}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-list?view=graph-rest-1.0&amp;tabs=http">GET /groups</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-1.0&amp;tabs=http">GET /groups/{group-id}/drive/items/{item-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-1.0&amp;tabs=http">GET /groups/{group-id}/drive/root:/{item-path}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-list-permissiongrants?view=graph-rest-1.0&amp;tabs=http">GET /groups/{group-id}/permissionGrants</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/plannergroup-list-plans?view=graph-rest-1.0&amp;tabs=http">GET /groups/{group-id}/planner/plans</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/conversationthread-list-posts?view=graph-rest-1.0&amp;tabs=http">GET /groups/{groupId}/conversations/{conversationId}/threads/{threadId}/posts</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/conversationthread-list-posts?view=graph-rest-1.0&amp;tabs=http">GET /groups/{groupId}/threads/{threadId}/posts</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-get?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-list-acceptedsenders?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/acceptedSenders</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-list-events?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/calendar/events</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-get-event?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/calendar/events/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-list-calendarview?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/calendarView?startDateTime={start_datetime}&amp;endDateTime={end_datetime}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-list-conversations?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/conversations</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-get-conversation?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/conversations/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/conversation-list-threads?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/conversations/{id}/threads</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/conversationthread-get?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/conversations/{id}/threads/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/post-get?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/conversations/{id}/threads/{id}/posts/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/post-list-attachments?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/conversations/{id}/threads/{id}/posts/{id}/attachments</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/group-list-endpoints?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/endpoints</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/endpoint-get?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/endpoints/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-list-events?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/events</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-get-event?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/events/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-list-memberof?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/memberOf</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-list-members?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/members</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-list-owners?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/owners</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/photo/$value</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-list-photos?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/photos</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-list-rejectedsenders?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/rejectedSenders</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-list-threads?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/threads</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-get-thread?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/threads/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/post-get?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/threads/{id}/posts/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/post-list-attachments?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/threads/{id}/posts/{id}/attachments</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-list-transitivememberof?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/transitiveMemberOf</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-list-transitivemembers?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/transitiveMembers</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-delta?view=graph-rest-1.0&amp;tabs=http">GET /groups/delta</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-list-settings?view=graph-rest-1.0&amp;tabs=http">GET /groupSettings</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/groupsetting-get?view=graph-rest-1.0&amp;tabs=http">GET /groupSettings/{groupSettingId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0&amp;tabs=http">GET /me/contactfolders/{contactFolderId}/contacts/{id}/photo/$value</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0&amp;tabs=http">GET /me/contacts/{id}/photo/$value</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-1.0&amp;tabs=http">GET /me/drive/items/{item-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-1.0&amp;tabs=http">GET /me/drive/root:/{item-path}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0&amp;tabs=http">GET /me/photo/$value</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/planneruser-get?view=graph-rest-beta&amp;tabs=http">GET /me/planner</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-delta?view=graph-rest-beta&amp;tabs=http">GET /me/planner/all/delta</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-favoriteplans?view=graph-rest-beta&amp;tabs=http">GET /me/planner/favoritePlans</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/planneruser-list-plans?view=graph-rest-1.0&amp;tabs=http">GET /me/planner/plans</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-recentplans?view=graph-rest-beta&amp;tabs=http">GET /me/planner/recentPlans</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/planneruser-list-tasks?view=graph-rest-1.0&amp;tabs=http">GET /me/planner/tasks</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-transitivememberof?view=graph-rest-1.0&amp;tabs=http">GET /me/transitiveMemberOf</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/planner-list-buckets?view=graph-rest-1.0&amp;tabs=http">GET /planner/buckets</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/plannerbucket-get?view=graph-rest-1.0&amp;tabs=http">GET /planner/buckets/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/plannerbucket-list-tasks?view=graph-rest-1.0&amp;tabs=http">GET /planner/buckets/{id}/tasks</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/planner-list-plans?view=graph-rest-1.0&amp;tabs=http">GET /planner/plans</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/plannerplandetails-get?view=graph-rest-1.0&amp;tabs=http">GET /planner/plans/{id}/details</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/plannerplan-get?view=graph-rest-1.0&amp;tabs=http">GET /planner/plans/{plan-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/plannerplan-list-buckets?view=graph-rest-1.0&amp;tabs=http">GET /planner/plans/{plan-id}/buckets</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/plannerplan-list-tasks?view=graph-rest-1.0&amp;tabs=http">GET /planner/plans/{plan-id}/tasks</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/planner-list-tasks?view=graph-rest-1.0&amp;tabs=http">GET /planner/tasks</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/plannertask-get?view=graph-rest-1.0&amp;tabs=http">GET /planner/tasks/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0&amp;tabs=http">GET /planner/tasks/{id}/assignedToTaskBoardFormat</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-1.0&amp;tabs=http">GET /planner/tasks/{id}/bucketTaskBoardFormat</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0&amp;tabs=http">GET /planner/tasks/{id}/details</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-1.0&amp;tabs=http">GET /planner/tasks/{id}/progressTaskBoardFormat</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/group-list-settings?view=graph-rest-beta&amp;tabs=http">GET /settings</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/directorysetting-get?view=graph-rest-beta&amp;tabs=http">GET /settings/{directorySettingId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-1.0&amp;tabs=http">GET /sites/{site-id}/drive/items/{item-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-1.0&amp;tabs=http">GET /sites/{site-id}/drive/root:/{item-path}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-1.0&amp;tabs=http">GET /sites/{site-id}/lists/{list-id}/items/{item-id}/driveItem</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-beta&amp;tabs=http">GET /sites/{siteId}/drive/items/{itemId}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-beta&amp;tabs=http">GET /sites/{siteId}/drive/root:/{item-path}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0&amp;tabs=http">GET /team/{id}/photo/$value</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0&amp;tabs=http">GET /teams/{id}/channels/{id}/filesFolder</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/channel-list-tabs?view=graph-rest-1.0&amp;tabs=http">GET /teams/{id}/channels/{id}/tabs</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/team-get-installedapps?view=graph-rest-1.0&amp;tabs=http">GET /teams/{id}/installedApps/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/openshiftchangerequest-list?view=graph-rest-1.0&amp;tabs=http">GET /teams/{id}/schedule/openShiftChangeRequests</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/openshiftchangerequest-get?view=graph-rest-1.0&amp;tabs=http">GET /teams/{id}/schedule/openShiftChangeRequests/{openShiftsChangeRequestId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/openshift-list?view=graph-rest-1.0&amp;tabs=http">GET /teams/{id}/schedule/openShifts</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/openshift-get?view=graph-rest-1.0&amp;tabs=http">GET /teams/{id}/schedule/openShifts/{openShiftId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/team-get?view=graph-rest-1.0&amp;tabs=http">GET /teams/{team-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/channel-list?view=graph-rest-1.0&amp;tabs=http">GET /teams/{team-id}/channels</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/channel-get?view=graph-rest-1.0&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/channel-list-members?view=graph-rest-1.0&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/members</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/channel-list-messages?view=graph-rest-1.0&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/messages</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/chatmessage-get?view=graph-rest-1.0&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/messages/{message-id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/messages/{message-id}/hostedContents</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/chatmessagehostedcontent-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/messages/{message-id}/hostedContents/{hosted-content-id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/chatmessage-list-replies?view=graph-rest-1.0&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/messages/{message-id}/replies</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/chatmessage-get?view=graph-rest-1.0&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/messages/{message-id}/replies/{reply-id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/messages/{message-id}/replies/{reply-id}/hostedContents</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/chatmessagehostedcontent-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/messages/{message-id}/replies/{reply-id}/hostedContents/{hosted-content-id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/messages/delta</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/channel-list-tabs?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/tabs</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/channel-get-tabs?view=graph-rest-1.0&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/tabs/{tab-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/team-list-installedapps?view=graph-rest-1.0&amp;tabs=http">GET /teams/{team-id}/installedApps</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamId}/channels/{channelId}/filesFolder</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/schedule-get?view=graph-rest-1.0&amp;tabs=http">GET /teams/{teamId}/schedule</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/offershiftrequest-get?view=graph-rest-1.0&amp;tabs=http">GET /teams/{teamId}/schedule/offerShiftRequests/{offerShiftRequestId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/schedule-list-schedulinggroups?view=graph-rest-1.0&amp;tabs=http">GET /teams/{teamId}/schedule/schedulingGroups</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/schedulinggroup-get?view=graph-rest-1.0&amp;tabs=http">GET /teams/{teamId}/schedule/schedulingGroups/{schedulingGroupId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/schedule-list-shifts?view=graph-rest-1.0&amp;tabs=http">GET /teams/{teamId}/schedule/shifts</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/shift-get?view=graph-rest-1.0&amp;tabs=http">GET /teams/{teamId}/schedule/shifts/{shiftId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/swapshiftschangerequest-get?view=graph-rest-1.0&amp;tabs=http">GET /teams/{teamId}/schedule/swapShiftsChangeRequests</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/schedule-list-timeoffreasons?view=graph-rest-1.0&amp;tabs=http">GET /teams/{teamId}/schedule/timeOffReasons</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/timeoffreason-get?view=graph-rest-1.0&amp;tabs=http">GET /teams/{teamId}/schedule/timeOffReasons/{timeOffReasonId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/timeoffrequest-list?view=graph-rest-1.0&amp;tabs=http">GET /teams/{teamId}/schedule/timeOffRequests</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/timeoffrequest-get?view=graph-rest-1.0&amp;tabs=http">GET /teams/{teamId}/schedule/timeOffRequests/{timeOffRequestId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/schedule-list-timesoff?view=graph-rest-1.0&amp;tabs=http">GET /teams/{teamId}/schedule/timesOff</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/timeoff-get?view=graph-rest-1.0&amp;tabs=http">GET /teams/{teamId}/schedule/timesOff/{timeOffId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/contactfolders/{contactFolderId}/contacts/{id}/photo/$value</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/contacts/{id}/photo/$value</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-list-photos?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/joinedGroups/{id}/photos</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/photo/$value</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/planneruser-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/planner</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-delta?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/planner/all/delta</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-favoriteplans?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/planner/favoritePlans</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/planneruser-list-plans?view=graph-rest-1.0&amp;tabs=http">GET /users/{id}/planner/plans</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-recentplans?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/planner/recentPlans</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/planneruser-list-tasks?view=graph-rest-1.0&amp;tabs=http">GET /users/{id}/planner/tasks</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{user-id}/drive/items/{item-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{user-id}/drive/root:/{item-path}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-beta&amp;tabs=http">GET /users/{userId}/drive/items/{itemId}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-beta&amp;tabs=http">GET /users/{userId}/drive/root:/{item-path}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0&amp;tabs=http">POST /directory/deletedItems/getUserOwnedObjects</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0&amp;tabs=http">POST /directoryObjects/{id}/checkMemberGroups</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/directoryobject-checkmemberobjects?view=graph-rest-1.0&amp;tabs=http">POST /directoryObjects/{id}/checkMemberObjects</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0&amp;tabs=http">POST /directoryObjects/{id}/getMemberGroups</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0&amp;tabs=http">POST /directoryObjects/{id}/getMemberObjects</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0&amp;tabs=http">POST /directoryObjects/validateProperties</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-validateproperties?view=graph-rest-1.0&amp;tabs=http">POST /groups/{id}/validateProperties</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/openshift-post?view=graph-rest-1.0&amp;tabs=http">POST /teams/{id}/schedule/openShifts</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/timeoff-put?view=graph-rest-1.0&amp;tabs=http">PUT /teams/{teamId}/schedule/timesOff/{timeOffId}</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
+<th>Type</th>
+<th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Id</strong></td>
-<td>5f8c59db-677d-491f-a6b8-5f174b11ec1d</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/orgcontact-list-directreports?view=graph-rest-beta&amp;tabs=http">GET /contacts/{id}/directReports</a></td>
 </tr>
 <tr>
-<td><strong>Consent Type</strong></td>
-<td>Admin</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/orgcontact-get-manager?view=graph-rest-beta&amp;tabs=http">GET /contacts/{id}/manager</a></td>
 </tr>
 <tr>
-<td><strong>Display String</strong></td>
-<td>Read all groups</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/orgcontact-list-memberof?view=graph-rest-beta&amp;tabs=http">GET /contacts/{id}/memberOf</a></td>
 </tr>
 <tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to list groups, and to read their properties and all group memberships on behalf of the signed-in user.  Also allows the app to read calendar, conversations, files, and other group content for all groups the signed-in user can access.</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/orgcontact-list-transitivememberof?view=graph-rest-beta&amp;tabs=http">GET /contacts/{id}/transitiveMemberOf</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-plans?view=graph-rest-beta&amp;tabs=http">GET /drive/root/createdByUser/planner/plans</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-beta&amp;tabs=http">GET /drives/{drive-id}/items/{item-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-beta&amp;tabs=http">GET /drives/{drive-id}/root:/{item-path}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-list?view=graph-rest-beta&amp;tabs=http">GET /groups</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-beta&amp;tabs=http">GET /groups/{group-id}/drive/items/{item-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-beta&amp;tabs=http">GET /groups/{group-id}/drive/root:/{item-path}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-list-permissiongrants?view=graph-rest-beta&amp;tabs=http">GET /groups/{group-id}/permissionGrants</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/plannergroup-list-plans?view=graph-rest-beta&amp;tabs=http">GET /groups/{group-id}/planner/plans</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/conversationthread-list-posts?view=graph-rest-beta&amp;tabs=http">GET /groups/{groupId}/conversations/{conversationId}/threads/{threadId}/posts</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/conversationthread-list-posts?view=graph-rest-beta&amp;tabs=http">GET /groups/{groupId}/threads/{threadId}/posts</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-get?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-list-acceptedsenders?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/acceptedSenders</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-list-events?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/calendar/events</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-get-event?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/calendar/events/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-list-calendarview?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/calendarView?startDateTime={start_datetime}&amp;endDateTime={end_datetime}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-list-conversations?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/conversations</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-get-conversation?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/conversations/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/conversation-list-threads?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/conversations/{id}/threads</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/conversationthread-get?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/conversations/{id}/threads/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/post-get?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/conversations/{id}/threads/{id}/posts/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/post-list-attachments?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/conversations/{id}/threads/{id}/posts/{id}/attachments</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-list-endpoints?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/endpoints</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/endpoint-get?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/endpoints/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-list-events?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/events</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-get-event?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/events/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-list-memberof?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/memberOf</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-list-members?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/members</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-list-owners?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/owners</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/photo/$value</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-list-photos?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/photos</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-list-rejectedsenders?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/rejectedSenders</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-list-threads?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/threads</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-get-thread?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/threads/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/post-get?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/threads/{id}/posts/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/post-list-attachments?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/threads/{id}/posts/{id}/attachments</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-list-transitivememberof?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/transitiveMemberOf</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-list-transitivemembers?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/transitiveMembers</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-delta?view=graph-rest-beta&amp;tabs=http">GET /groups/delta</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-beta&amp;tabs=http">GET /me/contactfolders/{contactFolderId}/contacts/{id}/photo/$value</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-beta&amp;tabs=http">GET /me/contacts/{id}/photo/$value</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-beta&amp;tabs=http">GET /me/drive/items/{item-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-beta&amp;tabs=http">GET /me/drive/root:/{item-path}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-beta&amp;tabs=http">GET /me/photo/$value</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planneruser-get?view=graph-rest-beta&amp;tabs=http">GET /me/planner</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-delta?view=graph-rest-beta&amp;tabs=http">GET /me/planner/all/delta</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-favoriteplans?view=graph-rest-beta&amp;tabs=http">GET /me/planner/favoritePlans</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-plans?view=graph-rest-beta&amp;tabs=http">GET /me/planner/plans</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-recentplans?view=graph-rest-beta&amp;tabs=http">GET /me/planner/recentPlans</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-tasks?view=graph-rest-beta&amp;tabs=http">GET /me/planner/tasks</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-transitivememberof?view=graph-rest-beta&amp;tabs=http">GET /me/transitiveMemberOf</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planner-list-buckets?view=graph-rest-beta&amp;tabs=http">GET /planner/buckets</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/plannerbucket-get?view=graph-rest-beta&amp;tabs=http">GET /planner/buckets/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/plannerbucket-list-tasks?view=graph-rest-beta&amp;tabs=http">GET /planner/buckets/{id}/tasks</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planner-list-plans?view=graph-rest-beta&amp;tabs=http">GET /planner/plans</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/plannerplandetails-get?view=graph-rest-beta&amp;tabs=http">GET /planner/plans/{id}/details</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/plannerplan-get?view=graph-rest-beta&amp;tabs=http">GET /planner/plans/{plan-id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/plannerplan-list-buckets?view=graph-rest-beta&amp;tabs=http">GET /planner/plans/{plan-id}/buckets</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/plannerplan-list-tasks?view=graph-rest-beta&amp;tabs=http">GET /planner/plans/{plan-id}/tasks</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planner-list-tasks?view=graph-rest-beta&amp;tabs=http">GET /planner/tasks</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/plannertask-get?view=graph-rest-beta&amp;tabs=http">GET /planner/tasks/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-beta&amp;tabs=http">GET /planner/tasks/{id}/assignedToTaskBoardFormat</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-beta&amp;tabs=http">GET /planner/tasks/{id}/bucketTaskBoardFormat</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-beta&amp;tabs=http">GET /planner/tasks/{id}/details</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-beta&amp;tabs=http">GET /planner/tasks/{id}/progressTaskBoardFormat</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-list-settings?view=graph-rest-beta&amp;tabs=http">GET /settings</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directorysetting-get?view=graph-rest-beta&amp;tabs=http">GET /settings/{directorySettingId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-beta&amp;tabs=http">GET /sites/{siteId}/drive/items/{itemId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-beta&amp;tabs=http">GET /sites/{siteId}/drive/root:/{item-path}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-beta&amp;tabs=http">GET /team/{id}/photo/$value</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-beta&amp;tabs=http">GET /teams/{id}/channels/{id}/filesFolder</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/team-get-installedapps?view=graph-rest-beta&amp;tabs=http">GET /teams/{id}/installedApps/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/openshiftchangerequest-list?view=graph-rest-beta&amp;tabs=http">GET /teams/{id}/schedule/openShiftChangeRequests</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/openshiftchangerequest-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{id}/schedule/openShiftChangeRequests/{openShiftsChangeRequestId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/openshift-list?view=graph-rest-beta&amp;tabs=http">GET /teams/{id}/schedule/openShifts</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/openshift-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{id}/schedule/openShifts/{openShiftId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/team-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/channel-list?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}/channels</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/channel-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/channel-list-members?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/members</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/channel-list-messages?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/messages</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/chatmessage-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/messages/{message-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/messages/{message-id}/hostedContents</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/chatmessagehostedcontent-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/messages/{message-id}/hostedContents/{hosted-content-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/chatmessage-list-replies?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/messages/{message-id}/replies</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/chatmessage-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/messages/{message-id}/replies/{reply-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/messages/{message-id}/replies/{reply-id}/hostedContents</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/chatmessagehostedcontent-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/messages/{message-id}/replies/{reply-id}/hostedContents/{hosted-content-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/messages/delta</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/channel-list-tabs?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/tabs</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/channel-get-tabs?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/tabs/{tab-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/team-list-installedapps?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}/installedApps</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamId}/channels/{channelId}/filesFolder</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/schedule-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamId}/schedule</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/offershiftrequest-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamId}/schedule/offerShiftRequests/{offerShiftRequestId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/schedule-list-schedulinggroups?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamId}/schedule/schedulingGroups</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/schedulinggroup-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamId}/schedule/schedulingGroups/{schedulingGroupId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/schedule-list-shifts?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamId}/schedule/shifts</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/shift-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamId}/schedule/shifts/{shiftId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/swapshiftschangerequest-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamId}/schedule/swapShiftsChangeRequests</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/schedule-list-timeoffreasons?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamId}/schedule/timeOffReasons</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/timeoffreason-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamId}/schedule/timeOffReasons/{timeOffReasonId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/timeoffrequest-list?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamId}/schedule/timeOffRequests</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/timeoffrequest-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamId}/schedule/timeOffRequests/{timeOffRequestId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/schedule-list-timesoff?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamId}/schedule/timesOff</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/timeoff-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamId}/schedule/timesOff/{timeOffId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/contactfolders/{contactFolderId}/contacts/{id}/photo/$value</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/contacts/{id}/photo/$value</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-list-photos?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/joinedGroups/{id}/photos</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/photo/$value</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planneruser-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/planner</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-delta?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/planner/all/delta</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-favoriteplans?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/planner/favoritePlans</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-plans?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/planner/plans</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-recentplans?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/planner/recentPlans</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/planneruser-list-tasks?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/planner/tasks</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-beta&amp;tabs=http">GET /users/{userId}/drive/items/{itemId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-beta&amp;tabs=http">GET /users/{userId}/drive/root:/{item-path}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-beta&amp;tabs=http">POST /directory/deletedItems/getUserOwnedObjects</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-beta&amp;tabs=http">POST /directoryObjects/{id}/checkMemberGroups</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directoryobject-checkmemberobjects?view=graph-rest-beta&amp;tabs=http">POST /directoryObjects/{id}/checkMemberObjects</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-beta&amp;tabs=http">POST /directoryObjects/{id}/getMemberGroups</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-beta&amp;tabs=http">POST /directoryObjects/{id}/getMemberObjects</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-beta&amp;tabs=http">POST /directoryObjects/validateProperties</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-validateproperties?view=graph-rest-beta&amp;tabs=http">POST /groups/{id}/validateProperties</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/openshift-post?view=graph-rest-beta&amp;tabs=http">POST /teams/{id}/schedule/openShifts</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/timeoff-put?view=graph-rest-beta&amp;tabs=http">PUT /teams/{teamId}/schedule/timesOff/{timeOffId}</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>5b567255-7703-4780-807c-7be8301ae99b</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read all groups</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read group properties and memberships, and read conversations for all groups, without a signed-in user.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="administrativeunit-"><a href="https://docs.microsoft.com/graph/api/resources/administrativeunit?view=graph-rest-1.0&amp;tabs=http">administrativeUnit </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_administrativeUnit1" role="tab" aria-controls="tabpanel_2_administrativeUnit1" data-tab="administrativeUnit1" tabindex="0" aria-selected="true">administrativeUnit</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_application2" role="tab" aria-controls="tabpanel_2_application2" data-tab="application2" tabindex="-1">application</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_attachment3" role="tab" aria-controls="tabpanel_2_attachment3" data-tab="attachment3" tabindex="-1">attachment</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_change-notifications-api-overview4" role="tab" aria-controls="tabpanel_2_change-notifications-api-overview4" data-tab="change-notifications-api-overview4" tabindex="-1">change-notifications-api-overview</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_channel5" role="tab" aria-controls="tabpanel_2_channel5" data-tab="channel5" tabindex="-1">channel</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_chat6" role="tab" aria-controls="tabpanel_2_chat6" data-tab="chat6" tabindex="-1">chat</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_chatMessage7" role="tab" aria-controls="tabpanel_2_chatMessage7" data-tab="chatMessage7" tabindex="-1">chatMessage</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_chatMessageHostedContent8" role="tab" aria-controls="tabpanel_2_chatMessageHostedContent8" data-tab="chatMessageHostedContent8" tabindex="-1">chatMessageHostedContent</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_conversation9" role="tab" aria-controls="tabpanel_2_conversation9" data-tab="conversation9" tabindex="-1">conversation</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_conversationMember10" role="tab" aria-controls="tabpanel_2_conversationMember10" data-tab="conversationMember10" tabindex="-1">conversationMember</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_conversationThread11" role="tab" aria-controls="tabpanel_2_conversationThread11" data-tab="conversationThread11" tabindex="-1">conversationThread</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_device12" role="tab" aria-controls="tabpanel_2_device12" data-tab="device12" tabindex="-1">device</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_directory13" role="tab" aria-controls="tabpanel_2_directory13" data-tab="directory13" tabindex="-1">directory</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_directoryObject14" role="tab" aria-controls="tabpanel_2_directoryObject14" data-tab="directoryObject14" tabindex="-1">directoryObject</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_directoryRole15" role="tab" aria-controls="tabpanel_2_directoryRole15" data-tab="directoryRole15" tabindex="-1">directoryRole</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_directorySetting16" role="tab" aria-controls="tabpanel_2_directorySetting16" data-tab="directorySetting16" tabindex="-1">directorySetting</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_drive17" role="tab" aria-controls="tabpanel_2_drive17" data-tab="drive17" tabindex="-1">drive</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_driveItem18" role="tab" aria-controls="tabpanel_2_driveItem18" data-tab="driveItem18" tabindex="-1">driveItem</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_Endpoint19" role="tab" aria-controls="tabpanel_2_Endpoint19" data-tab="Endpoint19" tabindex="-1">Endpoint</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_event20" role="tab" aria-controls="tabpanel_2_event20" data-tab="event20" tabindex="-1">event</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_group21" role="tab" aria-controls="tabpanel_2_group21" data-tab="group21" tabindex="-1">group</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_groups-overview22" role="tab" aria-controls="tabpanel_2_groups-overview22" data-tab="groups-overview22" tabindex="-1">groups-overview</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_groupSetting23" role="tab" aria-controls="tabpanel_2_groupSetting23" data-tab="groupSetting23" tabindex="-1">groupSetting</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_listItem24" role="tab" aria-controls="tabpanel_2_listItem24" data-tab="listItem24" tabindex="-1">listItem</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_offerShiftRequest25" role="tab" aria-controls="tabpanel_2_offerShiftRequest25" data-tab="offerShiftRequest25" tabindex="-1">offerShiftRequest</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_openShift26" role="tab" aria-controls="tabpanel_2_openShift26" data-tab="openShift26" tabindex="-1">openShift</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_openShiftChangeRequest27" role="tab" aria-controls="tabpanel_2_openShiftChangeRequest27" data-tab="openShiftChangeRequest27" tabindex="-1">openShiftChangeRequest</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_orgContact28" role="tab" aria-controls="tabpanel_2_orgContact28" data-tab="orgContact28" tabindex="-1">orgContact</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_planner-overview29" role="tab" aria-controls="tabpanel_2_planner-overview29" data-tab="planner-overview29" tabindex="-1">planner-overview</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_plannerAssignedToTaskBoardTaskFormat30" role="tab" aria-controls="tabpanel_2_plannerAssignedToTaskBoardTaskFormat30" data-tab="plannerAssignedToTaskBoardTaskFormat30" tabindex="-1">plannerAssignedToTaskBoardTaskFormat</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_plannerBucket31" role="tab" aria-controls="tabpanel_2_plannerBucket31" data-tab="plannerBucket31" tabindex="-1">plannerBucket</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_plannerBucketTaskBoardTaskFormat32" role="tab" aria-controls="tabpanel_2_plannerBucketTaskBoardTaskFormat32" data-tab="plannerBucketTaskBoardTaskFormat32" tabindex="-1">plannerBucketTaskBoardTaskFormat</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_plannerPlan33" role="tab" aria-controls="tabpanel_2_plannerPlan33" data-tab="plannerPlan33" tabindex="-1">plannerPlan</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_plannerPlanDetails34" role="tab" aria-controls="tabpanel_2_plannerPlanDetails34" data-tab="plannerPlanDetails34" tabindex="-1">plannerPlanDetails</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_plannerProgressTaskBoardTaskFormat35" role="tab" aria-controls="tabpanel_2_plannerProgressTaskBoardTaskFormat35" data-tab="plannerProgressTaskBoardTaskFormat35" tabindex="-1">plannerProgressTaskBoardTaskFormat</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_plannerTask36" role="tab" aria-controls="tabpanel_2_plannerTask36" data-tab="plannerTask36" tabindex="-1">plannerTask</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_plannerTaskDetails37" role="tab" aria-controls="tabpanel_2_plannerTaskDetails37" data-tab="plannerTaskDetails37" tabindex="-1">plannerTaskDetails</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_plannerUser38" role="tab" aria-controls="tabpanel_2_plannerUser38" data-tab="plannerUser38" tabindex="-1">plannerUser</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_post39" role="tab" aria-controls="tabpanel_2_post39" data-tab="post39" tabindex="-1">post</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_profilePhoto40" role="tab" aria-controls="tabpanel_2_profilePhoto40" data-tab="profilePhoto40" tabindex="-1">profilePhoto</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_resourceSpecificPermissionGrant41" role="tab" aria-controls="tabpanel_2_resourceSpecificPermissionGrant41" data-tab="resourceSpecificPermissionGrant41" tabindex="-1">resourceSpecificPermissionGrant</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_schedule42" role="tab" aria-controls="tabpanel_2_schedule42" data-tab="schedule42" tabindex="-1">schedule</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_schedulingGroup43" role="tab" aria-controls="tabpanel_2_schedulingGroup43" data-tab="schedulingGroup43" tabindex="-1">schedulingGroup</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_servicePrincipal44" role="tab" aria-controls="tabpanel_2_servicePrincipal44" data-tab="servicePrincipal44" tabindex="-1">servicePrincipal</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_shift45" role="tab" aria-controls="tabpanel_2_shift45" data-tab="shift45" tabindex="-1">shift</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_swapShiftsChangeRequest46" role="tab" aria-controls="tabpanel_2_swapShiftsChangeRequest46" data-tab="swapShiftsChangeRequest46" tabindex="-1">swapShiftsChangeRequest</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_team47" role="tab" aria-controls="tabpanel_2_team47" data-tab="team47" tabindex="-1">team</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_teamsAppInstallation48" role="tab" aria-controls="tabpanel_2_teamsAppInstallation48" data-tab="teamsAppInstallation48" tabindex="-1">teamsAppInstallation</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_teamsTab49" role="tab" aria-controls="tabpanel_2_teamsTab49" data-tab="teamsTab49" tabindex="-1">teamsTab</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_teamworkBot50" role="tab" aria-controls="tabpanel_2_teamworkBot50" data-tab="teamworkBot50" tabindex="-1">teamworkBot</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_timeOff51" role="tab" aria-controls="tabpanel_2_timeOff51" data-tab="timeOff51" tabindex="-1">timeOff</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_timeOffReason52" role="tab" aria-controls="tabpanel_2_timeOffReason52" data-tab="timeOffReason52" tabindex="-1">timeOffReason</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_timeOffRequest53" role="tab" aria-controls="tabpanel_2_timeOffRequest53" data-tab="timeOffRequest53" tabindex="-1">timeOffRequest</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_user54" role="tab" aria-controls="tabpanel_2_user54" data-tab="user54" tabindex="-1">user</a>
+</li>
+</ul>
+<section id="tabpanel_2_administrativeUnit1" role="tabpanel" data-tab="administrativeUnit1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/administrativeunit?view=graph-rest-1.0&amp;tabs=http">administrativeUnit</a></p>
 <table>
 <thead>
 <tr>
@@ -889,7 +1352,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="application-"><a href="https://docs.microsoft.com/graph/api/resources/application?view=graph-rest-1.0&amp;tabs=http">application </a></h3>
+</section>
+<section id="tabpanel_2_application2" role="tabpanel" data-tab="application2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/application?view=graph-rest-1.0&amp;tabs=http">application</a></p>
 <table>
 <thead>
 <tr>
@@ -1096,7 +1562,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="attachment-"><a href="https://docs.microsoft.com/graph/api/resources/attachment?view=graph-rest-1.0&amp;tabs=http">attachment </a></h3>
+</section>
+<section id="tabpanel_2_attachment3" role="tabpanel" data-tab="attachment3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/attachment?view=graph-rest-1.0&amp;tabs=http">attachment</a></p>
 <table>
 <thead>
 <tr>
@@ -1138,8 +1607,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="change-notifications-api-overview"><a href="https://docs.microsoft.com/graph/api/resources/change-notifications-api-overview?view=graph-rest-1.0&amp;tabs=http">change-notifications-api-overview</a></h3>
-<h3 id="channel-"><a href="https://docs.microsoft.com/graph/api/resources/channel?view=graph-rest-1.0&amp;tabs=http">channel </a></h3>
+</section>
+<section id="tabpanel_2_change-notifications-api-overview4" role="tabpanel" data-tab="change-notifications-api-overview4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/change-notifications-api-overview?view=graph-rest-1.0&amp;tabs=http">change-notifications-api-overview</a></p>
+</section>
+<section id="tabpanel_2_channel5" role="tabpanel" data-tab="channel5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/channel?view=graph-rest-1.0&amp;tabs=http">channel</a></p>
 <table>
 <thead>
 <tr>
@@ -1206,7 +1681,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="chat-"><a href="https://docs.microsoft.com/graph/api/resources/chat?view=graph-rest-1.0&amp;tabs=http">chat </a></h3>
+</section>
+<section id="tabpanel_2_chat6" role="tabpanel" data-tab="chat6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/chat?view=graph-rest-1.0&amp;tabs=http">chat</a></p>
 <table>
 <thead>
 <tr>
@@ -1263,7 +1741,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="chatmessage-"><a href="https://docs.microsoft.com/graph/api/resources/chatmessage?view=graph-rest-1.0&amp;tabs=http">chatMessage </a></h3>
+</section>
+<section id="tabpanel_2_chatMessage7" role="tabpanel" data-tab="chatMessage7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/chatmessage?view=graph-rest-1.0&amp;tabs=http">chatMessage</a></p>
 <table>
 <thead>
 <tr>
@@ -1390,7 +1871,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="chatmessagehostedcontent-"><a href="https://docs.microsoft.com/graph/api/resources/chatmessagehostedcontent?view=graph-rest-1.0&amp;tabs=http">chatMessageHostedContent </a></h3>
+</section>
+<section id="tabpanel_2_chatMessageHostedContent8" role="tabpanel" data-tab="chatMessageHostedContent8" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/chatmessagehostedcontent?view=graph-rest-1.0&amp;tabs=http">chatMessageHostedContent</a></p>
 <table>
 <thead>
 <tr>
@@ -1417,7 +1901,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="conversation-"><a href="https://docs.microsoft.com/graph/api/resources/conversation?view=graph-rest-1.0&amp;tabs=http">conversation </a></h3>
+</section>
+<section id="tabpanel_2_conversation9" role="tabpanel" data-tab="conversation9" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/conversation?view=graph-rest-1.0&amp;tabs=http">conversation</a></p>
 <table>
 <thead>
 <tr>
@@ -1459,7 +1946,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="conversationmember-"><a href="https://docs.microsoft.com/graph/api/resources/conversationmember?view=graph-rest-1.0&amp;tabs=http">conversationMember </a></h3>
+</section>
+<section id="tabpanel_2_conversationMember10" role="tabpanel" data-tab="conversationMember10" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/conversationmember?view=graph-rest-1.0&amp;tabs=http">conversationMember</a></p>
 <table>
 <thead>
 <tr>
@@ -1491,7 +1981,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="conversationthread-"><a href="https://docs.microsoft.com/graph/api/resources/conversationthread?view=graph-rest-1.0&amp;tabs=http">conversationThread </a></h3>
+</section>
+<section id="tabpanel_2_conversationThread11" role="tabpanel" data-tab="conversationThread11" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/conversationthread?view=graph-rest-1.0&amp;tabs=http">conversationThread</a></p>
 <table>
 <thead>
 <tr>
@@ -1548,7 +2041,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="device-"><a href="https://docs.microsoft.com/graph/api/resources/device?view=graph-rest-1.0&amp;tabs=http">device </a></h3>
+</section>
+<section id="tabpanel_2_device12" role="tabpanel" data-tab="device12" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/device?view=graph-rest-1.0&amp;tabs=http">device</a></p>
 <table>
 <thead>
 <tr>
@@ -1715,7 +2211,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="directory-"><a href="https://docs.microsoft.com/graph/api/resources/directory?view=graph-rest-1.0&amp;tabs=http">directory </a></h3>
+</section>
+<section id="tabpanel_2_directory13" role="tabpanel" data-tab="directory13" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/directory?view=graph-rest-1.0&amp;tabs=http">directory</a></p>
 <table>
 <thead>
 <tr>
@@ -1732,7 +2231,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="directoryobject-"><a href="https://docs.microsoft.com/graph/api/resources/directoryobject?view=graph-rest-1.0&amp;tabs=http">directoryObject </a></h3>
+</section>
+<section id="tabpanel_2_directoryObject14" role="tabpanel" data-tab="directoryObject14" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/directoryobject?view=graph-rest-1.0&amp;tabs=http">directoryObject</a></p>
 <table>
 <thead>
 <tr>
@@ -1754,7 +2256,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="directoryrole-"><a href="https://docs.microsoft.com/graph/api/resources/directoryrole?view=graph-rest-1.0&amp;tabs=http">directoryRole </a></h3>
+</section>
+<section id="tabpanel_2_directoryRole15" role="tabpanel" data-tab="directoryRole15" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/directoryrole?view=graph-rest-1.0&amp;tabs=http">directoryRole</a></p>
 <table>
 <thead>
 <tr>
@@ -1786,7 +2291,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="directorysetting-"><a href="https://docs.microsoft.com/graph/api/resources/directorysetting?view=graph-rest-1.0&amp;tabs=http">directorySetting </a></h3>
+</section>
+<section id="tabpanel_2_directorySetting16" role="tabpanel" data-tab="directorySetting16" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/directorysetting?view=graph-rest-1.0&amp;tabs=http">directorySetting</a></p>
 <table>
 <thead>
 <tr>
@@ -1818,7 +2326,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="drive-"><a href="https://docs.microsoft.com/graph/api/resources/drive?view=graph-rest-1.0&amp;tabs=http">drive </a></h3>
+</section>
+<section id="tabpanel_2_drive17" role="tabpanel" data-tab="drive17" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/drive?view=graph-rest-1.0&amp;tabs=http">drive</a></p>
 <table>
 <thead>
 <tr>
@@ -1895,7 +2406,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="driveitem-"><a href="https://docs.microsoft.com/graph/api/resources/driveitem?view=graph-rest-1.0&amp;tabs=http">driveItem </a></h3>
+</section>
+<section id="tabpanel_2_driveItem18" role="tabpanel" data-tab="driveItem18" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/driveitem?view=graph-rest-1.0&amp;tabs=http">driveItem</a></p>
 <table>
 <thead>
 <tr>
@@ -2077,7 +2591,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="endpoint-"><a href="https://docs.microsoft.com/graph/api/resources/endpoint?view=graph-rest-1.0&amp;tabs=http">Endpoint </a></h3>
+</section>
+<section id="tabpanel_2_Endpoint19" role="tabpanel" data-tab="Endpoint19" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/endpoint?view=graph-rest-1.0&amp;tabs=http">Endpoint</a></p>
 <table>
 <thead>
 <tr>
@@ -2119,7 +2636,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="event-"><a href="https://docs.microsoft.com/graph/api/resources/event?view=graph-rest-1.0&amp;tabs=http">event </a></h3>
+</section>
+<section id="tabpanel_2_event20" role="tabpanel" data-tab="event20" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/event?view=graph-rest-1.0&amp;tabs=http">event</a></p>
 <table>
 <thead>
 <tr>
@@ -2336,7 +2856,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="group-"><a href="https://docs.microsoft.com/graph/api/resources/group?view=graph-rest-1.0&amp;tabs=http">group </a></h3>
+</section>
+<section id="tabpanel_2_group21" role="tabpanel" data-tab="group21" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/group?view=graph-rest-1.0&amp;tabs=http">group</a></p>
 <table>
 <thead>
 <tr>
@@ -2558,8 +3081,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="groups-overview"><a href="https://docs.microsoft.com/graph/api/resources/groups-overview?view=graph-rest-1.0&amp;tabs=http">groups-overview</a></h3>
-<h3 id="groupsetting-"><a href="https://docs.microsoft.com/graph/api/resources/groupsetting?view=graph-rest-1.0&amp;tabs=http">groupSetting </a></h3>
+</section>
+<section id="tabpanel_2_groups-overview22" role="tabpanel" data-tab="groups-overview22" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/groups-overview?view=graph-rest-1.0&amp;tabs=http">groups-overview</a></p>
+</section>
+<section id="tabpanel_2_groupSetting23" role="tabpanel" data-tab="groupSetting23" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/groupsetting?view=graph-rest-1.0&amp;tabs=http">groupSetting</a></p>
 <table>
 <thead>
 <tr>
@@ -2591,7 +3120,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="listitem-"><a href="https://docs.microsoft.com/graph/api/resources/listitem?view=graph-rest-1.0&amp;tabs=http">listItem </a></h3>
+</section>
+<section id="tabpanel_2_listItem24" role="tabpanel" data-tab="listItem24" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/listitem?view=graph-rest-1.0&amp;tabs=http">listItem</a></p>
 <table>
 <thead>
 <tr>
@@ -2608,7 +3140,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="offershiftrequest-"><a href="https://docs.microsoft.com/graph/api/resources/offershiftrequest?view=graph-rest-1.0&amp;tabs=http">offerShiftRequest </a></h3>
+</section>
+<section id="tabpanel_2_offerShiftRequest25" role="tabpanel" data-tab="offerShiftRequest25" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/offershiftrequest?view=graph-rest-1.0&amp;tabs=http">offerShiftRequest</a></p>
 <table>
 <thead>
 <tr>
@@ -2640,7 +3175,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="openshift-"><a href="https://docs.microsoft.com/graph/api/resources/openshift?view=graph-rest-1.0&amp;tabs=http">openShift </a></h3>
+</section>
+<section id="tabpanel_2_openShift26" role="tabpanel" data-tab="openShift26" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/openshift?view=graph-rest-1.0&amp;tabs=http">openShift</a></p>
 <table>
 <thead>
 <tr>
@@ -2667,7 +3205,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="openshiftchangerequest-"><a href="https://docs.microsoft.com/graph/api/resources/openshiftchangerequest?view=graph-rest-1.0&amp;tabs=http">openShiftChangeRequest </a></h3>
+</section>
+<section id="tabpanel_2_openShiftChangeRequest27" role="tabpanel" data-tab="openShiftChangeRequest27" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/openshiftchangerequest?view=graph-rest-1.0&amp;tabs=http">openShiftChangeRequest</a></p>
 <table>
 <thead>
 <tr>
@@ -2684,7 +3225,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="orgcontact-"><a href="https://docs.microsoft.com/graph/api/resources/orgcontact?view=graph-rest-1.0&amp;tabs=http">orgContact </a></h3>
+</section>
+<section id="tabpanel_2_orgContact28" role="tabpanel" data-tab="orgContact28" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/orgcontact?view=graph-rest-1.0&amp;tabs=http">orgContact</a></p>
 <table>
 <thead>
 <tr>
@@ -2776,8 +3320,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="planner-overview"><a href="https://docs.microsoft.com/graph/api/resources/planner-overview?view=graph-rest-1.0&amp;tabs=http">planner-overview</a></h3>
-<h3 id="plannerassignedtotaskboardtaskformat-"><a href="https://docs.microsoft.com/graph/api/resources/plannerassignedtotaskboardtaskformat?view=graph-rest-1.0&amp;tabs=http">plannerAssignedToTaskBoardTaskFormat </a></h3>
+</section>
+<section id="tabpanel_2_planner-overview29" role="tabpanel" data-tab="planner-overview29" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/planner-overview?view=graph-rest-1.0&amp;tabs=http">planner-overview</a></p>
+</section>
+<section id="tabpanel_2_plannerAssignedToTaskBoardTaskFormat30" role="tabpanel" data-tab="plannerAssignedToTaskBoardTaskFormat30" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannerassignedtotaskboardtaskformat?view=graph-rest-1.0&amp;tabs=http">plannerAssignedToTaskBoardTaskFormat</a></p>
 <table>
 <thead>
 <tr>
@@ -2804,7 +3354,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="plannerbucket-"><a href="https://docs.microsoft.com/graph/api/resources/plannerbucket?view=graph-rest-1.0&amp;tabs=http">plannerBucket </a></h3>
+</section>
+<section id="tabpanel_2_plannerBucket31" role="tabpanel" data-tab="plannerBucket31" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannerbucket?view=graph-rest-1.0&amp;tabs=http">plannerBucket</a></p>
 <table>
 <thead>
 <tr>
@@ -2836,7 +3389,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="plannerbuckettaskboardtaskformat-"><a href="https://docs.microsoft.com/graph/api/resources/plannerbuckettaskboardtaskformat?view=graph-rest-1.0&amp;tabs=http">plannerBucketTaskBoardTaskFormat </a></h3>
+</section>
+<section id="tabpanel_2_plannerBucketTaskBoardTaskFormat32" role="tabpanel" data-tab="plannerBucketTaskBoardTaskFormat32" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannerbuckettaskboardtaskformat?view=graph-rest-1.0&amp;tabs=http">plannerBucketTaskBoardTaskFormat</a></p>
 <table>
 <thead>
 <tr>
@@ -2858,7 +3414,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="plannerplan-"><a href="https://docs.microsoft.com/graph/api/resources/plannerplan?view=graph-rest-1.0&amp;tabs=http">plannerPlan </a></h3>
+</section>
+<section id="tabpanel_2_plannerPlan33" role="tabpanel" data-tab="plannerPlan33" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannerplan?view=graph-rest-1.0&amp;tabs=http">plannerPlan</a></p>
 <table>
 <thead>
 <tr>
@@ -2900,7 +3459,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="plannerplandetails-"><a href="https://docs.microsoft.com/graph/api/resources/plannerplandetails?view=graph-rest-1.0&amp;tabs=http">plannerPlanDetails </a></h3>
+</section>
+<section id="tabpanel_2_plannerPlanDetails34" role="tabpanel" data-tab="plannerPlanDetails34" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannerplandetails?view=graph-rest-1.0&amp;tabs=http">plannerPlanDetails</a></p>
 <table>
 <thead>
 <tr>
@@ -2927,7 +3489,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="plannerprogresstaskboardtaskformat-"><a href="https://docs.microsoft.com/graph/api/resources/plannerprogresstaskboardtaskformat?view=graph-rest-1.0&amp;tabs=http">plannerProgressTaskBoardTaskFormat </a></h3>
+</section>
+<section id="tabpanel_2_plannerProgressTaskBoardTaskFormat35" role="tabpanel" data-tab="plannerProgressTaskBoardTaskFormat35" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannerprogresstaskboardtaskformat?view=graph-rest-1.0&amp;tabs=http">plannerProgressTaskBoardTaskFormat</a></p>
 <table>
 <thead>
 <tr>
@@ -2949,7 +3514,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="plannertask-"><a href="https://docs.microsoft.com/graph/api/resources/plannertask?view=graph-rest-1.0&amp;tabs=http">plannerTask </a></h3>
+</section>
+<section id="tabpanel_2_plannerTask36" role="tabpanel" data-tab="plannerTask36" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannertask?view=graph-rest-1.0&amp;tabs=http">plannerTask</a></p>
 <table>
 <thead>
 <tr>
@@ -3071,7 +3639,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="plannertaskdetails-"><a href="https://docs.microsoft.com/graph/api/resources/plannertaskdetails?view=graph-rest-1.0&amp;tabs=http">plannerTaskDetails </a></h3>
+</section>
+<section id="tabpanel_2_plannerTaskDetails37" role="tabpanel" data-tab="plannerTaskDetails37" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannertaskdetails?view=graph-rest-1.0&amp;tabs=http">plannerTaskDetails</a></p>
 <table>
 <thead>
 <tr>
@@ -3108,7 +3679,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="planneruser-"><a href="https://docs.microsoft.com/graph/api/resources/planneruser?view=graph-rest-1.0&amp;tabs=http">plannerUser </a></h3>
+</section>
+<section id="tabpanel_2_plannerUser38" role="tabpanel" data-tab="plannerUser38" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/planneruser?view=graph-rest-1.0&amp;tabs=http">plannerUser</a></p>
 <table>
 <thead>
 <tr>
@@ -3125,7 +3699,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="post-"><a href="https://docs.microsoft.com/graph/api/resources/post?view=graph-rest-1.0&amp;tabs=http">post </a></h3>
+</section>
+<section id="tabpanel_2_post39" role="tabpanel" data-tab="post39" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/post?view=graph-rest-1.0&amp;tabs=http">post</a></p>
 <table>
 <thead>
 <tr>
@@ -3202,7 +3779,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="profilephoto-"><a href="https://docs.microsoft.com/graph/api/resources/profilephoto?view=graph-rest-1.0&amp;tabs=http">profilePhoto </a></h3>
+</section>
+<section id="tabpanel_2_profilePhoto40" role="tabpanel" data-tab="profilePhoto40" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/profilephoto?view=graph-rest-1.0&amp;tabs=http">profilePhoto</a></p>
 <table>
 <thead>
 <tr>
@@ -3229,7 +3809,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="resourcespecificpermissiongrant-"><a href="https://docs.microsoft.com/graph/api/resources/resourcespecificpermissiongrant?view=graph-rest-1.0&amp;tabs=http">resourceSpecificPermissionGrant </a></h3>
+</section>
+<section id="tabpanel_2_resourceSpecificPermissionGrant41" role="tabpanel" data-tab="resourceSpecificPermissionGrant41" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/resourcespecificpermissiongrant?view=graph-rest-1.0&amp;tabs=http">resourceSpecificPermissionGrant</a></p>
 <table>
 <thead>
 <tr>
@@ -3276,9 +3859,18 @@
 </tr>
 </tbody>
 </table>
-<h3 id="schedule-"><a href="https://docs.microsoft.com/graph/api/resources/schedule?view=graph-rest-1.0&amp;tabs=http">schedule </a></h3>
-<h3 id="schedulinggroup-"><a href="https://docs.microsoft.com/graph/api/resources/schedulinggroup?view=graph-rest-1.0&amp;tabs=http">schedulingGroup </a></h3>
-<h3 id="serviceprincipal-"><a href="https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-1.0&amp;tabs=http">servicePrincipal </a></h3>
+</section>
+<section id="tabpanel_2_schedule42" role="tabpanel" data-tab="schedule42" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/schedule?view=graph-rest-1.0&amp;tabs=http">schedule</a></p>
+</section>
+<section id="tabpanel_2_schedulingGroup43" role="tabpanel" data-tab="schedulingGroup43" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/schedulinggroup?view=graph-rest-1.0&amp;tabs=http">schedulingGroup</a></p>
+</section>
+<section id="tabpanel_2_servicePrincipal44" role="tabpanel" data-tab="servicePrincipal44" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-1.0&amp;tabs=http">servicePrincipal</a></p>
 <table>
 <thead>
 <tr>
@@ -3470,8 +4062,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="shift-"><a href="https://docs.microsoft.com/graph/api/resources/shift?view=graph-rest-1.0&amp;tabs=http">shift </a></h3>
-<h3 id="swapshiftschangerequest-"><a href="https://docs.microsoft.com/graph/api/resources/swapshiftschangerequest?view=graph-rest-1.0&amp;tabs=http">swapShiftsChangeRequest </a></h3>
+</section>
+<section id="tabpanel_2_shift45" role="tabpanel" data-tab="shift45" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/shift?view=graph-rest-1.0&amp;tabs=http">shift</a></p>
+</section>
+<section id="tabpanel_2_swapShiftsChangeRequest46" role="tabpanel" data-tab="swapShiftsChangeRequest46" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/swapshiftschangerequest?view=graph-rest-1.0&amp;tabs=http">swapShiftsChangeRequest</a></p>
 <table>
 <thead>
 <tr>
@@ -3488,7 +4086,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="team-"><a href="https://docs.microsoft.com/graph/api/resources/team?view=graph-rest-1.0&amp;tabs=http">team </a></h3>
+</section>
+<section id="tabpanel_2_team47" role="tabpanel" data-tab="team47" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/team?view=graph-rest-1.0&amp;tabs=http">team</a></p>
 <table>
 <thead>
 <tr>
@@ -3585,7 +4186,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="teamsappinstallation-"><a href="https://docs.microsoft.com/graph/api/resources/teamsappinstallation?view=graph-rest-1.0&amp;tabs=http">teamsAppInstallation </a></h3>
+</section>
+<section id="tabpanel_2_teamsAppInstallation48" role="tabpanel" data-tab="teamsAppInstallation48" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/teamsappinstallation?view=graph-rest-1.0&amp;tabs=http">teamsAppInstallation</a></p>
 <table>
 <thead>
 <tr>
@@ -3607,7 +4211,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="teamstab-"><a href="https://docs.microsoft.com/graph/api/resources/teamstab?view=graph-rest-1.0&amp;tabs=http">teamsTab </a></h3>
+</section>
+<section id="tabpanel_2_teamsTab49" role="tabpanel" data-tab="teamsTab49" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/teamstab?view=graph-rest-1.0&amp;tabs=http">teamsTab</a></p>
 <table>
 <thead>
 <tr>
@@ -3639,7 +4246,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="teamworkbot-"><a href="https://docs.microsoft.com/graph/api/resources/teamworkbot?view=graph-rest-1.0&amp;tabs=http">teamworkBot </a></h3>
+</section>
+<section id="tabpanel_2_teamworkBot50" role="tabpanel" data-tab="teamworkBot50" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/teamworkbot?view=graph-rest-1.0&amp;tabs=http">teamworkBot</a></p>
 <table>
 <thead>
 <tr>
@@ -3656,8 +4266,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="timeoff-"><a href="https://docs.microsoft.com/graph/api/resources/timeoff?view=graph-rest-1.0&amp;tabs=http">timeOff </a></h3>
-<h3 id="timeoffreason-"><a href="https://docs.microsoft.com/graph/api/resources/timeoffreason?view=graph-rest-1.0&amp;tabs=http">timeOffReason </a></h3>
+</section>
+<section id="tabpanel_2_timeOff51" role="tabpanel" data-tab="timeOff51" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/timeoff?view=graph-rest-1.0&amp;tabs=http">timeOff</a></p>
+</section>
+<section id="tabpanel_2_timeOffReason52" role="tabpanel" data-tab="timeOffReason52" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/timeoffreason?view=graph-rest-1.0&amp;tabs=http">timeOffReason</a></p>
 <table>
 <thead>
 <tr>
@@ -3704,7 +4320,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="timeoffrequest-"><a href="https://docs.microsoft.com/graph/api/resources/timeoffrequest?view=graph-rest-1.0&amp;tabs=http">timeOffRequest </a></h3>
+</section>
+<section id="tabpanel_2_timeOffRequest53" role="tabpanel" data-tab="timeOffRequest53" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/timeoffrequest?view=graph-rest-1.0&amp;tabs=http">timeOffRequest</a></p>
 <table>
 <thead>
 <tr>
@@ -3731,7 +4350,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="user-"><a href="https://docs.microsoft.com/graph/api/resources/user?view=graph-rest-1.0&amp;tabs=http">user </a></h3>
+</section>
+<section id="tabpanel_2_user54" role="tabpanel" data-tab="user54" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/user?view=graph-rest-1.0&amp;tabs=http">user</a></p>
 <table>
 <thead>
 <tr>
@@ -4128,6 +4750,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

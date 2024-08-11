@@ -90,164 +90,235 @@
         <article data-uid="">
 <h1 id="devicereadall">Device.Read.All</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>Device.Read.All</code> permission.</p>
 <blockquote>
 <p>Allows the app to read your organization's devices' configuration information on behalf of the signed-in user.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>7438b122-aefc-4978-80ed-43db9fcc7715</td>
+<td>951183d1-1a61-466f-a6d1-1fde911bfd95</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Read all devices</td>
+<td>Read all devices</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the app to read your organization's devices' configuration information without a signed-in user.</td>
+<td>Allows the app to read your organization's devices' configuration information on behalf of the signed-in user.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/device-list?view=graph-rest-1.0&amp;tabs=http">GET /devices</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/device-get?view=graph-rest-1.0&amp;tabs=http">GET /devices(deviceId='{deviceId}')</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/device-list-memberof?view=graph-rest-1.0&amp;tabs=http">GET /devices(deviceId='{deviceId}')/memberOf</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/device-list-registeredowners?view=graph-rest-1.0&amp;tabs=http">GET /devices(deviceId='{deviceId}')/registeredOwners</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-1.0&amp;tabs=http">GET /devices(deviceId='{deviceId}')/registeredUsers</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/device-list-transitivememberof?view=graph-rest-1.0&amp;tabs=http">GET /devices(deviceId='{deviceId}')/transitiveMemberOf</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/device-list-usagerights?view=graph-rest-beta&amp;tabs=http">GET /devices(deviceId='{deviceId}')/usageRights</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/device-list-transitivememberof?view=graph-rest-1.0&amp;tabs=http">GET /devices/{id | userPrincipalName}/transitiveMemberOf</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/device-get?view=graph-rest-1.0&amp;tabs=http">GET /devices/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/device-list-memberof?view=graph-rest-1.0&amp;tabs=http">GET /devices/{id}/memberOf</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/device-list-registeredowners?view=graph-rest-1.0&amp;tabs=http">GET /devices/{id}/registeredOwners</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-1.0&amp;tabs=http">GET /devices/{id}/registeredUsers</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/device-list-transitivememberof?view=graph-rest-beta&amp;tabs=http">GET /devices/{id}/transitiveMemberOf</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/device-list-usagerights?view=graph-rest-beta&amp;tabs=http">GET /devices/{objectId}/usageRights</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/device-delta?view=graph-rest-1.0&amp;tabs=http">GET /devices/delta</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-beta&amp;tabs=http">POST /directoryObjects/{id}/checkMemberGroups</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/directoryobject-checkmemberobjects?view=graph-rest-1.0&amp;tabs=http">POST /directoryObjects/{id}/checkMemberObjects</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0&amp;tabs=http">POST /directoryObjects/{id}/getMemberObjects</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
+<th>Type</th>
+<th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Id</strong></td>
-<td>951183d1-1a61-466f-a6d1-1fde911bfd95</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/device-list?view=graph-rest-beta&amp;tabs=http">GET /devices</a></td>
 </tr>
 <tr>
-<td><strong>Consent Type</strong></td>
-<td>Admin</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/device-get?view=graph-rest-beta&amp;tabs=http">GET /devices(deviceId='{deviceId}')</a></td>
 </tr>
 <tr>
-<td><strong>Display String</strong></td>
-<td>Read all devices</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/device-list-memberof?view=graph-rest-beta&amp;tabs=http">GET /devices(deviceId='{deviceId}')/memberOf</a></td>
 </tr>
 <tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read your organization's devices' configuration information on behalf of the signed-in user.</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/device-list-registeredowners?view=graph-rest-beta&amp;tabs=http">GET /devices(deviceId='{deviceId}')/registeredOwners</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-beta&amp;tabs=http">GET /devices(deviceId='{deviceId}')/registeredUsers</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/device-list-transitivememberof?view=graph-rest-beta&amp;tabs=http">GET /devices(deviceId='{deviceId}')/transitiveMemberOf</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/device-list-usagerights?view=graph-rest-beta&amp;tabs=http">GET /devices(deviceId='{deviceId}')/usageRights</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/device-get?view=graph-rest-beta&amp;tabs=http">GET /devices/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/device-list-memberof?view=graph-rest-beta&amp;tabs=http">GET /devices/{id}/memberOf</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/device-list-registeredowners?view=graph-rest-beta&amp;tabs=http">GET /devices/{id}/registeredOwners</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-beta&amp;tabs=http">GET /devices/{id}/registeredUsers</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/device-list-transitivememberof?view=graph-rest-beta&amp;tabs=http">GET /devices/{id}/transitiveMemberOf</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/device-list-usagerights?view=graph-rest-beta&amp;tabs=http">GET /devices/{objectId}/usageRights</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/device-delta?view=graph-rest-beta&amp;tabs=http">GET /devices/delta</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-beta&amp;tabs=http">POST /directoryObjects/{id}/checkMemberGroups</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directoryobject-checkmemberobjects?view=graph-rest-beta&amp;tabs=http">POST /directoryObjects/{id}/checkMemberObjects</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-beta&amp;tabs=http">POST /directoryObjects/{id}/getMemberObjects</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>7438b122-aefc-4978-80ed-43db9fcc7715</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read all devices</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read your organization's devices' configuration information without a signed-in user.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="administrativeunit-"><a href="https://docs.microsoft.com/graph/api/resources/administrativeunit?view=graph-rest-1.0&amp;tabs=http">administrativeUnit </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_administrativeUnit1" role="tab" aria-controls="tabpanel_2_administrativeUnit1" data-tab="administrativeUnit1" tabindex="0" aria-selected="true">administrativeUnit</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_device2" role="tab" aria-controls="tabpanel_2_device2" data-tab="device2" tabindex="-1">device</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_directoryObject3" role="tab" aria-controls="tabpanel_2_directoryObject3" data-tab="directoryObject3" tabindex="-1">directoryObject</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_group4" role="tab" aria-controls="tabpanel_2_group4" data-tab="group4" tabindex="-1">group</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_orgContact5" role="tab" aria-controls="tabpanel_2_orgContact5" data-tab="orgContact5" tabindex="-1">orgContact</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_servicePrincipal6" role="tab" aria-controls="tabpanel_2_servicePrincipal6" data-tab="servicePrincipal6" tabindex="-1">servicePrincipal</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_usageRight7" role="tab" aria-controls="tabpanel_2_usageRight7" data-tab="usageRight7" tabindex="-1">usageRight</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_user8" role="tab" aria-controls="tabpanel_2_user8" data-tab="user8" tabindex="-1">user</a>
+</li>
+</ul>
+<section id="tabpanel_2_administrativeUnit1" role="tabpanel" data-tab="administrativeUnit1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/administrativeunit?view=graph-rest-1.0&amp;tabs=http">administrativeUnit</a></p>
 <table>
 <thead>
 <tr>
@@ -279,7 +350,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="device-"><a href="https://docs.microsoft.com/graph/api/resources/device?view=graph-rest-1.0&amp;tabs=http">device </a></h3>
+</section>
+<section id="tabpanel_2_device2" role="tabpanel" data-tab="device2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/device?view=graph-rest-1.0&amp;tabs=http">device</a></p>
 <table>
 <thead>
 <tr>
@@ -446,7 +520,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="directoryobject-"><a href="https://docs.microsoft.com/graph/api/resources/directoryobject?view=graph-rest-1.0&amp;tabs=http">directoryObject </a></h3>
+</section>
+<section id="tabpanel_2_directoryObject3" role="tabpanel" data-tab="directoryObject3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/directoryobject?view=graph-rest-1.0&amp;tabs=http">directoryObject</a></p>
 <table>
 <thead>
 <tr>
@@ -468,7 +545,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="group-"><a href="https://docs.microsoft.com/graph/api/resources/group?view=graph-rest-1.0&amp;tabs=http">group </a></h3>
+</section>
+<section id="tabpanel_2_group4" role="tabpanel" data-tab="group4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/group?view=graph-rest-1.0&amp;tabs=http">group</a></p>
 <table>
 <thead>
 <tr>
@@ -690,7 +770,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="orgcontact-"><a href="https://docs.microsoft.com/graph/api/resources/orgcontact?view=graph-rest-1.0&amp;tabs=http">orgContact </a></h3>
+</section>
+<section id="tabpanel_2_orgContact5" role="tabpanel" data-tab="orgContact5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/orgcontact?view=graph-rest-1.0&amp;tabs=http">orgContact</a></p>
 <table>
 <thead>
 <tr>
@@ -782,7 +865,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="serviceprincipal-"><a href="https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-1.0&amp;tabs=http">servicePrincipal </a></h3>
+</section>
+<section id="tabpanel_2_servicePrincipal6" role="tabpanel" data-tab="servicePrincipal6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-1.0&amp;tabs=http">servicePrincipal</a></p>
 <table>
 <thead>
 <tr>
@@ -974,7 +1060,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="usageright-"><a href="https://docs.microsoft.com/graph/api/resources/usageright?view=graph-rest-1.0&amp;tabs=http">usageRight </a></h3>
+</section>
+<section id="tabpanel_2_usageRight7" role="tabpanel" data-tab="usageRight7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/usageright?view=graph-rest-1.0&amp;tabs=http">usageRight</a></p>
 <table>
 <thead>
 <tr>
@@ -1006,7 +1095,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="user-"><a href="https://docs.microsoft.com/graph/api/resources/user?view=graph-rest-1.0&amp;tabs=http">user </a></h3>
+</section>
+<section id="tabpanel_2_user8" role="tabpanel" data-tab="user8" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/user?view=graph-rest-1.0&amp;tabs=http">user</a></p>
 <table>
 <thead>
 <tr>
@@ -1403,6 +1495,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

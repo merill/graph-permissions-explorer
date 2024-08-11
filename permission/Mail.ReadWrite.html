@@ -90,474 +90,725 @@
         <article data-uid="">
 <h1 id="mailreadwrite">Mail.ReadWrite</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>Mail.ReadWrite</code> permission.</p>
 <blockquote>
 <p>Allows the app to create, read, update, and delete email in user mailboxes. Does not include permission to send mail.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>e2a3a72e-5f79-4c64-b1b1-878b674786c9</td>
+<td>024d486e-b451-40bb-833d-3e66d98c5c73</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Read and write mail in all mailboxes</td>
+<td>Read and write access to user mail</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the app to create, read, update, and delete mail in all mailboxes without a signed-in user. Does not include permission to send mail.</td>
+<td>Allows the app to create, read, update, and delete email in user mailboxes. Does not include permission to send mail.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/eventmessage-update?view=graph-rest-1.0&amp;tabs=http"></a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/inferenceclassificationoverride-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /me/inferenceClassification/overrides/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/mailfolder-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /me/mailFolders/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/eventmessage-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /me/mailFolders/{id}/messages/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/eventmessage-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /me/messages/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/mailfolder-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /users/{id | userPrincipalName}/mailFolders/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/eventmessage-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /users/{id | userPrincipalName}/mailFolders/{id}/messages/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/eventmessage-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /users/{id | userPrincipalName}/messages/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/inferenceclassificationoverride-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /users/{id}/inferenceClassification/overrides/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-mailfolders?view=graph-rest-1.0&amp;tabs=http">GET /me/mailFolders</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/mailfolder-get?view=graph-rest-1.0&amp;tabs=http">GET /me/mailFolders/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/mailfolder-list-childfolders?view=graph-rest-1.0&amp;tabs=http">GET /me/mailFolders/{id}/childFolders</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0&amp;tabs=http">GET /me/mailFolders/{id}/messages</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-delta?view=graph-rest-1.0&amp;tabs=http">GET /me/mailFolders/{id}/messages/delta</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-1.0&amp;tabs=http">GET /me/mailFolders/delta</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-messages?view=graph-rest-1.0&amp;tabs=http">GET /me/messages</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-mailfolders?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/mailFolders</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/mailfolder-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/mailFolders/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/mailfolder-list-childfolders?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/mailFolders/{id}/childFolders</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/mailFolders/{id}/messages</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-messages?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/messages</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-delta?view=graph-rest-1.0&amp;tabs=http">GET /users/{id}/mailFolders/{id}/messages/delta</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-1.0&amp;tabs=http">GET /users/{id}/mailFolders/delta</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/inferenceclassificationoverride-update?view=graph-rest-1.0&amp;tabs=http">PATCH /me/inferenceClassification/overrides/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/mailfolder-update?view=graph-rest-1.0&amp;tabs=http">PATCH /me/mailFolders/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/eventmessage-update?view=graph-rest-1.0&amp;tabs=http">PATCH /me/mailFolders/{id}/messages/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/eventmessage-update?view=graph-rest-1.0&amp;tabs=http">PATCH /me/messages/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/mailfolder-update?view=graph-rest-1.0&amp;tabs=http">PATCH /users/{id | userPrincipalName}/mailFolders/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/eventmessage-update?view=graph-rest-1.0&amp;tabs=http">PATCH /users/{id | userPrincipalName}/mailFolders/{id}/messages/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/eventmessage-update?view=graph-rest-1.0&amp;tabs=http">PATCH /users/{id | userPrincipalName}/messages/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/inferenceclassificationoverride-update?view=graph-rest-1.0&amp;tabs=http">PATCH /users/{id}/inferenceClassification/overrides/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0&amp;tabs=http">POST /me/events/{id}/attachments/createUploadSession</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/inferenceclassification-post-overrides?view=graph-rest-1.0&amp;tabs=http">POST /me/inferenceClassification/overrides</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-post-mailfolders?view=graph-rest-1.0&amp;tabs=http">POST /me/mailFolders</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/mailfolder-post-childfolders?view=graph-rest-1.0&amp;tabs=http">POST /me/mailFolders/{id}/childFolders</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/mailfolder-copy?view=graph-rest-1.0&amp;tabs=http">POST /me/mailFolders/{id}/copy</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/mailfolder-post-messages?view=graph-rest-1.0&amp;tabs=http">POST /me/mailFolders/{id}/messages</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-copy?view=graph-rest-1.0&amp;tabs=http">POST /me/mailFolders/{id}/messages/{id}/copy</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-createforward?view=graph-rest-1.0&amp;tabs=http">POST /me/mailFolders/{id}/messages/{id}/createForward</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-createreply?view=graph-rest-1.0&amp;tabs=http">POST /me/mailFolders/{id}/messages/{id}/createReply</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-createreplyall?view=graph-rest-1.0&amp;tabs=http">POST /me/mailFolders/{id}/messages/{id}/createReplyAll</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/message-markasjunk?view=graph-rest-beta&amp;tabs=http">POST /me/mailFolders/{id}/messages/{id}/markAsJunk</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/message-markasnotjunk?view=graph-rest-beta&amp;tabs=http">POST /me/mailFolders/{id}/messages/{id}/markAsNotJunk</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-move?view=graph-rest-1.0&amp;tabs=http">POST /me/mailFolders/{id}/messages/{id}/move</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/mailfolder-move?view=graph-rest-1.0&amp;tabs=http">POST /me/mailFolders/{id}/move</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/message-recall?view=graph-rest-beta&amp;tabs=http">POST /me/mailFolders/sentitems/messages/{id}/recall</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-post-messages?view=graph-rest-1.0&amp;tabs=http">POST /me/messages</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0&amp;tabs=http">POST /me/messages/{id}/attachments</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-copy?view=graph-rest-1.0&amp;tabs=http">POST /me/messages/{id}/copy</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-createforward?view=graph-rest-1.0&amp;tabs=http">POST /me/messages/{id}/createForward</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-createreply?view=graph-rest-1.0&amp;tabs=http">POST /me/messages/{id}/createReply</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-createreplyall?view=graph-rest-1.0&amp;tabs=http">POST /me/messages/{id}/createReplyAll</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/message-markasjunk?view=graph-rest-beta&amp;tabs=http">POST /me/messages/{id}/markAsJunk</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/message-markasnotjunk?view=graph-rest-beta&amp;tabs=http">POST /me/messages/{id}/markAsNotJunk</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-move?view=graph-rest-1.0&amp;tabs=http">POST /me/messages/{id}/move</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/events/{id}/attachments/createUploadSession</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-post-mailfolders?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/mailFolders</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/mailfolder-post-childfolders?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/mailFolders/{id}/childFolders</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/mailfolder-copy?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/mailFolders/{id}/copy</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/mailfolder-post-messages?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/mailFolders/{id}/messages</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-copy?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/mailFolders/{id}/messages/{id}/copy</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-createforward?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/mailFolders/{id}/messages/{id}/createForward</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-createreply?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/mailFolders/{id}/messages/{id}/createReply</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-createreplyall?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/mailFolders/{id}/messages/{id}/createReplyAll</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/message-markasjunk?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/mailFolders/{id}/messages/{id}/markAsJunk</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/message-markasnotjunk?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/mailFolders/{id}/messages/{id}/markAsNotJunk</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-move?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/mailFolders/{id}/messages/{id}/move</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/mailfolder-move?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/mailFolders/{id}/move</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/message-recall?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/mailFolders/sentitems/messages/{id}/recall</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/messages/{id}/attachments</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-copy?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/messages/{id}/copy</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-createforward?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/messages/{id}/createForward</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-createreply?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/messages/{id}/createReply</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-createreplyall?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/messages/{id}/createReplyAll</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/message-markasjunk?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/messages/{id}/markAsJunk</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/message-markasnotjunk?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/messages/{id}/markAsNotJunk</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-move?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/messages/{id}/move</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/inferenceclassification-post-overrides?view=graph-rest-1.0&amp;tabs=http">POST /users/{id}/inferenceClassification/overrides</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-post-messages?view=graph-rest-1.0&amp;tabs=http">POST /users/{id|userPrincipalName}/messages</a></td>
 </tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
+<table>
+<thead>
 <tr>
-<td>Beta</td>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/inferenceclassificationoverride-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/inferenceClassification/overrides/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/mailfolder-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/mailFolders/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/eventmessage-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/mailFolders/{id}/messages/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/eventmessage-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/messages/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/mailfolder-delete?view=graph-rest-beta&amp;tabs=http">DELETE /users/{id | userPrincipalName}/mailFolders/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/eventmessage-delete?view=graph-rest-beta&amp;tabs=http">DELETE /users/{id | userPrincipalName}/mailFolders/{id}/messages/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/eventmessage-delete?view=graph-rest-beta&amp;tabs=http">DELETE /users/{id | userPrincipalName}/messages/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/inferenceclassificationoverride-delete?view=graph-rest-beta&amp;tabs=http">DELETE /users/{id}/inferenceClassification/overrides/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-mailfolders?view=graph-rest-beta&amp;tabs=http">GET /me/mailFolders</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/mailfolder-get?view=graph-rest-beta&amp;tabs=http">GET /me/mailFolders/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/mailfolder-list-childfolders?view=graph-rest-beta&amp;tabs=http">GET /me/mailFolders/{id}/childFolders</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-beta&amp;tabs=http">GET /me/mailFolders/{id}/messages</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-delta?view=graph-rest-beta&amp;tabs=http">GET /me/mailFolders/{id}/messages/delta</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-beta&amp;tabs=http">GET /me/mailFolders/delta</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-messages?view=graph-rest-beta&amp;tabs=http">GET /me/messages</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-mailfolders?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/mailFolders</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/mailfolder-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/mailFolders/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/mailfolder-list-childfolders?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/mailFolders/{id}/childFolders</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/mailFolders/{id}/messages</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-messages?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/messages</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-delta?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/mailFolders/{id}/messages/delta</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/mailFolders/delta</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/inferenceclassificationoverride-update?view=graph-rest-beta&amp;tabs=http">PATCH /me/inferenceClassification/overrides/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/mailfolder-update?view=graph-rest-beta&amp;tabs=http">PATCH /me/mailFolders/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/eventmessage-update?view=graph-rest-beta&amp;tabs=http">PATCH /me/mailFolders/{id}/messages/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/eventmessage-update?view=graph-rest-beta&amp;tabs=http">PATCH /me/messages/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/mailfolder-update?view=graph-rest-beta&amp;tabs=http">PATCH /users/{id | userPrincipalName}/mailFolders/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/eventmessage-update?view=graph-rest-beta&amp;tabs=http">PATCH /users/{id | userPrincipalName}/mailFolders/{id}/messages/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/eventmessage-update?view=graph-rest-beta&amp;tabs=http">PATCH /users/{id | userPrincipalName}/messages/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/inferenceclassificationoverride-update?view=graph-rest-beta&amp;tabs=http">PATCH /users/{id}/inferenceClassification/overrides/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-beta&amp;tabs=http">POST /me/events/{id}/attachments/createUploadSession</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/inferenceclassification-post-overrides?view=graph-rest-beta&amp;tabs=http">POST /me/inferenceClassification/overrides</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-post-mailfolders?view=graph-rest-beta&amp;tabs=http">POST /me/mailFolders</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/mailfolder-post-childfolders?view=graph-rest-beta&amp;tabs=http">POST /me/mailFolders/{id}/childFolders</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/mailfolder-copy?view=graph-rest-beta&amp;tabs=http">POST /me/mailFolders/{id}/copy</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/mailfolder-post-messages?view=graph-rest-beta&amp;tabs=http">POST /me/mailFolders/{id}/messages</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-copy?view=graph-rest-beta&amp;tabs=http">POST /me/mailFolders/{id}/messages/{id}/copy</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-createforward?view=graph-rest-beta&amp;tabs=http">POST /me/mailFolders/{id}/messages/{id}/createForward</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-createreply?view=graph-rest-beta&amp;tabs=http">POST /me/mailFolders/{id}/messages/{id}/createReply</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-createreplyall?view=graph-rest-beta&amp;tabs=http">POST /me/mailFolders/{id}/messages/{id}/createReplyAll</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-markasjunk?view=graph-rest-beta&amp;tabs=http">POST /me/mailFolders/{id}/messages/{id}/markAsJunk</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-markasnotjunk?view=graph-rest-beta&amp;tabs=http">POST /me/mailFolders/{id}/messages/{id}/markAsNotJunk</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-move?view=graph-rest-beta&amp;tabs=http">POST /me/mailFolders/{id}/messages/{id}/move</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/mailfolder-move?view=graph-rest-beta&amp;tabs=http">POST /me/mailFolders/{id}/move</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-recall?view=graph-rest-beta&amp;tabs=http">POST /me/mailFolders/sentitems/messages/{id}/recall</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-post-messages?view=graph-rest-beta&amp;tabs=http">POST /me/messages</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-beta&amp;tabs=http">POST /me/messages/{id}/attachments</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-copy?view=graph-rest-beta&amp;tabs=http">POST /me/messages/{id}/copy</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-createforward?view=graph-rest-beta&amp;tabs=http">POST /me/messages/{id}/createForward</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-createreply?view=graph-rest-beta&amp;tabs=http">POST /me/messages/{id}/createReply</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-createreplyall?view=graph-rest-beta&amp;tabs=http">POST /me/messages/{id}/createReplyAll</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-markasjunk?view=graph-rest-beta&amp;tabs=http">POST /me/messages/{id}/markAsJunk</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-markasnotjunk?view=graph-rest-beta&amp;tabs=http">POST /me/messages/{id}/markAsNotJunk</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-move?view=graph-rest-beta&amp;tabs=http">POST /me/messages/{id}/move</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-post-mailfolders?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/mailFolders</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/mailfolder-post-childfolders?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/mailFolders/{id}/childFolders</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/mailfolder-copy?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/mailFolders/{id}/copy</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/mailfolder-post-messages?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/mailFolders/{id}/messages</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-copy?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/mailFolders/{id}/messages/{id}/copy</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-createforward?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/mailFolders/{id}/messages/{id}/createForward</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-createreply?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/mailFolders/{id}/messages/{id}/createReply</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-createreplyall?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/mailFolders/{id}/messages/{id}/createReplyAll</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-markasjunk?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/mailFolders/{id}/messages/{id}/markAsJunk</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-markasnotjunk?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/mailFolders/{id}/messages/{id}/markAsNotJunk</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-move?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/mailFolders/{id}/messages/{id}/move</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/mailfolder-move?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/mailFolders/{id}/move</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-recall?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/mailFolders/sentitems/messages/{id}/recall</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-post-attachments?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/messages/{id}/attachments</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-copy?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/messages/{id}/copy</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-createforward?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/messages/{id}/createForward</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-createreply?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/messages/{id}/createReply</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-createreplyall?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/messages/{id}/createReplyAll</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-markasjunk?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/messages/{id}/markAsJunk</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-markasnotjunk?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/messages/{id}/markAsNotJunk</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-move?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/messages/{id}/move</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/inferenceclassification-post-overrides?view=graph-rest-beta&amp;tabs=http">POST /users/{id}/inferenceClassification/overrides</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-post-messages?view=graph-rest-beta&amp;tabs=http">POST /users/{id|userPrincipalName}/messages</a></td>
+</tr>
+<tr>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-beta&amp;tabs=http">POST /users/{id|userPrincipalName}/messages/{id}/attachments</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>024d486e-b451-40bb-833d-3e66d98c5c73</td>
-</tr>
-<tr>
-<td><strong>Consent Type</strong></td>
-<td>User</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read and write access to user mail</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to create, read, update, and delete email in user mailboxes. Does not include permission to send mail.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>e2a3a72e-5f79-4c64-b1b1-878b674786c9</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read and write mail in all mailboxes</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to create, read, update, and delete mail in all mailboxes without a signed-in user. Does not include permission to send mail.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="attachment-"><a href="https://docs.microsoft.com/graph/api/resources/attachment?view=graph-rest-1.0&amp;tabs=http">attachment </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_attachment1" role="tab" aria-controls="tabpanel_2_attachment1" data-tab="attachment1" tabindex="0" aria-selected="true">attachment</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_attachmentItem2" role="tab" aria-controls="tabpanel_2_attachmentItem2" data-tab="attachmentItem2" tabindex="-1">attachmentItem</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_event3" role="tab" aria-controls="tabpanel_2_event3" data-tab="event3" tabindex="-1">event</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_eventMessage4" role="tab" aria-controls="tabpanel_2_eventMessage4" data-tab="eventMessage4" tabindex="-1">eventMessage</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_fileAttachment5" role="tab" aria-controls="tabpanel_2_fileAttachment5" data-tab="fileAttachment5" tabindex="-1">fileAttachment</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_followupFlag6" role="tab" aria-controls="tabpanel_2_followupFlag6" data-tab="followupFlag6" tabindex="-1">followupFlag</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_inferenceClassificationOverride7" role="tab" aria-controls="tabpanel_2_inferenceClassificationOverride7" data-tab="inferenceClassificationOverride7" tabindex="-1">inferenceClassificationOverride</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_itemAttachment8" role="tab" aria-controls="tabpanel_2_itemAttachment8" data-tab="itemAttachment8" tabindex="-1">itemAttachment</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_mailFolder9" role="tab" aria-controls="tabpanel_2_mailFolder9" data-tab="mailFolder9" tabindex="-1">mailFolder</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_mailSearchFolder10" role="tab" aria-controls="tabpanel_2_mailSearchFolder10" data-tab="mailSearchFolder10" tabindex="-1">mailSearchFolder</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_manage-focused-inbox11" role="tab" aria-controls="tabpanel_2_manage-focused-inbox11" data-tab="manage-focused-inbox11" tabindex="-1">manage-focused-inbox</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_mention12" role="tab" aria-controls="tabpanel_2_mention12" data-tab="mention12" tabindex="-1">mention</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_message13" role="tab" aria-controls="tabpanel_2_message13" data-tab="message13" tabindex="-1">message</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_multiValueLegacyExtendedProperty14" role="tab" aria-controls="tabpanel_2_multiValueLegacyExtendedProperty14" data-tab="multiValueLegacyExtendedProperty14" tabindex="-1">multiValueLegacyExtendedProperty</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_recipient15" role="tab" aria-controls="tabpanel_2_recipient15" data-tab="recipient15" tabindex="-1">recipient</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_referenceAttachment16" role="tab" aria-controls="tabpanel_2_referenceAttachment16" data-tab="referenceAttachment16" tabindex="-1">referenceAttachment</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_singleValueLegacyExtendedProperty17" role="tab" aria-controls="tabpanel_2_singleValueLegacyExtendedProperty17" data-tab="singleValueLegacyExtendedProperty17" tabindex="-1">singleValueLegacyExtendedProperty</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_uploadSession18" role="tab" aria-controls="tabpanel_2_uploadSession18" data-tab="uploadSession18" tabindex="-1">uploadSession</a>
+</li>
+</ul>
+<section id="tabpanel_2_attachment1" role="tabpanel" data-tab="attachment1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/attachment?view=graph-rest-1.0&amp;tabs=http">attachment</a></p>
 <table>
 <thead>
 <tr>
@@ -599,7 +850,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="attachmentitem-"><a href="https://docs.microsoft.com/graph/api/resources/attachmentitem?view=graph-rest-1.0&amp;tabs=http">attachmentItem </a></h3>
+</section>
+<section id="tabpanel_2_attachmentItem2" role="tabpanel" data-tab="attachmentItem2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/attachmentitem?view=graph-rest-1.0&amp;tabs=http">attachmentItem</a></p>
 <table>
 <thead>
 <tr>
@@ -641,7 +895,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="event-"><a href="https://docs.microsoft.com/graph/api/resources/event?view=graph-rest-1.0&amp;tabs=http">event </a></h3>
+</section>
+<section id="tabpanel_2_event3" role="tabpanel" data-tab="event3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/event?view=graph-rest-1.0&amp;tabs=http">event</a></p>
 <table>
 <thead>
 <tr>
@@ -858,7 +1115,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="eventmessage-"><a href="https://docs.microsoft.com/graph/api/resources/eventmessage?view=graph-rest-1.0&amp;tabs=http">eventMessage </a></h3>
+</section>
+<section id="tabpanel_2_eventMessage4" role="tabpanel" data-tab="eventMessage4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/eventmessage?view=graph-rest-1.0&amp;tabs=http">eventMessage</a></p>
 <table>
 <thead>
 <tr>
@@ -1035,7 +1295,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="fileattachment-"><a href="https://docs.microsoft.com/graph/api/resources/fileattachment?view=graph-rest-1.0&amp;tabs=http">fileAttachment </a></h3>
+</section>
+<section id="tabpanel_2_fileAttachment5" role="tabpanel" data-tab="fileAttachment5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/fileattachment?view=graph-rest-1.0&amp;tabs=http">fileAttachment</a></p>
 <table>
 <thead>
 <tr>
@@ -1092,7 +1355,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="followupflag-"><a href="https://docs.microsoft.com/graph/api/resources/followupflag?view=graph-rest-1.0&amp;tabs=http">followupFlag </a></h3>
+</section>
+<section id="tabpanel_2_followupFlag6" role="tabpanel" data-tab="followupFlag6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/followupflag?view=graph-rest-1.0&amp;tabs=http">followupFlag</a></p>
 <table>
 <thead>
 <tr>
@@ -1124,7 +1390,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="inferenceclassificationoverride-"><a href="https://docs.microsoft.com/graph/api/resources/inferenceclassificationoverride?view=graph-rest-1.0&amp;tabs=http">inferenceClassificationOverride </a></h3>
+</section>
+<section id="tabpanel_2_inferenceClassificationOverride7" role="tabpanel" data-tab="inferenceClassificationOverride7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/inferenceclassificationoverride?view=graph-rest-1.0&amp;tabs=http">inferenceClassificationOverride</a></p>
 <table>
 <thead>
 <tr>
@@ -1151,7 +1420,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="itemattachment-"><a href="https://docs.microsoft.com/graph/api/resources/itemattachment?view=graph-rest-1.0&amp;tabs=http">itemAttachment </a></h3>
+</section>
+<section id="tabpanel_2_itemAttachment8" role="tabpanel" data-tab="itemAttachment8" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/itemattachment?view=graph-rest-1.0&amp;tabs=http">itemAttachment</a></p>
 <table>
 <thead>
 <tr>
@@ -1193,7 +1465,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="mailfolder-"><a href="https://docs.microsoft.com/graph/api/resources/mailfolder?view=graph-rest-1.0&amp;tabs=http">mailFolder </a></h3>
+</section>
+<section id="tabpanel_2_mailFolder9" role="tabpanel" data-tab="mailFolder9" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/mailfolder?view=graph-rest-1.0&amp;tabs=http">mailFolder</a></p>
 <table>
 <thead>
 <tr>
@@ -1240,7 +1515,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="mailsearchfolder-"><a href="https://docs.microsoft.com/graph/api/resources/mailsearchfolder?view=graph-rest-1.0&amp;tabs=http">mailSearchFolder </a></h3>
+</section>
+<section id="tabpanel_2_mailSearchFolder10" role="tabpanel" data-tab="mailSearchFolder10" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/mailsearchfolder?view=graph-rest-1.0&amp;tabs=http">mailSearchFolder</a></p>
 <table>
 <thead>
 <tr>
@@ -1272,8 +1550,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="manage-focused-inbox"><a href="https://docs.microsoft.com/graph/api/resources/manage-focused-inbox?view=graph-rest-1.0&amp;tabs=http">manage-focused-inbox</a></h3>
-<h3 id="mention-"><a href="https://docs.microsoft.com/graph/api/resources/mention?view=graph-rest-1.0&amp;tabs=http">mention </a></h3>
+</section>
+<section id="tabpanel_2_manage-focused-inbox11" role="tabpanel" data-tab="manage-focused-inbox11" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/manage-focused-inbox?view=graph-rest-1.0&amp;tabs=http">manage-focused-inbox</a></p>
+</section>
+<section id="tabpanel_2_mention12" role="tabpanel" data-tab="mention12" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/mention?view=graph-rest-1.0&amp;tabs=http">mention</a></p>
 <table>
 <thead>
 <tr>
@@ -1330,7 +1614,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="message-"><a href="https://docs.microsoft.com/graph/api/resources/message?view=graph-rest-1.0&amp;tabs=http">message </a></h3>
+</section>
+<section id="tabpanel_2_message13" role="tabpanel" data-tab="message13" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/message?view=graph-rest-1.0&amp;tabs=http">message</a></p>
 <table>
 <thead>
 <tr>
@@ -1492,7 +1779,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="multivaluelegacyextendedproperty-"><a href="https://docs.microsoft.com/graph/api/resources/multivaluelegacyextendedproperty?view=graph-rest-1.0&amp;tabs=http">multiValueLegacyExtendedProperty </a></h3>
+</section>
+<section id="tabpanel_2_multiValueLegacyExtendedProperty14" role="tabpanel" data-tab="multiValueLegacyExtendedProperty14" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/multivaluelegacyextendedproperty?view=graph-rest-1.0&amp;tabs=http">multiValueLegacyExtendedProperty</a></p>
 <table>
 <thead>
 <tr>
@@ -1514,7 +1804,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="recipient-"><a href="https://docs.microsoft.com/graph/api/resources/recipient?view=graph-rest-1.0&amp;tabs=http">recipient </a></h3>
+</section>
+<section id="tabpanel_2_recipient15" role="tabpanel" data-tab="recipient15" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/recipient?view=graph-rest-1.0&amp;tabs=http">recipient</a></p>
 <table>
 <thead>
 <tr>
@@ -1531,7 +1824,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="referenceattachment-"><a href="https://docs.microsoft.com/graph/api/resources/referenceattachment?view=graph-rest-1.0&amp;tabs=http">referenceAttachment </a></h3>
+</section>
+<section id="tabpanel_2_referenceAttachment16" role="tabpanel" data-tab="referenceAttachment16" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/referenceattachment?view=graph-rest-1.0&amp;tabs=http">referenceAttachment</a></p>
 <table>
 <thead>
 <tr>
@@ -1573,7 +1869,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="singlevaluelegacyextendedproperty-"><a href="https://docs.microsoft.com/graph/api/resources/singlevaluelegacyextendedproperty?view=graph-rest-1.0&amp;tabs=http">singleValueLegacyExtendedProperty </a></h3>
+</section>
+<section id="tabpanel_2_singleValueLegacyExtendedProperty17" role="tabpanel" data-tab="singleValueLegacyExtendedProperty17" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/singlevaluelegacyextendedproperty?view=graph-rest-1.0&amp;tabs=http">singleValueLegacyExtendedProperty</a></p>
 <table>
 <thead>
 <tr>
@@ -1595,7 +1894,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="uploadsession-"><a href="https://docs.microsoft.com/graph/api/resources/uploadsession?view=graph-rest-1.0&amp;tabs=http">uploadSession </a></h3>
+</section>
+<section id="tabpanel_2_uploadSession18" role="tabpanel" data-tab="uploadSession18" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/uploadsession?view=graph-rest-1.0&amp;tabs=http">uploadSession</a></p>
 <table>
 <thead>
 <tr>
@@ -1622,6 +1924,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

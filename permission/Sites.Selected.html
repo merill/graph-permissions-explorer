@@ -90,124 +90,156 @@
         <article data-uid="">
 <h1 id="sitesselected">Sites.Selected</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>Sites.Selected</code> permission.</p>
 <blockquote>
 <p>Allow the application to access a subset of site collections on behalf of the signed-in user.  The specific site collections and the permissions granted will be configured in SharePoint Online.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>883ea226-0bf2-4a8f-9f9d-92c9162a727d</td>
+<td>f89c84ef-20d0-4b54-87e9-02e856d66d53</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Access selected site collections</td>
+<td>Access selected Sites, on behalf of the signed-in user</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allow the application to access a subset of site collections without a signed in user.  The specific site collections and the permissions granted will be configured in SharePoint Online.</td>
+<td>Allow the application to access a subset of site collections on behalf of the signed-in user.  The specific site collections and the permissions granted will be configured in SharePoint Online.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/documentsetversion-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /sites/{siteId}/lists/{listId}/items/{itemId}/documentSetVersions/{documentSetVersionId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/listitem-list-documentsetversions?view=graph-rest-1.0&amp;tabs=http">GET /sites/{siteId}/lists/{listId}/items/{itemId}/documentSetVersions</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/documentsetversion-get?view=graph-rest-1.0&amp;tabs=http">GET /sites/{siteId}/lists/{listId}/items/{itemId}/documentSetVersions/{documentSetVersionId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/driveitem-post-permissions?view=graph-rest-beta&amp;tabs=http">POST /drives/{drive-id}/items/{item-id}/permissions</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/driveitem-post-permissions?view=graph-rest-beta&amp;tabs=http">POST /groups/{group-id}/drive/items/{item-id}/permissions</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/driveitem-post-permissions?view=graph-rest-beta&amp;tabs=http">POST /me/drive/items/{item-id}/permissions</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/driveitem-post-permissions?view=graph-rest-beta&amp;tabs=http">POST /sites/{siteId}/drive/items/{itemId}/permissions</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/listitem-post-documentsetversions?view=graph-rest-1.0&amp;tabs=http">POST /sites/{siteId}/lists/{listId}/items/{itemId}/documentSetVersions</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0&amp;tabs=http">POST /sites/{siteId}/lists/{listId}/items/{itemId}/documentSetVersions/{documentSetVersionId}/restore</a></td>
 </tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
+<table>
+<thead>
 <tr>
-<td>Beta</td>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/documentsetversion-delete?view=graph-rest-beta&amp;tabs=http">DELETE /sites/{siteId}/lists/{listId}/items/{itemId}/documentSetVersions/{documentSetVersionId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/listitem-list-documentsetversions?view=graph-rest-beta&amp;tabs=http">GET /sites/{siteId}/lists/{listId}/items/{itemId}/documentSetVersions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/documentsetversion-get?view=graph-rest-beta&amp;tabs=http">GET /sites/{siteId}/lists/{listId}/items/{itemId}/documentSetVersions/{documentSetVersionId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/driveitem-post-permissions?view=graph-rest-beta&amp;tabs=http">POST /drives/{drive-id}/items/{item-id}/permissions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/driveitem-post-permissions?view=graph-rest-beta&amp;tabs=http">POST /groups/{group-id}/drive/items/{item-id}/permissions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/driveitem-post-permissions?view=graph-rest-beta&amp;tabs=http">POST /me/drive/items/{item-id}/permissions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/driveitem-post-permissions?view=graph-rest-beta&amp;tabs=http">POST /sites/{siteId}/drive/items/{itemId}/permissions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/listitem-post-documentsetversions?view=graph-rest-beta&amp;tabs=http">POST /sites/{siteId}/lists/{listId}/items/{itemId}/documentSetVersions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-beta&amp;tabs=http">POST /sites/{siteId}/lists/{listId}/items/{itemId}/documentSetVersions/{documentSetVersionId}/restore</a></td>
+</tr>
+<tr>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/driveitem-post-permissions?view=graph-rest-beta&amp;tabs=http">POST /users/{userId}/drive/items/{itemId}/permissions</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>f89c84ef-20d0-4b54-87e9-02e856d66d53</td>
-</tr>
-<tr>
-<td><strong>Consent Type</strong></td>
-<td>User</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Access selected Sites, on behalf of the signed-in user</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allow the application to access a subset of site collections on behalf of the signed-in user.  The specific site collections and the permissions granted will be configured in SharePoint Online.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>883ea226-0bf2-4a8f-9f9d-92c9162a727d</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Access selected site collections</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allow the application to access a subset of site collections without a signed in user.  The specific site collections and the permissions granted will be configured in SharePoint Online.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="documentsetversion-"><a href="https://docs.microsoft.com/graph/api/resources/documentsetversion?view=graph-rest-1.0&amp;tabs=http">documentSetVersion </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_documentSetVersion1" role="tab" aria-controls="tabpanel_2_documentSetVersion1" data-tab="documentSetVersion1" tabindex="0" aria-selected="true">documentSetVersion</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_List2" role="tab" aria-controls="tabpanel_2_List2" data-tab="List2" tabindex="-1">List</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_Permission3" role="tab" aria-controls="tabpanel_2_Permission3" data-tab="Permission3" tabindex="-1">Permission</a>
+</li>
+</ul>
+<section id="tabpanel_2_documentSetVersion1" role="tabpanel" data-tab="documentSetVersion1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/documentsetversion?view=graph-rest-1.0&amp;tabs=http">documentSetVersion</a></p>
 <table>
 <thead>
 <tr>
@@ -264,7 +296,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="list-"><a href="https://docs.microsoft.com/graph/api/resources/list?view=graph-rest-1.0&amp;tabs=http">List </a></h3>
+</section>
+<section id="tabpanel_2_List2" role="tabpanel" data-tab="List2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/list?view=graph-rest-1.0&amp;tabs=http">List</a></p>
 <table>
 <thead>
 <tr>
@@ -346,7 +381,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="permission-"><a href="https://docs.microsoft.com/graph/api/resources/permission?view=graph-rest-1.0&amp;tabs=http">Permission </a></h3>
+</section>
+<section id="tabpanel_2_Permission3" role="tabpanel" data-tab="Permission3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/permission?view=graph-rest-1.0&amp;tabs=http">Permission</a></p>
 <table>
 <thead>
 <tr>
@@ -418,6 +456,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

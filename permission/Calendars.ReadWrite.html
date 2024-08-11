@@ -90,654 +90,1012 @@
         <article data-uid="">
 <h1 id="calendarsreadwrite">Calendars.ReadWrite</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>Calendars.ReadWrite</code> permission.</p>
 <blockquote>
 <p>Allows the app to create, read, update, and delete events in user calendars.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>ef54d2bf-783f-4e0f-bca1-3210c0444d99</td>
+<td>1ec239c2-d7c9-4623-a91a-a9775856bb36</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Read and write calendars in all mailboxes</td>
+<td>Have full access to user calendars</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the app to create, read, update, and delete events of all calendars without a signed-in user.</td>
+<td>Allows the app to create, read, update, and delete events in user calendars.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0&amp;tabs=http"></a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-delete-event?view=graph-rest-1.0&amp;tabs=http">DELETE /groups/{id}/calendar/events/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /groups/{id}/calendar/events/{id}/</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /groups/{id}/events/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /me/calendar/events/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/calendargroup-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /me/calendarGroups/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /me/calendarGroups/{id}/calendars/{id}/events/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/calendar-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /me/calendars/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /me/calendars/{id}/events/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /me/events/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /users/{id | userPrincipalName}/calendar/events/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/calendargroup-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /users/{id | userPrincipalName}/calendarGroups/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /users/{id | userPrincipalName}/calendarGroups/{id}/calendars/{id}/events/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/calendar-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /users/{id | userPrincipalName}/calendars/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /users/{id | userPrincipalName}/calendars/{id}/events/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /users/{id | userPrincipalName}/events/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/calendarpermission-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /users/{id}/calendar/calendarPermissions/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-list-calendarview?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/calendarView?startDateTime={start_datetime}&amp;endDateTime={end_datetime}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/calendar-list-calendarview?view=graph-rest-1.0&amp;tabs=http">GET /me/calendar/calendarView?startDateTime={start_datetime}&amp;endDateTime={end_datetime}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-calendargroups?view=graph-rest-1.0&amp;tabs=http">GET /me/calendarGroups</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-calendars?view=graph-rest-1.0&amp;tabs=http">GET /me/calendars</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0&amp;tabs=http">GET /me/calendarView/delta?startDateTime={start_datetime}&amp;endDateTime={end_datetime}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-beta&amp;tabs=http">GET /me/events/delta</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-beta&amp;tabs=http">GET /me/events/delta?startDateTime={start_datetime}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/calendar-list-calendarview?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/calendar/calendarView?startDateTime={start_datetime}&amp;endDateTime={end_datetime}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-calendargroups?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/calendarGroups</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-calendars?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/calendars</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-calendarview?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/calendarView?startDateTime={start_datetime}&amp;endDateTime={end_datetime}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/events/delta</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/events/delta?startDateTime={start_datetime}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-reminderview?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/reminderView(startDateTime={startDateTime-value},endDateTime={endDateTime-value})</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/user-reminderview?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/reminderView(startDateTime={startDateTime},endDateTime={endDateTime})</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0&amp;tabs=http">GET /users/{id}/calendarView/delta?startDateTime={start_datetime}&amp;endDateTime={end_datetime}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-update-event?view=graph-rest-1.0&amp;tabs=http">PATCH /groups/{id}/calendar/events/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-update-event?view=graph-rest-1.0&amp;tabs=http">PATCH /groups/{id}/events/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-update?view=graph-rest-1.0&amp;tabs=http">PATCH /me/calendar/events/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/calendargroup-update?view=graph-rest-1.0&amp;tabs=http">PATCH /me/calendarGroups/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-update?view=graph-rest-1.0&amp;tabs=http">PATCH /me/calendarGroups/{id}/calendars/{id}/events/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-update?view=graph-rest-1.0&amp;tabs=http">PATCH /me/calendars/{id}/events/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-update?view=graph-rest-1.0&amp;tabs=http">PATCH /me/events/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-update?view=graph-rest-1.0&amp;tabs=http">PATCH /users/{id | userPrincipalName}/calendar/events/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/calendargroup-update?view=graph-rest-1.0&amp;tabs=http">PATCH /users/{id | userPrincipalName}/calendarGroups/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-update?view=graph-rest-1.0&amp;tabs=http">PATCH /users/{id | userPrincipalName}/calendarGroups/{id}/calendars/{id}/events/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-update?view=graph-rest-1.0&amp;tabs=http">PATCH /users/{id | userPrincipalName}/calendars/{id}/events/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-update?view=graph-rest-1.0&amp;tabs=http">PATCH /users/{id | userPrincipalName}/events/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0&amp;tabs=http">POST /groups/{id}/calendar/events/{id}/cancel</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0&amp;tabs=http">POST /groups/{id}/events/{id}/cancel</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-post-events?view=graph-rest-1.0&amp;tabs=http">POST /me/calendar/events</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0&amp;tabs=http">POST /me/calendar/events/{id}/accept</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0&amp;tabs=http">POST /me/calendar/events/{id}/attachments</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0&amp;tabs=http">POST /me/calendar/events/{id}/cancel</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0&amp;tabs=http">POST /me/calendar/events/{id}/decline</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0&amp;tabs=http">POST /me/calendar/events/{id}/dismissReminder</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0&amp;tabs=http">POST /me/calendar/events/{id}/snoozeReminder</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0&amp;tabs=http">POST /me/calendar/events/{id}/tentativelyAccept</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/calendar-getschedule?view=graph-rest-1.0&amp;tabs=http">POST /me/calendar/getSchedule</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-post-calendargroups?view=graph-rest-1.0&amp;tabs=http">POST /me/calendarGroups</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0&amp;tabs=http">POST /me/calendarGroups/{id}/calendars/{id}/events/{id}/accept</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0&amp;tabs=http">POST /me/calendarGroups/{id}/calendars/{id}/events/{id}/cancel</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0&amp;tabs=http">POST /me/calendarGroups/{id}/calendars/{id}/events/{id}/decline</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0&amp;tabs=http">POST /me/calendarGroups/{id}/calendars/{id}/events/{id}/dismissReminder</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0&amp;tabs=http">POST /me/calendarGroups/{id}/calendars/{id}/events/{id}/snoozeReminder</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0&amp;tabs=http">POST /me/calendarGroups/{id}/calendars/{id}/events/{id}/tentativelyAccept</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-post-calendars?view=graph-rest-1.0&amp;tabs=http">POST /me/calendars</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-post-events?view=graph-rest-1.0&amp;tabs=http">POST /me/calendars/{id}/events</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0&amp;tabs=http">POST /me/calendars/{id}/events/{id}/accept</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0&amp;tabs=http">POST /me/calendars/{id}/events/{id}/cancel</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0&amp;tabs=http">POST /me/calendars/{id}/events/{id}/decline</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0&amp;tabs=http">POST /me/calendars/{id}/events/{id}/dismissReminder</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0&amp;tabs=http">POST /me/calendars/{id}/events/{id}/snoozeReminder</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0&amp;tabs=http">POST /me/calendars/{id}/events/{id}/tentativelyAccept</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-post-events?view=graph-rest-1.0&amp;tabs=http">POST /me/events</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0&amp;tabs=http">POST /me/events/{id}/accept</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0&amp;tabs=http">POST /me/events/{id}/attachments</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0&amp;tabs=http">POST /me/events/{id}/attachments/createUploadSession</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0&amp;tabs=http">POST /me/events/{id}/cancel</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0&amp;tabs=http">POST /me/events/{id}/decline</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0&amp;tabs=http">POST /me/events/{id}/dismissReminder</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0&amp;tabs=http">POST /me/events/{id}/snoozeReminder</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0&amp;tabs=http">POST /me/events/{id}/tentativelyAccept</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-beta&amp;tabs=http">POST /solutions/bookingbusinesses/{id}/getStaffAvailability</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-1.0&amp;tabs=http">POST /solutions/bookingBusinesses/{id}/getStaffAvailability</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-post-events?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/calendar/events</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/calendar/events/{id}/accept</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/calendar/events/{id}/attachments</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/calendar/events/{id}/cancel</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/calendar/events/{id}/decline</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/calendar/events/{id}/dismissReminder</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/calendar/events/{id}/snoozeReminder</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/calendar/events/{id}/tentativelyAccept</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-post-calendargroups?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/calendarGroups</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/calendarGroups/{id}/calendars/{id}/events/{id}/accept</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/calendarGroups/{id}/calendars/{id}/events/{id}/cancel</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/calendarGroups/{id}/calendars/{id}/events/{id}/decline</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/calendarGroups/{id}/calendars/{id}/events/{id}/dismissReminder</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/calendarGroups/{id}/calendars/{id}/events/{id}/snoozeReminder</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/calendarGroups/{id}/calendars/{id}/events/{id}/tentativelyAccept</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-post-calendars?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/calendars</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-post-events?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/calendars/{id}/events</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/calendars/{id}/events/{id}/accept</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/calendars/{id}/events/{id}/cancel</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/calendars/{id}/events/{id}/decline</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/calendars/{id}/events/{id}/dismissReminder</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/calendars/{id}/events/{id}/snoozeReminder</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/calendars/{id}/events/{id}/tentativelyAccept</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-post-events?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/events</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/events/{id}/accept</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/events/{id}/attachments</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/events/{id}/attachments/createUploadSession</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/events/{id}/cancel</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/events/{id}/decline</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/events/{id}/dismissReminder</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/events/{id}/snoozeReminder</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/events/{id}/tentativelyAccept</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/calendar-getschedule?view=graph-rest-1.0&amp;tabs=http">POST /users/{id|userPrincipalName}/calendar/getSchedule</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-events?view=graph-rest-1.0&amp;tabs=http">Prefer: outlook.timezone=&quot;Eastern Standard Time&quot;</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
+<th>Type</th>
+<th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Id</strong></td>
-<td>1ec239c2-d7c9-4623-a91a-a9775856bb36</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-delete-event?view=graph-rest-beta&amp;tabs=http">DELETE /groups/{id}/calendar/events/{id}</a></td>
 </tr>
 <tr>
-<td><strong>Consent Type</strong></td>
-<td>User</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-delete?view=graph-rest-beta&amp;tabs=http">DELETE /groups/{id}/calendar/events/{id}/</a></td>
 </tr>
 <tr>
-<td><strong>Display String</strong></td>
-<td>Have full access to user calendars</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-delete?view=graph-rest-beta&amp;tabs=http">DELETE /groups/{id}/events/{id}</a></td>
 </tr>
 <tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to create, read, update, and delete events in user calendars.</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/calendar/events/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/calendargroup-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/calendarGroups/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/calendarGroups/{id}/calendars/{id}/events/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/calendar-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/calendars/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/calendars/{id}/events/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-delete?view=graph-rest-beta&amp;tabs=http">DELETE /me/events/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-delete?view=graph-rest-beta&amp;tabs=http">DELETE /users/{id | userPrincipalName}/calendar/events/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/calendargroup-delete?view=graph-rest-beta&amp;tabs=http">DELETE /users/{id | userPrincipalName}/calendarGroups/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-delete?view=graph-rest-beta&amp;tabs=http">DELETE /users/{id | userPrincipalName}/calendarGroups/{id}/calendars/{id}/events/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/calendar-delete?view=graph-rest-beta&amp;tabs=http">DELETE /users/{id | userPrincipalName}/calendars/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-delete?view=graph-rest-beta&amp;tabs=http">DELETE /users/{id | userPrincipalName}/calendars/{id}/events/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-delete?view=graph-rest-beta&amp;tabs=http">DELETE /users/{id | userPrincipalName}/events/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/calendarpermission-delete?view=graph-rest-beta&amp;tabs=http">DELETE /users/{id}/calendar/calendarPermissions/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-list-calendarview?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/calendarView?startDateTime={start_datetime}&amp;endDateTime={end_datetime}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/calendar-list-calendarview?view=graph-rest-beta&amp;tabs=http">GET /me/calendar/calendarView?startDateTime={start_datetime}&amp;endDateTime={end_datetime}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-calendargroups?view=graph-rest-beta&amp;tabs=http">GET /me/calendarGroups</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-calendars?view=graph-rest-beta&amp;tabs=http">GET /me/calendars</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-beta&amp;tabs=http">GET /me/events/delta</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-beta&amp;tabs=http">GET /me/events/delta?startDateTime={start_datetime}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/calendar-list-calendarview?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/calendar/calendarView?startDateTime={start_datetime}&amp;endDateTime={end_datetime}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-calendargroups?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/calendarGroups</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-calendars?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/calendars</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-calendarview?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/calendarView?startDateTime={start_datetime}&amp;endDateTime={end_datetime}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/events/delta</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/events/delta?startDateTime={start_datetime}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-reminderview?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/reminderView(startDateTime={startDateTime},endDateTime={endDateTime})</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-update-event?view=graph-rest-beta&amp;tabs=http">PATCH /groups/{id}/calendar/events/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-update-event?view=graph-rest-beta&amp;tabs=http">PATCH /groups/{id}/events/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-update?view=graph-rest-beta&amp;tabs=http">PATCH /me/calendar/events/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/calendargroup-update?view=graph-rest-beta&amp;tabs=http">PATCH /me/calendarGroups/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-update?view=graph-rest-beta&amp;tabs=http">PATCH /me/calendarGroups/{id}/calendars/{id}/events/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-update?view=graph-rest-beta&amp;tabs=http">PATCH /me/calendars/{id}/events/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-update?view=graph-rest-beta&amp;tabs=http">PATCH /me/events/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-update?view=graph-rest-beta&amp;tabs=http">PATCH /users/{id | userPrincipalName}/calendar/events/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/calendargroup-update?view=graph-rest-beta&amp;tabs=http">PATCH /users/{id | userPrincipalName}/calendarGroups/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-update?view=graph-rest-beta&amp;tabs=http">PATCH /users/{id | userPrincipalName}/calendarGroups/{id}/calendars/{id}/events/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-update?view=graph-rest-beta&amp;tabs=http">PATCH /users/{id | userPrincipalName}/calendars/{id}/events/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-update?view=graph-rest-beta&amp;tabs=http">PATCH /users/{id | userPrincipalName}/events/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-beta&amp;tabs=http">POST /groups/{id}/calendar/events/{id}/cancel</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-beta&amp;tabs=http">POST /groups/{id}/events/{id}/cancel</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-post-events?view=graph-rest-beta&amp;tabs=http">POST /me/calendar/events</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-beta&amp;tabs=http">POST /me/calendar/events/{id}/accept</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-beta&amp;tabs=http">POST /me/calendar/events/{id}/cancel</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-beta&amp;tabs=http">POST /me/calendar/events/{id}/decline</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-beta&amp;tabs=http">POST /me/calendar/events/{id}/dismissReminder</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-beta&amp;tabs=http">POST /me/calendar/events/{id}/snoozeReminder</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-beta&amp;tabs=http">POST /me/calendar/events/{id}/tentativelyAccept</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/calendar-getschedule?view=graph-rest-beta&amp;tabs=http">POST /me/calendar/getSchedule</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-post-calendargroups?view=graph-rest-beta&amp;tabs=http">POST /me/calendarGroups</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-beta&amp;tabs=http">POST /me/calendarGroups/{id}/calendars/{id}/events/{id}/accept</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-beta&amp;tabs=http">POST /me/calendarGroups/{id}/calendars/{id}/events/{id}/cancel</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-beta&amp;tabs=http">POST /me/calendarGroups/{id}/calendars/{id}/events/{id}/decline</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-beta&amp;tabs=http">POST /me/calendarGroups/{id}/calendars/{id}/events/{id}/dismissReminder</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-beta&amp;tabs=http">POST /me/calendarGroups/{id}/calendars/{id}/events/{id}/snoozeReminder</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-beta&amp;tabs=http">POST /me/calendarGroups/{id}/calendars/{id}/events/{id}/tentativelyAccept</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-post-calendars?view=graph-rest-beta&amp;tabs=http">POST /me/calendars</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-post-events?view=graph-rest-beta&amp;tabs=http">POST /me/calendars/{id}/events</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-beta&amp;tabs=http">POST /me/calendars/{id}/events/{id}/accept</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-beta&amp;tabs=http">POST /me/calendars/{id}/events/{id}/cancel</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-beta&amp;tabs=http">POST /me/calendars/{id}/events/{id}/decline</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-beta&amp;tabs=http">POST /me/calendars/{id}/events/{id}/dismissReminder</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-beta&amp;tabs=http">POST /me/calendars/{id}/events/{id}/snoozeReminder</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-beta&amp;tabs=http">POST /me/calendars/{id}/events/{id}/tentativelyAccept</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-post-events?view=graph-rest-beta&amp;tabs=http">POST /me/events</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-beta&amp;tabs=http">POST /me/events/{id}/accept</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-beta&amp;tabs=http">POST /me/events/{id}/attachments</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-beta&amp;tabs=http">POST /me/events/{id}/attachments/createUploadSession</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-beta&amp;tabs=http">POST /me/events/{id}/cancel</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-beta&amp;tabs=http">POST /me/events/{id}/decline</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-beta&amp;tabs=http">POST /me/events/{id}/dismissReminder</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-beta&amp;tabs=http">POST /me/events/{id}/snoozeReminder</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-beta&amp;tabs=http">POST /me/events/{id}/tentativelyAccept</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-beta&amp;tabs=http">POST /solutions/bookingbusinesses/{id}/getStaffAvailability</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-post-events?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/calendar/events</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/calendar/events/{id}/accept</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/calendar/events/{id}/cancel</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/calendar/events/{id}/decline</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/calendar/events/{id}/dismissReminder</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/calendar/events/{id}/snoozeReminder</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/calendar/events/{id}/tentativelyAccept</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-post-calendargroups?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/calendarGroups</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/calendarGroups/{id}/calendars/{id}/events/{id}/accept</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/calendarGroups/{id}/calendars/{id}/events/{id}/cancel</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/calendarGroups/{id}/calendars/{id}/events/{id}/decline</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/calendarGroups/{id}/calendars/{id}/events/{id}/dismissReminder</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/calendarGroups/{id}/calendars/{id}/events/{id}/snoozeReminder</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/calendarGroups/{id}/calendars/{id}/events/{id}/tentativelyAccept</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-post-calendars?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/calendars</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-post-events?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/calendars/{id}/events</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/calendars/{id}/events/{id}/accept</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/calendars/{id}/events/{id}/cancel</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/calendars/{id}/events/{id}/decline</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/calendars/{id}/events/{id}/dismissReminder</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/calendars/{id}/events/{id}/snoozeReminder</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/calendars/{id}/events/{id}/tentativelyAccept</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-post-events?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/events</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/events/{id}/accept</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/events/{id}/attachments</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/events/{id}/cancel</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/events/{id}/decline</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/events/{id}/dismissReminder</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/events/{id}/snoozeReminder</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/events/{id}/tentativelyAccept</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/calendar-getschedule?view=graph-rest-beta&amp;tabs=http">POST /users/{id|userPrincipalName}/calendar/getSchedule</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-events?view=graph-rest-beta&amp;tabs=http">Prefer: outlook.timezone=&quot;Eastern Standard Time&quot;</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>ef54d2bf-783f-4e0f-bca1-3210c0444d99</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read and write calendars in all mailboxes</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to create, read, update, and delete events of all calendars without a signed-in user.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="attachment-"><a href="https://docs.microsoft.com/graph/api/resources/attachment?view=graph-rest-1.0&amp;tabs=http">attachment </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_attachment1" role="tab" aria-controls="tabpanel_2_attachment1" data-tab="attachment1" tabindex="0" aria-selected="true">attachment</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_attachmentItem2" role="tab" aria-controls="tabpanel_2_attachmentItem2" data-tab="attachmentItem2" tabindex="-1">attachmentItem</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_attendee3" role="tab" aria-controls="tabpanel_2_attendee3" data-tab="attendee3" tabindex="-1">attendee</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_bookingAppointment4" role="tab" aria-controls="tabpanel_2_bookingAppointment4" data-tab="bookingAppointment4" tabindex="-1">bookingAppointment</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_bookingStaffMember5" role="tab" aria-controls="tabpanel_2_bookingStaffMember5" data-tab="bookingStaffMember5" tabindex="-1">bookingStaffMember</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_calendar6" role="tab" aria-controls="tabpanel_2_calendar6" data-tab="calendar6" tabindex="-1">calendar</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_calendarGroup7" role="tab" aria-controls="tabpanel_2_calendarGroup7" data-tab="calendarGroup7" tabindex="-1">calendarGroup</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_dateTimeTimeZone8" role="tab" aria-controls="tabpanel_2_dateTimeTimeZone8" data-tab="dateTimeTimeZone8" tabindex="-1">dateTimeTimeZone</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_event9" role="tab" aria-controls="tabpanel_2_event9" data-tab="event9" tabindex="-1">event</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_itemBody10" role="tab" aria-controls="tabpanel_2_itemBody10" data-tab="itemBody10" tabindex="-1">itemBody</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_Location11" role="tab" aria-controls="tabpanel_2_Location11" data-tab="Location11" tabindex="-1">Location</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_message12" role="tab" aria-controls="tabpanel_2_message12" data-tab="message12" tabindex="-1">message</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_patternedRecurrence13" role="tab" aria-controls="tabpanel_2_patternedRecurrence13" data-tab="patternedRecurrence13" tabindex="-1">patternedRecurrence</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_reminder14" role="tab" aria-controls="tabpanel_2_reminder14" data-tab="reminder14" tabindex="-1">reminder</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_scheduleInformation15" role="tab" aria-controls="tabpanel_2_scheduleInformation15" data-tab="scheduleInformation15" tabindex="-1">scheduleInformation</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_staffAvailabilityItem16" role="tab" aria-controls="tabpanel_2_staffAvailabilityItem16" data-tab="staffAvailabilityItem16" tabindex="-1">staffAvailabilityItem</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_timeSlot17" role="tab" aria-controls="tabpanel_2_timeSlot17" data-tab="timeSlot17" tabindex="-1">timeSlot</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_uploadSession18" role="tab" aria-controls="tabpanel_2_uploadSession18" data-tab="uploadSession18" tabindex="-1">uploadSession</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_user19" role="tab" aria-controls="tabpanel_2_user19" data-tab="user19" tabindex="-1">user</a>
+</li>
+</ul>
+<section id="tabpanel_2_attachment1" role="tabpanel" data-tab="attachment1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/attachment?view=graph-rest-1.0&amp;tabs=http">attachment</a></p>
 <table>
 <thead>
 <tr>
@@ -779,7 +1137,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="attachmentitem-"><a href="https://docs.microsoft.com/graph/api/resources/attachmentitem?view=graph-rest-1.0&amp;tabs=http">attachmentItem </a></h3>
+</section>
+<section id="tabpanel_2_attachmentItem2" role="tabpanel" data-tab="attachmentItem2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/attachmentitem?view=graph-rest-1.0&amp;tabs=http">attachmentItem</a></p>
 <table>
 <thead>
 <tr>
@@ -821,7 +1182,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="attendee-"><a href="https://docs.microsoft.com/graph/api/resources/attendee?view=graph-rest-1.0&amp;tabs=http">attendee </a></h3>
+</section>
+<section id="tabpanel_2_attendee3" role="tabpanel" data-tab="attendee3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/attendee?view=graph-rest-1.0&amp;tabs=http">attendee</a></p>
 <table>
 <thead>
 <tr>
@@ -853,7 +1217,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="bookingappointment-"><a href="https://docs.microsoft.com/graph/api/resources/bookingappointment?view=graph-rest-1.0&amp;tabs=http">bookingAppointment </a></h3>
+</section>
+<section id="tabpanel_2_bookingAppointment4" role="tabpanel" data-tab="bookingAppointment4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/bookingappointment?view=graph-rest-1.0&amp;tabs=http">bookingAppointment</a></p>
 <table>
 <thead>
 <tr>
@@ -1030,7 +1397,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="bookingstaffmember-"><a href="https://docs.microsoft.com/graph/api/resources/bookingstaffmember?view=graph-rest-1.0&amp;tabs=http">bookingStaffMember </a></h3>
+</section>
+<section id="tabpanel_2_bookingStaffMember5" role="tabpanel" data-tab="bookingStaffMember5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/bookingstaffmember?view=graph-rest-1.0&amp;tabs=http">bookingStaffMember</a></p>
 <table>
 <thead>
 <tr>
@@ -1102,7 +1472,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="calendar-"><a href="https://docs.microsoft.com/graph/api/resources/calendar?view=graph-rest-1.0&amp;tabs=http">calendar </a></h3>
+</section>
+<section id="tabpanel_2_calendar6" role="tabpanel" data-tab="calendar6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/calendar?view=graph-rest-1.0&amp;tabs=http">calendar</a></p>
 <table>
 <thead>
 <tr>
@@ -1184,7 +1557,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="calendargroup-"><a href="https://docs.microsoft.com/graph/api/resources/calendargroup?view=graph-rest-1.0&amp;tabs=http">calendarGroup </a></h3>
+</section>
+<section id="tabpanel_2_calendarGroup7" role="tabpanel" data-tab="calendarGroup7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/calendargroup?view=graph-rest-1.0&amp;tabs=http">calendarGroup</a></p>
 <table>
 <thead>
 <tr>
@@ -1216,7 +1592,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="datetimetimezone-"><a href="https://docs.microsoft.com/graph/api/resources/datetimetimezone?view=graph-rest-1.0&amp;tabs=http">dateTimeTimeZone </a></h3>
+</section>
+<section id="tabpanel_2_dateTimeTimeZone8" role="tabpanel" data-tab="dateTimeTimeZone8" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/datetimetimezone?view=graph-rest-1.0&amp;tabs=http">dateTimeTimeZone</a></p>
 <table>
 <thead>
 <tr>
@@ -1238,7 +1617,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="event-"><a href="https://docs.microsoft.com/graph/api/resources/event?view=graph-rest-1.0&amp;tabs=http">event </a></h3>
+</section>
+<section id="tabpanel_2_event9" role="tabpanel" data-tab="event9" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/event?view=graph-rest-1.0&amp;tabs=http">event</a></p>
 <table>
 <thead>
 <tr>
@@ -1455,7 +1837,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="itembody-"><a href="https://docs.microsoft.com/graph/api/resources/itembody?view=graph-rest-1.0&amp;tabs=http">itemBody </a></h3>
+</section>
+<section id="tabpanel_2_itemBody10" role="tabpanel" data-tab="itemBody10" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/itembody?view=graph-rest-1.0&amp;tabs=http">itemBody</a></p>
 <table>
 <thead>
 <tr>
@@ -1477,7 +1862,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="location-"><a href="https://docs.microsoft.com/graph/api/resources/location?view=graph-rest-1.0&amp;tabs=http">Location </a></h3>
+</section>
+<section id="tabpanel_2_Location11" role="tabpanel" data-tab="Location11" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/location?view=graph-rest-1.0&amp;tabs=http">Location</a></p>
 <table>
 <thead>
 <tr>
@@ -1529,7 +1917,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="message-"><a href="https://docs.microsoft.com/graph/api/resources/message?view=graph-rest-1.0&amp;tabs=http">message </a></h3>
+</section>
+<section id="tabpanel_2_message12" role="tabpanel" data-tab="message12" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/message?view=graph-rest-1.0&amp;tabs=http">message</a></p>
 <table>
 <thead>
 <tr>
@@ -1691,7 +2082,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="patternedrecurrence-"><a href="https://docs.microsoft.com/graph/api/resources/patternedrecurrence?view=graph-rest-1.0&amp;tabs=http">patternedRecurrence </a></h3>
+</section>
+<section id="tabpanel_2_patternedRecurrence13" role="tabpanel" data-tab="patternedRecurrence13" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/patternedrecurrence?view=graph-rest-1.0&amp;tabs=http">patternedRecurrence</a></p>
 <table>
 <thead>
 <tr>
@@ -1713,7 +2107,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="reminder-"><a href="https://docs.microsoft.com/graph/api/resources/reminder?view=graph-rest-1.0&amp;tabs=http">reminder </a></h3>
+</section>
+<section id="tabpanel_2_reminder14" role="tabpanel" data-tab="reminder14" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/reminder?view=graph-rest-1.0&amp;tabs=http">reminder</a></p>
 <table>
 <thead>
 <tr>
@@ -1765,7 +2162,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="scheduleinformation-"><a href="https://docs.microsoft.com/graph/api/resources/scheduleinformation?view=graph-rest-1.0&amp;tabs=http">scheduleInformation </a></h3>
+</section>
+<section id="tabpanel_2_scheduleInformation15" role="tabpanel" data-tab="scheduleInformation15" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/scheduleinformation?view=graph-rest-1.0&amp;tabs=http">scheduleInformation</a></p>
 <table>
 <thead>
 <tr>
@@ -1802,7 +2202,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="staffavailabilityitem-"><a href="https://docs.microsoft.com/graph/api/resources/staffavailabilityitem?view=graph-rest-1.0&amp;tabs=http">staffAvailabilityItem </a></h3>
+</section>
+<section id="tabpanel_2_staffAvailabilityItem16" role="tabpanel" data-tab="staffAvailabilityItem16" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/staffavailabilityitem?view=graph-rest-1.0&amp;tabs=http">staffAvailabilityItem</a></p>
 <table>
 <thead>
 <tr>
@@ -1824,7 +2227,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="timeslot-"><a href="https://docs.microsoft.com/graph/api/resources/timeslot?view=graph-rest-1.0&amp;tabs=http">timeSlot </a></h3>
+</section>
+<section id="tabpanel_2_timeSlot17" role="tabpanel" data-tab="timeSlot17" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/timeslot?view=graph-rest-1.0&amp;tabs=http">timeSlot</a></p>
 <table>
 <thead>
 <tr>
@@ -1846,7 +2252,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="uploadsession-"><a href="https://docs.microsoft.com/graph/api/resources/uploadsession?view=graph-rest-1.0&amp;tabs=http">uploadSession </a></h3>
+</section>
+<section id="tabpanel_2_uploadSession18" role="tabpanel" data-tab="uploadSession18" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/uploadsession?view=graph-rest-1.0&amp;tabs=http">uploadSession</a></p>
 <table>
 <thead>
 <tr>
@@ -1873,7 +2282,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="user-"><a href="https://docs.microsoft.com/graph/api/resources/user?view=graph-rest-1.0&amp;tabs=http">user </a></h3>
+</section>
+<section id="tabpanel_2_user19" role="tabpanel" data-tab="user19" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/user?view=graph-rest-1.0&amp;tabs=http">user</a></p>
 <table>
 <thead>
 <tr>
@@ -2270,6 +2682,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

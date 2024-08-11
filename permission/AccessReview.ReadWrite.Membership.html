@@ -90,149 +90,169 @@
         <article data-uid="">
 <h1 id="accessreviewreadwritemembership">AccessReview.ReadWrite.Membership</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>AccessReview.ReadWrite.Membership</code> permission.</p>
 <blockquote>
 <p>Allows the app to read, update, delete and perform actions on access reviews, reviewers, decisions and settings for group and app memberships that the signed-in user has access to in the organization.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>18228521-a591-40f1-b215-5fad4488c117</td>
+<td>5af8c3f5-baca-439a-97b0-ea58a435e269</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Manage access reviews for group and app memberships</td>
+<td>Manage access reviews for group and app memberships</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the app to read, update, delete and perform actions on access reviews, reviewers, decisions and settings in the organization for group and app memberships, without a signed-in user.</td>
+<td>Allows the app to read, update, delete and perform actions on access reviews, reviewers, decisions and settings for group and app memberships that the signed-in user has access to in the organization.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accessreview-delete?view=graph-rest-beta&amp;tabs=http">DELETE /accessReviews/{reviewId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accessreview-removereviewer?view=graph-rest-beta&amp;tabs=http">DELETE /accessReviews/{reviewId}/reviewers/{userId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accessreview-list?view=graph-rest-beta&amp;tabs=http">GET /accessReviews?$filter=businessFlowTemplateId eq {businessFlowTemplate-id}&amp;$top={pagesize}&amp;$skip=0</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accessreview-get?view=graph-rest-beta&amp;tabs=http">GET /accessReviews/{reviewId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accessreview-listdecisions?view=graph-rest-beta&amp;tabs=http">GET /accessReviews/{reviewId}/decisions</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accessreview-listmydecisions?view=graph-rest-beta&amp;tabs=http">GET /accessReviews/{reviewId}/myDecisions</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accessreview-listreviewers?view=graph-rest-beta&amp;tabs=http">GET /accessReviews/{reviewId}/reviewers</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/businessflowtemplate-list?view=graph-rest-beta&amp;tabs=http">GET /businessFlowTemplates</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accessreview-update?view=graph-rest-beta&amp;tabs=http">PATCH /accessReviews/{reviewId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accessreview-create?view=graph-rest-beta&amp;tabs=http">POST /accessReviews</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accessreview-apply?view=graph-rest-beta&amp;tabs=http">POST /accessReviews/{reviewId}/applyDecisions</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accessreview-reset?view=graph-rest-beta&amp;tabs=http">POST /accessReviews/{reviewId}/resetDecisions</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accessreview-addreviewer?view=graph-rest-beta&amp;tabs=http">POST /accessReviews/{reviewId}/reviewers</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accessreview-sendreminder?view=graph-rest-beta&amp;tabs=http">POST /accessReviews/{reviewId}/sendReminder</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/accessreview-stop?view=graph-rest-beta&amp;tabs=http">POST /accessReviews/{reviewId}/stop</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>5af8c3f5-baca-439a-97b0-ea58a435e269</td>
-</tr>
-<tr>
-<td><strong>Consent Type</strong></td>
-<td>Admin</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Manage access reviews for group and app memberships</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read, update, delete and perform actions on access reviews, reviewers, decisions and settings for group and app memberships that the signed-in user has access to in the organization.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>18228521-a591-40f1-b215-5fad4488c117</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Manage access reviews for group and app memberships</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read, update, delete and perform actions on access reviews, reviewers, decisions and settings in the organization for group and app memberships, without a signed-in user.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="accessreview"><a href="https://docs.microsoft.com/graph/api/resources/accessreview?view=graph-rest-1.0&amp;tabs=http">accessreview</a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_accessreview1" role="tab" aria-controls="tabpanel_2_accessreview1" data-tab="accessreview1" tabindex="0" aria-selected="true">accessreview</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_accessreviewdecision2" role="tab" aria-controls="tabpanel_2_accessreviewdecision2" data-tab="accessreviewdecision2" tabindex="-1">accessreviewdecision</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_accessreviewrecurrencesettings3" role="tab" aria-controls="tabpanel_2_accessreviewrecurrencesettings3" data-tab="accessreviewrecurrencesettings3" tabindex="-1">accessreviewrecurrencesettings</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_accessreviews-root4" role="tab" aria-controls="tabpanel_2_accessreviews-root4" data-tab="accessreviews-root4" tabindex="-1">accessreviews-root</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_businessflowtemplate5" role="tab" aria-controls="tabpanel_2_businessflowtemplate5" data-tab="businessflowtemplate5" tabindex="-1">businessflowtemplate</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_identity6" role="tab" aria-controls="tabpanel_2_identity6" data-tab="identity6" tabindex="-1">identity</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_programcontrol7" role="tab" aria-controls="tabpanel_2_programcontrol7" data-tab="programcontrol7" tabindex="-1">programcontrol</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_userIdentity8" role="tab" aria-controls="tabpanel_2_userIdentity8" data-tab="userIdentity8" tabindex="-1">userIdentity</a>
+</li>
+</ul>
+<section id="tabpanel_2_accessreview1" role="tabpanel" data-tab="accessreview1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/accessreview?view=graph-rest-1.0&amp;tabs=http">accessreview</a></p>
 <table>
 <thead>
 <tr>
@@ -299,7 +319,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="accessreviewdecision"><a href="https://docs.microsoft.com/graph/api/resources/accessreviewdecision?view=graph-rest-1.0&amp;tabs=http">accessreviewdecision</a></h3>
+</section>
+<section id="tabpanel_2_accessreviewdecision2" role="tabpanel" data-tab="accessreviewdecision2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/accessreviewdecision?view=graph-rest-1.0&amp;tabs=http">accessreviewdecision</a></p>
 <table>
 <thead>
 <tr>
@@ -361,7 +384,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="accessreviewrecurrencesettings"><a href="https://docs.microsoft.com/graph/api/resources/accessreviewrecurrencesettings?view=graph-rest-1.0&amp;tabs=http">accessreviewrecurrencesettings</a></h3>
+</section>
+<section id="tabpanel_2_accessreviewrecurrencesettings3" role="tabpanel" data-tab="accessreviewrecurrencesettings3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/accessreviewrecurrencesettings?view=graph-rest-1.0&amp;tabs=http">accessreviewrecurrencesettings</a></p>
 <table>
 <thead>
 <tr>
@@ -393,8 +419,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="accessreviews-root"><a href="https://docs.microsoft.com/graph/api/resources/accessreviews-root?view=graph-rest-1.0&amp;tabs=http">accessreviews-root</a></h3>
-<h3 id="businessflowtemplate"><a href="https://docs.microsoft.com/graph/api/resources/businessflowtemplate?view=graph-rest-1.0&amp;tabs=http">businessflowtemplate</a></h3>
+</section>
+<section id="tabpanel_2_accessreviews-root4" role="tabpanel" data-tab="accessreviews-root4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/accessreviews-root?view=graph-rest-1.0&amp;tabs=http">accessreviews-root</a></p>
+</section>
+<section id="tabpanel_2_businessflowtemplate5" role="tabpanel" data-tab="businessflowtemplate5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/businessflowtemplate?view=graph-rest-1.0&amp;tabs=http">businessflowtemplate</a></p>
 <table>
 <thead>
 <tr>
@@ -416,7 +448,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="identity-"><a href="https://docs.microsoft.com/graph/api/resources/identity?view=graph-rest-1.0&amp;tabs=http">identity </a></h3>
+</section>
+<section id="tabpanel_2_identity6" role="tabpanel" data-tab="identity6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/identity?view=graph-rest-1.0&amp;tabs=http">identity</a></p>
 <table>
 <thead>
 <tr>
@@ -448,7 +483,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="programcontrol"><a href="https://docs.microsoft.com/graph/api/resources/programcontrol?view=graph-rest-1.0&amp;tabs=http">programcontrol</a></h3>
+</section>
+<section id="tabpanel_2_programcontrol7" role="tabpanel" data-tab="programcontrol7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/programcontrol?view=graph-rest-1.0&amp;tabs=http">programcontrol</a></p>
 <table>
 <thead>
 <tr>
@@ -505,7 +543,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="useridentity-"><a href="https://docs.microsoft.com/graph/api/resources/useridentity?view=graph-rest-1.0&amp;tabs=http">userIdentity </a></h3>
+</section>
+<section id="tabpanel_2_userIdentity8" role="tabpanel" data-tab="userIdentity8" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/useridentity?view=graph-rest-1.0&amp;tabs=http">userIdentity</a></p>
 <table>
 <thead>
 <tr>
@@ -537,6 +578,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

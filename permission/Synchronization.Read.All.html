@@ -90,139 +90,168 @@
         <article data-uid="">
 <h1 id="synchronizationreadall">Synchronization.Read.All</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>Synchronization.Read.All</code> permission.</p>
 <blockquote>
 <p>Allows the app to read Azure AD synchronization information, on behalf of the signed-in user.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>5ba43d2f-fa88-4db2-bd1c-a67c5f0fb1ce</td>
+<td>7aa02aeb-824f-4fbe-a3f7-611f751f5b55</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Read all Azure AD synchronization data.</td>
+<td>Read all Azure AD synchronization data</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the application to read Azure AD synchronization information, without a signed-in user.</td>
+<td>Allows the app to read Azure AD synchronization information, on behalf of the signed-in user.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-beta&amp;tabs=http">GET /applications/{id}/synchronization/templates</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-get?view=graph-rest-beta&amp;tabs=http">GET /applications/{id}/synchronization/templates/{templateId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-1.0&amp;tabs=http">GET /applications/{id}/synchronization/templates/{templateId}/schema</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-list-jobs?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/jobs/</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-get?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/jobs/{jobId}/</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/jobs/{jobId}/schema</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/templates</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-get?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/templates/{templateId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/templates/{templateId}/schema</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-1.0&amp;tabs=http">GET applications/{id}/synchronization/templates</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-get?view=graph-rest-1.0&amp;tabs=http">GET applications/{id}/synchronization/templates/{templateId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-1.0&amp;tabs=http">GET servicePrincipals/{id}/synchronization/templates</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-get?view=graph-rest-1.0&amp;tabs=http">GET servicePrincipals/{id}/synchronization/templates/{templateId}</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
+<th>Type</th>
+<th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Id</strong></td>
-<td>7aa02aeb-824f-4fbe-a3f7-611f751f5b55</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-beta&amp;tabs=http">GET /applications/{id}/synchronization/templates</a></td>
 </tr>
 <tr>
-<td><strong>Consent Type</strong></td>
-<td>Admin</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-get?view=graph-rest-beta&amp;tabs=http">GET /applications/{id}/synchronization/templates/{templateId}</a></td>
 </tr>
 <tr>
-<td><strong>Display String</strong></td>
-<td>Read all Azure AD synchronization data</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-beta&amp;tabs=http">GET /applications/{id}/synchronization/templates/{templateId}/schema</a></td>
 </tr>
 <tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read Azure AD synchronization information, on behalf of the signed-in user.</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-list-jobs?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/jobs/</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-get?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/jobs/{jobId}/</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/jobs/{jobId}/schema</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/templates</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-get?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/templates/{templateId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/templates/{templateId}/schema</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>5ba43d2f-fa88-4db2-bd1c-a67c5f0fb1ce</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read all Azure AD synchronization data.</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the application to read Azure AD synchronization information, without a signed-in user.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="synchronizationjob-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationjob?view=graph-rest-1.0&amp;tabs=http">synchronizationJob </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_synchronizationJob1" role="tab" aria-controls="tabpanel_2_synchronizationJob1" data-tab="synchronizationJob1" tabindex="0" aria-selected="true">synchronizationJob</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_synchronizationSchema2" role="tab" aria-controls="tabpanel_2_synchronizationSchema2" data-tab="synchronizationSchema2" tabindex="-1">synchronizationSchema</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_synchronizationTemplate3" role="tab" aria-controls="tabpanel_2_synchronizationTemplate3" data-tab="synchronizationTemplate3" tabindex="-1">synchronizationTemplate</a>
+</li>
+</ul>
+<section id="tabpanel_2_synchronizationJob1" role="tabpanel" data-tab="synchronizationJob1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationjob?view=graph-rest-1.0&amp;tabs=http">synchronizationJob</a></p>
 <table>
 <thead>
 <tr>
@@ -259,7 +288,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="synchronizationschema-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationschema?view=graph-rest-1.0&amp;tabs=http">synchronizationSchema </a></h3>
+</section>
+<section id="tabpanel_2_synchronizationSchema2" role="tabpanel" data-tab="synchronizationSchema2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationschema?view=graph-rest-1.0&amp;tabs=http">synchronizationSchema</a></p>
 <table>
 <thead>
 <tr>
@@ -286,7 +318,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="synchronizationtemplate-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationtemplate?view=graph-rest-1.0&amp;tabs=http">synchronizationTemplate </a></h3>
+</section>
+<section id="tabpanel_2_synchronizationTemplate3" role="tabpanel" data-tab="synchronizationTemplate3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationtemplate?view=graph-rest-1.0&amp;tabs=http">synchronizationTemplate</a></p>
 <table>
 <thead>
 <tr>
@@ -333,6 +368,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

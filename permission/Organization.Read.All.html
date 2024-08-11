@@ -90,144 +90,211 @@
         <article data-uid="">
 <h1 id="organizationreadall">Organization.Read.All</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>Organization.Read.All</code> permission.</p>
 <blockquote>
 <p>Allows the app to read the organization and related resources, on behalf of the signed-in user. Related resources include things like subscribed skus and tenant branding information.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>498476ce-e0fe-48b0-b801-37ba7e2685c6</td>
+<td>4908d5b9-3fb2-4b1e-9336-1888b7937185</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Read organization information</td>
+<td>Read organization information</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the app to read the organization and related resources, without a signed-in user. Related resources include things like subscribed skus and tenant branding information.</td>
+<td>Allows the app to read the organization and related resources, on behalf of the signed-in user. Related resources include things like subscribed skus and tenant branding information.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/directory-list-subscriptions?view=graph-rest-1.0&amp;tabs=http">GET /directory/subscriptions</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/companysubscription-get?view=graph-rest-1.0&amp;tabs=http">GET /directory/subscriptions(commerceSubscriptionId='{commerceSubscriptionId}')</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/companysubscription-get?view=graph-rest-1.0&amp;tabs=http">GET /directory/subscriptions/{id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/organization-list?view=graph-rest-beta&amp;tabs=http">GET /organization</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/certificatebasedauthconfiguration-list?view=graph-rest-1.0&amp;tabs=http">GET /organization/{id}/certificateBasedAuthConfiguration</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/certificatebasedauthconfiguration-get?view=graph-rest-1.0&amp;tabs=http">GET /organization/{id}/certificateBasedAuthConfiguration/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/organization-get?view=graph-rest-1.0&amp;tabs=http">GET /organization/{organizationId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0&amp;tabs=http">GET /organization/{organizationId}/branding</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0&amp;tabs=http">GET /organization/{organizationId}/branding/localizations</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/organizationalbrandinglocalization-get?view=graph-rest-1.0&amp;tabs=http">GET /organization/{organizationId}/branding/localizations/{organizationalBrandingLocalizationId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/organizationsettings-list-contactinsights?view=graph-rest-beta&amp;tabs=http">GET /organization/{organizationId}/settings/contactInsights</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/organizationsettings-list-microsoftapplicationdataaccess?view=graph-rest-beta&amp;tabs=http">GET /organization/{organizationId}/settings/microsoftApplicationDataAccess</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/subscribedsku-list?view=graph-rest-1.0&amp;tabs=http">GET /subscribedSkus</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/subscribedsku-get?view=graph-rest-1.0&amp;tabs=http">GET /subscribedSkus/{id}</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
+<th>Type</th>
+<th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Id</strong></td>
-<td>4908d5b9-3fb2-4b1e-9336-1888b7937185</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directory-list-subscriptions?view=graph-rest-beta&amp;tabs=http">GET /directory/subscriptions</a></td>
 </tr>
 <tr>
-<td><strong>Consent Type</strong></td>
-<td>Admin</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/companysubscription-get?view=graph-rest-beta&amp;tabs=http">GET /directory/subscriptions(commerceSubscriptionId='{commerceSubscriptionId}')</a></td>
 </tr>
 <tr>
-<td><strong>Display String</strong></td>
-<td>Read organization information</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/companysubscription-get?view=graph-rest-beta&amp;tabs=http">GET /directory/subscriptions/{id}</a></td>
 </tr>
 <tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read the organization and related resources, on behalf of the signed-in user. Related resources include things like subscribed skus and tenant branding information.</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/organization-list?view=graph-rest-beta&amp;tabs=http">GET /organization</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/certificatebasedauthconfiguration-list?view=graph-rest-beta&amp;tabs=http">GET /organization/{id}/certificateBasedAuthConfiguration</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/certificatebasedauthconfiguration-get?view=graph-rest-beta&amp;tabs=http">GET /organization/{id}/certificateBasedAuthConfiguration/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/organization-get?view=graph-rest-beta&amp;tabs=http">GET /organization/{organizationId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-beta&amp;tabs=http">GET /organization/{organizationId}/branding</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-beta&amp;tabs=http">GET /organization/{organizationId}/branding/localizations</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/organizationalbrandinglocalization-get?view=graph-rest-beta&amp;tabs=http">GET /organization/{organizationId}/branding/localizations/{organizationalBrandingLocalizationId}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/organizationsettings-list-contactinsights?view=graph-rest-beta&amp;tabs=http">GET /organization/{organizationId}/settings/contactInsights</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/organizationsettings-list-microsoftapplicationdataaccess?view=graph-rest-beta&amp;tabs=http">GET /organization/{organizationId}/settings/microsoftApplicationDataAccess</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/subscribedsku-list?view=graph-rest-beta&amp;tabs=http">GET /subscribedSkus</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/subscribedsku-get?view=graph-rest-beta&amp;tabs=http">GET /subscribedSkus/{id}</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>498476ce-e0fe-48b0-b801-37ba7e2685c6</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read organization information</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read the organization and related resources, without a signed-in user. Related resources include things like subscribed skus and tenant branding information.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="certificatebasedauthconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/certificatebasedauthconfiguration?view=graph-rest-1.0&amp;tabs=http">certificateBasedAuthConfiguration </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_certificateBasedAuthConfiguration1" role="tab" aria-controls="tabpanel_2_certificateBasedAuthConfiguration1" data-tab="certificateBasedAuthConfiguration1" tabindex="0" aria-selected="true">certificateBasedAuthConfiguration</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_companySubscription2" role="tab" aria-controls="tabpanel_2_companySubscription2" data-tab="companySubscription2" tabindex="-1">companySubscription</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_insightsSettings3" role="tab" aria-controls="tabpanel_2_insightsSettings3" data-tab="insightsSettings3" tabindex="-1">insightsSettings</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_microsoftApplicationDataAccessSettings4" role="tab" aria-controls="tabpanel_2_microsoftApplicationDataAccessSettings4" data-tab="microsoftApplicationDataAccessSettings4" tabindex="-1">microsoftApplicationDataAccessSettings</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_organization5" role="tab" aria-controls="tabpanel_2_organization5" data-tab="organization5" tabindex="-1">organization</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_organizationalBranding6" role="tab" aria-controls="tabpanel_2_organizationalBranding6" data-tab="organizationalBranding6" tabindex="-1">organizationalBranding</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_organizationalBrandingLocalization7" role="tab" aria-controls="tabpanel_2_organizationalBrandingLocalization7" data-tab="organizationalBrandingLocalization7" tabindex="-1">organizationalBrandingLocalization</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_subscribedSku8" role="tab" aria-controls="tabpanel_2_subscribedSku8" data-tab="subscribedSku8" tabindex="-1">subscribedSku</a>
+</li>
+</ul>
+<section id="tabpanel_2_certificateBasedAuthConfiguration1" role="tabpanel" data-tab="certificateBasedAuthConfiguration1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/certificatebasedauthconfiguration?view=graph-rest-1.0&amp;tabs=http">certificateBasedAuthConfiguration</a></p>
 <table>
 <thead>
 <tr>
@@ -249,7 +316,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="companysubscription-"><a href="https://docs.microsoft.com/graph/api/resources/companysubscription?view=graph-rest-1.0&amp;tabs=http">companySubscription </a></h3>
+</section>
+<section id="tabpanel_2_companySubscription2" role="tabpanel" data-tab="companySubscription2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/companysubscription?view=graph-rest-1.0&amp;tabs=http">companySubscription</a></p>
 <table>
 <thead>
 <tr>
@@ -326,7 +396,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="insightssettings-"><a href="https://docs.microsoft.com/graph/api/resources/insightssettings?view=graph-rest-1.0&amp;tabs=http">insightsSettings </a></h3>
+</section>
+<section id="tabpanel_2_insightsSettings3" role="tabpanel" data-tab="insightsSettings3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/insightssettings?view=graph-rest-1.0&amp;tabs=http">insightsSettings</a></p>
 <table>
 <thead>
 <tr>
@@ -348,7 +421,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="microsoftapplicationdataaccesssettings-"><a href="https://docs.microsoft.com/graph/api/resources/microsoftapplicationdataaccesssettings?view=graph-rest-1.0&amp;tabs=http">microsoftApplicationDataAccessSettings </a></h3>
+</section>
+<section id="tabpanel_2_microsoftApplicationDataAccessSettings4" role="tabpanel" data-tab="microsoftApplicationDataAccessSettings4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/microsoftapplicationdataaccesssettings?view=graph-rest-1.0&amp;tabs=http">microsoftApplicationDataAccessSettings</a></p>
 <table>
 <thead>
 <tr>
@@ -370,7 +446,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="organization-"><a href="https://docs.microsoft.com/graph/api/resources/organization?view=graph-rest-1.0&amp;tabs=http">organization </a></h3>
+</section>
+<section id="tabpanel_2_organization5" role="tabpanel" data-tab="organization5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/organization?view=graph-rest-1.0&amp;tabs=http">organization</a></p>
 <table>
 <thead>
 <tr>
@@ -512,7 +591,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="organizationalbranding-"><a href="https://docs.microsoft.com/graph/api/resources/organizationalbranding?view=graph-rest-1.0&amp;tabs=http">organizationalBranding </a></h3>
+</section>
+<section id="tabpanel_2_organizationalBranding6" role="tabpanel" data-tab="organizationalBranding6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/organizationalbranding?view=graph-rest-1.0&amp;tabs=http">organizationalBranding</a></p>
 <table>
 <thead>
 <tr>
@@ -684,7 +766,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="organizationalbrandinglocalization-"><a href="https://docs.microsoft.com/graph/api/resources/organizationalbrandinglocalization?view=graph-rest-1.0&amp;tabs=http">organizationalBrandingLocalization </a></h3>
+</section>
+<section id="tabpanel_2_organizationalBrandingLocalization7" role="tabpanel" data-tab="organizationalBrandingLocalization7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/organizationalbrandinglocalization?view=graph-rest-1.0&amp;tabs=http">organizationalBrandingLocalization</a></p>
 <table>
 <thead>
 <tr>
@@ -856,7 +941,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="subscribedsku-"><a href="https://docs.microsoft.com/graph/api/resources/subscribedsku?view=graph-rest-1.0&amp;tabs=http">subscribedSku </a></h3>
+</section>
+<section id="tabpanel_2_subscribedSku8" role="tabpanel" data-tab="subscribedSku8" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/subscribedsku?view=graph-rest-1.0&amp;tabs=http">subscribedSku</a></p>
 <table>
 <thead>
 <tr>
@@ -923,6 +1011,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

@@ -90,269 +90,390 @@
         <article data-uid="">
 <h1 id="synchronizationreadwriteall">Synchronization.ReadWrite.All</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>Synchronization.ReadWrite.All</code> permission.</p>
 <blockquote>
 <p>Allows the app to configure the Azure AD synchronization service, on behalf of the signed-in user.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>9b50c33d-700f-43b1-b2eb-87e89b703581</td>
+<td>7bb27fa3-ea8f-4d67-a916-87715b6188bd</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Read and write all Azure AD synchronization data.</td>
+<td>Read and write all Azure AD synchronization data</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the application to configure the Azure AD synchronization service, without a signed-in user.</td>
+<td>Allows the app to configure the Azure AD synchronization service, on behalf of the signed-in user.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0&amp;tabs=http"></a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /applications/{id}/synchronization/templates/{templateId}/schema</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /servicePrincipals/{id}/synchronization/jobs/{jobId}/</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /servicePrincipals/{id}/synchronization/jobs/{jobId}/schema</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-beta&amp;tabs=http">GET /applications/{id}/synchronization/templates</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-get?view=graph-rest-beta&amp;tabs=http">GET /applications/{id}/synchronization/templates/{templateId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-1.0&amp;tabs=http">GET /applications/{id}/synchronization/templates/{templateId}/schema</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-1.0&amp;tabs=http">GET /applications/{id}/synchronization/templates/{templateId}/schema/filterOperators</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-functions?view=graph-rest-1.0&amp;tabs=http">GET /applications/{id}/synchronization/templates/{templateId}/schema/functions</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-list-jobs?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/jobs/</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-get?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/jobs/{jobId}/</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/jobs/{jobId}/schema</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/jobs/{jobId}/schema/filterOperators</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-functions?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/jobs/{jobId}/schema/functions</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/templates</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-get?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/templates/{templateId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/templates/{templateId}/schema</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/templates/{templateId}/schema/filterOperators</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-functions?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/templates/{templateId}/schema/functions</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-1.0&amp;tabs=http">GET applications/{id}/synchronization/templates</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-get?view=graph-rest-1.0&amp;tabs=http">GET applications/{id}/synchronization/templates/{templateId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-1.0&amp;tabs=http">GET servicePrincipals/{id}/synchronization/templates</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-get?view=graph-rest-1.0&amp;tabs=http">GET servicePrincipals/{id}/synchronization/templates/{templateId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-update?view=graph-rest-beta&amp;tabs=http">PATCH /applications/{id}/synchronization/templates/{templateId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-update?view=graph-rest-1.0&amp;tabs=http">PATCH applications/{id}/synchronization/templates/{templateId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-acquireaccesstoken?view=graph-rest-1.0&amp;tabs=http">POST /applications/{applicationsId}/synchronization/acquireAccessToken</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/synchronization/jobs/{jobId}/restart</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-post-jobs?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{id}/synchronization/jobs/</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{id}/synchronization/jobs/{id}/schema/parseExpression</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{id}/synchronization/jobs/{id}/validateCredentials</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-pause?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{id}/synchronization/jobs/{jobId}/pause</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-start?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{id}/synchronization/jobs/{jobId}/start</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{id}/synchronization/templates/{id}/schema/parseExpression</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{servicePrincipalId}/synchronization/jobs/{jobId}/restart</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-acquireaccesstoken?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{servicePrincipalsId}/synchronization/acquireAccessToken</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-provisionondemand?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{servicePrincipalsId}/synchronization/jobs/{synchronizationJobId}/provisionOnDemand</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-update?view=graph-rest-1.0&amp;tabs=http">PUT /applications/{id}/synchronization/templates/{templateId}/schema</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-update?view=graph-rest-1.0&amp;tabs=http">PUT /servicePrincipals/{id}/synchronization/jobs/{jobId}/schema</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-serviceprincipal-put-synchronization?view=graph-rest-1.0&amp;tabs=http">PUT /servicePrincipals/{id}/synchronization/secrets</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
+<th>Type</th>
+<th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Id</strong></td>
-<td>7bb27fa3-ea8f-4d67-a916-87715b6188bd</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-delete?view=graph-rest-beta&amp;tabs=http">DELETE /applications/{id}/synchronization/templates/{templateId}/schema</a></td>
 </tr>
 <tr>
-<td><strong>Consent Type</strong></td>
-<td>Admin</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-delete?view=graph-rest-beta&amp;tabs=http">DELETE /servicePrincipals/{id}/synchronization/jobs/{jobId}/</a></td>
 </tr>
 <tr>
-<td><strong>Display String</strong></td>
-<td>Read and write all Azure AD synchronization data</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-delete?view=graph-rest-beta&amp;tabs=http">DELETE /servicePrincipals/{id}/synchronization/jobs/{jobId}/schema</a></td>
 </tr>
 <tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to configure the Azure AD synchronization service, on behalf of the signed-in user.</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-beta&amp;tabs=http">GET /applications/{id}/synchronization/templates</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-get?view=graph-rest-beta&amp;tabs=http">GET /applications/{id}/synchronization/templates/{templateId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-beta&amp;tabs=http">GET /applications/{id}/synchronization/templates/{templateId}/schema</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-beta&amp;tabs=http">GET /applications/{id}/synchronization/templates/{templateId}/schema/filterOperators</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-functions?view=graph-rest-beta&amp;tabs=http">GET /applications/{id}/synchronization/templates/{templateId}/schema/functions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-list-jobs?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/jobs/</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-get?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/jobs/{jobId}/</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/jobs/{jobId}/schema</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/jobs/{jobId}/schema/filterOperators</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-functions?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/jobs/{jobId}/schema/functions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/templates</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-get?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/templates/{templateId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/templates/{templateId}/schema</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/templates/{templateId}/schema/filterOperators</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-functions?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/templates/{templateId}/schema/functions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-update?view=graph-rest-beta&amp;tabs=http">PATCH /applications/{id}/synchronization/templates/{templateId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-acquireaccesstoken?view=graph-rest-beta&amp;tabs=http">POST /applications/{applicationsId}/synchronization/acquireAccessToken</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/synchronization/jobs/{jobId}/restart</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-post-jobs?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/synchronization/jobs/</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/synchronization/jobs/{id}/schema/parseExpression</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/synchronization/jobs/{id}/validateCredentials</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-pause?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/synchronization/jobs/{jobId}/pause</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-start?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/synchronization/jobs/{jobId}/start</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/synchronization/templates/{id}/schema/parseExpression</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{servicePrincipalId}/synchronization/jobs/{jobId}/restart</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-acquireaccesstoken?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{servicePrincipalsId}/synchronization/acquireAccessToken</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-provisionondemand?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{servicePrincipalsId}/synchronization/jobs/{synchronizationJobId}/provisionOnDemand</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-update?view=graph-rest-beta&amp;tabs=http">PUT /applications/{id}/synchronization/templates/{templateId}/schema</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-update?view=graph-rest-beta&amp;tabs=http">PUT /servicePrincipals/{id}/synchronization/jobs/{jobId}/schema</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-serviceprincipal-put-synchronization?view=graph-rest-beta&amp;tabs=http">PUT /servicePrincipals/{id}/synchronization/secrets</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>9b50c33d-700f-43b1-b2eb-87e89b703581</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read and write all Azure AD synchronization data.</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the application to configure the Azure AD synchronization service, without a signed-in user.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="attributedefinition-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-attributedefinition?view=graph-rest-1.0&amp;tabs=http">attributeDefinition </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_attributeDefinition1" role="tab" aria-controls="tabpanel_2_attributeDefinition1" data-tab="attributeDefinition1" tabindex="0" aria-selected="true">attributeDefinition</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_attributeMappingFunctionSchema2" role="tab" aria-controls="tabpanel_2_attributeMappingFunctionSchema2" data-tab="attributeMappingFunctionSchema2" tabindex="-1">attributeMappingFunctionSchema</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_attributeMappingSource3" role="tab" aria-controls="tabpanel_2_attributeMappingSource3" data-tab="attributeMappingSource3" tabindex="-1">attributeMappingSource</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_expressionInputObject4" role="tab" aria-controls="tabpanel_2_expressionInputObject4" data-tab="expressionInputObject4" tabindex="-1">expressionInputObject</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_filter5" role="tab" aria-controls="tabpanel_2_filter5" data-tab="filter5" tabindex="-1">filter</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_filterOperatorSchema6" role="tab" aria-controls="tabpanel_2_filterOperatorSchema6" data-tab="filterOperatorSchema6" tabindex="-1">filterOperatorSchema</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_parseExpressionResponse7" role="tab" aria-controls="tabpanel_2_parseExpressionResponse7" data-tab="parseExpressionResponse7" tabindex="-1">parseExpressionResponse</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_synchronizationJob8" role="tab" aria-controls="tabpanel_2_synchronizationJob8" data-tab="synchronizationJob8" tabindex="-1">synchronizationJob</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_synchronizationJobApplicationParameters9" role="tab" aria-controls="tabpanel_2_synchronizationJobApplicationParameters9" data-tab="synchronizationJobApplicationParameters9" tabindex="-1">synchronizationJobApplicationParameters</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_synchronizationJobRestartCriteria10" role="tab" aria-controls="tabpanel_2_synchronizationJobRestartCriteria10" data-tab="synchronizationJobRestartCriteria10" tabindex="-1">synchronizationJobRestartCriteria</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_synchronizationSchema11" role="tab" aria-controls="tabpanel_2_synchronizationSchema11" data-tab="synchronizationSchema11" tabindex="-1">synchronizationSchema</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_synchronizationSecretKeyStringValuePair12" role="tab" aria-controls="tabpanel_2_synchronizationSecretKeyStringValuePair12" data-tab="synchronizationSecretKeyStringValuePair12" tabindex="-1">synchronizationSecretKeyStringValuePair</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_synchronizationTemplate13" role="tab" aria-controls="tabpanel_2_synchronizationTemplate13" data-tab="synchronizationTemplate13" tabindex="-1">synchronizationTemplate</a>
+</li>
+</ul>
+<section id="tabpanel_2_attributeDefinition1" role="tabpanel" data-tab="attributeDefinition1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/synchronization-attributedefinition?view=graph-rest-1.0&amp;tabs=http">attributeDefinition</a></p>
 <table>
 <thead>
 <tr>
@@ -419,7 +540,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="attributemappingfunctionschema-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-attributemappingfunctionschema?view=graph-rest-1.0&amp;tabs=http">attributeMappingFunctionSchema </a></h3>
+</section>
+<section id="tabpanel_2_attributeMappingFunctionSchema2" role="tabpanel" data-tab="attributeMappingFunctionSchema2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/synchronization-attributemappingfunctionschema?view=graph-rest-1.0&amp;tabs=http">attributeMappingFunctionSchema</a></p>
 <table>
 <thead>
 <tr>
@@ -441,7 +565,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="attributemappingsource-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-attributemappingsource?view=graph-rest-1.0&amp;tabs=http">attributeMappingSource </a></h3>
+</section>
+<section id="tabpanel_2_attributeMappingSource3" role="tabpanel" data-tab="attributeMappingSource3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/synchronization-attributemappingsource?view=graph-rest-1.0&amp;tabs=http">attributeMappingSource</a></p>
 <table>
 <thead>
 <tr>
@@ -473,7 +600,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="expressioninputobject-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-expressioninputobject?view=graph-rest-1.0&amp;tabs=http">expressionInputObject </a></h3>
+</section>
+<section id="tabpanel_2_expressionInputObject4" role="tabpanel" data-tab="expressionInputObject4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/synchronization-expressioninputobject?view=graph-rest-1.0&amp;tabs=http">expressionInputObject</a></p>
 <table>
 <thead>
 <tr>
@@ -495,7 +625,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="filter-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-filter?view=graph-rest-1.0&amp;tabs=http">filter </a></h3>
+</section>
+<section id="tabpanel_2_filter5" role="tabpanel" data-tab="filter5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/synchronization-filter?view=graph-rest-1.0&amp;tabs=http">filter</a></p>
 <table>
 <thead>
 <tr>
@@ -522,7 +655,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="filteroperatorschema-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-filteroperatorschema?view=graph-rest-1.0&amp;tabs=http">filterOperatorSchema </a></h3>
+</section>
+<section id="tabpanel_2_filterOperatorSchema6" role="tabpanel" data-tab="filterOperatorSchema6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/synchronization-filteroperatorschema?view=graph-rest-1.0&amp;tabs=http">filterOperatorSchema</a></p>
 <table>
 <thead>
 <tr>
@@ -554,7 +690,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="parseexpressionresponse-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-parseexpressionresponse?view=graph-rest-1.0&amp;tabs=http">parseExpressionResponse </a></h3>
+</section>
+<section id="tabpanel_2_parseExpressionResponse7" role="tabpanel" data-tab="parseExpressionResponse7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/synchronization-parseexpressionresponse?view=graph-rest-1.0&amp;tabs=http">parseExpressionResponse</a></p>
 <table>
 <thead>
 <tr>
@@ -591,7 +730,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="synchronizationjob-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationjob?view=graph-rest-1.0&amp;tabs=http">synchronizationJob </a></h3>
+</section>
+<section id="tabpanel_2_synchronizationJob8" role="tabpanel" data-tab="synchronizationJob8" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationjob?view=graph-rest-1.0&amp;tabs=http">synchronizationJob</a></p>
 <table>
 <thead>
 <tr>
@@ -628,7 +770,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="synchronizationjobapplicationparameters-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationjobapplicationparameters?view=graph-rest-1.0&amp;tabs=http">synchronizationJobApplicationParameters </a></h3>
+</section>
+<section id="tabpanel_2_synchronizationJobApplicationParameters9" role="tabpanel" data-tab="synchronizationJobApplicationParameters9" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationjobapplicationparameters?view=graph-rest-1.0&amp;tabs=http">synchronizationJobApplicationParameters</a></p>
 <table>
 <thead>
 <tr>
@@ -650,7 +795,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="synchronizationjobrestartcriteria-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationjobrestartcriteria?view=graph-rest-1.0&amp;tabs=http">synchronizationJobRestartCriteria </a></h3>
+</section>
+<section id="tabpanel_2_synchronizationJobRestartCriteria10" role="tabpanel" data-tab="synchronizationJobRestartCriteria10" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationjobrestartcriteria?view=graph-rest-1.0&amp;tabs=http">synchronizationJobRestartCriteria</a></p>
 <table>
 <thead>
 <tr>
@@ -667,7 +815,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="synchronizationschema-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationschema?view=graph-rest-1.0&amp;tabs=http">synchronizationSchema </a></h3>
+</section>
+<section id="tabpanel_2_synchronizationSchema11" role="tabpanel" data-tab="synchronizationSchema11" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationschema?view=graph-rest-1.0&amp;tabs=http">synchronizationSchema</a></p>
 <table>
 <thead>
 <tr>
@@ -694,7 +845,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="synchronizationsecretkeystringvaluepair-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationsecretkeystringvaluepair?view=graph-rest-1.0&amp;tabs=http">synchronizationSecretKeyStringValuePair </a></h3>
+</section>
+<section id="tabpanel_2_synchronizationSecretKeyStringValuePair12" role="tabpanel" data-tab="synchronizationSecretKeyStringValuePair12" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationsecretkeystringvaluepair?view=graph-rest-1.0&amp;tabs=http">synchronizationSecretKeyStringValuePair</a></p>
 <table>
 <thead>
 <tr>
@@ -716,7 +870,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="synchronizationtemplate-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationtemplate?view=graph-rest-1.0&amp;tabs=http">synchronizationTemplate </a></h3>
+</section>
+<section id="tabpanel_2_synchronizationTemplate13" role="tabpanel" data-tab="synchronizationTemplate13" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationtemplate?view=graph-rest-1.0&amp;tabs=http">synchronizationTemplate</a></p>
 <table>
 <thead>
 <tr>
@@ -763,6 +920,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

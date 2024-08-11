@@ -90,1684 +90,2426 @@
         <article data-uid="">
 <h1 id="directoryreadwriteall">Directory.ReadWrite.All</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>Directory.ReadWrite.All</code> permission.</p>
 <blockquote>
 <p>Allows the app to read and write data in your organization's directory, such as users, and groups.  It does not allow the app to delete users or groups, or reset user passwords.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>19dbc75e-c2e2-444c-a770-ec69d8559fc7</td>
+<td>c5366453-9fb0-48a5-a156-24f0c49a4b84</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Read and write directory data</td>
+<td>Read and write directory data</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the app to read and write data in your organization's directory, such as users, and groups, without a signed-in user.  Does not allow user or group deletion.</td>
+<td>Allows the app to read and write data in your organization's directory, such as users, and groups.  It does not allow the app to delete users or groups, or reset user passwords.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>V1</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-owners?view=graph-rest-1.0&amp;tabs=http"></a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/teamsapp-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /appCatalogs/teamsApps/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/extensionproperty-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /applications(appId='{appId}')/extensionProperties/{extensionPropertyId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-delete-owners?view=graph-rest-1.0&amp;tabs=http">DELETE /applications(appId='{appId}')/owners/{id}/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/extensionproperty-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /applications/{application ObjectId}/extensionProperties/{extensionPropertyId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-delete-owners?view=graph-rest-1.0&amp;tabs=http">DELETE /applications/{id}/owners/{id}/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/grouplifecyclepolicy-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /groupLifecyclePolicies/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-delete-members?view=graph-rest-1.0&amp;tabs=http">DELETE /groups/{id}/members/{id}/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-delete-owners?view=graph-rest-1.0&amp;tabs=http">DELETE /groups/{id}/owners/{id}/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/groupsetting-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /groupSettings/{groupSettingId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/oauth2permissiongrant-delete?view=graph-rest-beta&amp;tabs=http">DELETE /oauth2PermissionGrants/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/oauth2permissiongrant-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /oAuth2PermissionGrants/{id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/onpremisesagentgroup-delete?view=graph-rest-beta&amp;tabs=http">DELETE /onPremisesPublishingProfiles/{profile-id}/agents/{agent-id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/onpremisesagent-delete-agentgroups?view=graph-rest-beta&amp;tabs=http">DELETE /onPremisesPublishingProfiles/{profile-id}/agents/{agent-id}/agentGroups/{agentGroup-id}/$ref</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/connectorgroup-delete?view=graph-rest-beta&amp;tabs=http">DELETE /onPremisesPublishingProfiles/applicationProxy/connectorGroups/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/featurerolloutpolicy-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /policies/featureRolloutPolicies/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/featurerolloutpolicy-delete-appliesto?view=graph-rest-1.0&amp;tabs=http">DELETE /policies/featureRolloutPolicies/{policyId}/appliesTo/{directoryObjectId}/$ref</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/unifiedroledefinition-delete?view=graph-rest-beta&amp;tabs=http">DELETE /roleManagement/deviceManagement/roleDefinitions/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/unifiedroledefinition-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /roleManagement/directory/roleDefinitions/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/schemaextension-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /schemaExtensions/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /servicePrincipals(appId='{appId}')</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-owners?view=graph-rest-1.0&amp;tabs=http">DELETE /servicePrincipals(appId='{appId}')/owners/{id}/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /servicePrincipals/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-owners?view=graph-rest-1.0&amp;tabs=http">DELETE /serviceprincipals/{id}/owners/{id}/$ref</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-owners?view=graph-rest-beta&amp;tabs=http">DELETE /servicePrincipals/{id}/owners/{id}/$ref</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-remotedesktopsecurityconfiguration?view=graph-rest-1.0&amp;tabs=http">DELETE /servicePrincipals/{servicePrincipalsId}/remoteDesktopSecurityConfiguration/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/remotedesktopsecurityconfiguration-delete-targetdevicegroups?view=graph-rest-1.0&amp;tabs=http">DELETE /servicePrincipals/{servicePrincipalsId}/remoteDesktopSecurityConfiguration/targetDeviceGroups/{targetDeviceGroupId}/$ref</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/directorysetting-delete?view=graph-rest-beta&amp;tabs=http">DELETE /settings/{directorySettingId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/channel-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /teams/{team-id}/channels/{channel-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/channel-delete-tabs?view=graph-rest-1.0&amp;tabs=http">DELETE /teams/{team-id}/channels/{channel-id}/tabs/{tab-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/team-delete-installedapps?view=graph-rest-1.0&amp;tabs=http">DELETE /teams/{team-id}/installedApps/{app-installation-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-delete-manager?view=graph-rest-1.0&amp;tabs=http">DELETE /users/{id}/manager/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-delete-sponsors?view=graph-rest-1.0&amp;tabs=http">DELETE /users/{id}/sponsors/{id}/$ref</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/directory-list-administrativeunits?view=graph-rest-beta&amp;tabs=http">GET /administrativeUnits</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/administrativeunit-get?view=graph-rest-beta&amp;tabs=http">GET /administrativeUnits/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/administrativeunit-list-members?view=graph-rest-beta&amp;tabs=http">GET /administrativeUnits/{id}/members</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/administrativeunit-get-members?view=graph-rest-beta&amp;tabs=http">GET /administrativeUnits/{id}/members/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/administrativeunit-list-members?view=graph-rest-beta&amp;tabs=http">GET /administrativeUnits/{id}/members/$ref</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/administrativeunit-list-scopedrolemembers?view=graph-rest-beta&amp;tabs=http">GET /administrativeUnits/{id}/scopedRoleMembers</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/administrativeunit-get-scopedrolemembers?view=graph-rest-beta&amp;tabs=http">GET /administrativeUnits/{id}/scopedRoleMembers/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/administrativeunit-delta?view=graph-rest-beta&amp;tabs=http">GET /administrativeUnits/delta</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/appcatalogs-list-teamsapps?view=graph-rest-1.0&amp;tabs=http">GET /appCatalogs/teamsApps</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-list?view=graph-rest-1.0&amp;tabs=http">GET /applications</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-get?view=graph-rest-1.0&amp;tabs=http">GET /applications(appId='{appId}')</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-list-extensionproperty?view=graph-rest-1.0&amp;tabs=http">GET /applications(appId='{appId}')/extensionProperties</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-list-owners?view=graph-rest-1.0&amp;tabs=http">GET /applications(appId='{appId}')/owners</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-list-extensionproperty?view=graph-rest-1.0&amp;tabs=http">GET /applications/{application ObjectId}/extensionProperties</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-get?view=graph-rest-1.0&amp;tabs=http">GET /applications/{applicationObjectId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-list-owners?view=graph-rest-1.0&amp;tabs=http">GET /applications/{id}/owners</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-delta?view=graph-rest-1.0&amp;tabs=http">GET /applications/delta</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/orgcontact-list?view=graph-rest-1.0&amp;tabs=http">GET /contacts</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/orgcontact-get?view=graph-rest-1.0&amp;tabs=http">GET /contacts/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/orgcontact-list-directreports?view=graph-rest-1.0&amp;tabs=http">GET /contacts/{id}/directReports</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/orgcontact-get-manager?view=graph-rest-1.0&amp;tabs=http">GET /contacts/{id}/manager</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/orgcontact-list-memberof?view=graph-rest-1.0&amp;tabs=http">GET /contacts/{id}/memberOf</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/orgcontact-delta?view=graph-rest-1.0&amp;tabs=http">GET /contacts/delta</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contract-list?view=graph-rest-1.0&amp;tabs=http">GET /contracts</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/contract-get?view=graph-rest-1.0&amp;tabs=http">GET /contracts/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/device-list?view=graph-rest-1.0&amp;tabs=http">GET /devices</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/device-get?view=graph-rest-1.0&amp;tabs=http">GET /devices(deviceId='{deviceId}')</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/device-list-memberof?view=graph-rest-1.0&amp;tabs=http">GET /devices(deviceId='{deviceId}')/memberOf</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/device-list-registeredowners?view=graph-rest-1.0&amp;tabs=http">GET /devices(deviceId='{deviceId}')/registeredOwners</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-1.0&amp;tabs=http">GET /devices(deviceId='{deviceId}')/registeredUsers</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/device-list-transitivememberof?view=graph-rest-1.0&amp;tabs=http">GET /devices(deviceId='{deviceId}')/transitiveMemberOf</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/device-list-usagerights?view=graph-rest-beta&amp;tabs=http">GET /devices(deviceId='{deviceId}')/usageRights</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/device-list-transitivememberof?view=graph-rest-1.0&amp;tabs=http">GET /devices/{id | userPrincipalName}/transitiveMemberOf</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/device-get?view=graph-rest-1.0&amp;tabs=http">GET /devices/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/device-list-memberof?view=graph-rest-1.0&amp;tabs=http">GET /devices/{id}/memberOf</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/device-list-registeredowners?view=graph-rest-1.0&amp;tabs=http">GET /devices/{id}/registeredOwners</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-1.0&amp;tabs=http">GET /devices/{id}/registeredUsers</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/device-list-transitivememberof?view=graph-rest-beta&amp;tabs=http">GET /devices/{id}/transitiveMemberOf</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/device-list-usagerights?view=graph-rest-beta&amp;tabs=http">GET /devices/{objectId}/usageRights</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/directory-list-administrativeunits?view=graph-rest-1.0&amp;tabs=http">GET /directory/administrativeUnits</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/administrativeunit-get?view=graph-rest-1.0&amp;tabs=http">GET /directory/administrativeUnits/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/administrativeunit-list-members?view=graph-rest-1.0&amp;tabs=http">GET /directory/administrativeUnits/{id}/members</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/administrativeunit-get-members?view=graph-rest-1.0&amp;tabs=http">GET /directory/administrativeUnits/{id}/members/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/administrativeunit-list-members?view=graph-rest-1.0&amp;tabs=http">GET /directory/administrativeUnits/{id}/members/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/administrativeunit-list-scopedrolemembers?view=graph-rest-1.0&amp;tabs=http">GET /directory/administrativeUnits/{id}/scopedRoleMembers</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/administrativeunit-get-scopedrolemembers?view=graph-rest-1.0&amp;tabs=http">GET /directory/administrativeUnits/{id}/scopedRoleMembers/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/directoryrole-list?view=graph-rest-1.0&amp;tabs=http">GET /directoryRoles</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/directoryrole-get?view=graph-rest-1.0&amp;tabs=http">GET /directoryRoles(roleTemplateId='{roleTemplateId}')</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/directoryrole-list-members?view=graph-rest-1.0&amp;tabs=http">GET /directoryRoles(roleTemplateId='{roleTemplateId}')/members</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/directoryrole-list-scopedmembers?view=graph-rest-1.0&amp;tabs=http">GET /directoryRoles(roleTemplateId='{roleTemplateId}')/scopedMembers</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/directoryrole-get?view=graph-rest-1.0&amp;tabs=http">GET /directoryRoles/{role-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/directoryrole-list-members?view=graph-rest-1.0&amp;tabs=http">GET /directoryRoles/{role-id}/members</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/directoryrole-list-scopedmembers?view=graph-rest-1.0&amp;tabs=http">GET /directoryroles/{role-id}/scopedMembers</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/directoryrole-delta?view=graph-rest-1.0&amp;tabs=http">GET /directoryRoles/delta</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/directoryroletemplate-list?view=graph-rest-1.0&amp;tabs=http">GET /directoryRoleTemplates</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/directoryroletemplate-get?view=graph-rest-1.0&amp;tabs=http">GET /directoryRoleTemplates/{id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/directorysettingtemplate-list?view=graph-rest-beta&amp;tabs=http">GET /directorySettingTemplates</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/directorysettingtemplate-get?view=graph-rest-beta&amp;tabs=http">GET /directorySettingTemplates/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/grouplifecyclepolicy-list?view=graph-rest-1.0&amp;tabs=http">GET /groupLifecyclePolicies</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/grouplifecyclepolicy-get?view=graph-rest-1.0&amp;tabs=http">GET /groupLifecyclePolicies/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-list?view=graph-rest-1.0&amp;tabs=http">GET /groups</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-get?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-list-approleassignments?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/appRoleAssignments</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-list-grouplifecyclepolicies?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/groupLifecyclePolicies</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-list-memberof?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/memberOf</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-list-transitivememberof?view=graph-rest-1.0&amp;tabs=http">GET /groups/{id}/transitiveMemberOf</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-delta?view=graph-rest-1.0&amp;tabs=http">GET /groups/delta</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-list-settings?view=graph-rest-1.0&amp;tabs=http">GET /groupSettings</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/groupsetting-get?view=graph-rest-1.0&amp;tabs=http">GET /groupSettings/{groupSettingId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/groupsettingtemplate-list?view=graph-rest-1.0&amp;tabs=http">GET /groupSettingTemplates</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/groupsettingtemplate-get?view=graph-rest-1.0&amp;tabs=http">GET /groupSettingTemplates/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-get?view=graph-rest-1.0&amp;tabs=http">GET /me</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-createdobjects?view=graph-rest-1.0&amp;tabs=http">GET /me/createdObjects</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-directreports?view=graph-rest-1.0&amp;tabs=http">GET /me/directReports</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-joinedteams?view=graph-rest-1.0&amp;tabs=http">GET /me/joinedTeams</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-licensedetails?view=graph-rest-1.0&amp;tabs=http">GET /me/licenseDetails</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0&amp;tabs=http">GET /me/manager</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-memberof?view=graph-rest-1.0&amp;tabs=http">GET /me/memberOf</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-owneddevices?view=graph-rest-1.0&amp;tabs=http">GET /me/ownedDevices</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-ownedobjects?view=graph-rest-1.0&amp;tabs=http">GET /me/ownedObjects</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-registereddevices?view=graph-rest-1.0&amp;tabs=http">GET /me/registeredDevices</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/user-list-scopedrolememberof?view=graph-rest-beta&amp;tabs=http">GET /me/scopedRoleMemberOf </a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-transitivememberof?view=graph-rest-1.0&amp;tabs=http">GET /me/transitiveMemberOf</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/oauth2permissiongrant-list?view=graph-rest-1.0&amp;tabs=http">GET /oauth2PermissionGrants</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/oauth2permissiongrant-get?view=graph-rest-1.0&amp;tabs=http">GET /oauth2PermissionGrants/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/oauth2permissiongrant-delta?view=graph-rest-1.0&amp;tabs=http">GET /oauth2PermissionGrants/delta</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/onpremisespublishingprofile-get?view=graph-rest-beta&amp;tabs=http">GET /onPremisesPublishingProfiles/{profile-id}/</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/onpremisesagentgroup-list?view=graph-rest-beta&amp;tabs=http">GET /onPremisesPublishingProfiles/{profile-id}/agentGroups</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/onpremisesagent-list?view=graph-rest-beta&amp;tabs=http">GET /onPremisesPublishingProfiles/{profile-id}/agents</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/onpremisesagentgroup-get?view=graph-rest-beta&amp;tabs=http">GET /onPremisesPublishingProfiles/{profile-id}/agents/{agent-id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/onpremisesagent-get?view=graph-rest-beta&amp;tabs=http">GET /onPremisesPublishingProfiles/{profile-id}/agents/{agent-id}?$expand=agentGroups</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/connectorgroup-list?view=graph-rest-beta&amp;tabs=http">GET /onPremisesPublishingProfiles/applicationProxy/connectorGroups</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/connectorgroup-get?view=graph-rest-beta&amp;tabs=http">GET /onPremisesPublishingProfiles/applicationProxy/connectorGroups/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/connectorgroup-list-applications?view=graph-rest-beta&amp;tabs=http">GET /onPremisesPublishingProfiles/applicationProxy/connectorGroups/{id}/applications</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/connectorgroup-list-members?view=graph-rest-beta&amp;tabs=http">GET /onPremisesPublishingProfiles/applicationProxy/connectorGroups/{id}/members</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/connector-list?view=graph-rest-beta&amp;tabs=http">GET /onPremisesPublishingProfiles/applicationProxy/connectors</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/connector-get?view=graph-rest-beta&amp;tabs=http">GET /onPremisesPublishingProfiles/applicationProxy/connectors/{id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/connector-list-memberof?view=graph-rest-beta&amp;tabs=http">GET /onPremisesPublishingProfiles/applicationProxy/connectors/{id}/memberOf</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/organization-list?view=graph-rest-1.0&amp;tabs=http">GET /organization</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/organization-get?view=graph-rest-1.0&amp;tabs=http">GET /organization/{organizationId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/adminconsentrequestpolicy-get?view=graph-rest-1.0&amp;tabs=http">GET /policies/adminConsentRequestPolicy</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/featurerolloutpolicies-list?view=graph-rest-1.0&amp;tabs=http">GET /policies/featureRolloutPolicies</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/featurerolloutpolicy-get?view=graph-rest-1.0&amp;tabs=http">GET /policies/featureRolloutPolicies/{id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/cloudPC/roleDefinitions</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/cloudPC/roleDefinitions/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignments?view=graph-rest-1.0&amp;tabs=http">GET /roleManagement/directory/roleAssignments</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/unifiedroleassignment-get?view=graph-rest-1.0&amp;tabs=http">GET /roleManagement/directory/roleAssignments/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0&amp;tabs=http">GET /roleManagement/directory/roleDefinitions</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-1.0&amp;tabs=http">GET /roleManagement/directory/roleDefinitions/{id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/rbacapplication-list-transitiveroleassignments?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/directory/transitiveRoleAssignments?$filter=principalId eq '{principalId}'</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-get?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals(appId='{appId}')</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-approleassignedto?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals(appId='{appId}')/appRoleAssignedTo</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-approleassignments?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals(appId='{appId}')/appRoleAssignments</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-createdobjects?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals(appId='{appId}')/createdObjects</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-memberof?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals(appId='{appId}')/memberOf</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-oauth2permissiongrants?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals(appId='{appId}')/oauth2PermissionGrants</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-ownedobjects?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals(appId='{appId}')/ownedObjects</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-owners?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals(appId='{appId}')/owners</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-transitivememberof?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals(appId='{appId}')/transitiveMemberOf</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/approleassignment-get?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals(appId='{client-servicePrincipal-appId}')/appRoleAssignments/{appRoleAssignment-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/approleassignment-get?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{client-serviceprincipal-id}/appRoleAssignments/{appRoleAssignment-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-get?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-approleassignedto?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/appRoleAssignedTo</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-approleassignments?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/appRoleAssignments</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-createdobjects?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/createdObjects</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-memberof?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/memberOf</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-oauth2permissiongrants?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/oauth2PermissionGrants</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-ownedobjects?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/ownedObjects</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-owners?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/owners</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-transitivememberof?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/transitiveMemberOf</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/remotedesktopsecurityconfiguration-get?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{servicePrincipalsId}/remoteDesktopSecurityConfiguration</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/remotedesktopsecurityconfiguration-list-targetdevicegroups?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{servicePrincipalsId}/remoteDesktopSecurityConfiguration/targetDeviceGroups</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/targetdevicegroup-get?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{servicePrincipalsId}/remoteDesktopSecurityConfiguration/targetDeviceGroups/{targetDeviceGroupId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delta?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/delta</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/group-list-settings?view=graph-rest-beta&amp;tabs=http">GET /settings</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/directorysetting-get?view=graph-rest-beta&amp;tabs=http">GET /settings/{directorySettingId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/subscribedsku-list?view=graph-rest-1.0&amp;tabs=http">GET /subscribedSkus</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/subscribedsku-get?view=graph-rest-1.0&amp;tabs=http">GET /subscribedSkus/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/channel-list-tabs?view=graph-rest-1.0&amp;tabs=http">GET /teams/{id}/channels/{id}/tabs</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/team-get-installedapps?view=graph-rest-1.0&amp;tabs=http">GET /teams/{id}/installedApps/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/team-get?view=graph-rest-1.0&amp;tabs=http">GET /teams/{team-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/channel-list?view=graph-rest-1.0&amp;tabs=http">GET /teams/{team-id}/channels</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/channel-get?view=graph-rest-1.0&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/channel-list-tabs?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/tabs</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/channel-get-tabs?view=graph-rest-1.0&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/tabs/{tab-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/team-list-installedapps?view=graph-rest-1.0&amp;tabs=http">GET /teams/{team-id}/installedApps</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list?view=graph-rest-1.0&amp;tabs=http">GET /users</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-joinedteams?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | user-principal-name}/joinedTeams</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-createdobjects?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/createdObjects</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-directreports?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/directReports</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/manager</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-owneddevices?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/ownedDevices</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-ownedobjects?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/ownedObjects</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-registereddevices?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/registeredDevices</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-list-licensedetails?view=graph-rest-1.0&amp;tabs=http">GET /users/{id}/licenseDetails</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/user-list-scopedrolememberof?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/scopedRoleMemberOf</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/licensedetails-getteamslicensingdetails?view=graph-rest-1.0&amp;tabs=http">GET /users/{user-id}/licenseDetails/getTeamsLicensingDetails</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/user-list-usagerights?view=graph-rest-beta&amp;tabs=http">GET /users/{userId}/usageRights</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-delta?view=graph-rest-1.0&amp;tabs=http">GET /users/delta</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/device-update?view=graph-rest-1.0&amp;tabs=http">PATCH /devices(deviceId='{deviceId}')</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/device-update?view=graph-rest-1.0&amp;tabs=http">PATCH /devices/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/grouplifecyclepolicy-update?view=graph-rest-1.0&amp;tabs=http">PATCH /groupLifecyclePolicies/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-upsert?view=graph-rest-1.0&amp;tabs=http">PATCH /groups/(uniqueName='uniqueName')</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-update?view=graph-rest-1.0&amp;tabs=http">PATCH /groups/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/groupsetting-update?view=graph-rest-1.0&amp;tabs=http">PATCH /groupSettings/{groupSettingId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/oauth2permissiongrant-update?view=graph-rest-1.0&amp;tabs=http">PATCH /oauth2PermissionGrants/{id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/onpremisesagentgroup-update?view=graph-rest-beta&amp;tabs=http">PATCH /onPremisesPublishingProfiles/{profile-id}/agentGroups/{agentGroup-id}</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/onpremisespublishingprofile-update?view=graph-rest-beta&amp;tabs=http">PATCH /onPremisesPublishingProfiles/{profile-id}/hybridAgentUpdaterConfiguration</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/connectorgroup-update?view=graph-rest-beta&amp;tabs=http">PATCH /onPremisesPublishingProfiles/applicationProxy/connectorGroups/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/featurerolloutpolicy-update?view=graph-rest-1.0&amp;tabs=http">PATCH /policies/featureRolloutPolicies/{id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/unifiedroledefinition-update?view=graph-rest-beta&amp;tabs=http">PATCH /roleManagement/deviceManagement/roleDefinitions/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/unifiedroledefinition-update?view=graph-rest-1.0&amp;tabs=http">PATCH /roleManagement/directory/roleDefinitions/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/schemaextension-update?view=graph-rest-1.0&amp;tabs=http">PATCH /schemaExtensions/{id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-update?view=graph-rest-beta&amp;tabs=http">PATCH /servicePrincipals(appId='{appId}')</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-upsert?view=graph-rest-1.0&amp;tabs=http">PATCH /servicePrincipals(appId='appId')</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-update?view=graph-rest-beta&amp;tabs=http">PATCH /servicePrincipals/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/remotedesktopsecurityconfiguration-update?view=graph-rest-1.0&amp;tabs=http">PATCH /servicePrincipals/{servicePrincipalsId}/remoteDesktopSecurityConfiguration</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/targetdevicegroup-update?view=graph-rest-1.0&amp;tabs=http">PATCH /servicePrincipals/{servicePrincipalsId}/remoteDesktopSecurityConfiguration/targetDeviceGroups/{targetDeviceGroupId}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/directorysetting-update?view=graph-rest-beta&amp;tabs=http">PATCH /settings/{directorySettingId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0&amp;tabs=http">PATCH /teams/{id}/channels/{id}/members/{id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/conversationmember-update?view=graph-rest-beta&amp;tabs=http">PATCH /teams/{id}/members/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/team-update?view=graph-rest-1.0&amp;tabs=http">PATCH /teams/{team-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/channel-patch?view=graph-rest-1.0&amp;tabs=http">PATCH /teams/{team-id}/channels/{channel-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0&amp;tabs=http">PATCH /teams/{team-id}/channels/{channel-id}/members/{membership-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/channel-patch-tabs?view=graph-rest-1.0&amp;tabs=http">PATCH /teams/{team-id}/channels/{channel-id}/tabs/{tab-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/team-update-members?view=graph-rest-1.0&amp;tabs=http">PATCH /teams/{team-id}/members/{membership-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-update?view=graph-rest-1.0&amp;tabs=http">PATCH /users/{id | userPrincipalName}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/administrativeunit-post-members?view=graph-rest-beta&amp;tabs=http">POST /administrativeUnits/{id}/members/$ref</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/teamsapp-publish?view=graph-rest-1.0&amp;tabs=http">POST /appCatalogs/teamsApps</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/teamsapp-update?view=graph-rest-1.0&amp;tabs=http">POST /appCatalogs/teamsApps/{id}/appDefinitions</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-addkey?view=graph-rest-1.0&amp;tabs=http">POST /applications(appId='{appId}')/addKey</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-addpassword?view=graph-rest-1.0&amp;tabs=http">POST /applications(appId='{appId}')/addPassword</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-post-extensionproperty?view=graph-rest-1.0&amp;tabs=http">POST /applications(appId='{appId}')/extensionProperties</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-post-owners?view=graph-rest-1.0&amp;tabs=http">POST /applications(appId='{appId}')/owners/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-removekey?view=graph-rest-1.0&amp;tabs=http">POST /applications(appId='{appId}')/removeKey</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-removepassword?view=graph-rest-1.0&amp;tabs=http">POST /applications(appId='{appId}')/removePassword</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-post-extensionproperty?view=graph-rest-1.0&amp;tabs=http">POST /applications/{application ObjectId}/extensionProperties</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-addkey?view=graph-rest-1.0&amp;tabs=http">POST /applications/{id}/addKey</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-addpassword?view=graph-rest-1.0&amp;tabs=http">POST /applications/{id}/addPassword</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-post-owners?view=graph-rest-1.0&amp;tabs=http">POST /applications/{id}/owners/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-removekey?view=graph-rest-1.0&amp;tabs=http">POST /applications/{id}/removeKey</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-removepassword?view=graph-rest-1.0&amp;tabs=http">POST /applications/{id}/removePassword</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/applicationtemplate-instantiate?view=graph-rest-1.0&amp;tabs=http">POST /applicationTemplates/{applicationTemplate-id}/instantiate</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/orgcontact-retryserviceprovisioning?view=graph-rest-beta&amp;tabs=http">POST /contacts/{id}/retryServiceProvisioning</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/administrativeunit-post-members?view=graph-rest-1.0&amp;tabs=http">POST /directory/administrativeUnits/{id}/members/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0&amp;tabs=http">POST /directoryObjects/{id}/checkMemberGroups</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/directoryobject-checkmemberobjects?view=graph-rest-1.0&amp;tabs=http">POST /directoryObjects/{id}/checkMemberObjects</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0&amp;tabs=http">POST /directoryObjects/{id}/getMemberGroups</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0&amp;tabs=http">POST /directoryObjects/{id}/getMemberObjects</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0&amp;tabs=http">POST /directoryObjects/validateProperties</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/grouplifecyclepolicy-post-grouplifecyclepolicies?view=graph-rest-1.0&amp;tabs=http">POST /groupLifecyclePolicies</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/grouplifecyclepolicy-addgroup?view=graph-rest-1.0&amp;tabs=http">POST /groupLifecyclePolicies/{id}/addGroup</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/grouplifecyclepolicy-removegroup?view=graph-rest-1.0&amp;tabs=http">POST /groupLifecyclePolicies/{id}/removeGroup</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/grouplifecyclepolicy-renewgroup?view=graph-rest-beta&amp;tabs=http">POST /groupLifecyclePolicies/renewGroup</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-post-groups?view=graph-rest-1.0&amp;tabs=http">POST /groups</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/group-deletepasswordsinglesignoncredentials?view=graph-rest-beta&amp;tabs=http">POST /groups/{groupsId}/deletePasswordSingleSignOnCredentials</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/group-getpasswordsinglesignoncredentials?view=graph-rest-beta&amp;tabs=http">POST /groups/{groupsId}/getPasswordSingleSignOnCredentials</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-assignlicense?view=graph-rest-1.0&amp;tabs=http">POST /groups/{id}/assignLicense</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-post-owners?view=graph-rest-1.0&amp;tabs=http">POST /groups/{id}/owners/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-renew?view=graph-rest-1.0&amp;tabs=http">POST /groups/{id}/renew</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-retryserviceprovisioning?view=graph-rest-1.0&amp;tabs=http">POST /groups/{id}/retryServiceProvisioning</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/group-post-settings?view=graph-rest-1.0&amp;tabs=http">POST /groupSettings</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/invitation-post?view=graph-rest-1.0&amp;tabs=http">POST /invitations</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/user-invalidateallrefreshtokens?view=graph-rest-beta&amp;tabs=http">POST /me/invalidateAllRefreshTokens</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-revokesigninsessions?view=graph-rest-1.0&amp;tabs=http">POST /me/revokeSignInSessions</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/oauth2permissiongrant-post?view=graph-rest-1.0&amp;tabs=http">POST /oauth2PermissionGrants</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/onpremisesagentgroup-post?view=graph-rest-beta&amp;tabs=http">POST /onPremisesPublishingProfiles/{profile-id}/agentGroups</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/onpremisesagent-post-agentgroups?view=graph-rest-beta&amp;tabs=http">POST /onPremisesPublishingProfiles/{profile-id}/agents/{agent-id}/agentGroups/$ref</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/connectorgroup-post?view=graph-rest-beta&amp;tabs=http">POST /onPremisesPublishingProfiles/applicationProxy/connectorGroups</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/connectorgroup-post-members?view=graph-rest-beta&amp;tabs=http">POST /onPremisesPublishingProfiles/applicationProxy/connectorGroups/{id}/members/$ref</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/connector-post-memberof?view=graph-rest-beta&amp;tabs=http">POST /onPremisesPublishingProfiles/applicationProxy/connectors/{id}/memberOf/$ref</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/orgcontact-retryserviceprovisioning?view=graph-rest-1.0&amp;tabs=http">POST /orgContacts/{id}/retryServiceProvisioning</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/featurerolloutpolicies-post?view=graph-rest-1.0&amp;tabs=http">POST /policies/featureRolloutPolicies</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/featurerolloutpolicy-post-appliesto?view=graph-rest-1.0&amp;tabs=http">POST /policies/featureRolloutPolicies/{id}/appliesTo/$ref</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-beta&amp;tabs=http">POST /roleManagement/deviceManagement/roleDefinitions</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0&amp;tabs=http">POST /roleManagement/directory/roleDefinitions</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/schemaextension-post-schemaextensions?view=graph-rest-1.0&amp;tabs=http">POST /schemaExtensions</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-serviceprincipals?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-addkey?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/addKey</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-addpassword?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/addPassword</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-addtokensigningcertificate?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/addTokenSigningCertificate</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-createpasswordsinglesignoncredentials?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/createPasswordSingleSignOnCredentials</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-deletepasswordsinglesignoncredentials?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/deletePasswordSingleSignOnCredentials</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-getpasswordsinglesignoncredentials?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/getPasswordSingleSignOnCredentials</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-owners?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/owners/$ref</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-removekey?view=graph-rest-beta&amp;tabs=http">POST /serviceprincipals(appId='{appId}')/removeKey</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-removekey?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/removeKey</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-removepassword?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/removePassword</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-updatepasswordsinglesignoncredentials?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/updatePasswordSingleSignOnCredentials</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-addkey?view=graph-rest-1.0&amp;tabs=http">POST /serviceprincipals/{id}/addKey</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-addkey?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/addKey</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-addpassword?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{id}/addPassword</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-addtokensigningcertificate?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{id}/addTokenSigningCertificate</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-createpasswordsinglesignoncredentials?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/createPasswordSingleSignOnCredentials</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-deletepasswordsinglesignoncredentials?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/deletePasswordSingleSignOnCredentials</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-getpasswordsinglesignoncredentials?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/getPasswordSingleSignOnCredentials</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-owners?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{id}/owners/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-removekey?view=graph-rest-1.0&amp;tabs=http">POST /serviceprincipals/{id}/removeKey</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-removepassword?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{id}/removePassword</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{id}/synchronization/jobs/{jobId}/schema/directories/{directoryId}/discover</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-updatepasswordsinglesignoncredentials?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/updatePasswordSingleSignOnCredentials</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-remotedesktopsecurityconfiguration?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{servicePrincipalsId}/remoteDesktopSecurityConfiguration</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/remotedesktopsecurityconfiguration-post-targetdevicegroups?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{servicePrincipalsId}/remoteDesktopSecurityConfiguration/targetDeviceGroups</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/group-post-settings?view=graph-rest-beta&amp;tabs=http">POST /settings</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/team-post?view=graph-rest-1.0&amp;tabs=http">POST /teams</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/team-archive?view=graph-rest-1.0&amp;tabs=http">POST /teams/{id}/archive</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/channel-post-tabs?view=graph-rest-beta&amp;tabs=http">POST /teams/{id}/channels/{id}/tabs</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/team-clone?view=graph-rest-1.0&amp;tabs=http">POST /teams/{id}/clone</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/team-unarchive?view=graph-rest-1.0&amp;tabs=http">POST /teams/{id}/unarchive</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/channel-post?view=graph-rest-1.0&amp;tabs=http">POST /teams/{team-id}/channels</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/channel-post-tabs?view=graph-rest-1.0&amp;tabs=http">POST /teams/{team-id}/channels/{channel-id}/tabs</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/team-post-installedapps?view=graph-rest-1.0&amp;tabs=http">POST /teams/{team-id}/installedApps</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/team-teamsappinstallation-upgrade?view=graph-rest-1.0&amp;tabs=http">POST /teams/{team-id}/installedApps/{app-installation-id}/upgrade</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-post-users?view=graph-rest-1.0&amp;tabs=http">POST /users</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-assignlicense?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/assignLicense</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/user-invalidateallrefreshtokens?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/invalidateAllRefreshTokens</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-revokesigninsessions?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/revokeSignInSessions</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-reprocesslicenseassignment?view=graph-rest-1.0&amp;tabs=http">POST /users/{id}/reprocessLicenseAssignment</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-retryserviceprovisioning?view=graph-rest-1.0&amp;tabs=http">POST /users/{id}/retryServiceProvisioning</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-post-sponsors?view=graph-rest-1.0&amp;tabs=http">POST /users/{id}/sponsors/$ref</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/user-deletepasswordsinglesignoncredentials?view=graph-rest-beta&amp;tabs=http">POST /users/{usersId}/deletePasswordSingleSignOnCredentials</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/user-getpasswordsinglesignoncredentials?view=graph-rest-beta&amp;tabs=http">POST /users/{usersId}/getPasswordSingleSignOnCredentials</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>D</td>
-<td><a href="https://docs.microsoft.com/graph/api/connectorgroup-post-applications?view=graph-rest-beta&amp;tabs=http">PUT /applications/{id}/connectorGroup/$ref</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/team-put-teams?view=graph-rest-1.0&amp;tabs=http">PUT /groups/{id}/team</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/adminconsentrequestpolicy-update?view=graph-rest-1.0&amp;tabs=http">PUT /policies/adminConsentRequestPolicy</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/adminconsentrequestpolicy-update?view=graph-rest-beta&amp;tabs=http">PUT /policies/adminConsentRequestPolicy </a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-post-manager?view=graph-rest-1.0&amp;tabs=http">PUT /users/{id}/manager/$ref</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
+<th>Type</th>
+<th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Id</strong></td>
-<td>c5366453-9fb0-48a5-a156-24f0c49a4b84</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/teamsapp-delete?view=graph-rest-beta&amp;tabs=http">DELETE /appCatalogs/teamsApps/{id}</a></td>
 </tr>
 <tr>
-<td><strong>Consent Type</strong></td>
-<td>Admin</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/extensionproperty-delete?view=graph-rest-beta&amp;tabs=http">DELETE /applications(appId='{appId}')/extensionProperties/{extensionPropertyId}</a></td>
 </tr>
 <tr>
-<td><strong>Display String</strong></td>
-<td>Read and write directory data</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-delete-owners?view=graph-rest-beta&amp;tabs=http">DELETE /applications(appId='{appId}')/owners/{id}/$ref</a></td>
 </tr>
 <tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read and write data in your organization's directory, such as users, and groups.  It does not allow the app to delete users or groups, or reset user passwords.</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/extensionproperty-delete?view=graph-rest-beta&amp;tabs=http">DELETE /applications/{application ObjectId}/extensionProperties/{extensionPropertyId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-delete-owners?view=graph-rest-beta&amp;tabs=http">DELETE /applications/{id}/owners/{id}/$ref</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/grouplifecyclepolicy-delete?view=graph-rest-beta&amp;tabs=http">DELETE /groupLifecyclePolicies/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-delete-members?view=graph-rest-beta&amp;tabs=http">DELETE /groups/{id}/members/{id}/$ref</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-delete-owners?view=graph-rest-beta&amp;tabs=http">DELETE /groups/{id}/owners/{id}/$ref</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/oauth2permissiongrant-delete?view=graph-rest-beta&amp;tabs=http">DELETE /oauth2PermissionGrants/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onpremisesagentgroup-delete?view=graph-rest-beta&amp;tabs=http">DELETE /onPremisesPublishingProfiles/{profile-id}/agents/{agent-id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onpremisesagent-delete-agentgroups?view=graph-rest-beta&amp;tabs=http">DELETE /onPremisesPublishingProfiles/{profile-id}/agents/{agent-id}/agentGroups/{agentGroup-id}/$ref</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/connectorgroup-delete?view=graph-rest-beta&amp;tabs=http">DELETE /onPremisesPublishingProfiles/applicationProxy/connectorGroups/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/featurerolloutpolicy-delete?view=graph-rest-beta&amp;tabs=http">DELETE /policies/featureRolloutPolicies/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/featurerolloutpolicy-delete-appliesto?view=graph-rest-beta&amp;tabs=http">DELETE /policies/featureRolloutPolicies/{policyId}/appliesTo/{directoryObjectId}/$ref</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedroledefinition-delete?view=graph-rest-beta&amp;tabs=http">DELETE /roleManagement/deviceManagement/roleDefinitions/{id}</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/schemaextension-delete?view=graph-rest-beta&amp;tabs=http">DELETE /schemaExtensions/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete?view=graph-rest-beta&amp;tabs=http">DELETE /servicePrincipals(appId='{appId}')</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete?view=graph-rest-beta&amp;tabs=http">DELETE /servicePrincipals/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-owners?view=graph-rest-beta&amp;tabs=http">DELETE /servicePrincipals/{id}/owners/{id}/$ref</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-remotedesktopsecurityconfiguration?view=graph-rest-beta&amp;tabs=http">DELETE /servicePrincipals/{servicePrincipalsId}/remoteDesktopSecurityConfiguration/$ref</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/remotedesktopsecurityconfiguration-delete-targetdevicegroups?view=graph-rest-beta&amp;tabs=http">DELETE /servicePrincipals/{servicePrincipalsId}/remoteDesktopSecurityConfiguration/targetDeviceGroups/{targetDeviceGroupId}/$ref</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directorysetting-delete?view=graph-rest-beta&amp;tabs=http">DELETE /settings/{directorySettingId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/channel-delete?view=graph-rest-beta&amp;tabs=http">DELETE /teams/{team-id}/channels/{channel-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/channel-delete-tabs?view=graph-rest-beta&amp;tabs=http">DELETE /teams/{team-id}/channels/{channel-id}/tabs/{tab-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/team-delete-installedapps?view=graph-rest-beta&amp;tabs=http">DELETE /teams/{team-id}/installedApps/{app-installation-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-delete-manager?view=graph-rest-beta&amp;tabs=http">DELETE /users/{id}/manager/$ref</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-delete-sponsors?view=graph-rest-beta&amp;tabs=http">DELETE /users/{id}/sponsors/{id}/$ref</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directory-list-administrativeunits?view=graph-rest-beta&amp;tabs=http">GET /administrativeUnits</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/administrativeunit-get?view=graph-rest-beta&amp;tabs=http">GET /administrativeUnits/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/administrativeunit-list-members?view=graph-rest-beta&amp;tabs=http">GET /administrativeUnits/{id}/members</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/administrativeunit-get-members?view=graph-rest-beta&amp;tabs=http">GET /administrativeUnits/{id}/members/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/administrativeunit-list-members?view=graph-rest-beta&amp;tabs=http">GET /administrativeUnits/{id}/members/$ref</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/administrativeunit-list-scopedrolemembers?view=graph-rest-beta&amp;tabs=http">GET /administrativeUnits/{id}/scopedRoleMembers</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/administrativeunit-get-scopedrolemembers?view=graph-rest-beta&amp;tabs=http">GET /administrativeUnits/{id}/scopedRoleMembers/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/administrativeunit-delta?view=graph-rest-beta&amp;tabs=http">GET /administrativeUnits/delta</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/appcatalogs-list-teamsapps?view=graph-rest-beta&amp;tabs=http">GET /appCatalogs/teamsApps</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-list?view=graph-rest-beta&amp;tabs=http">GET /applications</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-get?view=graph-rest-beta&amp;tabs=http">GET /applications(appId='{appId}')</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-list-extensionproperty?view=graph-rest-beta&amp;tabs=http">GET /applications(appId='{appId}')/extensionProperties</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-list-owners?view=graph-rest-beta&amp;tabs=http">GET /applications(appId='{appId}')/owners</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-list-extensionproperty?view=graph-rest-beta&amp;tabs=http">GET /applications/{application ObjectId}/extensionProperties</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-get?view=graph-rest-beta&amp;tabs=http">GET /applications/{applicationObjectId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-list-owners?view=graph-rest-beta&amp;tabs=http">GET /applications/{id}/owners</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-delta?view=graph-rest-beta&amp;tabs=http">GET /applications/delta</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/orgcontact-list?view=graph-rest-beta&amp;tabs=http">GET /contacts</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/orgcontact-get?view=graph-rest-beta&amp;tabs=http">GET /contacts/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/orgcontact-list-directreports?view=graph-rest-beta&amp;tabs=http">GET /contacts/{id}/directReports</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/orgcontact-get-manager?view=graph-rest-beta&amp;tabs=http">GET /contacts/{id}/manager</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/orgcontact-list-memberof?view=graph-rest-beta&amp;tabs=http">GET /contacts/{id}/memberOf</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/orgcontact-delta?view=graph-rest-beta&amp;tabs=http">GET /contacts/delta</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contract-list?view=graph-rest-beta&amp;tabs=http">GET /contracts</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/contract-get?view=graph-rest-beta&amp;tabs=http">GET /contracts/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/device-list?view=graph-rest-beta&amp;tabs=http">GET /devices</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/device-get?view=graph-rest-beta&amp;tabs=http">GET /devices(deviceId='{deviceId}')</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/device-list-memberof?view=graph-rest-beta&amp;tabs=http">GET /devices(deviceId='{deviceId}')/memberOf</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/device-list-registeredowners?view=graph-rest-beta&amp;tabs=http">GET /devices(deviceId='{deviceId}')/registeredOwners</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-beta&amp;tabs=http">GET /devices(deviceId='{deviceId}')/registeredUsers</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/device-list-transitivememberof?view=graph-rest-beta&amp;tabs=http">GET /devices(deviceId='{deviceId}')/transitiveMemberOf</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/device-list-usagerights?view=graph-rest-beta&amp;tabs=http">GET /devices(deviceId='{deviceId}')/usageRights</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/device-get?view=graph-rest-beta&amp;tabs=http">GET /devices/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/device-list-memberof?view=graph-rest-beta&amp;tabs=http">GET /devices/{id}/memberOf</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/device-list-registeredowners?view=graph-rest-beta&amp;tabs=http">GET /devices/{id}/registeredOwners</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-beta&amp;tabs=http">GET /devices/{id}/registeredUsers</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/device-list-transitivememberof?view=graph-rest-beta&amp;tabs=http">GET /devices/{id}/transitiveMemberOf</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/device-list-usagerights?view=graph-rest-beta&amp;tabs=http">GET /devices/{objectId}/usageRights</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directory-list-administrativeunits?view=graph-rest-beta&amp;tabs=http">GET /directory/administrativeUnits</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/administrativeunit-get?view=graph-rest-beta&amp;tabs=http">GET /directory/administrativeUnits/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directoryrole-list?view=graph-rest-beta&amp;tabs=http">GET /directoryRoles</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directoryrole-get?view=graph-rest-beta&amp;tabs=http">GET /directoryRoles(roleTemplateId='{roleTemplateId}')</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directoryrole-list-members?view=graph-rest-beta&amp;tabs=http">GET /directoryRoles(roleTemplateId='{roleTemplateId}')/members</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directoryrole-list-scopedmembers?view=graph-rest-beta&amp;tabs=http">GET /directoryRoles(roleTemplateId='{roleTemplateId}')/scopedMembers</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directoryrole-get?view=graph-rest-beta&amp;tabs=http">GET /directoryRoles/{role-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directoryrole-list-members?view=graph-rest-beta&amp;tabs=http">GET /directoryRoles/{role-id}/members</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directoryrole-list-scopedmembers?view=graph-rest-beta&amp;tabs=http">GET /directoryroles/{role-id}/scopedMembers</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directoryrole-delta?view=graph-rest-beta&amp;tabs=http">GET /directoryRoles/delta</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directoryroletemplate-list?view=graph-rest-beta&amp;tabs=http">GET /directoryRoleTemplates</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directoryroletemplate-get?view=graph-rest-beta&amp;tabs=http">GET /directoryRoleTemplates/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directorysettingtemplate-list?view=graph-rest-beta&amp;tabs=http">GET /directorySettingTemplates</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directorysettingtemplate-get?view=graph-rest-beta&amp;tabs=http">GET /directorySettingTemplates/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/grouplifecyclepolicy-list?view=graph-rest-beta&amp;tabs=http">GET /groupLifecyclePolicies</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/grouplifecyclepolicy-get?view=graph-rest-beta&amp;tabs=http">GET /groupLifecyclePolicies/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-list?view=graph-rest-beta&amp;tabs=http">GET /groups</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-get?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-list-approleassignments?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/appRoleAssignments</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-list-grouplifecyclepolicies?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/groupLifecyclePolicies</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-list-memberof?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/memberOf</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-list-transitivememberof?view=graph-rest-beta&amp;tabs=http">GET /groups/{id}/transitiveMemberOf</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-delta?view=graph-rest-beta&amp;tabs=http">GET /groups/delta</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-get?view=graph-rest-beta&amp;tabs=http">GET /me</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-createdobjects?view=graph-rest-beta&amp;tabs=http">GET /me/createdObjects</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-directreports?view=graph-rest-beta&amp;tabs=http">GET /me/directReports</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-joinedteams?view=graph-rest-beta&amp;tabs=http">GET /me/joinedTeams</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-licensedetails?view=graph-rest-beta&amp;tabs=http">GET /me/licenseDetails</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-manager?view=graph-rest-beta&amp;tabs=http">GET /me/manager</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-memberof?view=graph-rest-beta&amp;tabs=http">GET /me/memberOf</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-ownedobjects?view=graph-rest-beta&amp;tabs=http">GET /me/ownedObjects</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-registereddevices?view=graph-rest-beta&amp;tabs=http">GET /me/registeredDevices</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-scopedrolememberof?view=graph-rest-beta&amp;tabs=http">GET /me/scopedRoleMemberOf </a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-transitivememberof?view=graph-rest-beta&amp;tabs=http">GET /me/transitiveMemberOf</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/oauth2permissiongrant-list?view=graph-rest-beta&amp;tabs=http">GET /oauth2PermissionGrants</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/oauth2permissiongrant-get?view=graph-rest-beta&amp;tabs=http">GET /oauth2PermissionGrants/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/oauth2permissiongrant-delta?view=graph-rest-beta&amp;tabs=http">GET /oauth2PermissionGrants/delta</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onpremisespublishingprofile-get?view=graph-rest-beta&amp;tabs=http">GET /onPremisesPublishingProfiles/{profile-id}/</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onpremisesagentgroup-list?view=graph-rest-beta&amp;tabs=http">GET /onPremisesPublishingProfiles/{profile-id}/agentGroups</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onpremisesagent-list?view=graph-rest-beta&amp;tabs=http">GET /onPremisesPublishingProfiles/{profile-id}/agents</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onpremisesagentgroup-get?view=graph-rest-beta&amp;tabs=http">GET /onPremisesPublishingProfiles/{profile-id}/agents/{agent-id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onpremisesagent-get?view=graph-rest-beta&amp;tabs=http">GET /onPremisesPublishingProfiles/{profile-id}/agents/{agent-id}?$expand=agentGroups</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/connectorgroup-list?view=graph-rest-beta&amp;tabs=http">GET /onPremisesPublishingProfiles/applicationProxy/connectorGroups</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/connectorgroup-get?view=graph-rest-beta&amp;tabs=http">GET /onPremisesPublishingProfiles/applicationProxy/connectorGroups/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/connectorgroup-list-applications?view=graph-rest-beta&amp;tabs=http">GET /onPremisesPublishingProfiles/applicationProxy/connectorGroups/{id}/applications</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/connectorgroup-list-members?view=graph-rest-beta&amp;tabs=http">GET /onPremisesPublishingProfiles/applicationProxy/connectorGroups/{id}/members</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/connector-list?view=graph-rest-beta&amp;tabs=http">GET /onPremisesPublishingProfiles/applicationProxy/connectors</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/connector-get?view=graph-rest-beta&amp;tabs=http">GET /onPremisesPublishingProfiles/applicationProxy/connectors/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/connector-list-memberof?view=graph-rest-beta&amp;tabs=http">GET /onPremisesPublishingProfiles/applicationProxy/connectors/{id}/memberOf</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/organization-list?view=graph-rest-beta&amp;tabs=http">GET /organization</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/organization-get?view=graph-rest-beta&amp;tabs=http">GET /organization/{organizationId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/adminconsentrequestpolicy-get?view=graph-rest-beta&amp;tabs=http">GET /policies/adminConsentRequestPolicy</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/list-featurerolloutpolicies?view=graph-rest-beta&amp;tabs=http">GET /policies/featureRolloutPolicies</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/featurerolloutpolicy-get?view=graph-rest-beta&amp;tabs=http">GET /policies/featureRolloutPolicies/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/cloudPC/roleDefinitions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/cloudPC/roleDefinitions/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignments?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/directory/roleAssignments</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedroleassignment-get?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/directory/roleAssignments/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/rbacapplication-list-transitiveroleassignments?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/directory/transitiveRoleAssignments?$filter=principalId eq '{principalId}'</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-get?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals(appId='{appId}')</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/approleassignment-get?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals(appId='{client-servicePrincipal-appId}')/appRoleAssignments/{appRoleAssignment-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/approleassignment-get?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{client-serviceprincipal-id}/appRoleAssignments/{appRoleAssignment-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-get?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-approleassignedto?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/appRoleAssignedTo</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-approleassignments?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/appRoleAssignments</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-createdobjects?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/createdObjects</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-memberof?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/memberOf</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-oauth2permissiongrants?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/oauth2PermissionGrants</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-ownedobjects?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/ownedObjects</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-owners?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/owners</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-transitivememberof?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/transitiveMemberOf</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/remotedesktopsecurityconfiguration-get?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{servicePrincipalsId}/remoteDesktopSecurityConfiguration</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/remotedesktopsecurityconfiguration-list-targetdevicegroups?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{servicePrincipalsId}/remoteDesktopSecurityConfiguration/targetDeviceGroups</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/targetdevicegroup-get?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{servicePrincipalsId}/remoteDesktopSecurityConfiguration/targetDeviceGroups/{targetDeviceGroupId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delta?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/delta</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-list-settings?view=graph-rest-beta&amp;tabs=http">GET /settings</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directorysetting-get?view=graph-rest-beta&amp;tabs=http">GET /settings/{directorySettingId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/subscribedsku-list?view=graph-rest-beta&amp;tabs=http">GET /subscribedSkus</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/subscribedsku-get?view=graph-rest-beta&amp;tabs=http">GET /subscribedSkus/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/team-get-installedapps?view=graph-rest-beta&amp;tabs=http">GET /teams/{id}/installedApps/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/team-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/channel-list?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}/channels</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/channel-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/channel-list-tabs?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/tabs</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/channel-get-tabs?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/tabs/{tab-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/team-list-installedapps?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}/installedApps</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list?view=graph-rest-beta&amp;tabs=http">GET /users</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-joinedteams?view=graph-rest-beta&amp;tabs=http">GET /users/{id | user-principal-name}/joinedTeams</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-get?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-createdobjects?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/createdObjects</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-directreports?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/directReports</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-manager?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/manager</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-owneddevices?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/ownedDevices</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-ownedobjects?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/ownedObjects</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-registereddevices?view=graph-rest-beta&amp;tabs=http">GET /users/{id | userPrincipalName}/registeredDevices</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-licensedetails?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/licenseDetails</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-scopedrolememberof?view=graph-rest-beta&amp;tabs=http">GET /users/{id}/scopedRoleMemberOf</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/licensedetails-getteamslicensingdetails?view=graph-rest-beta&amp;tabs=http">GET /users/{user-id}/licenseDetails/getTeamsLicensingDetails</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-list-usagerights?view=graph-rest-beta&amp;tabs=http">GET /users/{userId}/usageRights</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-delta?view=graph-rest-beta&amp;tabs=http">GET /users/delta</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/device-update?view=graph-rest-beta&amp;tabs=http">PATCH /devices(deviceId='{deviceId}')</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/device-update?view=graph-rest-beta&amp;tabs=http">PATCH /devices/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/grouplifecyclepolicy-update?view=graph-rest-beta&amp;tabs=http">PATCH /groupLifecyclePolicies/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-upsert?view=graph-rest-beta&amp;tabs=http">PATCH /groups/(uniqueName='uniqueName')</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-update?view=graph-rest-beta&amp;tabs=http">PATCH /groups/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/oauth2permissiongrant-update?view=graph-rest-beta&amp;tabs=http">PATCH /oauth2PermissionGrants/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onpremisesagentgroup-update?view=graph-rest-beta&amp;tabs=http">PATCH /onPremisesPublishingProfiles/{profile-id}/agentGroups/{agentGroup-id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onpremisespublishingprofile-update?view=graph-rest-beta&amp;tabs=http">PATCH /onPremisesPublishingProfiles/{profile-id}/hybridAgentUpdaterConfiguration</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/connectorgroup-update?view=graph-rest-beta&amp;tabs=http">PATCH /onPremisesPublishingProfiles/applicationProxy/connectorGroups/{id}</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/featurerolloutpolicy-update?view=graph-rest-beta&amp;tabs=http">PATCH /policies/featureRolloutPolicies/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/unifiedroledefinition-update?view=graph-rest-beta&amp;tabs=http">PATCH /roleManagement/deviceManagement/roleDefinitions/{id}</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/schemaextension-update?view=graph-rest-beta&amp;tabs=http">PATCH /schemaExtensions/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-update?view=graph-rest-beta&amp;tabs=http">PATCH /servicePrincipals(appId='{appId}')</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-upsert?view=graph-rest-beta&amp;tabs=http">PATCH /servicePrincipals(appId='appId')</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-update?view=graph-rest-beta&amp;tabs=http">PATCH /servicePrincipals/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/remotedesktopsecurityconfiguration-update?view=graph-rest-beta&amp;tabs=http">PATCH /servicePrincipals/{servicePrincipalsId}/remoteDesktopSecurityConfiguration</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/targetdevicegroup-update?view=graph-rest-beta&amp;tabs=http">PATCH /servicePrincipals/{servicePrincipalsId}/remoteDesktopSecurityConfiguration/targetDeviceGroups/{targetDeviceGroupId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directorysetting-update?view=graph-rest-beta&amp;tabs=http">PATCH /settings/{directorySettingId}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/conversationmember-update?view=graph-rest-beta&amp;tabs=http">PATCH /teams/{id}/channels/{id}/members/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/conversationmember-update?view=graph-rest-beta&amp;tabs=http">PATCH /teams/{id}/members/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/team-update?view=graph-rest-beta&amp;tabs=http">PATCH /teams/{team-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/channel-patch?view=graph-rest-beta&amp;tabs=http">PATCH /teams/{team-id}/channels/{channel-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/channel-update-members?view=graph-rest-beta&amp;tabs=http">PATCH /teams/{team-id}/channels/{channel-id}/members/{membership-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/channel-patch-tabs?view=graph-rest-beta&amp;tabs=http">PATCH /teams/{team-id}/channels/{channel-id}/tabs/{tab-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/team-update-members?view=graph-rest-beta&amp;tabs=http">PATCH /teams/{team-id}/members/{membership-id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-update?view=graph-rest-beta&amp;tabs=http">PATCH /users/{id | userPrincipalName}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/administrativeunit-post-members?view=graph-rest-beta&amp;tabs=http">POST /administrativeUnits/{id}/members/$ref</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/teamsapp-publish?view=graph-rest-beta&amp;tabs=http">POST /appCatalogs/teamsApps</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/teamsapp-update?view=graph-rest-beta&amp;tabs=http">POST /appCatalogs/teamsApps/{id}/appDefinitions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-addkey?view=graph-rest-beta&amp;tabs=http">POST /applications(appId='{appId}')/addKey</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-addpassword?view=graph-rest-beta&amp;tabs=http">POST /applications(appId='{appId}')/addPassword</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-post-extensionproperty?view=graph-rest-beta&amp;tabs=http">POST /applications(appId='{appId}')/extensionProperties</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-post-owners?view=graph-rest-beta&amp;tabs=http">POST /applications(appId='{appId}')/owners/$ref</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-removekey?view=graph-rest-beta&amp;tabs=http">POST /applications(appId='{appId}')/removeKey</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-removepassword?view=graph-rest-beta&amp;tabs=http">POST /applications(appId='{appId}')/removePassword</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-post-extensionproperty?view=graph-rest-beta&amp;tabs=http">POST /applications/{application ObjectId}/extensionProperties</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-addkey?view=graph-rest-beta&amp;tabs=http">POST /applications/{id}/addKey</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-addpassword?view=graph-rest-beta&amp;tabs=http">POST /applications/{id}/addPassword</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-post-owners?view=graph-rest-beta&amp;tabs=http">POST /applications/{id}/owners/$ref</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-removekey?view=graph-rest-beta&amp;tabs=http">POST /applications/{id}/removeKey</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-removepassword?view=graph-rest-beta&amp;tabs=http">POST /applications/{id}/removePassword</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/applicationtemplate-instantiate?view=graph-rest-beta&amp;tabs=http">POST /applicationTemplates/{applicationTemplate-id}/instantiate</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/orgcontact-retryserviceprovisioning?view=graph-rest-beta&amp;tabs=http">POST /contacts/{id}/retryServiceProvisioning</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-beta&amp;tabs=http">POST /directoryObjects/{id}/checkMemberGroups</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directoryobject-checkmemberobjects?view=graph-rest-beta&amp;tabs=http">POST /directoryObjects/{id}/checkMemberObjects</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-beta&amp;tabs=http">POST /directoryObjects/{id}/getMemberGroups</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-beta&amp;tabs=http">POST /directoryObjects/{id}/getMemberObjects</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-beta&amp;tabs=http">POST /directoryObjects/validateProperties</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/grouplifecyclepolicy-post-grouplifecyclepolicies?view=graph-rest-beta&amp;tabs=http">POST /groupLifecyclePolicies</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/grouplifecyclepolicy-addgroup?view=graph-rest-beta&amp;tabs=http">POST /groupLifecyclePolicies/{id}/addGroup</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/grouplifecyclepolicy-removegroup?view=graph-rest-beta&amp;tabs=http">POST /groupLifecyclePolicies/{id}/removeGroup</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/grouplifecyclepolicy-renewgroup?view=graph-rest-beta&amp;tabs=http">POST /groupLifecyclePolicies/renewGroup</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-post-groups?view=graph-rest-beta&amp;tabs=http">POST /groups</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-deletepasswordsinglesignoncredentials?view=graph-rest-beta&amp;tabs=http">POST /groups/{groupsId}/deletePasswordSingleSignOnCredentials</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-getpasswordsinglesignoncredentials?view=graph-rest-beta&amp;tabs=http">POST /groups/{groupsId}/getPasswordSingleSignOnCredentials</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-assignlicense?view=graph-rest-beta&amp;tabs=http">POST /groups/{id}/assignLicense</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-post-owners?view=graph-rest-beta&amp;tabs=http">POST /groups/{id}/owners/$ref</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-renew?view=graph-rest-beta&amp;tabs=http">POST /groups/{id}/renew</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-retryserviceprovisioning?view=graph-rest-beta&amp;tabs=http">POST /groups/{id}/retryServiceProvisioning</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/invitation-post?view=graph-rest-beta&amp;tabs=http">POST /invitations</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-invalidateallrefreshtokens?view=graph-rest-beta&amp;tabs=http">POST /me/invalidateAllRefreshTokens</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-revokesigninsessions?view=graph-rest-beta&amp;tabs=http">POST /me/revokeSignInSessions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/oauth2permissiongrant-post?view=graph-rest-beta&amp;tabs=http">POST /oauth2PermissionGrants</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onpremisesagentgroup-post?view=graph-rest-beta&amp;tabs=http">POST /onPremisesPublishingProfiles/{profile-id}/agentGroups</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/onpremisesagent-post-agentgroups?view=graph-rest-beta&amp;tabs=http">POST /onPremisesPublishingProfiles/{profile-id}/agents/{agent-id}/agentGroups/$ref</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/connectorgroup-post?view=graph-rest-beta&amp;tabs=http">POST /onPremisesPublishingProfiles/applicationProxy/connectorGroups</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/connectorgroup-post-members?view=graph-rest-beta&amp;tabs=http">POST /onPremisesPublishingProfiles/applicationProxy/connectorGroups/{id}/members/$ref</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/connector-post-memberof?view=graph-rest-beta&amp;tabs=http">POST /onPremisesPublishingProfiles/applicationProxy/connectors/{id}/memberOf/$ref</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/post-featurerolloutpolicies?view=graph-rest-beta&amp;tabs=http">POST /policies/featureRolloutPolicies</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/featurerolloutpolicy-post-appliesto?view=graph-rest-beta&amp;tabs=http">POST /policies/featureRolloutPolicies/{id}/appliesTo/$ref</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-beta&amp;tabs=http">POST /roleManagement/deviceManagement/roleDefinitions</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/schemaextension-post-schemaextensions?view=graph-rest-beta&amp;tabs=http">POST /schemaExtensions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-serviceprincipals?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-addkey?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/addKey</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-addpassword?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/addPassword</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-addtokensigningcertificate?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/addTokenSigningCertificate</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-createpasswordsinglesignoncredentials?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/createPasswordSingleSignOnCredentials</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-deletepasswordsinglesignoncredentials?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/deletePasswordSingleSignOnCredentials</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-getpasswordsinglesignoncredentials?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/getPasswordSingleSignOnCredentials</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-owners?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/owners/$ref</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-removekey?view=graph-rest-beta&amp;tabs=http">POST /serviceprincipals(appId='{appId}')/removeKey</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-removepassword?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/removePassword</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-updatepasswordsinglesignoncredentials?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/updatePasswordSingleSignOnCredentials</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-addkey?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/addKey</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-addpassword?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/addPassword</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-addtokensigningcertificate?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/addTokenSigningCertificate</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-createpasswordsinglesignoncredentials?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/createPasswordSingleSignOnCredentials</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-deletepasswordsinglesignoncredentials?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/deletePasswordSingleSignOnCredentials</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-getpasswordsinglesignoncredentials?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/getPasswordSingleSignOnCredentials</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-owners?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/owners/$ref</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-removekey?view=graph-rest-beta&amp;tabs=http">POST /serviceprincipals/{id}/removeKey</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-removepassword?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/removePassword</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/synchronization/jobs/{jobId}/schema/directories/{directoryId}/discover</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-updatepasswordsinglesignoncredentials?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/updatePasswordSingleSignOnCredentials</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-remotedesktopsecurityconfiguration?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{servicePrincipalsId}/remoteDesktopSecurityConfiguration</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/remotedesktopsecurityconfiguration-post-targetdevicegroups?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{servicePrincipalsId}/remoteDesktopSecurityConfiguration/targetDeviceGroups</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/group-post-settings?view=graph-rest-beta&amp;tabs=http">POST /settings</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/team-post?view=graph-rest-beta&amp;tabs=http">POST /teams</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/team-archive?view=graph-rest-beta&amp;tabs=http">POST /teams/{id}/archive</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/channel-post-tabs?view=graph-rest-beta&amp;tabs=http">POST /teams/{id}/channels/{id}/tabs</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/team-clone?view=graph-rest-beta&amp;tabs=http">POST /teams/{id}/clone</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/team-unarchive?view=graph-rest-beta&amp;tabs=http">POST /teams/{id}/unarchive</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/channel-post?view=graph-rest-beta&amp;tabs=http">POST /teams/{team-id}/channels</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/team-post-installedapps?view=graph-rest-beta&amp;tabs=http">POST /teams/{team-id}/installedApps</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/team-teamsappinstallation-upgrade?view=graph-rest-beta&amp;tabs=http">POST /teams/{team-id}/installedApps/{app-installation-id}/upgrade</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-post-users?view=graph-rest-beta&amp;tabs=http">POST /users</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-assignlicense?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/assignLicense</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-invalidateallrefreshtokens?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/invalidateAllRefreshTokens</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-revokesigninsessions?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/revokeSignInSessions</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-reprocesslicenseassignment?view=graph-rest-beta&amp;tabs=http">POST /users/{id}/reprocessLicenseAssignment</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-retryserviceprovisioning?view=graph-rest-beta&amp;tabs=http">POST /users/{id}/retryServiceProvisioning</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-post-sponsors?view=graph-rest-beta&amp;tabs=http">POST /users/{id}/sponsors/$ref</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-deletepasswordsinglesignoncredentials?view=graph-rest-beta&amp;tabs=http">POST /users/{usersId}/deletePasswordSingleSignOnCredentials</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-getpasswordsinglesignoncredentials?view=graph-rest-beta&amp;tabs=http">POST /users/{usersId}/getPasswordSingleSignOnCredentials</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/connectorgroup-post-applications?view=graph-rest-beta&amp;tabs=http">PUT /applications/{id}/connectorGroup/$ref</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/team-put-teams?view=graph-rest-beta&amp;tabs=http">PUT /groups/{id}/team</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/adminconsentrequestpolicy-update?view=graph-rest-beta&amp;tabs=http">PUT /policies/adminConsentRequestPolicy </a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-post-manager?view=graph-rest-beta&amp;tabs=http">PUT /users/{id}/manager/$ref</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>19dbc75e-c2e2-444c-a770-ec69d8559fc7</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read and write directory data</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read and write data in your organization's directory, such as users, and groups, without a signed-in user.  Does not allow user or group deletion.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="accessreviewreviewerscope-"><a href="https://docs.microsoft.com/graph/api/resources/accessreviewreviewerscope?view=graph-rest-1.0&amp;tabs=http">accessReviewReviewerScope </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_accessReviewReviewerScope1" role="tab" aria-controls="tabpanel_2_accessReviewReviewerScope1" data-tab="accessReviewReviewerScope1" tabindex="0" aria-selected="true">accessReviewReviewerScope</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_addIn2" role="tab" aria-controls="tabpanel_2_addIn2" data-tab="addIn2" tabindex="-1">addIn</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_adminConsentRequestPolicy3" role="tab" aria-controls="tabpanel_2_adminConsentRequestPolicy3" data-tab="adminConsentRequestPolicy3" tabindex="-1">adminConsentRequestPolicy</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_administrativeUnit4" role="tab" aria-controls="tabpanel_2_administrativeUnit4" data-tab="administrativeUnit4" tabindex="-1">administrativeUnit</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_application5" role="tab" aria-controls="tabpanel_2_application5" data-tab="application5" tabindex="-1">application</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_applicationServicePrincipal6" role="tab" aria-controls="tabpanel_2_applicationServicePrincipal6" data-tab="applicationServicePrincipal6" tabindex="-1">applicationServicePrincipal</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_applicationTemplate7" role="tab" aria-controls="tabpanel_2_applicationTemplate7" data-tab="applicationTemplate7" tabindex="-1">applicationTemplate</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_appRole8" role="tab" aria-controls="tabpanel_2_appRole8" data-tab="appRole8" tabindex="-1">appRole</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_appRoleAssignment9" role="tab" aria-controls="tabpanel_2_appRoleAssignment9" data-tab="appRoleAssignment9" tabindex="-1">appRoleAssignment</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_assignedLabel10" role="tab" aria-controls="tabpanel_2_assignedLabel10" data-tab="assignedLabel10" tabindex="-1">assignedLabel</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_assignedLicense11" role="tab" aria-controls="tabpanel_2_assignedLicense11" data-tab="assignedLicense11" tabindex="-1">assignedLicense</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_channel12" role="tab" aria-controls="tabpanel_2_channel12" data-tab="channel12" tabindex="-1">channel</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_channelModerationSettings13" role="tab" aria-controls="tabpanel_2_channelModerationSettings13" data-tab="channelModerationSettings13" tabindex="-1">channelModerationSettings</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_clonableteamparts14" role="tab" aria-controls="tabpanel_2_clonableteamparts14" data-tab="clonableteamparts14" tabindex="-1">clonableteamparts</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_connector15" role="tab" aria-controls="tabpanel_2_connector15" data-tab="connector15" tabindex="-1">connector</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_connectorGroup16" role="tab" aria-controls="tabpanel_2_connectorGroup16" data-tab="connectorGroup16" tabindex="-1">connectorGroup</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_Contract17" role="tab" aria-controls="tabpanel_2_Contract17" data-tab="Contract17" tabindex="-1">Contract</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_conversationMember18" role="tab" aria-controls="tabpanel_2_conversationMember18" data-tab="conversationMember18" tabindex="-1">conversationMember</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_credential19" role="tab" aria-controls="tabpanel_2_credential19" data-tab="credential19" tabindex="-1">credential</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_customSecurityAttributeValue20" role="tab" aria-controls="tabpanel_2_customSecurityAttributeValue20" data-tab="customSecurityAttributeValue20" tabindex="-1">customSecurityAttributeValue</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_device21" role="tab" aria-controls="tabpanel_2_device21" data-tab="device21" tabindex="-1">device</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_directoryObject22" role="tab" aria-controls="tabpanel_2_directoryObject22" data-tab="directoryObject22" tabindex="-1">directoryObject</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_directoryRole23" role="tab" aria-controls="tabpanel_2_directoryRole23" data-tab="directoryRole23" tabindex="-1">directoryRole</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_directoryRoleTemplate24" role="tab" aria-controls="tabpanel_2_directoryRoleTemplate24" data-tab="directoryRoleTemplate24" tabindex="-1">directoryRoleTemplate</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_directorySetting25" role="tab" aria-controls="tabpanel_2_directorySetting25" data-tab="directorySetting25" tabindex="-1">directorySetting</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_directorySettingTemplate26" role="tab" aria-controls="tabpanel_2_directorySettingTemplate26" data-tab="directorySettingTemplate26" tabindex="-1">directorySettingTemplate</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_employeeOrgData27" role="tab" aria-controls="tabpanel_2_employeeOrgData27" data-tab="employeeOrgData27" tabindex="-1">employeeOrgData</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_extensionproperty28" role="tab" aria-controls="tabpanel_2_extensionproperty28" data-tab="extensionproperty28" tabindex="-1">extensionproperty</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_extensionSchemaProperty29" role="tab" aria-controls="tabpanel_2_extensionSchemaProperty29" data-tab="extensionSchemaProperty29" tabindex="-1">extensionSchemaProperty</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_featureRolloutPolicy30" role="tab" aria-controls="tabpanel_2_featureRolloutPolicy30" data-tab="featureRolloutPolicy30" tabindex="-1">featureRolloutPolicy</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_group31" role="tab" aria-controls="tabpanel_2_group31" data-tab="group31" tabindex="-1">group</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_groupLifecyclePolicy32" role="tab" aria-controls="tabpanel_2_groupLifecyclePolicy32" data-tab="groupLifecyclePolicy32" tabindex="-1">groupLifecyclePolicy</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_groupSetting33" role="tab" aria-controls="tabpanel_2_groupSetting33" data-tab="groupSetting33" tabindex="-1">groupSetting</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_groupSettingTemplate34" role="tab" aria-controls="tabpanel_2_groupSettingTemplate34" data-tab="groupSettingTemplate34" tabindex="-1">groupSettingTemplate</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_groupWritebackConfiguration35" role="tab" aria-controls="tabpanel_2_groupWritebackConfiguration35" data-tab="groupWritebackConfiguration35" tabindex="-1">groupWritebackConfiguration</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_hybridAgentUpdaterConfiguration36" role="tab" aria-controls="tabpanel_2_hybridAgentUpdaterConfiguration36" data-tab="hybridAgentUpdaterConfiguration36" tabindex="-1">hybridAgentUpdaterConfiguration</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_invitation37" role="tab" aria-controls="tabpanel_2_invitation37" data-tab="invitation37" tabindex="-1">invitation</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_invitedUserMessageInfo38" role="tab" aria-controls="tabpanel_2_invitedUserMessageInfo38" data-tab="invitedUserMessageInfo38" tabindex="-1">invitedUserMessageInfo</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_keyCredential39" role="tab" aria-controls="tabpanel_2_keyCredential39" data-tab="keyCredential39" tabindex="-1">keyCredential</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_licenseDetails40" role="tab" aria-controls="tabpanel_2_licenseDetails40" data-tab="licenseDetails40" tabindex="-1">licenseDetails</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_oAuth2PermissionGrant41" role="tab" aria-controls="tabpanel_2_oAuth2PermissionGrant41" data-tab="oAuth2PermissionGrant41" tabindex="-1">oAuth2PermissionGrant</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_objectIdentity42" role="tab" aria-controls="tabpanel_2_objectIdentity42" data-tab="objectIdentity42" tabindex="-1">objectIdentity</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_onPremisesAgent43" role="tab" aria-controls="tabpanel_2_onPremisesAgent43" data-tab="onPremisesAgent43" tabindex="-1">onPremisesAgent</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_onPremisesAgentGroup44" role="tab" aria-controls="tabpanel_2_onPremisesAgentGroup44" data-tab="onPremisesAgentGroup44" tabindex="-1">onPremisesAgentGroup</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_onPremisesExtensionAttributes45" role="tab" aria-controls="tabpanel_2_onPremisesExtensionAttributes45" data-tab="onPremisesExtensionAttributes45" tabindex="-1">onPremisesExtensionAttributes</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_onPremisesPublishingProfile46" role="tab" aria-controls="tabpanel_2_onPremisesPublishingProfile46" data-tab="onPremisesPublishingProfile46" tabindex="-1">onPremisesPublishingProfile</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_organization47" role="tab" aria-controls="tabpanel_2_organization47" data-tab="organization47" tabindex="-1">organization</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_orgContact48" role="tab" aria-controls="tabpanel_2_orgContact48" data-tab="orgContact48" tabindex="-1">orgContact</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_passwordCredential49" role="tab" aria-controls="tabpanel_2_passwordCredential49" data-tab="passwordCredential49" tabindex="-1">passwordCredential</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_passwordProfile50" role="tab" aria-controls="tabpanel_2_passwordProfile50" data-tab="passwordProfile50" tabindex="-1">passwordProfile</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_passwordSingleSignOnCredentialSet51" role="tab" aria-controls="tabpanel_2_passwordSingleSignOnCredentialSet51" data-tab="passwordSingleSignOnCredentialSet51" tabindex="-1">passwordSingleSignOnCredentialSet</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_remoteDesktopSecurityConfiguration52" role="tab" aria-controls="tabpanel_2_remoteDesktopSecurityConfiguration52" data-tab="remoteDesktopSecurityConfiguration52" tabindex="-1">remoteDesktopSecurityConfiguration</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_samlSingleSignOnSettings53" role="tab" aria-controls="tabpanel_2_samlSingleSignOnSettings53" data-tab="samlSingleSignOnSettings53" tabindex="-1">samlSingleSignOnSettings</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_schemaextension54" role="tab" aria-controls="tabpanel_2_schemaextension54" data-tab="schemaextension54" tabindex="-1">schemaextension</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_scopedRoleMembership55" role="tab" aria-controls="tabpanel_2_scopedRoleMembership55" data-tab="scopedRoleMembership55" tabindex="-1">scopedRoleMembership</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_selfSignedCertificate56" role="tab" aria-controls="tabpanel_2_selfSignedCertificate56" data-tab="selfSignedCertificate56" tabindex="-1">selfSignedCertificate</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_servicePrincipal57" role="tab" aria-controls="tabpanel_2_servicePrincipal57" data-tab="servicePrincipal57" tabindex="-1">servicePrincipal</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_settingValue58" role="tab" aria-controls="tabpanel_2_settingValue58" data-tab="settingValue58" tabindex="-1">settingValue</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_subscribedSku59" role="tab" aria-controls="tabpanel_2_subscribedSku59" data-tab="subscribedSku59" tabindex="-1">subscribedSku</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_directoryDefinition60" role="tab" aria-controls="tabpanel_2_directoryDefinition60" data-tab="directoryDefinition60" tabindex="-1">directoryDefinition</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_targetDeviceGroup61" role="tab" aria-controls="tabpanel_2_targetDeviceGroup61" data-tab="targetDeviceGroup61" tabindex="-1">targetDeviceGroup</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_team62" role="tab" aria-controls="tabpanel_2_team62" data-tab="team62" tabindex="-1">team</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_teamsApp63" role="tab" aria-controls="tabpanel_2_teamsApp63" data-tab="teamsApp63" tabindex="-1">teamsApp</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_teamsAppDefinition64" role="tab" aria-controls="tabpanel_2_teamsAppDefinition64" data-tab="teamsAppDefinition64" tabindex="-1">teamsAppDefinition</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_teamsAppInstallation65" role="tab" aria-controls="tabpanel_2_teamsAppInstallation65" data-tab="teamsAppInstallation65" tabindex="-1">teamsAppInstallation</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_teamsAppPermissionSet66" role="tab" aria-controls="tabpanel_2_teamsAppPermissionSet66" data-tab="teamsAppPermissionSet66" tabindex="-1">teamsAppPermissionSet</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_teamsAsyncOperation67" role="tab" aria-controls="tabpanel_2_teamsAsyncOperation67" data-tab="teamsAsyncOperation67" tabindex="-1">teamsAsyncOperation</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_teamsLicensingDetails68" role="tab" aria-controls="tabpanel_2_teamsLicensingDetails68" data-tab="teamsLicensingDetails68" tabindex="-1">teamsLicensingDetails</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_teamsTab69" role="tab" aria-controls="tabpanel_2_teamsTab69" data-tab="teamsTab69" tabindex="-1">teamsTab</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_teamvisibilitytype70" role="tab" aria-controls="tabpanel_2_teamvisibilitytype70" data-tab="teamvisibilitytype70" tabindex="-1">teamvisibilitytype</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_teamworkBot71" role="tab" aria-controls="tabpanel_2_teamworkBot71" data-tab="teamworkBot71" tabindex="-1">teamworkBot</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_unifiedRoleAssignment72" role="tab" aria-controls="tabpanel_2_unifiedRoleAssignment72" data-tab="unifiedRoleAssignment72" tabindex="-1">unifiedRoleAssignment</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_unifiedRoleDefinition73" role="tab" aria-controls="tabpanel_2_unifiedRoleDefinition73" data-tab="unifiedRoleDefinition73" tabindex="-1">unifiedRoleDefinition</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_unifiedRolePermission74" role="tab" aria-controls="tabpanel_2_unifiedRolePermission74" data-tab="unifiedRolePermission74" tabindex="-1">unifiedRolePermission</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_usageRight75" role="tab" aria-controls="tabpanel_2_usageRight75" data-tab="usageRight75" tabindex="-1">usageRight</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_user76" role="tab" aria-controls="tabpanel_2_user76" data-tab="user76" tabindex="-1">user</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_users77" role="tab" aria-controls="tabpanel_2_users77" data-tab="users77" tabindex="-1">users</a>
+</li>
+</ul>
+<section id="tabpanel_2_accessReviewReviewerScope1" role="tabpanel" data-tab="accessReviewReviewerScope1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/accessreviewreviewerscope?view=graph-rest-1.0&amp;tabs=http">accessReviewReviewerScope</a></p>
 <table>
 <thead>
 <tr>
@@ -1794,7 +2536,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="addin-"><a href="https://docs.microsoft.com/graph/api/resources/addin?view=graph-rest-1.0&amp;tabs=http">addIn </a></h3>
+</section>
+<section id="tabpanel_2_addIn2" role="tabpanel" data-tab="addIn2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/addin?view=graph-rest-1.0&amp;tabs=http">addIn</a></p>
 <table>
 <thead>
 <tr>
@@ -1821,7 +2566,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="adminconsentrequestpolicy-"><a href="https://docs.microsoft.com/graph/api/resources/adminconsentrequestpolicy?view=graph-rest-1.0&amp;tabs=http">adminConsentRequestPolicy </a></h3>
+</section>
+<section id="tabpanel_2_adminConsentRequestPolicy3" role="tabpanel" data-tab="adminConsentRequestPolicy3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/adminconsentrequestpolicy?view=graph-rest-1.0&amp;tabs=http">adminConsentRequestPolicy</a></p>
 <table>
 <thead>
 <tr>
@@ -1863,7 +2611,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="administrativeunit-"><a href="https://docs.microsoft.com/graph/api/resources/administrativeunit?view=graph-rest-1.0&amp;tabs=http">administrativeUnit </a></h3>
+</section>
+<section id="tabpanel_2_administrativeUnit4" role="tabpanel" data-tab="administrativeUnit4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/administrativeunit?view=graph-rest-1.0&amp;tabs=http">administrativeUnit</a></p>
 <table>
 <thead>
 <tr>
@@ -1895,7 +2646,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="application-"><a href="https://docs.microsoft.com/graph/api/resources/application?view=graph-rest-1.0&amp;tabs=http">application </a></h3>
+</section>
+<section id="tabpanel_2_application5" role="tabpanel" data-tab="application5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/application?view=graph-rest-1.0&amp;tabs=http">application</a></p>
 <table>
 <thead>
 <tr>
@@ -2102,7 +2856,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="applicationserviceprincipal-"><a href="https://docs.microsoft.com/graph/api/resources/applicationserviceprincipal?view=graph-rest-1.0&amp;tabs=http">applicationServicePrincipal </a></h3>
+</section>
+<section id="tabpanel_2_applicationServicePrincipal6" role="tabpanel" data-tab="applicationServicePrincipal6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/applicationserviceprincipal?view=graph-rest-1.0&amp;tabs=http">applicationServicePrincipal</a></p>
 <table>
 <thead>
 <tr>
@@ -2124,7 +2881,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="applicationtemplate-"><a href="https://docs.microsoft.com/graph/api/resources/applicationtemplate?view=graph-rest-1.0&amp;tabs=http">applicationTemplate </a></h3>
+</section>
+<section id="tabpanel_2_applicationTemplate7" role="tabpanel" data-tab="applicationTemplate7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/applicationtemplate?view=graph-rest-1.0&amp;tabs=http">applicationTemplate</a></p>
 <table>
 <thead>
 <tr>
@@ -2181,7 +2941,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="approle-"><a href="https://docs.microsoft.com/graph/api/resources/approle?view=graph-rest-1.0&amp;tabs=http">appRole </a></h3>
+</section>
+<section id="tabpanel_2_appRole8" role="tabpanel" data-tab="appRole8" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/approle?view=graph-rest-1.0&amp;tabs=http">appRole</a></p>
 <table>
 <thead>
 <tr>
@@ -2228,7 +2991,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="approleassignment-"><a href="https://docs.microsoft.com/graph/api/resources/approleassignment?view=graph-rest-1.0&amp;tabs=http">appRoleAssignment </a></h3>
+</section>
+<section id="tabpanel_2_appRoleAssignment9" role="tabpanel" data-tab="appRoleAssignment9" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/approleassignment?view=graph-rest-1.0&amp;tabs=http">appRoleAssignment</a></p>
 <table>
 <thead>
 <tr>
@@ -2285,7 +3051,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="assignedlabel-"><a href="https://docs.microsoft.com/graph/api/resources/assignedlabel?view=graph-rest-1.0&amp;tabs=http">assignedLabel </a></h3>
+</section>
+<section id="tabpanel_2_assignedLabel10" role="tabpanel" data-tab="assignedLabel10" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/assignedlabel?view=graph-rest-1.0&amp;tabs=http">assignedLabel</a></p>
 <table>
 <thead>
 <tr>
@@ -2307,7 +3076,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="assignedlicense-"><a href="https://docs.microsoft.com/graph/api/resources/assignedlicense?view=graph-rest-1.0&amp;tabs=http">assignedLicense </a></h3>
+</section>
+<section id="tabpanel_2_assignedLicense11" role="tabpanel" data-tab="assignedLicense11" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/assignedlicense?view=graph-rest-1.0&amp;tabs=http">assignedLicense</a></p>
 <table>
 <thead>
 <tr>
@@ -2329,7 +3101,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="channel-"><a href="https://docs.microsoft.com/graph/api/resources/channel?view=graph-rest-1.0&amp;tabs=http">channel </a></h3>
+</section>
+<section id="tabpanel_2_channel12" role="tabpanel" data-tab="channel12" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/channel?view=graph-rest-1.0&amp;tabs=http">channel</a></p>
 <table>
 <thead>
 <tr>
@@ -2396,7 +3171,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="channelmoderationsettings-"><a href="https://docs.microsoft.com/graph/api/resources/channelmoderationsettings?view=graph-rest-1.0&amp;tabs=http">channelModerationSettings </a></h3>
+</section>
+<section id="tabpanel_2_channelModerationSettings13" role="tabpanel" data-tab="channelModerationSettings13" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/channelmoderationsettings?view=graph-rest-1.0&amp;tabs=http">channelModerationSettings</a></p>
 <table>
 <thead>
 <tr>
@@ -2428,8 +3206,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="clonableteamparts"><a href="https://docs.microsoft.com/graph/api/resources/clonableteamparts?view=graph-rest-1.0&amp;tabs=http">clonableteamparts</a></h3>
-<h3 id="connector-"><a href="https://docs.microsoft.com/graph/api/resources/connector?view=graph-rest-1.0&amp;tabs=http">connector </a></h3>
+</section>
+<section id="tabpanel_2_clonableteamparts14" role="tabpanel" data-tab="clonableteamparts14" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/clonableteamparts?view=graph-rest-1.0&amp;tabs=http">clonableteamparts</a></p>
+</section>
+<section id="tabpanel_2_connector15" role="tabpanel" data-tab="connector15" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/connector?view=graph-rest-1.0&amp;tabs=http">connector</a></p>
 <table>
 <thead>
 <tr>
@@ -2466,7 +3250,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="connectorgroup-"><a href="https://docs.microsoft.com/graph/api/resources/connectorgroup?view=graph-rest-1.0&amp;tabs=http">connectorGroup </a></h3>
+</section>
+<section id="tabpanel_2_connectorGroup16" role="tabpanel" data-tab="connectorGroup16" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/connectorgroup?view=graph-rest-1.0&amp;tabs=http">connectorGroup</a></p>
 <table>
 <thead>
 <tr>
@@ -2503,7 +3290,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="contract-"><a href="https://docs.microsoft.com/graph/api/resources/contract?view=graph-rest-1.0&amp;tabs=http">Contract </a></h3>
+</section>
+<section id="tabpanel_2_Contract17" role="tabpanel" data-tab="Contract17" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/contract?view=graph-rest-1.0&amp;tabs=http">Contract</a></p>
 <table>
 <thead>
 <tr>
@@ -2540,7 +3330,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="conversationmember-"><a href="https://docs.microsoft.com/graph/api/resources/conversationmember?view=graph-rest-1.0&amp;tabs=http">conversationMember </a></h3>
+</section>
+<section id="tabpanel_2_conversationMember18" role="tabpanel" data-tab="conversationMember18" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/conversationmember?view=graph-rest-1.0&amp;tabs=http">conversationMember</a></p>
 <table>
 <thead>
 <tr>
@@ -2572,7 +3365,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="credential-"><a href="https://docs.microsoft.com/graph/api/resources/credential?view=graph-rest-1.0&amp;tabs=http">credential </a></h3>
+</section>
+<section id="tabpanel_2_credential19" role="tabpanel" data-tab="credential19" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/credential?view=graph-rest-1.0&amp;tabs=http">credential</a></p>
 <table>
 <thead>
 <tr>
@@ -2599,8 +3395,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="customsecurityattributevalue-"><a href="https://docs.microsoft.com/graph/api/resources/customsecurityattributevalue?view=graph-rest-1.0&amp;tabs=http">customSecurityAttributeValue </a></h3>
-<h3 id="device-"><a href="https://docs.microsoft.com/graph/api/resources/device?view=graph-rest-1.0&amp;tabs=http">device </a></h3>
+</section>
+<section id="tabpanel_2_customSecurityAttributeValue20" role="tabpanel" data-tab="customSecurityAttributeValue20" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/customsecurityattributevalue?view=graph-rest-1.0&amp;tabs=http">customSecurityAttributeValue</a></p>
+</section>
+<section id="tabpanel_2_device21" role="tabpanel" data-tab="device21" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/device?view=graph-rest-1.0&amp;tabs=http">device</a></p>
 <table>
 <thead>
 <tr>
@@ -2767,7 +3569,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="directoryobject-"><a href="https://docs.microsoft.com/graph/api/resources/directoryobject?view=graph-rest-1.0&amp;tabs=http">directoryObject </a></h3>
+</section>
+<section id="tabpanel_2_directoryObject22" role="tabpanel" data-tab="directoryObject22" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/directoryobject?view=graph-rest-1.0&amp;tabs=http">directoryObject</a></p>
 <table>
 <thead>
 <tr>
@@ -2789,7 +3594,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="directoryrole-"><a href="https://docs.microsoft.com/graph/api/resources/directoryrole?view=graph-rest-1.0&amp;tabs=http">directoryRole </a></h3>
+</section>
+<section id="tabpanel_2_directoryRole23" role="tabpanel" data-tab="directoryRole23" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/directoryrole?view=graph-rest-1.0&amp;tabs=http">directoryRole</a></p>
 <table>
 <thead>
 <tr>
@@ -2821,7 +3629,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="directoryroletemplate-"><a href="https://docs.microsoft.com/graph/api/resources/directoryroletemplate?view=graph-rest-1.0&amp;tabs=http">directoryRoleTemplate </a></h3>
+</section>
+<section id="tabpanel_2_directoryRoleTemplate24" role="tabpanel" data-tab="directoryRoleTemplate24" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/directoryroletemplate?view=graph-rest-1.0&amp;tabs=http">directoryRoleTemplate</a></p>
 <table>
 <thead>
 <tr>
@@ -2848,7 +3659,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="directorysetting-"><a href="https://docs.microsoft.com/graph/api/resources/directorysetting?view=graph-rest-1.0&amp;tabs=http">directorySetting </a></h3>
+</section>
+<section id="tabpanel_2_directorySetting25" role="tabpanel" data-tab="directorySetting25" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/directorysetting?view=graph-rest-1.0&amp;tabs=http">directorySetting</a></p>
 <table>
 <thead>
 <tr>
@@ -2880,7 +3694,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="directorysettingtemplate-"><a href="https://docs.microsoft.com/graph/api/resources/directorysettingtemplate?view=graph-rest-1.0&amp;tabs=http">directorySettingTemplate </a></h3>
+</section>
+<section id="tabpanel_2_directorySettingTemplate26" role="tabpanel" data-tab="directorySettingTemplate26" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/directorysettingtemplate?view=graph-rest-1.0&amp;tabs=http">directorySettingTemplate</a></p>
 <table>
 <thead>
 <tr>
@@ -2912,7 +3729,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="employeeorgdata-"><a href="https://docs.microsoft.com/graph/api/resources/employeeorgdata?view=graph-rest-1.0&amp;tabs=http">employeeOrgData </a></h3>
+</section>
+<section id="tabpanel_2_employeeOrgData27" role="tabpanel" data-tab="employeeOrgData27" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/employeeorgdata?view=graph-rest-1.0&amp;tabs=http">employeeOrgData</a></p>
 <table>
 <thead>
 <tr>
@@ -2934,7 +3754,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="extensionproperty"><a href="https://docs.microsoft.com/graph/api/resources/extensionproperty?view=graph-rest-1.0&amp;tabs=http">extensionproperty</a></h3>
+</section>
+<section id="tabpanel_2_extensionproperty28" role="tabpanel" data-tab="extensionproperty28" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/extensionproperty?view=graph-rest-1.0&amp;tabs=http">extensionproperty</a></p>
 <table>
 <thead>
 <tr>
@@ -2981,7 +3804,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="extensionschemaproperty-"><a href="https://docs.microsoft.com/graph/api/resources/extensionschemaproperty?view=graph-rest-1.0&amp;tabs=http">extensionSchemaProperty </a></h3>
+</section>
+<section id="tabpanel_2_extensionSchemaProperty29" role="tabpanel" data-tab="extensionSchemaProperty29" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/extensionschemaproperty?view=graph-rest-1.0&amp;tabs=http">extensionSchemaProperty</a></p>
 <table>
 <thead>
 <tr>
@@ -3003,7 +3829,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="featurerolloutpolicy-"><a href="https://docs.microsoft.com/graph/api/resources/featurerolloutpolicy?view=graph-rest-1.0&amp;tabs=http">featureRolloutPolicy </a></h3>
+</section>
+<section id="tabpanel_2_featureRolloutPolicy30" role="tabpanel" data-tab="featureRolloutPolicy30" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/featurerolloutpolicy?view=graph-rest-1.0&amp;tabs=http">featureRolloutPolicy</a></p>
 <table>
 <thead>
 <tr>
@@ -3045,7 +3874,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="group-"><a href="https://docs.microsoft.com/graph/api/resources/group?view=graph-rest-1.0&amp;tabs=http">group </a></h3>
+</section>
+<section id="tabpanel_2_group31" role="tabpanel" data-tab="group31" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/group?view=graph-rest-1.0&amp;tabs=http">group</a></p>
 <table>
 <thead>
 <tr>
@@ -3267,7 +4099,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="grouplifecyclepolicy-"><a href="https://docs.microsoft.com/graph/api/resources/grouplifecyclepolicy?view=graph-rest-1.0&amp;tabs=http">groupLifecyclePolicy </a></h3>
+</section>
+<section id="tabpanel_2_groupLifecyclePolicy32" role="tabpanel" data-tab="groupLifecyclePolicy32" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/grouplifecyclepolicy?view=graph-rest-1.0&amp;tabs=http">groupLifecyclePolicy</a></p>
 <table>
 <thead>
 <tr>
@@ -3299,7 +4134,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="groupsetting-"><a href="https://docs.microsoft.com/graph/api/resources/groupsetting?view=graph-rest-1.0&amp;tabs=http">groupSetting </a></h3>
+</section>
+<section id="tabpanel_2_groupSetting33" role="tabpanel" data-tab="groupSetting33" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/groupsetting?view=graph-rest-1.0&amp;tabs=http">groupSetting</a></p>
 <table>
 <thead>
 <tr>
@@ -3331,7 +4169,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="groupsettingtemplate-"><a href="https://docs.microsoft.com/graph/api/resources/groupsettingtemplate?view=graph-rest-1.0&amp;tabs=http">groupSettingTemplate </a></h3>
+</section>
+<section id="tabpanel_2_groupSettingTemplate34" role="tabpanel" data-tab="groupSettingTemplate34" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/groupsettingtemplate?view=graph-rest-1.0&amp;tabs=http">groupSettingTemplate</a></p>
 <table>
 <thead>
 <tr>
@@ -3363,7 +4204,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="groupwritebackconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/groupwritebackconfiguration?view=graph-rest-1.0&amp;tabs=http">groupWritebackConfiguration </a></h3>
+</section>
+<section id="tabpanel_2_groupWritebackConfiguration35" role="tabpanel" data-tab="groupWritebackConfiguration35" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/groupwritebackconfiguration?view=graph-rest-1.0&amp;tabs=http">groupWritebackConfiguration</a></p>
 <table>
 <thead>
 <tr>
@@ -3385,7 +4229,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="hybridagentupdaterconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/hybridagentupdaterconfiguration?view=graph-rest-1.0&amp;tabs=http">hybridAgentUpdaterConfiguration </a></h3>
+</section>
+<section id="tabpanel_2_hybridAgentUpdaterConfiguration36" role="tabpanel" data-tab="hybridAgentUpdaterConfiguration36" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/hybridagentupdaterconfiguration?view=graph-rest-1.0&amp;tabs=http">hybridAgentUpdaterConfiguration</a></p>
 <table>
 <thead>
 <tr>
@@ -3412,7 +4259,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="invitation-"><a href="https://docs.microsoft.com/graph/api/resources/invitation?view=graph-rest-1.0&amp;tabs=http">invitation </a></h3>
+</section>
+<section id="tabpanel_2_invitation37" role="tabpanel" data-tab="invitation37" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/invitation?view=graph-rest-1.0&amp;tabs=http">invitation</a></p>
 <table>
 <thead>
 <tr>
@@ -3469,7 +4319,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="invitedusermessageinfo-"><a href="https://docs.microsoft.com/graph/api/resources/invitedusermessageinfo?view=graph-rest-1.0&amp;tabs=http">invitedUserMessageInfo </a></h3>
+</section>
+<section id="tabpanel_2_invitedUserMessageInfo38" role="tabpanel" data-tab="invitedUserMessageInfo38" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/invitedusermessageinfo?view=graph-rest-1.0&amp;tabs=http">invitedUserMessageInfo</a></p>
 <table>
 <thead>
 <tr>
@@ -3496,7 +4349,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="keycredential-"><a href="https://docs.microsoft.com/graph/api/resources/keycredential?view=graph-rest-1.0&amp;tabs=http">keyCredential </a></h3>
+</section>
+<section id="tabpanel_2_keyCredential39" role="tabpanel" data-tab="keyCredential39" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/keycredential?view=graph-rest-1.0&amp;tabs=http">keyCredential</a></p>
 <table>
 <thead>
 <tr>
@@ -3548,7 +4404,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="licensedetails-"><a href="https://docs.microsoft.com/graph/api/resources/licensedetails?view=graph-rest-1.0&amp;tabs=http">licenseDetails </a></h3>
+</section>
+<section id="tabpanel_2_licenseDetails40" role="tabpanel" data-tab="licenseDetails40" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/licensedetails?view=graph-rest-1.0&amp;tabs=http">licenseDetails</a></p>
 <table>
 <thead>
 <tr>
@@ -3580,7 +4439,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="oauth2permissiongrant-"><a href="https://docs.microsoft.com/graph/api/resources/oauth2permissiongrant?view=graph-rest-1.0&amp;tabs=http">oAuth2PermissionGrant </a></h3>
+</section>
+<section id="tabpanel_2_oAuth2PermissionGrant41" role="tabpanel" data-tab="oAuth2PermissionGrant41" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/oauth2permissiongrant?view=graph-rest-1.0&amp;tabs=http">oAuth2PermissionGrant</a></p>
 <table>
 <thead>
 <tr>
@@ -3622,7 +4484,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="objectidentity-"><a href="https://docs.microsoft.com/graph/api/resources/objectidentity?view=graph-rest-1.0&amp;tabs=http">objectIdentity </a></h3>
+</section>
+<section id="tabpanel_2_objectIdentity42" role="tabpanel" data-tab="objectIdentity42" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/objectidentity?view=graph-rest-1.0&amp;tabs=http">objectIdentity</a></p>
 <table>
 <thead>
 <tr>
@@ -3649,7 +4514,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="onpremisesagent-"><a href="https://docs.microsoft.com/graph/api/resources/onpremisesagent?view=graph-rest-1.0&amp;tabs=http">onPremisesAgent </a></h3>
+</section>
+<section id="tabpanel_2_onPremisesAgent43" role="tabpanel" data-tab="onPremisesAgent43" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/onpremisesagent?view=graph-rest-1.0&amp;tabs=http">onPremisesAgent</a></p>
 <table>
 <thead>
 <tr>
@@ -3686,7 +4554,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="onpremisesagentgroup-"><a href="https://docs.microsoft.com/graph/api/resources/onpremisesagentgroup?view=graph-rest-1.0&amp;tabs=http">onPremisesAgentGroup </a></h3>
+</section>
+<section id="tabpanel_2_onPremisesAgentGroup44" role="tabpanel" data-tab="onPremisesAgentGroup44" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/onpremisesagentgroup?view=graph-rest-1.0&amp;tabs=http">onPremisesAgentGroup</a></p>
 <table>
 <thead>
 <tr>
@@ -3718,7 +4589,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="onpremisesextensionattributes-"><a href="https://docs.microsoft.com/graph/api/resources/onpremisesextensionattributes?view=graph-rest-1.0&amp;tabs=http">onPremisesExtensionAttributes </a></h3>
+</section>
+<section id="tabpanel_2_onPremisesExtensionAttributes45" role="tabpanel" data-tab="onPremisesExtensionAttributes45" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/onpremisesextensionattributes?view=graph-rest-1.0&amp;tabs=http">onPremisesExtensionAttributes</a></p>
 <table>
 <thead>
 <tr>
@@ -3805,7 +4679,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="onpremisespublishingprofile-"><a href="https://docs.microsoft.com/graph/api/resources/onpremisespublishingprofile?view=graph-rest-1.0&amp;tabs=http">onPremisesPublishingProfile </a></h3>
+</section>
+<section id="tabpanel_2_onPremisesPublishingProfile46" role="tabpanel" data-tab="onPremisesPublishingProfile46" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/onpremisespublishingprofile?view=graph-rest-1.0&amp;tabs=http">onPremisesPublishingProfile</a></p>
 <table>
 <thead>
 <tr>
@@ -3832,7 +4709,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="organization-"><a href="https://docs.microsoft.com/graph/api/resources/organization?view=graph-rest-1.0&amp;tabs=http">organization </a></h3>
+</section>
+<section id="tabpanel_2_organization47" role="tabpanel" data-tab="organization47" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/organization?view=graph-rest-1.0&amp;tabs=http">organization</a></p>
 <table>
 <thead>
 <tr>
@@ -3974,7 +4854,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="orgcontact-"><a href="https://docs.microsoft.com/graph/api/resources/orgcontact?view=graph-rest-1.0&amp;tabs=http">orgContact </a></h3>
+</section>
+<section id="tabpanel_2_orgContact48" role="tabpanel" data-tab="orgContact48" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/orgcontact?view=graph-rest-1.0&amp;tabs=http">orgContact</a></p>
 <table>
 <thead>
 <tr>
@@ -4066,7 +4949,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="passwordcredential-"><a href="https://docs.microsoft.com/graph/api/resources/passwordcredential?view=graph-rest-1.0&amp;tabs=http">passwordCredential </a></h3>
+</section>
+<section id="tabpanel_2_passwordCredential49" role="tabpanel" data-tab="passwordCredential49" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/passwordcredential?view=graph-rest-1.0&amp;tabs=http">passwordCredential</a></p>
 <table>
 <thead>
 <tr>
@@ -4113,7 +4999,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="passwordprofile-"><a href="https://docs.microsoft.com/graph/api/resources/passwordprofile?view=graph-rest-1.0&amp;tabs=http">passwordProfile </a></h3>
+</section>
+<section id="tabpanel_2_passwordProfile50" role="tabpanel" data-tab="passwordProfile50" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/passwordprofile?view=graph-rest-1.0&amp;tabs=http">passwordProfile</a></p>
 <table>
 <thead>
 <tr>
@@ -4140,7 +5029,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="passwordsinglesignoncredentialset-"><a href="https://docs.microsoft.com/graph/api/resources/passwordsinglesignoncredentialset?view=graph-rest-1.0&amp;tabs=http">passwordSingleSignOnCredentialSet </a></h3>
+</section>
+<section id="tabpanel_2_passwordSingleSignOnCredentialSet51" role="tabpanel" data-tab="passwordSingleSignOnCredentialSet51" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/passwordsinglesignoncredentialset?view=graph-rest-1.0&amp;tabs=http">passwordSingleSignOnCredentialSet</a></p>
 <table>
 <thead>
 <tr>
@@ -4162,7 +5054,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="remotedesktopsecurityconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/remotedesktopsecurityconfiguration?view=graph-rest-1.0&amp;tabs=http">remoteDesktopSecurityConfiguration </a></h3>
+</section>
+<section id="tabpanel_2_remoteDesktopSecurityConfiguration52" role="tabpanel" data-tab="remoteDesktopSecurityConfiguration52" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/remotedesktopsecurityconfiguration?view=graph-rest-1.0&amp;tabs=http">remoteDesktopSecurityConfiguration</a></p>
 <table>
 <thead>
 <tr>
@@ -4184,7 +5079,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="samlsinglesignonsettings-"><a href="https://docs.microsoft.com/graph/api/resources/samlsinglesignonsettings?view=graph-rest-1.0&amp;tabs=http">samlSingleSignOnSettings </a></h3>
+</section>
+<section id="tabpanel_2_samlSingleSignOnSettings53" role="tabpanel" data-tab="samlSingleSignOnSettings53" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/samlsinglesignonsettings?view=graph-rest-1.0&amp;tabs=http">samlSingleSignOnSettings</a></p>
 <table>
 <thead>
 <tr>
@@ -4201,7 +5099,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="schemaextension"><a href="https://docs.microsoft.com/graph/api/resources/schemaextension?view=graph-rest-1.0&amp;tabs=http">schemaextension</a></h3>
+</section>
+<section id="tabpanel_2_schemaextension54" role="tabpanel" data-tab="schemaextension54" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/schemaextension?view=graph-rest-1.0&amp;tabs=http">schemaextension</a></p>
 <table>
 <thead>
 <tr>
@@ -4243,7 +5144,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="scopedrolemembership-"><a href="https://docs.microsoft.com/graph/api/resources/scopedrolemembership?view=graph-rest-1.0&amp;tabs=http">scopedRoleMembership </a></h3>
+</section>
+<section id="tabpanel_2_scopedRoleMembership55" role="tabpanel" data-tab="scopedRoleMembership55" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/scopedrolemembership?view=graph-rest-1.0&amp;tabs=http">scopedRoleMembership</a></p>
 <table>
 <thead>
 <tr>
@@ -4275,7 +5179,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="selfsignedcertificate-"><a href="https://docs.microsoft.com/graph/api/resources/selfsignedcertificate?view=graph-rest-1.0&amp;tabs=http">selfSignedCertificate </a></h3>
+</section>
+<section id="tabpanel_2_selfSignedCertificate56" role="tabpanel" data-tab="selfSignedCertificate56" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/selfsignedcertificate?view=graph-rest-1.0&amp;tabs=http">selfSignedCertificate</a></p>
 <table>
 <thead>
 <tr>
@@ -4332,7 +5239,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="serviceprincipal-"><a href="https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-1.0&amp;tabs=http">servicePrincipal </a></h3>
+</section>
+<section id="tabpanel_2_servicePrincipal57" role="tabpanel" data-tab="servicePrincipal57" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-1.0&amp;tabs=http">servicePrincipal</a></p>
 <table>
 <thead>
 <tr>
@@ -4524,7 +5434,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="settingvalue-"><a href="https://docs.microsoft.com/graph/api/resources/settingvalue?view=graph-rest-1.0&amp;tabs=http">settingValue </a></h3>
+</section>
+<section id="tabpanel_2_settingValue58" role="tabpanel" data-tab="settingValue58" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/settingvalue?view=graph-rest-1.0&amp;tabs=http">settingValue</a></p>
 <table>
 <thead>
 <tr>
@@ -4546,7 +5459,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="subscribedsku-"><a href="https://docs.microsoft.com/graph/api/resources/subscribedsku?view=graph-rest-1.0&amp;tabs=http">subscribedSku </a></h3>
+</section>
+<section id="tabpanel_2_subscribedSku59" role="tabpanel" data-tab="subscribedSku59" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/subscribedsku?view=graph-rest-1.0&amp;tabs=http">subscribedSku</a></p>
 <table>
 <thead>
 <tr>
@@ -4613,7 +5529,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="directorydefinition-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-directorydefinition?view=graph-rest-1.0&amp;tabs=http">directoryDefinition </a></h3>
+</section>
+<section id="tabpanel_2_directoryDefinition60" role="tabpanel" data-tab="directoryDefinition60" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/synchronization-directorydefinition?view=graph-rest-1.0&amp;tabs=http">directoryDefinition</a></p>
 <table>
 <thead>
 <tr>
@@ -4660,7 +5579,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="targetdevicegroup-"><a href="https://docs.microsoft.com/graph/api/resources/targetdevicegroup?view=graph-rest-1.0&amp;tabs=http">targetDeviceGroup </a></h3>
+</section>
+<section id="tabpanel_2_targetDeviceGroup61" role="tabpanel" data-tab="targetDeviceGroup61" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/targetdevicegroup?view=graph-rest-1.0&amp;tabs=http">targetDeviceGroup</a></p>
 <table>
 <thead>
 <tr>
@@ -4682,7 +5604,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="team-"><a href="https://docs.microsoft.com/graph/api/resources/team?view=graph-rest-1.0&amp;tabs=http">team </a></h3>
+</section>
+<section id="tabpanel_2_team62" role="tabpanel" data-tab="team62" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/team?view=graph-rest-1.0&amp;tabs=http">team</a></p>
 <table>
 <thead>
 <tr>
@@ -4779,7 +5704,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="teamsapp-"><a href="https://docs.microsoft.com/graph/api/resources/teamsapp?view=graph-rest-1.0&amp;tabs=http">teamsApp </a></h3>
+</section>
+<section id="tabpanel_2_teamsApp63" role="tabpanel" data-tab="teamsApp63" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/teamsapp?view=graph-rest-1.0&amp;tabs=http">teamsApp</a></p>
 <table>
 <thead>
 <tr>
@@ -4811,7 +5739,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="teamsappdefinition-"><a href="https://docs.microsoft.com/graph/api/resources/teamsappdefinition?view=graph-rest-1.0&amp;tabs=http">teamsAppDefinition </a></h3>
+</section>
+<section id="tabpanel_2_teamsAppDefinition64" role="tabpanel" data-tab="teamsAppDefinition64" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/teamsappdefinition?view=graph-rest-1.0&amp;tabs=http">teamsAppDefinition</a></p>
 <table>
 <thead>
 <tr>
@@ -4863,7 +5794,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="teamsappinstallation-"><a href="https://docs.microsoft.com/graph/api/resources/teamsappinstallation?view=graph-rest-1.0&amp;tabs=http">teamsAppInstallation </a></h3>
+</section>
+<section id="tabpanel_2_teamsAppInstallation65" role="tabpanel" data-tab="teamsAppInstallation65" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/teamsappinstallation?view=graph-rest-1.0&amp;tabs=http">teamsAppInstallation</a></p>
 <table>
 <thead>
 <tr>
@@ -4885,7 +5819,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="teamsapppermissionset-"><a href="https://docs.microsoft.com/graph/api/resources/teamsapppermissionset?view=graph-rest-1.0&amp;tabs=http">teamsAppPermissionSet </a></h3>
+</section>
+<section id="tabpanel_2_teamsAppPermissionSet66" role="tabpanel" data-tab="teamsAppPermissionSet66" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/teamsapppermissionset?view=graph-rest-1.0&amp;tabs=http">teamsAppPermissionSet</a></p>
 <table>
 <thead>
 <tr>
@@ -4902,7 +5839,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="teamsasyncoperation-"><a href="https://docs.microsoft.com/graph/api/resources/teamsasyncoperation?view=graph-rest-1.0&amp;tabs=http">teamsAsyncOperation </a></h3>
+</section>
+<section id="tabpanel_2_teamsAsyncOperation67" role="tabpanel" data-tab="teamsAsyncOperation67" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/teamsasyncoperation?view=graph-rest-1.0&amp;tabs=http">teamsAsyncOperation</a></p>
 <table>
 <thead>
 <tr>
@@ -4959,7 +5899,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="teamslicensingdetails-"><a href="https://docs.microsoft.com/graph/api/resources/teamslicensingdetails?view=graph-rest-1.0&amp;tabs=http">teamsLicensingDetails </a></h3>
+</section>
+<section id="tabpanel_2_teamsLicensingDetails68" role="tabpanel" data-tab="teamsLicensingDetails68" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/teamslicensingdetails?view=graph-rest-1.0&amp;tabs=http">teamsLicensingDetails</a></p>
 <table>
 <thead>
 <tr>
@@ -4976,7 +5919,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="teamstab-"><a href="https://docs.microsoft.com/graph/api/resources/teamstab?view=graph-rest-1.0&amp;tabs=http">teamsTab </a></h3>
+</section>
+<section id="tabpanel_2_teamsTab69" role="tabpanel" data-tab="teamsTab69" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/teamstab?view=graph-rest-1.0&amp;tabs=http">teamsTab</a></p>
 <table>
 <thead>
 <tr>
@@ -5008,8 +5954,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="teamvisibilitytype"><a href="https://docs.microsoft.com/graph/api/resources/teamvisibilitytype?view=graph-rest-1.0&amp;tabs=http">teamvisibilitytype</a></h3>
-<h3 id="teamworkbot-"><a href="https://docs.microsoft.com/graph/api/resources/teamworkbot?view=graph-rest-1.0&amp;tabs=http">teamworkBot </a></h3>
+</section>
+<section id="tabpanel_2_teamvisibilitytype70" role="tabpanel" data-tab="teamvisibilitytype70" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/teamvisibilitytype?view=graph-rest-1.0&amp;tabs=http">teamvisibilitytype</a></p>
+</section>
+<section id="tabpanel_2_teamworkBot71" role="tabpanel" data-tab="teamworkBot71" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/teamworkbot?view=graph-rest-1.0&amp;tabs=http">teamworkBot</a></p>
 <table>
 <thead>
 <tr>
@@ -5026,7 +5978,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="unifiedroleassignment-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedroleassignment?view=graph-rest-1.0&amp;tabs=http">unifiedRoleAssignment </a></h3>
+</section>
+<section id="tabpanel_2_unifiedRoleAssignment72" role="tabpanel" data-tab="unifiedRoleAssignment72" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/unifiedroleassignment?view=graph-rest-1.0&amp;tabs=http">unifiedRoleAssignment</a></p>
 <table>
 <thead>
 <tr>
@@ -5063,7 +6018,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="unifiedroledefinition-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedroledefinition?view=graph-rest-1.0&amp;tabs=http">unifiedRoleDefinition </a></h3>
+</section>
+<section id="tabpanel_2_unifiedRoleDefinition73" role="tabpanel" data-tab="unifiedRoleDefinition73" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/unifiedroledefinition?view=graph-rest-1.0&amp;tabs=http">unifiedRoleDefinition</a></p>
 <table>
 <thead>
 <tr>
@@ -5120,7 +6078,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="unifiedrolepermission-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedrolepermission?view=graph-rest-1.0&amp;tabs=http">unifiedRolePermission </a></h3>
+</section>
+<section id="tabpanel_2_unifiedRolePermission74" role="tabpanel" data-tab="unifiedRolePermission74" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/unifiedrolepermission?view=graph-rest-1.0&amp;tabs=http">unifiedRolePermission</a></p>
 <table>
 <thead>
 <tr>
@@ -5147,7 +6108,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="usageright-"><a href="https://docs.microsoft.com/graph/api/resources/usageright?view=graph-rest-1.0&amp;tabs=http">usageRight </a></h3>
+</section>
+<section id="tabpanel_2_usageRight75" role="tabpanel" data-tab="usageRight75" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/usageright?view=graph-rest-1.0&amp;tabs=http">usageRight</a></p>
 <table>
 <thead>
 <tr>
@@ -5179,7 +6143,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="user-"><a href="https://docs.microsoft.com/graph/api/resources/user?view=graph-rest-1.0&amp;tabs=http">user </a></h3>
+</section>
+<section id="tabpanel_2_user76" role="tabpanel" data-tab="user76" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/user?view=graph-rest-1.0&amp;tabs=http">user</a></p>
 <table>
 <thead>
 <tr>
@@ -5576,7 +6543,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="users"><a href="https://docs.microsoft.com/graph/api/resources/users?view=graph-rest-1.0&amp;tabs=http">users</a></h3>
+</section>
+<section id="tabpanel_2_users77" role="tabpanel" data-tab="users77" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/users?view=graph-rest-1.0&amp;tabs=http">users</a></p>
 <table>
 <thead>
 <tr>
@@ -5631,6 +6601,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

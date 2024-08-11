@@ -90,99 +90,136 @@
         <article data-uid="">
 <h1 id="agreementreadall">Agreement.Read.All</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>Agreement.Read.All</code> permission.</p>
 <blockquote>
 <p>Allows the app to read terms of use agreements on behalf of the signed-in user.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>2f3e6f8c-093b-4c57-a58b-ba5ce494a169</td>
+<td>af2819c9-df71-4dd3-ade7-4d7c9dc653b7</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Read all terms of use agreements</td>
+<td>Read all terms of use agreements</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the app to read terms of use agreements, without a signed in user.</td>
+<td>Allows the app to read terms of use agreements on behalf of the signed-in user.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/agreement-list-files?view=graph-rest-1.0&amp;tabs=http">GET /agreements/{agreementsId}?$expand=files</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/agreementfile-get?view=graph-rest-1.0&amp;tabs=http">GET /agreements/{agreementsId}/file</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/agreementfile-list-localizations?view=graph-rest-1.0&amp;tabs=http">GET /agreements/{agreementsId}/file/localizations</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/termsofusecontainer-list-agreements?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/termsOfUse/agreements</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/agreement-get?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/termsOfUse/agreements/{id}</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
+<th>Type</th>
+<th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Id</strong></td>
-<td>af2819c9-df71-4dd3-ade7-4d7c9dc653b7</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/agreement-list-files?view=graph-rest-beta&amp;tabs=http">GET /agreements/{agreementsId}?$expand=files</a></td>
 </tr>
 <tr>
-<td><strong>Consent Type</strong></td>
-<td>Admin</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/agreementfile-get?view=graph-rest-beta&amp;tabs=http">GET /agreements/{agreementsId}/file</a></td>
 </tr>
 <tr>
-<td><strong>Display String</strong></td>
-<td>Read all terms of use agreements</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/agreementfile-list-localizations?view=graph-rest-beta&amp;tabs=http">GET /agreements/{agreementsId}/file/localizations</a></td>
 </tr>
 <tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read terms of use agreements on behalf of the signed-in user.</td>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/termsofusecontainer-list-agreements?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/termsOfUse/agreements</a></td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://docs.microsoft.com/graph/api/agreement-get?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/termsOfUse/agreements/{id}</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>2f3e6f8c-093b-4c57-a58b-ba5ce494a169</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read all terms of use agreements</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read terms of use agreements, without a signed in user.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="agreement-"><a href="https://docs.microsoft.com/graph/api/resources/agreement?view=graph-rest-1.0&amp;tabs=http">agreement </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_agreement1" role="tab" aria-controls="tabpanel_2_agreement1" data-tab="agreement1" tabindex="0" aria-selected="true">agreement</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_agreementFile2" role="tab" aria-controls="tabpanel_2_agreementFile2" data-tab="agreementFile2" tabindex="-1">agreementFile</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_agreementFileLocalization3" role="tab" aria-controls="tabpanel_2_agreementFileLocalization3" data-tab="agreementFileLocalization3" tabindex="-1">agreementFileLocalization</a>
+</li>
+</ul>
+<section id="tabpanel_2_agreement1" role="tabpanel" data-tab="agreement1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/agreement?view=graph-rest-1.0&amp;tabs=http">agreement</a></p>
 <table>
 <thead>
 <tr>
@@ -224,7 +261,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="agreementfile-"><a href="https://docs.microsoft.com/graph/api/resources/agreementfile?view=graph-rest-1.0&amp;tabs=http">agreementFile </a></h3>
+</section>
+<section id="tabpanel_2_agreementFile2" role="tabpanel" data-tab="agreementFile2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/agreementfile?view=graph-rest-1.0&amp;tabs=http">agreementFile</a></p>
 <table>
 <thead>
 <tr>
@@ -276,7 +316,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="agreementfilelocalization-"><a href="https://docs.microsoft.com/graph/api/resources/agreementfilelocalization?view=graph-rest-1.0&amp;tabs=http">agreementFileLocalization </a></h3>
+</section>
+<section id="tabpanel_2_agreementFileLocalization3" role="tabpanel" data-tab="agreementFileLocalization3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/agreementfilelocalization?view=graph-rest-1.0&amp;tabs=http">agreementFileLocalization</a></p>
 <table>
 <thead>
 <tr>
@@ -328,6 +371,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

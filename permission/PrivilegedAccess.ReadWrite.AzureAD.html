@@ -90,94 +90,110 @@
         <article data-uid="">
 <h1 id="privilegedaccessreadwriteazuread">PrivilegedAccess.ReadWrite.AzureAD</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>PrivilegedAccess.ReadWrite.AzureAD</code> permission.</p>
 <blockquote>
 <p>Allows the app to request and manage just in time elevation (including scheduled elevation) of users to Azure AD built-in administrative roles, on behalf of signed-in users.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>854d9ab1-6657-4ec8-be45-823027bcd009</td>
+<td>3c3c74f5-cdaa-4a97-b7e0-4e788bfcfb37</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Read and write privileged access to Azure AD roles</td>
+<td>Read and write privileged access to Azure AD</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the app to request and manage time-based assignment and just-in-time elevation (including scheduled elevation) of Azure AD built-in and custom administrative roles in your organization, without a signed-in user.</td>
+<td>Allows the app to request and manage just in time elevation (including scheduled elevation) of users to Azure AD built-in administrative roles, on behalf of signed-in users.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Beta</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/governanceroleassignmentrequest-list?view=graph-rest-beta&amp;tabs=http">GET /privilegedAccess/azureResources/resources/{resourceId}/roleAssignmentRequests</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/governanceroleassignmentrequest-list?view=graph-rest-beta&amp;tabs=http">GET /privilegedAccess/azureResources/roleAssignmentRequests?$filter=resourceId+eq+'{resourceId}'</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/rbacapplication-rolescheduleinstances?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/directory/roleScheduleInstances(directoryScopeId='@directoryScopeId',appScopeId='@appScopeId',principalId='@principalId',roleDefinitionId='@roleDefinitionId')</a></td>
 </tr>
 <tr>
-<td>Beta</td>
 <td>D</td>
 <td><a href="https://docs.microsoft.com/graph/api/rbacapplication-roleschedules?view=graph-rest-beta&amp;tabs=http">GET /roleManagement/directory/roleSchedules(directoryScopeId='@directoryScopeId',appScopeId='@appScopeId',principalId='@principalId',roleDefinitionId='@roleDefinitionId')</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>3c3c74f5-cdaa-4a97-b7e0-4e788bfcfb37</td>
-</tr>
-<tr>
-<td><strong>Consent Type</strong></td>
-<td>Admin</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read and write privileged access to Azure AD</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to request and manage just in time elevation (including scheduled elevation) of users to Azure AD built-in administrative roles, on behalf of signed-in users.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>854d9ab1-6657-4ec8-be45-823027bcd009</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read and write privileged access to Azure AD roles</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to request and manage time-based assignment and just-in-time elevation (including scheduled elevation) of Azure AD built-in and custom administrative roles in your organization, without a signed-in user.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="governanceroleassignmentrequest-"><a href="https://docs.microsoft.com/graph/api/resources/governanceroleassignmentrequest?view=graph-rest-1.0&amp;tabs=http">governanceRoleAssignmentRequest </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_governanceRoleAssignmentRequest1" role="tab" aria-controls="tabpanel_2_governanceRoleAssignmentRequest1" data-tab="governanceRoleAssignmentRequest1" tabindex="0" aria-selected="true">governanceRoleAssignmentRequest</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_unifiedRoleScheduleBase2" role="tab" aria-controls="tabpanel_2_unifiedRoleScheduleBase2" data-tab="unifiedRoleScheduleBase2" tabindex="-1">unifiedRoleScheduleBase</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_unifiedRoleScheduleInstanceBase3" role="tab" aria-controls="tabpanel_2_unifiedRoleScheduleInstanceBase3" data-tab="unifiedRoleScheduleInstanceBase3" tabindex="-1">unifiedRoleScheduleInstanceBase</a>
+</li>
+</ul>
+<section id="tabpanel_2_governanceRoleAssignmentRequest1" role="tabpanel" data-tab="governanceRoleAssignmentRequest1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/governanceroleassignmentrequest?view=graph-rest-1.0&amp;tabs=http">governanceRoleAssignmentRequest</a></p>
 <table>
 <thead>
 <tr>
@@ -244,7 +260,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="unifiedroleschedulebase-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedroleschedulebase?view=graph-rest-1.0&amp;tabs=http">unifiedRoleScheduleBase </a></h3>
+</section>
+<section id="tabpanel_2_unifiedRoleScheduleBase2" role="tabpanel" data-tab="unifiedRoleScheduleBase2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/unifiedroleschedulebase?view=graph-rest-1.0&amp;tabs=http">unifiedRoleScheduleBase</a></p>
 <table>
 <thead>
 <tr>
@@ -301,7 +320,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="unifiedrolescheduleinstancebase-"><a href="https://docs.microsoft.com/graph/api/resources/unifiedrolescheduleinstancebase?view=graph-rest-1.0&amp;tabs=http">unifiedRoleScheduleInstanceBase </a></h3>
+</section>
+<section id="tabpanel_2_unifiedRoleScheduleInstanceBase3" role="tabpanel" data-tab="unifiedRoleScheduleInstanceBase3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/unifiedrolescheduleinstancebase?view=graph-rest-1.0&amp;tabs=http">unifiedRoleScheduleInstanceBase</a></p>
 <table>
 <thead>
 <tr>
@@ -338,6 +360,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

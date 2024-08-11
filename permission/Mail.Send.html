@@ -90,159 +90,234 @@
         <article data-uid="">
 <h1 id="mailsend">Mail.Send</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>Mail.Send</code> permission.</p>
 <blockquote>
 <p>Allows the app to send mail as users in the organization.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>b633e1c5-b582-4048-a93e-9f11b44c7e96</td>
+<td>e383f46e-2787-4529-855e-0e479a3ffac0</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Send mail as any user</td>
+<td>Send mail as a user</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the app to send mail as any user without a signed-in user.</td>
+<td>Allows the app to send mail as users in the organization.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-forward?view=graph-rest-1.0&amp;tabs=http">POST /me/mailFolders/{id}/messages/{id}/forward</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-reply?view=graph-rest-1.0&amp;tabs=http">POST /me/mailFolders/{id}/messages/{id}/reply</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-replyall?view=graph-rest-1.0&amp;tabs=http">POST /me/mailFolders/{id}/messages/{id}/replyAll</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-forward?view=graph-rest-1.0&amp;tabs=http">POST /me/messages/{id}/forward</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-reply?view=graph-rest-1.0&amp;tabs=http">POST /me/messages/{id}/reply</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-send?view=graph-rest-1.0&amp;tabs=http">POST /me/messages/{id}/send</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-sendmail?view=graph-rest-1.0&amp;tabs=http">POST /me/sendMail</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-forward?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/mailFolders/{id}/messages/{id}/forward</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-reply?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/mailFolders/{id}/messages/{id}/reply</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-replyall?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/mailFolders/{id}/messages/{id}/replyAll</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-forward?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/messages/{id}/forward</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-reply?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/messages/{id}/reply</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-replyall?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/messages/{id}/replyAll</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-send?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/messages/{id}/send</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/message-unsubscribe?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/messages/{id}/unsubscribe</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/user-sendmail?view=graph-rest-1.0&amp;tabs=http">POST /users/{id | userPrincipalName}/sendMail</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/message-replyall?view=graph-rest-1.0&amp;tabs=http">POST /users/me/messages/{id}/replyAll</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
+<th>Type</th>
+<th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Id</strong></td>
-<td>e383f46e-2787-4529-855e-0e479a3ffac0</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-forward?view=graph-rest-beta&amp;tabs=http">POST /me/mailFolders/{id}/messages/{id}/forward</a></td>
 </tr>
 <tr>
-<td><strong>Consent Type</strong></td>
-<td>User</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-reply?view=graph-rest-beta&amp;tabs=http">POST /me/mailFolders/{id}/messages/{id}/reply</a></td>
 </tr>
 <tr>
-<td><strong>Display String</strong></td>
-<td>Send mail as a user</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-replyall?view=graph-rest-beta&amp;tabs=http">POST /me/mailFolders/{id}/messages/{id}/replyAll</a></td>
 </tr>
 <tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to send mail as users in the organization.</td>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-forward?view=graph-rest-beta&amp;tabs=http">POST /me/messages/{id}/forward</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-reply?view=graph-rest-beta&amp;tabs=http">POST /me/messages/{id}/reply</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-send?view=graph-rest-beta&amp;tabs=http">POST /me/messages/{id}/send</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-sendmail?view=graph-rest-beta&amp;tabs=http">POST /me/sendMail</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-forward?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/mailFolders/{id}/messages/{id}/forward</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-reply?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/mailFolders/{id}/messages/{id}/reply</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-replyall?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/mailFolders/{id}/messages/{id}/replyAll</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-forward?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/messages/{id}/forward</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-reply?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/messages/{id}/reply</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-replyall?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/messages/{id}/replyAll</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-send?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/messages/{id}/send</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-unsubscribe?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/messages/{id}/unsubscribe</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/user-sendmail?view=graph-rest-beta&amp;tabs=http">POST /users/{id | userPrincipalName}/sendMail</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/message-replyall?view=graph-rest-beta&amp;tabs=http">POST /users/me/messages/{id}/replyAll</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>b633e1c5-b582-4048-a93e-9f11b44c7e96</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Send mail as any user</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to send mail as any user without a signed-in user.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="attachment-"><a href="https://docs.microsoft.com/graph/api/resources/attachment?view=graph-rest-1.0&amp;tabs=http">attachment </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_attachment1" role="tab" aria-controls="tabpanel_2_attachment1" data-tab="attachment1" tabindex="0" aria-selected="true">attachment</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_fileAttachment2" role="tab" aria-controls="tabpanel_2_fileAttachment2" data-tab="fileAttachment2" tabindex="-1">fileAttachment</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_mention3" role="tab" aria-controls="tabpanel_2_mention3" data-tab="mention3" tabindex="-1">mention</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_message4" role="tab" aria-controls="tabpanel_2_message4" data-tab="message4" tabindex="-1">message</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_recipient5" role="tab" aria-controls="tabpanel_2_recipient5" data-tab="recipient5" tabindex="-1">recipient</a>
+</li>
+</ul>
+<section id="tabpanel_2_attachment1" role="tabpanel" data-tab="attachment1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/attachment?view=graph-rest-1.0&amp;tabs=http">attachment</a></p>
 <table>
 <thead>
 <tr>
@@ -284,7 +359,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="fileattachment-"><a href="https://docs.microsoft.com/graph/api/resources/fileattachment?view=graph-rest-1.0&amp;tabs=http">fileAttachment </a></h3>
+</section>
+<section id="tabpanel_2_fileAttachment2" role="tabpanel" data-tab="fileAttachment2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/fileattachment?view=graph-rest-1.0&amp;tabs=http">fileAttachment</a></p>
 <table>
 <thead>
 <tr>
@@ -341,7 +419,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="mention-"><a href="https://docs.microsoft.com/graph/api/resources/mention?view=graph-rest-1.0&amp;tabs=http">mention </a></h3>
+</section>
+<section id="tabpanel_2_mention3" role="tabpanel" data-tab="mention3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/mention?view=graph-rest-1.0&amp;tabs=http">mention</a></p>
 <table>
 <thead>
 <tr>
@@ -398,7 +479,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="message-"><a href="https://docs.microsoft.com/graph/api/resources/message?view=graph-rest-1.0&amp;tabs=http">message </a></h3>
+</section>
+<section id="tabpanel_2_message4" role="tabpanel" data-tab="message4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/message?view=graph-rest-1.0&amp;tabs=http">message</a></p>
 <table>
 <thead>
 <tr>
@@ -560,7 +644,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="recipient-"><a href="https://docs.microsoft.com/graph/api/resources/recipient?view=graph-rest-1.0&amp;tabs=http">recipient </a></h3>
+</section>
+<section id="tabpanel_2_recipient5" role="tabpanel" data-tab="recipient5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/recipient?view=graph-rest-1.0&amp;tabs=http">recipient</a></p>
 <table>
 <thead>
 <tr>
@@ -577,6 +664,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

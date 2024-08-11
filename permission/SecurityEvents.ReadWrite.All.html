@@ -90,174 +90,217 @@
         <article data-uid="">
 <h1 id="securityeventsreadwriteall">SecurityEvents.ReadWrite.All</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>SecurityEvents.ReadWrite.All</code> permission.</p>
 <blockquote>
 <p>Allows the app to read your organization’s security events on behalf of the signed-in user. Also allows the app to update editable properties in security events on behalf of the signed-in user.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>d903a879-88e0-4c09-b0c9-82f6a1333f84</td>
+<td>6aedf524-7e1c-45a7-bd76-ded8cab8d0fc</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Read and update your organization’s security events</td>
+<td>Read and update your organization’s security events</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the app to read your organization’s security events without a signed-in user. Also allows the app to update editable properties in security events.</td>
+<td>Allows the app to read your organization’s security events on behalf of the signed-in user. Also allows the app to update editable properties in security events on behalf of the signed-in user.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/alert-list?view=graph-rest-1.0&amp;tabs=http">GET /security/alerts</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/alert-list?view=graph-rest-1.0&amp;tabs=http">GET /security/alerts?$filter={property} eq '{property-value}'</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/alert-list?view=graph-rest-1.0&amp;tabs=http">GET /security/alerts?$filter={property} eq '{property-value}' and {property} eq '{property-value}'</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/alert-list?view=graph-rest-beta&amp;tabs=http">GET /security/alerts?$filter={property} eq '{property-value}'&amp;{property} eq '{property-value}'</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/alert-list?view=graph-rest-1.0&amp;tabs=http">GET /security/alerts?$filter={property} eq '{property-value}'&amp;$top=5</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/alert-list?view=graph-rest-1.0&amp;tabs=http">GET /security/alerts?$top=1</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/alert-get?view=graph-rest-1.0&amp;tabs=http">GET /security/alerts/{alert_id}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A,D</td>
-<td><a href="https://docs.microsoft.com/graph/api/alert-get?view=graph-rest-beta&amp;tabs=http">GET /security/alerts/{id}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-list-securescorecontrolprofiles?view=graph-rest-1.0&amp;tabs=http">GET /security/secureScoreControlProfiles</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-list-securescorecontrolprofiles?view=graph-rest-1.0&amp;tabs=http">GET /security/secureScoreControlProfiles?$filter={property} eq '{property-value}'</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-list-securescorecontrolprofiles?view=graph-rest-1.0&amp;tabs=http">GET /security/secureScoreControlProfiles?$top=1</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/securescorecontrolprofile-get?view=graph-rest-1.0&amp;tabs=http">GET /security/secureScoreControlProfiles/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-list-securescores?view=graph-rest-1.0&amp;tabs=http">GET /security/secureScores</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-list-securescores?view=graph-rest-1.0&amp;tabs=http">GET /security/secureScores?$filter={property} eq '{property-value}'</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-list-securescores?view=graph-rest-1.0&amp;tabs=http">GET /security/secureScores?$top=1</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/security-list-securescores?view=graph-rest-1.0&amp;tabs=http">GET /security/secureScores?$top=1&amp;$skip=7</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/securescore-get?view=graph-rest-1.0&amp;tabs=http">GET /security/secureScores/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/alert-update?view=graph-rest-1.0&amp;tabs=http">PATCH /security/alerts/{alert_id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/securescorecontrolprofile-update?view=graph-rest-1.0&amp;tabs=http">PATCH /security/secureScoreControlProfiles/{id}</a></td>
 </tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
+<table>
+<thead>
 <tr>
-<td>Beta</td>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/alert-list?view=graph-rest-beta&amp;tabs=http">GET /security/alerts</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/alert-list?view=graph-rest-beta&amp;tabs=http">GET /security/alerts?$filter={property} eq '{property-value}'</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/alert-list?view=graph-rest-beta&amp;tabs=http">GET /security/alerts?$filter={property} eq '{property-value}'&amp;{property} eq '{property-value}'</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/alert-list?view=graph-rest-beta&amp;tabs=http">GET /security/alerts?$filter={property} eq '{property-value}'&amp;$top=5</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/alert-list?view=graph-rest-beta&amp;tabs=http">GET /security/alerts?$top=1</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/alert-get?view=graph-rest-beta&amp;tabs=http">GET /security/alerts/{id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/securescorecontrolprofiles-list?view=graph-rest-beta&amp;tabs=http">GET /security/secureScoreControlProfiles</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/security-list-securescores?view=graph-rest-beta&amp;tabs=http">GET /security/secureScores</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/alert-update?view=graph-rest-beta&amp;tabs=http">PATCH /security/alerts/{alert_id}</a></td>
+</tr>
+<tr>
+<td>A,D</td>
+<td><a href="https://docs.microsoft.com/graph/api/securescorecontrolprofiles-update?view=graph-rest-beta&amp;tabs=http">PATCH /security/secureScoreControlProfiles/{id}</a></td>
+</tr>
+<tr>
 <td>A,D</td>
 <td><a href="https://docs.microsoft.com/graph/api/alert-updatealerts?view=graph-rest-beta&amp;tabs=http">POST /security/alerts/updateAlerts</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="delegate-permission">Delegate Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>6aedf524-7e1c-45a7-bd76-ded8cab8d0fc</td>
-</tr>
-<tr>
-<td><strong>Consent Type</strong></td>
-<td>Admin</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read and update your organization’s security events</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read your organization’s security events on behalf of the signed-in user. Also allows the app to update editable properties in security events on behalf of the signed-in user.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="application-permission">Application Permission</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Id</strong></td>
-<td>d903a879-88e0-4c09-b0c9-82f6a1333f84</td>
-</tr>
-<tr>
-<td><strong>Display String</strong></td>
-<td>Read and update your organization’s security events</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to read your organization’s security events without a signed-in user. Also allows the app to update editable properties in security events.</td>
-</tr>
-</tbody>
-</table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="alert"><a href="https://docs.microsoft.com/graph/api/resources/alert?view=graph-rest-1.0&amp;tabs=http">alert</a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_alert1" role="tab" aria-controls="tabpanel_2_alert1" data-tab="alert1" tabindex="0" aria-selected="true">alert</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_secureScore2" role="tab" aria-controls="tabpanel_2_secureScore2" data-tab="secureScore2" tabindex="-1">secureScore</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_secureScoreControlProfile3" role="tab" aria-controls="tabpanel_2_secureScoreControlProfile3" data-tab="secureScoreControlProfile3" tabindex="-1">secureScoreControlProfile</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_secureScoreControlProfile4" role="tab" aria-controls="tabpanel_2_secureScoreControlProfile4" data-tab="secureScoreControlProfile4" tabindex="-1">secureScoreControlProfile</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_security-error-codes5" role="tab" aria-controls="tabpanel_2_security-error-codes5" data-tab="security-error-codes5" tabindex="-1">security-error-codes</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_securityVendorInformation6" role="tab" aria-controls="tabpanel_2_securityVendorInformation6" data-tab="securityVendorInformation6" tabindex="-1">securityVendorInformation</a>
+</li>
+</ul>
+<section id="tabpanel_2_alert1" role="tabpanel" data-tab="alert1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/alert?view=graph-rest-1.0&amp;tabs=http">alert</a></p>
 <table>
 <thead>
 <tr>
@@ -439,7 +482,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="securescore-"><a href="https://docs.microsoft.com/graph/api/resources/securescore?view=graph-rest-1.0&amp;tabs=http">secureScore </a></h3>
+</section>
+<section id="tabpanel_2_secureScore2" role="tabpanel" data-tab="secureScore2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/securescore?view=graph-rest-1.0&amp;tabs=http">secureScore</a></p>
 <table>
 <thead>
 <tr>
@@ -506,8 +552,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="securescorecontrolprofile-"><a href="https://docs.microsoft.com/graph/api/resources/securescorecontrolprofile?view=graph-rest-1.0&amp;tabs=http">secureScoreControlProfile </a></h3>
-<h3 id="securescorecontrolprofile--1"><a href="https://docs.microsoft.com/graph/api/resources/securescorecontrolprofiles?view=graph-rest-1.0&amp;tabs=http">secureScoreControlProfile </a></h3>
+</section>
+<section id="tabpanel_2_secureScoreControlProfile3" role="tabpanel" data-tab="secureScoreControlProfile3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/securescorecontrolprofile?view=graph-rest-1.0&amp;tabs=http">secureScoreControlProfile</a></p>
+</section>
+<section id="tabpanel_2_secureScoreControlProfile4" role="tabpanel" data-tab="secureScoreControlProfile4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/securescorecontrolprofiles?view=graph-rest-1.0&amp;tabs=http">secureScoreControlProfile</a></p>
 <table>
 <thead>
 <tr>
@@ -624,8 +676,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="security-error-codes"><a href="https://docs.microsoft.com/graph/api/resources/security-error-codes?view=graph-rest-1.0&amp;tabs=http">security-error-codes</a></h3>
-<h3 id="securityvendorinformation-"><a href="https://docs.microsoft.com/graph/api/resources/securityvendorinformation?view=graph-rest-1.0&amp;tabs=http">securityVendorInformation </a></h3>
+</section>
+<section id="tabpanel_2_security-error-codes5" role="tabpanel" data-tab="security-error-codes5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-error-codes?view=graph-rest-1.0&amp;tabs=http">security-error-codes</a></p>
+</section>
+<section id="tabpanel_2_securityVendorInformation6" role="tabpanel" data-tab="securityVendorInformation6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/securityvendorinformation?view=graph-rest-1.0&amp;tabs=http">securityVendorInformation</a></p>
 <table>
 <thead>
 <tr>
@@ -657,6 +715,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 

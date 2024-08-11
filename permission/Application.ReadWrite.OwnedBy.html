@@ -90,917 +90,1483 @@
         <article data-uid="">
 <h1 id="applicationreadwriteownedby">Application.ReadWrite.OwnedBy</h1>
 
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>Application.ReadWrite.OwnedBy</code> permission.</p>
 <blockquote>
 <p>Allows the app to create other applications, and fully manage those applications (read, update, update application secrets and delete), without a signed-in user.  It cannot update any apps that it is not an owner of.</p>
 </blockquote>
-<h2 id="graph-methods">Graph Methods</h2>
-<p>Type: A = Application Permission, D = Delegate Permission</p>
 <table>
 <thead>
 <tr>
-<th>Ver</th>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>18a4783c-866b-4cc7-a460-3d5e5662c884</td>
+<td>-</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Manage apps that this app creates or owns</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the app to create other applications, and fully manage those applications (read, update, update application secrets and delete), without a signed-in user.  It cannot update any apps that it is not an owner of.</td>
+<td>-</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<p>Type: A = Application Permission, D = Delegate Permission</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_v1" role="tab" aria-controls="tabpanel_1_v1" data-tab="v1" tabindex="0" aria-selected="true">v1.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_beta" role="tab" aria-controls="tabpanel_1_beta" data-tab="beta" tabindex="-1">beta</a>
+</li>
+</ul>
+<section id="tabpanel_1_v1" role="tabpanel" data-tab="v1">
+
+<table>
+<thead>
+<tr>
 <th>Type</th>
 <th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>V1</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0&amp;tabs=http"></a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /applications(appId='{appId}')</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/extensionproperty-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /applications(appId='{appId}')/extensionProperties/{extensionPropertyId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/federatedidentitycredential-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /applications(appId='{appId}')/federatedIdentityCredentials/{federatedIdentityCredentialId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/federatedidentitycredential-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /applications(appId='{appId}')/federatedIdentityCredentials/{federatedIdentityCredentialName}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-delete-owners?view=graph-rest-1.0&amp;tabs=http">DELETE /applications(appId='{appId}')/owners/{id}/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-delete-tokenissuancepolicies?view=graph-rest-1.0&amp;tabs=http">DELETE /applications(appId='{appId}')/tokenIssuancePolicies/{id}/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-delete-tokenlifetimepolicies?view=graph-rest-1.0&amp;tabs=http">DELETE /applications(appId='{appId}')/tokenLifetimePolicies/{tokenLifetimePolicyId}/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/extensionproperty-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /applications/{application ObjectId}/extensionProperties/{extensionPropertyId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /applications/{applicationObjectId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-delete-tokenlifetimepolicies?view=graph-rest-1.0&amp;tabs=http">DELETE /applications/{applicationObjectId}/tokenLifetimePolicies/{tokenLifetimePolicyId}/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/federatedidentitycredential-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /applications/{id}/federatedIdentityCredentials/{federatedIdentityCredentialId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/federatedidentitycredential-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /applications/{id}/federatedIdentityCredentials/{federatedIdentityCredentialName}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-delete-owners?view=graph-rest-1.0&amp;tabs=http">DELETE /applications/{id}/owners/{id}/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /applications/{id}/synchronization/templates/{templateId}/schema</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-delete-tokenissuancepolicies?view=graph-rest-1.0&amp;tabs=http">DELETE /applications/{id}/tokenIssuancePolicies/{id}/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /servicePrincipals(appId='{appId}')</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-claimsmappingpolicies?view=graph-rest-1.0&amp;tabs=http">DELETE /servicePrincipals(appId='{appId}')/claimsMappingPolicies/{id}/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-homerealmdiscoverypolicies?view=graph-rest-1.0&amp;tabs=http">DELETE /servicePrincipals(appId='{appId}')/homeRealmDiscoveryPolicies/{id}/$ref</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-homerealmdiscoverypolicies?view=graph-rest-beta&amp;tabs=http">DELETE /servicePrincipals(appId='{appId}')/homeRealmDiscoveryPolicies/{policyId}/$ref</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-owners?view=graph-rest-1.0&amp;tabs=http">DELETE /servicePrincipals(appId='{appId}')/owners/{id}/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-tokenlifetimepolicies?view=graph-rest-1.0&amp;tabs=http">DELETE /servicePrincipals(appId='{appId}')/tokenLifetimePolicies/{tokenLifetimePolicyId}/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /servicePrincipals/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-claimsmappingpolicies?view=graph-rest-1.0&amp;tabs=http">DELETE /servicePrincipals/{id}/claimsMappingPolicies/{id}/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-homerealmdiscoverypolicies?view=graph-rest-1.0&amp;tabs=http">DELETE /servicePrincipals/{id}/homeRealmDiscoveryPolicies/{id}/$ref</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-homerealmdiscoverypolicies?view=graph-rest-beta&amp;tabs=http">DELETE /servicePrincipals/{id}/homeRealmDiscoveryPolicies/{policyId}/$ref</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-owners?view=graph-rest-1.0&amp;tabs=http">DELETE /serviceprincipals/{id}/owners/{id}/$ref</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-owners?view=graph-rest-beta&amp;tabs=http">DELETE /servicePrincipals/{id}/owners/{id}/$ref</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /servicePrincipals/{id}/synchronization/jobs/{jobId}/</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /servicePrincipals/{id}/synchronization/jobs/{jobId}/schema</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-tokenlifetimepolicies?view=graph-rest-1.0&amp;tabs=http">DELETE /servicePrincipals/{servicePrincipalObjectId}/tokenLifetimePolicies/{tokenLifetimePolicyId}/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/remotedesktopsecurityconfiguration-delete-targetdevicegroups?view=graph-rest-1.0&amp;tabs=http">DELETE /servicePrincipals/{servicePrincipalsId}/remoteDesktopSecurityConfiguration/targetDeviceGroups/{targetDeviceGroupId}/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-list?view=graph-rest-1.0&amp;tabs=http">GET /applications</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-get?view=graph-rest-1.0&amp;tabs=http">GET /applications(appId='{appId}')</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-list-extensionproperty?view=graph-rest-1.0&amp;tabs=http">GET /applications(appId='{appId}')/extensionProperties</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/extensionproperty-get?view=graph-rest-1.0&amp;tabs=http">GET /applications(appId='{appId}')/extensionProperties/{extensionPropertyId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-list-federatedidentitycredentials?view=graph-rest-1.0&amp;tabs=http">GET /applications(appId='{appId}')/federatedIdentityCredentials</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/federatedidentitycredential-get?view=graph-rest-1.0&amp;tabs=http">GET /applications(appId='{appId}')/federatedIdentityCredentials/{federatedIdentityCredentialId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/federatedidentitycredential-get?view=graph-rest-1.0&amp;tabs=http">GET /applications(appId='{appId}')/federatedIdentityCredentials/{federatedIdentityCredentialName}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-list-owners?view=graph-rest-1.0&amp;tabs=http">GET /applications(appId='{appId}')/owners</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-list-tokenissuancepolicies?view=graph-rest-1.0&amp;tabs=http">GET /applications(appId='{appId}')/tokenIssuancePolicies</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-1.0&amp;tabs=http">GET /applications(appId='{appId}')/tokenLifetimePolicies</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-list-extensionproperty?view=graph-rest-1.0&amp;tabs=http">GET /applications/{application ObjectId}/extensionProperties</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/extensionproperty-get?view=graph-rest-1.0&amp;tabs=http">GET /applications/{application ObjectId}/extensionProperties/{extensionPropertyId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-get?view=graph-rest-1.0&amp;tabs=http">GET /applications/{applicationObjectId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-list-federatedidentitycredentials?view=graph-rest-1.0&amp;tabs=http">GET /applications/{id}/federatedIdentityCredentials</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/federatedidentitycredential-get?view=graph-rest-1.0&amp;tabs=http">GET /applications/{id}/federatedIdentityCredentials/{federatedIdentityCredentialId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/federatedidentitycredential-get?view=graph-rest-1.0&amp;tabs=http">GET /applications/{id}/federatedIdentityCredentials/{federatedIdentityCredentialName}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-list-owners?view=graph-rest-1.0&amp;tabs=http">GET /applications/{id}/owners</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-beta&amp;tabs=http">GET /applications/{id}/synchronization/templates</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-get?view=graph-rest-beta&amp;tabs=http">GET /applications/{id}/synchronization/templates/{templateId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-1.0&amp;tabs=http">GET /applications/{id}/synchronization/templates/{templateId}/schema</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-1.0&amp;tabs=http">GET /applications/{id}/synchronization/templates/{templateId}/schema/filterOperators</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-functions?view=graph-rest-1.0&amp;tabs=http">GET /applications/{id}/synchronization/templates/{templateId}/schema/functions</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-list-tokenissuancepolicies?view=graph-rest-1.0&amp;tabs=http">GET /applications/{id}/tokenIssuancePolicies</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-1.0&amp;tabs=http">GET /applications/{id}/tokenLifetimePolicies</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-delta?view=graph-rest-1.0&amp;tabs=http">GET /applications/delta</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-get?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals(appId='{appId}')</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-approleassignedto?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals(appId='{appId}')/appRoleAssignedTo</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-approleassignments?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals(appId='{appId}')/appRoleAssignments</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-claimsmappingpolicies?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals(appId='{appId}')/claimsMappingPolicies</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-delegatedpermissionclassifications?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals(appId='{appId}')/delegatedPermissionClassifications</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-homerealmdiscoverypolicies?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals(appId='{appId}')/homeRealmDiscoveryPolicies</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-memberof?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals(appId='{appId}')/memberOf</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-ownedobjects?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals(appId='{appId}')/ownedObjects</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-owners?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals(appId='{appId}')/owners</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-tokenlifetimepolicies?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals(appId='{appId}')/tokenLifetimePolicies</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/approleassignment-get?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals(appId='{client-servicePrincipal-appId}')/appRoleAssignments/{appRoleAssignment-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/approleassignment-get?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{client-serviceprincipal-id}/appRoleAssignments/{appRoleAssignment-id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-get?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-approleassignedto?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/appRoleAssignedTo</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-approleassignments?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/appRoleAssignments</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-claimsmappingpolicies?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/claimsMappingPolicies</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-createdobjects?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/createdObjects</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-delegatedpermissionclassifications?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/delegatedPermissionClassifications</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-homerealmdiscoverypolicies?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/homeRealmDiscoveryPolicies</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-memberof?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/memberOf</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-ownedobjects?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/ownedObjects</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-owners?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/owners</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-list-jobs?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/jobs/</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-get?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/jobs/{jobId}/</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/jobs/{jobId}/schema</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/jobs/{jobId}/schema/filterOperators</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-functions?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/jobs/{jobId}/schema/functions</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/templates</a></td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-get?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/templates/{templateId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/templates/{templateId}/schema</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/templates/{templateId}/schema/filterOperators</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-functions?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/templates/{templateId}/schema/functions</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-tokenlifetimepolicies?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{id}/tokenLifetimePolicies</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/remotedesktopsecurityconfiguration-get?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{servicePrincipalsId}/remoteDesktopSecurityConfiguration</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/remotedesktopsecurityconfiguration-list-targetdevicegroups?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{servicePrincipalsId}/remoteDesktopSecurityConfiguration/targetDeviceGroups</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/targetdevicegroup-get?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/{servicePrincipalsId}/remoteDesktopSecurityConfiguration/targetDeviceGroups/{targetDeviceGroupId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delta?view=graph-rest-1.0&amp;tabs=http">GET /servicePrincipals/delta</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-1.0&amp;tabs=http">GET applications/{id}/synchronization/templates</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-get?view=graph-rest-1.0&amp;tabs=http">GET applications/{id}/synchronization/templates/{templateId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-1.0&amp;tabs=http">GET servicePrincipals/{id}/synchronization/templates</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-get?view=graph-rest-1.0&amp;tabs=http">GET servicePrincipals/{id}/synchronization/templates/{templateId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-update?view=graph-rest-1.0&amp;tabs=http">PATCH /applications(appId='{appId}')</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/federatedidentitycredential-upsert?view=graph-rest-1.0&amp;tabs=http">PATCH /applications(appId='{appId}')/federatedIdentityCredentials(name='{name}')</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/federatedidentitycredential-update?view=graph-rest-1.0&amp;tabs=http">PATCH /applications(appId='{appId}')/federatedIdentityCredentials/{federatedIdentityCredentialId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/federatedidentitycredential-update?view=graph-rest-1.0&amp;tabs=http">PATCH /applications(appId='{appId}')/federatedIdentityCredentials/{federatedIdentityCredentialName}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-upsert?view=graph-rest-1.0&amp;tabs=http">PATCH /applications(uniqueName='{uniqueName}')</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-update?view=graph-rest-1.0&amp;tabs=http">PATCH /applications/{applicationObjectId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/federatedidentitycredential-upsert?view=graph-rest-1.0&amp;tabs=http">PATCH /applications/{id}/federatedIdentityCredentials(name='{name}')</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/federatedidentitycredential-update?view=graph-rest-1.0&amp;tabs=http">PATCH /applications/{id}/federatedIdentityCredentials/{federatedIdentityCredentialId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/federatedidentitycredential-update?view=graph-rest-1.0&amp;tabs=http">PATCH /applications/{id}/federatedIdentityCredentials/{federatedIdentityCredentialName}</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-update?view=graph-rest-beta&amp;tabs=http">PATCH /applications/{id}/synchronization/templates/{templateId}</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-update?view=graph-rest-1.0&amp;tabs=http">PATCH /servicePrincipals(appId='{appId}')</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-upsert?view=graph-rest-1.0&amp;tabs=http">PATCH /servicePrincipals(appId='appId')</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-update?view=graph-rest-1.0&amp;tabs=http">PATCH /servicePrincipals/{id}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/targetdevicegroup-update?view=graph-rest-1.0&amp;tabs=http">PATCH /servicePrincipals/{servicePrincipalsId}/remoteDesktopSecurityConfiguration/targetDeviceGroups/{targetDeviceGroupId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-update?view=graph-rest-1.0&amp;tabs=http">PATCH applications/{id}/synchronization/templates/{templateId}</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-post-applications?view=graph-rest-1.0&amp;tabs=http">POST /applications</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-addkey?view=graph-rest-1.0&amp;tabs=http">POST /applications(appId='{appId}')/addKey</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-addpassword?view=graph-rest-1.0&amp;tabs=http">POST /applications(appId='{appId}')/addPassword</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-post-extensionproperty?view=graph-rest-1.0&amp;tabs=http">POST /applications(appId='{appId}')/extensionProperties</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-post-federatedidentitycredentials?view=graph-rest-1.0&amp;tabs=http">POST /applications(appId='{appId}')/federatedIdentityCredentials</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-post-owners?view=graph-rest-1.0&amp;tabs=http">POST /applications(appId='{appId}')/owners/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-removekey?view=graph-rest-1.0&amp;tabs=http">POST /applications(appId='{appId}')/removeKey</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-removepassword?view=graph-rest-1.0&amp;tabs=http">POST /applications(appId='{appId}')/removePassword</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-post-tokenissuancepolicies?view=graph-rest-1.0&amp;tabs=http">POST /applications(appId='{appId}')/tokenIssuancePolicies/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-post-tokenlifetimepolicies?view=graph-rest-1.0&amp;tabs=http">POST /applications(appId='{appId}')/tokenLifetimePolicies/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-post-extensionproperty?view=graph-rest-1.0&amp;tabs=http">POST /applications/{application ObjectId}/extensionProperties</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-acquireaccesstoken?view=graph-rest-1.0&amp;tabs=http">POST /applications/{applicationsId}/synchronization/acquireAccessToken</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-addkey?view=graph-rest-1.0&amp;tabs=http">POST /applications/{id}/addKey</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-addpassword?view=graph-rest-1.0&amp;tabs=http">POST /applications/{id}/addPassword</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-post-federatedidentitycredentials?view=graph-rest-1.0&amp;tabs=http">POST /applications/{id}/federatedIdentityCredentials</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-post-owners?view=graph-rest-1.0&amp;tabs=http">POST /applications/{id}/owners/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-removekey?view=graph-rest-1.0&amp;tabs=http">POST /applications/{id}/removeKey</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-removepassword?view=graph-rest-1.0&amp;tabs=http">POST /applications/{id}/removePassword</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-post-tokenissuancepolicies?view=graph-rest-1.0&amp;tabs=http">POST /applications/{id}/tokenIssuancePolicies/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/application-post-tokenlifetimepolicies?view=graph-rest-1.0&amp;tabs=http">POST /applications/{id}/tokenLifetimePolicies/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/applicationtemplate-instantiate?view=graph-rest-1.0&amp;tabs=http">POST /applicationTemplates/{applicationTemplate-id}/instantiate</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-serviceprincipals?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-addkey?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/addKey</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-addpassword?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/addPassword</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-addtokensigningcertificate?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/addTokenSigningCertificate</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-claimsmappingpolicies?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/claimsMappingPolicies/$ref</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-getpasswordsinglesignoncredentials?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/getPasswordSingleSignOnCredentials</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-homerealmdiscoverypolicies?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/homeRealmDiscoveryPolicies/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-owners?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/owners/$ref</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-removekey?view=graph-rest-beta&amp;tabs=http">POST /serviceprincipals(appId='{appId}')/removeKey</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-removekey?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/removeKey</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-removepassword?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/removePassword</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/synchronization/jobs/{jobId}/restart</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-tokenlifetimepolicies?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/tokenLifetimePolicies/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-addkey?view=graph-rest-1.0&amp;tabs=http">POST /serviceprincipals/{id}/addKey</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-addkey?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/addKey</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-addpassword?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{id}/addPassword</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-addtokensigningcertificate?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{id}/addTokenSigningCertificate</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-claimsmappingpolicies?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{id}/claimsMappingPolicies/$ref</a></td>
 </tr>
 <tr>
-<td>Beta</td>
-<td>A</td>
-<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-getpasswordsinglesignoncredentials?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/getPasswordSingleSignOnCredentials</a></td>
-</tr>
-<tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-homerealmdiscoverypolicies?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{id}/homeRealmDiscoveryPolicies/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-owners?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{id}/owners/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-removekey?view=graph-rest-1.0&amp;tabs=http">POST /serviceprincipals/{id}/removeKey</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-removepassword?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{id}/removePassword</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-post-jobs?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{id}/synchronization/jobs/</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{id}/synchronization/jobs/{id}/schema/parseExpression</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{id}/synchronization/jobs/{id}/validateCredentials</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-pause?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{id}/synchronization/jobs/{jobId}/pause</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{id}/synchronization/jobs/{jobId}/schema/directories/{directoryId}/discover</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-start?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{id}/synchronization/jobs/{jobId}/start</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{id}/synchronization/templates/{id}/schema/parseExpression</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-tokenlifetimepolicies?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{id}/tokenLifetimePolicies/$ref</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{servicePrincipalId}/synchronization/jobs/{jobId}/restart</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-remotedesktopsecurityconfiguration?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{servicePrincipalsId}/remoteDesktopSecurityConfiguration</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/remotedesktopsecurityconfiguration-post-targetdevicegroups?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{servicePrincipalsId}/remoteDesktopSecurityConfiguration/targetDeviceGroups</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-acquireaccesstoken?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{servicePrincipalsId}/synchronization/acquireAccessToken</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-provisionondemand?view=graph-rest-1.0&amp;tabs=http">POST /servicePrincipals/{servicePrincipalsId}/synchronization/jobs/{synchronizationJobId}/provisionOnDemand</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-update?view=graph-rest-1.0&amp;tabs=http">PUT /applications/{id}/synchronization/templates/{templateId}/schema</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-update?view=graph-rest-1.0&amp;tabs=http">PUT /servicePrincipals/{id}/synchronization/jobs/{jobId}/schema</a></td>
 </tr>
 <tr>
-<td>V1</td>
 <td>A</td>
 <td><a href="https://docs.microsoft.com/graph/api/synchronization-serviceprincipal-put-synchronization?view=graph-rest-1.0&amp;tabs=http">PUT /servicePrincipals/{id}/synchronization/secrets</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="application-permission">Application Permission</h2>
+</section>
+<section id="tabpanel_1_beta" role="tabpanel" data-tab="beta" aria-hidden="true" hidden="hidden">
+
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
+<th>Type</th>
+<th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Id</strong></td>
-<td>18a4783c-866b-4cc7-a460-3d5e5662c884</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-delete?view=graph-rest-beta&amp;tabs=http">DELETE /applications(appId='{appId}')</a></td>
 </tr>
 <tr>
-<td><strong>Display String</strong></td>
-<td>Manage apps that this app creates or owns</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/extensionproperty-delete?view=graph-rest-beta&amp;tabs=http">DELETE /applications(appId='{appId}')/extensionProperties/{extensionPropertyId}</a></td>
 </tr>
 <tr>
-<td><strong>Description</strong></td>
-<td>Allows the app to create other applications, and fully manage those applications (read, update, update application secrets and delete), without a signed-in user.  It cannot update any apps that it is not an owner of.</td>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/federatedidentitycredential-delete?view=graph-rest-beta&amp;tabs=http">DELETE /applications(appId='{appId}')/federatedIdentityCredentials/{federatedIdentityCredentialId}</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/federatedidentitycredential-delete?view=graph-rest-beta&amp;tabs=http">DELETE /applications(appId='{appId}')/federatedIdentityCredentials/{federatedIdentityCredentialName}</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-delete-owners?view=graph-rest-beta&amp;tabs=http">DELETE /applications(appId='{appId}')/owners/{id}/$ref</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-delete-tokenlifetimepolicies?view=graph-rest-beta&amp;tabs=http">DELETE /applications(appId='{appId}')/tokenLifetimePolicies/{tokenLifetimePolicyId}/$ref</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/extensionproperty-delete?view=graph-rest-beta&amp;tabs=http">DELETE /applications/{application ObjectId}/extensionProperties/{extensionPropertyId}</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-delete?view=graph-rest-beta&amp;tabs=http">DELETE /applications/{applicationObjectId}</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-delete-tokenlifetimepolicies?view=graph-rest-beta&amp;tabs=http">DELETE /applications/{applicationObjectId}/tokenLifetimePolicies/{tokenLifetimePolicyId}/$ref</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/federatedidentitycredential-delete?view=graph-rest-beta&amp;tabs=http">DELETE /applications/{id}/federatedIdentityCredentials/{federatedIdentityCredentialId}</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/federatedidentitycredential-delete?view=graph-rest-beta&amp;tabs=http">DELETE /applications/{id}/federatedIdentityCredentials/{federatedIdentityCredentialName}</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-delete-owners?view=graph-rest-beta&amp;tabs=http">DELETE /applications/{id}/owners/{id}/$ref</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-delete?view=graph-rest-beta&amp;tabs=http">DELETE /applications/{id}/synchronization/templates/{templateId}/schema</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-delete-tokenissuancepolicies?view=graph-rest-beta&amp;tabs=http">DELETE /applications/{id}/tokenIssuancePolicies/{id}/$ref</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete?view=graph-rest-beta&amp;tabs=http">DELETE /servicePrincipals(appId='{appId}')</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-claimsmappingpolicies?view=graph-rest-beta&amp;tabs=http">DELETE /servicePrincipals(appId='{appId}')/claimsMappingPolicies/{id}/$ref</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-homerealmdiscoverypolicies?view=graph-rest-beta&amp;tabs=http">DELETE /servicePrincipals(appId='{appId}')/homeRealmDiscoveryPolicies/{policyId}/$ref</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-tokenlifetimepolicies?view=graph-rest-beta&amp;tabs=http">DELETE /servicePrincipals(appId='{appId}')/tokenLifetimePolicies/{tokenLifetimePolicyId}/$ref</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete?view=graph-rest-beta&amp;tabs=http">DELETE /servicePrincipals/{id}</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-claimsmappingpolicies?view=graph-rest-beta&amp;tabs=http">DELETE /servicePrincipals/{id}/claimsMappingPolicies/{id}/$ref</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-homerealmdiscoverypolicies?view=graph-rest-beta&amp;tabs=http">DELETE /servicePrincipals/{id}/homeRealmDiscoveryPolicies/{policyId}/$ref</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-owners?view=graph-rest-beta&amp;tabs=http">DELETE /servicePrincipals/{id}/owners/{id}/$ref</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-delete?view=graph-rest-beta&amp;tabs=http">DELETE /servicePrincipals/{id}/synchronization/jobs/{jobId}/</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-delete?view=graph-rest-beta&amp;tabs=http">DELETE /servicePrincipals/{id}/synchronization/jobs/{jobId}/schema</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-tokenlifetimepolicies?view=graph-rest-beta&amp;tabs=http">DELETE /servicePrincipals/{servicePrincipalObjectId}/tokenLifetimePolicies/{tokenLifetimePolicyId}/$ref</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/remotedesktopsecurityconfiguration-delete-targetdevicegroups?view=graph-rest-beta&amp;tabs=http">DELETE /servicePrincipals/{servicePrincipalsId}/remoteDesktopSecurityConfiguration/targetDeviceGroups/{targetDeviceGroupId}/$ref</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-list?view=graph-rest-beta&amp;tabs=http">GET /applications</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-get?view=graph-rest-beta&amp;tabs=http">GET /applications(appId='{appId}')</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-list-extensionproperty?view=graph-rest-beta&amp;tabs=http">GET /applications(appId='{appId}')/extensionProperties</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/extensionproperty-get?view=graph-rest-beta&amp;tabs=http">GET /applications(appId='{appId}')/extensionProperties/{extensionPropertyId}</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-list-federatedidentitycredentials?view=graph-rest-beta&amp;tabs=http">GET /applications(appId='{appId}')/federatedIdentityCredentials</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/federatedidentitycredential-get?view=graph-rest-beta&amp;tabs=http">GET /applications(appId='{appId}')/federatedIdentityCredentials/{federatedIdentityCredentialId}</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/federatedidentitycredential-get?view=graph-rest-beta&amp;tabs=http">GET /applications(appId='{appId}')/federatedIdentityCredentials/{federatedIdentityCredentialName}</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-list-owners?view=graph-rest-beta&amp;tabs=http">GET /applications(appId='{appId}')/owners</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-list-tokenissuancepolicies?view=graph-rest-beta&amp;tabs=http">GET /applications(appId='{appId}')/tokenIssuancePolicies</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-beta&amp;tabs=http">GET /applications(appId='{appId}')/tokenLifetimePolicies</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-list-extensionproperty?view=graph-rest-beta&amp;tabs=http">GET /applications/{application ObjectId}/extensionProperties</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/extensionproperty-get?view=graph-rest-beta&amp;tabs=http">GET /applications/{application ObjectId}/extensionProperties/{extensionPropertyId}</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-get?view=graph-rest-beta&amp;tabs=http">GET /applications/{applicationObjectId}</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-list-federatedidentitycredentials?view=graph-rest-beta&amp;tabs=http">GET /applications/{id}/federatedIdentityCredentials</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/federatedidentitycredential-get?view=graph-rest-beta&amp;tabs=http">GET /applications/{id}/federatedIdentityCredentials/{federatedIdentityCredentialId}</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/federatedidentitycredential-get?view=graph-rest-beta&amp;tabs=http">GET /applications/{id}/federatedIdentityCredentials/{federatedIdentityCredentialName}</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-list-owners?view=graph-rest-beta&amp;tabs=http">GET /applications/{id}/owners</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-beta&amp;tabs=http">GET /applications/{id}/synchronization/templates</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-get?view=graph-rest-beta&amp;tabs=http">GET /applications/{id}/synchronization/templates/{templateId}</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-beta&amp;tabs=http">GET /applications/{id}/synchronization/templates/{templateId}/schema</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-beta&amp;tabs=http">GET /applications/{id}/synchronization/templates/{templateId}/schema/filterOperators</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-functions?view=graph-rest-beta&amp;tabs=http">GET /applications/{id}/synchronization/templates/{templateId}/schema/functions</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-list-tokenissuancepolicies?view=graph-rest-beta&amp;tabs=http">GET /applications/{id}/tokenIssuancePolicies</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-beta&amp;tabs=http">GET /applications/{id}/tokenLifetimePolicies</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-delta?view=graph-rest-beta&amp;tabs=http">GET /applications/delta</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-get?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals(appId='{appId}')</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals(appId='{appId}')/tokenLifetimePolicies</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/approleassignment-get?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals(appId='{client-servicePrincipal-appId}')/appRoleAssignments/{appRoleAssignment-id}</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/approleassignment-get?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{client-serviceprincipal-id}/appRoleAssignments/{appRoleAssignment-id}</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-get?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-approleassignedto?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/appRoleAssignedTo</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-approleassignments?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/appRoleAssignments</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-claimsmappingpolicies?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/claimsMappingPolicies</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-createdobjects?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/createdObjects</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-delegatedpermissionclassifications?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/delegatedPermissionClassifications</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-homerealmdiscoverypolicies?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/homeRealmDiscoveryPolicies</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-memberof?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/memberOf</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-ownedobjects?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/ownedObjects</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-list-owners?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/owners</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-list-jobs?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/jobs/</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-get?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/jobs/{jobId}/</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/jobs/{jobId}/schema</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/jobs/{jobId}/schema/filterOperators</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-functions?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/jobs/{jobId}/schema/functions</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/templates</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-get?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/templates/{templateId}</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/templates/{templateId}/schema</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/templates/{templateId}/schema/filterOperators</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-functions?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/synchronization/templates/{templateId}/schema/functions</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{id}/tokenLifetimePolicies</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/remotedesktopsecurityconfiguration-get?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{servicePrincipalsId}/remoteDesktopSecurityConfiguration</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/remotedesktopsecurityconfiguration-list-targetdevicegroups?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{servicePrincipalsId}/remoteDesktopSecurityConfiguration/targetDeviceGroups</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/targetdevicegroup-get?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/{servicePrincipalsId}/remoteDesktopSecurityConfiguration/targetDeviceGroups/{targetDeviceGroupId}</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-delta?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/delta</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-update?view=graph-rest-beta&amp;tabs=http">PATCH /applications(appId='{appId}')</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/federatedidentitycredential-upsert?view=graph-rest-beta&amp;tabs=http">PATCH /applications(appId='{appId}')/federatedIdentityCredentials(name='{name}')</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/federatedidentitycredential-update?view=graph-rest-beta&amp;tabs=http">PATCH /applications(appId='{appId}')/federatedIdentityCredentials/{federatedIdentityCredentialId}</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/federatedidentitycredential-update?view=graph-rest-beta&amp;tabs=http">PATCH /applications(appId='{appId}')/federatedIdentityCredentials/{federatedIdentityCredentialName}</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-upsert?view=graph-rest-beta&amp;tabs=http">PATCH /applications(uniqueName='{uniqueName}')</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-update?view=graph-rest-beta&amp;tabs=http">PATCH /applications/{applicationObjectId}</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/federatedidentitycredential-upsert?view=graph-rest-beta&amp;tabs=http">PATCH /applications/{id}/federatedIdentityCredentials(name='{name}')</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/federatedidentitycredential-update?view=graph-rest-beta&amp;tabs=http">PATCH /applications/{id}/federatedIdentityCredentials/{federatedIdentityCredentialId}</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/federatedidentitycredential-update?view=graph-rest-beta&amp;tabs=http">PATCH /applications/{id}/federatedIdentityCredentials/{federatedIdentityCredentialName}</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-update?view=graph-rest-beta&amp;tabs=http">PATCH /applications/{id}/synchronization/templates/{templateId}</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-update?view=graph-rest-beta&amp;tabs=http">PATCH /servicePrincipals(appId='{appId}')</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-upsert?view=graph-rest-beta&amp;tabs=http">PATCH /servicePrincipals(appId='appId')</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-update?view=graph-rest-beta&amp;tabs=http">PATCH /servicePrincipals/{id}</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/targetdevicegroup-update?view=graph-rest-beta&amp;tabs=http">PATCH /servicePrincipals/{servicePrincipalsId}/remoteDesktopSecurityConfiguration/targetDeviceGroups/{targetDeviceGroupId}</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-post-applications?view=graph-rest-beta&amp;tabs=http">POST /applications</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-addkey?view=graph-rest-beta&amp;tabs=http">POST /applications(appId='{appId}')/addKey</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-addpassword?view=graph-rest-beta&amp;tabs=http">POST /applications(appId='{appId}')/addPassword</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-post-extensionproperty?view=graph-rest-beta&amp;tabs=http">POST /applications(appId='{appId}')/extensionProperties</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-post-federatedidentitycredentials?view=graph-rest-beta&amp;tabs=http">POST /applications(appId='{appId}')/federatedIdentityCredentials</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-post-owners?view=graph-rest-beta&amp;tabs=http">POST /applications(appId='{appId}')/owners/$ref</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-removekey?view=graph-rest-beta&amp;tabs=http">POST /applications(appId='{appId}')/removeKey</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-removepassword?view=graph-rest-beta&amp;tabs=http">POST /applications(appId='{appId}')/removePassword</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-post-tokenissuancepolicies?view=graph-rest-beta&amp;tabs=http">POST /applications(appId='{appId}')/tokenIssuancePolicies/$ref</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-post-tokenlifetimepolicies?view=graph-rest-beta&amp;tabs=http">POST /applications(appId='{appId}')/tokenLifetimePolicies/$ref</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-post-extensionproperty?view=graph-rest-beta&amp;tabs=http">POST /applications/{application ObjectId}/extensionProperties</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-acquireaccesstoken?view=graph-rest-beta&amp;tabs=http">POST /applications/{applicationsId}/synchronization/acquireAccessToken</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-addkey?view=graph-rest-beta&amp;tabs=http">POST /applications/{id}/addKey</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-addpassword?view=graph-rest-beta&amp;tabs=http">POST /applications/{id}/addPassword</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-post-federatedidentitycredentials?view=graph-rest-beta&amp;tabs=http">POST /applications/{id}/federatedIdentityCredentials</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-post-owners?view=graph-rest-beta&amp;tabs=http">POST /applications/{id}/owners/$ref</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-removekey?view=graph-rest-beta&amp;tabs=http">POST /applications/{id}/removeKey</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-removepassword?view=graph-rest-beta&amp;tabs=http">POST /applications/{id}/removePassword</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-post-tokenissuancepolicies?view=graph-rest-beta&amp;tabs=http">POST /applications/{id}/tokenIssuancePolicies/$ref</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/application-post-tokenlifetimepolicies?view=graph-rest-beta&amp;tabs=http">POST /applications/{id}/tokenLifetimePolicies/$ref</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/applicationtemplate-instantiate?view=graph-rest-beta&amp;tabs=http">POST /applicationTemplates/{applicationTemplate-id}/instantiate</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-serviceprincipals?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-addkey?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/addKey</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-addpassword?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/addPassword</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-addtokensigningcertificate?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/addTokenSigningCertificate</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-claimsmappingpolicies?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/claimsMappingPolicies/$ref</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-getpasswordsinglesignoncredentials?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/getPasswordSingleSignOnCredentials</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-homerealmdiscoverypolicies?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/homeRealmDiscoveryPolicies/$ref</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-owners?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/owners/$ref</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-removekey?view=graph-rest-beta&amp;tabs=http">POST /serviceprincipals(appId='{appId}')/removeKey</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-removepassword?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/removePassword</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/synchronization/jobs/{jobId}/restart</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-tokenlifetimepolicies?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals(appId='{appId}')/tokenLifetimePolicies/$ref</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-addkey?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/addKey</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-addpassword?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/addPassword</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-addtokensigningcertificate?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/addTokenSigningCertificate</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-claimsmappingpolicies?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/claimsMappingPolicies/$ref</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-getpasswordsinglesignoncredentials?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/getPasswordSingleSignOnCredentials</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-homerealmdiscoverypolicies?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/homeRealmDiscoveryPolicies/$ref</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-owners?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/owners/$ref</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-removekey?view=graph-rest-beta&amp;tabs=http">POST /serviceprincipals/{id}/removeKey</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-removepassword?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/removePassword</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-post-jobs?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/synchronization/jobs/</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/synchronization/jobs/{id}/schema/parseExpression</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/synchronization/jobs/{id}/validateCredentials</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-pause?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/synchronization/jobs/{jobId}/pause</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/synchronization/jobs/{jobId}/schema/directories/{directoryId}/discover</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-start?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/synchronization/jobs/{jobId}/start</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/synchronization/templates/{id}/schema/parseExpression</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-tokenlifetimepolicies?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{id}/tokenLifetimePolicies/$ref</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{servicePrincipalId}/synchronization/jobs/{jobId}/restart</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/serviceprincipal-post-remotedesktopsecurityconfiguration?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{servicePrincipalsId}/remoteDesktopSecurityConfiguration</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/remotedesktopsecurityconfiguration-post-targetdevicegroups?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{servicePrincipalsId}/remoteDesktopSecurityConfiguration/targetDeviceGroups</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronization-acquireaccesstoken?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{servicePrincipalsId}/synchronization/acquireAccessToken</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-provisionondemand?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/{servicePrincipalsId}/synchronization/jobs/{synchronizationJobId}/provisionOnDemand</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-update?view=graph-rest-beta&amp;tabs=http">PUT /applications/{id}/synchronization/templates/{templateId}/schema</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-update?view=graph-rest-beta&amp;tabs=http">PUT /servicePrincipals/{id}/synchronization/jobs/{jobId}/schema</a></td>
+</tr>
+<tr>
+<td>A</td>
+<td><a href="https://docs.microsoft.com/graph/api/synchronization-serviceprincipal-put-synchronization?view=graph-rest-beta&amp;tabs=http">PUT /servicePrincipals/{id}/synchronization/secrets</a></td>
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 <h2 id="resources">Resources</h2>
-<h3 id="addin-"><a href="https://docs.microsoft.com/graph/api/resources/addin?view=graph-rest-1.0&amp;tabs=http">addIn </a></h3>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_addIn1" role="tab" aria-controls="tabpanel_2_addIn1" data-tab="addIn1" tabindex="0" aria-selected="true">addIn</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_apiApplication2" role="tab" aria-controls="tabpanel_2_apiApplication2" data-tab="apiApplication2" tabindex="-1">apiApplication</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_application3" role="tab" aria-controls="tabpanel_2_application3" data-tab="application3" tabindex="-1">application</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_applicationServicePrincipal4" role="tab" aria-controls="tabpanel_2_applicationServicePrincipal4" data-tab="applicationServicePrincipal4" tabindex="-1">applicationServicePrincipal</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_applicationTemplate5" role="tab" aria-controls="tabpanel_2_applicationTemplate5" data-tab="applicationTemplate5" tabindex="-1">applicationTemplate</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_appRole6" role="tab" aria-controls="tabpanel_2_appRole6" data-tab="appRole6" tabindex="-1">appRole</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_appRoleAssignment7" role="tab" aria-controls="tabpanel_2_appRoleAssignment7" data-tab="appRoleAssignment7" tabindex="-1">appRoleAssignment</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_claimsMappingPolicy8" role="tab" aria-controls="tabpanel_2_claimsMappingPolicy8" data-tab="claimsMappingPolicy8" tabindex="-1">claimsMappingPolicy</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_customSecurityAttributeValue9" role="tab" aria-controls="tabpanel_2_customSecurityAttributeValue9" data-tab="customSecurityAttributeValue9" tabindex="-1">customSecurityAttributeValue</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_delegatedPermissionClassification10" role="tab" aria-controls="tabpanel_2_delegatedPermissionClassification10" data-tab="delegatedPermissionClassification10" tabindex="-1">delegatedPermissionClassification</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_directoryObject11" role="tab" aria-controls="tabpanel_2_directoryObject11" data-tab="directoryObject11" tabindex="-1">directoryObject</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_extensionproperty12" role="tab" aria-controls="tabpanel_2_extensionproperty12" data-tab="extensionproperty12" tabindex="-1">extensionproperty</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_federatedIdentityCredential13" role="tab" aria-controls="tabpanel_2_federatedIdentityCredential13" data-tab="federatedIdentityCredential13" tabindex="-1">federatedIdentityCredential</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_group14" role="tab" aria-controls="tabpanel_2_group14" data-tab="group14" tabindex="-1">group</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_homeRealmDiscoveryPolicy15" role="tab" aria-controls="tabpanel_2_homeRealmDiscoveryPolicy15" data-tab="homeRealmDiscoveryPolicy15" tabindex="-1">homeRealmDiscoveryPolicy</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_informationalUrl16" role="tab" aria-controls="tabpanel_2_informationalUrl16" data-tab="informationalUrl16" tabindex="-1">informationalUrl</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_keyCredential17" role="tab" aria-controls="tabpanel_2_keyCredential17" data-tab="keyCredential17" tabindex="-1">keyCredential</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_onPremisesPublishing18" role="tab" aria-controls="tabpanel_2_onPremisesPublishing18" data-tab="onPremisesPublishing18" tabindex="-1">onPremisesPublishing</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_parentalControlSettings19" role="tab" aria-controls="tabpanel_2_parentalControlSettings19" data-tab="parentalControlSettings19" tabindex="-1">parentalControlSettings</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_passwordCredential20" role="tab" aria-controls="tabpanel_2_passwordCredential20" data-tab="passwordCredential20" tabindex="-1">passwordCredential</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_passwordSingleSignOnCredentialSet21" role="tab" aria-controls="tabpanel_2_passwordSingleSignOnCredentialSet21" data-tab="passwordSingleSignOnCredentialSet21" tabindex="-1">passwordSingleSignOnCredentialSet</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_publicClientApplication22" role="tab" aria-controls="tabpanel_2_publicClientApplication22" data-tab="publicClientApplication22" tabindex="-1">publicClientApplication</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_remoteDesktopSecurityConfiguration23" role="tab" aria-controls="tabpanel_2_remoteDesktopSecurityConfiguration23" data-tab="remoteDesktopSecurityConfiguration23" tabindex="-1">remoteDesktopSecurityConfiguration</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_requiredResourceAccess24" role="tab" aria-controls="tabpanel_2_requiredResourceAccess24" data-tab="requiredResourceAccess24" tabindex="-1">requiredResourceAccess</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_samlSingleSignOnSettings25" role="tab" aria-controls="tabpanel_2_samlSingleSignOnSettings25" data-tab="samlSingleSignOnSettings25" tabindex="-1">samlSingleSignOnSettings</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_selfSignedCertificate26" role="tab" aria-controls="tabpanel_2_selfSignedCertificate26" data-tab="selfSignedCertificate26" tabindex="-1">selfSignedCertificate</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_servicePrincipal27" role="tab" aria-controls="tabpanel_2_servicePrincipal27" data-tab="servicePrincipal27" tabindex="-1">servicePrincipal</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_spaApplication28" role="tab" aria-controls="tabpanel_2_spaApplication28" data-tab="spaApplication28" tabindex="-1">spaApplication</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_attributeDefinition29" role="tab" aria-controls="tabpanel_2_attributeDefinition29" data-tab="attributeDefinition29" tabindex="-1">attributeDefinition</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_attributeMappingFunctionSchema30" role="tab" aria-controls="tabpanel_2_attributeMappingFunctionSchema30" data-tab="attributeMappingFunctionSchema30" tabindex="-1">attributeMappingFunctionSchema</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_attributeMappingSource31" role="tab" aria-controls="tabpanel_2_attributeMappingSource31" data-tab="attributeMappingSource31" tabindex="-1">attributeMappingSource</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_directoryDefinition32" role="tab" aria-controls="tabpanel_2_directoryDefinition32" data-tab="directoryDefinition32" tabindex="-1">directoryDefinition</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_expressionInputObject33" role="tab" aria-controls="tabpanel_2_expressionInputObject33" data-tab="expressionInputObject33" tabindex="-1">expressionInputObject</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_filter34" role="tab" aria-controls="tabpanel_2_filter34" data-tab="filter34" tabindex="-1">filter</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_filterOperatorSchema35" role="tab" aria-controls="tabpanel_2_filterOperatorSchema35" data-tab="filterOperatorSchema35" tabindex="-1">filterOperatorSchema</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_parseExpressionResponse36" role="tab" aria-controls="tabpanel_2_parseExpressionResponse36" data-tab="parseExpressionResponse36" tabindex="-1">parseExpressionResponse</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_synchronizationJob37" role="tab" aria-controls="tabpanel_2_synchronizationJob37" data-tab="synchronizationJob37" tabindex="-1">synchronizationJob</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_synchronizationJobApplicationParameters38" role="tab" aria-controls="tabpanel_2_synchronizationJobApplicationParameters38" data-tab="synchronizationJobApplicationParameters38" tabindex="-1">synchronizationJobApplicationParameters</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_synchronizationJobRestartCriteria39" role="tab" aria-controls="tabpanel_2_synchronizationJobRestartCriteria39" data-tab="synchronizationJobRestartCriteria39" tabindex="-1">synchronizationJobRestartCriteria</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_synchronizationSchema40" role="tab" aria-controls="tabpanel_2_synchronizationSchema40" data-tab="synchronizationSchema40" tabindex="-1">synchronizationSchema</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_synchronizationSecretKeyStringValuePair41" role="tab" aria-controls="tabpanel_2_synchronizationSecretKeyStringValuePair41" data-tab="synchronizationSecretKeyStringValuePair41" tabindex="-1">synchronizationSecretKeyStringValuePair</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_synchronizationTemplate42" role="tab" aria-controls="tabpanel_2_synchronizationTemplate42" data-tab="synchronizationTemplate42" tabindex="-1">synchronizationTemplate</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_targetDeviceGroup43" role="tab" aria-controls="tabpanel_2_targetDeviceGroup43" data-tab="targetDeviceGroup43" tabindex="-1">targetDeviceGroup</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_tokenIssuancePolicy44" role="tab" aria-controls="tabpanel_2_tokenIssuancePolicy44" data-tab="tokenIssuancePolicy44" tabindex="-1">tokenIssuancePolicy</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_tokenLifetimePolicy45" role="tab" aria-controls="tabpanel_2_tokenLifetimePolicy45" data-tab="tokenLifetimePolicy45" tabindex="-1">tokenLifetimePolicy</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_user46" role="tab" aria-controls="tabpanel_2_user46" data-tab="user46" tabindex="-1">user</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_webApplication47" role="tab" aria-controls="tabpanel_2_webApplication47" data-tab="webApplication47" tabindex="-1">webApplication</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_windowsApplication48" role="tab" aria-controls="tabpanel_2_windowsApplication48" data-tab="windowsApplication48" tabindex="-1">windowsApplication</a>
+</li>
+</ul>
+<section id="tabpanel_2_addIn1" role="tabpanel" data-tab="addIn1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/addin?view=graph-rest-1.0&amp;tabs=http">addIn</a></p>
 <table>
 <thead>
 <tr>
@@ -1027,7 +1593,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="apiapplication-"><a href="https://docs.microsoft.com/graph/api/resources/apiapplication?view=graph-rest-1.0&amp;tabs=http">apiApplication </a></h3>
+</section>
+<section id="tabpanel_2_apiApplication2" role="tabpanel" data-tab="apiApplication2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/apiapplication?view=graph-rest-1.0&amp;tabs=http">apiApplication</a></p>
 <table>
 <thead>
 <tr>
@@ -1064,7 +1633,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="application-"><a href="https://docs.microsoft.com/graph/api/resources/application?view=graph-rest-1.0&amp;tabs=http">application </a></h3>
+</section>
+<section id="tabpanel_2_application3" role="tabpanel" data-tab="application3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/application?view=graph-rest-1.0&amp;tabs=http">application</a></p>
 <table>
 <thead>
 <tr>
@@ -1271,7 +1843,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="applicationserviceprincipal-"><a href="https://docs.microsoft.com/graph/api/resources/applicationserviceprincipal?view=graph-rest-1.0&amp;tabs=http">applicationServicePrincipal </a></h3>
+</section>
+<section id="tabpanel_2_applicationServicePrincipal4" role="tabpanel" data-tab="applicationServicePrincipal4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/applicationserviceprincipal?view=graph-rest-1.0&amp;tabs=http">applicationServicePrincipal</a></p>
 <table>
 <thead>
 <tr>
@@ -1293,7 +1868,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="applicationtemplate-"><a href="https://docs.microsoft.com/graph/api/resources/applicationtemplate?view=graph-rest-1.0&amp;tabs=http">applicationTemplate </a></h3>
+</section>
+<section id="tabpanel_2_applicationTemplate5" role="tabpanel" data-tab="applicationTemplate5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/applicationtemplate?view=graph-rest-1.0&amp;tabs=http">applicationTemplate</a></p>
 <table>
 <thead>
 <tr>
@@ -1350,7 +1928,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="approle-"><a href="https://docs.microsoft.com/graph/api/resources/approle?view=graph-rest-1.0&amp;tabs=http">appRole </a></h3>
+</section>
+<section id="tabpanel_2_appRole6" role="tabpanel" data-tab="appRole6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/approle?view=graph-rest-1.0&amp;tabs=http">appRole</a></p>
 <table>
 <thead>
 <tr>
@@ -1397,7 +1978,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="approleassignment-"><a href="https://docs.microsoft.com/graph/api/resources/approleassignment?view=graph-rest-1.0&amp;tabs=http">appRoleAssignment </a></h3>
+</section>
+<section id="tabpanel_2_appRoleAssignment7" role="tabpanel" data-tab="appRoleAssignment7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/approleassignment?view=graph-rest-1.0&amp;tabs=http">appRoleAssignment</a></p>
 <table>
 <thead>
 <tr>
@@ -1454,7 +2038,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="claimsmappingpolicy-"><a href="https://docs.microsoft.com/graph/api/resources/claimsmappingpolicy?view=graph-rest-1.0&amp;tabs=http">claimsMappingPolicy </a></h3>
+</section>
+<section id="tabpanel_2_claimsMappingPolicy8" role="tabpanel" data-tab="claimsMappingPolicy8" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/claimsmappingpolicy?view=graph-rest-1.0&amp;tabs=http">claimsMappingPolicy</a></p>
 <table>
 <thead>
 <tr>
@@ -1486,8 +2073,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="customsecurityattributevalue-"><a href="https://docs.microsoft.com/graph/api/resources/customsecurityattributevalue?view=graph-rest-1.0&amp;tabs=http">customSecurityAttributeValue </a></h3>
-<h3 id="delegatedpermissionclassification-"><a href="https://docs.microsoft.com/graph/api/resources/delegatedpermissionclassification?view=graph-rest-1.0&amp;tabs=http">delegatedPermissionClassification </a></h3>
+</section>
+<section id="tabpanel_2_customSecurityAttributeValue9" role="tabpanel" data-tab="customSecurityAttributeValue9" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/customsecurityattributevalue?view=graph-rest-1.0&amp;tabs=http">customSecurityAttributeValue</a></p>
+</section>
+<section id="tabpanel_2_delegatedPermissionClassification10" role="tabpanel" data-tab="delegatedPermissionClassification10" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/delegatedpermissionclassification?view=graph-rest-1.0&amp;tabs=http">delegatedPermissionClassification</a></p>
 <table>
 <thead>
 <tr>
@@ -1519,7 +2112,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="directoryobject-"><a href="https://docs.microsoft.com/graph/api/resources/directoryobject?view=graph-rest-1.0&amp;tabs=http">directoryObject </a></h3>
+</section>
+<section id="tabpanel_2_directoryObject11" role="tabpanel" data-tab="directoryObject11" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/directoryobject?view=graph-rest-1.0&amp;tabs=http">directoryObject</a></p>
 <table>
 <thead>
 <tr>
@@ -1541,7 +2137,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="extensionproperty"><a href="https://docs.microsoft.com/graph/api/resources/extensionproperty?view=graph-rest-1.0&amp;tabs=http">extensionproperty</a></h3>
+</section>
+<section id="tabpanel_2_extensionproperty12" role="tabpanel" data-tab="extensionproperty12" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/extensionproperty?view=graph-rest-1.0&amp;tabs=http">extensionproperty</a></p>
 <table>
 <thead>
 <tr>
@@ -1588,7 +2187,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="federatedidentitycredential-"><a href="https://docs.microsoft.com/graph/api/resources/federatedidentitycredential?view=graph-rest-1.0&amp;tabs=http">federatedIdentityCredential </a></h3>
+</section>
+<section id="tabpanel_2_federatedIdentityCredential13" role="tabpanel" data-tab="federatedIdentityCredential13" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/federatedidentitycredential?view=graph-rest-1.0&amp;tabs=http">federatedIdentityCredential</a></p>
 <table>
 <thead>
 <tr>
@@ -1630,7 +2232,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="group-"><a href="https://docs.microsoft.com/graph/api/resources/group?view=graph-rest-1.0&amp;tabs=http">group </a></h3>
+</section>
+<section id="tabpanel_2_group14" role="tabpanel" data-tab="group14" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/group?view=graph-rest-1.0&amp;tabs=http">group</a></p>
 <table>
 <thead>
 <tr>
@@ -1852,7 +2457,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="homerealmdiscoverypolicy-"><a href="https://docs.microsoft.com/graph/api/resources/homerealmdiscoverypolicy?view=graph-rest-1.0&amp;tabs=http">homeRealmDiscoveryPolicy </a></h3>
+</section>
+<section id="tabpanel_2_homeRealmDiscoveryPolicy15" role="tabpanel" data-tab="homeRealmDiscoveryPolicy15" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/homerealmdiscoverypolicy?view=graph-rest-1.0&amp;tabs=http">homeRealmDiscoveryPolicy</a></p>
 <table>
 <thead>
 <tr>
@@ -1889,7 +2497,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="informationalurl-"><a href="https://docs.microsoft.com/graph/api/resources/informationalurl?view=graph-rest-1.0&amp;tabs=http">informationalUrl </a></h3>
+</section>
+<section id="tabpanel_2_informationalUrl16" role="tabpanel" data-tab="informationalUrl16" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/informationalurl?view=graph-rest-1.0&amp;tabs=http">informationalUrl</a></p>
 <table>
 <thead>
 <tr>
@@ -1926,7 +2537,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="keycredential-"><a href="https://docs.microsoft.com/graph/api/resources/keycredential?view=graph-rest-1.0&amp;tabs=http">keyCredential </a></h3>
+</section>
+<section id="tabpanel_2_keyCredential17" role="tabpanel" data-tab="keyCredential17" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/keycredential?view=graph-rest-1.0&amp;tabs=http">keyCredential</a></p>
 <table>
 <thead>
 <tr>
@@ -1978,7 +2592,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="onpremisespublishing-"><a href="https://docs.microsoft.com/graph/api/resources/onpremisespublishing?view=graph-rest-1.0&amp;tabs=http">onPremisesPublishing </a></h3>
+</section>
+<section id="tabpanel_2_onPremisesPublishing18" role="tabpanel" data-tab="onPremisesPublishing18" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/onpremisespublishing?view=graph-rest-1.0&amp;tabs=http">onPremisesPublishing</a></p>
 <table>
 <thead>
 <tr>
@@ -2090,7 +2707,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="parentalcontrolsettings-"><a href="https://docs.microsoft.com/graph/api/resources/parentalcontrolsettings?view=graph-rest-1.0&amp;tabs=http">parentalControlSettings </a></h3>
+</section>
+<section id="tabpanel_2_parentalControlSettings19" role="tabpanel" data-tab="parentalControlSettings19" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/parentalcontrolsettings?view=graph-rest-1.0&amp;tabs=http">parentalControlSettings</a></p>
 <table>
 <thead>
 <tr>
@@ -2112,7 +2732,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="passwordcredential-"><a href="https://docs.microsoft.com/graph/api/resources/passwordcredential?view=graph-rest-1.0&amp;tabs=http">passwordCredential </a></h3>
+</section>
+<section id="tabpanel_2_passwordCredential20" role="tabpanel" data-tab="passwordCredential20" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/passwordcredential?view=graph-rest-1.0&amp;tabs=http">passwordCredential</a></p>
 <table>
 <thead>
 <tr>
@@ -2159,7 +2782,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="passwordsinglesignoncredentialset-"><a href="https://docs.microsoft.com/graph/api/resources/passwordsinglesignoncredentialset?view=graph-rest-1.0&amp;tabs=http">passwordSingleSignOnCredentialSet </a></h3>
+</section>
+<section id="tabpanel_2_passwordSingleSignOnCredentialSet21" role="tabpanel" data-tab="passwordSingleSignOnCredentialSet21" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/passwordsinglesignoncredentialset?view=graph-rest-1.0&amp;tabs=http">passwordSingleSignOnCredentialSet</a></p>
 <table>
 <thead>
 <tr>
@@ -2181,7 +2807,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="publicclientapplication-"><a href="https://docs.microsoft.com/graph/api/resources/publicclientapplication?view=graph-rest-1.0&amp;tabs=http">publicClientApplication </a></h3>
+</section>
+<section id="tabpanel_2_publicClientApplication22" role="tabpanel" data-tab="publicClientApplication22" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/publicclientapplication?view=graph-rest-1.0&amp;tabs=http">publicClientApplication</a></p>
 <table>
 <thead>
 <tr>
@@ -2198,7 +2827,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="remotedesktopsecurityconfiguration-"><a href="https://docs.microsoft.com/graph/api/resources/remotedesktopsecurityconfiguration?view=graph-rest-1.0&amp;tabs=http">remoteDesktopSecurityConfiguration </a></h3>
+</section>
+<section id="tabpanel_2_remoteDesktopSecurityConfiguration23" role="tabpanel" data-tab="remoteDesktopSecurityConfiguration23" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/remotedesktopsecurityconfiguration?view=graph-rest-1.0&amp;tabs=http">remoteDesktopSecurityConfiguration</a></p>
 <table>
 <thead>
 <tr>
@@ -2220,7 +2852,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="requiredresourceaccess-"><a href="https://docs.microsoft.com/graph/api/resources/requiredresourceaccess?view=graph-rest-1.0&amp;tabs=http">requiredResourceAccess </a></h3>
+</section>
+<section id="tabpanel_2_requiredResourceAccess24" role="tabpanel" data-tab="requiredResourceAccess24" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/requiredresourceaccess?view=graph-rest-1.0&amp;tabs=http">requiredResourceAccess</a></p>
 <table>
 <thead>
 <tr>
@@ -2242,7 +2877,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="samlsinglesignonsettings-"><a href="https://docs.microsoft.com/graph/api/resources/samlsinglesignonsettings?view=graph-rest-1.0&amp;tabs=http">samlSingleSignOnSettings </a></h3>
+</section>
+<section id="tabpanel_2_samlSingleSignOnSettings25" role="tabpanel" data-tab="samlSingleSignOnSettings25" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/samlsinglesignonsettings?view=graph-rest-1.0&amp;tabs=http">samlSingleSignOnSettings</a></p>
 <table>
 <thead>
 <tr>
@@ -2259,7 +2897,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="selfsignedcertificate-"><a href="https://docs.microsoft.com/graph/api/resources/selfsignedcertificate?view=graph-rest-1.0&amp;tabs=http">selfSignedCertificate </a></h3>
+</section>
+<section id="tabpanel_2_selfSignedCertificate26" role="tabpanel" data-tab="selfSignedCertificate26" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/selfsignedcertificate?view=graph-rest-1.0&amp;tabs=http">selfSignedCertificate</a></p>
 <table>
 <thead>
 <tr>
@@ -2316,7 +2957,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="serviceprincipal-"><a href="https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-1.0&amp;tabs=http">servicePrincipal </a></h3>
+</section>
+<section id="tabpanel_2_servicePrincipal27" role="tabpanel" data-tab="servicePrincipal27" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-1.0&amp;tabs=http">servicePrincipal</a></p>
 <table>
 <thead>
 <tr>
@@ -2508,7 +3152,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="spaapplication-"><a href="https://docs.microsoft.com/graph/api/resources/spaapplication?view=graph-rest-1.0&amp;tabs=http">spaApplication </a></h3>
+</section>
+<section id="tabpanel_2_spaApplication28" role="tabpanel" data-tab="spaApplication28" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/spaapplication?view=graph-rest-1.0&amp;tabs=http">spaApplication</a></p>
 <table>
 <thead>
 <tr>
@@ -2525,7 +3172,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="attributedefinition-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-attributedefinition?view=graph-rest-1.0&amp;tabs=http">attributeDefinition </a></h3>
+</section>
+<section id="tabpanel_2_attributeDefinition29" role="tabpanel" data-tab="attributeDefinition29" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/synchronization-attributedefinition?view=graph-rest-1.0&amp;tabs=http">attributeDefinition</a></p>
 <table>
 <thead>
 <tr>
@@ -2592,7 +3242,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="attributemappingfunctionschema-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-attributemappingfunctionschema?view=graph-rest-1.0&amp;tabs=http">attributeMappingFunctionSchema </a></h3>
+</section>
+<section id="tabpanel_2_attributeMappingFunctionSchema30" role="tabpanel" data-tab="attributeMappingFunctionSchema30" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/synchronization-attributemappingfunctionschema?view=graph-rest-1.0&amp;tabs=http">attributeMappingFunctionSchema</a></p>
 <table>
 <thead>
 <tr>
@@ -2614,7 +3267,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="attributemappingsource-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-attributemappingsource?view=graph-rest-1.0&amp;tabs=http">attributeMappingSource </a></h3>
+</section>
+<section id="tabpanel_2_attributeMappingSource31" role="tabpanel" data-tab="attributeMappingSource31" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/synchronization-attributemappingsource?view=graph-rest-1.0&amp;tabs=http">attributeMappingSource</a></p>
 <table>
 <thead>
 <tr>
@@ -2646,7 +3302,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="directorydefinition-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-directorydefinition?view=graph-rest-1.0&amp;tabs=http">directoryDefinition </a></h3>
+</section>
+<section id="tabpanel_2_directoryDefinition32" role="tabpanel" data-tab="directoryDefinition32" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/synchronization-directorydefinition?view=graph-rest-1.0&amp;tabs=http">directoryDefinition</a></p>
 <table>
 <thead>
 <tr>
@@ -2693,7 +3352,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="expressioninputobject-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-expressioninputobject?view=graph-rest-1.0&amp;tabs=http">expressionInputObject </a></h3>
+</section>
+<section id="tabpanel_2_expressionInputObject33" role="tabpanel" data-tab="expressionInputObject33" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/synchronization-expressioninputobject?view=graph-rest-1.0&amp;tabs=http">expressionInputObject</a></p>
 <table>
 <thead>
 <tr>
@@ -2715,7 +3377,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="filter-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-filter?view=graph-rest-1.0&amp;tabs=http">filter </a></h3>
+</section>
+<section id="tabpanel_2_filter34" role="tabpanel" data-tab="filter34" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/synchronization-filter?view=graph-rest-1.0&amp;tabs=http">filter</a></p>
 <table>
 <thead>
 <tr>
@@ -2742,7 +3407,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="filteroperatorschema-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-filteroperatorschema?view=graph-rest-1.0&amp;tabs=http">filterOperatorSchema </a></h3>
+</section>
+<section id="tabpanel_2_filterOperatorSchema35" role="tabpanel" data-tab="filterOperatorSchema35" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/synchronization-filteroperatorschema?view=graph-rest-1.0&amp;tabs=http">filterOperatorSchema</a></p>
 <table>
 <thead>
 <tr>
@@ -2774,7 +3442,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="parseexpressionresponse-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-parseexpressionresponse?view=graph-rest-1.0&amp;tabs=http">parseExpressionResponse </a></h3>
+</section>
+<section id="tabpanel_2_parseExpressionResponse36" role="tabpanel" data-tab="parseExpressionResponse36" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/synchronization-parseexpressionresponse?view=graph-rest-1.0&amp;tabs=http">parseExpressionResponse</a></p>
 <table>
 <thead>
 <tr>
@@ -2811,7 +3482,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="synchronizationjob-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationjob?view=graph-rest-1.0&amp;tabs=http">synchronizationJob </a></h3>
+</section>
+<section id="tabpanel_2_synchronizationJob37" role="tabpanel" data-tab="synchronizationJob37" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationjob?view=graph-rest-1.0&amp;tabs=http">synchronizationJob</a></p>
 <table>
 <thead>
 <tr>
@@ -2848,7 +3522,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="synchronizationjobapplicationparameters-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationjobapplicationparameters?view=graph-rest-1.0&amp;tabs=http">synchronizationJobApplicationParameters </a></h3>
+</section>
+<section id="tabpanel_2_synchronizationJobApplicationParameters38" role="tabpanel" data-tab="synchronizationJobApplicationParameters38" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationjobapplicationparameters?view=graph-rest-1.0&amp;tabs=http">synchronizationJobApplicationParameters</a></p>
 <table>
 <thead>
 <tr>
@@ -2870,7 +3547,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="synchronizationjobrestartcriteria-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationjobrestartcriteria?view=graph-rest-1.0&amp;tabs=http">synchronizationJobRestartCriteria </a></h3>
+</section>
+<section id="tabpanel_2_synchronizationJobRestartCriteria39" role="tabpanel" data-tab="synchronizationJobRestartCriteria39" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationjobrestartcriteria?view=graph-rest-1.0&amp;tabs=http">synchronizationJobRestartCriteria</a></p>
 <table>
 <thead>
 <tr>
@@ -2887,7 +3567,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="synchronizationschema-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationschema?view=graph-rest-1.0&amp;tabs=http">synchronizationSchema </a></h3>
+</section>
+<section id="tabpanel_2_synchronizationSchema40" role="tabpanel" data-tab="synchronizationSchema40" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationschema?view=graph-rest-1.0&amp;tabs=http">synchronizationSchema</a></p>
 <table>
 <thead>
 <tr>
@@ -2914,7 +3597,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="synchronizationsecretkeystringvaluepair-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationsecretkeystringvaluepair?view=graph-rest-1.0&amp;tabs=http">synchronizationSecretKeyStringValuePair </a></h3>
+</section>
+<section id="tabpanel_2_synchronizationSecretKeyStringValuePair41" role="tabpanel" data-tab="synchronizationSecretKeyStringValuePair41" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationsecretkeystringvaluepair?view=graph-rest-1.0&amp;tabs=http">synchronizationSecretKeyStringValuePair</a></p>
 <table>
 <thead>
 <tr>
@@ -2936,7 +3622,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="synchronizationtemplate-"><a href="https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationtemplate?view=graph-rest-1.0&amp;tabs=http">synchronizationTemplate </a></h3>
+</section>
+<section id="tabpanel_2_synchronizationTemplate42" role="tabpanel" data-tab="synchronizationTemplate42" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationtemplate?view=graph-rest-1.0&amp;tabs=http">synchronizationTemplate</a></p>
 <table>
 <thead>
 <tr>
@@ -2983,7 +3672,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="targetdevicegroup-"><a href="https://docs.microsoft.com/graph/api/resources/targetdevicegroup?view=graph-rest-1.0&amp;tabs=http">targetDeviceGroup </a></h3>
+</section>
+<section id="tabpanel_2_targetDeviceGroup43" role="tabpanel" data-tab="targetDeviceGroup43" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/targetdevicegroup?view=graph-rest-1.0&amp;tabs=http">targetDeviceGroup</a></p>
 <table>
 <thead>
 <tr>
@@ -3005,7 +3697,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="tokenissuancepolicy-"><a href="https://docs.microsoft.com/graph/api/resources/tokenissuancepolicy?view=graph-rest-1.0&amp;tabs=http">tokenIssuancePolicy </a></h3>
+</section>
+<section id="tabpanel_2_tokenIssuancePolicy44" role="tabpanel" data-tab="tokenIssuancePolicy44" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/tokenissuancepolicy?view=graph-rest-1.0&amp;tabs=http">tokenIssuancePolicy</a></p>
 <table>
 <thead>
 <tr>
@@ -3042,7 +3737,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="tokenlifetimepolicy-"><a href="https://docs.microsoft.com/graph/api/resources/tokenlifetimepolicy?view=graph-rest-1.0&amp;tabs=http">tokenLifetimePolicy </a></h3>
+</section>
+<section id="tabpanel_2_tokenLifetimePolicy45" role="tabpanel" data-tab="tokenLifetimePolicy45" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/tokenlifetimepolicy?view=graph-rest-1.0&amp;tabs=http">tokenLifetimePolicy</a></p>
 <table>
 <thead>
 <tr>
@@ -3074,7 +3772,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="user-"><a href="https://docs.microsoft.com/graph/api/resources/user?view=graph-rest-1.0&amp;tabs=http">user </a></h3>
+</section>
+<section id="tabpanel_2_user46" role="tabpanel" data-tab="user46" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/user?view=graph-rest-1.0&amp;tabs=http">user</a></p>
 <table>
 <thead>
 <tr>
@@ -3471,7 +4172,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="webapplication-"><a href="https://docs.microsoft.com/graph/api/resources/webapplication?view=graph-rest-1.0&amp;tabs=http">webApplication </a></h3>
+</section>
+<section id="tabpanel_2_webApplication47" role="tabpanel" data-tab="webApplication47" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/webapplication?view=graph-rest-1.0&amp;tabs=http">webApplication</a></p>
 <table>
 <thead>
 <tr>
@@ -3503,7 +4207,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="windowsapplication-"><a href="https://docs.microsoft.com/graph/api/resources/windowsapplication?view=graph-rest-1.0&amp;tabs=http">windowsApplication </a></h3>
+</section>
+<section id="tabpanel_2_windowsApplication48" role="tabpanel" data-tab="windowsApplication48" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/windowsapplication?view=graph-rest-1.0&amp;tabs=http">windowsApplication</a></p>
 <table>
 <thead>
 <tr>
@@ -3525,6 +4232,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+</div>
 
 </article>
 
