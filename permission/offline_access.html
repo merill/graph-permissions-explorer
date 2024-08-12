@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="offline_access | Graph Permissions ">
       
-      
+      <meta name="description" content="View all the Graph APIs and data exposed when granting offline_access to an application.">
       <link rel="icon" href="../images/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -93,7 +93,12 @@
 <blockquote>
 <p>Allows the app to see and update the data you gave it access to, even when users are not currently using the app. This does not give the app any additional permissions.</p>
 </blockquote>
-<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>offline_access</code> permission.</p>
+<!-- markdownlint-disable MD002 MD041 -->
+<p><em>offline_access</em> is an OpenID Connect (OIDC) scope.</p>
+<p>You can use the OIDC scopes to specify artifacts that you want returned in Microsoft identity platform authorization and token requests. The Microsoft identity platform v1.0 and v2.0 endpoints support OIDC scopes differently.</p>
+<p>With the Microsoft identity platform v1.0 endpoint, only the <em>openid</em> scope is used. You specify it in the <em>scope</em> parameter in an authorization request to return an ID token when you use the OpenID Connect protocol to sign in a user to your app. For more information, see <a href="https://docs.microsoft.com/entra/identity-platform/v2-oauth2-auth-code-flow">Microsoft identity platform and OAuth 2.0 authorization code flow</a>. To successfully return an ID token, you must also make sure that the <em>User.Read</em> permission is configured when you register your app.</p>
+<p>With the Microsoft identity platform v2.0 endpoint, you specify the <em>offline_access</em> scope in the <strong>scope</strong> parameter to explicitly request a refresh token when using the OAuth 2.0 or OpenID Connect protocols. With OpenID Connect, you specify the <em>openid</em> scope to request an ID token. You can also specify the <em>email</em> scope, <em>profile</em> scope, or both to return additional claims in the ID token. You don't need to specify the <em>User.Read</em> permission to return an ID token with the v2.0 endpoint. For more information, see <a href="https://docs.microsoft.com/entra/identity-platform/scopes-oidc#openid-connect-scopes">OpenID Connect scopes</a>.</p>
+<p>The Microsoft Authentication Library (MSAL) currently specifies <em>offline_access</em>, <em>openid</em>, <em>profile</em>, and <em>email</em> by default in authorization and token requests. Therefore, for the default case, if you specify these scopes explicitly, the Microsoft identity platform might return an error.</p>
 <table>
 <thead>
 <tr>
