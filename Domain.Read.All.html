@@ -1,0 +1,678 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Domain.Read.All | Graph Permissions </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Domain.Read.All | Graph Permissions ">
+      
+      <meta name="description" content="View all the Graph APIs and data exposed when granting Domain.Read.All to an application.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+      <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-X45QH3T4D7"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-X45QH3T4D7');
+      </script>
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="domainreadall">Domain.Read.All</h1>
+
+<blockquote>
+<p>Allows the app to read all domain properties on behalf of the signed-in user.</p>
+</blockquote>
+<blockquote>
+<p><strong>Merill's Note</strong></p>
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>Domain.Read.All</code> permission.</p>
+<p>If you need to create an audit report of the permissions granted to all the apps in your tenant, you can run the <code>Export-MsIdAppConsentGrantReport</code> command. See <a href="https://www.youtube.com/watch?v=vO0m5yE3dZA">How To: Run a quick OAuth app audit of your tenant</a></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Application</th>
+<th>Delegated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>dbb9058a-0e50-45d7-ae91-66909b5d4664</td>
+<td>2f9ee017-59c1-4f1d-9472-bd5529a7b311</td>
+</tr>
+<tr>
+<td>DisplayText</td>
+<td>Read domains</td>
+<td>Read domains.</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows the app to read all domain properties without a signed-in user.</td>
+<td>Allows the app to read all domain properties on behalf of the signed-in user.</td>
+</tr>
+<tr>
+<td>AdminConsentRequired</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph-methods">Graph Methods</h2>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_apiv1" role="tab" aria-controls="tabpanel_1_apiv1" data-tab="apiv1" tabindex="0" aria-selected="true"><span><i class='bi bi-braces'></i></span> API [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_apibeta" role="tab" aria-controls="tabpanel_1_apibeta" data-tab="apibeta" tabindex="-1"><span><i class='bi bi-braces'></i></span> API [beta]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psv1" role="tab" aria-controls="tabpanel_1_psv1" data-tab="psv1" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psbeta" role="tab" aria-controls="tabpanel_1_psbeta" data-tab="psbeta" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [beta]</a>
+</li>
+</ul>
+<section id="tabpanel_1_apiv1" role="tabpanel" data-tab="apiv1">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-list?view=graph-rest-1.0&amp;tabs=http">GET /directory/federationConfigurations/graph.samlOrWsFedExternalDomainFederation</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-get?view=graph-rest-1.0&amp;tabs=http">GET /directory/federationConfigurations/graph.samlOrWsFedExternalDomainFederation?$filter=domains/any(x: x/id eq 'domainName-value')</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/domain-list?view=graph-rest-1.0&amp;tabs=http">GET /domains</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/domain-list-federationconfiguration?view=graph-rest-1.0&amp;tabs=http">GET /domains/{domainsId}/federationConfiguration</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/internaldomainfederation-get?view=graph-rest-1.0&amp;tabs=http">GET /domains/{domainsId}/federationConfiguration/{internalDomainFederationId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/domain-get?view=graph-rest-1.0&amp;tabs=http">GET /domains/{id}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/domain-list-domainnamereferences?view=graph-rest-1.0&amp;tabs=http">GET /domains/{id}/domainNameReferences</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/domain-list-serviceconfigurationrecords?view=graph-rest-1.0&amp;tabs=http">GET /domains/{id}/serviceConfigurationRecords</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/domain-list-verificationdnsrecords?view=graph-rest-1.0&amp;tabs=http">GET /domains/{id}/verificationDnsRecords</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_apibeta" role="tabpanel" data-tab="apibeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-list?view=graph-rest-beta&amp;tabs=http">GET /directory/federationConfigurations/graph.samlOrWsFedExternalDomainFederation</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-get?view=graph-rest-beta&amp;tabs=http">GET /directory/federationConfigurations/graph.samlOrWsFedExternalDomainFederation?$filter=domains/any(x: x/id eq 'domainName-value')</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/domain-list?view=graph-rest-beta&amp;tabs=http">GET /domains</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/domain-list-federationconfiguration?view=graph-rest-beta&amp;tabs=http">GET /domains/{domainsId}/federationConfiguration</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/internaldomainfederation-get?view=graph-rest-beta&amp;tabs=http">GET /domains/{domainsId}/federationConfiguration/{internalDomainFederationId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/domain-get?view=graph-rest-beta&amp;tabs=http">GET /domains/{id}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/domain-list-domainnamereferences?view=graph-rest-beta&amp;tabs=http">GET /domains/{id}/domainNameReferences</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/domain-list-serviceconfigurationrecords?view=graph-rest-beta&amp;tabs=http">GET /domains/{id}/serviceConfigurationRecords</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/domain-list-verificationdnsrecords?view=graph-rest-beta&amp;tabs=http">GET /domains/{id}/verificationDnsRecords</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/domain-list-rootdomain?view=graph-rest-beta&amp;tabs=http">GET /domains/contoso.com/rootDomain</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_psv1" role="tabpanel" data-tab="psv1" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectoryfederationconfiguration">Get-MgDirectoryFederationConfiguration</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdomain">Get-MgDomain</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdomainfederationconfiguration">Get-MgDomainFederationConfiguration</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdomainnamereference">Get-MgDomainNameReference</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdomainserviceconfigurationrecord">Get-MgDomainServiceConfigurationRecord</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdomainverificationdnsrecord">Get-MgDomainVerificationDnsRecord</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_psbeta" role="tabpanel" data-tab="psbeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.directorymanagement/get-mgbetadirectoryfederationconfiguration">Get-MgBetaDirectoryFederationConfiguration</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.directorymanagement/get-mgbetadomain">Get-MgBetaDomain</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.directorymanagement/get-mgbetadomainfederationconfiguration">Get-MgBetaDomainFederationConfiguration</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.directorymanagement/get-mgbetadomainnamereference">Get-MgBetaDomainNameReference</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.directorymanagement/get-mgbetadomainserviceconfigurationrecord">Get-MgBetaDomainServiceConfigurationRecord</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.directorymanagement/get-mgbetadomainverificationdnsrecord">Get-MgBetaDomainVerificationDnsRecord</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
+</div>
+<h2 id="resources">Resources</h2>
+<p>Granting this permission allows the calling application to access the following information from your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_directoryObject1" role="tab" aria-controls="tabpanel_2_directoryObject1" data-tab="directoryObject1" tabindex="0" aria-selected="true">directoryObject</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_domain2" role="tab" aria-controls="tabpanel_2_domain2" data-tab="domain2" tabindex="-1">domain</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_domainDnsRecord3" role="tab" aria-controls="tabpanel_2_domainDnsRecord3" data-tab="domainDnsRecord3" tabindex="-1">domainDnsRecord</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_externalDomainName4" role="tab" aria-controls="tabpanel_2_externalDomainName4" data-tab="externalDomainName4" tabindex="-1">externalDomainName</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_internalDomainFederation5" role="tab" aria-controls="tabpanel_2_internalDomainFederation5" data-tab="internalDomainFederation5" tabindex="-1">internalDomainFederation</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_samlOrWsFedExternalDomainFederation6" role="tab" aria-controls="tabpanel_2_samlOrWsFedExternalDomainFederation6" data-tab="samlOrWsFedExternalDomainFederation6" tabindex="-1">samlOrWsFedExternalDomainFederation</a>
+</li>
+</ul>
+<section id="tabpanel_2_directoryObject1" role="tabpanel" data-tab="directoryObject1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/directoryobject?view=graph-rest-1.0&amp;tabs=http">directoryObject</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">deletedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time when this object was deleted. Always <code>null</code> when the object hasn't been deleted.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the object. For example, <code>12345678-9abc-def0-1234-56789abcde</code>. The value of the **i</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_domain2" role="tabpanel" data-tab="domain2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/domain?view=graph-rest-1.0&amp;tabs=http">domain</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">authenticationType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Indicates the configured authentication type for the domain. The value is either <code>Managed</code> or <code>Federated</code>. <code>Managed</code> indicates a cloud managed domain where Microsoft Entra ID performs user authentication. <code>Federated</code> indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. Not nullable.  <br><br>To update this property in delegated scenarios, the calling app must be assigned the <em>Directory.AccessAsUser.All</em> delegated permission.</td>
+</tr>
+<tr>
+<td style="text-align: left;">availabilityStatus</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">This property is always <code>null</code> except when the verify action is used. When the verify action is used, a <strong>domain</strong> entity is returned in the response. The <strong>availabilityStatus</strong> property of the <strong>domain</strong> entity in the response is either <code>AvailableImmediately</code> or <code>EmailVerifiedDomainTakeoverScheduled</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The fully qualified name of the domain. Key, immutable, not nullable, unique.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isAdminManaged</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The value of the property is <code>false</code> if the DNS record management of the domain is delegated to Microsoft 365. Otherwise, the value is <code>true</code>. Not nullable</td>
+</tr>
+<tr>
+<td style="text-align: left;">isDefault</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if this is the default domain that is used for user creation. There's only one default domain per company. Not nullable</td>
+</tr>
+<tr>
+<td style="text-align: left;">isInitial</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if this is the initial domain created by Microsoft Online Services (contoso.com). There's only one initial domain per company. Not nullable</td>
+</tr>
+<tr>
+<td style="text-align: left;">isRoot</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if the domain is a verified root domain. Otherwise, <code>false</code> if the domain is a subdomain or unverified. Not nullable</td>
+</tr>
+<tr>
+<td style="text-align: left;">isVerified</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if the domain has completed domain ownership verification. Not nullable</td>
+</tr>
+<tr>
+<td style="text-align: left;">passwordNotificationWindowInDays</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Specifies the number of days before a user receives notification that their password will expire. If the property isn't set, a default value of 14 days is used.</td>
+</tr>
+<tr>
+<td style="text-align: left;">passwordValidityPeriodInDays</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Specifies the length of time that a password is valid before it must be changed. If the property isn't set, a default value of 90 days is used.</td>
+</tr>
+<tr>
+<td style="text-align: left;">state</td>
+<td style="text-align: left;">domainState</td>
+<td style="text-align: left;">Status of asynchronous operations scheduled for the domain.</td>
+</tr>
+<tr>
+<td style="text-align: left;">supportedServices</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">The capabilities assigned to the domain. Can include <code>0</code>, <code>1</code> or more of following values: <code>Email</code>, <code>Sharepoint</code>, <code>EmailInternalRelayOnly</code>, <code>OfficeCommunicationsOnline</code>, <code>SharePointDefaultDomain</code>, <code>FullRedelegation</code>, <code>SharePointPublic</code>, <code>OrgIdAuthentication</code>, <code>Yammer</code>, <code>Intune</code>. The values that you can add or remove using the API include: <code>Email</code>, <code>OfficeCommunicationsOnline</code>, <code>Yammer</code>. Not nullable.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_domainDnsRecord3" role="tabpanel" data-tab="domainDnsRecord3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/domaindnsrecord?view=graph-rest-1.0&amp;tabs=http">domainDnsRecord</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier assigned to this entity. Not nullable, Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isOptional</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">If <code>false</code>, the customer must configure this record at the DNS host for Microsoft Online Services to operate correctly with the domain.</td>
+</tr>
+<tr>
+<td style="text-align: left;">label</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Value used when configuring the name of the DNS record at the DNS host.</td>
+</tr>
+<tr>
+<td style="text-align: left;">recordType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Indicates what type of DNS record this entity represents. The value can be <code>CName</code>, <code>Mx</code>, <code>Srv</code>, or <code>Txt</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">supportedService</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Microsoft Online Service or feature that has a dependency on this DNS record. Can be one of the following values: <code>null</code>, <code>Email</code>, <code>Sharepoint</code>, <code>EmailInternalRelayOnly</code>, <code>OfficeCommunicationsOnline</code>, <code>SharePointDefaultDomain</code>, <code>FullRedelegation</code>, <code>SharePointPublic</code>, <code>OrgIdAuthentication</code>, <code>Yammer</code>, <code>Intune</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">ttl</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Value to use when configuring the time-to-live (ttl) property of the DNS record at the DNS host. Not nullable.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_externalDomainName4" role="tabpanel" data-tab="externalDomainName4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/externaldomainname?view=graph-rest-1.0&amp;tabs=http">externalDomainName</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Domain name of the external organization that the Microsoft Entra tenant is federating with. Inherited from entity.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_internalDomainFederation5" role="tabpanel" data-tab="internalDomainFederation5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/internaldomainfederation?view=graph-rest-1.0&amp;tabs=http">internalDomainFederation</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">activeSignInUri</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">URL of the endpoint used by active clients when authenticating with federated domains set up for single sign-on in Microsoft Entra ID. Corresponds to the <strong>ActiveLogOnUri</strong> property of the Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the federated identity Provider (IdP). Inherited from identityProviderBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">federatedIdpMfaBehavior</td>
+<td style="text-align: left;">federatedIdpMfaBehavior</td>
+<td style="text-align: left;">Determines whether Microsoft Entra ID accepts the MFA performed by the federated IdP when a federated user accesses an application that is governed by a conditional access policy that requires MFA. The possible values are: <code>acceptIfMfaDoneByFederatedIdp</code>, <code>enforceMfaByFederatedIdp</code>, <code>rejectMfaByFederatedIdp</code>, <code>unknownFutureValue</code>. For more information, see federatedIdpMfaBehavior values.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the federated identity provider. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isSignedAuthenticationRequestRequired</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">If <code>true</code>, when SAML authentication requests are sent to the federated SAML IdP, Microsoft Entra ID will sign those requests using the OrgID signing key. If <code>false</code> (default), the SAML authentication requests sent to the federated IdP aren't signed.</td>
+</tr>
+<tr>
+<td style="text-align: left;">issuerUri</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Issuer URI of the federation server. Inherited from samlOrWsFedProvider.</td>
+</tr>
+<tr>
+<td style="text-align: left;">metadataExchangeUri</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">URI of the metadata exchange endpoint used for authentication from rich client applications. Inherited from samlOrWsFedProvider.</td>
+</tr>
+<tr>
+<td style="text-align: left;">nextSigningCertificate</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Fallback token signing certificate that can also be used to sign tokens, for example when the primary signing certificate expires. Formatted as Base64 encoded strings of the public portion of the federated IdP's token signing certificate. Needs to be compatible with the X509Certificate2 class. Much like the signingCertificate, the nextSigningCertificate property is used if a rollover is required outside of the auto-rollover update, a new federation service is being set up, or if the new token signing certificate isn't present in the federation properties after the federation service certificate has been updated.</td>
+</tr>
+<tr>
+<td style="text-align: left;">passiveSignInUri</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">URI that web-based clients are directed to when signing into Microsoft Entra services. Inherited from samlOrWsFedProvider.</td>
+</tr>
+<tr>
+<td style="text-align: left;">preferredAuthenticationProtocol</td>
+<td style="text-align: left;">authenticationProtocol</td>
+<td style="text-align: left;">Preferred authentication protocol. The possible values are: <code>wsFed</code>, <code>saml</code>, <code>unknownFutureValue</code>. Inherited from samlOrWsFedProvider.</td>
+</tr>
+<tr>
+<td style="text-align: left;">promptLoginBehavior</td>
+<td style="text-align: left;">promptLoginBehavior</td>
+<td style="text-align: left;">Sets the preferred behavior for the sign-in prompt. The possible values are: <code>translateToFreshPasswordAuthentication</code>, <code>nativeSupport</code>, <code>disabled</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">signingCertificate</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Current certificate used to sign tokens passed to the Microsoft identity platform. The certificate is formatted as a Base64 encoded string of the public portion of the federated IdP's token signing certificate and must be compatible with the X509Certificate2 class. <br>This property is used in the following scenarios: <li> If a rollover is required outside of the autorollover update <li> A new federation service is being set up <li> If the new token signing certificate isn't present in the federation properties after the federation service certificate has been updated.<br>Microsoft Entra ID updates certificates via an autorollover process in which it attempts to retrieve a new certificate from the federation service metadata, 30 days before expiry of the current certificate. If a new certificate isn't available, Microsoft Entra ID monitors the metadata daily and will update the federation settings for the domain when a new certificate is available. Inherited from samlOrWsFedProvider.</li></td>
+</tr>
+<tr>
+<td style="text-align: left;">signingCertificateUpdateStatus</td>
+<td style="text-align: left;">signingCertificateUpdateStatus</td>
+<td style="text-align: left;">Provides status and timestamp of the last update of the signing certificate.</td>
+</tr>
+<tr>
+<td style="text-align: left;">signOutUri</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">URI that clients are redirected to when they sign out of Microsoft Entra services. Corresponds to the **L</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_samlOrWsFedExternalDomainFederation6" role="tabpanel" data-tab="samlOrWsFedExternalDomainFederation6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/samlorwsfedexternaldomainfederation?view=graph-rest-1.0&amp;tabs=http">samlOrWsFedExternalDomainFederation</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the SAML or WS-Fed based IdP. Inherited from identityProviderBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the identity provider. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">issuerUri</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Issuer URI of the federation server. Inherited from samlOrWsFedProvider.</td>
+</tr>
+<tr>
+<td style="text-align: left;">metadataExchangeUri</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">URI of the metadata exchange endpoint used for authentication from rich client applications. Inherited from samlOrWsFedProvider.</td>
+</tr>
+<tr>
+<td style="text-align: left;">passiveSignInUri</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">URI that web-based clients are directed to when signing in to Microsoft Entra services. Inherited from samlOrWsFedProvider.</td>
+</tr>
+<tr>
+<td style="text-align: left;">preferredAuthenticationProtocol</td>
+<td style="text-align: left;">authenticationProtocol</td>
+<td style="text-align: left;">Preferred authentication protocol. The possible values are: <code>wsFed</code>, <code>saml</code>, <code>unknownFutureValue</code>. Inherited from samlOrWsFedProvider.</td>
+</tr>
+<tr>
+<td style="text-align: left;">signingCertificate</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Current certificate used to sign tokens passed to the Microsoft identity platform. The certificate is formatted as a Base64 encoded string of the public portion of the federated IdP's token signing certificate and must be compatible with the X509Certificate2 class.  <br><br> This property is used in the following scenarios: <ul><li> if a rollover is required outside of the autorollover update <li>a new federation service is being set up <li> if the new token signing certificate isn't present in the federation properties after the federation service certificate has been updated. </li></ul> <br><br> Microsoft Entra ID updates certificates via an autorollover process in which it attempts to retrieve a new certificate from the federation service metadata, 30 days before expiry of the current certificate. If a new certificate isn't available, Microsoft Entra ID monitors the metadata daily and will update the federation settings for the domain when a new certificate is available. <br><br> Inherited from samlOrWsFedProvider.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</div>
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Created by <strong><a href='https://merill.net'>merill</a></strong></span> | <span>Sign up to my weekly <a href='https://entra.news'>Entra newsletter</a></span> | <span><a href='https://github.com/merill/graphpermissions.github.io/issues'>Submit feedback</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
