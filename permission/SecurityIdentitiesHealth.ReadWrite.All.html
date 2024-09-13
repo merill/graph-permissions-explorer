@@ -156,6 +156,20 @@
 <th>Methods</th>
 </tr>
 </thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/security-identitycontainer-list-healthissues?view=graph-rest-1.0&amp;tabs=http">GET /security/identities/healthIssues</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/security-healthissue-get?view=graph-rest-1.0&amp;tabs=http">GET /security/identities/healthIssues/{healthIssueId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/security-healthissue-update?view=graph-rest-1.0&amp;tabs=http">PATCH /security/identities/healthIssues/{healthIssueId}</a></div></td>
+</tr>
+</tbody>
 </table>
 </section>
 <section id="tabpanel_1_apibeta" role="tabpanel" data-tab="apibeta" aria-hidden="true" hidden="hidden">
@@ -196,6 +210,16 @@
 <th>Commands</th>
 </tr>
 </thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.security/get-mgsecurityidentityhealthissue">Get-MgSecurityIdentityHealthIssue</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.security/update-mgsecurityidentityhealthissue">Update-MgSecurityIdentityHealthIssue</a></div></td>
+</tr>
+</tbody>
 </table>
 </section>
 <section id="tabpanel_1_psbeta" role="tabpanel" data-tab="psbeta" aria-hidden="true" hidden="hidden">
@@ -250,7 +274,7 @@
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time of when the health issue was generated.</td>
+<td style="text-align: left;">The date and time when the health issue was generated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">description</td>
@@ -273,9 +297,9 @@
 <td style="text-align: left;">The type of the health issue. The possible values are: <code>sensor</code>, <code>global</code>, <code>unknownFutureValue</code>. For a list of all health issues and their identifiers, see Microsoft Defender for Identity health issues.</td>
 </tr>
 <tr>
-<td style="text-align: left;">ID</td>
+<td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">A unique identifier that represents the health issue.</td>
+<td style="text-align: left;">A unique identifier that represents the health issue. Inherited from entity.</td>
 </tr>
 <tr>
 <td style="text-align: left;">issueTypeId</td>
@@ -285,22 +309,22 @@
 <tr>
 <td style="text-align: left;">lastModifiedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time of when the health issue was last updated.</td>
+<td style="text-align: left;">The date and time when the health issue was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">recommendations</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">This field contains a list of recommended actions that can be taken to resolve the issue effectively and efficiently. These actions might include how to investigate the issue further. Not limited to prewritten responses.</td>
+<td style="text-align: left;">A list of recommended actions that can be taken to resolve the issue effectively and efficiently. These actions might include instructions for further investigation and aren't limited to prewritten responses.</td>
 </tr>
 <tr>
 <td style="text-align: left;">recommendedActionCommands</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">Contains a list of commands from the product's PowerShell module that can be used to resolve the issue, if available. If there aren't any commands that can be used to solve the issue, this field is empty. The commands, if present, provide a quick and efficient way to address the issue. The commands run in order for the single recommended fix.</td>
+<td style="text-align: left;">A list of commands from the PowerShell module for the product that can be used to resolve the issue, if available. If no commands can be used to solve the issue, this property is empty. The commands, if present, provide a quick and efficient way to address the issue. These commands run in sequence for the single recommended fix.</td>
 </tr>
 <tr>
 <td style="text-align: left;">sensorDNSNames</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">A list of the dns names of the sensors the health issue is related to.</td>
+<td style="text-align: left;">A list of the DNS names of the sensors the health issue is related to.</td>
 </tr>
 <tr>
 <td style="text-align: left;">severity</td>
