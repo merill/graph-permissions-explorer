@@ -93,6 +93,11 @@
 <blockquote>
 <p>Allows the app to read and write all scenario monitoring alerts, on behalf of the signed-in user.</p>
 </blockquote>
+<blockquote>
+<p><strong>Merill's Note</strong></p>
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>HealthMonitoringAlert.ReadWrite.All</code> permission.</p>
+<p>If you need to create an audit report of the permissions granted to all the apps in your tenant, you can run the <code>Export-MsIdAppConsentGrantReport</code> command. See <a href="https://www.youtube.com/watch?v=vO0m5yE3dZA">How To: Run a quick OAuth app audit of your tenant</a></p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -125,11 +130,186 @@
 </tbody>
 </table>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_apiv1" role="tab" aria-controls="tabpanel_1_apiv1" data-tab="apiv1" tabindex="0" aria-selected="true"><span><i class='bi bi-braces'></i></span> API [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_apibeta" role="tab" aria-controls="tabpanel_1_apibeta" data-tab="apibeta" tabindex="-1"><span><i class='bi bi-braces'></i></span> API [beta]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psv1" role="tab" aria-controls="tabpanel_1_psv1" data-tab="psv1" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psbeta" role="tab" aria-controls="tabpanel_1_psbeta" data-tab="psbeta" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [beta]</a>
+</li>
+</ul>
+<section id="tabpanel_1_apiv1" role="tabpanel" data-tab="apiv1">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_apibeta" role="tabpanel" data-tab="apibeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/healthmonitoring-alert-get?view=graph-rest-beta&amp;tabs=http">GET /reports/healthMonitoring/alerts/{alertId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/healthmonitoring-alert-update?view=graph-rest-beta&amp;tabs=http">PATCH /reports/healthMonitoring/alerts/{alertId}</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_psv1" role="tabpanel" data-tab="psv1" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_psbeta" role="tabpanel" data-tab="psbeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
 </div>
-<hr>
+<h2 id="resources">Resources</h2>
+<p>Granting this permission allows the calling application to access (and/or update) the following information in your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_alert1" role="tab" aria-controls="tabpanel_2_alert1" data-tab="alert1" tabindex="0" aria-selected="true">alert</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_directoryObjectImpactSummary2" role="tab" aria-controls="tabpanel_2_directoryObjectImpactSummary2" data-tab="directoryObjectImpactSummary2" tabindex="-1">directoryObjectImpactSummary</a>
+</li>
+</ul>
+<section id="tabpanel_2_alert1" role="tabpanel" data-tab="alert1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/healthmonitoring-alert?view=graph-rest-1.0&amp;tabs=http">alert</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">alertType</td>
+<td style="text-align: left;">microsoft.graph.healthMonitoring.alertType</td>
+<td style="text-align: left;">Indicates which type of scenario an alert is associated with. The possible values are: <code>unknown</code>, <code>mfaSignInFailure</code>, <code>managedDeviceSignInFailure</code>, <code>compliantDeviceSignInFailure</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">category</td>
+<td style="text-align: left;">microsoft.graph.healthMonitoring.category</td>
+<td style="text-align: left;">The classification that groups the scenario. The possible values are: <code>unknown</code>, <code>authentication</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The time when Microsoft Entra Health monitoring generated the alert. Supports <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">documentation</td>
+<td style="text-align: left;">microsoft.graph.healthMonitoring.documentation</td>
+<td style="text-align: left;">A key-value pair that contains the name of and link to the documentation to aid in investigation of the alert.</td>
+</tr>
+<tr>
+<td style="text-align: left;">enrichment</td>
+<td style="text-align: left;">microsoft.graph.healthMonitoring.enrichment</td>
+<td style="text-align: left;">Investigative information on the alert. This information typically includes counts of impacted objects, which include directory objects such as users, groups, and devices, and a pointer to supporting data.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique GUID identifier of this alert in the associated tenant. Inherited from microsoft.graph.entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">scenario</td>
+<td style="text-align: left;">microsoft.graph.healthMonitoring.scenario</td>
+<td style="text-align: left;">The area being monitored on the system that is emitting the source signals. The possible values are: <code>unknown</code>, <code>mfa</code>, <code>devices</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">signals</td>
+<td style="text-align: left;">microsoft.graph.healthMonitoring.signals</td>
+<td style="text-align: left;">The collection of signals that were used in the generation of the alert. These signals are sourced from serviceActivity APIs and are added to the alert as key-value pairs.</td>
+</tr>
+<tr>
+<td style="text-align: left;">state</td>
+<td style="text-align: left;">microsoft.graph.healthMonitoring.alertState</td>
+<td style="text-align: left;">The current lifecycle state of the alert. The possible values are: <code>active</code>, <code>resolved</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_directoryObjectImpactSummary2" role="tabpanel" data-tab="directoryObjectImpactSummary2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/healthmonitoring-directoryobjectimpactsummary?view=graph-rest-1.0&amp;tabs=http">directoryObjectImpactSummary</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">impactedCount</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The number of resources impacted. The number could be an exhaustive count or a sampling count. Inherited from microsoft.graph.healthMonitoring.resourceImpactSummary.</td>
+</tr>
+<tr>
+<td style="text-align: left;">impactedCountLimitExceeded</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether <strong>impactedCount</strong> is exhaustive or a sampling. When this value is &quot;true,&quot; the limit was exceeded and <strong>impactedCount</strong> represents a sampling. Otherwise, <strong>impactedCount</strong> represents the true number of impacts. Inherited from microsoft.graph.healthMonitoring.resourceImpactSummary.</td>
+</tr>
+<tr>
+<td style="text-align: left;">resourceType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The type of resource that was impacted. Examples include <code>user</code>, <code>group</code>, <code>application</code>, <code>servicePrincipal</code>, <code>device</code>. Inherited from microsoft.graph.healthMonitoring.resourceImpactSummary.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</div>
 
 </article>
 
