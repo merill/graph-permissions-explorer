@@ -94,12 +94,12 @@
 <p>Allows the app to read and write data in your organization's directory, such as users, and groups.  It does not allow the app to delete users or groups, or reset user passwords.</p>
 </blockquote>
 <!-- markdownlint-disable MD002 MD041 -->
-<p><em>Directory permissions are <strong>not recommended</strong> for use and might be deprecated in the future.</em></p>
 <div class="CAUTION">
 <h5>Caution</h5>
-<p>Directory.ReadWrite.All grants access that is broadly equivalent to a global tenant admin. Apps that are granted Directory.ReadWrite.All can manage the full range of directory resources, and they can manage authorization for <em>other</em> apps and users to access resources across the organization. This includes directory resources like <a href="https://docs.microsoft.com/graph/api/resources/user">users</a>, <a href="https://docs.microsoft.com/graph/api/resources/group">groups</a>, <a href="https://docs.microsoft.com/graph/api/resources/application">applications</a>, and <a href="https://docs.microsoft.com/graph/api/resources/device">devices</a>, and nondirectory resources in Exchange, SharePoint, Teams, and other services.</p>
+<p>Directory permissions grant broad access to directory (Microsoft Entra ID) resources such as <a href="https://docs.microsoft.com/graph/api/resources/user">user</a>, <a href="https://docs.microsoft.com/graph/api/resources/group">group</a>, and <a href="https://docs.microsoft.com/graph/api/resources/device">device</a> in an organization. Whenever possible, choose permissions specific to these resources and avoid using directory permissions.</p>
+<p>Directory permissions might be deprecated in the future.</p>
 </div>
-<p>Before December 3rd, 2020, when the application permission <em>Directory.ReadWrite.All</em> was granted, the <a href="https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#directory-writers-permissions">Directory Writers</a> directory role was also assigned. This directory role isn't removed automatically when the associated application permissions are revoked. To remove an application's access to read or write to the directory, customers must also remove any directory roles that were granted to the application.</p>
+<p>Before December 3rd, 2020, when the application permission <em>Directory.ReadWrite.All</em> was granted, the <a href="https://docs.microsoft.com/entra/identity/role-based-access-control/permissions-reference#directory-writers">Directory Writers</a> directory role was also assigned. This directory role isn't removed automatically when the associated application permissions are revoked. To remove an application's access to read or write to the directory, customers must also remove any directory roles that were granted to the application.</p>
 <p>A service update disabling this behavior began rolling out on December 3rd, 2020. Deployment to all customers completed on January 11, 2021. Directory roles are no longer automatically assigned when application permissions are granted.</p>
 <blockquote>
 <p><strong>Merill's Note</strong></p>
