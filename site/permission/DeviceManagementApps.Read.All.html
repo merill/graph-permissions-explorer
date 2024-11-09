@@ -7208,32 +7208,57 @@
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the mobile app relationship entity. Read-Only. Inherited from mobileAppRelationship</td>
+<td style="text-align: left;">The unique identifier for the mobile app relationship entity. This is assigned at MobileAppRelationship entity creation. For example: 2dbc75b9-e993-4e4d-a071-91ac5a218672_43aaaf35-ce51-4695-9447-5eac6df31161. Read-Only. Returned by default. Supports: $select. Does not support $search, $filter, $orderBy. Inherited from mobileAppRelationship</td>
 </tr>
 <tr>
 <td style="text-align: left;">targetId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">App ID of the app that is the target of the mobile app relationship entity. Read-Only Inherited from mobileAppRelationship</td>
+<td style="text-align: left;">The unique app identifier of the target of the mobile app relationship entity. For example: 2dbc75b9-e993-4e4d-a071-91ac5a218672. Read-Only. Returned by default. Supports: $select. Does not support $search, $filter, $orderBy. Inherited from mobileAppRelationship</td>
 </tr>
 <tr>
 <td style="text-align: left;">targetDisplayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name of the app that is the target of the mobile app relationship entity. Read-Only. This property is read-only. Inherited from mobileAppRelationship</td>
+<td style="text-align: left;">The display name of the app that is the target of the mobile app relationship entity. For example: Firefox Setup 52.0.2 32bit.intunewin. Maximum length is 500 characters. Read-Only. Returned by default. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only. Inherited from mobileAppRelationship</td>
 </tr>
 <tr>
 <td style="text-align: left;">targetDisplayVersion</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The display version of the app that is the target of the mobile app relationship entity. Read-Only. This property is read-only. Inherited from mobileAppRelationship</td>
+<td style="text-align: left;">The display version of the app that is the target of the mobile app relationship entity. For example 1.0 or 1.2203.156. Read-Only. Returned by default. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only. Inherited from mobileAppRelationship</td>
 </tr>
 <tr>
 <td style="text-align: left;">targetPublisher</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The publisher of the app that is the target of the mobile app relationship entity. Read-Only. This property is read-only. Inherited from mobileAppRelationship</td>
+<td style="text-align: left;">The publisher of the app that is the target of the mobile app relationship entity. For example: Fabrikam. Maximum length is 500 characters. Read-Only. Returned by default. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only. Inherited from mobileAppRelationship</td>
+</tr>
+<tr>
+<td style="text-align: left;">targetPublisherDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The publisher display name of the app that is the target of the mobile app relationship entity. For example: Fabrikam. Maximum length is 500 characters. Read-Only. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only. Inherited from mobileAppRelationship</td>
+</tr>
+<tr>
+<td style="text-align: left;">sourceId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique app identifier of the source of the mobile app relationship entity. For example: 2dbc75b9-e993-4e4d-a071-91ac5a218672. If null during relationship creation, then it will be populated with parent Id. Read-Only. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only. Inherited from mobileAppRelationship</td>
+</tr>
+<tr>
+<td style="text-align: left;">sourceDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the app that is the source of the mobile app relationship entity. For example: Orca. Maximum length is 500 characters. Read-Only. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only. Inherited from mobileAppRelationship</td>
+</tr>
+<tr>
+<td style="text-align: left;">sourceDisplayVersion</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display version of the app that is the source of the mobile app relationship entity. For example 1.0.12 or 1.2203.156 or 3. Read-Only. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only. Inherited from mobileAppRelationship</td>
+</tr>
+<tr>
+<td style="text-align: left;">sourcePublisherDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The publisher display name of the app that is the source of the mobile app relationship entity. For example: Fabrikam. Maximum length is 500 characters. Read-Only. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only. Inherited from mobileAppRelationship</td>
 </tr>
 <tr>
 <td style="text-align: left;">targetType</td>
 <td style="text-align: left;">mobileAppRelationshipType</td>
-<td style="text-align: left;">The type of relationship indicating whether the target application of a relationship is a parent or child in the relationship. Possible values are: parent, child. Read-Only. This property is read-only. Inherited from mobileAppRelationship. Possible values are: <code>child</code>, <code>parent</code>, <code>unknownFutureValue</code>.</td>
+<td style="text-align: left;">The type of relationship indicating whether the target application of a relationship is a parent or child in the relationship. Possible values are: parent, child. Read-Only. Returned by default. Supports: $select, $filter. Does not support $search, $orderBy. This property is read-only. Inherited from mobileAppRelationship. Possible values are: <code>child</code>, <code>parent</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">dependencyType</td>
@@ -7463,32 +7488,57 @@
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the mobile app relationship entity. Read-Only.</td>
+<td style="text-align: left;">The unique identifier for the mobile app relationship entity. This is assigned at MobileAppRelationship entity creation. For example: 2dbc75b9-e993-4e4d-a071-91ac5a218672_43aaaf35-ce51-4695-9447-5eac6df31161. Read-Only. Returned by default. Supports: $select. Does not support $search, $filter, $orderBy.</td>
 </tr>
 <tr>
 <td style="text-align: left;">targetId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">App ID of the app that is the target of the mobile app relationship entity. Read-Only</td>
+<td style="text-align: left;">The unique app identifier of the target of the mobile app relationship entity. For example: 2dbc75b9-e993-4e4d-a071-91ac5a218672. Read-Only. Returned by default. Supports: $select. Does not support $search, $filter, $orderBy.</td>
 </tr>
 <tr>
 <td style="text-align: left;">targetDisplayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name of the app that is the target of the mobile app relationship entity. Read-Only. This property is read-only.</td>
+<td style="text-align: left;">The display name of the app that is the target of the mobile app relationship entity. For example: Firefox Setup 52.0.2 32bit.intunewin. Maximum length is 500 characters. Read-Only. Returned by default. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">targetDisplayVersion</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The display version of the app that is the target of the mobile app relationship entity. Read-Only. This property is read-only.</td>
+<td style="text-align: left;">The display version of the app that is the target of the mobile app relationship entity. For example 1.0 or 1.2203.156. Read-Only. Returned by default. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">targetPublisher</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The publisher of the app that is the target of the mobile app relationship entity. Read-Only. This property is read-only.</td>
+<td style="text-align: left;">The publisher of the app that is the target of the mobile app relationship entity. For example: Fabrikam. Maximum length is 500 characters. Read-Only. Returned by default. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">targetPublisherDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The publisher display name of the app that is the target of the mobile app relationship entity. For example: Fabrikam. Maximum length is 500 characters. Read-Only. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sourceId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique app identifier of the source of the mobile app relationship entity. For example: 2dbc75b9-e993-4e4d-a071-91ac5a218672. If null during relationship creation, then it will be populated with parent Id. Read-Only. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sourceDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the app that is the source of the mobile app relationship entity. For example: Orca. Maximum length is 500 characters. Read-Only. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sourceDisplayVersion</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display version of the app that is the source of the mobile app relationship entity. For example 1.0.12 or 1.2203.156 or 3. Read-Only. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sourcePublisherDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The publisher display name of the app that is the source of the mobile app relationship entity. For example: Fabrikam. Maximum length is 500 characters. Read-Only. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">targetType</td>
 <td style="text-align: left;">mobileAppRelationshipType</td>
-<td style="text-align: left;">The type of relationship indicating whether the target application of a relationship is a parent or child in the relationship. Possible values are: parent, child. Read-Only. This property is read-only. Possible values are: <code>child</code>, <code>parent</code>, <code>unknownFutureValue</code>.</td>
+<td style="text-align: left;">The type of relationship indicating whether the target application of a relationship is a parent or child in the relationship. Possible values are: parent, child. Read-Only. Returned by default. Supports: $select, $filter. Does not support $search, $orderBy. This property is read-only. Possible values are: <code>child</code>, <code>parent</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -7563,32 +7613,57 @@
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the mobile app relationship entity. Read-Only. Inherited from mobileAppRelationship</td>
+<td style="text-align: left;">The unique identifier for the mobile app relationship entity. This is assigned at MobileAppRelationship entity creation. For example: 2dbc75b9-e993-4e4d-a071-91ac5a218672_43aaaf35-ce51-4695-9447-5eac6df31161. Read-Only. Returned by default. Supports: $select. Does not support $search, $filter, $orderBy. Inherited from mobileAppRelationship</td>
 </tr>
 <tr>
 <td style="text-align: left;">targetId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">App ID of the app that is the target of the mobile app relationship entity. Read-Only Inherited from mobileAppRelationship</td>
+<td style="text-align: left;">The unique app identifier of the target of the mobile app relationship entity. For example: 2dbc75b9-e993-4e4d-a071-91ac5a218672. Read-Only. Returned by default. Supports: $select. Does not support $search, $filter, $orderBy. Inherited from mobileAppRelationship</td>
 </tr>
 <tr>
 <td style="text-align: left;">targetDisplayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name of the app that is the target of the mobile app relationship entity. Read-Only. This property is read-only. Inherited from mobileAppRelationship</td>
+<td style="text-align: left;">The display name of the app that is the target of the mobile app relationship entity. For example: Firefox Setup 52.0.2 32bit.intunewin. Maximum length is 500 characters. Read-Only. Returned by default. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only. Inherited from mobileAppRelationship</td>
 </tr>
 <tr>
 <td style="text-align: left;">targetDisplayVersion</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The display version of the app that is the target of the mobile app relationship entity. Read-Only. This property is read-only. Inherited from mobileAppRelationship</td>
+<td style="text-align: left;">The display version of the app that is the target of the mobile app relationship entity. For example 1.0 or 1.2203.156. Read-Only. Returned by default. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only. Inherited from mobileAppRelationship</td>
 </tr>
 <tr>
 <td style="text-align: left;">targetPublisher</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The publisher of the app that is the target of the mobile app relationship entity. Read-Only. This property is read-only. Inherited from mobileAppRelationship</td>
+<td style="text-align: left;">The publisher of the app that is the target of the mobile app relationship entity. For example: Fabrikam. Maximum length is 500 characters. Read-Only. Returned by default. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only. Inherited from mobileAppRelationship</td>
+</tr>
+<tr>
+<td style="text-align: left;">targetPublisherDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The publisher display name of the app that is the target of the mobile app relationship entity. For example: Fabrikam. Maximum length is 500 characters. Read-Only. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only. Inherited from mobileAppRelationship</td>
+</tr>
+<tr>
+<td style="text-align: left;">sourceId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique app identifier of the source of the mobile app relationship entity. For example: 2dbc75b9-e993-4e4d-a071-91ac5a218672. If null during relationship creation, then it will be populated with parent Id. Read-Only. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only. Inherited from mobileAppRelationship</td>
+</tr>
+<tr>
+<td style="text-align: left;">sourceDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the app that is the source of the mobile app relationship entity. For example: Orca. Maximum length is 500 characters. Read-Only. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only. Inherited from mobileAppRelationship</td>
+</tr>
+<tr>
+<td style="text-align: left;">sourceDisplayVersion</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display version of the app that is the source of the mobile app relationship entity. For example 1.0.12 or 1.2203.156 or 3. Read-Only. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only. Inherited from mobileAppRelationship</td>
+</tr>
+<tr>
+<td style="text-align: left;">sourcePublisherDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The publisher display name of the app that is the source of the mobile app relationship entity. For example: Fabrikam. Maximum length is 500 characters. Read-Only. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only. Inherited from mobileAppRelationship</td>
 </tr>
 <tr>
 <td style="text-align: left;">targetType</td>
 <td style="text-align: left;">mobileAppRelationshipType</td>
-<td style="text-align: left;">The type of relationship indicating whether the target application of a relationship is a parent or child in the relationship. Possible values are: parent, child. Read-Only. This property is read-only. Inherited from mobileAppRelationship. Possible values are: <code>child</code>, <code>parent</code>, <code>unknownFutureValue</code>.</td>
+<td style="text-align: left;">The type of relationship indicating whether the target application of a relationship is a parent or child in the relationship. Possible values are: parent, child. Read-Only. Returned by default. Supports: $select, $filter. Does not support $search, $orderBy. This property is read-only. Inherited from mobileAppRelationship. Possible values are: <code>child</code>, <code>parent</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">supersedenceType</td>
@@ -13216,7 +13291,7 @@
 <tr>
 <td style="text-align: left;">appActionIfUnableToAuthenticateUser</td>
 <td style="text-align: left;">managedAppRemediationAction</td>
-<td style="text-align: left;">If set, it will specify what action to take in the case where the user is unable to checkin because their authentication token is invalid. This happens when the user is deleted or disabled in AAD. Some possible values are block or wipe. If this property is not set, no action will be taken. Possible values are: <code>block</code>, <code>wipe</code>, <code>warn</code>.</td>
+<td style="text-align: left;">If set, it will specify what action to take in the case where the user is unable to checkin because their authentication token is invalid. This happens when the user is deleted or disabled in AAD. Some possible values are block or wipe. If this property is not set, no action will be taken. Possible values are: <code>block</code>, <code>wipe</code>, <code>warn</code>, <code>blockWhenSettingIsSupported</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">maximumAllowedDeviceThreatLevel</td>
@@ -13226,7 +13301,7 @@
 <tr>
 <td style="text-align: left;">mobileThreatDefenseRemediationAction</td>
 <td style="text-align: left;">managedAppRemediationAction</td>
-<td style="text-align: left;">Determines what action to take if the mobile threat defense threat threshold isn't met. Some possible values are block or wipe. Warn isn't a supported value for this property. Possible values are: <code>block</code>, <code>wipe</code>, <code>warn</code>.</td>
+<td style="text-align: left;">Determines what action to take if the mobile threat defense threat threshold isn't met. Some possible values are block or wipe. Warn isn't a supported value for this property. Possible values are: <code>block</code>, <code>wipe</code>, <code>warn</code>, <code>blockWhenSettingIsSupported</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">minimumRequiredSdkVersion</td>
@@ -13906,7 +13981,7 @@
 <tr>
 <td style="text-align: left;">managedDeviceCount</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The number of vulnerable devices. Valid values 0 to 65536</td>
+<td style="text-align: left;">The number of vulnerable devices.</td>
 </tr>
 <tr>
 <td style="text-align: left;">intendedSettings</td>
