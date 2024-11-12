@@ -156,7 +156,23 @@
 <tbody>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
-<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/filestoragecontainer-permanentdelete?view=graph-rest-1.0&amp;tabs=http">POST /storageContainers/{containerId}/permanentDelete</a></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/filestorage-delete-deletedcontainers?view=graph-rest-1.0&amp;tabs=http">DELETE /storage/fileStorage/deletedContainers/{containerId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/filestoragecontainer-restore?view=graph-rest-1.0&amp;tabs=http">POST /deletedStorageContainers/{containerId}/restore</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/filestoragecontainer-lock?view=graph-rest-1.0&amp;tabs=http">POST /storage/fileStorage/containers/{containerId}/lock</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/filestoragecontainer-permanentdelete?view=graph-rest-1.0&amp;tabs=http">POST /storage/fileStorage/containers/{containerId}/permanentDelete</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/filestoragecontainer-unlock?view=graph-rest-1.0&amp;tabs=http">POST /storage/fileStorage/containers/{containerId}/unlock</a></div></td>
 </tr>
 </tbody>
 </table>
@@ -293,9 +309,19 @@
 <td style="text-align: left;">The unique stable identifier of the <strong>filerStorageContainer</strong>. Read-only.</td>
 </tr>
 <tr>
+<td style="text-align: left;">lockState</td>
+<td style="text-align: left;">siteLockState</td>
+<td style="text-align: left;">Indicates the lock state of the <strong>fileStorageContainer</strong>. The possible values are <code>unlocked</code> and <code>lockedReadOnly</code>. Read-only.</td>
+</tr>
+<tr>
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">fileStorageContainerStatus</td>
 <td style="text-align: left;">Status of the <strong>fileStorageContainer</strong>. Containers are created as inactive and require activation. Inactive containers are subjected to automatic deletion in 24 hours. The possible values are: <code>inactive </code>, <code>active </code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">settings</td>
+<td style="text-align: left;">fileStorageContainerSettings</td>
+<td style="text-align: left;">Settings associated with a <strong>fileStorageContainer</strong>. Read-write.</td>
 </tr>
 <tr>
 <td style="text-align: left;">viewpoint</td>
