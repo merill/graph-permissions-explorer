@@ -93,6 +93,11 @@
 <blockquote>
 <p>Allows the app to read details of discovered cloud apps in the organization, on behalf of the signed in user.</p>
 </blockquote>
+<blockquote>
+<p><strong>Merill's Note</strong></p>
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>CloudApp-Discovery.Read.All</code> permission.</p>
+<p>If you need to create an audit report of the permissions granted to all the apps in your tenant, you can run the <code>Export-MsIdAppConsentGrantReport</code> command. See <a href="https://www.youtube.com/watch?v=vO0m5yE3dZA">How To: Run a quick OAuth app audit of your tenant</a></p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -125,11 +130,866 @@
 </tbody>
 </table>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_apiv1" role="tab" aria-controls="tabpanel_1_apiv1" data-tab="apiv1" tabindex="0" aria-selected="true"><span><i class='bi bi-braces'></i></span> API [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_apibeta" role="tab" aria-controls="tabpanel_1_apibeta" data-tab="apibeta" tabindex="-1"><span><i class='bi bi-braces'></i></span> API [beta]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psv1" role="tab" aria-controls="tabpanel_1_psv1" data-tab="psv1" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psbeta" role="tab" aria-controls="tabpanel_1_psbeta" data-tab="psbeta" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [beta]</a>
+</li>
+</ul>
+<section id="tabpanel_1_apiv1" role="tabpanel" data-tab="apiv1">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_apibeta" role="tabpanel" data-tab="apibeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/security-datadiscoveryreport-list-uploadedstreams?view=graph-rest-beta&amp;tabs=http">GET /security/dataDiscovery/cloudAppDiscovery/uploadedStreams</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/security-cloudappdiscoveryreport-aggregatedappsdetails?view=graph-rest-beta&amp;tabs=http">GET /security/dataDiscovery/cloudAppDiscovery/uploadedStreams/{streamId}/microsoft.graph.security.aggregatedAppsDetails(period=duration'{duration}')</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/security-discoveredcloudappdetail-get?view=graph-rest-beta&amp;tabs=http">GET /security/dataDiscovery/cloudAppDiscovery/uploadedStreams/{streamId}/microsoft.graph.security.aggregatedAppsDetails(period=duration'{duration}')/{appId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/security-discoveredcloudappinfo-get?view=graph-rest-beta&amp;tabs=http">GET /security/dataDiscovery/cloudAppDiscovery/uploadedStreams/{streamId}/microsoft.graph.security.aggregatedAppsDetails(period=duration'{duration}')/{appId}/appInfo</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/security-endpointdiscoveredcloudappdetail-list-devices?view=graph-rest-beta&amp;tabs=http">GET /security/dataDiscovery/cloudAppDiscovery/uploadedStreams/{streamId}/microsoft.graph.security.aggregatedAppsDetails(period=duration'{duration}')/{appId}/devices</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/security-discoveredcloudappdetail-list-ipaddresses?view=graph-rest-beta&amp;tabs=http">GET /security/dataDiscovery/cloudAppDiscovery/uploadedStreams/{streamId}/microsoft.graph.security.aggregatedAppsDetails(period=duration'{duration}')/{appId}/ipAddresses</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/security-discoveredcloudappdetail-list-users?view=graph-rest-beta&amp;tabs=http">GET /security/dataDiscovery/cloudAppDiscovery/uploadedStreams/{streamId}/microsoft.graph.security.aggregatedAppsDetails(period=duration'{duration}')/{appId}/users</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_psv1" role="tabpanel" data-tab="psv1" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_psbeta" role="tabpanel" data-tab="psbeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
 </div>
-<hr>
+<h2 id="resources">Resources</h2>
+<p>Granting this permission allows the calling application to access (and/or update) the following information in your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_cloudAppDiscoveryReport1" role="tab" aria-controls="tabpanel_2_cloudAppDiscoveryReport1" data-tab="cloudAppDiscoveryReport1" tabindex="0" aria-selected="true">cloudAppDiscoveryReport</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_discoveredCloudAppDetail2" role="tab" aria-controls="tabpanel_2_discoveredCloudAppDetail2" data-tab="discoveredCloudAppDetail2" tabindex="-1">discoveredCloudAppDetail</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_discoveredCloudAppDevice3" role="tab" aria-controls="tabpanel_2_discoveredCloudAppDevice3" data-tab="discoveredCloudAppDevice3" tabindex="-1">discoveredCloudAppDevice</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_discoveredCloudAppInfo4" role="tab" aria-controls="tabpanel_2_discoveredCloudAppInfo4" data-tab="discoveredCloudAppInfo4" tabindex="-1">discoveredCloudAppInfo</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_discoveredCloudAppIPAddress5" role="tab" aria-controls="tabpanel_2_discoveredCloudAppIPAddress5" data-tab="discoveredCloudAppIPAddress5" tabindex="-1">discoveredCloudAppIPAddress</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_discoveredCloudAppUser6" role="tab" aria-controls="tabpanel_2_discoveredCloudAppUser6" data-tab="discoveredCloudAppUser6" tabindex="-1">discoveredCloudAppUser</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_endpointDiscoveredCloudAppDetail7" role="tab" aria-controls="tabpanel_2_endpointDiscoveredCloudAppDetail7" data-tab="endpointDiscoveredCloudAppDetail7" tabindex="-1">endpointDiscoveredCloudAppDetail</a>
+</li>
+</ul>
+<section id="tabpanel_2_cloudAppDiscoveryReport1" role="tabpanel" data-tab="cloudAppDiscoveryReport1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-cloudappdiscoveryreport?view=graph-rest-1.0&amp;tabs=http">cloudAppDiscoveryReport</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">anonymizeMachineData</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Use <code>1</code> if the machine information is anonymized; otherwise use <code>0</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">anonymizeUserData</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Use <code>1</code> if the user information is anonymized; otherwise use <code>0</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date in the format specified. The Timestamp represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A comment or description for the report.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the continuous report.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The ID of the log type supported. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isSnapshotReport</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Use <code>1</code> for a snapshot report; otherwise use <code>0</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastDataReceivedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date when the data was last received. The Timestamp represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date when the continuous report was last modified. The Timestamp represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">logDataProvider</td>
+<td style="text-align: left;">microsoft.graph.security.logDataProvider</td>
+<td style="text-align: left;">The applicable log data provider. Possible values are: <code>barracuda</code>, <code>bluecoat</code>, <code>checkpoint</code>, <code>ciscoAsa</code>, <code>ciscoIronportProxy</code>, <code>fortigate</code>, <code>paloAlto</code>, <code>squid</code>, <code>zscaler</code>, <code>mcafeeSwg</code>, <code>ciscoScanSafe</code>, <code>juniperSrx</code>, <code>sophosSg</code>, <code>websenseV75</code>, <code>websenseSiemCef</code>, <code>machineZoneMeraki</code>, <code>squidNative</code>, <code>ciscoFwsm</code>, <code>microsoftIsaW3C</code>, <code>sonicwall</code>, <code>sophosCyberoam</code>, <code>clavister</code>, <code>customParser</code>, <code>juniperSsg</code>, <code>zscalerQradar</code>, <code>juniperSrxSd</code>, <code>juniperSrxWelf</code>, <code>microsoftConditionalAppAccess</code>, <code>ciscoAsaFirepower</code>, <code>genericCef</code>, <code>genericLeef</code>, <code>genericW3C</code>, <code>iFilter</code>, <code>checkpointXml</code>, <code>checkpointSmartViewTracker</code>, <code>barracudaNextGenFw</code>, <code>barracudaNextGenFwWeblog</code>, <code>microsoftDefenderForEndpoint</code>, <code>zscalerCef</code>, <code>sophosXg</code>, <code>iboss</code>, <code>forcepoint</code>, <code>fortios</code>, <code>ciscoIronportWsaIi</code>, <code>paloAltoLeef</code>, <code>forcepointLeef</code>, <code>stormshield</code>, <code>contentkeeper</code>, <code>ciscoIronportWsaIii</code>, <code>checkpointCef</code>, <code>corrata</code>, <code>ciscoFirepowerV6</code>, <code>menloSecurityCef</code>, <code>watchguardXtm</code>, <code>openSystemsSecureWebGateway</code>, <code>wandera</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">logFileCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The count of log files history.</td>
+</tr>
+<tr>
+<td style="text-align: left;">receiverProtocol</td>
+<td style="text-align: left;">microsoft.graph.security.receiverProtocol</td>
+<td style="text-align: left;">The applicable receiver protocol. Possible values are: <code>ftp</code>, <code>ftps</code>, <code>syslogUdp</code>, <code>syslogTcp</code>, <code>syslogTls</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">supportedEntityTypes</td>
+<td style="text-align: left;">microsoft.graph.security.entityType collection</td>
+<td style="text-align: left;">The supported entity type. Possible values are: <code>userName</code>, <code>ipAddress</code>, <code>machineName</code>, <code>other</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">supportedTrafficTypes</td>
+<td style="text-align: left;">microsoft.graph.security.trafficType collection</td>
+<td style="text-align: left;">The supported traffic type. Possible values are: <code>downloadedBytes</code>, <code>uploadedBytes</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_discoveredCloudAppDetail2" role="tabpanel" data-tab="discoveredCloudAppDetail2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-discoveredcloudappdetail?view=graph-rest-1.0&amp;tabs=http">discoveredCloudAppDetail</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">category</td>
+<td style="text-align: left;">microsoft.graph.security.appCategory</td>
+<td style="text-align: left;">The category of the discovered app. Possible values include: <code>security</code>, <code>collaboration</code>, <code>hostingServices</code>, <code>onlineMeetings</code>, <code>newsAndEntertainment</code>, <code>eCommerce</code>, <code>education</code>, <code>cloudStorage</code>, <code>marketing</code>, <code>operationsManagement</code>, <code>health</code>, <code>advertising</code>, <code>productivity</code>, <code>accountingAndFinance</code>, <code>contentManagement</code>, <code>contentSharing</code>, <code>businessManagement</code>, <code>communications</code>, <code>dataAnalytics</code>, <code>businessIntelligence</code>, <code>webemail</code>, <code>codeHosting</code>, <code>webAnalytics</code>, <code>socialNetwork</code>, <code>crm</code>, <code>forums</code>, <code>humanResourceManagement</code>, <code>transportationAndTravel</code>, <code>productDesign</code>, <code>sales</code>, <code>cloudComputingPlatform</code>, <code>projectManagement</code>, <code>personalInstantMessaging</code>, <code>developmentTools</code>, <code>itServices</code>, <code>supplyChainAndLogistics</code>, <code>propertyManagement</code>, <code>customerSupport</code>, <code>internetOfThings</code>, <code>vendorManagementSystems</code>, <code>websiteMonitoring</code>, <code>generativeAi</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The app name.</td>
+</tr>
+<tr>
+<td style="text-align: left;">domains</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">The domain.</td>
+</tr>
+<tr>
+<td style="text-align: left;">downloadNetworkTrafficInBytes</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">The download traffic size.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The SaaSDB ID of the app. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">ipAddressCount</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">The IP address.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastSeenDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The last seen date of the discovered app. The Timestamp represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">riskScore</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">The risk score of the app.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tags</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">The tags applied to an app. Possible values include <code>Unsanctioned</code>, <code>Sanctioned</code>, <code>Monitored</code>, or a custom value.</td>
+</tr>
+<tr>
+<td style="text-align: left;">transactionCount</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">The app transaction count.</td>
+</tr>
+<tr>
+<td style="text-align: left;">uploadNetworkTrafficInBytes</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">The app upload traffic size, in bytes.</td>
+</tr>
+<tr>
+<td style="text-align: left;">userCount</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">The count of users who use the app.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_discoveredCloudAppDevice3" role="tabpanel" data-tab="discoveredCloudAppDevice3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-discoveredcloudappdevice?view=graph-rest-1.0&amp;tabs=http">discoveredCloudAppDevice</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name of the cloud app.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_discoveredCloudAppInfo4" role="tabpanel" data-tab="discoveredCloudAppInfo4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-discoveredcloudappinfo?view=graph-rest-1.0&amp;tabs=http">discoveredCloudAppInfo</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">csaStarLevel</td>
+<td style="text-align: left;">microsoft.graph.security.appInfoCsaStarLevel</td>
+<td style="text-align: left;">Indicates the CSA star program certification level of the app. Possible values are: <code>selfAssessment</code>, <code>certification</code>, <code>attestation</code>, <code>cStarAssessment</code>, <code>continuousMonitoring</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">dataAtRestEncryptionMethod</td>
+<td style="text-align: left;">microsoft.graph.security.appInfoDataAtRestEncryptionMethod</td>
+<td style="text-align: left;">Indicates the encryption mode for data at rest of the app. The possible values are: <code>aes</code>, <code>bitLocker</code>, <code>blowfish</code>, <code>des3</code>, <code>des</code>, <code>rc4</code>, <code>rsA</code>, <code>notSupported</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">dataCenter</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Indicates the countries or regions in which your data center resides.</td>
+</tr>
+<tr>
+<td style="text-align: left;">dataRetentionPolicy</td>
+<td style="text-align: left;">microsoft.graph.security.appInfoDataRetentionPolicy</td>
+<td style="text-align: left;">Indicates the app's policy for user data retention after account termination. The possible values are: <code>dataRetained</code>, <code>deletedImmediately</code>, <code>deletedWithinTwoWeeks</code>, <code>deletedWithinOneMonth</code>, <code>deletedWithinThreeMonths</code>, <code>deletedWithinMoreThanThreeMonths</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">dataTypes</td>
+<td style="text-align: left;">microsoft.graph.security.appInfoUploadedDataTypes</td>
+<td style="text-align: left;">Indicates the data types that an end user can upload to the app. The possible values are: <code>documents</code>, <code>mediaFiles</code>, <code>codingFiles</code>, <code>creditCards</code>, <code>databaseFiles</code>, <code>none</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">domainRegistrationDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Indicates the date when the app domain was registered.</td>
+</tr>
+<tr>
+<td style="text-align: left;">encryptionProtocol</td>
+<td style="text-align: left;">microsoft.graph.security.appInfoEncryptionProtocol</td>
+<td style="text-align: left;">Indicates the TLS encryption protocol version. The possible values are: <code>tls1_0</code>, <code>tls1_1</code>, <code>tls1_2</code>, <code>tls1_3</code>, <code>notApplicable</code>, <code>notSupported</code>, <code>unknown</code>, <code>unknownFutureValue</code>, <code>ssl3</code>. You must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value in this evolvable enum: <code>ssl3</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">fedRampLevel</td>
+<td style="text-align: left;">microsoft.graph.security.appInfoFedRampLevel</td>
+<td style="text-align: left;">Indicates the FedRAMP compliant status of the app. The possible values are: <code>high</code>, <code>moderate</code>, <code>low</code>, <code>liSaaS</code>, <code>unknown</code>, <code>unknownFutureValue</code>, <code>notSupported</code>. You must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value in this evolvable enum: <code>notSupported</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">founded</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Indicates the year that the specific app vendor was established.</td>
+</tr>
+<tr>
+<td style="text-align: left;">gdprReadinessStatement</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Indicates the GDPR readiness of the app in relation to policies app provides to safeguard personal user data.</td>
+</tr>
+<tr>
+<td style="text-align: left;">headquarters</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Indicates the location of the headquarters of the app.</td>
+</tr>
+<tr>
+<td style="text-align: left;">holding</td>
+<td style="text-align: left;">microsoft.graph.security.appInfoHolding</td>
+<td style="text-align: left;">Indicates the ownership model of the app. The possible values are: <code>private</code>, <code>public</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">hostingCompany</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Indicates the company name that provides hosting services for the app.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Indicates the identified unique SaaS ID of the app. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isAdminAuditTrail</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates the availability of an admin audit trail for the app. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isCobitCompliant</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates the compliance status of the app with the Control Objectives for Information Technology (COBIT). The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isCoppaCompliant</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates the compliance status of the app with the Children's Online Privacy Protection Rule (COPPA). The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isDataAuditTrail</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates the compliance status of the app with availability of a data audit trail. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isDataClassification</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates the compliance status of the app with regards to data classification. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isDataOwnership</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates the compliance status of the app that pertains to data ownership. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isDisasterRecoveryPlan</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app has a disaster recovery plan. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isDmca</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates the compliance status of the app with the Digital Millennium Copyright Act (DMCA). The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isFerpaCompliant</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates the compliance status of the app with the Family Educational Rights and Privacy Act (FERPA). The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isFfiecCompliant</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates the compliance status of the app with the Federal Financial Institutions Examination Council guidance on the risk management. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isFileSharing</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app has features that allow file sharing between users. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isFinraCompliant</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates the compliance status of the app with the Financial Industry Regulatory Authority (FINRA). The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isFismaCompliant</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates the compliance status of the app with the Federal Information Security Modernization Act (FISMA). The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isGaapCompliant</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates the compliance status of the app with the Generally Accepted Accounting Principles (GAAP). The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isGdprDataProtectionImpactAssessment</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app conducts regular GDPR data assessments to identify risk to individuals. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isGdprDataProtectionOfficer</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app appoints a data protection officer to oversee data security strategy and GDPR compliance. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isGdprDataProtectionSecureCrossBorderDataTransfer</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app securely transfers data across borders as GDPR guidelines recommend. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isGdprImpactAssessment</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app conducts data protection GDPR impact assessments to identify risk to individuals. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isGdprLawfulBasisForProcessing</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app has a valid lawful basis for processing personal data. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isGdprReportDataBreaches</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app reports personal data breaches to the relevant supervisory authority as per GDPR. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isGdprRightsRelatedToAutomatedDecisionMaking</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app provides specific rights related to automated decision-making and profiling as per GDPR. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isGdprRightToAccess</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app gives the rights to obtain a copy of a user's personal data as per GDPR. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isGdprRightToBeInformed</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app gives the right to inform users about the data collection and use of their personal data as per GDPR. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isGdprRightToDataPortablility</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app provides individuals with the ability to obtain and reuse their personal data for their own purposes across different services upon request. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isGdprRightToErasure</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app stops processing and deletetion of an individual's personal data upon request. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isGdprRightToObject</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app provides individuals with the ability to object to the processing of their personal data in certain circumstances. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isGdprRightToRectification</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app provides individuals with the ability to rectify their personal data. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isGdprRightToRestrictionOfProcessing</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app provides individuals with the ability to block or suppress the processing of personal data. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isGdprSecureCrossBorderDataControl</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app securely transfers data across borders. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isGlbaCompliant</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app is compliant with the Gramm-Leach-Bliley Act (GLBA). The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isHipaaCompliant</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app is compliant with the Health Insurance Portability and Accountability Act (HIPAA). The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isHitrustCsfCompliant</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app is compliant with the HITRUST Framework (HITRUST CSF). The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isHttpSecurityHeadersContentSecurityPolicy</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app is compliant with the HITRUST Framework (HITRUST CSF). The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isHttpSecurityHeadersStrictTransportSecurity</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the HTTP security headers of the app provide another layer of security by helping to mitigate attacks and security vulnerabilities. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isHttpSecurityHeadersXContentTypeOptions</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the HTTP security headers of the app provide another layer of security by helping to mitigate attacks and security vulnerabilities. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isHttpSecurityHeadersXFrameOptions</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the HTTP security headers of the app provide another layer of security by helping to mitigate attacks and security vulnerabilities. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isHttpSecurityHeadersXXssProtection</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the HTTP security headers of the app provide another layer of security by helping to mitigate attacks and security vulnerabilities. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isIpAddressRestriction</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app supports the restriction of specific IP addresses by the app. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isIsae3402Compliant</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app is ISAE3402 compliant. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isIso27001Compliant</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app is ISO27001 compliant. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isIso27017Compliant</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app is ISO27017 compliant. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isIso27018Compliant</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app is ISO27018 compliant. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isItarCompliant</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app is compliant with International Traffic in Arms Regulations (ITAR). The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isMultiFactorAuthentication</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app supports multifactor authentication. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isPasswordPolicy</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app enforces a password policy. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isPasswordPolicyChangePasswordPeriod</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app forces users to reset their password periodically. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isPasswordPolicyCharacterCombination</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app forces a character combination on password creation. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isPasswordPolicyPasswordHistoryAndReuse</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app disallows the reuse of old passwords. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isPasswordPolicyPasswordLengthLimit</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app enforces a length limit on password creation. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isPasswordPolicyPersonalInformationUse</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app disallows the use of personal information in passwords. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isPenetrationTesting</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app carries out penetration testing to detect and assess network vulnerabilities. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isPrivacyShieldCompliant</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app complies with the EU-US Privacy Shield Framework. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isRememberPassword</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app enables the option for remembering and saving user passwords in the app. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isRequiresUserAuthentication</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app requires user authentication. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isSoc1Compliant</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app is Soc1 compliant. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isSoc2Compliant</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app is Soc2 compliant. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isSoc3Compliant</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app is Soc3 compliant. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isSoxCompliant</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app is Sox compliant. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isSp80053Compliant</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app is Sp80053 compliant. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isSsae16Compliant</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app is Ssae16 compliant. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isSupportsSaml</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app supports SAML authentication. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isTrustedCertificate</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app server provides a trusted SSL cetificate. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isUserAuditTrail</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app supports availability of audit trail per user account. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isUserCanUploadData</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app supports the ability of users to upload data. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isUserRolesSupport</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app supports distribution of users by roles and levels of permission. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isValidCertificateName</td>
+<td style="text-align: left;">microsoft.graph.security.cloudAppInfoState</td>
+<td style="text-align: left;">Indicates if the app server provides an SSL certificate that matches the domain name. The possible values are: <code>true</code>, <code>false</code>, <code>unknown</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">latestBreachDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Indicates the last date of the data breach for the company.</td>
+</tr>
+<tr>
+<td style="text-align: left;">logonUrls</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Indicates the URL that users can use to sign into the app.</td>
+</tr>
+<tr>
+<td style="text-align: left;">pciDssVersion</td>
+<td style="text-align: left;">microsoft.graph.security.appInfoPciDssVersion</td>
+<td style="text-align: left;">Indicates the pciDss version. The possible values are: <code>v1</code>, <code>v2</code>, <code>v3</code>, <code>v3_1</code>, <code>v3_2</code>, <code>v3_2_1</code>, <code>notSupported</code>, <code>unknown</code>, <code>unknownFutureValue</code>, <code>v4</code>. You must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value in this evolvable enum: <code>v4</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">vendor</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Indicates the app vendor.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_discoveredCloudAppIPAddress5" role="tabpanel" data-tab="discoveredCloudAppIPAddress5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-discoveredcloudappipaddress?view=graph-rest-1.0&amp;tabs=http">discoveredCloudAppIPAddress</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ipAddress</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The IP address associated with a discovered cloud app.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_discoveredCloudAppUser6" role="tabpanel" data-tab="discoveredCloudAppUser6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-discoveredcloudappuser?view=graph-rest-1.0&amp;tabs=http">discoveredCloudAppUser</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">userIdentifier</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of a user who accessed the discovered cloud app.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_endpointDiscoveredCloudAppDetail7" role="tabpanel" data-tab="endpointDiscoveredCloudAppDetail7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-endpointdiscoveredcloudappdetail?view=graph-rest-1.0&amp;tabs=http">endpointDiscoveredCloudAppDetail</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">category</td>
+<td style="text-align: left;">microsoft.graph.security.appCategory</td>
+<td style="text-align: left;">The list of category of discovered apps. The possible values are: <code>security</code>, <code>collaboration</code>, <code>hostingServices</code>, <code>onlineMeetings</code>, <code>newsAndEntertainment</code>, <code>eCommerce</code>, <code>education</code>, <code>cloudStorage</code>, <code>marketing</code>, <code>operationsManagement</code>, <code>health</code>, <code>advertising</code>, <code>productivity</code>, <code>accountingAndFinance</code>, <code>contentManagement</code>, <code>contentSharing</code>, <code>businessManagement</code>, <code>communications</code>, <code>dataAnalytics</code>, <code>businessIntelligence</code>, <code>webemail</code>, <code>codeHosting</code>, <code>webAnalytics</code>, <code>socialNetwork</code>, <code>crm</code>, <code>forums</code>, <code>humanResourceManagement</code>, <code>transportationAndTravel</code>, <code>productDesign</code>, <code>sales</code>, <code>cloudComputingPlatform</code>, <code>projectManagement</code>, <code>personalInstantMessaging</code>, <code>developmentTools</code>, <code>itServices</code>, <code>supplyChainAndLogistics</code>, <code>propertyManagement</code>, <code>customerSupport</code>, <code>internetOfThings</code>, <code>vendorManagementSystems</code>, <code>websiteMonitoring</code>, <code>generativeAi</code>, <code>unknown</code>, <code>unknownFutureValue</code>. Inherited from discoveredCloudAppDetail.</td>
+</tr>
+<tr>
+<td style="text-align: left;">deviceCount</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">The number of devices that accessed the discovered app.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name of the discovered cloud app. Inherited from discoveredCloudAppDetail.</td>
+</tr>
+<tr>
+<td style="text-align: left;">domains</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">The list of domains identified as belonging to the discovered app. Inherited from discoveredCloudAppDetail.</td>
+</tr>
+<tr>
+<td style="text-align: left;">downloadNetworkTrafficInBytes</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">The amount of download traffic from the app. Inherited from discoveredCloudAppDetail.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The ID of the discovered app. Inherited from discoveredCloudAppDetail.</td>
+</tr>
+<tr>
+<td style="text-align: left;">ipAddressCount</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">The count of IP addresses that accessed the discovered app. Inherited from discoveredCloudAppDetail.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastSeenDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the app was last seen. The Timestamp represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Inherited from discoveredCloudAppDetail.</td>
+</tr>
+<tr>
+<td style="text-align: left;">riskScore</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">The risk score of the discovered app. Inherited from discoveredCloudAppDetail.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tags</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">A list of tags applied to a discovered app. Inherited from discoveredCloudAppDetail.</td>
+</tr>
+<tr>
+<td style="text-align: left;">transactionCount</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">The total transanctions on the discovered app. Inherited from discoveredCloudAppDetail.</td>
+</tr>
+<tr>
+<td style="text-align: left;">uploadNetworkTrafficInBytes</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">The upload traffic on the discovered app. Inherited from discoveredCloudAppDetail.</td>
+</tr>
+<tr>
+<td style="text-align: left;">userCount</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">The count of users who access the discovered app. Inherited from discoveredCloudAppDetail.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</div>
 
 </article>
 
