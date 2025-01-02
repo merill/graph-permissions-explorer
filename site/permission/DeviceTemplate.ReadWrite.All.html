@@ -93,6 +93,11 @@
 <blockquote>
 <p>Allows the app to create, read, update and delete the device template, on behalf of the signed in user. It also allows the app to add or remove owners on any device template.</p>
 </blockquote>
+<blockquote>
+<p><strong>Merill's Note</strong></p>
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>DeviceTemplate.ReadWrite.All</code> permission.</p>
+<p>If you need to create an audit report of the permissions granted to all the apps in your tenant, you can run the <code>Export-MsIdAppConsentGrantReport</code> command. See <a href="https://www.youtube.com/watch?v=vO0m5yE3dZA">How To: Run a quick OAuth app audit of your tenant</a></p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -125,11 +130,711 @@
 </tbody>
 </table>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_apiv1" role="tab" aria-controls="tabpanel_1_apiv1" data-tab="apiv1" tabindex="0" aria-selected="true"><span><i class='bi bi-braces'></i></span> API [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_apibeta" role="tab" aria-controls="tabpanel_1_apibeta" data-tab="apibeta" tabindex="-1"><span><i class='bi bi-braces'></i></span> API [beta]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psv1" role="tab" aria-controls="tabpanel_1_psv1" data-tab="psv1" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psbeta" role="tab" aria-controls="tabpanel_1_psbeta" data-tab="psbeta" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [beta]</a>
+</li>
+</ul>
+<section id="tabpanel_1_apiv1" role="tabpanel" data-tab="apiv1">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_apibeta" role="tabpanel" data-tab="apibeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/devicetemplate-delete-owners?view=graph-rest-beta&amp;tabs=http">DELETE /directory/templates/deviceTemplates/{deviceTemplateId}/owners/{id}/$ref</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/devicetemplate-delete?view=graph-rest-beta&amp;tabs=http">DELETE /directory/templates/deviceTemplates/{id}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/template-list-devicetemplates?view=graph-rest-beta&amp;tabs=http">GET /directory/templates/deviceTemplates</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/devicetemplate-get?view=graph-rest-beta&amp;tabs=http">GET /directory/templates/deviceTemplates/{id}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/devicetemplate-list-owners?view=graph-rest-beta&amp;tabs=http">GET /directory/templates/deviceTemplates/{id}/owners</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/template-post-devicetemplates?view=graph-rest-beta&amp;tabs=http">POST /directory/templates/deviceTemplates</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/devicetemplate-post-owners?view=graph-rest-beta&amp;tabs=http">POST /directory/templates/deviceTemplates/{id}/owners/$ref</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_psv1" role="tabpanel" data-tab="psv1" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_psbeta" role="tabpanel" data-tab="psbeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
 </div>
-<hr>
+<h2 id="resources">Resources</h2>
+<p>Granting this permission allows the calling application to access (and/or update) the following information in your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_application1" role="tab" aria-controls="tabpanel_2_application1" data-tab="application1" tabindex="0" aria-selected="true">application</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_deviceTemplate2" role="tab" aria-controls="tabpanel_2_deviceTemplate2" data-tab="deviceTemplate2" tabindex="-1">deviceTemplate</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_directoryObject3" role="tab" aria-controls="tabpanel_2_directoryObject3" data-tab="directoryObject3" tabindex="-1">directoryObject</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_mutualTlsOauthConfiguration4" role="tab" aria-controls="tabpanel_2_mutualTlsOauthConfiguration4" data-tab="mutualTlsOauthConfiguration4" tabindex="-1">mutualTlsOauthConfiguration</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_servicePrincipal5" role="tab" aria-controls="tabpanel_2_servicePrincipal5" data-tab="servicePrincipal5" tabindex="-1">servicePrincipal</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_users6" role="tab" aria-controls="tabpanel_2_users6" data-tab="users6" tabindex="-1">users</a>
+</li>
+</ul>
+<section id="tabpanel_2_application1" role="tabpanel" data-tab="application1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/application?view=graph-rest-1.0&amp;tabs=http">application</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">addIns</td>
+<td style="text-align: left;">addIn collection</td>
+<td style="text-align: left;">Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams can set the addIns property for its &quot;FileHandler&quot; functionality. This lets services like Microsoft 365 call the application in the context of a document the user is working on.</td>
+</tr>
+<tr>
+<td style="text-align: left;">api</td>
+<td style="text-align: left;">apiApplication</td>
+<td style="text-align: left;">Specifies settings for an application that implements a web API.</td>
+</tr>
+<tr>
+<td style="text-align: left;">appId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the application that is assigned to an application by Microsoft Entra ID. Not nullable. Read-only. Alternate key. Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">applicationTemplateId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier of the applicationTemplate. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ne</code>). Read-only. <code>null</code> if the app wasn't created from an application template.</td>
+</tr>
+<tr>
+<td style="text-align: left;">appRoles</td>
+<td style="text-align: left;">appRole collection</td>
+<td style="text-align: left;">The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.</td>
+</tr>
+<tr>
+<td style="text-align: left;">certification</td>
+<td style="text-align: left;">certification</td>
+<td style="text-align: left;">Specifies the certification status of the application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, and <code>eq</code> on <code>null</code> values) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">deletedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the application was deleted. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Free text field to provide a description of the application object to end users. The maximum allowed size is 1,024 characters. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>) and <code>$search</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">disabledByMicrosoftStatus</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Specifies whether Microsoft has disabled the registered application. Possible values are: <code>null</code> (default value), <code>NotDisabled</code>, and <code>DisabledDueToViolationOfServicesAgreement</code> (reasons include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement). <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name for the application. Maximum length is 256 characters. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values), <code>$search</code>, and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">groupMembershipClaims</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Configures the <code>groups</code> claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following valid string values: <code>None</code>, <code>SecurityGroup</code> (for security groups and Microsoft Entra roles), <code>All</code> (this gets all of the security groups, distribution groups, and Microsoft Entra directory roles that the signed-in user is a member of).</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for the application object. This property is referred to as <strong>Object ID</strong> in the Microsoft Entra admin center. Inherited from directoryObject. Key. Not nullable. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">identifierUris</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you reference in your API's code, and it must be globally unique. You can use the default value provided, which is in the form <code>api://&lt;appId&gt;</code>, or specify a more readable URI like <code>https://contoso.com/api</code>. For more information on valid identifierUris patterns and best practices, see Microsoft Entra application registration security best practices. Not nullable. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">info</td>
+<td style="text-align: left;">informationalUrl</td>
+<td style="text-align: left;">Basic profile information of the application such as  app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Microsoft Entra apps. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, and <code>eq</code> on <code>null</code> values).</td>
+</tr>
+<tr>
+<td style="text-align: left;">isDeviceOnlyAuthSupported</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Specifies whether this application supports device authentication without a user. The default is <code>false</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isFallbackPublicClient</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is <code>false</code>, which means the fallback application type is confidential client such as a web app. There are certain scenarios where Microsoft Entra ID can't determine the client application type. For example, the ROPC flow where it's configured without specifying a redirect URI. In those cases, Microsoft Entra ID interprets the application type based on the value of this property.</td>
+</tr>
+<tr>
+<td style="text-align: left;">keyCredentials</td>
+<td style="text-align: left;">keyCredential collection</td>
+<td style="text-align: left;">The collection of key credentials associated with the application. Not nullable. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">logo</td>
+<td style="text-align: left;">Stream</td>
+<td style="text-align: left;">The main logo for the application. Not nullable.</td>
+</tr>
+<tr>
+<td style="text-align: left;">nativeAuthenticationApisEnabled</td>
+<td style="text-align: left;">nativeAuthenticationApisEnabled</td>
+<td style="text-align: left;">Specifies whether the Native Authentication APIs are enabled for the application. The possible values are: <code>none</code> and <code>all</code>. Default is <code>none</code>. For more information, see Native Authentication.</td>
+</tr>
+<tr>
+<td style="text-align: left;">notes</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Notes relevant for the management of the application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">oauth2RequiredPostResponse</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Specifies whether, as part of OAuth 2.0 token requests, Microsoft Entra ID allows POST requests, as opposed to GET requests. The default is <code>false</code>, which specifies that only GET requests are allowed.</td>
+</tr>
+<tr>
+<td style="text-align: left;">optionalClaims</td>
+<td style="text-align: left;">optionalClaims</td>
+<td style="text-align: left;">Application developers can configure optional claims in their Microsoft Entra applications to specify the claims that are sent to their application by the Microsoft security token service. For more information, see How to: Provide optional claims to your app.</td>
+</tr>
+<tr>
+<td style="text-align: left;">parentalControlSettings</td>
+<td style="text-align: left;">parentalControlSettings</td>
+<td style="text-align: left;">Specifies parental control settings for an application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">passwordCredentials</td>
+<td style="text-align: left;">passwordCredential collection</td>
+<td style="text-align: left;">The collection of password credentials associated with the application. Not nullable.</td>
+</tr>
+<tr>
+<td style="text-align: left;">publicClient</td>
+<td style="text-align: left;">publicClientApplication</td>
+<td style="text-align: left;">Specifies settings for installed clients such as desktop or mobile devices.</td>
+</tr>
+<tr>
+<td style="text-align: left;">publisherDomain</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The verified publisher domain for the application. Read-only. For more information, see How to: Configure an application's publisher domain. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">requestSignatureVerification</td>
+<td style="text-align: left;">requestSignatureVerification</td>
+<td style="text-align: left;">Specifies whether this application requires Microsoft Entra ID to verify the signed authentication requests.</td>
+</tr>
+<tr>
+<td style="text-align: left;">requiredResourceAccess</td>
+<td style="text-align: left;">requiredResourceAccess collection</td>
+<td style="text-align: left;">Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. <br><br>No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. For more information, see Limits on requested permissions per app. Not nullable. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">samlMetadataUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The URL where the service exposes SAML metadata for federation. This property is valid only for single-tenant applications. Nullable.</td>
+</tr>
+<tr>
+<td style="text-align: left;">serviceManagementReference</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">References application or service contact information from a Service or Asset Management database. Nullable.</td>
+</tr>
+<tr>
+<td style="text-align: left;">servicePrincipalLockConfiguration</td>
+<td style="text-align: left;">servicePrincipalLockConfiguration</td>
+<td style="text-align: left;">Specifies whether sensitive properties of a multitenant application should be locked for editing after the application is provisioned in a tenant. Nullable. <code>null</code> by default.</td>
+</tr>
+<tr>
+<td style="text-align: left;">signInAudience</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Specifies the Microsoft accounts that are supported for the current application. The possible values are: <code>AzureADMyOrg</code> (default), <code>AzureADMultipleOrgs</code>, <code>AzureADandPersonalMicrosoftAccount</code>, and <code>PersonalMicrosoftAccount</code>. See more in the table. <br><br>The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. <br><br>The value for this property has implications on other app object properties. As a result, if you change this property, you might need to change other properties first. For more information, see Validation differences for signInAudience.<br><br>Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">spa</td>
+<td style="text-align: left;">spaApplication</td>
+<td style="text-align: left;">Specifies settings for a single-page application, including sign out URLs and redirect URIs for authorization codes and access tokens.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tags</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here will also appear in the <strong>tags</strong> property of any associated service principals.<br><br>Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>) and <code>$search</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tokenEncryptionKeyId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Specifies the keyId of a public key from the keyCredentials collection. When configured, Microsoft Entra ID encrypts all the tokens it emits by using the key this property points to. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.</td>
+</tr>
+<tr>
+<td style="text-align: left;">uniqueName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier that can be assigned to an application and used as an alternate key. Immutable. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">verifiedPublisher</td>
+<td style="text-align: left;">verifiedPublisher</td>
+<td style="text-align: left;">Specifies the verified publisher of the application. For more information about how publisher verification helps support application security, trustworthiness, and compliance, see Publisher verification.</td>
+</tr>
+<tr>
+<td style="text-align: left;">web</td>
+<td style="text-align: left;">webApplication</td>
+<td style="text-align: left;">Specifies settings for a web application.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_deviceTemplate2" role="tabpanel" data-tab="deviceTemplate2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/devicetemplate?view=graph-rest-1.0&amp;tabs=http">deviceTemplate</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">deletedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time when this object was deleted. Always <code>null</code> when the object hasn't been deleted. Inherited from directoryObject.</td>
+</tr>
+<tr>
+<td style="text-align: left;">deviceAuthority</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A tenant-defined name for the party that's responsible for provisioning and managing devices on the Microsoft Entra tenant. For example, Tailwind Traders (the manufacturer) makes security cameras that are installed in customer buildings and managed by Lakeshore Retail (the device authority). This value is provided to the customer by the device authority (manufacturer or reseller).</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the object. Inherited from directoryObject. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>in</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">manufacturer</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Manufacturer name.</td>
+</tr>
+<tr>
+<td style="text-align: left;">model</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Model name.</td>
+</tr>
+<tr>
+<td style="text-align: left;">mutualTlsOauthConfigurationId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Object ID of the mutualTlsOauthConfiguration. This value isn't required if self-signed certificates are used. This value is provided to the customer by the device authority (manufacturer or reseller).</td>
+</tr>
+<tr>
+<td style="text-align: left;">mutualTlsOauthConfigurationTenantId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">ID (tenant ID for device authority) of the tenant that contains the mutualTlsOauthConfiguration. This value isn't required if self-signed certificates are used. This value is provided to the customer by the device authority (manufacturer or reseller).</td>
+</tr>
+<tr>
+<td style="text-align: left;">operatingSystem</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Operating system type. Supports <code>$filter</code> (<code>eq</code>, <code>in</code>).</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_directoryObject3" role="tabpanel" data-tab="directoryObject3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/directoryobject?view=graph-rest-1.0&amp;tabs=http">directoryObject</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">deletedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time when this object was deleted. Always <code>null</code> when the object hasn't been deleted.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the object. For example, <code>12345678-9abc-def0-1234-56789abcde</code>. The value of the **i</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_mutualTlsOauthConfiguration4" role="tabpanel" data-tab="mutualTlsOauthConfiguration4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/mutualtlsoauthconfiguration?view=graph-rest-1.0&amp;tabs=http">mutualTlsOauthConfiguration</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">certificateAuthorities</td>
+<td style="text-align: left;">certificateAuthority collection</td>
+<td style="text-align: left;">Multi-value property that represents a list of trusted certificate authorities. Inherited from trustedCertificateAuthorityBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">deletedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time when this object was deleted. Always <code>null</code> when the object hasn't been deleted. Inherited from trustedCertificateAuthorityBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Friendly name. Supports <code>$filter</code> (<code>eq</code>, <code>in</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the <strong>mutualTlsOauthConfiguration</strong> object. Inherited from trustedCertificateAuthorityBase. Supports <code>$filter</code> (<code>eq</code>, <code>in</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">tlsClientAuthParameter</td>
+<td style="text-align: left;">tlsClientRegistrationMetadata</td>
+<td style="text-align: left;">Specifies the field in the certificate that contains the subject ID. The possible values are: <code>tls_client_auth_subject_dn</code>, <code>tls_client_auth_san_dns</code>, <code>tls_client_auth_san_uri</code>, <code>tls_client_auth_san_ip</code>, <code>tls_client_auth_san_email</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_servicePrincipal5" role="tabpanel" data-tab="servicePrincipal5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-1.0&amp;tabs=http">servicePrincipal</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">accountEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if the service principal account is enabled; otherwise, <code>false</code>. If set to <code>false</code>, then no users are able to sign in to this app, even if they're assigned to it. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">addIns</td>
+<td style="text-align: left;">addIn collection</td>
+<td style="text-align: left;">Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its &quot;FileHandler&quot; functionality. This lets services like Microsoft 365 call the application in the context of a document the user is working on.</td>
+</tr>
+<tr>
+<td style="text-align: left;">alternativeNames</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Used to retrieve service principals by subscription, identify resource group and full resource IDs for managed identities. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">appDescription</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The description exposed by the associated application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">appDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name exposed by the associated application. Maximum length is 256 characters.</td>
+</tr>
+<tr>
+<td style="text-align: left;">appId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the associated application (its <strong>appId</strong> property). Alternate key. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>, <code>startsWith</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">applicationTemplateId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier of the applicationTemplate. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ne</code>). Read-only. <code>null</code> if the service principal wasn't created from an application template.</td>
+</tr>
+<tr>
+<td style="text-align: left;">appOwnerOrganizationId</td>
+<td style="text-align: left;">Guid</td>
+<td style="text-align: left;">Contains the tenant ID where the application is registered. This is applicable only to service principals backed by applications. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>, <code>ge</code>, <code>le</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">appRoleAssignmentRequired</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Specifies whether users or other service principals need to be granted an app role assignment for this service principal before users can sign in or apps can get tokens. The default value is <code>false</code>. Not nullable. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>NOT</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">appRoles</td>
+<td style="text-align: left;">appRole collection</td>
+<td style="text-align: left;">The roles exposed by the application that's linked to this service principal. For more information, see the <strong>appRoles</strong> property definition on the application entity. Not nullable.</td>
+</tr>
+<tr>
+<td style="text-align: left;">customSecurityAttributes</td>
+<td style="text-align: left;">customSecurityAttributeValue</td>
+<td style="text-align: left;">An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. <br><br>Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>startsWith</code>). Filter value is case sensitive. <br><li>To read this property, the calling app must be assigned the <em>CustomSecAttributeAssignment.Read.All</em> permission. To write this property, the calling app must be assigned the <em>CustomSecAttributeAssignment.ReadWrite.All</em> permissions. <li>To read or write this property in delegated scenarios, the admin must be assigned the <em>Attribute Assignment Administrator</em> role.</li></td>
+</tr>
+<tr>
+<td style="text-align: left;">deletedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the service principal was deleted. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps displays the application description in this field. The maximum allowed size is 1,024 characters. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>) and <code>$search</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">disabledByMicrosoftStatus</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Specifies whether Microsoft has disabled the registered application. Possible values are: <code>null</code> (default value), <code>NotDisabled</code>, and <code>DisabledDueToViolationOfServicesAgreement</code> (reasons include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement). <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name for the service principal. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values), <code>$search</code>, and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">homepage</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Home page or landing page of the application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the service principal. Inherited from directoryObject. Key. Not nullable. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">info</td>
+<td style="text-align: left;">informationalUrl</td>
+<td style="text-align: left;">Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Microsoft Entra apps. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, and <code>eq</code> on <code>null</code> values).</td>
+</tr>
+<tr>
+<td style="text-align: left;">keyCredentials</td>
+<td style="text-align: left;">keyCredential collection</td>
+<td style="text-align: left;">The collection of key credentials associated with the service principal. Not nullable. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">loginUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Specifies the URL where the service provider redirects the user to Microsoft Entra ID to authenticate. Microsoft Entra ID uses the URL to launch the application from Microsoft 365 or the Microsoft Entra My Apps. When blank, Microsoft Entra ID performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Microsoft Entra My Apps, or the Microsoft Entra SSO URL.</td>
+</tr>
+<tr>
+<td style="text-align: left;">logoutUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Specifies the URL that the Microsoft's authorization service uses to sign out a user using OpenID Connect front-channel, back-channel, or SAML sign out protocols.</td>
+</tr>
+<tr>
+<td style="text-align: left;">notes</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Free text field to capture information about the service principal, typically used for operational purposes. Maximum allowed size is 1,024 characters.</td>
+</tr>
+<tr>
+<td style="text-align: left;">notificationEmailAddresses</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Specifies the list of email addresses where Microsoft Entra ID sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Microsoft Entra Gallery applications.</td>
+</tr>
+<tr>
+<td style="text-align: left;">oauth2PermissionScopes</td>
+<td style="text-align: left;">permissionScope collection</td>
+<td style="text-align: left;">The delegated permissions exposed by the application. For more information, see the <strong>oauth2PermissionScopes</strong> property on the application entity's <strong>api</strong> property. Not nullable.</td>
+</tr>
+<tr>
+<td style="text-align: left;">passwordCredentials</td>
+<td style="text-align: left;">passwordCredential collection</td>
+<td style="text-align: left;">The collection of password credentials associated with the application. Not nullable.</td>
+</tr>
+<tr>
+<td style="text-align: left;">preferredSingleSignOnMode</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Specifies the single sign-on mode configured for this application. Microsoft Entra ID uses the preferred single sign-on mode to launch the application from Microsoft 365 or the My Apps portal. The supported values are <code>password</code>, <code>saml</code>, <code>notSupported</code>, and <code>oidc</code>. <strong>Note:</strong> This field might be <code>null</code> for older SAML apps and for OIDC applications where it isn't set automatically.</td>
+</tr>
+<tr>
+<td style="text-align: left;">preferredTokenSigningKeyThumbprint</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">This property can be used on SAML applications (apps that have <strong>preferredSingleSignOnMode</strong> set to <code>saml</code>) to control which certificate is used to sign the SAML responses. For applications that aren't SAML, don't write or otherwise rely on this property.</td>
+</tr>
+<tr>
+<td style="text-align: left;">replyUrls</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">The URLs that user tokens are sent to for sign in with the associated application, or the redirect URIs that OAuth 2.0 authorization codes and access tokens are sent to for the associated application. Not nullable.</td>
+</tr>
+<tr>
+<td style="text-align: left;">resourceSpecificApplicationPermissions</td>
+<td style="text-align: left;">resourceSpecificPermission collection</td>
+<td style="text-align: left;">The resource-specific application permissions exposed by this application. Currently, resource-specific permissions are only supported for Teams apps accessing to specific chats and teams using Microsoft Graph. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">samlSingleSignOnSettings</td>
+<td style="text-align: left;">samlSingleSignOnSettings</td>
+<td style="text-align: left;">The collection for settings related to saml single sign-on.</td>
+</tr>
+<tr>
+<td style="text-align: left;">servicePrincipalNames</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Contains the list of <strong>identifiersUris</strong>, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Microsoft Entra ID. For example,<ul><li>Client apps can specify a resource URI that is based on the values of this property to acquire an access token, which is the URI returned in the &quot;aud&quot; claim.</li></ul><br>The any operator is required for filter expressions on multi-valued properties. Not nullable. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">servicePrincipalType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifies whether the service principal represents an application, a managed identity, or a legacy application. This is set by Microsoft Entra ID internally. The <strong>servicePrincipalType</strong> property can be set to three different values: <ul><li><strong>Application</strong> - A service principal that represents an application or service. The <strong>appId</strong> property identifies the associated app registration, and matches the <strong>appId</strong> of an application, possibly from a different tenant. If the associated app registration is missing, tokens aren't issued for the service principal.</li><li><strong>ManagedIdentity</strong> - A service principal that represents a managed identity. Service principals representing managed identities can be granted access and permissions, but can't be updated or modified directly.</li><li><strong>Legacy</strong> - A service principal that represents an app created before app registrations, or through legacy experiences. A legacy service principal can have credentials, service principal names, reply URLs, and other properties that are editable by an authorized user, but doesn't have an associated app registration. The <strong>appId</strong> value doesn't associate the service principal with an app registration. The service principal can only be used in the tenant where it was created.</li><li><strong>SocialIdp</strong> - For internal use. </li></ul></td>
+</tr>
+<tr>
+<td style="text-align: left;">signInAudience</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Specifies the Microsoft accounts that are supported for the current application. Read-only. <br><br>Supported values are:<ul><li><code>AzureADMyOrg</code>: Users with a Microsoft work or school account in my organization's Microsoft Entra tenant (single-tenant).</li><li><code>AzureADMultipleOrgs</code>: Users with a Microsoft work or school account in any organization's Microsoft Entra tenant (multitenant).</li><li><code>AzureADandPersonalMicrosoftAccount</code>: Users with a personal Microsoft account, or a work or school account in any organization's Microsoft Entra tenant.</li><li><code>PersonalMicrosoftAccount</code>: Users with a personal Microsoft account only.</li></ul></td>
+</tr>
+<tr>
+<td style="text-align: left;">tags</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Custom strings that can be used to categorize and identify the service principal. Not nullable. The value is the union of strings set here and on the associated application entity's <strong>tags</strong> property.<br><br>Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">tokenEncryptionKeyId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Specifies the keyId of a public key from the keyCredentials collection. When configured, Microsoft Entra ID issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.</td>
+</tr>
+<tr>
+<td style="text-align: left;">verifiedPublisher</td>
+<td style="text-align: left;">verifiedPublisher</td>
+<td style="text-align: left;">Specifies the verified publisher of the application that's linked to this service principal.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_users6" role="tabpanel" data-tab="users6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/users?view=graph-rest-1.0&amp;tabs=http">users</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">The unique identifier for the user.</td>
+</tr>
+<tr>
+<td style="text-align: left;">businessPhones</td>
+<td style="text-align: left;">The user's phone numbers.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">The name displayed in the address book for the user.</td>
+</tr>
+<tr>
+<td style="text-align: left;">givenName</td>
+<td style="text-align: left;">The first name of the user.</td>
+</tr>
+<tr>
+<td style="text-align: left;">jobTitle</td>
+<td style="text-align: left;">The user's job title.</td>
+</tr>
+<tr>
+<td style="text-align: left;">mail</td>
+<td style="text-align: left;">The user's email address.</td>
+</tr>
+<tr>
+<td style="text-align: left;">mobilePhone</td>
+<td style="text-align: left;">The user's cellphone number.</td>
+</tr>
+<tr>
+<td style="text-align: left;">officeLocation</td>
+<td style="text-align: left;">The user's physical office location.</td>
+</tr>
+<tr>
+<td style="text-align: left;">preferredLanguage</td>
+<td style="text-align: left;">The user's language of preference.</td>
+</tr>
+<tr>
+<td style="text-align: left;">surname</td>
+<td style="text-align: left;">The last name of the user.</td>
+</tr>
+<tr>
+<td style="text-align: left;">userPrincipalName</td>
+<td style="text-align: left;">The user's principal name.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</div>
 
 </article>
 
