@@ -169,7 +169,7 @@
 <tbody>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
-<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/devicetemplate-createdevicefromtemplate?view=graph-rest-beta&amp;tabs=http">POST /directory/templates/deviceTemplates/{deviceTemplateId}/createDeviceFromTemplate</a></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/template-post-devicetemplates?view=graph-rest-beta&amp;tabs=http">POST /directory/templates/deviceTemplates</a></div></td>
 </tr>
 </tbody>
 </table>
@@ -206,186 +206,16 @@
 <div class="tabGroup" id="tabgroup_2">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_2_device1" role="tab" aria-controls="tabpanel_2_device1" data-tab="device1" tabindex="0" aria-selected="true">device</a>
+<a href="#tabpanel_2_deviceTemplate1" role="tab" aria-controls="tabpanel_2_deviceTemplate1" data-tab="deviceTemplate1" tabindex="0" aria-selected="true">deviceTemplate</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_deviceTemplate2" role="tab" aria-controls="tabpanel_2_deviceTemplate2" data-tab="deviceTemplate2" tabindex="-1">deviceTemplate</a>
+<a href="#tabpanel_2_directoryObject2" role="tab" aria-controls="tabpanel_2_directoryObject2" data-tab="directoryObject2" tabindex="-1">directoryObject</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_keyCredential3" role="tab" aria-controls="tabpanel_2_keyCredential3" data-tab="keyCredential3" tabindex="-1">keyCredential</a>
+<a href="#tabpanel_2_mutualTlsOauthConfiguration3" role="tab" aria-controls="tabpanel_2_mutualTlsOauthConfiguration3" data-tab="mutualTlsOauthConfiguration3" tabindex="-1">mutualTlsOauthConfiguration</a>
 </li>
 </ul>
-<section id="tabpanel_2_device1" role="tabpanel" data-tab="device1">
-
-<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/device?view=graph-rest-1.0&amp;tabs=http">device</a></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">accountEnabled</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;"><code>true</code> if the account is enabled; otherwise, <code>false</code>. Required. Default is <code>true</code>. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>). Only callers with at least the Cloud Device Administrator role can set this property.</td>
-</tr>
-<tr>
-<td style="text-align: left;">alternativeSecurityIds</td>
-<td style="text-align: left;">alternativeSecurityId collection</td>
-<td style="text-align: left;">For internal use only. Not nullable. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">approximateLastSignInDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, and <code>eq</code> on <code>null</code> values) and <code>$orderby</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">complianceExpirationDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">deviceCategory</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">User-defined property set by Intune to automatically add devices to groups and simplify managing devices.</td>
-</tr>
-<tr>
-<td style="text-align: left;">deviceId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Unique identifier set by Azure Device Registration Service at the time of registration. This alternate key can be used to reference the device object. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>startsWith</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">deviceMetadata</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">For internal use only. Set to <code>null</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">deviceOwnership</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Ownership of the device. Intune sets this property. Possible values are: <code>unknown</code>, <code>company</code>, <code>personal</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">deviceVersion</td>
-<td style="text-align: left;">Int32</td>
-<td style="text-align: left;">For internal use only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">displayName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name for the device. Maximum length is 256 characters. Required. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values), <code>$search</code>, and <code>$orderby</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">enrollmentProfileName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Enrollment profile applied to the device. For example, <code>Apple Device Enrollment Profile</code>, <code>Device enrollment - Corporate device identifiers</code>, or <code>Windows Autopilot profile name</code>. This property is set by Intune.</td>
-</tr>
-<tr>
-<td style="text-align: left;">enrollmentType</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Enrollment type of the device. Intune sets this property. Possible values are: <code>unknown</code>, <code>userEnrollment</code>, <code>deviceEnrollmentManager</code>, <code>appleBulkWithUser</code>, <code>appleBulkWithoutUser</code>, <code>windowsAzureADJoin</code>, <code>windowsBulkUserless</code>, <code>windowsAutoEnrollment</code>, <code>windowsBulkAzureDomainJoin</code>, <code>windowsCoManagement</code>, <code>windowsAzureADJoinUsingDeviceAuth</code>,<code>appleUserEnrollment</code>, <code>appleUserEnrollmentWithServiceAccount</code>. <br><br><strong>NOTE:</strong> This property might return other values apart from those listed.</td>
-</tr>
-<tr>
-<td style="text-align: left;">extensionAttributes</td>
-<td style="text-align: left;">onPremisesExtensionAttributes</td>
-<td style="text-align: left;">Contains extension attributes 1-15 for the device. The individual extension attributes aren't selectable. These properties are mastered in the cloud and can be set during creation or update of a device object in Microsoft Entra ID. <br><br>Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
-</tr>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the device. Inherited from directoryObject. Key, Not nullable. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">isCompliant</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;"><code>true</code> if the device complies with Mobile Device Management (MDM) policies; otherwise, <code>false</code>. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">isManaged</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;"><code>true</code> if the device is managed by a Mobile Device Management (MDM) app; otherwise, <code>false</code>. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">manufacturer</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Manufacturer of the device. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">isRooted</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;"><code>true</code> if the device is rooted or jail-broken. This property can only be updated by Intune.</td>
-</tr>
-<tr>
-<td style="text-align: left;">managementType</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The management channel of the device. This property is set by Intune. Possible values are: <code>eas</code>, <code>mdm</code>, <code>easMdm</code>, <code>intuneClient</code>, <code>easIntuneClient</code>, <code>configurationManagerClient</code>, <code>configurationManagerClientMdm</code>, <code>configurationManagerClientMdmEas</code>, <code>unknown</code>, <code>jamf</code>, <code>googleCloudDevicePolicyController</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">mdmAppId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Application identifier used to register device into MDM. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>startsWith</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">model</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Model of the device. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">onPremisesLastSyncDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code> Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">onPremisesSecurityIdentifier</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">onPremisesSyncEnabled</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;"><code>true</code> if this object is synced from an on-premises directory; <code>false</code> if this object was originally synced from an on-premises directory but is no longer synced; <code>null</code> if this object has never been synced from an on-premises directory (default). Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>, and <code>eq</code> on <code>null</code> values).</td>
-</tr>
-<tr>
-<td style="text-align: left;">operatingSystem</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The type of operating system on the device. Required. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
-</tr>
-<tr>
-<td style="text-align: left;">operatingSystemVersion</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The version of the operating system on the device. Required. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values).</td>
-</tr>
-<tr>
-<td style="text-align: left;">physicalIds</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">For internal use only. Not nullable. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>,<code>/$count eq 0</code>, <code>/$count ne 0</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">profileType</td>
-<td style="text-align: left;">deviceProfileType</td>
-<td style="text-align: left;">The profile type of the device. Possible values: <code>RegisteredDevice</code> (default), <code>SecureVM</code>, <code>Printer</code>, <code>Shared</code>, <code>IoT</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">registrationDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Date and time of when the device was registered. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">systemLabels</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">List of labels applied to the device by the system. Supports <code>$filter</code> (<code>/$count eq 0</code>, <code>/$count ne 0</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">trustType</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Type of trust for the joined device. Read-only. Possible values:  <code>Workplace</code> (indicates *b</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="tabpanel_2_deviceTemplate2" role="tabpanel" data-tab="deviceTemplate2" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_deviceTemplate1" role="tabpanel" data-tab="deviceTemplate1">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/devicetemplate?view=graph-rest-1.0&amp;tabs=http">deviceTemplate</a></p>
 <table>
@@ -440,9 +270,9 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_keyCredential3" role="tabpanel" data-tab="keyCredential3" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_directoryObject2" role="tabpanel" data-tab="directoryObject2" aria-hidden="true" hidden="hidden">
 
-<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/keycredential?view=graph-rest-1.0&amp;tabs=http">keyCredential</a></p>
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/directoryobject?view=graph-rest-1.0&amp;tabs=http">directoryObject</a></p>
 <table>
 <thead>
 <tr>
@@ -453,44 +283,54 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">customKeyIdentifier</td>
-<td style="text-align: left;">Binary</td>
-<td style="text-align: left;">A 40-character binary type that can be used to identify the credential. Optional. When not provided in the payload, defaults to the thumbprint of the certificate.</td>
+<td style="text-align: left;">deletedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time when this object was deleted. Always <code>null</code> when the object hasn't been deleted.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the object. For example, <code>12345678-9abc-def0-1234-56789abcde</code>. The value of the **i</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_mutualTlsOauthConfiguration3" role="tabpanel" data-tab="mutualTlsOauthConfiguration3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/mutualtlsoauthconfiguration?view=graph-rest-1.0&amp;tabs=http">mutualTlsOauthConfiguration</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">certificateAuthorities</td>
+<td style="text-align: left;">certificateAuthority collection</td>
+<td style="text-align: left;">Multi-value property that represents a list of trusted certificate authorities. Inherited from trustedCertificateAuthorityBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">deletedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time when this object was deleted. Always <code>null</code> when the object hasn't been deleted. Inherited from trustedCertificateAuthorityBase.</td>
 </tr>
 <tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The friendly name for the key, with a maximum length of 90 characters. Longer values are accepted but shortened. Optional.</td>
+<td style="text-align: left;">Friendly name. Supports <code>$filter</code> (<code>eq</code>, <code>in</code>).</td>
 </tr>
 <tr>
-<td style="text-align: left;">endDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time at which the credential expires. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">key</td>
-<td style="text-align: left;">Binary</td>
-<td style="text-align: left;">The certificate's raw data in byte array converted to Base64 string. Returned only on <code>$select</code> for a single object, that is, <code>GET applications/{applicationId}?$select=keyCredentials</code> or <code>GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials</code>; otherwise, it's always <code>null</code>. <br><br> From a <em>.cer</em> certificate, you can read the key using the <strong>Convert.ToBase64String()</strong> method. For more information, see Get the certificate key.</td>
-</tr>
-<tr>
-<td style="text-align: left;">keyId</td>
-<td style="text-align: left;">Guid</td>
-<td style="text-align: left;">The unique identifier (GUID) for the key.</td>
-</tr>
-<tr>
-<td style="text-align: left;">startDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">type</td>
+<td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The type of key credential; for example, <code>Symmetric</code>, <code>AsymmetricX509Cert</code>.</td>
+<td style="text-align: left;">The unique identifier for the <strong>mutualTlsOauthConfiguration</strong> object. Inherited from trustedCertificateAuthorityBase. Supports <code>$filter</code> (<code>eq</code>, <code>in</code>).</td>
 </tr>
 <tr>
-<td style="text-align: left;">usage</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">A string that describes the purpose for which the key can be used; for example, <code>Verify</code>.</td>
+<td style="text-align: left;">tlsClientAuthParameter</td>
+<td style="text-align: left;">tlsClientRegistrationMetadata</td>
+<td style="text-align: left;">Specifies the field in the certificate that contains the subject ID. The possible values are: <code>tls_client_auth_subject_dn</code>, <code>tls_client_auth_san_dns</code>, <code>tls_client_auth_san_uri</code>, <code>tls_client_auth_san_ip</code>, <code>tls_client_auth_san_email</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 </tbody>
 </table>
