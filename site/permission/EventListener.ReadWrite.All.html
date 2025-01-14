@@ -286,6 +286,10 @@
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/onotpsendcustomextension-get?view=graph-rest-beta&amp;tabs=http">GET /identity/authenticationEventListeners/{listenerId}/microsoft.graph.OnEmailOtpSendListener/handler/microsoft.graph.OnOtpSendCustomExtensionHandler/customExtension</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/identitycontainer-list-authenticationeventsflows?view=graph-rest-beta&amp;tabs=http">GET /identity/authenticationEventsFlows</a></div></td>
 </tr>
 <tr>
@@ -579,16 +583,19 @@
 <a href="#tabpanel_2_onInteractiveAuthFlowStartListener20" role="tab" aria-controls="tabpanel_2_onInteractiveAuthFlowStartListener20" data-tab="onInteractiveAuthFlowStartListener20" tabindex="-1">onInteractiveAuthFlowStartListener</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_onTokenIssuanceStartHandler21" role="tab" aria-controls="tabpanel_2_onTokenIssuanceStartHandler21" data-tab="onTokenIssuanceStartHandler21" tabindex="-1">onTokenIssuanceStartHandler</a>
+<a href="#tabpanel_2_onOtpSendCustomExtension21" role="tab" aria-controls="tabpanel_2_onOtpSendCustomExtension21" data-tab="onOtpSendCustomExtension21" tabindex="-1">onOtpSendCustomExtension</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_onTokenIssuanceStartListener22" role="tab" aria-controls="tabpanel_2_onTokenIssuanceStartListener22" data-tab="onTokenIssuanceStartListener22" tabindex="-1">onTokenIssuanceStartListener</a>
+<a href="#tabpanel_2_onTokenIssuanceStartHandler22" role="tab" aria-controls="tabpanel_2_onTokenIssuanceStartHandler22" data-tab="onTokenIssuanceStartHandler22" tabindex="-1">onTokenIssuanceStartHandler</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_onUserCreateStartHandler23" role="tab" aria-controls="tabpanel_2_onUserCreateStartHandler23" data-tab="onUserCreateStartHandler23" tabindex="-1">onUserCreateStartHandler</a>
+<a href="#tabpanel_2_onTokenIssuanceStartListener23" role="tab" aria-controls="tabpanel_2_onTokenIssuanceStartListener23" data-tab="onTokenIssuanceStartListener23" tabindex="-1">onTokenIssuanceStartListener</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_onUserCreateStartListener24" role="tab" aria-controls="tabpanel_2_onUserCreateStartListener24" data-tab="onUserCreateStartListener24" tabindex="-1">onUserCreateStartListener</a>
+<a href="#tabpanel_2_onUserCreateStartHandler24" role="tab" aria-controls="tabpanel_2_onUserCreateStartHandler24" data-tab="onUserCreateStartHandler24" tabindex="-1">onUserCreateStartHandler</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_onUserCreateStartListener25" role="tab" aria-controls="tabpanel_2_onUserCreateStartListener25" data-tab="onUserCreateStartListener25" tabindex="-1">onUserCreateStartListener</a>
 </li>
 </ul>
 <section id="tabpanel_2_authenticationConditionApplication1" role="tabpanel" data-tab="authenticationConditionApplication1">
@@ -1156,11 +1163,56 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_onTokenIssuanceStartHandler21" role="tabpanel" data-tab="onTokenIssuanceStartHandler21" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_onOtpSendCustomExtension21" role="tabpanel" data-tab="onOtpSendCustomExtension21" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/onotpsendcustomextension?view=graph-rest-1.0&amp;tabs=http">onOtpSendCustomExtension</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">authenticationConfiguration</td>
+<td style="text-align: left;">customExtensionAuthenticationConfiguration</td>
+<td style="text-align: left;">The authentication configuration for this custom extension. Inherited from customCalloutExtension. Optional.</td>
+</tr>
+<tr>
+<td style="text-align: left;">behaviorOnError</td>
+<td style="text-align: left;">customExtensionBehaviorOnError</td>
+<td style="text-align: left;">Let to configure behavior if the call to custom authentication extension returns error. Inherited from customAuthenticationExtension. Optional.</td>
+</tr>
+<tr>
+<td style="text-align: left;">clientConfiguration</td>
+<td style="text-align: left;">customExtensionClientConfiguration</td>
+<td style="text-align: left;">The connection settings that define how long Microsoft Entra ID can wait for a response from an external app. After this time, Microsoft Entra ID shuts down the connection when trying to trigger the external app. Inherited from customCalloutExtension. Optional.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The description for the custom extension. Inherited from customCalloutExtension. Optional.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name for the custom extension. Inherited from customCalloutExtension. Optional.</td>
+</tr>
+<tr>
+<td style="text-align: left;">endpointConfiguration</td>
+<td style="text-align: left;">customExtensionEndpointConfiguration</td>
+<td style="text-align: left;">The configuration for the API endpoint that the custom extension calls. Inherited from customCalloutExtension. Optional.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_onTokenIssuanceStartHandler22" role="tabpanel" data-tab="onTokenIssuanceStartHandler22" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/ontokenissuancestarthandler?view=graph-rest-1.0&amp;tabs=http">onTokenIssuanceStartHandler</a></p>
 </section>
-<section id="tabpanel_2_onTokenIssuanceStartListener22" role="tabpanel" data-tab="onTokenIssuanceStartListener22" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_onTokenIssuanceStartListener23" role="tabpanel" data-tab="onTokenIssuanceStartListener23" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/ontokenissuancestartlistener?view=graph-rest-1.0&amp;tabs=http">onTokenIssuanceStartListener</a></p>
 <table>
@@ -1190,11 +1242,11 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_onUserCreateStartHandler23" role="tabpanel" data-tab="onUserCreateStartHandler23" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_onUserCreateStartHandler24" role="tabpanel" data-tab="onUserCreateStartHandler24" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/onusercreatestarthandler?view=graph-rest-1.0&amp;tabs=http">onUserCreateStartHandler</a></p>
 </section>
-<section id="tabpanel_2_onUserCreateStartListener24" role="tabpanel" data-tab="onUserCreateStartListener24" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_onUserCreateStartListener25" role="tabpanel" data-tab="onUserCreateStartListener25" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/onusercreatestartlistener?view=graph-rest-1.0&amp;tabs=http">onUserCreateStartListener</a></p>
 <table>
