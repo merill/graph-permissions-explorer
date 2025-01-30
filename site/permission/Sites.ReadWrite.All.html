@@ -3097,10 +3097,6 @@
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
-<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.sites/remove-mgsitepage">Remove-MgSitePage</a></div></td>
-</tr>
-<tr>
-<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.sites/remove-mgsitepageassitepagewebpart">Remove-MgSitePageAsSitePageWebPart</a></div></td>
 </tr>
 <tr>
@@ -3110,6 +3106,10 @@
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.users.actions/remove-mguserfollowedsite">Remove-MgUserFollowedSite</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.notes/remove-mguseronenotepage">Remove-MgUserOnenotePage</a></div></td>
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
@@ -7007,9 +7007,24 @@
 <td style="text-align: left;">Indicates whether attendees can turn on their microphone. Inherited from onlineMeetingBase.</td>
 </tr>
 <tr>
+<td style="text-align: left;">allowBreakoutRooms</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether breakout rooms are enabled for the meeting. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">allowedLobbyAdmitters</td>
+<td style="text-align: left;">allowedLobbyAdmitterRoles</td>
+<td style="text-align: left;">Specifies the users who can admit from the lobby. Possible values are: <code>organizerAndCoOrganizersAndPresenters</code>, <code>organizerAndCoOrganizers</code>, <code>unknownFutureValue</code>. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
 <td style="text-align: left;">allowedPresenters</td>
 <td style="text-align: left;">onlineMeetingPresenters</td>
 <td style="text-align: left;">Specifies who can be a presenter in a meeting. Possible values are listed in the following table. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">allowLiveShare</td>
+<td style="text-align: left;">meetingLiveShareOptions</td>
+<td style="text-align: left;">Indicates whether live share is enabled for the meeting. Possible values are: <code>enabled</code>, <code>disabled</code>, <code>unknownFutureValue</code>. Inherited from onlineMeetingBase.</td>
 </tr>
 <tr>
 <td style="text-align: left;">allowMeetingChat</td>
@@ -7022,6 +7037,11 @@
 <td style="text-align: left;">Specifies if participants are allowed to rename themselves in an instance of the meeting. Inherited from onlineMeetingBase.</td>
 </tr>
 <tr>
+<td style="text-align: left;">allowPowerPointSharing</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether PowerPoint live is enabled for the meeting. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
 <td style="text-align: left;">allowTeamworkReactions</td>
 <td style="text-align: left;">Boolean</td>
 <td style="text-align: left;">Indicates whether Teams reactions are enabled for the meeting. Inherited from onlineMeetingBase.</td>
@@ -7032,9 +7052,19 @@
 <td style="text-align: left;">Indicates whether recording is enabled for the meeting. Inherited from onlineMeetingBase.</td>
 </tr>
 <tr>
+<td style="text-align: left;">allowTeamworkReactions</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether Teams reactions are enabled for the meeting. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
 <td style="text-align: left;">allowTranscription</td>
 <td style="text-align: left;">Boolean</td>
 <td style="text-align: left;">Indicates whether transcription is enabled for the meeting. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">allowWhiteboard</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether whiteboard is enabled for the meeting. Inherited from onlineMeetingBase.</td>
 </tr>
 <tr>
 <td style="text-align: left;">audioConferencing</td>
