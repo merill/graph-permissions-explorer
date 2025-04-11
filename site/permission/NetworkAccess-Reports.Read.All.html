@@ -174,6 +174,10 @@
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/networkaccess-logs-list-traffic?view=graph-rest-beta&amp;tabs=http">GET /networkAccess/logs/traffic</a></div></td>
 </tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/networkaccess-networkaccesstraffic-get?view=graph-rest-beta&amp;tabs=http">GET /networkAccess/logs/traffic/{transactionId}</a></div></td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -233,12 +237,17 @@
 <tr>
 <td style="text-align: left;">action</td>
 <td style="text-align: left;">microsoft.graph.networkaccess.filteringPolicyAction</td>
-<td style="text-align: left;">Indicates what action to take based on filtering policies. The possible values are: <code>block</code>, <code>allow</code>.</td>
+<td style="text-align: left;">Indicates the action taken based on filtering policies. The possible values are: <code>block</code>, <code>allow</code>, <code>unknownFutureValue</code>, <code>bypass</code>, <code>alert</code>. Use the <code>Prefer: include-unknown-enum-members</code> request header to get the following values from this {evolvable enum}(/graph/best-practices-concept#handling-future-members-in-evolvable-enumerations): <code>bypass</code> , <code>alert</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">agentVersion</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Represents the version of the Global Secure Access client agent software. Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
+<td style="text-align: left;">Represents the version of the Global Secure Access (GSA) client agent software. Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">applicationSnapshot</td>
+<td style="text-align: left;">microsoft.graph.networkaccess.applicationSnapshot</td>
+<td style="text-align: left;">Destination Application ID accessed in Azure AD during the transaction. Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">connectionId</td>
@@ -249,6 +258,11 @@
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">Represents the date and time when a network access traffic log entry was created. Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Informational error message. For example: &quot;Threat intelligence detected a transaction and triggered an alert.&quot; or &quot;The Global Secure Access (GSA) policy blocked the destination and triggered an alert.&quot; Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">destinationFQDN</td>
@@ -264,6 +278,16 @@
 <td style="text-align: left;">destinationPort</td>
 <td style="text-align: left;">Int32</td>
 <td style="text-align: left;">Represents the network port number on the destination host or server in a network communication. Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">destinationUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Represents the URL of the destination in a network communication. Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">destinationWebCategory</td>
+<td style="text-align: left;">microsoft.graph.networkaccess.webCategory</td>
+<td style="text-align: left;">The destination FQDN's Web Category (e.g., Gambling). Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">deviceCategory</td>
@@ -286,14 +310,39 @@
 <td style="text-align: left;">Represents the version or release number of the operating system installed on a device within a network infrastructure. Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
+<td style="text-align: left;">filteringProfileId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The ID of the Filtering Profile associated with the action performed on traffic. Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">filteringProfileName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name of the Filtering Profile associated with the action performed on traffic. Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
 <td style="text-align: left;">headers</td>
 <td style="text-align: left;">microsoft.graph.networkaccess.headers</td>
 <td style="text-align: left;">Represents the headers included in a network request or response. Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
+<td style="text-align: left;">httpMethod</td>
+<td style="text-align: left;">microsoft.graph.networkaccess.httpMethod</td>
+<td style="text-align: left;">The HTTP method inspected in the intercepted HTTP traffic. Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">initiatingProcessName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The process initiating the traffic transaction. Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
 <td style="text-align: left;">networkProtocol</td>
 <td style="text-align: left;">microsoft.graph.networkaccess.networkingProtocol</td>
-<td style="text-align: left;">Represents the networking protocol used for communication.The possible values are: <code>ip</code>, <code>icmp</code>, <code>igmp</code>, <code>ggp</code>, <code>ipv4</code>, <code>tcp</code>, <code>pup</code>, <code>udp</code>, <code>idp</code>, <code>ipv6</code>, <code>ipv6RoutingHeader</code>, <code>ipv6FragmentHeader</code>, <code>ipSecEncapsulatingSecurityPayload</code>, <code>ipSecAuthenticationHeader</code>, <code>icmpV6</code>, <code>ipv6NoNextHeader</code>, <code>ipv6DestinationOptions</code>, <code>nd</code>, <code>raw</code>, <code>ipx</code>, <code>spx</code>, <code>spxII</code>, <code>unknownFutureValue</code>. Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
+<td style="text-align: left;">Represents the networking protocol used for communication. The possible values are: <code>ip</code>, <code>icmp</code>, <code>igmp</code>, <code>ggp</code>, <code>ipv4</code>, <code>tcp</code>, <code>pup</code>, <code>udp</code>, <code>idp</code>, <code>ipv6</code>, <code>ipv6RoutingHeader</code>, <code>ipv6FragmentHeader</code>, <code>ipSecEncapsulatingSecurityPayload</code>, <code>ipSecAuthenticationHeader</code>, <code>icmpV6</code>, <code>ipv6NoNextHeader</code>, <code>ipv6DestinationOptions</code>, <code>nd</code>, <code>raw</code>, <code>ipx</code>, <code>spx</code>, <code>spxII</code>, <code>unknownFutureValue</code>. Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">operationStatus</td>
+<td style="text-align: left;">microsoft.graph.networkaccess.networkTrafficOperationStatus</td>
+<td style="text-align: left;">Indication if traffic was successfully processed. The possible values are: <code>success</code>, <code>failure</code>, <code>unknownFutureValue</code>. Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">policyId</td>
@@ -301,14 +350,49 @@
 <td style="text-align: left;">Represents a unique identifier assigned to a policy. Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
+<td style="text-align: left;">policyName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name of the filtering policy associated with the action performed on traffic. Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
 <td style="text-align: left;">policyRuleId</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Represents a unique identifier assigned to a policy rule. Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
+<td style="text-align: left;">policyRuleName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name of the rule associated with the action performed on traffic. Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">popProcessingRegion</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The Point-of-Presence processing region of the traffic. Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">privateAccessDetails</td>
+<td style="text-align: left;">microsoft.graph.networkaccess.privateAccessDetails</td>
+<td style="text-align: left;">Details about private access traffic. Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
 <td style="text-align: left;">receivedBytes</td>
 <td style="text-align: left;">Int64</td>
 <td style="text-align: left;">Represents the total number of bytes received in a network communication or data transfer. Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">remoteNetworkId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The ID from which traffic was sent or received, providing visibility into the origin of the traffic. Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">resourceTenantId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Tenant ID that owns the resource. Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">responseCode</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The HTTP response code inspected in the intercepted HTTP traffic. Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">sentBytes</td>
@@ -336,9 +420,14 @@
 <td style="text-align: left;">Represents a unique identifier assigned to a tenant within a network infrastructure. Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
+<td style="text-align: left;">threatType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The type of threat detected in the traffic. Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
 <td style="text-align: left;">trafficType</td>
 <td style="text-align: left;">microsoft.graph.networkaccess.trafficType</td>
-<td style="text-align: left;">Represents the type or category of network traffic.The possible values are: <code>internet</code>, <code>private</code>, <code>microsoft365</code>, <code>all</code>, <code>unknownFutureValue</code>. Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
+<td style="text-align: left;">Represents the type or category of network traffic. The possible values are: <code>internet</code>, <code>private</code>, <code>microsoft365</code>, <code>all</code>, <code>unknownFutureValue</code>. Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">transactionId</td>
@@ -348,7 +437,7 @@
 <tr>
 <td style="text-align: left;">transportProtocol</td>
 <td style="text-align: left;">microsoft.graph.networkaccess.networkingProtocol</td>
-<td style="text-align: left;">Represents the transport protocol used for communication.The possible values are: <code>ip</code>, <code>icmp</code>, <code>igmp</code>, <code>ggp</code>, <code>ipv4</code>, <code>tcp</code>, <code>pup</code>, <code>udp</code>, <code>idp</code>, <code>ipv6</code>, <code>ipv6RoutingHeader</code>, <code>ipv6FragmentHeader</code>, <code>ipSecEncapsulatingSecurityPayload</code>, <code>ipSecAuthenticationHeader</code>, <code>icmpV6</code>, <code>ipv6NoNextHeader</code>, <code>ipv6DestinationOptions</code>, <code>nd</code>, <code>raw</code>, <code>ipx</code>, <code>spx</code>, <code>spxII</code>, <code>unknownFutureValue</code>. Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
+<td style="text-align: left;">Represents the transport protocol used for communication. The possible values are: <code>ip</code>, <code>icmp</code>, <code>igmp</code>, <code>ggp</code>, <code>ipv4</code>, <code>tcp</code>, <code>pup</code>, <code>udp</code>, <code>idp</code>, <code>ipv6</code>, <code>ipv6RoutingHeader</code>, <code>ipv6FragmentHeader</code>, <code>ipSecEncapsulatingSecurityPayload</code>, <code>ipSecAuthenticationHeader</code>, <code>icmpV6</code>, <code>ipv6NoNextHeader</code>, <code>ipv6DestinationOptions</code>, <code>nd</code>, <code>raw</code>, <code>ipx</code>, <code>spx</code>, <code>spxII</code>, <code>unknownFutureValue</code>. Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">userId</td>
@@ -359,6 +448,11 @@
 <td style="text-align: left;">userPrincipalName</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Represents the user principal name (UPN) associated with a user. Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">vendorNames</td>
+<td style="text-align: left;">Collection(String)</td>
+<td style="text-align: left;">The name of the vendors who detected the threat. Supports $filter (<code>eq</code>) and <code>$orderby</code>.</td>
 </tr>
 </tbody>
 </table>
