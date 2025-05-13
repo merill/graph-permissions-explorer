@@ -172,6 +172,14 @@
 <tbody>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/networkaccess-logs-list-connections?view=graph-rest-beta&amp;tabs=http">GET /networkAccess/logs/connections</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/networkaccess-connection-get?view=graph-rest-beta&amp;tabs=http">GET /networkAccess/logs/connections/{connectionId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/networkaccess-logs-list-remotenetworks?view=graph-rest-beta&amp;tabs=http">GET /networkAccess/logs/remoteNetworks</a></div></td>
 </tr>
 <tr>
@@ -227,13 +235,176 @@
 <div class="tabGroup" id="tabgroup_2">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_2_networkAccessTraffic1" role="tab" aria-controls="tabpanel_2_networkAccessTraffic1" data-tab="networkAccessTraffic1" tabindex="0" aria-selected="true">networkAccessTraffic</a>
+<a href="#tabpanel_2_connection1" role="tab" aria-controls="tabpanel_2_connection1" data-tab="connection1" tabindex="0" aria-selected="true">connection</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_remoteNetworkHealthEvent2" role="tab" aria-controls="tabpanel_2_remoteNetworkHealthEvent2" data-tab="remoteNetworkHealthEvent2" tabindex="-1">remoteNetworkHealthEvent</a>
+<a href="#tabpanel_2_networkAccessTraffic2" role="tab" aria-controls="tabpanel_2_networkAccessTraffic2" data-tab="networkAccessTraffic2" tabindex="-1">networkAccessTraffic</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_remoteNetworkHealthEvent3" role="tab" aria-controls="tabpanel_2_remoteNetworkHealthEvent3" data-tab="remoteNetworkHealthEvent3" tabindex="-1">remoteNetworkHealthEvent</a>
 </li>
 </ul>
-<section id="tabpanel_2_networkAccessTraffic1" role="tabpanel" data-tab="networkAccessTraffic1">
+<section id="tabpanel_2_connection1" role="tabpanel" data-tab="connection1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/networkaccess-connection?view=graph-rest-1.0&amp;tabs=http">connection</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">agentVersion</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The version of the client that initiated the connection.</td>
+</tr>
+<tr>
+<td style="text-align: left;">applicationSnapshot</td>
+<td style="text-align: left;">microsoft.graph.networkaccess.applicationSnapshot</td>
+<td style="text-align: left;"><strong>appId</strong> (or client ID) of the destination Microsoft Entra application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The time the connection was created.</td>
+</tr>
+<tr>
+<td style="text-align: left;">destinationFqdn</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The destination FQDN of the connection.</td>
+</tr>
+<tr>
+<td style="text-align: left;">destinationIp</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The destination IP of the connection.</td>
+</tr>
+<tr>
+<td style="text-align: left;">destinationPort</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The destination port of the connection.</td>
+</tr>
+<tr>
+<td style="text-align: left;">deviceCategory</td>
+<td style="text-align: left;">microsoft.graph.networkaccess.deviceCategory</td>
+<td style="text-align: left;">The category of the device. The possible values are: <code>client</code>, <code>branch</code>, <code>unknownFutureValue</code>, <code>remoteNetwork</code>. Use the <code>Prefer: include-unknown-enum-members</code> request header to get the following values from this evolvable enum: <code>remoteNetwork</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">deviceId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The DeviceID.</td>
+</tr>
+<tr>
+<td style="text-align: left;">deviceOperatingSystem</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The device operating system type.</td>
+</tr>
+<tr>
+<td style="text-align: left;">deviceOperatingSystemVersion</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The device operating system version.</td>
+</tr>
+<tr>
+<td style="text-align: left;">endDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The time the connection was terminated.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the connection. Inherited from microsoft.graph.entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">initiatingProcessName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The process initiating the traffic connection.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastUpdateDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">When the connection was last updated.</td>
+</tr>
+<tr>
+<td style="text-align: left;">networkProtocol</td>
+<td style="text-align: left;">microsoft.graph.networkaccess.networkingProtocol</td>
+<td style="text-align: left;">The network protocol of the connection. The possible values are: <code>ip</code>, <code>icmp</code>, <code>igmp</code>, <code>ggp</code>, <code>ipv4</code>, <code>tcp</code>, <code>pup</code>, <code>udp</code>, <code>idp</code>, <code>ipv6</code>, <code>ipv6RoutingHeader</code>, <code>ipv6FragmentHeader</code>, <code>ipSecEncapsulatingSecurityPayload</code>, <code>ipSecAuthenticationHeader</code>, <code>icmpV6</code>, <code>ipv6NoNextHeader</code>, <code>ipv6DestinationOptions</code>, <code>nd</code>, <code>raw</code>, <code>ipx</code>, <code>spx</code>, <code>spxII</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">popProcessingRegion</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The Point-of-Presence processing region of the traffic.</td>
+</tr>
+<tr>
+<td style="text-align: left;">privateAccessDetails</td>
+<td style="text-align: left;">microsoft.graph.networkaccess.privateAccessDetails</td>
+<td style="text-align: left;">Private access details.</td>
+</tr>
+<tr>
+<td style="text-align: left;">receivedBytes</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">Accumulative bytes received.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sentBytes</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">Accumulative bytes sent.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sourceIp</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The source IP of the connection.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sourcePort</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The source port of the connection.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">microsoft.graph.networkaccess.connectionStatus</td>
+<td style="text-align: left;">Status of the connection. The possible values are: <code>open</code>, <code>active</code>, <code>closed</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tenantId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The ID of the tenant where the connection was initiated.</td>
+</tr>
+<tr>
+<td style="text-align: left;">trafficType</td>
+<td style="text-align: left;">microsoft.graph.networkaccess.trafficType</td>
+<td style="text-align: left;">The type of traffic. The possible values are: <code>internet</code>, <code>private</code>, <code>microsoft365</code>, <code>all</code>, <code>unknownFutureValue</code>, <code>microsoft</code>.  Use the <code>Prefer: include-unknown-enum-members</code> request header to get the following values from this evolvable enum: <code>microsoft</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">transactionBlockCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The number of blocked transactions belonging to the connection.</td>
+</tr>
+<tr>
+<td style="text-align: left;">transactionCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The number of transactions belonging to the connection.</td>
+</tr>
+<tr>
+<td style="text-align: left;">transportProtocol</td>
+<td style="text-align: left;">microsoft.graph.networkaccess.networkingProtocol</td>
+<td style="text-align: left;">The transport protocol of the connection. The possible values are: <code>ip</code>, <code>icmp</code>, <code>igmp</code>, <code>ggp</code>, <code>ipv4</code>, <code>tcp</code>, <code>pup</code>, <code>udp</code>, <code>idp</code>, <code>ipv6</code>, <code>ipv6RoutingHeader</code>, <code>ipv6FragmentHeader</code>, <code>ipSecEncapsulatingSecurityPayload</code>, <code>ipSecAuthenticationHeader</code>, <code>icmpV6</code>, <code>ipv6NoNextHeader</code>, <code>ipv6DestinationOptions</code>, <code>nd</code>, <code>raw</code>, <code>ipx</code>, <code>spx</code>, <code>spxII</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">userId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The user ID.</td>
+</tr>
+<tr>
+<td style="text-align: left;">userPrincipalName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The principal name of the user.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_networkAccessTraffic2" role="tabpanel" data-tab="networkAccessTraffic2" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/networkaccess-networkaccesstraffic?view=graph-rest-1.0&amp;tabs=http">networkAccessTraffic</a></p>
 <table>
@@ -468,7 +639,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_remoteNetworkHealthEvent2" role="tabpanel" data-tab="remoteNetworkHealthEvent2" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_remoteNetworkHealthEvent3" role="tabpanel" data-tab="remoteNetworkHealthEvent3" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/networkaccess-remotenetworkhealthevent?view=graph-rest-1.0&amp;tabs=http">remoteNetworkHealthEvent</a></p>
 <table>

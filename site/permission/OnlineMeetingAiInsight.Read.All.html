@@ -93,6 +93,11 @@
 <blockquote>
 <p>Allows the app to read all AI Insights for online meetings, on behalf of the signed-in user.</p>
 </blockquote>
+<blockquote>
+<p><strong>Merill's Note</strong></p>
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>OnlineMeetingAiInsight.Read.All</code> permission.</p>
+<p>If you need to create an audit report of the permissions granted to all the apps in your tenant, you can run the <code>Export-MsIdAppConsentGrantReport</code> command. See <a href="https://www.youtube.com/watch?v=vO0m5yE3dZA">How To: Run a quick OAuth app audit of your tenant</a></p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -125,11 +130,414 @@
 </tbody>
 </table>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_apiv1" role="tab" aria-controls="tabpanel_1_apiv1" data-tab="apiv1" tabindex="0" aria-selected="true"><span><i class='bi bi-braces'></i></span> API [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_apibeta" role="tab" aria-controls="tabpanel_1_apibeta" data-tab="apibeta" tabindex="-1"><span><i class='bi bi-braces'></i></span> API [beta]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psv1" role="tab" aria-controls="tabpanel_1_psv1" data-tab="psv1" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psbeta" role="tab" aria-controls="tabpanel_1_psbeta" data-tab="psbeta" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [beta]</a>
+</li>
+</ul>
+<section id="tabpanel_1_apiv1" role="tabpanel" data-tab="apiv1">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_apibeta" role="tabpanel" data-tab="apibeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/onlinemeeting-list-aiinsights?view=graph-rest-beta&amp;tabs=http">GET /copilot/users/{userId}/onlineMeetings/{onlineMeetingId}/aiInsights</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/callaiinsight-get?view=graph-rest-beta&amp;tabs=http">GET /copilot/users/{userId}/onlineMeetings/{onlineMeetingId}/aiInsights/{aiInsightId}</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_psv1" role="tabpanel" data-tab="psv1" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_psbeta" role="tabpanel" data-tab="psbeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
 </div>
-<hr>
+<h2 id="resources">Resources</h2>
+<p>Granting this permission allows the calling application to access (and/or update) the following information in your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_callAiInsight1" role="tab" aria-controls="tabpanel_2_callAiInsight1" data-tab="callAiInsight1" tabindex="0" aria-selected="true">callAiInsight</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_callTranscript2" role="tab" aria-controls="tabpanel_2_callTranscript2" data-tab="callTranscript2" tabindex="-1">callTranscript</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_onlineMeeting3" role="tab" aria-controls="tabpanel_2_onlineMeeting3" data-tab="onlineMeeting3" tabindex="-1">onlineMeeting</a>
+</li>
+</ul>
+<section id="tabpanel_2_callAiInsight1" role="tabpanel" data-tab="callAiInsight1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/callaiinsight?view=graph-rest-1.0&amp;tabs=http">callAiInsight</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">actionItems</td>
+<td style="text-align: left;">actionItem collection</td>
+<td style="text-align: left;">The collection of AI-generated action items. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">callId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The ID for the online meeting call for which the <strong>callAiInsight</strong> was generated. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">contentCorrelationId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique ID that correlates the transcript from which the insights were generated. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time at which the corresponding transcript was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">endDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time at which the corresponding transcription ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the <strong>callAiInsight</strong> entity. Read-only. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">meetingNotes</td>
+<td style="text-align: left;">meetingNote collection</td>
+<td style="text-align: left;">The collection of AI-generated meeting notes. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">viewpoint</td>
+<td style="text-align: left;">callAiInsightViewPoint</td>
+<td style="text-align: left;">The caller-specific properties of the **c</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_callTranscript2" role="tabpanel" data-tab="callTranscript2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/calltranscript?view=graph-rest-1.0&amp;tabs=http">callTranscript</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">callId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the call that is related to this transcript. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">content</td>
+<td style="text-align: left;">Stream</td>
+<td style="text-align: left;">The content of the transcript. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">contentCorrelationId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier that links the transcript with its corresponding recording. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time at which the transcript was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">endDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time at which the transcription ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the transcript. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">meetingId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier of the online meeting related to this transcript. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">meetingOrganizer</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The identity information of the organizer of the <strong>onlineMeeting</strong> related to this transcript. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">metadataContent</td>
+<td style="text-align: left;">Stream</td>
+<td style="text-align: left;">The time-aligned metadata of the utterances in the transcript. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">transcriptContentUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The URL that can be used to access the content of the transcript. Read-only.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_onlineMeeting3" role="tabpanel" data-tab="onlineMeeting3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/onlinemeeting?view=graph-rest-1.0&amp;tabs=http">onlineMeeting</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">allowAttendeeToEnableCamera</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether attendees can turn on their camera. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">allowAttendeeToEnableMic</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether attendees can turn on their microphone. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">allowBreakoutRooms</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether breakout rooms are enabled for the meeting. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">allowedLobbyAdmitters</td>
+<td style="text-align: left;">allowedLobbyAdmitterRoles</td>
+<td style="text-align: left;">Specifies the users who can admit from the lobby. Possible values are: <code>organizerAndCoOrganizersAndPresenters</code>, <code>organizerAndCoOrganizers</code>, <code>unknownFutureValue</code>. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">allowedPresenters</td>
+<td style="text-align: left;">onlineMeetingPresenters</td>
+<td style="text-align: left;">Specifies who can be a presenter in a meeting. Possible values are listed in the following table. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">allowLiveShare</td>
+<td style="text-align: left;">meetingLiveShareOptions</td>
+<td style="text-align: left;">Indicates whether live share is enabled for the meeting. Possible values are: <code>enabled</code>, <code>disabled</code>, <code>unknownFutureValue</code>. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">allowMeetingChat</td>
+<td style="text-align: left;">meetingChatMode</td>
+<td style="text-align: left;">Specifies the mode of meeting chat. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">allowParticipantsToChangeName</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Specifies if participants are allowed to rename themselves in an instance of the meeting. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">allowPowerPointSharing</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether PowerPoint live is enabled for the meeting. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">allowTeamworkReactions</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether Teams reactions are enabled for the meeting. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">allowRecording</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether recording is enabled for the meeting. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">allowTeamworkReactions</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether Teams reactions are enabled for the meeting. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">allowTranscription</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether transcription is enabled for the meeting. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">allowWhiteboard</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether whiteboard is enabled for the meeting. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">audioConferencing</td>
+<td style="text-align: left;">audioConferencing</td>
+<td style="text-align: left;">The phone access (dial-in) information for an online meeting. Read-only. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">chatInfo</td>
+<td style="text-align: left;">chatInfo</td>
+<td style="text-align: left;">The chat information associated with this online meeting. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">chatRestrictions</td>
+<td style="text-align: left;">chatRestrictions</td>
+<td style="text-align: left;">Specifies the configuration settings for meeting chat restrictions. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">creationDateTime</td>
+<td style="text-align: left;">DateTime</td>
+<td style="text-align: left;">The meeting creation time in UTC. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">endDateTime</td>
+<td style="text-align: left;">DateTime</td>
+<td style="text-align: left;">The meeting end time in UTC. Required when you create an online meeting.</td>
+</tr>
+<tr>
+<td style="text-align: left;">joinWebUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The join URL of the online meeting. The format of the URL may change; therefore, users shouldn't rely on any information extracted from parsing the URL. Read-only. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">participants</td>
+<td style="text-align: left;">meetingParticipants</td>
+<td style="text-align: left;">The participants associated with the online meeting, including the organizer and the attendees.</td>
+</tr>
+<tr>
+<td style="text-align: left;">subject</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The subject of the online meeting. Required when you create an online meeting.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The default ID associated with the online meeting. Read-only. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isEntryExitAnnounced</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether to announce when callers join or leave. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">joinInformation</td>
+<td style="text-align: left;">itemBody</td>
+<td style="text-align: left;">The join information in the language and locale variant specified in the <code>Accept-Language</code> request HTTP header. Read-only. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">joinMeetingIdSettings</td>
+<td style="text-align: left;">joinMeetingIdSettings</td>
+<td style="text-align: left;">Specifies the <strong>joinMeetingId</strong>, the meeting passcode, and the requirement for the passcode. Once an <strong>onlineMeeting</strong> is created, the <strong>joinMeetingIdSettings</strong> can't be modified. To make any changes to this property, the meeting needs to be canceled and a new one needs to be created. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lobbyBypassSettings</td>
+<td style="text-align: left;">lobbyBypassSettings</td>
+<td style="text-align: left;">Specifies which participants can bypass the meeting lobby. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">meetingTemplateId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The ID of the meeting template.</td>
+</tr>
+<tr>
+<td style="text-align: left;">recordAutomatically</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether to record the meeting automatically. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">shareMeetingChatHistoryDefault</td>
+<td style="text-align: left;">meetingChatHistoryDefaultMode</td>
+<td style="text-align: left;">Specifies whether meeting chat history is shared with participants. Possible values are: <code>all</code>, <code>none</code>, <code>unknownFutureValue</code>. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">startDateTime</td>
+<td style="text-align: left;">DateTime</td>
+<td style="text-align: left;">The meeting start time in UTC.</td>
+</tr>
+<tr>
+<td style="text-align: left;">videoTeleconferenceId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The video teleconferencing ID. Read-only. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">watermarkProtection</td>
+<td style="text-align: left;">watermarkProtectionValues</td>
+<td style="text-align: left;">Specifies whether the client application should apply a watermark a content type. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">attendeeReport (deprecated)</td>
+<td style="text-align: left;">Stream</td>
+<td style="text-align: left;">The content stream of the attendee report of a Microsoft Teams live event. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">broadcastSettings (deprecated)</td>
+<td style="text-align: left;">broadcastMeetingSettings</td>
+<td style="text-align: left;">Settings related to a live event.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isBroadcast (deprecated)</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether this meeting is a Teams live event.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</div>
 
 </article>
 
