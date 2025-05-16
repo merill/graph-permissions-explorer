@@ -2623,7 +2623,27 @@
 <tr>
 <td style="text-align: left;">cronScheduleExpression</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">An expression that specifies the cron schedule. (For example, &quot;0 0 0 20 * *&quot;</td>
+<td style="text-align: left;">An expression that specifies the cron schedule. (For example, &quot;0 0 0 20 * *&quot; means schedules a job to run at midnight on the 20th of every month) Administrators can set a cron expression to define the scheduling rules for automatic regular application. When auto provision is disabled, <code>cronScheduleExpression</code> is set to null, stopping the automatic task scheduling. Read-Only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">nextRunDateTime</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Indicates IT Admins can see when the next automatic regular apply is executed. It needs to be coordinated with <code>timezone</code>, for example, &quot;2025-01-01 00:00:00&quot; with &quot;China Standard Time&quot; means the next task executes at Jan 01 2025 00:00:00 GMT+0800 (China Standard Time). Read-Only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">startDateTime</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Indicates IT Admins can set a start date to define the first scheduler run after this time. If not set, the default is the current time. There is no time zone information at this time, it needs to be coordinated with <code>timezone</code>, for example, &quot;2025-01-01 00:00:00&quot; with &quot;China Standard Time&quot; means the scheduling rule takes effect after Jan 01 2025 00:00:00 GMT+0800 (China Standard Time).</td>
+</tr>
+<tr>
+<td style="text-align: left;">endDateTime</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Indicates IT Admins can set an end date to define the last scheduler run before this time. If not set, the scheduler runs continuously. There is no time zone information at this time; it needs to be coordinated with <code>timezone</code>, for example, &quot;2025-02-01 00:00:00&quot; with &quot;China Standard Time&quot; means the scheduling rule takes effect before Feb 01 2025 00:00:00 GMT+0800 (China Standard Time).</td>
+</tr>
+<tr>
+<td style="text-align: left;">timezone</td>
+<td style="text-align: left;">cloudPcPolicyTimezone</td>
+<td style="text-align: left;">Indicates IT Admins can set a timezone to define the timezone of <code>nextRunDateTime</code>, <code>startDateTime</code>, <code>endDateTime</code>, default is <code>gmt</code>. Possible values are <code>gmt</code>, <code>bit</code>, <code>nut</code>, <code>hst</code>, <code>mit</code>, <code>akst</code>, <code>pst</code>, <code>mst</code>, <code>east</code>, <code>est</code>, <code>ast</code>, <code>nst</code>, <code>art</code>, <code>gst</code>, <code>azot</code>, <code>cet</code>, <code>cat</code>, <code>eat</code>, <code>get</code>, <code>pkt</code>, <code>ist</code>, <code>bst</code>, <code>tha</code>, <code>cst</code>, <code>jst</code>, <code>acst</code>, <code>pgt</code>, <code>sbt</code>, <code>fjt</code>, <code>tot</code>, <code>lint</code>, and <code>unknownFutureValue</code>.</td>
 </tr>
 </tbody>
 </table>
