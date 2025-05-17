@@ -93,6 +93,11 @@
 <blockquote>
 <p>Allows the app to get sensitivity labels.</p>
 </blockquote>
+<blockquote>
+<p><strong>Merill's Note</strong></p>
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>SensitivityLabels.Read.All</code> permission.</p>
+<p>If you need to create an audit report of the permissions granted to all the apps in your tenant, you can run the <code>Export-MsIdAppConsentGrantReport</code> command. See <a href="https://www.youtube.com/watch?v=vO0m5yE3dZA">How To: Run a quick OAuth app audit of your tenant</a></p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -125,11 +130,243 @@
 </tbody>
 </table>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_apiv1" role="tab" aria-controls="tabpanel_1_apiv1" data-tab="apiv1" tabindex="0" aria-selected="true"><span><i class='bi bi-braces'></i></span> API [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_apibeta" role="tab" aria-controls="tabpanel_1_apibeta" data-tab="apibeta" tabindex="-1"><span><i class='bi bi-braces'></i></span> API [beta]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psv1" role="tab" aria-controls="tabpanel_1_psv1" data-tab="psv1" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psbeta" role="tab" aria-controls="tabpanel_1_psbeta" data-tab="psbeta" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [beta]</a>
+</li>
+</ul>
+<section id="tabpanel_1_apiv1" role="tabpanel" data-tab="apiv1">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_apibeta" role="tabpanel" data-tab="apibeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/tenantdatasecurityandgovernance-list-sensitivitylabels?view=graph-rest-beta&amp;tabs=http">GET /security/dataSecurityAndGovernance/sensitivityLabels</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/sensitivitylabel-get?view=graph-rest-beta&amp;tabs=http">GET /security/dataSecurityAndGovernance/sensitivityLabels/{labelId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/usagerightsincluded-get?view=graph-rest-beta&amp;tabs=http">GET /security/dataSecurityAndGovernance/sensitivityLabels/{labelId}/rights</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/userdatasecurityandgovernance-list-sensitivitylabels?view=graph-rest-beta&amp;tabs=http">GET /users/{usersId}/dataSecurityAndGovernance/sensitivityLabels</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_psv1" role="tabpanel" data-tab="psv1" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_psbeta" role="tabpanel" data-tab="psbeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
 </div>
-<hr>
+<h2 id="resources">Resources</h2>
+<p>Granting this permission allows the calling application to access (and/or update) the following information in your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_sensitivityLabel1" role="tab" aria-controls="tabpanel_2_sensitivityLabel1" data-tab="sensitivityLabel1" tabindex="0" aria-selected="true">sensitivityLabel</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_usagerights2" role="tab" aria-controls="tabpanel_2_usagerights2" data-tab="usagerights2" tabindex="-1">usagerights</a>
+</li>
+</ul>
+<section id="tabpanel_2_sensitivityLabel1" role="tabpanel" data-tab="sensitivityLabel1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-sensitivitylabel?view=graph-rest-1.0&amp;tabs=http">sensitivityLabel</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">actionSource</td>
+<td style="text-align: left;">microsoft.graph.security.labelActionSource</td>
+<td style="text-align: left;">Indicates the source of the action that resulted in the label being applied. Possible values are: <code>manual</code>, <code>automatic</code>, <code>recommended</code>, <code>none</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">autoLabeling</td>
+<td style="text-align: left;">autoLabeling</td>
+<td style="text-align: left;">The auto-labeling configuration for the label.</td>
+</tr>
+<tr>
+<td style="text-align: left;">applicableTo</td>
+<td style="text-align: left;">microsoft.graph.security.sensitivityLabelTarget</td>
+<td style="text-align: left;">Specifies the workloads where the label can be applied. Possible values: <code>email</code>, <code>site</code>, <code>unifiedGroup</code>, <code>teamwork</code>, <code>file</code>, <code>schematizedData</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">applicationMode</td>
+<td style="text-align: left;">microsoft.graph.security.applicationMode</td>
+<td style="text-align: left;">Specifies how the label should be applied or recommended. Possible values are: <code>manual</code>, <code>automatic</code>, <code>recommended</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">assignedPolicies</td>
+<td style="text-align: left;">labelPolicy collection</td>
+<td style="text-align: left;">The collection of label policies that are assigned to the label.</td>
+</tr>
+<tr>
+<td style="text-align: left;">autoTooltip</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The tooltip displayed to users for recommended or automatically applied labels.</td>
+</tr>
+<tr>
+<td style="text-align: left;">color</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The color that the UI should display for the label, if configured.</td>
+</tr>
+<tr>
+<td style="text-align: left;">contentFormats</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Returns the supported content formats for the label.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The admin-defined description for the label.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the sensitivity label.</td>
+</tr>
+<tr>
+<td style="text-align: left;">hasProtection</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the label has protection actions configured.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The label ID is a globally unique identifier (GUID).</td>
+</tr>
+<tr>
+<td style="text-align: left;">isActive</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the label is active or not. Active labels should be hidden or disabled in the UI.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isAppliable</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the label can be applied to content. <code>False</code> if the label is a parent with child labels.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isDefault</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if the label is the default label for the policy; <code>false</code> otherwise.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if the label is currently enabled; <code>false</code> otherwise.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isEndpointProtectionEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if the label provides protection settings enforced by endpoint Data Loss Prevention; <code>false</code> otherwise.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isScopedToUser</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates if the label is scoped to specific users or groups (<code>true</code>) or available to the entire tenant (<code>false</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">labelActions</td>
+<td style="text-align: left;">labelActionBase collection</td>
+<td style="text-align: left;">The actions that are associated with the label.</td>
+</tr>
+<tr>
+<td style="text-align: left;">locale</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The locale associated with the label's localized properties (for example, 'en-US'). Used in context of listing labels scoped to user/locale.</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The plaintext name of the label.</td>
+</tr>
+<tr>
+<td style="text-align: left;">priority</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The priority of the label. Lower numbers indicate higher priority.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sensitivity</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The sensitivity value of the label, where lower is less sensitive.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tooltip</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The tooltip that should be displayed for the label in a UI.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_usagerights2" role="tabpanel" data-tab="usagerights2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/usagerights?view=graph-rest-1.0&amp;tabs=http">usagerights</a></p>
+</section>
+</div>
 
 </article>
 

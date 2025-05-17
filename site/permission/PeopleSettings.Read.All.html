@@ -218,6 +218,14 @@
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/peopleadminsettings-list-profilepropertysettings?view=graph-rest-beta&amp;tabs=http">GET /admin/people/profilePropertySettings</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/profilepropertysetting-get?view=graph-rest-beta&amp;tabs=http">GET /admin/people/profilePropertySettings/{profilePropertySettingId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/peopleadminsettings-list-pronouns?view=graph-rest-beta&amp;tabs=http">GET /admin/people/pronouns</a></div></td>
 </tr>
 <tr>
@@ -317,7 +325,10 @@
 <a href="#tabpanel_2_profileCardProperty6" role="tab" aria-controls="tabpanel_2_profileCardProperty6" data-tab="profileCardProperty6" tabindex="-1">profileCardProperty</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_pronounsSettings7" role="tab" aria-controls="tabpanel_2_pronounsSettings7" data-tab="pronounsSettings7" tabindex="-1">pronounsSettings</a>
+<a href="#tabpanel_2_profilePropertySetting7" role="tab" aria-controls="tabpanel_2_profilePropertySetting7" data-tab="profilePropertySetting7" tabindex="-1">profilePropertySetting</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_pronounsSettings8" role="tab" aria-controls="tabpanel_2_pronounsSettings8" data-tab="pronounsSettings8" tabindex="-1">pronounsSettings</a>
 </li>
 </ul>
 <section id="tabpanel_2_enhancedPersonalizationSetting1" role="tabpanel" data-tab="enhancedPersonalizationSetting1">
@@ -470,7 +481,47 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_pronounsSettings7" role="tabpanel" data-tab="pronounsSettings7" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_profilePropertySetting7" role="tabpanel" data-tab="profilePropertySetting7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/profilepropertysetting?view=graph-rest-1.0&amp;tabs=http">profilePropertySetting</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">allowedAudiences</td>
+<td style="text-align: left;">organizationAllowedAudiences</td>
+<td style="text-align: left;">A privacy setting that reflects the allowed audience for the configured property. The possible values are: <code>me</code>, <code>organization</code>, <code>federatedOrganizations</code>, <code>everyone</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">System generated GUID. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isUserOverrideForAudienceEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Defines whether a user is allowed to override the tenant admin privacy setting.</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the property-level setting.</td>
+</tr>
+<tr>
+<td style="text-align: left;">prioritizedSourceUrls</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">A collection of prioritized profile source URLs ordered by data precedence within an organization.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_pronounsSettings8" role="tabpanel" data-tab="pronounsSettings8" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/pronounssettings?view=graph-rest-1.0&amp;tabs=http">pronounsSettings</a></p>
 <table>

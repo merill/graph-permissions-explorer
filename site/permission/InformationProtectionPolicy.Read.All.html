@@ -1591,6 +1591,36 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">actionSource</td>
+<td style="text-align: left;">microsoft.graph.security.labelActionSource</td>
+<td style="text-align: left;">Indicates the source of the action that resulted in the label being applied. Possible values are: <code>manual</code>, <code>automatic</code>, <code>recommended</code>, <code>none</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">autoLabeling</td>
+<td style="text-align: left;">autoLabeling</td>
+<td style="text-align: left;">The auto-labeling configuration for the label.</td>
+</tr>
+<tr>
+<td style="text-align: left;">applicableTo</td>
+<td style="text-align: left;">microsoft.graph.security.sensitivityLabelTarget</td>
+<td style="text-align: left;">Specifies the workloads where the label can be applied. Possible values: <code>email</code>, <code>site</code>, <code>unifiedGroup</code>, <code>teamwork</code>, <code>file</code>, <code>schematizedData</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">applicationMode</td>
+<td style="text-align: left;">microsoft.graph.security.applicationMode</td>
+<td style="text-align: left;">Specifies how the label should be applied or recommended. Possible values are: <code>manual</code>, <code>automatic</code>, <code>recommended</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">assignedPolicies</td>
+<td style="text-align: left;">labelPolicy collection</td>
+<td style="text-align: left;">The collection of label policies that are assigned to the label.</td>
+</tr>
+<tr>
+<td style="text-align: left;">autoTooltip</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The tooltip displayed to users for recommended or automatically applied labels.</td>
+</tr>
+<tr>
 <td style="text-align: left;">color</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The color that the UI should display for the label, if configured.</td>
@@ -1604,6 +1634,11 @@
 <td style="text-align: left;">description</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The admin-defined description for the label.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the sensitivity label.</td>
 </tr>
 <tr>
 <td style="text-align: left;">hasProtection</td>
@@ -1626,9 +1661,44 @@
 <td style="text-align: left;">Indicates whether the label can be applied to content. <code>False</code> if the label is a parent with child labels.</td>
 </tr>
 <tr>
+<td style="text-align: left;">isDefault</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if the label is the default label for the policy; <code>false</code> otherwise.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if the label is currently enabled; <code>false</code> otherwise.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isEndpointProtectionEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if the label provides protection settings enforced by endpoint Data Loss Prevention; <code>false</code> otherwise.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isScopedToUser</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates if the label is scoped to specific users or groups (<code>true</code>) or available to the entire tenant (<code>false</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">labelActions</td>
+<td style="text-align: left;">labelActionBase collection</td>
+<td style="text-align: left;">The actions that are associated with the label.</td>
+</tr>
+<tr>
+<td style="text-align: left;">locale</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The locale associated with the label's localized properties (for example, 'en-US'). Used in context of listing labels scoped to user/locale.</td>
+</tr>
+<tr>
 <td style="text-align: left;">name</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The plaintext name of the label.</td>
+</tr>
+<tr>
+<td style="text-align: left;">priority</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The priority of the label. Lower numbers indicate higher priority.</td>
 </tr>
 <tr>
 <td style="text-align: left;">sensitivity</td>
