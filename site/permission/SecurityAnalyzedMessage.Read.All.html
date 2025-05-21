@@ -245,11 +245,6 @@
 <td style="text-align: left;">A collection of the attachments in the email.</td>
 </tr>
 <tr>
-<td style="text-align: left;">attachmentsCount</td>
-<td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The number of attachments in the email.</td>
-</tr>
-<tr>
 <td style="text-align: left;">authenticationDetails</td>
 <td style="text-align: left;">microsoft.graph.security.analyzedEmailAuthenticationDetail</td>
 <td style="text-align: left;">The authentication details associated with the email.</td>
@@ -258,6 +253,11 @@
 <td style="text-align: left;">bulkComplaintLevel</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The bulk complaint level of the email. A higher level is more likely to be spam.</td>
+</tr>
+<tr>
+<td style="text-align: left;">clientType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Shows the type of client that sent the message (for example, REST).</td>
 </tr>
 <tr>
 <td style="text-align: left;">contexts</td>
@@ -280,6 +280,11 @@
 <td style="text-align: left;">The distribution list details to which the email was sent.</td>
 </tr>
 <tr>
+<td style="text-align: left;">dlpRules</td>
+<td style="text-align: left;">microsoft.graph.security.analyzedEmailDlpRuleInfo collection</td>
+<td style="text-align: left;">Data loss prevention rules configured in purview.</td>
+</tr>
+<tr>
 <td style="text-align: left;">emailClusterId</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The identifier for the group of similar emails clustered based on heuristic analysis of their content.</td>
@@ -290,9 +295,19 @@
 <td style="text-align: left;">The name of the Exchange transport rules (ETRs) associated with the email.</td>
 </tr>
 <tr>
+<td style="text-align: left;">forwardingDetail</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Email smtp forwarding details.</td>
+</tr>
+<tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The ID of an analyzed email.</td>
+</tr>
+<tr>
+<td style="text-align: left;">inboundConnectorFormattedName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Custom instructions name that defines organizational mail flow and how the email was routed.</td>
 </tr>
 <tr>
 <td style="text-align: left;">internetMessageId</td>
@@ -345,6 +360,21 @@
 <td style="text-align: left;">The action taken on the email based on the configured policy.</td>
 </tr>
 <tr>
+<td style="text-align: left;">policyType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Type of policy configured that defines the delivery action on email.</td>
+</tr>
+<tr>
+<td style="text-align: left;">primaryOverrideSource</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Shows the organization or user setting that altered the intended delivery location of the message (allowed instead of blocked, or blocked instead of allowed).</td>
+</tr>
+<tr>
+<td style="text-align: left;">recipientDetail</td>
+<td style="text-align: left;">microsoft.graph.security.analyzedEmailRecipientDetail</td>
+<td style="text-align: left;">Details of the recipients.</td>
+</tr>
+<tr>
 <td style="text-align: left;">recipientEmailAddress</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Contains the email address of the recipient.</td>
@@ -380,14 +410,19 @@
 <td style="text-align: left;">Indicates the threat types. The possible values are: <code>unknown</code>, <code>spam</code>, <code>malware</code>, <code>phish</code>, <code>none</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 <tr>
+<td style="text-align: left;">timelineEvents</td>
+<td style="text-align: left;">microsoft.graph.security.timelineEvent collection</td>
+<td style="text-align: left;">Delivery and post-delivery events that happened to the email.</td>
+</tr>
+<tr>
+<td style="text-align: left;">threatDetectionDetails</td>
+<td style="text-align: left;">microsoft.graph.security.threatDetectionDetail collection</td>
+<td style="text-align: left;">Information about threats detected in the email.</td>
+</tr>
+<tr>
 <td style="text-align: left;">urls</td>
 <td style="text-align: left;">microsoft.graph.security.analyzedEmailUrl collection</td>
 <td style="text-align: left;">A collection of the URLs in the email.</td>
-</tr>
-<tr>
-<td style="text-align: left;">urlsCount</td>
-<td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The number of URLs in the email.</td>
 </tr>
 </tbody>
 </table>
