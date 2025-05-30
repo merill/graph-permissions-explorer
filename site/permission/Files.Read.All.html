@@ -1568,7 +1568,10 @@
 <a href="#tabpanel_2_user51" role="tab" aria-controls="tabpanel_2_user51" data-tab="user51" tabindex="-1">user</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_virtualEventWebinar52" role="tab" aria-controls="tabpanel_2_virtualEventWebinar52" data-tab="virtualEventWebinar52" tabindex="-1">virtualEventWebinar</a>
+<a href="#tabpanel_2_virtualEventTownhall52" role="tab" aria-controls="tabpanel_2_virtualEventTownhall52" data-tab="virtualEventTownhall52" tabindex="-1">virtualEventTownhall</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_virtualEventWebinar53" role="tab" aria-controls="tabpanel_2_virtualEventWebinar53" data-tab="virtualEventWebinar53" tabindex="-1">virtualEventWebinar</a>
 </li>
 </ul>
 <section id="tabpanel_2_alert1" role="tabpanel" data-tab="alert1">
@@ -3859,24 +3862,89 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">assignedTo</td>
+<td style="text-align: left;">scheduleChangeRequestActor</td>
+<td style="text-align: left;">Indicates who the request is assigned to. Inherited from scheduleChangeRequest.The possible values are: <code>sender</code>, <code>recipient</code>, <code>manager</code>, <code>system</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The user who created the entity. Inherited from changeTrackedEntity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the entity was created. Inherited from changeTrackedEntity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the entity. Inherited from entity. Inherits from entity</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The user who last modified the entity. Inherited from changeTrackedEntity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the entity was last modified. Inherited from changeTrackedEntity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">managerActionDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the manager approved or declined the request. Inherited from scheduleChangeRequest.</td>
+</tr>
+<tr>
+<td style="text-align: left;">managerActionMessage</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The message sent by the manager regarding the request. Inherited from scheduleChangeRequest.</td>
+</tr>
+<tr>
+<td style="text-align: left;">managerUserId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The user ID of the manager who approved or declined the request. Inherited from scheduleChangeRequest.</td>
+</tr>
+<tr>
 <td style="text-align: left;">recipientActionDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code></td>
+<td style="text-align: left;">The date and time when the recipient approved or declined the request.</td>
 </tr>
 <tr>
 <td style="text-align: left;">recipientActionMessage</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Custom message sent by recipient of the offer shift request.</td>
+<td style="text-align: left;">The message sent by the recipient regarding the request.</td>
 </tr>
 <tr>
 <td style="text-align: left;">recipientUserId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">User ID of the recipient of the offer shift request.</td>
+<td style="text-align: left;">The recipient's user ID.</td>
+</tr>
+<tr>
+<td style="text-align: left;">senderDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the sender sent the request. Inherited from scheduleChangeRequest.</td>
+</tr>
+<tr>
+<td style="text-align: left;">senderMessage</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The message sent by the sender of the request. Inherited from scheduleChangeRequest.</td>
 </tr>
 <tr>
 <td style="text-align: left;">senderShiftId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">User ID of the sender of the offer shift request.</td>
+<td style="text-align: left;">The sender's shift ID.</td>
+</tr>
+<tr>
+<td style="text-align: left;">senderUserId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The user ID of the sender of the request. Inherited from scheduleChangeRequest.</td>
+</tr>
+<tr>
+<td style="text-align: left;">state</td>
+<td style="text-align: left;">scheduleChangeState</td>
+<td style="text-align: left;">The state of the entity. Inherited from scheduleChangeRequest.The possible values are: <code>pending</code>, <code>approved</code>, <code>declined</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -3894,9 +3962,74 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">assignedTo</td>
+<td style="text-align: left;">scheduleChangeRequestActor</td>
+<td style="text-align: left;">Indicates who the request is assigned to. Inherited from scheduleChangeRequest.The possible values are: <code>sender</code>, <code>recipient</code>, <code>manager</code>, <code>system</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The user who created the entity. Inherited from changeTrackedEntity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the entity was created. Inherited from changeTrackedEntity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the entity. Inherited from entity. Inherits from entity</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The user who last modified the entity. Inherited from changeTrackedEntity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the entity was last modified. Inherited from changeTrackedEntity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">managerActionDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the manager approved or declined the request. Inherited from scheduleChangeRequest.</td>
+</tr>
+<tr>
+<td style="text-align: left;">managerActionMessage</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The message sent by the manager regarding the request. Inherited from scheduleChangeRequest.</td>
+</tr>
+<tr>
+<td style="text-align: left;">managerUserId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The user ID of the manager who approved or declined the request. Inherited from scheduleChangeRequest.</td>
+</tr>
+<tr>
 <td style="text-align: left;">openShiftId</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">ID for the open shift.</td>
+</tr>
+<tr>
+<td style="text-align: left;">senderDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the sender sent the request. Inherited from scheduleChangeRequest.</td>
+</tr>
+<tr>
+<td style="text-align: left;">senderMessage</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The message sent by the sender of the request. Inherited from scheduleChangeRequest.</td>
+</tr>
+<tr>
+<td style="text-align: left;">senderUserId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The user ID of the sender of the request. Inherited from scheduleChangeRequest.</td>
+</tr>
+<tr>
+<td style="text-align: left;">state</td>
+<td style="text-align: left;">scheduleChangeState</td>
+<td style="text-align: left;">The state of the **s</td>
 </tr>
 </tbody>
 </table>
@@ -4545,9 +4678,94 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">assignedTo</td>
+<td style="text-align: left;">scheduleChangeRequestActor</td>
+<td style="text-align: left;">Indicates who the request is assigned to. Inherited from scheduleChangeRequest.The possible values are: <code>sender</code>, <code>recipient</code>, <code>manager</code>, <code>system</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The user who created the entity. Inherited from changeTrackedEntity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the entity was created. Inherited from changeTrackedEntity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the entity. Inherited from entity. Inherits from entity</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The user who last modified the entity. Inherited from changeTrackedEntity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the entity was last modified. Inherited from changeTrackedEntity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">managerActionDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the manager approved or declined the request. Inherited from scheduleChangeRequest.</td>
+</tr>
+<tr>
+<td style="text-align: left;">managerActionMessage</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The message sent by the manager regarding the request. Inherited from scheduleChangeRequest.</td>
+</tr>
+<tr>
+<td style="text-align: left;">managerUserId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The user ID of the manager who approved or declined the request. Inherited from scheduleChangeRequest.</td>
+</tr>
+<tr>
+<td style="text-align: left;">recipientActionDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the recipient approved or declined the request. Inherited from offerShiftRequest.</td>
+</tr>
+<tr>
+<td style="text-align: left;">recipientActionMessage</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The message sent by the recipient regarding the request. Inherited from offerShiftRequest.</td>
+</tr>
+<tr>
 <td style="text-align: left;">recipientShiftId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">ShiftId for the recipient user with whom the request is to swap.</td>
+<td style="text-align: left;">The recipient's Shift ID</td>
+</tr>
+<tr>
+<td style="text-align: left;">recipientUserId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The recipient's user ID. Inherited from offerShiftRequest.</td>
+</tr>
+<tr>
+<td style="text-align: left;">senderDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the sender sent the request. Inherited from scheduleChangeRequest.</td>
+</tr>
+<tr>
+<td style="text-align: left;">senderMessage</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The message sent by the sender of the request. Inherited from scheduleChangeRequest.</td>
+</tr>
+<tr>
+<td style="text-align: left;">senderShiftId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The sender's shift ID. Inherited from offerShiftRequest.</td>
+</tr>
+<tr>
+<td style="text-align: left;">senderUserId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The user ID of the sender of the request. Inherited from scheduleChangeRequest.</td>
+</tr>
+<tr>
+<td style="text-align: left;">state</td>
+<td style="text-align: left;">scheduleChangeState</td>
+<td style="text-align: left;">The state of the entity. Inherited from scheduleChangeRequest.The possible values are: <code>pending</code>, <code>approved</code>, <code>declined</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -4754,14 +4972,79 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">assignedTo</td>
+<td style="text-align: left;">scheduleChangeRequestActor</td>
+<td style="text-align: left;">Indicates who the request is assigned to. Inherited from scheduleChangeRequest.The possible values are: <code>sender</code>, <code>recipient</code>, <code>manager</code>, <code>system</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The user who created the entity. Inherited from changeTrackedEntity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the entity was created. Inherited from changeTrackedEntity.</td>
+</tr>
+<tr>
 <td style="text-align: left;">endDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code></td>
+<td style="text-align: left;">The date and time the time off ends in ISO 8601 format and in UTC time.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the entity. Inherited from entity. Inherits from entity</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The user who last modified the entity. Inherited from changeTrackedEntity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the entity was last modified. Inherited from changeTrackedEntity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">managerActionDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the manager approved or declined the request. Inherited from scheduleChangeRequest.</td>
+</tr>
+<tr>
+<td style="text-align: left;">managerActionMessage</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The message sent by the manager regarding the request. Inherited from scheduleChangeRequest.</td>
+</tr>
+<tr>
+<td style="text-align: left;">managerUserId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The user ID of the manager who approved or declined the request. Inherited from scheduleChangeRequest.</td>
+</tr>
+<tr>
+<td style="text-align: left;">senderDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the sender sent the request. Inherited from scheduleChangeRequest.</td>
+</tr>
+<tr>
+<td style="text-align: left;">senderMessage</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The message sent by the sender of the request. Inherited from scheduleChangeRequest.</td>
+</tr>
+<tr>
+<td style="text-align: left;">senderUserId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The user ID of the sender of the request. Inherited from scheduleChangeRequest.</td>
 </tr>
 <tr>
 <td style="text-align: left;">startDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code></td>
+<td style="text-align: left;">The date and time the time off starts in ISO 8601 format and in UTC time.</td>
+</tr>
+<tr>
+<td style="text-align: left;">state</td>
+<td style="text-align: left;">scheduleChangeState</td>
+<td style="text-align: left;">The state of the entity. Inherited from scheduleChangeRequest.The possible values are: <code>pending</code>, <code>approved</code>, <code>declined</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">timeOffReasonId</td>
@@ -5266,7 +5549,87 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_virtualEventWebinar52" role="tabpanel" data-tab="virtualEventWebinar52" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_virtualEventTownhall52" role="tabpanel" data-tab="virtualEventTownhall52" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/virtualeventtownhall?view=graph-rest-1.0&amp;tabs=http">virtualEventTownhall</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">audience</td>
+<td style="text-align: left;">meetingAudience</td>
+<td style="text-align: left;">The audience to whom the town hall is visible. Possible values are: <code>everyone</code>, <code>organization</code>, and <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">coOrganizers</td>
+<td style="text-align: left;">communicationsUserIdentity collection</td>
+<td style="text-align: left;">Identity information of the coorganizers of the town hall.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">communicationsIdentitySet</td>
+<td style="text-align: left;">Identity information of the creator of the town hall. Inherited from virtualEvent. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">itemBody</td>
+<td style="text-align: left;">Description of the town hall. Inherited from virtualEvent.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Display name of the town hall. Inherited from virtualEvent.</td>
+</tr>
+<tr>
+<td style="text-align: left;">endDateTime</td>
+<td style="text-align: left;">dateTimeTimeZone</td>
+<td style="text-align: left;">Date and time when the town hall ends. The <strong>timeZone</strong> property <em>can</em> be set to any of the time zones currently supported by Windows. For details on how to get all available time zones using PowerShell, see Get-TimeZone. Inherited from virtualEvent.</td>
+</tr>
+<tr>
+<td style="text-align: left;">externalEventInformation</td>
+<td style="text-align: left;">virtualEventExternalInformation collection</td>
+<td style="text-align: left;">The external information of a town hall. Returned only for event organizers or coorganizers; otherwise, <code>null</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier of the town hall. Inherited from entity. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">invitedAttendees</td>
+<td style="text-align: left;">identity collection</td>
+<td style="text-align: left;">The attendees invited to the town hall. The supported identities are: communicationsUserIdentity and communicationsGuestIdentity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isInviteOnly</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the town hall is only open to invited people and groups within your organization. The <strong>isInviteOnly</strong> property can only be <code>true</code> if the value of the <strong>audience</strong> property is set to <code>organization</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">settings</td>
+<td style="text-align: left;">virtualEventSettings</td>
+<td style="text-align: left;">The virtual event settings.</td>
+</tr>
+<tr>
+<td style="text-align: left;">startDateTime</td>
+<td style="text-align: left;">dateTimeTimeZone</td>
+<td style="text-align: left;">Date and time when the town hall starts. The <strong>timeZone</strong> property <em>can</em> be set to any of the time zones currently supported by Windows. For details on how to get all available time zones using PowerShell, see Get-TimeZone. Inherited from virtualEvent.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">virtualEventStatus</td>
+<td style="text-align: left;">Status of the town hall. Possible values are: <code>draft</code>, <code>published</code>, <code>canceled</code>, and <code>unknownFutureValue</code>. Inherited from virtualEvent.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_virtualEventWebinar53" role="tabpanel" data-tab="virtualEventWebinar53" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/virtualeventwebinar?view=graph-rest-1.0&amp;tabs=http">virtualEventWebinar</a></p>
 <table>
