@@ -205,6 +205,10 @@
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/backuprestoreroot-list-serviceapps?view=graph-rest-beta&amp;tabs=http">GET /solutions/backupRestore/serviceApps</a></div></td>
 </tr>
 <tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/emailnotificationssetting-update?view=graph-rest-beta&amp;tabs=http">PATCH /solutions/backupRestore/emailNotificationsSetting</a></div></td>
+</tr>
+<tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/backuprestoreroot-enable?view=graph-rest-beta&amp;tabs=http">POST /solutions/backupRestore/enable</a></div></td>
 </tr>
@@ -310,10 +314,16 @@
 <a href="#tabpanel_2_backupRestoreRoot1" role="tab" aria-controls="tabpanel_2_backupRestoreRoot1" data-tab="backupRestoreRoot1" tabindex="0" aria-selected="true">backupRestoreRoot</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_serviceApp2" role="tab" aria-controls="tabpanel_2_serviceApp2" data-tab="serviceApp2" tabindex="-1">serviceApp</a>
+<a href="#tabpanel_2_emailNotificationsSetting2" role="tab" aria-controls="tabpanel_2_emailNotificationsSetting2" data-tab="emailNotificationsSetting2" tabindex="-1">emailNotificationsSetting</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_serviceStatus3" role="tab" aria-controls="tabpanel_2_serviceStatus3" data-tab="serviceStatus3" tabindex="-1">serviceStatus</a>
+<a href="#tabpanel_2_notificationRecipients3" role="tab" aria-controls="tabpanel_2_notificationRecipients3" data-tab="notificationRecipients3" tabindex="-1">notificationRecipients</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_serviceApp4" role="tab" aria-controls="tabpanel_2_serviceApp4" data-tab="serviceApp4" tabindex="-1">serviceApp</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_serviceStatus5" role="tab" aria-controls="tabpanel_2_serviceStatus5" data-tab="serviceStatus5" tabindex="-1">serviceStatus</a>
 </li>
 </ul>
 <section id="tabpanel_2_backupRestoreRoot1" role="tabpanel" data-tab="backupRestoreRoot1">
@@ -341,7 +351,67 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_serviceApp2" role="tabpanel" data-tab="serviceApp2" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_emailNotificationsSetting2" role="tabpanel" data-tab="emailNotificationsSetting2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/emailnotificationssetting?view=graph-rest-1.0&amp;tabs=http">emailNotificationsSetting</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">additionalEvents</td>
+<td style="text-align: left;">notificationEventsType</td>
+<td style="text-align: left;">Indicates whether to opt in to additional policy and restore updates. Possible values: <code>none</code>, <code>restoreAndPolicyUpdates</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for the <strong>emailNotificationsSetting</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether notifications are enabled.</td>
+</tr>
+<tr>
+<td style="text-align: left;">recipients</td>
+<td style="text-align: left;">notificationRecipients</td>
+<td style="text-align: left;">A list of recipients who receive the notifications.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_notificationRecipients3" role="tabpanel" data-tab="notificationRecipients3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/notificationrecipients?view=graph-rest-1.0&amp;tabs=http">notificationRecipients</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">customRecipients</td>
+<td style="text-align: left;">emailIdentity collection</td>
+<td style="text-align: left;">A list of users or groups that receive notifications.</td>
+</tr>
+<tr>
+<td style="text-align: left;">role</td>
+<td style="text-align: left;">notificationRecipientsType</td>
+<td style="text-align: left;">Indicates whether the recipient type is an admin role or a custom list. The possible values are: <code>none</code>, <code>globalAdmins</code>, <code>backupAdmins</code>, <code>custom</code>, <code>allAdmins</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_serviceApp4" role="tabpanel" data-tab="serviceApp4" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/serviceapp?view=graph-rest-1.0&amp;tabs=http">serviceApp</a></p>
 <table>
@@ -391,7 +461,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_serviceStatus3" role="tabpanel" data-tab="serviceStatus3" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_serviceStatus5" role="tabpanel" data-tab="serviceStatus5" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/servicestatus?view=graph-rest-1.0&amp;tabs=http">serviceStatus</a></p>
 <table>
