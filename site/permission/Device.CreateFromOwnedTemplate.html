@@ -317,9 +317,9 @@
 <td style="text-align: left;"><code>true</code> if the device is managed by a Mobile Device Management (MDM) app; otherwise, <code>false</code>. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>).</td>
 </tr>
 <tr>
-<td style="text-align: left;">manufacturer</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Manufacturer of the device. Read-only.</td>
+<td style="text-align: left;">isManagementRestricted</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the device is a member of a restricted management administrative unit. If not set, the default value is <code>null</code> and the default behavior is false. Read-only. <br><br> To manage a device that's a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. <br><br>Returned only on <code>$select</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">isRooted</td>
@@ -330,6 +330,11 @@
 <td style="text-align: left;">managementType</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The management channel of the device. This property is set by Intune. Possible values are: <code>eas</code>, <code>mdm</code>, <code>easMdm</code>, <code>intuneClient</code>, <code>easIntuneClient</code>, <code>configurationManagerClient</code>, <code>configurationManagerClientMdm</code>, <code>configurationManagerClientMdmEas</code>, <code>unknown</code>, <code>jamf</code>, <code>googleCloudDevicePolicyController</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">manufacturer</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Manufacturer of the device. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">mdmAppId</td>
