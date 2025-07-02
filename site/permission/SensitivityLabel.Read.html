@@ -156,6 +156,16 @@
 <th>Methods</th>
 </tr>
 </thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/tenantdatasecurityandgovernance-list-sensitivitylabels?view=graph-rest-1.0&amp;tabs=http">GET /security/dataSecurityAndGovernance/sensitivityLabels</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/sensitivitylabel-get?view=graph-rest-1.0&amp;tabs=http">GET /security/dataSecurityAndGovernance/sensitivityLabels/{labelId}</a></div></td>
+</tr>
+</tbody>
 </table>
 </section>
 <section id="tabpanel_1_apibeta" role="tabpanel" data-tab="apibeta" aria-hidden="true" hidden="hidden">
@@ -177,14 +187,6 @@
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/sensitivitylabel-get?view=graph-rest-beta&amp;tabs=http">GET /security/dataSecurityAndGovernance/sensitivityLabels/{labelId}</a></div></td>
-</tr>
-<tr>
-<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
-<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/usagerightsincluded-get?view=graph-rest-beta&amp;tabs=http">GET /security/dataSecurityAndGovernance/sensitivityLabels/{labelId}/rights</a></div></td>
-</tr>
-<tr>
-<td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
-<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/userdatasecurityandgovernance-list-sensitivitylabels?view=graph-rest-beta&amp;tabs=http">GET /users/{usersId}/dataSecurityAndGovernance/sensitivityLabels</a></div></td>
 </tr>
 </tbody>
 </table>
@@ -223,9 +225,6 @@
 <li role="presentation">
 <a href="#tabpanel_2_sensitivityLabel1" role="tab" aria-controls="tabpanel_2_sensitivityLabel1" data-tab="sensitivityLabel1" tabindex="0" aria-selected="true">sensitivityLabel</a>
 </li>
-<li role="presentation">
-<a href="#tabpanel_2_usagerights2" role="tab" aria-controls="tabpanel_2_usagerights2" data-tab="usagerights2" tabindex="-1">usagerights</a>
-</li>
 </ul>
 <section id="tabpanel_2_sensitivityLabel1" role="tabpanel" data-tab="sensitivityLabel1">
 
@@ -245,11 +244,6 @@
 <td style="text-align: left;">Indicates the source of the action that resulted in the label being applied. Possible values are: <code>manual</code>, <code>automatic</code>, <code>recommended</code>, <code>none</code>.</td>
 </tr>
 <tr>
-<td style="text-align: left;">autoLabeling</td>
-<td style="text-align: left;">autoLabeling</td>
-<td style="text-align: left;">The auto-labeling configuration for the label.</td>
-</tr>
-<tr>
 <td style="text-align: left;">applicableTo</td>
 <td style="text-align: left;">microsoft.graph.security.sensitivityLabelTarget</td>
 <td style="text-align: left;">Specifies the workloads where the label can be applied. Possible values: <code>email</code>, <code>site</code>, <code>unifiedGroup</code>, <code>teamwork</code>, <code>file</code>, <code>schematizedData</code>.</td>
@@ -258,11 +252,6 @@
 <td style="text-align: left;">applicationMode</td>
 <td style="text-align: left;">microsoft.graph.security.applicationMode</td>
 <td style="text-align: left;">Specifies how the label should be applied or recommended. Possible values are: <code>manual</code>, <code>automatic</code>, <code>recommended</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;">assignedPolicies</td>
-<td style="text-align: left;">labelPolicy collection</td>
-<td style="text-align: left;">The collection of label policies that are assigned to the label.</td>
 </tr>
 <tr>
 <td style="text-align: left;">autoTooltip</td>
@@ -330,11 +319,6 @@
 <td style="text-align: left;">Indicates if the label is scoped to specific users or groups (<code>true</code>) or available to the entire tenant (<code>false</code>).</td>
 </tr>
 <tr>
-<td style="text-align: left;">labelActions</td>
-<td style="text-align: left;">labelActionBase collection</td>
-<td style="text-align: left;">The actions that are associated with the label.</td>
-</tr>
-<tr>
 <td style="text-align: left;">locale</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The locale associated with the label's localized properties (for example, 'en-US'). Used in context of listing labels scoped to user/locale.</td>
@@ -361,10 +345,6 @@
 </tr>
 </tbody>
 </table>
-</section>
-<section id="tabpanel_2_usagerights2" role="tabpanel" data-tab="usagerights2" aria-hidden="true" hidden="hidden">
-
-<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/usagerights?view=graph-rest-1.0&amp;tabs=http">usagerights</a></p>
 </section>
 </div>
 
