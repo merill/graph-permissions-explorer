@@ -159,7 +159,7 @@
 <tbody>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
-<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/presence-get?view=graph-rest-1.0&amp;tabs=http">GET /communications/presences</a></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/presence-get?view=graph-rest-1.0&amp;tabs=http">GET /communications/presences/{id}</a></div></td>
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
@@ -186,7 +186,7 @@
 <tbody>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
-<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/presence-get?view=graph-rest-beta&amp;tabs=http">GET /communications/presences</a></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/presence-get?view=graph-rest-beta&amp;tabs=http">GET /communications/presences/{id}</a></div></td>
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
@@ -229,12 +229,6 @@
 <th>Commands</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
-<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.cloudcommunications/get-mgbetacommunicationpresence">Get-MgBetaCommunicationPresence</a></div></td>
-</tr>
-</tbody>
 </table>
 </section>
 </div>
@@ -260,18 +254,28 @@
 <tbody>
 <tr>
 <td style="text-align: left;">activity</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">The supplemental information to a user's availability. Possible values are <code>Available</code>, <code>Away</code>, <code>BeRightBack</code>, <code>Busy</code>, <code>DoNotDisturb</code>, <code>InACall</code>, <code>InAConferenceCall</code>, <code>Inactive</code>, <code>InAMeeting</code>, <code>Offline</code>, <code>OffWork</code>, <code>OutOfOffice</code>, <code>PresenceUnknown</code>, <code>Presenting</code>, <code>UrgentInterruptionsOnly</code>.</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The supplemental information to a user's availability. Possible values are <code>available</code>, <code>away</code>, <code>beRightBack</code>, <code>busy</code>, <code>doNotDisturb</code>, <code>offline</code>, <code>outOfOffice</code>, <code>presenceUnknown</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">availability</td>
-<td style="text-align: left;">String collection</td>
-<td style="text-align: left;">The base presence information for a user. Possible values are <code>Available</code>, <code>AvailableIdle</code>,  <code>Away</code>, <code>BeRightBack</code>, <code>Busy</code>, <code>BusyIdle</code>, <code>DoNotDisturb</code>, <code>Offline</code>, <code>PresenceUnknown</code></td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The base presence information for a user. Possible values are <code>available</code>, <code>away</code>, <code>beRightBack</code>, <code>busy</code>, <code>doNotDisturb</code>, <code>focusing</code>, <code>inACall</code>, <code>inAMeeting</code>, <code>offline</code>, <code>presenting</code>, <code>presenceUnknown</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The unique identifier for the user.</td>
+</tr>
+<tr>
+<td style="text-align: left;">outOfOfficeSettings</td>
+<td style="text-align: left;">outOfOfficeSettings</td>
+<td style="text-align: left;">The out of office settings for a user.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sequenceNumber</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The lexicographically sortable String stamp that represents the version of a <strong>presence</strong> object.</td>
 </tr>
 <tr>
 <td style="text-align: left;">statusMessage</td>

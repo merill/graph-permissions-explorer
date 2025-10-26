@@ -290,10 +290,6 @@
 <tbody>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
-<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.cloudcommunications/get-mgbetauseronlinemeetingrecording">Get-MgBetaUserOnlineMeetingRecording</a></div></td>
-</tr>
-<tr>
-<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.bookings/get-mgbetavirtualeventtownhallsessionattendancereport">Get-MgBetaVirtualEventTownhallSessionAttendanceReport</a></div></td>
 </tr>
 <tr>
@@ -448,6 +444,11 @@
 <td style="text-align: left;">Indicates whether breakout rooms are enabled for the meeting. Inherited from onlineMeetingBase.</td>
 </tr>
 <tr>
+<td style="text-align: left;">allowCopyingAndSharingMeetingContent</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the ability to copy and share meeting content is enabled for the meeting. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
 <td style="text-align: left;">allowedLobbyAdmitters</td>
 <td style="text-align: left;">allowedLobbyAdmitterRoles</td>
 <td style="text-align: left;">Specifies the users who can admit from the lobby. Possible values are: <code>organizerAndCoOrganizersAndPresenters</code>, <code>organizerAndCoOrganizers</code>, <code>unknownFutureValue</code>. Inherited from onlineMeetingBase.</td>
@@ -528,6 +529,11 @@
 <td style="text-align: left;">The meeting end time in UTC. Required when you create an online meeting.</td>
 </tr>
 <tr>
+<td style="text-align: left;">externalId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The external ID that is a custom identifier. Optional.</td>
+</tr>
+<tr>
 <td style="text-align: left;">joinWebUrl</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The join URL of the online meeting. The format of the URL may change; therefore, users shouldn't rely on any information extracted from parsing the URL. Read-only. Inherited from onlineMeetingBase.</td>
@@ -546,6 +552,11 @@
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The default ID associated with the online meeting. Read-only. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isEndToEndEncryptionEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether end-to-end encryption (E2EE) is enabled for the online meeting. Inherited from onlineMeetingBase.</td>
 </tr>
 <tr>
 <td style="text-align: left;">isEntryExitAnnounced</td>
@@ -703,6 +714,21 @@
 <td style="text-align: left;">Indicates whether breakout rooms are enabled for the virtual event session. Inherited from onlineMeetingBase.</td>
 </tr>
 <tr>
+<td style="text-align: left;">allowCopyingAndSharingMeetingContent</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the ability to copy and share meeting content is enabled for the virtual event session. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">allowedLobbyAdmitters</td>
+<td style="text-align: left;">allowedLobbyAdmitterRoles</td>
+<td style="text-align: left;">Specifies the users who can admit from the lobby. Possible values are: <code>organizerAndCoOrganizersAndPresenters</code>, <code>organizerAndCoOrganizers</code>, <code>unknownFutureValue</code>. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">allowedPresenters</td>
+<td style="text-align: left;">onlineMeetingPresenters</td>
+<td style="text-align: left;">Specifies who can be a presenter in a virtual event session. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
 <td style="text-align: left;">allowLiveShare</td>
 <td style="text-align: left;">meetingLiveShareOptions</td>
 <td style="text-align: left;">Indicates whether live share is enabled for the virtual event session. Possible values are: <code>enabled</code>, <code>disabled</code>, <code>unknownFutureValue</code>. Inherited from onlineMeetingBase.</td>
@@ -743,16 +769,6 @@
 <td style="text-align: left;">Indicates whether whiteboard is enabled for the virtual event session. Inherited from onlineMeetingBase.</td>
 </tr>
 <tr>
-<td style="text-align: left;">allowedLobbyAdmitters</td>
-<td style="text-align: left;">allowedLobbyAdmitterRoles</td>
-<td style="text-align: left;">Specifies the users who can admit from the lobby. Possible values are: <code>organizerAndCoOrganizersAndPresenters</code>, <code>organizerAndCoOrganizers</code>, <code>unknownFutureValue</code>. Inherited from onlineMeetingBase.</td>
-</tr>
-<tr>
-<td style="text-align: left;">allowedPresenters</td>
-<td style="text-align: left;">onlineMeetingPresenters</td>
-<td style="text-align: left;">Specifies who can be a presenter in a virtual event session. Inherited from onlineMeetingBase.</td>
-</tr>
-<tr>
 <td style="text-align: left;">anonymizeIdentityForRoles</td>
 <td style="text-align: left;">onlineMeetingRole collection</td>
 <td style="text-align: left;">Specifies whose identity is anonymized in the virtual event session. Possible values are: <code>attendee</code>. The <code>attendee</code> value can't be removed through a PATCH operation once added. Inherited from onlineMeetingBase.</td>
@@ -781,6 +797,11 @@
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The unique identifier of the virtual event session. Read-only. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isEndToEndEncryptionEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether end-to-end encryption (E2EE) is enabled for the virtual event session. Inherited from onlineMeetingBase.</td>
 </tr>
 <tr>
 <td style="text-align: left;">isEntryExitAnnounced</td>

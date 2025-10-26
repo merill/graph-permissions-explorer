@@ -235,13 +235,393 @@
 <div class="tabGroup" id="tabgroup_2">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_2_listItem1" role="tab" aria-controls="tabpanel_2_listItem1" data-tab="listItem1" tabindex="0" aria-selected="true">listItem</a>
+<a href="#tabpanel_2_drive1" role="tab" aria-controls="tabpanel_2_drive1" data-tab="drive1" tabindex="0" aria-selected="true">drive</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_Permission2" role="tab" aria-controls="tabpanel_2_Permission2" data-tab="Permission2" tabindex="-1">Permission</a>
+<a href="#tabpanel_2_driveItem2" role="tab" aria-controls="tabpanel_2_driveItem2" data-tab="driveItem2" tabindex="-1">driveItem</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_fileStorageContainer3" role="tab" aria-controls="tabpanel_2_fileStorageContainer3" data-tab="fileStorageContainer3" tabindex="-1">fileStorageContainer</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_identity4" role="tab" aria-controls="tabpanel_2_identity4" data-tab="identity4" tabindex="-1">identity</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_listItem5" role="tab" aria-controls="tabpanel_2_listItem5" data-tab="listItem5" tabindex="-1">listItem</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_Permission6" role="tab" aria-controls="tabpanel_2_Permission6" data-tab="Permission6" tabindex="-1">Permission</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_sharePointGroup7" role="tab" aria-controls="tabpanel_2_sharePointGroup7" data-tab="sharePointGroup7" tabindex="-1">sharePointGroup</a>
 </li>
 </ul>
-<section id="tabpanel_2_listItem1" role="tabpanel" data-tab="listItem1">
+<section id="tabpanel_2_drive1" role="tabpanel" data-tab="drive1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/drive?view=graph-rest-1.0&amp;tabs=http">drive</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">[identitySet][]</td>
+<td style="text-align: left;">Identity of the user, device, or application which created the item. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">dateTimeOffset</td>
+<td style="text-align: left;">Date and time of item creation. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Provide a user-visible description of the drive. Read-write.</td>
+</tr>
+<tr>
+<td style="text-align: left;">driveType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Describes the type of drive represented by this resource. OneDrive personal drives return <code>personal</code>. OneDrive for Business returns <code>business</code>. SharePoint document libraries return <code>documentLibrary</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier of the drive. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedBy</td>
+<td style="text-align: left;">[identitySet][]</td>
+<td style="text-align: left;">Identity of the user, device, and application which last modified the item. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">dateTimeOffset</td>
+<td style="text-align: left;">Date and time the item was last modified. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The name of the item. Read-write.</td>
+</tr>
+<tr>
+<td style="text-align: left;">owner</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">Optional. The user account that owns the drive. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">quota</td>
+<td style="text-align: left;">quota</td>
+<td style="text-align: left;">Optional. Information about the drive's storage space quota. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sharepointIds</td>
+<td style="text-align: left;">[sharepointIds][]</td>
+<td style="text-align: left;">Returns identifiers useful for SharePoint REST compatibility. Read-only. This property isn't returned by default and must be selected using the <code>$select</code> query parameter.</td>
+</tr>
+<tr>
+<td style="text-align: left;">system</td>
+<td style="text-align: left;">[systemFacet][]</td>
+<td style="text-align: left;">If present, indicates that it's a system-managed drive. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">webUrl</td>
+<td style="text-align: left;">string (url)</td>
+<td style="text-align: left;">URL that displays the resource in the browser. Read-only.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_driveItem2" role="tabpanel" data-tab="driveItem2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/driveitem?view=graph-rest-1.0&amp;tabs=http">driveItem</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">audio</td>
+<td style="text-align: left;">[audio][]</td>
+<td style="text-align: left;">Audio metadata, if the item is an audio file. Read-only. Read-only. Only on OneDrive Personal.</td>
+</tr>
+<tr>
+<td style="text-align: left;">bundle</td>
+<td style="text-align: left;">[bundle][]</td>
+<td style="text-align: left;">Bundle metadata, if the item is a bundle. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">content</td>
+<td style="text-align: left;">Stream</td>
+<td style="text-align: left;">The content stream, if the item represents a file.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">[identitySet][]</td>
+<td style="text-align: left;">Identity of the user, device, and application that created the item. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time of item creation. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">cTag</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">An eTag for the content of the item. This eTag isn't changed if only the metadata is changed. <strong>Note</strong> This property isn't returned if the item is a folder. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">deleted</td>
+<td style="text-align: left;">[deleted][]</td>
+<td style="text-align: left;">Information about the deleted state of the item. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Provides a user-visible description of the item. Read-write. Only on OneDrive Personal.</td>
+</tr>
+<tr>
+<td style="text-align: left;">eTag</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">eTag for the entire item (metadata + content). Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">file</td>
+<td style="text-align: left;">[file][]</td>
+<td style="text-align: left;">File metadata, if the item is a file. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">fileSystemInfo</td>
+<td style="text-align: left;">[fileSystemInfo][]</td>
+<td style="text-align: left;">File system information on client. Read-write.</td>
+</tr>
+<tr>
+<td style="text-align: left;">folder</td>
+<td style="text-align: left;">[folder][]</td>
+<td style="text-align: left;">Folder metadata, if the item is a folder. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier of the item within the Drive. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">image</td>
+<td style="text-align: left;">[image][]</td>
+<td style="text-align: left;">Image metadata, if the item is an image. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedBy</td>
+<td style="text-align: left;">[identitySet][]</td>
+<td style="text-align: left;">Identity of the user, device, and application that last modified the item. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time the item was last modified. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">location</td>
+<td style="text-align: left;">[geoCoordinates][]</td>
+<td style="text-align: left;">Location metadata, if the item has location data. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">malware</td>
+<td style="text-align: left;">[malware][]</td>
+<td style="text-align: left;">Malware metadata, if the item was detected to contain malware. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name of the item (filename and extension). Read-write.</td>
+</tr>
+<tr>
+<td style="text-align: left;">package</td>
+<td style="text-align: left;">[package][]</td>
+<td style="text-align: left;">If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">parentReference</td>
+<td style="text-align: left;">[itemReference][]</td>
+<td style="text-align: left;">Parent information, if the item has a parent. Read-write.</td>
+</tr>
+<tr>
+<td style="text-align: left;">pendingOperations</td>
+<td style="text-align: left;">[pendingOperations][]</td>
+<td style="text-align: left;">If present, indicates that one or more operations that might affect the state of the driveItem are pending completion. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">photo</td>
+<td style="text-align: left;">[photo][]</td>
+<td style="text-align: left;">Photo metadata, if the item is a photo. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">publication</td>
+<td style="text-align: left;">[publicationFacet][]</td>
+<td style="text-align: left;">Provides information about the published or checked-out state of an item, in locations that support such actions. This property isn't returned by default. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">remoteItem</td>
+<td style="text-align: left;">[remoteItem][]</td>
+<td style="text-align: left;">Remote item data, if the item is shared from a drive other than the one being accessed. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">root</td>
+<td style="text-align: left;">[root][]</td>
+<td style="text-align: left;">If this property is non-null, it indicates that the driveItem is the top-most driveItem in the drive.</td>
+</tr>
+<tr>
+<td style="text-align: left;">searchResult</td>
+<td style="text-align: left;">[searchResult][]</td>
+<td style="text-align: left;">Search metadata, if the item is from a search result. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">shared</td>
+<td style="text-align: left;">[shared][]</td>
+<td style="text-align: left;">Indicates that the item was shared with others and provides information about the shared state of the item. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sharepointIds</td>
+<td style="text-align: left;">[sharepointIds][]</td>
+<td style="text-align: left;">Returns identifiers useful for SharePoint REST compatibility. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">size</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">Size of the item in bytes. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">specialFolder</td>
+<td style="text-align: left;">[specialFolder][]</td>
+<td style="text-align: left;">If the current item is also available as a special folder, this facet is returned. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">video</td>
+<td style="text-align: left;">[video][]</td>
+<td style="text-align: left;">Video metadata, if the item is a video. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">webDavUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">WebDAV compatible URL for the item.</td>
+</tr>
+<tr>
+<td style="text-align: left;">webUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">URL that displays the resource in the browser. Read-only.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_fileStorageContainer3" role="tabpanel" data-tab="fileStorageContainer3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/filestoragecontainer?view=graph-rest-1.0&amp;tabs=http">fileStorageContainer</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">containerTypeId</td>
+<td style="text-align: left;">Guid</td>
+<td style="text-align: left;">Container type ID of the <strong>fileStorageContainer</strong>. For details about container types, see Container Types. Each container must have only one container type. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time of the <strong>fileStorageContainer</strong> creation. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">customProperties</td>
+<td style="text-align: left;">fileStorageContainerCustomPropertyDictionary</td>
+<td style="text-align: left;">Custom property collection for the <strong>fileStorageContainer</strong>. Read-write.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Provides a user-visible description of the <strong>fileStorageContainer</strong>. Read-write.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the <strong>fileStorageContainer</strong>. Read-write.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique stable identifier of the <strong>filerStorageContainer</strong>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lockState</td>
+<td style="text-align: left;">siteLockState</td>
+<td style="text-align: left;">Indicates the lock state of the <strong>fileStorageContainer</strong>. The possible values are <code>unlocked</code> and <code>lockedReadOnly</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">settings</td>
+<td style="text-align: left;">fileStorageContainerSettings</td>
+<td style="text-align: left;">Settings associated with a <strong>fileStorageContainer</strong>. Read-write.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">fileStorageContainerStatus</td>
+<td style="text-align: left;">Status of the <strong>fileStorageContainer</strong>. Containers are created as inactive and require activation. Inactive containers are subjected to automatic deletion in 24 hours. The possible values are: <code>inactive </code>, <code>active </code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">viewpoint</td>
+<td style="text-align: left;">fileStorageContainerViewpoint</td>
+<td style="text-align: left;">Data specific to the current user. Read-only.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_identity4" role="tabpanel" data-tab="identity4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/identity?view=graph-rest-1.0&amp;tabs=http">identity</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the identity.<br><br>For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don't show up as changed when using delta.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the <strong>id</strong> of the principal, that is, the group, user, or application that's subject to review.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tenantId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identity of the tenant. Optional.</td>
+</tr>
+<tr>
+<td style="text-align: left;">thumbnails</td>
+<td style="text-align: left;">thumbnailSet</td>
+<td style="text-align: left;">Keyed collection of thumbnail resources. Optional. Applies to drive items, for example.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_listItem5" role="tabpanel" data-tab="listItem5" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/listitem?view=graph-rest-1.0&amp;tabs=http">listItem</a></p>
 <table>
@@ -261,7 +641,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_Permission2" role="tabpanel" data-tab="Permission2" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_Permission6" role="tabpanel" data-tab="Permission6" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/permission?view=graph-rest-1.0&amp;tabs=http">Permission</a></p>
 <table>
@@ -332,6 +712,36 @@
 <td style="text-align: left;">shareId</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">A unique token that can be used to access this shared item via the <strong>shares</strong> API. Read-only.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_sharePointGroup7" role="tabpanel" data-tab="sharePointGroup7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/sharepointgroup?view=graph-rest-1.0&amp;tabs=http">sharePointGroup</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The user-visible description of the <strong>sharePointGroup</strong>. Read-write.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique stable identifier of the <strong>sharePointGroup</strong>. This ID is unique only within the context of a single SharePoint Embedded container or SharePoint site. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">title</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The user-visible title of the **s</td>
 </tr>
 </tbody>
 </table>

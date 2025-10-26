@@ -546,10 +546,6 @@
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
-<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/educationgradingscheme-post?view=graph-rest-beta&amp;tabs=http">POST /education/classes/{educationClassId}/assignmentSettings/gradingSchemes</a></div></td>
-</tr>
-<tr>
-<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/educationclass-post-category?view=graph-rest-beta&amp;tabs=http">POST /education/classes/{id}/assignmentCategories</a></div></td>
 </tr>
 <tr>
@@ -562,6 +558,10 @@
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/educationassignmentsettings-post-gradingschemes?view=graph-rest-beta&amp;tabs=http">POST /education/classes/{id}/assignmentSettings/gradingSchemes</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/educationuser-post-rubrics?view=graph-rest-beta&amp;tabs=http">POST /education/me/rubrics</a></div></td>
 </tr>
 <tr>
@@ -570,7 +570,7 @@
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
-<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/educationassignment-post-gradingscheme?view=graph-rest-beta&amp;tabs=http">PUT /education/classes/{educationClassId}/assignments/{assignmentid}/gradingScheme/$ref</a></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/educationassignment-put-gradingscheme?view=graph-rest-beta&amp;tabs=http">PUT /education/classes/{educationClassId}/assignments/{assignmentid}/gradingScheme/$ref</a></div></td>
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
@@ -2070,7 +2070,7 @@
 <tr>
 <td style="text-align: left;">assignmentResourceUrl</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Pointer to the assignment from which the resource was copied, and if null, the student uploaded the resource.</td>
+<td style="text-align: left;">Pointer to the assignment from which the resource was copied. If the value is <code>null</code>, the student uploaded the resource.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>

@@ -93,6 +93,11 @@
 <blockquote>
 <p>Allows the app to read your tenant's acquired telephone number details on behalf of the signed-in admin user. Acquired telephone numbers may include attributes related to assigned object, emergency location, network site, etc.</p>
 </blockquote>
+<blockquote>
+<p><strong>Merill's Note</strong></p>
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>TeamsTelephoneNumber.Read.All</code> permission.</p>
+<p>If you need to create an audit report of the permissions granted to all the apps in your tenant, you can run the <code>Export-MsIdAppConsentGrantReport</code> command. See <a href="https://www.youtube.com/watch?v=vO0m5yE3dZA">How To: Run a quick OAuth app audit of your tenant</a></p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -125,11 +130,240 @@
 </tbody>
 </table>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_apiv1" role="tab" aria-controls="tabpanel_1_apiv1" data-tab="apiv1" tabindex="0" aria-selected="true"><span><i class='bi bi-braces'></i></span> API [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_apibeta" role="tab" aria-controls="tabpanel_1_apibeta" data-tab="apibeta" tabindex="-1"><span><i class='bi bi-braces'></i></span> API [beta]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psv1" role="tab" aria-controls="tabpanel_1_psv1" data-tab="psv1" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psbeta" role="tab" aria-controls="tabpanel_1_psbeta" data-tab="psbeta" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [beta]</a>
+</li>
+</ul>
+<section id="tabpanel_1_apiv1" role="tabpanel" data-tab="apiv1">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_apibeta" role="tabpanel" data-tab="apibeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/teamsadministration-telephonenumbermanagementroot-list-numberassignments?view=graph-rest-beta&amp;tabs=http">GET /admin/teams/telephoneNumberManagement/numberAssignments</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/teamsadministration-numberassignment-get?view=graph-rest-beta&amp;tabs=http">GET /admin/teams/telephoneNumberManagement/numberAssignments/{numberAssignmentId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/teamsadministration-telephonenumberlongrunningoperation-get?view=graph-rest-beta&amp;tabs=http">GET /admin/teams/telephoneNumberManagement/operations/{telephoneNumberLongRunningOperationId}</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_psv1" role="tabpanel" data-tab="psv1" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_psbeta" role="tabpanel" data-tab="psbeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
 </div>
-<hr>
+<h2 id="resources">Resources</h2>
+<p>Granting this permission allows the calling application to access (and/or update) the following information in your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_numberAssignment1" role="tab" aria-controls="tabpanel_2_numberAssignment1" data-tab="numberAssignment1" tabindex="0" aria-selected="true">numberAssignment</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_telephoneNumberLongRunningOperation2" role="tab" aria-controls="tabpanel_2_telephoneNumberLongRunningOperation2" data-tab="telephoneNumberLongRunningOperation2" tabindex="-1">telephoneNumberLongRunningOperation</a>
+</li>
+</ul>
+<section id="tabpanel_2_numberAssignment1" role="tabpanel" data-tab="numberAssignment1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/teamsadministration-numberassignment?view=graph-rest-1.0&amp;tabs=http">numberAssignment</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">activationState</td>
+<td style="text-align: left;">microsoft.graph.teamsAdministration.activationState</td>
+<td style="text-align: left;">The activation state of the telephone number. The possible values are: <code>activated</code>, <code>assignmentPending</code>, <code>assignmentFailed</code>, <code>updatePending</code>, <code>updateFailed</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">assignmentCategory</td>
+<td style="text-align: left;">microsoft.graph.teamsAdministration.assignmentCategory</td>
+<td style="text-align: left;">Contains the assignment category such as Primary or Private. The possible values are: <code>primary</code>, <code>private</code>, <code>alternate</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">assignmentStatus</td>
+<td style="text-align: left;">microsoft.graph.teamsAdministration.assignmentStatus</td>
+<td style="text-align: left;">The assignment status of the phone number. The possible values are: <code>unassigned</code>, <code>internalError</code>, <code>userAssigned</code>, <code>conferenceAssigned</code>, <code>voiceApplicationAssigned</code>, <code>thirdPartyAppAssigned</code>, <code>policyAssigned</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">assignmentTargetId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The ID of the object the phone number is assigned to, either the ObjectId of a user or resource account, or the policy instance ID of a Teams shared calling routing policy instance.</td>
+</tr>
+<tr>
+<td style="text-align: left;">capabilities</td>
+<td style="text-align: left;">microsoft.graph.teamsAdministration.numberCapability collection</td>
+<td style="text-align: left;">The list of capabilities assigned to the phone number.</td>
+</tr>
+<tr>
+<td style="text-align: left;">city</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The city where the phone number is located or associated with.</td>
+</tr>
+<tr>
+<td style="text-align: left;">civicAddressId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The ID of the civic address assigned to the phone number.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The ID of the operation. Inherited from microsoft.graph.entity. Inherits from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isoCountryCode</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The ISO country code assigned to the phone number.</td>
+</tr>
+<tr>
+<td style="text-align: left;">locationId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The ID of the location assigned to the phone number.</td>
+</tr>
+<tr>
+<td style="text-align: left;">networkSiteId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">This property is reserved for internal Microsoft use.</td>
+</tr>
+<tr>
+<td style="text-align: left;">numberSource</td>
+<td style="text-align: left;">microsoft.graph.teamsAdministration.numberSource</td>
+<td style="text-align: left;">The source of the phone number. <code>online</code> is used for phone numbers assigned in Microsoft 365, and <code>onPremises</code> is used for phone numbers assigned in AD on-premises, which are synchronized into Microsoft 365. The possible values are: <code>online</code>, <code>onPremises</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">numberType</td>
+<td style="text-align: left;">microsoft.graph.teamsAdministration.numberType</td>
+<td style="text-align: left;">The type of the phone number. The possible values are: <code>internalError</code>, <code>directRouting</code>, <code>callingPlan</code>, <code>operatorConnect</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">operatorId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The ID of the operator.</td>
+</tr>
+<tr>
+<td style="text-align: left;">portInStatus</td>
+<td style="text-align: left;">microsoft.graph.teamsAdministration.portInStatus</td>
+<td style="text-align: left;">The status of any port in order covering the phone number. The possible values are: <code>completed</code>, <code>firmOrderCommitmentAccepted</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">reverseNumberLookupOptions</td>
+<td style="text-align: left;">microsoft.graph.teamsAdministration.reverseNumberLookupOption collection</td>
+<td style="text-align: left;">Status of Reverse Number Lookup (RNL). If set to <code>skipInternalVoip</code>, calls are routed through the external Public Switched Telephone Network (PSTN) instead of using internal VoIP resolution.</td>
+</tr>
+<tr>
+<td style="text-align: left;">supportedCustomerActions</td>
+<td style="text-align: left;">microsoft.graph.teamsAdministration.customerAction collection</td>
+<td style="text-align: left;">Indicates what customer actions are available to modify the number.</td>
+</tr>
+<tr>
+<td style="text-align: left;">telephoneNumber</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The telephone number in the record. The recorded telephone number is always displayed with a '+' prefix, regardless of whether it was originally assigned with one.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_telephoneNumberLongRunningOperation2" role="tabpanel" data-tab="telephoneNumberLongRunningOperation2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/teamsadministration-telephonenumberlongrunningoperation?view=graph-rest-1.0&amp;tabs=http">telephoneNumberLongRunningOperation</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Date and time when the asynchronous operation was created.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Operation identifier found as a response to asynchronous action. Inherited from microsoft.graph.entity. Inherits from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">numbers</td>
+<td style="text-align: left;">microsoft.graph.teamsAdministration.telephoneNumberLongRunningOperationDetails collection</td>
+<td style="text-align: left;">Asynchronous operation details.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">longRunningOperationStatus</td>
+<td style="text-align: left;">Status of the operation. The possible values are: <code>notStarted</code>, <code>running</code>, <code>succeeded</code>, <code>failed</code>, <code>skipped, and </code>unknownFutureValue`.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</div>
 
 </article>
 

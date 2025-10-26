@@ -788,6 +788,10 @@
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-beta&amp;tabs=http">GET /sites/{siteId}/extensions/{extensionId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-beta&amp;tabs=http">GET /team/{id}/photo/$value</a></div></td>
 </tr>
 <tr>
@@ -3639,7 +3643,7 @@
 <tr>
 <td style="text-align: left;">issuingAuthority</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Authority which granted the patent.</td>
+<td style="text-align: left;">Authority that granted the patent.</td>
 </tr>
 <tr>
 <td style="text-align: left;">lastModifiedBy</td>
@@ -4124,7 +4128,7 @@
 <tr>
 <td style="text-align: left;">webLink</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The URL to open the message in Outlook on the web.<br><br>You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, the browser shows the message in the Outlook on the web review pane.<br><br>The message opens in the browser if you are signed in to your mailbox via Outlook on the web. You are prompted to sign in if you are not already signed in with the browser.<br><br>This URL cannot be accessed from within an iFrame.</td>
+<td style="text-align: left;">The URL to open the message in Outlook on the web.<br><br>You can append an <code>ispopout</code> argument to the end of the URL to change how the message is displayed. If <code>ispopout</code> is not present or if it is set to <code>1</code>, then the message is shown in a popout window. If <code>ispopout</code> is set to <code>0</code>, the browser shows the message in the Outlook on the web review pane.<br><br>The message opens in the browser if you are signed in to your mailbox via Outlook on the web. You are prompted to sign in if you are not already signed in with the browser.<br><br>This URL cannot be accessed from within an iFrame.<br><br>**N</td>
 </tr>
 </tbody>
 </table>
@@ -6737,14 +6741,24 @@
 <td style="text-align: left;">Provides the dateTimeOffset for when the entity was created. Inherited from itemFacet.</td>
 </tr>
 <tr>
+<td style="text-align: left;">originTenantInfo</td>
+<td style="text-align: left;">originTenantInfo</td>
+<td style="text-align: left;">Contains the identifiers of the user and the origin tenant that provisioned the user. This property is populated when the user is invited as a guest to the host tenant.</td>
+</tr>
+<tr>
 <td style="text-align: left;">preferredLanguageTag</td>
 <td style="text-align: left;">localeInfo</td>
-<td style="text-align: left;">Contains the language the user has associated as preferred for the account.</td>
+<td style="text-align: left;">Contains the language that the user associated as preferred for their account.</td>
 </tr>
 <tr>
 <td style="text-align: left;">source</td>
 <td style="text-align: left;">personDataSource</td>
 <td style="text-align: left;">Where the values originated if synced from another service. Inherited from itemFacet.</td>
+</tr>
+<tr>
+<td style="text-align: left;">userPersona</td>
+<td style="text-align: left;">userPersona</td>
+<td style="text-align: left;">Represents the user's persona. The possible values are: <code>unknown</code>, <code>externalMember</code>, <code>externalGuest</code>, <code>internalMember</code>, <code>internalGuest</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">userPrincipalName</td>

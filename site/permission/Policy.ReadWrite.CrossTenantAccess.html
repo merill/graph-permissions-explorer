@@ -91,7 +91,7 @@
 <h1 id="policyreadwritecrosstenantaccess">Policy.ReadWrite.CrossTenantAccess</h1>
 
 <blockquote>
-<p>Allows the app to read and write your organization's cross tenant access policies on behalf of the signed-in user.</p>
+<p>Allows the app to read and write your organization's cross-tenant access policies and configuration for automatic user consent settings to suppress consent prompts for users of the other tenant on behalf of the signed-in user.</p>
 </blockquote>
 <blockquote>
 <p><strong>Merill's Note</strong></p>
@@ -119,8 +119,8 @@
 </tr>
 <tr>
 <td>Description</td>
-<td>Allows the app to read and write your organization's cross tenant access policies without a signed-in user.</td>
-<td>Allows the app to read and write your organization's cross tenant access policies on behalf of the signed-in user.</td>
+<td>Allows the app to read and write your organization's cross-tenant access policies and configuration for automatic user consent settings to suppress consent prompts for users of the other tenant on behalf of the signed-in user.</td>
+<td>Allows the app to read and write your organization's cross-tenant access policies and configuration for automatic user consent settings to suppress consent prompts for users of the other tenant on behalf of the signed-in user.</td>
 </tr>
 <tr>
 <td>AdminConsentRequired</td>
@@ -259,6 +259,10 @@
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-delete?view=graph-rest-beta&amp;tabs=http">DELETE /policies/crossTenantAccessPolicy/partners/{id}/identitySynchronization</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/policydeletableitem-delete?view=graph-rest-beta&amp;tabs=http">DELETE /policies/deletedItems/crossTenantPartners/{id}</a></div></td>
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
@@ -507,40 +511,109 @@
 <div class="tabGroup" id="tabgroup_2">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_2_crossTenantAccessPolicy1" role="tab" aria-controls="tabpanel_2_crossTenantAccessPolicy1" data-tab="crossTenantAccessPolicy1" tabindex="0" aria-selected="true">crossTenantAccessPolicy</a>
+<a href="#tabpanel_2_conditionalAccessPolicy1" role="tab" aria-controls="tabpanel_2_conditionalAccessPolicy1" data-tab="conditionalAccessPolicy1" tabindex="0" aria-selected="true">conditionalAccessPolicy</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_crossTenantAccessPolicyB2BSetting2" role="tab" aria-controls="tabpanel_2_crossTenantAccessPolicyB2BSetting2" data-tab="crossTenantAccessPolicyB2BSetting2" tabindex="-1">crossTenantAccessPolicyB2BSetting</a>
+<a href="#tabpanel_2_crossTenantAccessPolicy2" role="tab" aria-controls="tabpanel_2_crossTenantAccessPolicy2" data-tab="crossTenantAccessPolicy2" tabindex="-1">crossTenantAccessPolicy</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_crossTenantAccessPolicyConfigurationDefault3" role="tab" aria-controls="tabpanel_2_crossTenantAccessPolicyConfigurationDefault3" data-tab="crossTenantAccessPolicyConfigurationDefault3" tabindex="-1">crossTenantAccessPolicyConfigurationDefault</a>
+<a href="#tabpanel_2_crossTenantAccessPolicyB2BSetting3" role="tab" aria-controls="tabpanel_2_crossTenantAccessPolicyB2BSetting3" data-tab="crossTenantAccessPolicyB2BSetting3" tabindex="-1">crossTenantAccessPolicyB2BSetting</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_crossTenantAccessPolicyConfigurationPartner4" role="tab" aria-controls="tabpanel_2_crossTenantAccessPolicyConfigurationPartner4" data-tab="crossTenantAccessPolicyConfigurationPartner4" tabindex="-1">crossTenantAccessPolicyConfigurationPartner</a>
+<a href="#tabpanel_2_crossTenantAccessPolicyConfigurationDefault4" role="tab" aria-controls="tabpanel_2_crossTenantAccessPolicyConfigurationDefault4" data-tab="crossTenantAccessPolicyConfigurationDefault4" tabindex="-1">crossTenantAccessPolicyConfigurationDefault</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_crossTenantAccessPolicyInboundTrust5" role="tab" aria-controls="tabpanel_2_crossTenantAccessPolicyInboundTrust5" data-tab="crossTenantAccessPolicyInboundTrust5" tabindex="-1">crossTenantAccessPolicyInboundTrust</a>
+<a href="#tabpanel_2_crossTenantAccessPolicyConfigurationPartner5" role="tab" aria-controls="tabpanel_2_crossTenantAccessPolicyConfigurationPartner5" data-tab="crossTenantAccessPolicyConfigurationPartner5" tabindex="-1">crossTenantAccessPolicyConfigurationPartner</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_crossTenantAccessPolicyTenantRestrictions6" role="tab" aria-controls="tabpanel_2_crossTenantAccessPolicyTenantRestrictions6" data-tab="crossTenantAccessPolicyTenantRestrictions6" tabindex="-1">crossTenantAccessPolicyTenantRestrictions</a>
+<a href="#tabpanel_2_crossTenantAccessPolicyInboundTrust6" role="tab" aria-controls="tabpanel_2_crossTenantAccessPolicyInboundTrust6" data-tab="crossTenantAccessPolicyInboundTrust6" tabindex="-1">crossTenantAccessPolicyInboundTrust</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_crossTenantIdentitySyncPolicyPartner7" role="tab" aria-controls="tabpanel_2_crossTenantIdentitySyncPolicyPartner7" data-tab="crossTenantIdentitySyncPolicyPartner7" tabindex="-1">crossTenantIdentitySyncPolicyPartner</a>
+<a href="#tabpanel_2_crossTenantAccessPolicyTenantRestrictions7" role="tab" aria-controls="tabpanel_2_crossTenantAccessPolicyTenantRestrictions7" data-tab="crossTenantAccessPolicyTenantRestrictions7" tabindex="-1">crossTenantAccessPolicyTenantRestrictions</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_crossTenantUserSyncInbound8" role="tab" aria-controls="tabpanel_2_crossTenantUserSyncInbound8" data-tab="crossTenantUserSyncInbound8" tabindex="-1">crossTenantUserSyncInbound</a>
+<a href="#tabpanel_2_crossTenantIdentitySyncPolicyPartner8" role="tab" aria-controls="tabpanel_2_crossTenantIdentitySyncPolicyPartner8" data-tab="crossTenantIdentitySyncPolicyPartner8" tabindex="-1">crossTenantIdentitySyncPolicyPartner</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_inboundOutboundPolicyConfiguration9" role="tab" aria-controls="tabpanel_2_inboundOutboundPolicyConfiguration9" data-tab="inboundOutboundPolicyConfiguration9" tabindex="-1">inboundOutboundPolicyConfiguration</a>
+<a href="#tabpanel_2_crossTenantUserSyncInbound9" role="tab" aria-controls="tabpanel_2_crossTenantUserSyncInbound9" data-tab="crossTenantUserSyncInbound9" tabindex="-1">crossTenantUserSyncInbound</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_multiTenantOrganizationIdentitySyncPolicyTemplate10" role="tab" aria-controls="tabpanel_2_multiTenantOrganizationIdentitySyncPolicyTemplate10" data-tab="multiTenantOrganizationIdentitySyncPolicyTemplate10" tabindex="-1">multiTenantOrganizationIdentitySyncPolicyTemplate</a>
+<a href="#tabpanel_2_inboundOutboundPolicyConfiguration10" role="tab" aria-controls="tabpanel_2_inboundOutboundPolicyConfiguration10" data-tab="inboundOutboundPolicyConfiguration10" tabindex="-1">inboundOutboundPolicyConfiguration</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_multiTenantOrganizationPartnerConfigurationTemplate11" role="tab" aria-controls="tabpanel_2_multiTenantOrganizationPartnerConfigurationTemplate11" data-tab="multiTenantOrganizationPartnerConfigurationTemplate11" tabindex="-1">multiTenantOrganizationPartnerConfigurationTemplate</a>
+<a href="#tabpanel_2_multiTenantOrganizationIdentitySyncPolicyTemplate11" role="tab" aria-controls="tabpanel_2_multiTenantOrganizationIdentitySyncPolicyTemplate11" data-tab="multiTenantOrganizationIdentitySyncPolicyTemplate11" tabindex="-1">multiTenantOrganizationIdentitySyncPolicyTemplate</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_multiTenantOrganizationPartnerConfigurationTemplate12" role="tab" aria-controls="tabpanel_2_multiTenantOrganizationPartnerConfigurationTemplate12" data-tab="multiTenantOrganizationPartnerConfigurationTemplate12" tabindex="-1">multiTenantOrganizationPartnerConfigurationTemplate</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_namedLocation13" role="tab" aria-controls="tabpanel_2_namedLocation13" data-tab="namedLocation13" tabindex="-1">namedLocation</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_policyDeletableItem14" role="tab" aria-controls="tabpanel_2_policyDeletableItem14" data-tab="policyDeletableItem14" tabindex="-1">policyDeletableItem</a>
 </li>
 </ul>
-<section id="tabpanel_2_crossTenantAccessPolicy1" role="tabpanel" data-tab="crossTenantAccessPolicy1">
+<section id="tabpanel_2_conditionalAccessPolicy1" role="tabpanel" data-tab="conditionalAccessPolicy1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/conditionalaccesspolicy?view=graph-rest-1.0&amp;tabs=http">conditionalAccessPolicy</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">conditions</td>
+<td style="text-align: left;">conditionalAccessConditionSet</td>
+<td style="text-align: left;">Specifies the rules that must be met for the policy to apply. Required.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Readonly.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Specifies a display name for the conditionalAccessPolicy object.</td>
+</tr>
+<tr>
+<td style="text-align: left;">grantControls</td>
+<td style="text-align: left;">conditionalAccessGrantControls</td>
+<td style="text-align: left;">Specifies the grant controls that must be fulfilled to pass the policy.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Specifies the identifier of a conditionalAccessPolicy object. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">modifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Readonly.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sessionControls</td>
+<td style="text-align: left;">conditionalAccessSessionControls</td>
+<td style="text-align: left;">Specifies the session controls that are enforced after sign-in.</td>
+</tr>
+<tr>
+<td style="text-align: left;">state</td>
+<td style="text-align: left;">conditionalAccessPolicyState</td>
+<td style="text-align: left;">Specifies the state of the conditionalAccessPolicy object. Possible values are: <code>enabled</code>, <code>disabled</code>, <code>enabledForReportingButNotEnforced</code>. Required.</td>
+</tr>
+<tr>
+<td style="text-align: left;">templateId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Specifies the unique identifier of a Conditional Access template. Inherited from entity.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_crossTenantAccessPolicy2" role="tabpanel" data-tab="crossTenantAccessPolicy2" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/crosstenantaccesspolicy?view=graph-rest-1.0&amp;tabs=http">crossTenantAccessPolicy</a></p>
 <table>
@@ -565,7 +638,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_crossTenantAccessPolicyB2BSetting2" role="tabpanel" data-tab="crossTenantAccessPolicyB2BSetting2" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_crossTenantAccessPolicyB2BSetting3" role="tabpanel" data-tab="crossTenantAccessPolicyB2BSetting3" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/crosstenantaccesspolicyb2bsetting?view=graph-rest-1.0&amp;tabs=http">crossTenantAccessPolicyB2BSetting</a></p>
 <table>
@@ -590,7 +663,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_crossTenantAccessPolicyConfigurationDefault3" role="tabpanel" data-tab="crossTenantAccessPolicyConfigurationDefault3" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_crossTenantAccessPolicyConfigurationDefault4" role="tabpanel" data-tab="crossTenantAccessPolicyConfigurationDefault4" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/crosstenantaccesspolicyconfigurationdefault?view=graph-rest-1.0&amp;tabs=http">crossTenantAccessPolicyConfigurationDefault</a></p>
 <table>
@@ -650,7 +723,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_crossTenantAccessPolicyConfigurationPartner4" role="tabpanel" data-tab="crossTenantAccessPolicyConfigurationPartner4" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_crossTenantAccessPolicyConfigurationPartner5" role="tabpanel" data-tab="crossTenantAccessPolicyConfigurationPartner5" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/crosstenantaccesspolicyconfigurationpartner?view=graph-rest-1.0&amp;tabs=http">crossTenantAccessPolicyConfigurationPartner</a></p>
 <table>
@@ -715,7 +788,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_crossTenantAccessPolicyInboundTrust5" role="tabpanel" data-tab="crossTenantAccessPolicyInboundTrust5" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_crossTenantAccessPolicyInboundTrust6" role="tabpanel" data-tab="crossTenantAccessPolicyInboundTrust6" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/crosstenantaccesspolicyinboundtrust?view=graph-rest-1.0&amp;tabs=http">crossTenantAccessPolicyInboundTrust</a></p>
 <table>
@@ -745,7 +818,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_crossTenantAccessPolicyTenantRestrictions6" role="tabpanel" data-tab="crossTenantAccessPolicyTenantRestrictions6" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_crossTenantAccessPolicyTenantRestrictions7" role="tabpanel" data-tab="crossTenantAccessPolicyTenantRestrictions7" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/crosstenantaccesspolicytenantrestrictions?view=graph-rest-1.0&amp;tabs=http">crossTenantAccessPolicyTenantRestrictions</a></p>
 <table>
@@ -775,7 +848,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_crossTenantIdentitySyncPolicyPartner7" role="tabpanel" data-tab="crossTenantIdentitySyncPolicyPartner7" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_crossTenantIdentitySyncPolicyPartner8" role="tabpanel" data-tab="crossTenantIdentitySyncPolicyPartner8" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/crosstenantidentitysyncpolicypartner?view=graph-rest-1.0&amp;tabs=http">crossTenantIdentitySyncPolicyPartner</a></p>
 <table>
@@ -805,7 +878,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_crossTenantUserSyncInbound8" role="tabpanel" data-tab="crossTenantUserSyncInbound8" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_crossTenantUserSyncInbound9" role="tabpanel" data-tab="crossTenantUserSyncInbound9" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/crosstenantusersyncinbound?view=graph-rest-1.0&amp;tabs=http">crossTenantUserSyncInbound</a></p>
 <table>
@@ -825,7 +898,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_inboundOutboundPolicyConfiguration9" role="tabpanel" data-tab="inboundOutboundPolicyConfiguration9" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_inboundOutboundPolicyConfiguration10" role="tabpanel" data-tab="inboundOutboundPolicyConfiguration10" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/inboundoutboundpolicyconfiguration?view=graph-rest-1.0&amp;tabs=http">inboundOutboundPolicyConfiguration</a></p>
 <table>
@@ -850,7 +923,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_multiTenantOrganizationIdentitySyncPolicyTemplate10" role="tabpanel" data-tab="multiTenantOrganizationIdentitySyncPolicyTemplate10" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_multiTenantOrganizationIdentitySyncPolicyTemplate11" role="tabpanel" data-tab="multiTenantOrganizationIdentitySyncPolicyTemplate11" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/multitenantorganizationidentitysyncpolicytemplate?view=graph-rest-1.0&amp;tabs=http">multiTenantOrganizationIdentitySyncPolicyTemplate</a></p>
 <table>
@@ -880,7 +953,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_multiTenantOrganizationPartnerConfigurationTemplate11" role="tabpanel" data-tab="multiTenantOrganizationPartnerConfigurationTemplate11" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_multiTenantOrganizationPartnerConfigurationTemplate12" role="tabpanel" data-tab="multiTenantOrganizationPartnerConfigurationTemplate12" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/multitenantorganizationpartnerconfigurationtemplate?view=graph-rest-1.0&amp;tabs=http">multiTenantOrganizationPartnerConfigurationTemplate</a></p>
 <table>
@@ -931,6 +1004,61 @@
 <td style="text-align: left;">templateApplicationLevel</td>
 <td style="text-align: left;">templateApplicationLevel</td>
 <td style="text-align: left;">Specifies whether the template will be applied to partner configuration settings of certain tenants. The possible values are: <code>none</code>, <code>newPartners</code>, <code>existingPartners</code>, <code>unknownFutureValue</code>. You can also specify multiple values like <code>newPartners,existingPartners</code> (default). <code>none</code> indicates the template isn't applied to any new or existing partner tenants. <code>newPartners</code> indicates the template is applied to new partner tenants. <code>existingPartners</code> indicates the template is applied to existing partner tenants, those who already had partner-specific partner configurations in place.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_namedLocation13" role="tabpanel" data-tab="namedLocation13" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/namedlocation?view=graph-rest-1.0&amp;tabs=http">namedLocation</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The Timestamp type represents creation date and time of the location using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Human-readable name of the location.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifier of a namedLocation object. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">modifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The Timestamp type represents last modified date and time of the location using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_policyDeletableItem14" role="tabpanel" data-tab="policyDeletableItem14" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/policydeletableitem?view=graph-rest-1.0&amp;tabs=http">policyDeletableItem</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">deletedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Shows the last date and time the policy was deleted.</td>
 </tr>
 </tbody>
 </table>

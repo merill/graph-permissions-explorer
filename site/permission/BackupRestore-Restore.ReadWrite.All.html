@@ -175,10 +175,6 @@
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
-<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/backuprestoreroot-list-restorepoints?view=graph-rest-1.0&amp;tabs=http">GET /solutions/backupRestore/restorePoints?$expand=protectionUnit($filter=id eq '{ProtectionUnitID}')&amp;$filter=protectionDateTime lt YYYY-MM-DDTHH:mm:ssZ</a></div></td>
-</tr>
-<tr>
-<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/backuprestoreroot-list-restoresessions?view=graph-rest-1.0&amp;tabs=http">GET /solutions/backupRestore/restoreSessions</a></div></td>
 </tr>
 <tr>
@@ -315,10 +311,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
-<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.backuprestore/get-mgsolutionbackuprestorepoint">Get-MgSolutionBackupRestorePoint</a></div></td>
-</tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.backuprestore/get-mgsolutionbackuprestoresession">Get-MgSolutionBackupRestoreSession</a></div></td>
@@ -704,6 +696,16 @@
 <td style="text-align: left;">Timestamp of last modification of this restore session.</td>
 </tr>
 <tr>
+<td style="text-align: left;">restoreJobType</td>
+<td style="text-align: left;">restoreJobType</td>
+<td style="text-align: left;">Indicates whether the restore session was created normally or by a bulk job.</td>
+</tr>
+<tr>
+<td style="text-align: left;">restoreSessionArtifactCount</td>
+<td style="text-align: left;">restoreSessionArtifactCount</td>
+<td style="text-align: left;">The number of metadata artifacts that belong to this restore session.</td>
+</tr>
+<tr>
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">restoreSessionStatus</td>
 <td style="text-align: left;">Status of the restore session. The value is an aggregated status of the restored artifacts. The possible values are: <code>draft</code>, <code>activating</code>, <code>active</code>, <code>completedWithError</code>, <code>completed</code>, <code>unknownFutureValue</code>, <code>failed</code>. Use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value in this evolvable enum: <code>failed</code>.</td>
@@ -725,13 +727,8 @@
 <tbody>
 <tr>
 <td style="text-align: left;">artifactCount</td>
-<td style="text-align: left;">int</td>
-<td style="text-align: left;">.</td>
-</tr>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier of the restore artifact.</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">This property will be deprecated soon. Don't use.</td>
 </tr>
 <tr>
 <td style="text-align: left;">completionDateTime</td>
@@ -749,6 +746,11 @@
 <td style="text-align: left;">Contains error details if the restoration of the artifact fails. Inherited from restoreArtifactBase.</td>
 </tr>
 <tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier of the restore artifact.</td>
+</tr>
+<tr>
 <td style="text-align: left;">restoredFolderId</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The new restored folder identifier for the user.</td>
@@ -757,6 +759,11 @@
 <td style="text-align: left;">restoredFolderName</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The new restored folder name.</td>
+</tr>
+<tr>
+<td style="text-align: left;">restoredItemCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The number of items that are being restored in the folder.</td>
 </tr>
 <tr>
 <td style="text-align: left;">searchResponseId</td>
@@ -771,7 +778,7 @@
 <tr>
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">artifactRestoreStatus</td>
-<td style="text-align: left;">The restoration status of the artifact. Inherited from restoreArtifactBase.T he possible values are: <code>added</code>, <code>scheduling</code>, <code>scheduled</code>, <code>inProgress</code>, <code>succeeded</code>, <code>failed</code>, <code>unknownFutureValue</code>.</td>
+<td style="text-align: left;">The restoration status of the artifact. Inherited from restoreArtifactBase.The possible values are: <code>added</code>, <code>scheduling</code>, <code>scheduled</code>, <code>inProgress</code>, <code>succeeded</code>, <code>failed</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -819,6 +826,11 @@
 <td style="text-align: left;">The new restored folder name.</td>
 </tr>
 <tr>
+<td style="text-align: left;">restoredItemCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The number of items that are being restored in the folder.</td>
+</tr>
+<tr>
 <td style="text-align: left;">startDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">The time when the restoration of the artifact started. Inherited from restoreArtifactBase.</td>
@@ -826,7 +838,7 @@
 <tr>
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">artifactRestoreStatus</td>
-<td style="text-align: left;">The restoration status of the artifact. Inherited from restoreArtifactBase.T he possible values are: <code>added</code>, <code>scheduling</code>, <code>scheduled</code>, <code>inProgress</code>, <code>succeeded</code>, <code>failed</code>, <code>unknownFutureValue</code>.</td>
+<td style="text-align: left;">The restoration status of the artifact. Inherited from restoreArtifactBase. The possible values are: <code>added</code>, <code>scheduling</code>, <code>scheduled</code>, <code>inProgress</code>, <code>succeeded</code>, <code>failed</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -971,7 +983,17 @@
 <tr>
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">restoreSessionStatus</td>
-<td style="text-align: left;">Status of the restore session. The value is an aggregated status of the restored artifacts. The possible values are: <code>draft</code>, <code>activating</code>, <code>active</code>, <code>completedWithError</code>, <code>completed</code>, <code>unknownFutureValue</code>, <code>failed</code>. Use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value in this evolvable enum: <code>failed</code>.</td>
+<td style="text-align: left;">Status of the restore session. The value is an aggregated status of the restored artifacts. The possible values are: <code>draft</code>, <code>activating</code>, <code>active</code>, <code>completedWithError</code>, <code>completed</code>, <code>unknownFutureValue</code>, <code>failed</code>. You must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value in this evolvable enum: <code>failed</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">restoreJobType</td>
+<td style="text-align: left;">restoreJobType</td>
+<td style="text-align: left;">Indicates whether the restore session was created normally or by a bulk job.</td>
+</tr>
+<tr>
+<td style="text-align: left;">restoreSessionArtifactCount</td>
+<td style="text-align: left;">restoreSessionArtifactCount</td>
+<td style="text-align: left;">The number of metadata artifacts that belong to this restore session.</td>
 </tr>
 </tbody>
 </table>
@@ -989,29 +1011,24 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier of the protection unit.</td>
-</tr>
-<tr>
-<td style="text-align: left;">policyId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier of the protection policy based on which protection unit was created.</td>
-</tr>
-<tr>
 <td style="text-align: left;">createdBy</td>
 <td style="text-align: left;">identitySet</td>
-<td style="text-align: left;">The identity of person who created the protection unit.</td>
+<td style="text-align: left;">The identity of the person who created the protection unit.</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The time of creation of the protection unit.</td>
+<td style="text-align: left;">The time of creation of the protection unit. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">error</td>
 <td style="text-align: left;">publicError</td>
 <td style="text-align: left;">Contains error details if an error occurred while creating a protection unit.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier of the protection unit. Inherited from entity.</td>
 </tr>
 <tr>
 <td style="text-align: left;">lastModifiedBy</td>
@@ -1021,12 +1038,27 @@
 <tr>
 <td style="text-align: left;">lastModifiedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Timestamp of the last modification of this protection unit.</td>
+<td style="text-align: left;">Timestamp of the last modification of this protection unit. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">offboardRequestedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when protection unit offboard was requested. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">policyId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier of the protection policy based on which protection unit was created.</td>
+</tr>
+<tr>
+<td style="text-align: left;">protectionSources</td>
+<td style="text-align: left;">protectionSource</td>
+<td style="text-align: left;">Indicates the sources by which a protection unit is currently protected. A protection unit protected by multiple sources is indicated by comma-separated values. The possible values are: <code>none</code>, <code>manual</code>, <code>dynamicRule</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">protectionUnitStatus</td>
-<td style="text-align: left;">The status of the protection unit. The possible values are: <code>protectRequested</code>, <code>protected</code>, <code>unprotectRequested</code>, <code>unprotected</code>, <code>removeRequested</code>, <code>unknownFutureValue</code>.</td>
+<td style="text-align: left;">The status of the protection unit. The possible values are: <code>protectRequested</code>, <code>protected</code>, <code>unprotectRequested</code>, <code>unprotected</code>, <code>removeRequested</code>, <code>unknownFutureValue</code>, <code>offboardRequested</code>, <code>offboarded</code>, <code>cancelOffboardRequested</code>. Use the <code>Prefer: include-unknown-enum-members</code> request header to get the following values from this evolvable enum: <code>offboardRequested</code>, <code>offboarded</code>, <code>cancelOffboardRequested</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -1114,6 +1146,16 @@
 <td style="text-align: left;">Timestamp of the last modification of the restore session.</td>
 </tr>
 <tr>
+<td style="text-align: left;">restoreJobType</td>
+<td style="text-align: left;">restoreJobType</td>
+<td style="text-align: left;">Indicates whether the restore session was created normally or by a bulk job.</td>
+</tr>
+<tr>
+<td style="text-align: left;">restoreSessionArtifactCount</td>
+<td style="text-align: left;">restoreSessionArtifactCount</td>
+<td style="text-align: left;">The number of metadata artifacts that belong to this restore session.</td>
+</tr>
+<tr>
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">restoreSessionStatus</td>
 <td style="text-align: left;">Status of the restore session. The value is an aggregated status of the restored artifacts. The possible values are: <code>draft</code>, <code>activating</code>, <code>active</code>, <code>completedWithError</code>, <code>completed</code>, <code>unknownFutureValue</code>, <code>failed</code>. Use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value in this evolvable enum: <code>failed</code>.</td>
@@ -1169,9 +1211,19 @@
 <td style="text-align: left;">Timestamp of last modification of this restore session.</td>
 </tr>
 <tr>
+<td style="text-align: left;">restoreJobType</td>
+<td style="text-align: left;">restoreJobType</td>
+<td style="text-align: left;">Indicates whether the restore session was created normally or by a bulk job.</td>
+</tr>
+<tr>
+<td style="text-align: left;">restoreSessionArtifactCount</td>
+<td style="text-align: left;">restoreSessionArtifactCount</td>
+<td style="text-align: left;">The number of metadata artifacts that belong to this restore session.</td>
+</tr>
+<tr>
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">restoreSessionStatus</td>
-<td style="text-align: left;">Status of the restore session. The value is an aggregated status of restore artifacts. The possible values are: <code>draft</code>, <code>activating</code>, <code>active</code>, <code>completedWithError</code>, <code>completed</code>, <code>unknownFutureValue</code>, <code>failed</code>. Use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value in this evolvable enum: <code>failed</code>.</td>
+<td style="text-align: left;">Status of the restore session. The value is an aggregated status of restore artifacts. The possible values are: <code>draft</code>, <code>activating</code>, <code>active</code>, <code>completedWithError</code>, <code>completed</code>, <code>unknownFutureValue</code>, <code>failed</code>. You must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value in this evolvable enum: <code>failed</code>.</td>
 </tr>
 </tbody>
 </table>

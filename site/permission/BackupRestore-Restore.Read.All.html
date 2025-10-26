@@ -183,10 +183,6 @@
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
-<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/backuprestoreroot-list-restorepoints?view=graph-rest-1.0&amp;tabs=http">GET /solutions/backupRestore/restorePoints?$expand=protectionUnit($filter=id eq '{ProtectionUnitID}')&amp;$filter=protectionDateTime lt YYYY-MM-DDTHH:mm:ssZ</a></div></td>
-</tr>
-<tr>
-<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/backuprestoreroot-list-restoresessions?view=graph-rest-1.0&amp;tabs=http">GET /solutions/backupRestore/restoreSessions</a></div></td>
 </tr>
 <tr>
@@ -298,10 +294,6 @@
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.backuprestore/get-mgsolutionbackuprestoreonedriveforbusinessrestoresessiondriverestoreartifactbulkadditionrequest">Get-MgSolutionBackupRestoreOneDriveForBusinessRestoreSessionDriveRestoreArtifactBulkAdditionRequest</a></div></td>
-</tr>
-<tr>
-<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
-<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.backuprestore/get-mgsolutionbackuprestorepoint">Get-MgSolutionBackupRestorePoint</a></div></td>
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
@@ -602,6 +594,16 @@
 <td style="text-align: left;">Timestamp of last modification of this restore session.</td>
 </tr>
 <tr>
+<td style="text-align: left;">restoreJobType</td>
+<td style="text-align: left;">restoreJobType</td>
+<td style="text-align: left;">Indicates whether the restore session was created normally or by a bulk job.</td>
+</tr>
+<tr>
+<td style="text-align: left;">restoreSessionArtifactCount</td>
+<td style="text-align: left;">restoreSessionArtifactCount</td>
+<td style="text-align: left;">The number of metadata artifacts that belong to this restore session.</td>
+</tr>
+<tr>
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">restoreSessionStatus</td>
 <td style="text-align: left;">Status of the restore session. The value is an aggregated status of the restored artifacts. The possible values are: <code>draft</code>, <code>activating</code>, <code>active</code>, <code>completedWithError</code>, <code>completed</code>, <code>unknownFutureValue</code>, <code>failed</code>. Use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value in this evolvable enum: <code>failed</code>.</td>
@@ -652,6 +654,11 @@
 <td style="text-align: left;">The new restored folder name.</td>
 </tr>
 <tr>
+<td style="text-align: left;">restoredItemCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The number of items that are being restored in the folder.</td>
+</tr>
+<tr>
 <td style="text-align: left;">startDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">The time when the restoration of the artifact started. Inherited from restoreArtifactBase.</td>
@@ -659,7 +666,7 @@
 <tr>
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">artifactRestoreStatus</td>
-<td style="text-align: left;">The restoration status of the artifact. Inherited from restoreArtifactBase.T he possible values are: <code>added</code>, <code>scheduling</code>, <code>scheduled</code>, <code>inProgress</code>, <code>succeeded</code>, <code>failed</code>, <code>unknownFutureValue</code>.</td>
+<td style="text-align: left;">The restoration status of the artifact. Inherited from restoreArtifactBase. The possible values are: <code>added</code>, <code>scheduling</code>, <code>scheduled</code>, <code>inProgress</code>, <code>succeeded</code>, <code>failed</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -804,7 +811,17 @@
 <tr>
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">restoreSessionStatus</td>
-<td style="text-align: left;">Status of the restore session. The value is an aggregated status of the restored artifacts. The possible values are: <code>draft</code>, <code>activating</code>, <code>active</code>, <code>completedWithError</code>, <code>completed</code>, <code>unknownFutureValue</code>, <code>failed</code>. Use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value in this evolvable enum: <code>failed</code>.</td>
+<td style="text-align: left;">Status of the restore session. The value is an aggregated status of the restored artifacts. The possible values are: <code>draft</code>, <code>activating</code>, <code>active</code>, <code>completedWithError</code>, <code>completed</code>, <code>unknownFutureValue</code>, <code>failed</code>. You must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value in this evolvable enum: <code>failed</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">restoreJobType</td>
+<td style="text-align: left;">restoreJobType</td>
+<td style="text-align: left;">Indicates whether the restore session was created normally or by a bulk job.</td>
+</tr>
+<tr>
+<td style="text-align: left;">restoreSessionArtifactCount</td>
+<td style="text-align: left;">restoreSessionArtifactCount</td>
+<td style="text-align: left;">The number of metadata artifacts that belong to this restore session.</td>
 </tr>
 </tbody>
 </table>
@@ -892,6 +909,16 @@
 <td style="text-align: left;">Timestamp of the last modification of the restore session.</td>
 </tr>
 <tr>
+<td style="text-align: left;">restoreJobType</td>
+<td style="text-align: left;">restoreJobType</td>
+<td style="text-align: left;">Indicates whether the restore session was created normally or by a bulk job.</td>
+</tr>
+<tr>
+<td style="text-align: left;">restoreSessionArtifactCount</td>
+<td style="text-align: left;">restoreSessionArtifactCount</td>
+<td style="text-align: left;">The number of metadata artifacts that belong to this restore session.</td>
+</tr>
+<tr>
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">restoreSessionStatus</td>
 <td style="text-align: left;">Status of the restore session. The value is an aggregated status of the restored artifacts. The possible values are: <code>draft</code>, <code>activating</code>, <code>active</code>, <code>completedWithError</code>, <code>completed</code>, <code>unknownFutureValue</code>, <code>failed</code>. Use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value in this evolvable enum: <code>failed</code>.</td>
@@ -947,9 +974,19 @@
 <td style="text-align: left;">Timestamp of last modification of this restore session.</td>
 </tr>
 <tr>
+<td style="text-align: left;">restoreJobType</td>
+<td style="text-align: left;">restoreJobType</td>
+<td style="text-align: left;">Indicates whether the restore session was created normally or by a bulk job.</td>
+</tr>
+<tr>
+<td style="text-align: left;">restoreSessionArtifactCount</td>
+<td style="text-align: left;">restoreSessionArtifactCount</td>
+<td style="text-align: left;">The number of metadata artifacts that belong to this restore session.</td>
+</tr>
+<tr>
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">restoreSessionStatus</td>
-<td style="text-align: left;">Status of the restore session. The value is an aggregated status of restore artifacts. The possible values are: <code>draft</code>, <code>activating</code>, <code>active</code>, <code>completedWithError</code>, <code>completed</code>, <code>unknownFutureValue</code>, <code>failed</code>. Use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value in this evolvable enum: <code>failed</code>.</td>
+<td style="text-align: left;">Status of the restore session. The value is an aggregated status of restore artifacts. The possible values are: <code>draft</code>, <code>activating</code>, <code>active</code>, <code>completedWithError</code>, <code>completed</code>, <code>unknownFutureValue</code>, <code>failed</code>. You must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value in this evolvable enum: <code>failed</code>.</td>
 </tr>
 </tbody>
 </table>
