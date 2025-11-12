@@ -93,6 +93,11 @@
 <blockquote>
 <p>Allow the application to create site collections on behalf of the signed in user. Upon creation the application will be granted Sites.Selected(delegated) + FullControl to the newly created site.</p>
 </blockquote>
+<blockquote>
+<p><strong>Merill's Note</strong></p>
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>Sites.Create.All</code> permission.</p>
+<p>If you need to create an audit report of the permissions granted to all the apps in your tenant, you can run the <code>Export-MsIdAppConsentGrantReport</code> command. See <a href="https://www.youtube.com/watch?v=vO0m5yE3dZA">How To: Run a quick OAuth app audit of your tenant</a></p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -125,11 +130,337 @@
 </tbody>
 </table>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_apiv1" role="tab" aria-controls="tabpanel_1_apiv1" data-tab="apiv1" tabindex="0" aria-selected="true"><span><i class='bi bi-braces'></i></span> API [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_apibeta" role="tab" aria-controls="tabpanel_1_apibeta" data-tab="apibeta" tabindex="-1"><span><i class='bi bi-braces'></i></span> API [beta]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psv1" role="tab" aria-controls="tabpanel_1_psv1" data-tab="psv1" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psbeta" role="tab" aria-controls="tabpanel_1_psbeta" data-tab="psbeta" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [beta]</a>
+</li>
+</ul>
+<section id="tabpanel_1_apiv1" role="tabpanel" data-tab="apiv1">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_apibeta" role="tabpanel" data-tab="apibeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/site-getoperationstatus?view=graph-rest-beta&amp;tabs=http">GET /sites/getOperationStatus(operationId='{siteOperationId}')</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/site-post-sites?view=graph-rest-beta&amp;tabs=http">POST /sites</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_psv1" role="tabpanel" data-tab="psv1" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_psbeta" role="tabpanel" data-tab="psbeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
 </div>
-<hr>
+<h2 id="resources">Resources</h2>
+<p>Granting this permission allows the calling application to access (and/or update) the following information in your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_BaseItem1" role="tab" aria-controls="tabpanel_2_BaseItem1" data-tab="BaseItem1" tabindex="0" aria-selected="true">BaseItem</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_identityInput2" role="tab" aria-controls="tabpanel_2_identityInput2" data-tab="identityInput2" tabindex="-1">identityInput</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_richLongRunningOperation3" role="tab" aria-controls="tabpanel_2_richLongRunningOperation3" data-tab="richLongRunningOperation3" tabindex="-1">richLongRunningOperation</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_site4" role="tab" aria-controls="tabpanel_2_site4" data-tab="site4" tabindex="-1">site</a>
+</li>
+</ul>
+<section id="tabpanel_2_BaseItem1" role="tabpanel" data-tab="BaseItem1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/baseitem?view=graph-rest-1.0&amp;tabs=http">BaseItem</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">[identitySet][]</td>
+<td style="text-align: left;">Identity of the user, device, or application that created the item. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">dateTimeOffset</td>
+<td style="text-align: left;">Date and time of item creation. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Provides a user-visible description of the item. Optional.</td>
+</tr>
+<tr>
+<td style="text-align: left;">eTag</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">ETag for the item. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The unique identifier of the drive. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedBy</td>
+<td style="text-align: left;">[identitySet][]</td>
+<td style="text-align: left;">Identity of the user, device, and application that last modified the item. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">dateTimeOffset</td>
+<td style="text-align: left;">Date and time the item was last modified. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The name of the item. Read-write.</td>
+</tr>
+<tr>
+<td style="text-align: left;">parentReference</td>
+<td style="text-align: left;">[itemReference][]</td>
+<td style="text-align: left;">Parent information, if the item has a parent. Read-write.</td>
+</tr>
+<tr>
+<td style="text-align: left;">webUrl</td>
+<td style="text-align: left;">string (url)</td>
+<td style="text-align: left;">URL that either displays the resource in the browser (for Office file formats), or is a direct link to the file (for other formats). Read-only.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_identityInput2" role="tabpanel" data-tab="identityInput2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/identityinput?view=graph-rest-1.0&amp;tabs=http">identityInput</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">alias</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The alias of the identity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">email</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The email of the identity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">objectId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique object ID assigned to the identity in Microsoft Entra ID.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_richLongRunningOperation3" role="tabpanel" data-tab="richLongRunningOperation3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/richlongrunningoperation?view=graph-rest-1.0&amp;tabs=http">richLongRunningOperation</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when this operation was created.</td>
+</tr>
+<tr>
+<td style="text-align: left;">error</td>
+<td style="text-align: left;">publicError</td>
+<td style="text-align: left;">Error that caused the operation to fail.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for the operation. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastActionDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the last action was performed on this operation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">percentageComplete</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">A value between 0 and 100 that indicates the progress of the operation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">resourceId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the result.</td>
+</tr>
+<tr>
+<td style="text-align: left;">resourceLocation</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The canonical URL of the resource.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">longRunningOperationStatus</td>
+<td style="text-align: left;">The status of the long-running operation. Possible values are: <code>notStarted</code>, <code>running</code>, <code>succeeded</code>, <code>failed</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">statusDetail</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The detail about the status value.</td>
+</tr>
+<tr>
+<td style="text-align: left;">type</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The type of the operation.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_site4" role="tabpanel" data-tab="site4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/site?view=graph-rest-1.0&amp;tabs=http">site</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>createdDateTime</strong></td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the item was created. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>description</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The descriptive text for the site.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>displayName</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The full title for the site. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>eTag</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">ETag for the item. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>id</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The unique identifier of the item. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>isPersonalSite</strong></td>
+<td style="text-align: left;">bool</td>
+<td style="text-align: left;">Identifies whether the site is personal or not. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>lastModifiedDateTime</strong></td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the item was last modified. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>name</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The name/title of the item.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>root</strong></td>
+<td style="text-align: left;">root</td>
+<td style="text-align: left;">If present, provides the root site in the site collection. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>sharepointIds</strong></td>
+<td style="text-align: left;">sharepointIds</td>
+<td style="text-align: left;">Returns identifiers useful for SharePoint REST compatibility. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>siteCollection</strong></td>
+<td style="text-align: left;">siteCollection</td>
+<td style="text-align: left;">Provides details about the site's site collection. Available only on the root site. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>webUrl</strong></td>
+<td style="text-align: left;">string (url)</td>
+<td style="text-align: left;">URL that displays the item in the browser. Read-only.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</div>
 
 </article>
 

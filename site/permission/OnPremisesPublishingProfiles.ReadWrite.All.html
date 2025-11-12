@@ -184,6 +184,14 @@
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/onpremisespublishingprofile-list-sensors?view=graph-rest-beta&amp;tabs=http">GET /onPremisesPublishingProfiles/privateAccess/sensors</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/privateaccesssensor-get?view=graph-rest-beta&amp;tabs=http">GET /onPremisesPublishingProfiles/privateAccess/sensors/{privateAccessSensorId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/publishedresource-update?view=graph-rest-beta&amp;tabs=http">PATCH /onPremisesPublishingProfiles/{profile-id}/publishedResources/{resource-id}</a></div></td>
 </tr>
 <tr>
@@ -254,7 +262,10 @@
 <a href="#tabpanel_2_onPremisesAgentGroup1" role="tab" aria-controls="tabpanel_2_onPremisesAgentGroup1" data-tab="onPremisesAgentGroup1" tabindex="0" aria-selected="true">onPremisesAgentGroup</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_publishedResource2" role="tab" aria-controls="tabpanel_2_publishedResource2" data-tab="publishedResource2" tabindex="-1">publishedResource</a>
+<a href="#tabpanel_2_privateAccessSensor2" role="tab" aria-controls="tabpanel_2_privateAccessSensor2" data-tab="privateAccessSensor2" tabindex="-1">privateAccessSensor</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_publishedResource3" role="tab" aria-controls="tabpanel_2_publishedResource3" data-tab="publishedResource3" tabindex="-1">publishedResource</a>
 </li>
 </ul>
 <section id="tabpanel_2_onPremisesAgentGroup1" role="tabpanel" data-tab="onPremisesAgentGroup1">
@@ -286,13 +297,63 @@
 </tr>
 <tr>
 <td style="text-align: left;">publishingType</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Possible values are: <code>applicationProxy</code>, <code>exchangeOnline</code>, <code>authentication</code>, <code>provisioning</code>, <code>adAdministration</code>.</td>
+<td style="text-align: left;">onPremisesPublishingType</td>
+<td style="text-align: left;">Possible values are: <code>applicationProxy</code>, <code>exchangeOnline</code>, <code>authentication</code>, <code>provisioning</code>, <code>intunePfx</code>, <code>oflineDomainJoin</code>, <code>unknownFutureValue</code>, <code>privateAccess</code>. Use the <code>Prefer: include-unknown-enum-members</code> request header to get the following values from this evolvable enum: <code>privateAccess</code>.</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_publishedResource2" role="tabpanel" data-tab="publishedResource2" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_privateAccessSensor2" role="tabpanel" data-tab="privateAccessSensor2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/privateaccesssensor?view=graph-rest-1.0&amp;tabs=http">privateAccessSensor</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">externalIp</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">External IP of sensor.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique ID of the sensor. Inherits from entity</td>
+</tr>
+<tr>
+<td style="text-align: left;">isAuditMode</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Not Implementated.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isBreakglassEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Not Implemented.</td>
+</tr>
+<tr>
+<td style="text-align: left;">machineName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Machine name of sensor.</td>
+</tr>
+<tr>
+<td style="text-align: left;">version</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Version of sensor.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">microsoft.graph.sensorStatus</td>
+<td style="text-align: left;">The possible values are: <code>active</code>, <code>inactive</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_publishedResource3" role="tabpanel" data-tab="publishedResource3" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/publishedresource?view=graph-rest-1.0&amp;tabs=http">publishedResource</a></p>
 <table>
@@ -316,8 +377,8 @@
 </tr>
 <tr>
 <td style="text-align: left;">publishingType</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Possible values are: <code>applicationProxy</code>, <code>exchangeOnline</code>, <code>authentication</code>, <code>provisioning</code>, <code>adAdministration</code>.</td>
+<td style="text-align: left;">onPremisesPublishingType</td>
+<td style="text-align: left;">Possible values are: <code>applicationProxy</code>, <code>exchangeOnline</code>, <code>authentication</code>, <code>provisioning</code>, <code>intunePfx</code>, <code>oflineDomainJoin</code>, <code>unknownFutureValue</code>, <code>privateAccess</code>. Use the <code>Prefer: include-unknown-enum-members</code> request header to get the following values from this evolvable enum: <code>privateAccess</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">resourceName</td>
