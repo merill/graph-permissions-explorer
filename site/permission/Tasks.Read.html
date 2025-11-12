@@ -590,6 +590,10 @@
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/plannerplan-getusagerights?view=graph-rest-beta&amp;tabs=http">GET /planner/plans/{plannerPlanId}/getUsageRights</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/plannerroster-get?view=graph-rest-beta&amp;tabs=http">GET /planner/rosters/{plannerRosterId}</a></div></td>
 </tr>
 <tr>
@@ -1246,25 +1250,28 @@
 <a href="#tabpanel_2_plannerUser37" role="tab" aria-controls="tabpanel_2_plannerUser37" data-tab="plannerUser37" tabindex="-1">plannerUser</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_post38" role="tab" aria-controls="tabpanel_2_post38" data-tab="post38" tabindex="-1">post</a>
+<a href="#tabpanel_2_planUsageRight38" role="tab" aria-controls="tabpanel_2_planUsageRight38" data-tab="planUsageRight38" tabindex="-1">planUsageRight</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_referenceAttachment39" role="tab" aria-controls="tabpanel_2_referenceAttachment39" data-tab="referenceAttachment39" tabindex="-1">referenceAttachment</a>
+<a href="#tabpanel_2_post39" role="tab" aria-controls="tabpanel_2_post39" data-tab="post39" tabindex="-1">post</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_singleValueLegacyExtendedProperty40" role="tab" aria-controls="tabpanel_2_singleValueLegacyExtendedProperty40" data-tab="singleValueLegacyExtendedProperty40" tabindex="-1">singleValueLegacyExtendedProperty</a>
+<a href="#tabpanel_2_referenceAttachment40" role="tab" aria-controls="tabpanel_2_referenceAttachment40" data-tab="referenceAttachment40" tabindex="-1">referenceAttachment</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_taskFileAttachment41" role="tab" aria-controls="tabpanel_2_taskFileAttachment41" data-tab="taskFileAttachment41" tabindex="-1">taskFileAttachment</a>
+<a href="#tabpanel_2_singleValueLegacyExtendedProperty41" role="tab" aria-controls="tabpanel_2_singleValueLegacyExtendedProperty41" data-tab="singleValueLegacyExtendedProperty41" tabindex="-1">singleValueLegacyExtendedProperty</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_todoTask42" role="tab" aria-controls="tabpanel_2_todoTask42" data-tab="todoTask42" tabindex="-1">todoTask</a>
+<a href="#tabpanel_2_taskFileAttachment42" role="tab" aria-controls="tabpanel_2_taskFileAttachment42" data-tab="taskFileAttachment42" tabindex="-1">taskFileAttachment</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_todoTaskList43" role="tab" aria-controls="tabpanel_2_todoTaskList43" data-tab="todoTaskList43" tabindex="-1">todoTaskList</a>
+<a href="#tabpanel_2_todoTask43" role="tab" aria-controls="tabpanel_2_todoTask43" data-tab="todoTask43" tabindex="-1">todoTask</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_user44" role="tab" aria-controls="tabpanel_2_user44" data-tab="user44" tabindex="-1">user</a>
+<a href="#tabpanel_2_todoTaskList44" role="tab" aria-controls="tabpanel_2_todoTaskList44" data-tab="todoTaskList44" tabindex="-1">todoTaskList</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_user45" role="tab" aria-controls="tabpanel_2_user45" data-tab="user45" tabindex="-1">user</a>
 </li>
 </ul>
 <section id="tabpanel_2_attachment1" role="tabpanel" data-tab="attachment1">
@@ -3680,7 +3687,37 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_post38" role="tabpanel" data-tab="post38" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_planUsageRight38" role="tabpanel" data-tab="planUsageRight38" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/planusageright?view=graph-rest-1.0&amp;tabs=http">planUsageRight</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">hasSensitivityLabel</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the plan has a sensitivity label applied. If <code>true</code>, the plan has a sensitivity label assignment; if <code>false</code>, no sensitivity label is applied.</td>
+</tr>
+<tr>
+<td style="text-align: left;">planId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier of the plan for which usage rights are under evaluation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">usageRights</td>
+<td style="text-align: left;">usageRightsInfo</td>
+<td style="text-align: left;">The detailed usage rights information for the requesting user on the plan. This property is <code>null</code> when no sensitivity label is applied to the plan. Optional.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_post39" role="tabpanel" data-tab="post39" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/post?view=graph-rest-1.0&amp;tabs=http">post</a></p>
 <table>
@@ -3760,7 +3797,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_referenceAttachment39" role="tabpanel" data-tab="referenceAttachment39" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_referenceAttachment40" role="tabpanel" data-tab="referenceAttachment40" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/referenceattachment?view=graph-rest-1.0&amp;tabs=http">referenceAttachment</a></p>
 <table>
@@ -3805,7 +3842,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_singleValueLegacyExtendedProperty40" role="tabpanel" data-tab="singleValueLegacyExtendedProperty40" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_singleValueLegacyExtendedProperty41" role="tabpanel" data-tab="singleValueLegacyExtendedProperty41" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/singlevaluelegacyextendedproperty?view=graph-rest-1.0&amp;tabs=http">singleValueLegacyExtendedProperty</a></p>
 <table>
@@ -3830,7 +3867,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_taskFileAttachment41" role="tabpanel" data-tab="taskFileAttachment41" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_taskFileAttachment42" role="tabpanel" data-tab="taskFileAttachment42" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/taskfileattachment?view=graph-rest-1.0&amp;tabs=http">taskFileAttachment</a></p>
 <table>
@@ -3875,7 +3912,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_todoTask42" role="tabpanel" data-tab="todoTask42" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_todoTask43" role="tabpanel" data-tab="todoTask43" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/todotask?view=graph-rest-1.0&amp;tabs=http">todoTask</a></p>
 <table>
@@ -3970,7 +4007,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_todoTaskList43" role="tabpanel" data-tab="todoTaskList43" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_todoTaskList44" role="tabpanel" data-tab="todoTaskList44" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/todotasklist?view=graph-rest-1.0&amp;tabs=http">todoTaskList</a></p>
 <table>
@@ -4010,7 +4047,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_user44" role="tabpanel" data-tab="user44" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_user45" role="tabpanel" data-tab="user45" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/user?view=graph-rest-1.0&amp;tabs=http">user</a></p>
 <table>
