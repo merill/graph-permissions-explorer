@@ -190,6 +190,14 @@
 <tbody>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/identityprotectionroot-list-agentriskdetections?view=graph-rest-beta&amp;tabs=http">GET /identityProtection/agentRiskDetections</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/agentriskdetection-get?view=graph-rest-beta&amp;tabs=http">GET /identityProtection/agentRiskDetections/{agentRiskDetectionId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/riskdetection-list?view=graph-rest-beta&amp;tabs=http">GET /identityProtection/riskDetections</a></div></td>
 </tr>
 <tr>
@@ -267,13 +275,96 @@
 <div class="tabGroup" id="tabgroup_2">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_2_riskDetection1" role="tab" aria-controls="tabpanel_2_riskDetection1" data-tab="riskDetection1" tabindex="0" aria-selected="true">riskDetection</a>
+<a href="#tabpanel_2_agentRiskDetection1" role="tab" aria-controls="tabpanel_2_agentRiskDetection1" data-tab="agentRiskDetection1" tabindex="0" aria-selected="true">agentRiskDetection</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_servicePrincipalRiskDetection2" role="tab" aria-controls="tabpanel_2_servicePrincipalRiskDetection2" data-tab="servicePrincipalRiskDetection2" tabindex="-1">servicePrincipalRiskDetection</a>
+<a href="#tabpanel_2_riskDetection2" role="tab" aria-controls="tabpanel_2_riskDetection2" data-tab="riskDetection2" tabindex="-1">riskDetection</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_servicePrincipalRiskDetection3" role="tab" aria-controls="tabpanel_2_servicePrincipalRiskDetection3" data-tab="servicePrincipalRiskDetection3" tabindex="-1">servicePrincipalRiskDetection</a>
 </li>
 </ul>
-<section id="tabpanel_2_riskDetection1" role="tabpanel" data-tab="riskDetection1">
+<section id="tabpanel_2_agentRiskDetection1" role="tabpanel" data-tab="agentRiskDetection1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/agentriskdetection?view=graph-rest-1.0&amp;tabs=http">agentRiskDetection</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">activityDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time that the risky activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>le</code>, and <code>ge</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">additionalInfo</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Additional information associated with the risk detection.</td>
+</tr>
+<tr>
+<td style="text-align: left;">agentDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the agent. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>startsWith</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">agentId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the agent. This is equivalent to 'id' to the specific agent type. See riskyAgentIdentity, riskyAgentIdentityBlueprintPrincipal, and riskyAgentUser. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>startsWith</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">detectedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time that the risk was detected. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>le</code>, and <code>ge</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">detectionTimingType</td>
+<td style="text-align: left;">riskDetectionTimingType</td>
+<td style="text-align: left;">Timing of the detected risk (real-time/offline). The possible values are: <code>notDefined</code>, <code>realtime</code>, <code>nearRealtime</code>, <code>offline</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique ID of the risk detection. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time that the risk detection was last updated. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>le</code>, and <code>ge</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">riskDetail</td>
+<td style="text-align: left;">riskDetail</td>
+<td style="text-align: left;">Details of the detected risk. The possible values are: <code>none</code>, <code>adminConfirmedAgentSafe</code>, <code>adminConfirmedAgentCompromised</code>, <code>adminDismissedRiskForAgent</code>. <br><br> Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">riskEventType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The type of risk event detected. <br><br> Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">riskEvidence</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Evidence on the risky activity occurred. <br><br> Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">riskLevel</td>
+<td style="text-align: left;">riskLevel</td>
+<td style="text-align: left;">Level of the detected risk. The possible values are: <code>low</code>, <code>medium</code>, <code>high</code>, <code>hidden</code>, <code>none</code>, <code>unknownFutureValue</code>. <br><br> Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">riskState</td>
+<td style="text-align: left;">riskState</td>
+<td style="text-align: left;">The state of a detected agentic risk. The possible values are: <code>none</code>, <code>confirmedSafe</code>, <code>dismissed</code>, <code>atRisk</code>, <code>confirmedCompromised</code>, <code>unknownFutureValue</code>. <br><br> Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_riskDetection2" role="tabpanel" data-tab="riskDetection2" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/riskdetection?view=graph-rest-1.0&amp;tabs=http">riskDetection</a></p>
 <table>
@@ -388,7 +479,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_servicePrincipalRiskDetection2" role="tabpanel" data-tab="servicePrincipalRiskDetection2" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_servicePrincipalRiskDetection3" role="tabpanel" data-tab="servicePrincipalRiskDetection3" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/serviceprincipalriskdetection?view=graph-rest-1.0&amp;tabs=http">servicePrincipalRiskDetection</a></p>
 <table>

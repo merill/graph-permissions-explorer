@@ -93,6 +93,11 @@
 <blockquote>
 <p>Allows the app to read risky agents information in your organization, on behalf of the signed-in user.</p>
 </blockquote>
+<blockquote>
+<p><strong>Merill's Note</strong></p>
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>IdentityRiskyAgent.Read.All</code> permission.</p>
+<p>If you need to create an audit report of the permissions granted to all the apps in your tenant, you can run the <code>Export-MsIdAppConsentGrantReport</code> command. See <a href="https://www.youtube.com/watch?v=vO0m5yE3dZA">How To: Run a quick OAuth app audit of your tenant</a></p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -125,11 +130,342 @@
 </tbody>
 </table>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_apiv1" role="tab" aria-controls="tabpanel_1_apiv1" data-tab="apiv1" tabindex="0" aria-selected="true"><span><i class='bi bi-braces'></i></span> API [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_apibeta" role="tab" aria-controls="tabpanel_1_apibeta" data-tab="apibeta" tabindex="-1"><span><i class='bi bi-braces'></i></span> API [beta]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psv1" role="tab" aria-controls="tabpanel_1_psv1" data-tab="psv1" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psbeta" role="tab" aria-controls="tabpanel_1_psbeta" data-tab="psbeta" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [beta]</a>
+</li>
+</ul>
+<section id="tabpanel_1_apiv1" role="tabpanel" data-tab="apiv1">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_apibeta" role="tabpanel" data-tab="apibeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/riskyagent-list?view=graph-rest-beta&amp;tabs=http">GET /identityProtection/riskyAgents</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/riskyagent-get?view=graph-rest-beta&amp;tabs=http">GET /identityProtection/riskyAgents/{riskyAgentId}</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_psv1" role="tabpanel" data-tab="psv1" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_psbeta" role="tabpanel" data-tab="psbeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
 </div>
-<hr>
+<h2 id="resources">Resources</h2>
+<p>Granting this permission allows the calling application to access (and/or update) the following information in your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_riskyAgent1" role="tab" aria-controls="tabpanel_2_riskyAgent1" data-tab="riskyAgent1" tabindex="0" aria-selected="true">riskyAgent</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_riskyAgentIdentity2" role="tab" aria-controls="tabpanel_2_riskyAgentIdentity2" data-tab="riskyAgentIdentity2" tabindex="-1">riskyAgentIdentity</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_riskyAgentIdentityBlueprintPrincipal3" role="tab" aria-controls="tabpanel_2_riskyAgentIdentityBlueprintPrincipal3" data-tab="riskyAgentIdentityBlueprintPrincipal3" tabindex="-1">riskyAgentIdentityBlueprintPrincipal</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_riskyAgentUser4" role="tab" aria-controls="tabpanel_2_riskyAgentUser4" data-tab="riskyAgentUser4" tabindex="-1">riskyAgentUser</a>
+</li>
+</ul>
+<section id="tabpanel_2_riskyAgent1" role="tabpanel" data-tab="riskyAgent1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/riskyagent?view=graph-rest-1.0&amp;tabs=http">riskyAgent</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">agentDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the agent. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>startsWith</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The object <strong>id</strong> of the riskyAgentIdentity, riskyAgentIdentityBlueprintPrincipal or riskyAgentUser. Inherited from entity. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>startsWith</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">isDeleted</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the agent is deleted.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the agent is enabled.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isProcessing</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether an agent's risky state is processing in the backend.</td>
+</tr>
+<tr>
+<td style="text-align: left;">riskDetail</td>
+<td style="text-align: left;">riskDetail</td>
+<td style="text-align: left;">Details of the detected risk of the agent. The possible values are: <code>none</code>, <code>adminConfirmedAgentSafe</code>, <code>adminConfirmedAgentCompromised</code>, <code>adminDismissedRiskForAgent</code>. <br><br> Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">riskLastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time that the risky agent was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>le</code>, and <code>ge</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">riskLevel</td>
+<td style="text-align: left;">riskLevel</td>
+<td style="text-align: left;">Level of the detected risky agent. The possible values are: <code>low</code>, <code>medium</code>, <code>high</code>, <code>hidden</code>, <code>none</code>, <code>unknownFutureValue</code>. <br><br> Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">riskState</td>
+<td style="text-align: left;">riskState</td>
+<td style="text-align: left;">State of the agent's risk. The possible values are: <code>none</code>, <code>confirmedSafe</code>, <code>dismissed</code>, <code>atRisk</code>, <code>confirmedCompromised</code>, <code>unknownFutureValue</code>. <br><br> Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_riskyAgentIdentity2" role="tabpanel" data-tab="riskyAgentIdentity2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/riskyagentidentity?view=graph-rest-1.0&amp;tabs=http">riskyAgentIdentity</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">agentDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the agent. Inherited from riskyAgent. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>startsWith</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The object <strong>id</strong> of the agent identity. Inherited from entity. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>startsWith</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">isDeleted</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the agent is deleted. Inherited from riskyAgent.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the agent is enabled. Inherited from riskyAgent.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isProcessing</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether an agent's risky state is processing in the backend. Inherited from riskyAgent.</td>
+</tr>
+<tr>
+<td style="text-align: left;">riskDetail</td>
+<td style="text-align: left;">riskDetail</td>
+<td style="text-align: left;">Details of the detected risk of the agent. Inherited from riskyAgent. The possible values are: <code>none</code>, <code>adminConfirmedAgentSafe</code>, <code>adminConfirmedAgentCompromised</code>, <code>adminDismissedRiskForAgent</code>. <br><br> Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">riskLastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time that the risky agent was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Inherited from riskyAgent. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>le</code>, and <code>ge</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">riskLevel</td>
+<td style="text-align: left;">riskLevel</td>
+<td style="text-align: left;">Level of the detected risky agent. Inherited from riskyAgent. The possible values are: <code>low</code>, <code>medium</code>, <code>high</code>, <code>hidden</code>, <code>none</code>, <code>unknownFutureValue</code>. <br><br> Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">riskState</td>
+<td style="text-align: left;">riskState</td>
+<td style="text-align: left;">State of the agent's risk. Inherited from riskyAgent. The possible values are: <code>none</code>, <code>confirmedSafe</code>, <code>remediated</code>, <code>dismissed</code>, <code>atRisk</code>, <code>confirmedCompromised</code>, <code>unknownFutureValue</code>. <br><br> Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_riskyAgentIdentityBlueprintPrincipal3" role="tabpanel" data-tab="riskyAgentIdentityBlueprintPrincipal3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/riskyagentidentityblueprintprincipal?view=graph-rest-1.0&amp;tabs=http">riskyAgentIdentityBlueprintPrincipal</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">agentDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the agent. Inherited from riskyAgent. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>startsWith</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The object <strong>id</strong> of the agent identity blueprint principal. Inherited from entity. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>startsWith</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">isDeleted</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the agent is deleted. Inherited from riskyAgent.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the agent is enabled. Inherited from riskyAgent.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isProcessing</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether an agent's risky state is processing in the backend. Inherited from riskyAgent.</td>
+</tr>
+<tr>
+<td style="text-align: left;">riskDetail</td>
+<td style="text-align: left;">riskDetail</td>
+<td style="text-align: left;">Details of the detected risk of the agent. Inherited from riskyAgent. The possible values are: <code>none</code>, <code>adminConfirmedAgentSafe</code>, <code>adminConfirmedAgentCompromised</code>, <code>adminDismissedRiskForAgent</code>. <br><br> Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">riskLastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time that the risky agent was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Inherited from riskyAgent. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>le</code>, and <code>ge</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">riskLevel</td>
+<td style="text-align: left;">riskLevel</td>
+<td style="text-align: left;">Level of the detected risky agent. Inherited from riskyAgent. The possible values are: <code>low</code>, <code>medium</code>, <code>high</code>, <code>hidden</code>, <code>none</code>, <code>unknownFutureValue</code>. <br><br> Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">riskState</td>
+<td style="text-align: left;">riskState</td>
+<td style="text-align: left;">State of the agent's risk. Inherited from riskyAgent. The possible values are: <code>none</code>, <code>confirmedSafe</code>, <code>remediated</code>, <code>dismissed</code>, <code>atRisk</code>, <code>confirmedCompromised</code>, <code>unknownFutureValue</code>. <br><br> Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_riskyAgentUser4" role="tabpanel" data-tab="riskyAgentUser4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/riskyagentuser?view=graph-rest-1.0&amp;tabs=http">riskyAgentUser</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">agentDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the agent. Inherited from riskyAgent. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>startsWith</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The object <strong>id</strong> of the agent user. Inherited from entity. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>startsWith</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">isDeleted</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the agent is deleted. Inherited from riskyAgent.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the agent is enabled. Inherited from riskyAgent.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isProcessing</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether an agent's risky state is processing in the backend. Inherited from riskyAgent.</td>
+</tr>
+<tr>
+<td style="text-align: left;">riskDetail</td>
+<td style="text-align: left;">riskDetail</td>
+<td style="text-align: left;">Details of the detected risk of the agent. Inherited from riskyAgent. The possible values are: <code>none</code>, <code>adminConfirmedAgentSafe</code>, <code>adminConfirmedAgentCompromised</code>, <code>adminDismissedRiskForAgent</code>. <br><br> Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">riskLastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time that the risky agent was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Inherited from riskyAgent. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>le</code>, and <code>ge</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">riskLevel</td>
+<td style="text-align: left;">riskLevel</td>
+<td style="text-align: left;">Level of the detected risky agent. Inherited from riskyAgent. The possible values are: <code>low</code>, <code>medium</code>, <code>high</code>, <code>hidden</code>, <code>none</code>, <code>unknownFutureValue</code>. <br><br> Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">riskState</td>
+<td style="text-align: left;">riskState</td>
+<td style="text-align: left;">State of the agent's risk. Inherited from riskyAgent. The possible values are: <code>none</code>, <code>confirmedSafe</code>, <code>remediated</code>, <code>dismissed</code>, <code>atRisk</code>, <code>confirmedCompromised</code>, <code>unknownFutureValue</code>. <br><br> Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+</tbody>
+</table>
+</section>
+</div>
 
 </article>
 

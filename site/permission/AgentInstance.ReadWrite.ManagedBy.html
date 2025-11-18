@@ -93,6 +93,11 @@
 <blockquote>
 <p>Allows the app to create, read, update, and delete agent instances that designate the calling app as their manager in your organization's Agent Registry without a signed-in user.</p>
 </blockquote>
+<blockquote>
+<p><strong>Merill's Note</strong></p>
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>AgentInstance.ReadWrite.ManagedBy</code> permission.</p>
+<p>If you need to create an audit report of the permissions granted to all the apps in your tenant, you can run the <code>Export-MsIdAppConsentGrantReport</code> command. See <a href="https://www.youtube.com/watch?v=vO0m5yE3dZA">How To: Run a quick OAuth app audit of your tenant</a></p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -125,11 +130,455 @@
 </tbody>
 </table>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_apiv1" role="tab" aria-controls="tabpanel_1_apiv1" data-tab="apiv1" tabindex="0" aria-selected="true"><span><i class='bi bi-braces'></i></span> API [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_apibeta" role="tab" aria-controls="tabpanel_1_apibeta" data-tab="apibeta" tabindex="-1"><span><i class='bi bi-braces'></i></span> API [beta]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psv1" role="tab" aria-controls="tabpanel_1_psv1" data-tab="psv1" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psbeta" role="tab" aria-controls="tabpanel_1_psbeta" data-tab="psbeta" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [beta]</a>
+</li>
+</ul>
+<section id="tabpanel_1_apiv1" role="tabpanel" data-tab="apiv1">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_apibeta" role="tabpanel" data-tab="apibeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/agentregistry-delete-agentinstances?view=graph-rest-beta&amp;tabs=http">DELETE /agentRegistry/agentInstances/{agentInstanceId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/agentinstance-get?view=graph-rest-beta&amp;tabs=http">GET /agentRegistry/agentInstances/{agentInstanceId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/agentinstance-list-agentcardmanifest?view=graph-rest-beta&amp;tabs=http">GET /agentRegistry/agentInstances/{agentInstanceId}/agentCardManifest</a></div><code>AgentInstance.ReadWrite.ManagedBy and AgentCardManifest.ReadWrite.All</code> ▪️ <code>AgentInstance.ReadWrite.ManagedBy and AgentCardManifest.ReadWrite.ManagedBy</code></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/agentinstance-list-collections?view=graph-rest-beta&amp;tabs=http">GET /agentRegistry/agentInstances/{agentInstanceId}/collections</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/agentinstance-update?view=graph-rest-beta&amp;tabs=http">PATCH /agentRegistry/agentInstances/{agentInstanceId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/agentregistry-post-agentinstances?view=graph-rest-beta&amp;tabs=http">POST /agentRegistry/agentInstances</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/agentcollection-post-members?view=graph-rest-beta&amp;tabs=http">POST /agentRegistry/agentInstances/{agentInstanceId}/collections/{agentCollectionId}/members/$ref</a></div><code>AgentCollection.ReadWrite.ManagedBy and AgentInstance.ReadWrite.ManagedBy</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_psv1" role="tabpanel" data-tab="psv1" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_psbeta" role="tabpanel" data-tab="psbeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
 </div>
-<hr>
+<h2 id="resources">Resources</h2>
+<p>Granting this permission allows the calling application to access (and/or update) the following information in your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_agentCardManifest1" role="tab" aria-controls="tabpanel_2_agentCardManifest1" data-tab="agentCardManifest1" tabindex="0" aria-selected="true">agentCardManifest</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_agentCardSignature2" role="tab" aria-controls="tabpanel_2_agentCardSignature2" data-tab="agentCardSignature2" tabindex="-1">agentCardSignature</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_agentCollection3" role="tab" aria-controls="tabpanel_2_agentCollection3" data-tab="agentCollection3" tabindex="-1">agentCollection</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_agentInstance4" role="tab" aria-controls="tabpanel_2_agentInstance4" data-tab="agentInstance4" tabindex="-1">agentInstance</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_agentInterface5" role="tab" aria-controls="tabpanel_2_agentInterface5" data-tab="agentInterface5" tabindex="-1">agentInterface</a>
+</li>
+</ul>
+<section id="tabpanel_2_agentCardManifest1" role="tabpanel" data-tab="agentCardManifest1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/agentcardmanifest?view=graph-rest-1.0&amp;tabs=http">agentCardManifest</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">capabilities</td>
+<td style="text-align: left;">agentCapabilities</td>
+<td style="text-align: left;">A declaration of optional capabilities supported by the agent.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Object ID of the user or application that created the agent card manifest. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">When this agent card manifest was created.</td>
+</tr>
+<tr>
+<td style="text-align: left;">defaultInputModes</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Default set of supported input MIME types for all skills, which can be overridden on a per-skill basis.</td>
+</tr>
+<tr>
+<td style="text-align: left;">defaultOutputModes</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Default set of supported output MIME types for all skills, which can be overridden on a per-skill basis.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A human-readable description of the agent.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A human-readable display name of the agent.</td>
+</tr>
+<tr>
+<td style="text-align: left;">documentationUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">URL to agent's documentation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">iconUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">URL to agent's icon image.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">ID of the agent card manifest. Inherited from entity. Key.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">When this agent card manifest was last modified.</td>
+</tr>
+<tr>
+<td style="text-align: left;">managedBy</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;"><strong>appId</strong> (referred to as <strong>Application (client) ID</strong> on the Microsoft Entra admin center) of the application managing this agent manifest.</td>
+</tr>
+<tr>
+<td style="text-align: left;">originatingStore</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the store/system where agent originated. For example <code>Copilot Studio</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">ownerIds</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">List of object IDs for the owners of the agent card manifest.</td>
+</tr>
+<tr>
+<td style="text-align: left;">protocolVersion</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Protocol version supported by the agent.</td>
+</tr>
+<tr>
+<td style="text-align: left;">provider</td>
+<td style="text-align: left;">agentProvider</td>
+<td style="text-align: left;">Information about the organization providing the agent.</td>
+</tr>
+<tr>
+<td style="text-align: left;">security</td>
+<td style="text-align: left;">securityRequirement collection</td>
+<td style="text-align: left;">Security requirements - array of security scheme references.</td>
+</tr>
+<tr>
+<td style="text-align: left;">securitySchemes</td>
+<td style="text-align: left;">securitySchemes</td>
+<td style="text-align: left;">Dictionary of security scheme definitions keyed by scheme name.</td>
+</tr>
+<tr>
+<td style="text-align: left;">skills</td>
+<td style="text-align: left;">agentSkill collection</td>
+<td style="text-align: left;">Skills/capabilities that the agent can perform</td>
+</tr>
+<tr>
+<td style="text-align: left;">supportsAuthenticatedExtendedCard</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Whether agent supports authenticated extended card retrieval</td>
+</tr>
+<tr>
+<td style="text-align: left;">version</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Version of the agent implementation</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_agentCardSignature2" role="tabpanel" data-tab="agentCardSignature2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/agentcardsignature?view=graph-rest-1.0&amp;tabs=http">agentCardSignature</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">header</td>
+<td style="text-align: left;">jwsHeader</td>
+<td style="text-align: left;">The unprotected JWS header values.</td>
+</tr>
+<tr>
+<td style="text-align: left;">protected</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The protected JWS header for the signature. This is a Base64url-encoded JSON object, as per RFC 7515.</td>
+</tr>
+<tr>
+<td style="text-align: left;">signature</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The computed signature, Base64url-encoded.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_agentCollection3" role="tabpanel" data-tab="agentCollection3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/agentcollection?view=graph-rest-1.0&amp;tabs=http">agentCollection</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Object ID of the user or app that created the agent instance.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Timestamp when agent collection was created.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Description / purpose of the collection.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Friendly name of the collection.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for the collection. Key. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Timestamp of last update.</td>
+</tr>
+<tr>
+<td style="text-align: left;">managedBy</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;"><strong>appId</strong> (referred to as <strong>Application (client) ID</strong> on the Microsoft Entra admin center) of the service principal managing this agent.</td>
+</tr>
+<tr>
+<td style="text-align: left;">originatingStore</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Source system/store where the collection originated. For example <code>Copilot Studio</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">ownerIds</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">List of object IDs for the owners of the agent instance.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_agentInstance4" role="tabpanel" data-tab="agentInstance4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/agentinstance?view=graph-rest-1.0&amp;tabs=http">agentInstance</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">additionalInterfaces</td>
+<td style="text-align: left;">agentInterface collection</td>
+<td style="text-align: left;">Additional interfaces/transports supported by the agent.</td>
+</tr>
+<tr>
+<td style="text-align: left;">agentIdentityBlueprintId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Object ID of the agentIdentityBlueprint object.</td>
+</tr>
+<tr>
+<td style="text-align: left;">agentIdentityId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Object ID of the agentIdentity object.</td>
+</tr>
+<tr>
+<td style="text-align: left;">agentUserId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Object ID of the agentUser associated with the agent. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Object ID of the user or application that created the agent instance. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Timestamp when agent instance was created. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Display name for the agent instance.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for the agent instance. Key. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Timestamp of last modification.</td>
+</tr>
+<tr>
+<td style="text-align: left;">managedBy</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;"><strong>appId</strong> (referred to as <strong>Application (client) ID</strong> on the Microsoft Entra admin center) of the application managing this agent.</td>
+</tr>
+<tr>
+<td style="text-align: left;">originatingStore</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the store/system where agent originated. For example <code>Copilot Studio</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">ownerIds</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">List of object IDs for the owners of the agent instance.</td>
+</tr>
+<tr>
+<td style="text-align: left;">preferredTransport</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Preferred transport protocol. The possible values are <code>JSONRPC</code>, <code>GRPC</code>, and <code>HTTP+JSON</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">signatures</td>
+<td style="text-align: left;">agentCardSignature collection</td>
+<td style="text-align: left;">Digital signatures for the agent instance.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sourceAgentId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifier of the agent in the original source system.</td>
+</tr>
+<tr>
+<td style="text-align: left;">url</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Endpoint URL for the agent instance.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_agentInterface5" role="tabpanel" data-tab="agentInterface5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/agentinterface?view=graph-rest-1.0&amp;tabs=http">agentInterface</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">transport</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The transport protocol supported at this URL.</td>
+</tr>
+<tr>
+<td style="text-align: left;">url</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The URL where this interface is available. Must be a valid absolute HTTPS URL in production.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</div>
 
 </article>
 
