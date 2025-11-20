@@ -402,11 +402,6 @@
 <td style="text-align: left;">The phone number of the <strong>building</strong>. Inherited from place.</td>
 </tr>
 <tr>
-<td style="text-align: left;">placeId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">An alternate immutable unique identifier of the <strong>building</strong>. Read-only. Inherited from place.</td>
-</tr>
-<tr>
 <td style="text-align: left;">resourceLinks</td>
 <td style="text-align: left;">resourceLink collection</td>
 <td style="text-align: left;">A set of links to external resources that are associated with the <strong>building</strong>. Inherited from place.</td>
@@ -415,6 +410,11 @@
 <td style="text-align: left;">tags</td>
 <td style="text-align: left;">String collection</td>
 <td style="text-align: left;">Custom tags that are associated with the building for categorization or filtering. Inherited from place.</td>
+</tr>
+<tr>
+<td style="text-align: left;">wifiState</td>
+<td style="text-align: left;">placeFeatureEnablement</td>
+<td style="text-align: left;">A state that indicates whether the building has Wi-Fi. Possible values are: <code>unknown</code>, <code>enabled</code>, <code>disabled</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -482,6 +482,11 @@
 <td style="text-align: left;">Specifies the <strong>desk</strong> location in latitude, longitude, and (optionally) altitude coordinates. Inherited from place.</td>
 </tr>
 <tr>
+<td style="text-align: left;">heightAdjustableState</td>
+<td style="text-align: left;">placeFeatureEnablement</td>
+<td style="text-align: left;">A state that indicates whether the desk is height adjustable. The possible values are: <code>unknown</code>, <code>enabled</code>, <code>disabled</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The unique identifier for the <strong>desk</strong>. Read-only. This identifier isn't immutable and can change if the mailbox or tenant configuration changes. Inherited from place.</td>
@@ -504,7 +509,7 @@
 <tr>
 <td style="text-align: left;">mode</td>
 <td style="text-align: left;">placeMode</td>
-<td style="text-align: left;">The mode of the desk. The supported modes are:<ul><li>assignedPlaceMode - Desks that are assigned to a user.</li><li>reservablePlaceMode - Desks that can be booked in advance using desk reservation tools.</li><li>dropInPlaceMode - First come, first served desks. When you plug into a peripheral on one of these desks, the desk is booked for you, assuming the peripheral is associated with the desk in the Microsoft Teams Rooms Pro management portal.</li><li>offlinePlaceMode - Desk that is taken down for maintenance or marked as not reservable.</li></ul></td>
+<td style="text-align: left;">The mode of the desk. The supported modes are:<ul><li>assignedPlaceMode - Desks that are assigned to a user.</li><li>reservablePlaceMode - Desks that can be booked in advance using desk reservation tools.</li><li>dropInPlaceMode - First come, first served desks. When you plug into a peripheral on one of these desks, the desk is booked for you, assuming the peripheral is associated with the desk in the Microsoft Teams Rooms Pro management portal.</li><li>unavailablePlaceMode - Desk that is taken down for maintenance or marked as not reservable.</li></ul></td>
 </tr>
 <tr>
 <td style="text-align: left;">parentId</td>
@@ -515,11 +520,6 @@
 <td style="text-align: left;">phone</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The phone number of the <strong>desk</strong>. Inherited from place.</td>
-</tr>
-<tr>
-<td style="text-align: left;">placeId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">An alternate immutable unique identifier of the <strong>desk</strong>. Read-only. Inherited from place.</td>
 </tr>
 <tr>
 <td style="text-align: left;">tags</td>
@@ -610,11 +610,6 @@
 <td style="text-align: left;">phone</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The phone number of the <strong>floor</strong>. Inherited from place.</td>
-</tr>
-<tr>
-<td style="text-align: left;">placeId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">An alternate immutable unique identifier of the <strong>floor</strong>. Read-only. Inherited from place.</td>
 </tr>
 <tr>
 <td style="text-align: left;">sortOrder</td>
@@ -1119,7 +1114,7 @@
 <tr>
 <td style="text-align: left;">mode</td>
 <td style="text-align: left;">placeMode</td>
-<td style="text-align: left;">The mode for a <strong>workspace</strong>. The supported modes are:<ul><li>reservablePlaceMode - Workspaces that can be booked in advance using desk pool reservation tools.</li><li>dropInPlaceMode - First come, first served desks. When you plug into a peripheral on one of these desks in the workspace, the desk is booked for you, assuming that the peripheral has been associated with the desk in the Microsoft Teams Rooms Pro management portal.</li><li>offlinePlaceMode - Workspaces that are taken down for maintenance or marked as not reservable.</li></ul></td>
+<td style="text-align: left;">The mode for a <strong>workspace</strong>. The supported modes are:<ul><li>reservablePlaceMode - Workspaces that can be booked in advance using desk pool reservation tools.</li><li>dropInPlaceMode - First come, first served desks. When you plug into a peripheral on one of these desks in the workspace, the desk is booked for you, assuming that the peripheral has been associated with the desk in the Microsoft Teams Rooms Pro management portal.</li><li>unavailablePlaceMode - Workspaces that are taken down for maintenance or marked as not reservable.</li></ul></td>
 </tr>
 <tr>
 <td style="text-align: left;">nickname</td>
@@ -1139,7 +1134,7 @@
 <tr>
 <td style="text-align: left;">placeId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">An alternate immutable unique identifier of the <strong>workspace</strong>. Read-only. Inherited from place.</td>
+<td style="text-align: left;">An alternate immutable unique identifier of the <strong>workspace</strong>. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">tags</td>
