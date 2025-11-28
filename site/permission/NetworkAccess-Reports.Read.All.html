@@ -176,6 +176,14 @@
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/networkaccess-deployments-list?view=graph-rest-beta&amp;tabs=http">GET /networkAccess/deployments</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/networkaccess-deployments-get?view=graph-rest-beta&amp;tabs=http">GET /networkAccess/deployments('id')</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/networkaccess-logs-list-connections?view=graph-rest-beta&amp;tabs=http">GET /networkAccess/logs/connections</a></div></td>
 </tr>
 <tr>
@@ -263,10 +271,13 @@
 <a href="#tabpanel_2_connection4" role="tab" aria-controls="tabpanel_2_connection4" data-tab="connection4" tabindex="-1">connection</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_networkAccessTraffic5" role="tab" aria-controls="tabpanel_2_networkAccessTraffic5" data-tab="networkAccessTraffic5" tabindex="-1">networkAccessTraffic</a>
+<a href="#tabpanel_2_networkaccess-deployment5" role="tab" aria-controls="tabpanel_2_networkaccess-deployment5" data-tab="networkaccess-deployment5" tabindex="-1">networkaccess-deployment</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_remoteNetworkHealthEvent6" role="tab" aria-controls="tabpanel_2_remoteNetworkHealthEvent6" data-tab="remoteNetworkHealthEvent6" tabindex="-1">remoteNetworkHealthEvent</a>
+<a href="#tabpanel_2_networkAccessTraffic6" role="tab" aria-controls="tabpanel_2_networkAccessTraffic6" data-tab="networkAccessTraffic6" tabindex="-1">networkAccessTraffic</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_remoteNetworkHealthEvent7" role="tab" aria-controls="tabpanel_2_remoteNetworkHealthEvent7" data-tab="remoteNetworkHealthEvent7" tabindex="-1">remoteNetworkHealthEvent</a>
 </li>
 </ul>
 <section id="tabpanel_2_alert1" role="tabpanel" data-tab="alert1">
@@ -749,7 +760,52 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_networkAccessTraffic5" role="tabpanel" data-tab="networkAccessTraffic5" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_networkaccess-deployment5" role="tabpanel" data-tab="networkaccess-deployment5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/networkaccess-deployment?view=graph-rest-1.0&amp;tabs=http">networkaccess-deployment</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">configuration</td>
+<td style="text-align: left;">microsoft.graph.networkaccess.deploymentConfiguration</td>
+<td style="text-align: left;">Specifies the configuration details associated with the deployment, such as the type of configuration change being applied.</td>
+</tr>
+<tr>
+<td style="text-align: left;">deploymentEndDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Indicates the date and time when the deployment was completed.</td>
+</tr>
+<tr>
+<td style="text-align: left;">initiatedBy</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifies the user or system that initiated the deployment.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Specifies the date and time when the deployment was last modified.</td>
+</tr>
+<tr>
+<td style="text-align: left;">requestId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A unique identifier for the deployment request. Primary key.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">microsoft.graph.networkaccess.deploymentStatus</td>
+<td style="text-align: left;">Represents the current status of the deployment, including its stage and any related messages.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_networkAccessTraffic6" role="tabpanel" data-tab="networkAccessTraffic6" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/networkaccess-networkaccesstraffic?view=graph-rest-1.0&amp;tabs=http">networkAccessTraffic</a></p>
 <table>
@@ -989,7 +1045,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_remoteNetworkHealthEvent6" role="tabpanel" data-tab="remoteNetworkHealthEvent6" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_remoteNetworkHealthEvent7" role="tabpanel" data-tab="remoteNetworkHealthEvent7" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/networkaccess-remotenetworkhealthevent?view=graph-rest-1.0&amp;tabs=http">remoteNetworkHealthEvent</a></p>
 <table>
