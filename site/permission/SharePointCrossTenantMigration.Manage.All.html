@@ -178,6 +178,14 @@
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/sharepointuseridentitymapping-update?view=graph-rest-beta&amp;tabs=http">PATCH /solutions/sharePoint/migrations/crossOrganizationUserMappings</a></div></td>
 </tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/sharepointmigrationtask-update?view=graph-rest-beta&amp;tabs=http">POST /solutions/sharePoint/migrations/crossOrganizationMigrationTasks</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/sharepointmigrationtask-cancel?view=graph-rest-beta&amp;tabs=http">POST /solutions/sharePoint/migrations/crossOrganizationMigrationTasks/{sharePointMigrationTaskId}/cancel</a></div></td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -228,10 +236,16 @@
 <a href="#tabpanel_2_sharePointIdentityMappingUserMigrationData5" role="tab" aria-controls="tabpanel_2_sharePointIdentityMappingUserMigrationData5" data-tab="sharePointIdentityMappingUserMigrationData5" tabindex="-1">sharePointIdentityMappingUserMigrationData</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_sharePointUserIdentityMapping6" role="tab" aria-controls="tabpanel_2_sharePointUserIdentityMapping6" data-tab="sharePointUserIdentityMapping6" tabindex="-1">sharePointUserIdentityMapping</a>
+<a href="#tabpanel_2_sharePointMigrationTask6" role="tab" aria-controls="tabpanel_2_sharePointMigrationTask6" data-tab="sharePointMigrationTask6" tabindex="-1">sharePointMigrationTask</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_userIdentity7" role="tab" aria-controls="tabpanel_2_userIdentity7" data-tab="userIdentity7" tabindex="-1">userIdentity</a>
+<a href="#tabpanel_2_sharePointMigrationTaskParameters7" role="tab" aria-controls="tabpanel_2_sharePointMigrationTaskParameters7" data-tab="sharePointMigrationTaskParameters7" tabindex="-1">sharePointMigrationTaskParameters</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_sharePointUserIdentityMapping8" role="tab" aria-controls="tabpanel_2_sharePointUserIdentityMapping8" data-tab="sharePointUserIdentityMapping8" tabindex="-1">sharePointUserIdentityMapping</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_userIdentity9" role="tab" aria-controls="tabpanel_2_userIdentity9" data-tab="userIdentity9" tabindex="-1">userIdentity</a>
 </li>
 </ul>
 <section id="tabpanel_2_identity1" role="tabpanel" data-tab="identity1">
@@ -379,7 +393,112 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_sharePointUserIdentityMapping6" role="tabpanel" data-tab="sharePointUserIdentityMapping6" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_sharePointMigrationTask6" role="tabpanel" data-tab="sharePointMigrationTask6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/sharepointmigrationtask?view=graph-rest-1.0&amp;tabs=http">sharePointMigrationTask</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">error</td>
+<td style="text-align: left;">publicError</td>
+<td style="text-align: left;">The error information to provide context for failures. Optional. Read-only. Only on OneDrive and SharePoint.</td>
+</tr>
+<tr>
+<td style="text-align: left;">finishedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time when the <strong>sharePointMigrationTask</strong> ended, if available. The task might complete successfully or fail, but it ends at that time. Read-only. Only on OneDrive and SharePoint. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique ID of the <strong>sharePointMigrationTask</strong> operation for the source organization and resource defined in the parameters. Omit this property during creation. The service returns it automatically. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastUpdatedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time when the <strong>sharePointMigrationTask</strong> was last updated or processed, if available. Use this property to find tasks that stopped processing for a long time. Read-only. Optional. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">parameters</td>
+<td style="text-align: left;">sharePointMigrationTaskParameters</td>
+<td style="text-align: left;">Identifies the source resource and organization, defines the target organization, and includes settings that control the migration process. These settings must be specified during task creation and are also returned in every query about this task for tracking and identification.</td>
+</tr>
+<tr>
+<td style="text-align: left;">startedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time when the <strong>sharePointMigrationTask</strong> started, if available. Read-only. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">sharePointMigrationTaskStatus</td>
+<td style="text-align: left;">Indicates the status of the migration activity that this task represents. Omit this property during creation. The service returns it automatically. The possible values are: <code>notStarted</code>, <code>inProgress</code>, <code>completed</code>, <code>cancelled</code>, <code>failed</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_sharePointMigrationTaskParameters7" role="tabpanel" data-tab="sharePointMigrationTaskParameters7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/sharepointmigrationtaskparameters?view=graph-rest-1.0&amp;tabs=http">sharePointMigrationTaskParameters</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">preferredLatestStartDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The preferred latest start date and time. The system cancels the <strong>sharePointMigrationTask</strong> if it doesn't start by this time. The value must be greater than the <strong>preferredStartDateTime</strong>, if present. Optional. Only on OneDrive and SharePoint.</td>
+</tr>
+<tr>
+<td style="text-align: left;">preferredStartDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The preferred start date and time that allows the <strong>sharePointMigrationTask</strong> to start at a future time instead of as soon as possible (default). Optional. Only on OneDrive and SharePoint.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sourceSiteUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The SharePoint URL of the source site. Optional. Exactly one of <strong>sourceSiteId</strong> or <strong>sourceUrl</strong> must be specified. If both or neither are specified, it's an error. Only on OneDrive and SharePoint.</td>
+</tr>
+<tr>
+<td style="text-align: left;">targetDataLocationCode</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">In Microsoft Entra, this value represents the geographic location (for example, <code>JPN</code>, <code>NAM</code>) of the target organization where the resource must be migrated to ensure data residency and compliance. This property isn't required for single-geo target organizations or when the migration is to the default GEO of a multi-geo target organization. Optional. Only on OneDrive and SharePoint.</td>
+</tr>
+<tr>
+<td style="text-align: left;">targetOrganizationHost</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The root, admin, or my site host of the specific multi-geo instance of the target organization where the resource must be migrated to ensure data residency and compliance. This property isn't required for single-geo target organizations or when the migration is to the default GEO of a multi-geo target organization. Optional. Only on OneDrive and SharePoint.</td>
+</tr>
+<tr>
+<td style="text-align: left;">targetOrganizationId</td>
+<td style="text-align: left;">Guid</td>
+<td style="text-align: left;">The unique Microsoft Entra company ID of the target organization to which the source resource must be migrated. Only on OneDrive and SharePoint.</td>
+</tr>
+<tr>
+<td style="text-align: left;">targetSiteUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The SharePoint URL of the target site. Only on OneDrive and SharePoint.</td>
+</tr>
+<tr>
+<td style="text-align: left;">validateOnly</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether this task is an actual migration or only a validation. If the parameter is missing, the system treats it as <code>false</code>. The default behavior is a real migration. Optional. Only on OneDrive and SharePoint.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_sharePointUserIdentityMapping8" role="tabpanel" data-tab="sharePointUserIdentityMapping8" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/sharepointuseridentitymapping?view=graph-rest-1.0&amp;tabs=http">sharePointUserIdentityMapping</a></p>
 <table>
@@ -424,7 +543,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_userIdentity7" role="tabpanel" data-tab="userIdentity7" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_userIdentity9" role="tabpanel" data-tab="userIdentity9" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/useridentity?view=graph-rest-1.0&amp;tabs=http">userIdentity</a></p>
 <table>
