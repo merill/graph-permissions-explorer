@@ -177,6 +177,10 @@
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/agentidentityblueprint-post-inheritablepermissions?view=graph-rest-beta&amp;tabs=http">POST /applications/{id}/microsoft.graph.agentIdentityBlueprint/inheritablePermissions</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/agentidentityblueprint-post?view=graph-rest-beta&amp;tabs=http">POST /applications/microsoft.graph.agentIdentityBlueprint</a></div></td>
 </tr>
 </tbody>
@@ -230,6 +234,12 @@
 </li>
 <li role="presentation">
 <a href="#tabpanel_2_federatedIdentityExpression4" role="tab" aria-controls="tabpanel_2_federatedIdentityExpression4" data-tab="federatedIdentityExpression4" tabindex="-1">federatedIdentityExpression</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_inheritablePermission5" role="tab" aria-controls="tabpanel_2_inheritablePermission5" data-tab="inheritablePermission5" tabindex="-1">inheritablePermission</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_inheritableScopes6" role="tab" aria-controls="tabpanel_2_inheritableScopes6" data-tab="inheritableScopes6" tabindex="-1">inheritableScopes</a>
 </li>
 </ul>
 <section id="tabpanel_2_agentIdentityBlueprint1" role="tabpanel" data-tab="agentIdentityBlueprint1">
@@ -648,6 +658,51 @@
 <td style="text-align: left;">value</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Indicates the configured expression. Required.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_inheritablePermission5" role="tabpanel" data-tab="inheritablePermission5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/inheritablepermission?view=graph-rest-1.0&amp;tabs=http">inheritablePermission</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">inheritableScopes</td>
+<td style="text-align: left;">inheritableScopes</td>
+<td style="text-align: left;">Inheritance configuration for delegated permission scopes published by the resource application. Supports three patterns: <code>allAllowedScopes</code> (inherit all available scopes), <code>enumeratedScopes</code> (inherit only the listed scopes), and <code>noScopes</code> (inherit none). Each pattern exposes a <code>kind</code> discriminator for filtering.</td>
+</tr>
+<tr>
+<td style="text-align: left;">resourceAppId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The **a</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_inheritableScopes6" role="tabpanel" data-tab="inheritableScopes6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/inheritablescopes?view=graph-rest-1.0&amp;tabs=http">inheritableScopes</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">kind</td>
+<td style="text-align: left;">scopeCollectionKind</td>
+<td style="text-align: left;">Discriminator indicating which inheritance pattern is configured. The possible values are: <code>allAllowed</code> (inherit all scopes), <code>enumerated</code> (inherit listed scopes only), <code>none</code> (inherit no scopes), <code>scopeKindNotSet</code> (unset; internal use), <code>unknownFutureValue</code> (reserved for future expansion).</td>
 </tr>
 </tbody>
 </table>
