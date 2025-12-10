@@ -153,6 +153,16 @@
 <th>Methods</th>
 </tr>
 </thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/calltranscript-get?view=graph-rest-1.0&amp;tabs=http">GET /me/onlineMeetings/{meetingId}/transcripts/{transcriptId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/calltranscript-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{userId}/onlineMeetings/{meetingId}/transcripts/{transcriptId}</a></div></td>
+</tr>
+</tbody>
 </table>
 </section>
 <section id="tabpanel_1_apibeta" role="tabpanel" data-tab="apibeta" aria-hidden="true" hidden="hidden">
@@ -166,16 +176,6 @@
 <th>Methods</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
-<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/calltranscript-get?view=graph-rest-beta&amp;tabs=http">GET /me/onlineMeetings/{meetingId}/transcripts/{transcriptId}</a></div></td>
-</tr>
-<tr>
-<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
-<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/calltranscript-get?view=graph-rest-beta&amp;tabs=http">GET /users/{userId}/onlineMeetings/{meetingId}/transcripts/{transcriptId}</a></div></td>
-</tr>
-</tbody>
 </table>
 </section>
 <section id="tabpanel_1_psv1" role="tabpanel" data-tab="psv1" aria-hidden="true" hidden="hidden">
@@ -189,6 +189,12 @@
 <th>Commands</th>
 </tr>
 </thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.cloudcommunications/get-mguseronlinemeetingtranscript">Get-MgUserOnlineMeetingTranscript</a></div></td>
+</tr>
+</tbody>
 </table>
 </section>
 <section id="tabpanel_1_psbeta" role="tabpanel" data-tab="psbeta" aria-hidden="true" hidden="hidden">
@@ -210,15 +216,15 @@
 <div class="tabGroup" id="tabgroup_2">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_2_adhocCall1" role="tab" aria-controls="tabpanel_2_adhocCall1" data-tab="adhocCall1" tabindex="0" aria-selected="true">adhocCall</a>
+<a href="#tabpanel_2_callTranscript1" role="tab" aria-controls="tabpanel_2_callTranscript1" data-tab="callTranscript1" tabindex="0" aria-selected="true">callTranscript</a>
 </li>
 <li role="presentation">
 <a href="#tabpanel_2_onlineMeeting2" role="tab" aria-controls="tabpanel_2_onlineMeeting2" data-tab="onlineMeeting2" tabindex="-1">onlineMeeting</a>
 </li>
 </ul>
-<section id="tabpanel_2_adhocCall1" role="tabpanel" data-tab="adhocCall1">
+<section id="tabpanel_2_callTranscript1" role="tabpanel" data-tab="callTranscript1">
 
-<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/adhoccall?view=graph-rest-1.0&amp;tabs=http">adhocCall</a></p>
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/calltranscript?view=graph-rest-1.0&amp;tabs=http">callTranscript</a></p>
 <table>
 <thead>
 <tr>
@@ -229,19 +235,54 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">callId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the call that is related to this transcript. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">content</td>
+<td style="text-align: left;">Stream</td>
+<td style="text-align: left;">The content of the transcript. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">contentCorrelationId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier that links the transcript with its corresponding recording. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time at which the transcript was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
+</tr>
+<tr>
 <td style="text-align: left;">endDateTime</td>
-<td style="text-align: left;">DateTime</td>
-<td style="text-align: left;">The meeting end time in UTC. Required when an ad hoc call is ended.</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time at which the transcription ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the call, including PSTN, 1:1, and group calls. Read-only.</td>
+<td style="text-align: left;">The unique identifier for the transcript. Read-only.</td>
 </tr>
 <tr>
-<td style="text-align: left;">startDateTime</td>
-<td style="text-align: left;">DateTime</td>
-<td style="text-align: left;">The meeting start time in UTC. Required when the call is started.</td>
+<td style="text-align: left;">meetingId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier of the online meeting related to this transcript. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">meetingOrganizer</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The identity information of the organizer of the <strong>onlineMeeting</strong> related to this transcript. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">metadataContent</td>
+<td style="text-align: left;">Stream</td>
+<td style="text-align: left;">The time-aligned metadata of the utterances in the transcript. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">transcriptContentUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The URL that can be used to access the content of the transcript. Read-only.</td>
 </tr>
 </tbody>
 </table>
