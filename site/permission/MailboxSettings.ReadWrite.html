@@ -260,6 +260,10 @@
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/user-get-mailboxsettings?view=graph-rest-beta&amp;tabs=http">GET /me/mailboxSettings</a></div></td>
 </tr>
 <tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/workhoursandlocationssetting-get?view=graph-rest-beta&amp;tabs=http">GET /me/settings/workHoursAndLocations</a></div></td>
+</tr>
+<tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/user-get-mailboxsettings?view=graph-rest-beta&amp;tabs=http">GET /users/{id|userPrincipalName}/mailboxSettings</a></div></td>
 </tr>
@@ -274,6 +278,10 @@
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/outlookcategory-update?view=graph-rest-beta&amp;tabs=http">PATCH /me/outlook/masterCategories/{id}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/workhoursandlocationssetting-update?view=graph-rest-beta&amp;tabs=http">PATCH /me/settings/workHoursAndLocations</a></div></td>
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
@@ -430,7 +438,10 @@
 <a href="#tabpanel_2_outlookCategory8" role="tab" aria-controls="tabpanel_2_outlookCategory8" data-tab="outlookCategory8" tabindex="-1">outlookCategory</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_workingHours9" role="tab" aria-controls="tabpanel_2_workingHours9" data-tab="workingHours9" tabindex="-1">workingHours</a>
+<a href="#tabpanel_2_workHoursAndLocationsSetting9" role="tab" aria-controls="tabpanel_2_workHoursAndLocationsSetting9" data-tab="workHoursAndLocationsSetting9" tabindex="-1">workHoursAndLocationsSetting</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_workingHours10" role="tab" aria-controls="tabpanel_2_workingHours10" data-tab="workingHours10" tabindex="-1">workingHours</a>
 </li>
 </ul>
 <section id="tabpanel_2_automaticRepliesSetting1" role="tabpanel" data-tab="automaticRepliesSetting1">
@@ -918,7 +929,27 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_workingHours9" role="tabpanel" data-tab="workingHours9" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_workHoursAndLocationsSetting9" role="tabpanel" data-tab="workHoursAndLocationsSetting9" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/workhoursandlocationssetting?view=graph-rest-1.0&amp;tabs=http">workHoursAndLocationsSetting</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">maxSharedWorkLocationDetails</td>
+<td style="text-align: left;">maxWorkLocationDetails</td>
+<td style="text-align: left;">Controls the level of work location details that can be shared with colleagues. The possible values are: <code>unknown</code>, <code>none</code>, <code>approximate</code>, <code>specific</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_workingHours10" role="tabpanel" data-tab="workingHours10" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/workinghours?view=graph-rest-1.0&amp;tabs=http">workingHours</a></p>
 <table>
