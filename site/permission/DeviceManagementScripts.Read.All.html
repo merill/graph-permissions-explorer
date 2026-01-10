@@ -93,6 +93,11 @@
 <blockquote>
 <p>Allows the app to read Microsoft Intune device compliance scripts, device management scripts, device shell scripts, device custom attribute shell scripts and device health scripts on behalf of the signed in user.</p>
 </blockquote>
+<blockquote>
+<p><strong>Merill's Note</strong></p>
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>DeviceManagementScripts.Read.All</code> permission.</p>
+<p>If you need to create an audit report of the permissions granted to all the apps in your tenant, you can run the <code>Export-MsIdAppConsentGrantReport</code> command. See <a href="https://www.youtube.com/watch?v=vO0m5yE3dZA">How To: Run a quick OAuth app audit of your tenant</a></p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -125,11 +130,1181 @@
 </tbody>
 </table>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_apiv1" role="tab" aria-controls="tabpanel_1_apiv1" data-tab="apiv1" tabindex="0" aria-selected="true"><span><i class='bi bi-braces'></i></span> API [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_apibeta" role="tab" aria-controls="tabpanel_1_apibeta" data-tab="apibeta" tabindex="-1"><span><i class='bi bi-braces'></i></span> API [beta]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psv1" role="tab" aria-controls="tabpanel_1_psv1" data-tab="psv1" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psbeta" role="tab" aria-controls="tabpanel_1_psbeta" data-tab="psbeta" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [beta]</a>
+</li>
+</ul>
+<section id="tabpanel_1_apiv1" role="tabpanel" data-tab="apiv1">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_apibeta" role="tabpanel" data-tab="apibeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/intune-devices-devicecompliancescript-list?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/deviceComplianceScripts</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/intune-devices-devicecompliancescript-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/deviceComplianceScripts/{deviceComplianceScriptId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/intune-devices-devicehealthscriptassignment-list?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/deviceComplianceScripts/{deviceComplianceScriptId}/assignments</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/intune-devices-devicecustomattributeshellscript-list?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/deviceCustomAttributeShellScripts</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/intune-devices-devicecustomattributeshellscript-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScriptId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/intune-devices-devicemanagementscriptdevicestate-list?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScriptId}/deviceRunStates</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/intune-devices-devicemanagementscriptgroupassignment-list?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScriptId}/groupAssignments</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/intune-devices-devicemanagementscriptrunsummary-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScriptId}/runSummary</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/intune-devices-devicemanagementscriptuserstate-list?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScriptId}/userRunStates</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/intune-devices-devicehealthscript-list?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/deviceHealthScripts</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/intune-devices-devicehealthscript-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/deviceHealthScripts/{deviceHealthScriptId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/intune-devices-devicehealthscriptassignment-list?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/deviceHealthScripts/{deviceHealthScriptId}/assignments</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/intune-devices-devicehealthscriptdevicestate-list?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/deviceHealthScripts/{deviceHealthScriptId}/deviceRunStates</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/intune-devices-devicehealthscript-getremediationhistory?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/deviceHealthScripts/{deviceHealthScriptId}/getRemediationHistory</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/intune-devices-devicehealthscriptrunsummary-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/deviceHealthScripts/{deviceHealthScriptId}/runSummary</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/intune-devices-devicehealthscript-areglobalscriptsavailable?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/deviceHealthScripts/areGlobalScriptsAvailable</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/intune-devices-devicehealthscript-getremediationsummary?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/deviceHealthScripts/getRemediationSummary</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/intune-shared-devicemanagementscript-list?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/deviceManagementScripts</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/intune-shared-devicemanagementscript-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/deviceManagementScripts/{deviceManagementScriptId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/intune-devices-devicemanagementscriptdevicestate-list?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/deviceManagementScripts/{deviceManagementScriptId}/deviceRunStates</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/intune-devices-devicemanagementscriptgroupassignment-list?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/deviceManagementScripts/{deviceManagementScriptId}/groupAssignments</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/intune-devices-devicemanagementscriptrunsummary-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/deviceManagementScripts/{deviceManagementScriptId}/runSummary</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/intune-devices-devicemanagementscriptuserstate-list?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/deviceManagementScripts/{deviceManagementScriptId}/userRunStates</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/intune-devices-devicemanagementscriptdevicestate-list?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/deviceManagementScripts/{deviceManagementScriptId}/userRunStates/{deviceManagementScriptUserStateId}/deviceRunStates</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/intune-devices-deviceshellscript-list?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/deviceShellScripts</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/intune-devices-deviceshellscript-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/deviceShellScripts/{deviceShellScriptId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/intune-devices-devicemanagementscriptdevicestate-list?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/deviceShellScripts/{deviceShellScriptId}/deviceRunStates</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/intune-devices-devicemanagementscriptgroupassignment-list?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/deviceShellScripts/{deviceShellScriptId}/groupAssignments</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/intune-devices-devicemanagementscriptrunsummary-get?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/deviceShellScripts/{deviceShellScriptId}/runSummary</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/intune-devices-devicemanagementscriptuserstate-list?view=graph-rest-beta&amp;tabs=http">GET /deviceManagement/deviceShellScripts/{deviceShellScriptId}/userRunStates</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/intune-devices-devicehealthscript-getglobalscripthighestavailableversion?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/deviceHealthScripts/{deviceHealthScriptId}/getGlobalScriptHighestAvailableVersion</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_psv1" role="tabpanel" data-tab="psv1" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_psbeta" role="tabpanel" data-tab="psbeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement/get-mgbetadevicemanagementdevicehealthscript">Get-MgBetaDeviceManagementDeviceHealthScript</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement/get-mgbetadevicemanagementdevicehealthscriptassignment">Get-MgBetaDeviceManagementDeviceHealthScriptAssignment</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement/get-mgbetadevicemanagementdevicehealthscriptdevicerunstate">Get-MgBetaDeviceManagementDeviceHealthScriptDeviceRunState</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement/get-mgbetadevicemanagementdevicehealthscriptglobalscripthighestavailableversion">Get-MgBetaDeviceManagementDeviceHealthScriptGlobalScriptHighestAvailableVersion</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement/get-mgbetadevicemanagementdevicehealthscriptremediationhistory">Get-MgBetaDeviceManagementDeviceHealthScriptRemediationHistory</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement/get-mgbetadevicemanagementdevicehealthscriptremediationsummary">Get-MgBetaDeviceManagementDeviceHealthScriptRemediationSummary</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement/get-mgbetadevicemanagementdevicehealthscriptrunsummary">Get-MgBetaDeviceManagementDeviceHealthScriptRunSummary</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement/get-mgbetadevicemanagementdeviceshellscript">Get-MgBetaDeviceManagementDeviceShellScript</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement/get-mgbetadevicemanagementdeviceshellscriptdevicerunstate">Get-MgBetaDeviceManagementDeviceShellScriptDeviceRunState</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement/get-mgbetadevicemanagementdeviceshellscriptgroupassignment">Get-MgBetaDeviceManagementDeviceShellScriptGroupAssignment</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement/get-mgbetadevicemanagementdeviceshellscriptrunsummary">Get-MgBetaDeviceManagementDeviceShellScriptRunSummary</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement/get-mgbetadevicemanagementdeviceshellscriptuserrunstate">Get-MgBetaDeviceManagementDeviceShellScriptUserRunState</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement/get-mgbetadevicemanagementscript">Get-MgBetaDeviceManagementScript</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement/get-mgbetadevicemanagementscriptdevicerunstate">Get-MgBetaDeviceManagementScriptDeviceRunState</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement/get-mgbetadevicemanagementscriptgroupassignment">Get-MgBetaDeviceManagementScriptGroupAssignment</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement/get-mgbetadevicemanagementscriptrunsummary">Get-MgBetaDeviceManagementScriptRunSummary</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement/get-mgbetadevicemanagementscriptuserrunstate">Get-MgBetaDeviceManagementScriptUserRunState</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement/get-mgbetadevicemanagementscriptuserrunstatedevicerunstate">Get-MgBetaDeviceManagementScriptUserRunStateDeviceRunState</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement/invoke-mgbetaisdevicemanagementdevicehealthscriptglobalscriptavailable">Invoke-MgBetaIsDeviceManagementDeviceHealthScriptGlobalScriptAvailable</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
 </div>
-<hr>
+<h2 id="resources">Resources</h2>
+<p>Granting this permission allows the calling application to access (and/or update) the following information in your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_deviceComplianceScript1" role="tab" aria-controls="tabpanel_2_deviceComplianceScript1" data-tab="deviceComplianceScript1" tabindex="0" aria-selected="true">deviceComplianceScript</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_deviceCustomAttributeShellScript2" role="tab" aria-controls="tabpanel_2_deviceCustomAttributeShellScript2" data-tab="deviceCustomAttributeShellScript2" tabindex="-1">deviceCustomAttributeShellScript</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_deviceHealthScript3" role="tab" aria-controls="tabpanel_2_deviceHealthScript3" data-tab="deviceHealthScript3" tabindex="-1">deviceHealthScript</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_deviceHealthScriptAssignment4" role="tab" aria-controls="tabpanel_2_deviceHealthScriptAssignment4" data-tab="deviceHealthScriptAssignment4" tabindex="-1">deviceHealthScriptAssignment</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_deviceHealthScriptDeviceState5" role="tab" aria-controls="tabpanel_2_deviceHealthScriptDeviceState5" data-tab="deviceHealthScriptDeviceState5" tabindex="-1">deviceHealthScriptDeviceState</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_deviceHealthScriptRemediationHistory6" role="tab" aria-controls="tabpanel_2_deviceHealthScriptRemediationHistory6" data-tab="deviceHealthScriptRemediationHistory6" tabindex="-1">deviceHealthScriptRemediationHistory</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_deviceHealthScriptRemediationSummary7" role="tab" aria-controls="tabpanel_2_deviceHealthScriptRemediationSummary7" data-tab="deviceHealthScriptRemediationSummary7" tabindex="-1">deviceHealthScriptRemediationSummary</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_deviceHealthScriptRunSummary8" role="tab" aria-controls="tabpanel_2_deviceHealthScriptRunSummary8" data-tab="deviceHealthScriptRunSummary8" tabindex="-1">deviceHealthScriptRunSummary</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_deviceManagementScript9" role="tab" aria-controls="tabpanel_2_deviceManagementScript9" data-tab="deviceManagementScript9" tabindex="-1">deviceManagementScript</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_deviceManagementScriptDeviceState10" role="tab" aria-controls="tabpanel_2_deviceManagementScriptDeviceState10" data-tab="deviceManagementScriptDeviceState10" tabindex="-1">deviceManagementScriptDeviceState</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_deviceManagementScriptGroupAssignment11" role="tab" aria-controls="tabpanel_2_deviceManagementScriptGroupAssignment11" data-tab="deviceManagementScriptGroupAssignment11" tabindex="-1">deviceManagementScriptGroupAssignment</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_deviceManagementScriptRunSummary12" role="tab" aria-controls="tabpanel_2_deviceManagementScriptRunSummary12" data-tab="deviceManagementScriptRunSummary12" tabindex="-1">deviceManagementScriptRunSummary</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_deviceManagementScriptUserState13" role="tab" aria-controls="tabpanel_2_deviceManagementScriptUserState13" data-tab="deviceManagementScriptUserState13" tabindex="-1">deviceManagementScriptUserState</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_deviceShellScript14" role="tab" aria-controls="tabpanel_2_deviceShellScript14" data-tab="deviceShellScript14" tabindex="-1">deviceShellScript</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_intune-devices-globaldevicehealthscriptstate15" role="tab" aria-controls="tabpanel_2_intune-devices-globaldevicehealthscriptstate15" data-tab="intune-devices-globaldevicehealthscriptstate15" tabindex="-1">intune-devices-globaldevicehealthscriptstate</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_deviceManagementScript16" role="tab" aria-controls="tabpanel_2_deviceManagementScript16" data-tab="deviceManagementScript16" tabindex="-1">deviceManagementScript</a>
+</li>
+</ul>
+<section id="tabpanel_2_deviceComplianceScript1" role="tabpanel" data-tab="deviceComplianceScript1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/intune-devices-devicecompliancescript?view=graph-rest-1.0&amp;tabs=http">deviceComplianceScript</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique Identifier for the device compliance script</td>
+</tr>
+<tr>
+<td style="text-align: left;">publisher</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the device compliance script publisher</td>
+</tr>
+<tr>
+<td style="text-align: left;">version</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Version of the device compliance script</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the device compliance script</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Description of the device compliance script</td>
+</tr>
+<tr>
+<td style="text-align: left;">detectionScriptContent</td>
+<td style="text-align: left;">Binary</td>
+<td style="text-align: left;">The entire content of the detection powershell script</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The timestamp of when the device compliance script was created. This property is read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The timestamp of when the device compliance script was modified. This property is read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">runAsAccount</td>
+<td style="text-align: left;">runAsAccountType</td>
+<td style="text-align: left;">Indicates the type of execution context. Possible values are: <code>system</code>, <code>user</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">enforceSignatureCheck</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicate whether the script signature needs be checked</td>
+</tr>
+<tr>
+<td style="text-align: left;">runAs32Bit</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicate whether PowerShell script(s) should run as 32-bit</td>
+</tr>
+<tr>
+<td style="text-align: left;">roleScopeTagIds</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">List of Scope Tag IDs for the device compliance script</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_deviceCustomAttributeShellScript2" role="tabpanel" data-tab="deviceCustomAttributeShellScript2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/intune-devices-devicecustomattributeshellscript?view=graph-rest-1.0&amp;tabs=http">deviceCustomAttributeShellScript</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique Identifier for the custom attribute entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">customAttributeName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name of the custom attribute.</td>
+</tr>
+<tr>
+<td style="text-align: left;">customAttributeType</td>
+<td style="text-align: left;">deviceCustomAttributeValueType</td>
+<td style="text-align: left;">The expected type of the custom attribute's value. Possible values are: <code>integer</code>, <code>string</code>, <code>dateTime</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the device management script.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Optional description for the device management script.</td>
+</tr>
+<tr>
+<td style="text-align: left;">scriptContent</td>
+<td style="text-align: left;">Binary</td>
+<td style="text-align: left;">The script content.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the device management script was created. This property is read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the device management script was last modified. This property is read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">runAsAccount</td>
+<td style="text-align: left;">runAsAccountType</td>
+<td style="text-align: left;">Indicates the type of execution context. Possible values are: <code>system</code>, <code>user</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">fileName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Script file name.</td>
+</tr>
+<tr>
+<td style="text-align: left;">roleScopeTagIds</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">List of Scope Tag IDs for this PowerShellScript instance.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_deviceHealthScript3" role="tabpanel" data-tab="deviceHealthScript3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/intune-devices-devicehealthscript?view=graph-rest-1.0&amp;tabs=http">deviceHealthScript</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique Identifier for the device health script</td>
+</tr>
+<tr>
+<td style="text-align: left;">publisher</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the device health script publisher</td>
+</tr>
+<tr>
+<td style="text-align: left;">version</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Version of the device health script</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the device health script</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Description of the device health script</td>
+</tr>
+<tr>
+<td style="text-align: left;">detectionScriptContent</td>
+<td style="text-align: left;">Binary</td>
+<td style="text-align: left;">The entire content of the detection powershell script</td>
+</tr>
+<tr>
+<td style="text-align: left;">remediationScriptContent</td>
+<td style="text-align: left;">Binary</td>
+<td style="text-align: left;">The entire content of the remediation powershell script</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The timestamp of when the device health script was created. This property is read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The timestamp of when the device health script was modified. This property is read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">runAsAccount</td>
+<td style="text-align: left;">runAsAccountType</td>
+<td style="text-align: left;">Indicates the type of execution context. Possible values are: <code>system</code>, <code>user</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">enforceSignatureCheck</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicate whether the script signature needs be checked</td>
+</tr>
+<tr>
+<td style="text-align: left;">runAs32Bit</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicate whether PowerShell script(s) should run as 32-bit</td>
+</tr>
+<tr>
+<td style="text-align: left;">roleScopeTagIds</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">List of Scope Tag IDs for the device health script</td>
+</tr>
+<tr>
+<td style="text-align: left;">isGlobalScript</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Determines if this is Microsoft Proprietary Script. Proprietary scripts are read-only</td>
+</tr>
+<tr>
+<td style="text-align: left;">highestAvailableVersion</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Highest available version for a Microsoft Proprietary script</td>
+</tr>
+<tr>
+<td style="text-align: left;">deviceHealthScriptType</td>
+<td style="text-align: left;">deviceHealthScriptType</td>
+<td style="text-align: left;">DeviceHealthScriptType for the script policy. Possible values are: <code>deviceHealthScript</code>, <code>managedInstallerScript</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">detectionScriptParameters</td>
+<td style="text-align: left;">deviceHealthScriptParameter collection</td>
+<td style="text-align: left;">List of ComplexType DetectionScriptParameters objects.</td>
+</tr>
+<tr>
+<td style="text-align: left;">remediationScriptParameters</td>
+<td style="text-align: left;">deviceHealthScriptParameter collection</td>
+<td style="text-align: left;">List of ComplexType RemediationScriptParameters objects.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_deviceHealthScriptAssignment4" role="tabpanel" data-tab="deviceHealthScriptAssignment4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/intune-devices-devicehealthscriptassignment?view=graph-rest-1.0&amp;tabs=http">deviceHealthScriptAssignment</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Key of the device health script assignment entity. This property is read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">target</td>
+<td style="text-align: left;">deviceAndAppManagementAssignmentTarget</td>
+<td style="text-align: left;">The Azure Active Directory group we are targeting the script to</td>
+</tr>
+<tr>
+<td style="text-align: left;">runRemediationScript</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Determine whether we want to run detection script only or run both detection script and remediation script</td>
+</tr>
+<tr>
+<td style="text-align: left;">runSchedule</td>
+<td style="text-align: left;">deviceHealthScriptRunSchedule</td>
+<td style="text-align: left;">Script run schedule for the target group</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_deviceHealthScriptDeviceState5" role="tabpanel" data-tab="deviceHealthScriptDeviceState5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/intune-devices-devicehealthscriptdevicestate?view=graph-rest-1.0&amp;tabs=http">deviceHealthScriptDeviceState</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Key of the device health script device state entity. This property is read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">detectionState</td>
+<td style="text-align: left;">runState</td>
+<td style="text-align: left;">Detection state from the lastest device health script execution. The possible values are: <code>unknown</code>, <code>success</code>, <code>fail</code>, <code>scriptError</code>, <code>pending</code>, <code>notApplicable</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastStateUpdateDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The last timestamp of when the device health script executed</td>
+</tr>
+<tr>
+<td style="text-align: left;">expectedStateUpdateDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The next timestamp of when the device health script is expected to execute</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastSyncDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The last time that Intune Managment Extension synced with Intune</td>
+</tr>
+<tr>
+<td style="text-align: left;">preRemediationDetectionScriptOutput</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Output of the detection script before remediation</td>
+</tr>
+<tr>
+<td style="text-align: left;">preRemediationDetectionScriptError</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Error from the detection script before remediation</td>
+</tr>
+<tr>
+<td style="text-align: left;">remediationScriptError</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Error output of the remediation script</td>
+</tr>
+<tr>
+<td style="text-align: left;">postRemediationDetectionScriptOutput</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Detection script output after remediation</td>
+</tr>
+<tr>
+<td style="text-align: left;">postRemediationDetectionScriptError</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Error from the detection script after remediation</td>
+</tr>
+<tr>
+<td style="text-align: left;">remediationState</td>
+<td style="text-align: left;">remediationState</td>
+<td style="text-align: left;">Remediation state from the lastest device health script execution. The possible values are: <code>unknown</code>, <code>skipped</code>, <code>success</code>, <code>remediationFailed</code>, <code>scriptError</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">assignmentFilterIds</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">A list of the assignment filter ids used for health script applicability evaluation</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_deviceHealthScriptRemediationHistory6" role="tabpanel" data-tab="deviceHealthScriptRemediationHistory6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/intune-devices-devicehealthscriptremediationhistory?view=graph-rest-1.0&amp;tabs=http">deviceHealthScriptRemediationHistory</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date on which the results history is calculated for the healthscript.</td>
+</tr>
+<tr>
+<td style="text-align: left;">historyData</td>
+<td style="text-align: left;">deviceHealthScriptRemediationHistoryData collection</td>
+<td style="text-align: left;">The number of devices remediated by the device health script on the given date.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_deviceHealthScriptRemediationSummary7" role="tabpanel" data-tab="deviceHealthScriptRemediationSummary7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/intune-devices-devicehealthscriptremediationsummary?view=graph-rest-1.0&amp;tabs=http">deviceHealthScriptRemediationSummary</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">scriptCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The number of device health scripts deployed.</td>
+</tr>
+<tr>
+<td style="text-align: left;">remediatedDeviceCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The number of devices remediated by device health scripts.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_deviceHealthScriptRunSummary8" role="tabpanel" data-tab="deviceHealthScriptRunSummary8" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/intune-devices-devicehealthscriptrunsummary?view=graph-rest-1.0&amp;tabs=http">deviceHealthScriptRunSummary</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Key of the device health script run summary entity. This property is read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">noIssueDetectedDeviceCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Number of devices for which the detection script did not find an issue and the device is healthy</td>
+</tr>
+<tr>
+<td style="text-align: left;">issueDetectedDeviceCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Number of devices for which the detection script found an issue</td>
+</tr>
+<tr>
+<td style="text-align: left;">detectionScriptErrorDeviceCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Number of devices on which the detection script execution encountered an error and did not complete</td>
+</tr>
+<tr>
+<td style="text-align: left;">detectionScriptPendingDeviceCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Number of devices which have not yet run the latest version of the device health script</td>
+</tr>
+<tr>
+<td style="text-align: left;">detectionScriptNotApplicableDeviceCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Number of devices for which the detection script was not applicable</td>
+</tr>
+<tr>
+<td style="text-align: left;">issueRemediatedDeviceCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Number of devices for which the remediation script was able to resolve the detected issue</td>
+</tr>
+<tr>
+<td style="text-align: left;">remediationSkippedDeviceCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Number of devices for which remediation was skipped</td>
+</tr>
+<tr>
+<td style="text-align: left;">issueReoccurredDeviceCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Number of devices for which the remediation script executed successfully but failed to resolve the detected issue</td>
+</tr>
+<tr>
+<td style="text-align: left;">remediationScriptErrorDeviceCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Number of devices for which the remediation script execution encountered an error and did not complete</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastScriptRunDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Last run time for the script across all devices</td>
+</tr>
+<tr>
+<td style="text-align: left;">issueRemediatedCumulativeDeviceCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Number of devices that were remediated over the last 30 days</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_deviceManagementScript9" role="tabpanel" data-tab="deviceManagementScript9" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/intune-devices-devicemanagementscript?view=graph-rest-1.0&amp;tabs=http">deviceManagementScript</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">enforceSignatureCheck</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicate whether the script signature needs be checked.</td>
+</tr>
+<tr>
+<td style="text-align: left;">runAs32Bit</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">A value indicating whether the PowerShell script should run as 32-bit</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique Identifier for the device management script.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the device management script.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Optional description for the device management script.</td>
+</tr>
+<tr>
+<td style="text-align: left;">scriptContent</td>
+<td style="text-align: left;">Binary</td>
+<td style="text-align: left;">The script content.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the device management script was created. This property is read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the device management script was last modified. This property is read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">runAsAccount</td>
+<td style="text-align: left;">runAsAccountType</td>
+<td style="text-align: left;">Indicates the type of execution context. Possible values are: <code>system</code>, <code>user</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">fileName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Script file name.</td>
+</tr>
+<tr>
+<td style="text-align: left;">roleScopeTagIds</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">List of Scope Tag IDs for this PowerShellScript instance.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_deviceManagementScriptDeviceState10" role="tabpanel" data-tab="deviceManagementScriptDeviceState10" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/intune-devices-devicemanagementscriptdevicestate?view=graph-rest-1.0&amp;tabs=http">deviceManagementScriptDeviceState</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Key of the device management script device state entity. This property is read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">runState</td>
+<td style="text-align: left;">runState</td>
+<td style="text-align: left;">State of latest run of the device management script. Possible values are: <code>unknown</code>, <code>success</code>, <code>fail</code>, <code>scriptError</code>, <code>pending</code>, <code>notApplicable</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">resultMessage</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Details of execution output.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastStateUpdateDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Latest time the device management script executes.</td>
+</tr>
+<tr>
+<td style="text-align: left;">errorCode</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Error code corresponding to erroneous execution of the device management script.</td>
+</tr>
+<tr>
+<td style="text-align: left;">errorDescription</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Error description corresponding to erroneous execution of the device management script.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_deviceManagementScriptGroupAssignment11" role="tabpanel" data-tab="deviceManagementScriptGroupAssignment11" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/intune-devices-devicemanagementscriptgroupassignment?view=graph-rest-1.0&amp;tabs=http">deviceManagementScriptGroupAssignment</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Key of the device management script group assignment entity. This property is read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">targetGroupId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The Id of the Azure Active Directory group we are targeting the script to.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_deviceManagementScriptRunSummary12" role="tabpanel" data-tab="deviceManagementScriptRunSummary12" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/intune-devices-devicemanagementscriptrunsummary?view=graph-rest-1.0&amp;tabs=http">deviceManagementScriptRunSummary</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Key of the device management script run summary entity. This property is read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">successDeviceCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Success device count.</td>
+</tr>
+<tr>
+<td style="text-align: left;">errorDeviceCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Error device count.</td>
+</tr>
+<tr>
+<td style="text-align: left;">successUserCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Success user count.</td>
+</tr>
+<tr>
+<td style="text-align: left;">errorUserCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Error user count.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_deviceManagementScriptUserState13" role="tabpanel" data-tab="deviceManagementScriptUserState13" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/intune-devices-devicemanagementscriptuserstate?view=graph-rest-1.0&amp;tabs=http">deviceManagementScriptUserState</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Key of the device management script user state entity. This property is read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">successDeviceCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Success device count for specific user.</td>
+</tr>
+<tr>
+<td style="text-align: left;">errorDeviceCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Error device count for specific user.</td>
+</tr>
+<tr>
+<td style="text-align: left;">userPrincipalName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">User principle name of specific user.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_deviceShellScript14" role="tabpanel" data-tab="deviceShellScript14" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/intune-devices-deviceshellscript?view=graph-rest-1.0&amp;tabs=http">deviceShellScript</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">executionFrequency</td>
+<td style="text-align: left;">Duration</td>
+<td style="text-align: left;">The interval for script to run. If not defined the script will run once</td>
+</tr>
+<tr>
+<td style="text-align: left;">retryCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Number of times for the script to be retried if it fails</td>
+</tr>
+<tr>
+<td style="text-align: left;">blockExecutionNotifications</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Does not notify the user a script is being executed</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique Identifier for the device management script.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the device management script.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Optional description for the device management script.</td>
+</tr>
+<tr>
+<td style="text-align: left;">scriptContent</td>
+<td style="text-align: left;">Binary</td>
+<td style="text-align: left;">The script content.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the device management script was created. This property is read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the device management script was last modified. This property is read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">runAsAccount</td>
+<td style="text-align: left;">runAsAccountType</td>
+<td style="text-align: left;">Indicates the type of execution context. Possible values are: <code>system</code>, <code>user</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">fileName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Script file name.</td>
+</tr>
+<tr>
+<td style="text-align: left;">roleScopeTagIds</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">List of Scope Tag IDs for this PowerShellScript instance.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_intune-devices-globaldevicehealthscriptstate15" role="tabpanel" data-tab="intune-devices-globaldevicehealthscriptstate15" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/intune-devices-globaldevicehealthscriptstate?view=graph-rest-1.0&amp;tabs=http">intune-devices-globaldevicehealthscriptstate</a></p>
+</section>
+<section id="tabpanel_2_deviceManagementScript16" role="tabpanel" data-tab="deviceManagementScript16" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/intune-shared-devicemanagementscript?view=graph-rest-1.0&amp;tabs=http">deviceManagementScript</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique Identifier for the device management script.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the device management script.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Optional description for the device management script.</td>
+</tr>
+<tr>
+<td style="text-align: left;">scriptContent</td>
+<td style="text-align: left;">Binary</td>
+<td style="text-align: left;">The script content.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the device management script was created. This property is read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the device management script was last modified. This property is read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">runAsAccount</td>
+<td style="text-align: left;">runAsAccountType</td>
+<td style="text-align: left;">Indicates the type of execution context. The possible values are: <code>system</code>, <code>user</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">enforceSignatureCheck</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicate whether the script signature needs be checked.</td>
+</tr>
+<tr>
+<td style="text-align: left;">fileName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Script file name.</td>
+</tr>
+<tr>
+<td style="text-align: left;">roleScopeTagIds</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">List of Scope Tag IDs for this PowerShellScript instance.</td>
+</tr>
+<tr>
+<td style="text-align: left;">runAs32Bit</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">A value indicating whether the PowerShell script should run as 32-bit</td>
+</tr>
+</tbody>
+</table>
+</section>
+</div>
 
 </article>
 
