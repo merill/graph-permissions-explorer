@@ -222,6 +222,14 @@
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/channel-list-enabledapps?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamsId}/channels/{channelId}/enabledApps</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/teamsapp-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamsId}/channels/{channelId}/enabledApps/{teamsAppId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/userteamwork-list-installedapps?view=graph-rest-beta&amp;tabs=http">GET /users/{user-id | user-principal-name}/teamwork/installedApps</a></div></td>
 </tr>
 <tr>
@@ -288,6 +296,10 @@
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.teams/get-mgbetateamchannelenabledapp">Get-MgBetaTeamChannelEnabledApp</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.teams/get-mgbetateaminstalledapp">Get-MgBetaTeamInstalledApp</a></div></td>
 </tr>
 <tr>
@@ -307,34 +319,107 @@
 <div class="tabGroup" id="tabgroup_2">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_2_chat1" role="tab" aria-controls="tabpanel_2_chat1" data-tab="chat1" tabindex="0" aria-selected="true">chat</a>
+<a href="#tabpanel_2_channel1" role="tab" aria-controls="tabpanel_2_channel1" data-tab="channel1" tabindex="0" aria-selected="true">channel</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_onlineMeeting2" role="tab" aria-controls="tabpanel_2_onlineMeeting2" data-tab="onlineMeeting2" tabindex="-1">onlineMeeting</a>
+<a href="#tabpanel_2_chat2" role="tab" aria-controls="tabpanel_2_chat2" data-tab="chat2" tabindex="-1">chat</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_resourceSpecificPermissionGrant3" role="tab" aria-controls="tabpanel_2_resourceSpecificPermissionGrant3" data-tab="resourceSpecificPermissionGrant3" tabindex="-1">resourceSpecificPermissionGrant</a>
+<a href="#tabpanel_2_onlineMeeting3" role="tab" aria-controls="tabpanel_2_onlineMeeting3" data-tab="onlineMeeting3" tabindex="-1">onlineMeeting</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_team4" role="tab" aria-controls="tabpanel_2_team4" data-tab="team4" tabindex="-1">team</a>
+<a href="#tabpanel_2_resourceSpecificPermissionGrant4" role="tab" aria-controls="tabpanel_2_resourceSpecificPermissionGrant4" data-tab="resourceSpecificPermissionGrant4" tabindex="-1">resourceSpecificPermissionGrant</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_teamsApp5" role="tab" aria-controls="tabpanel_2_teamsApp5" data-tab="teamsApp5" tabindex="-1">teamsApp</a>
+<a href="#tabpanel_2_team5" role="tab" aria-controls="tabpanel_2_team5" data-tab="team5" tabindex="-1">team</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_teamsAppInstallation6" role="tab" aria-controls="tabpanel_2_teamsAppInstallation6" data-tab="teamsAppInstallation6" tabindex="-1">teamsAppInstallation</a>
+<a href="#tabpanel_2_teamsApp6" role="tab" aria-controls="tabpanel_2_teamsApp6" data-tab="teamsApp6" tabindex="-1">teamsApp</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_teamsAppPermissionSet7" role="tab" aria-controls="tabpanel_2_teamsAppPermissionSet7" data-tab="teamsAppPermissionSet7" tabindex="-1">teamsAppPermissionSet</a>
+<a href="#tabpanel_2_teamsAppInstallation7" role="tab" aria-controls="tabpanel_2_teamsAppInstallation7" data-tab="teamsAppInstallation7" tabindex="-1">teamsAppInstallation</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_teamworkBot8" role="tab" aria-controls="tabpanel_2_teamworkBot8" data-tab="teamworkBot8" tabindex="-1">teamworkBot</a>
+<a href="#tabpanel_2_teamsAppPermissionSet8" role="tab" aria-controls="tabpanel_2_teamsAppPermissionSet8" data-tab="teamsAppPermissionSet8" tabindex="-1">teamsAppPermissionSet</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_user9" role="tab" aria-controls="tabpanel_2_user9" data-tab="user9" tabindex="-1">user</a>
+<a href="#tabpanel_2_teamworkBot9" role="tab" aria-controls="tabpanel_2_teamworkBot9" data-tab="teamworkBot9" tabindex="-1">teamworkBot</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_user10" role="tab" aria-controls="tabpanel_2_user10" data-tab="user10" tabindex="-1">user</a>
 </li>
 </ul>
-<section id="tabpanel_2_chat1" role="tabpanel" data-tab="chat1">
+<section id="tabpanel_2_channel1" role="tabpanel" data-tab="channel1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/channel?view=graph-rest-1.0&amp;tabs=http">channel</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">dateTimeOffset</td>
+<td style="text-align: left;">Read only. Timestamp at which the channel was created.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Optional textual description for the channel.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Channel name as it will appear to the user in Microsoft Teams. The maximum length is 50 characters.</td>
+</tr>
+<tr>
+<td style="text-align: left;">email</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The email address for sending messages to the channel. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The channel's unique identifier. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isArchived</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the channel is archived. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isFavoriteByDefault</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the channel should be marked as recommended for all members of the team to show in their channel list. <strong>Note:</strong> All recommended channels automatically show in the channels list for education and frontline worker users. The property can only be set programmatically via the Create team method. The default value is <code>false</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">membershipType</td>
+<td style="text-align: left;">channelMembershipType</td>
+<td style="text-align: left;">The type of the channel. Can be set during creation and can't be changed. The possible values are: <code>standard</code>, <code>private</code>, <code>unknownFutureValue</code>, <code>shared</code>. The default value is <code>standard</code>. Use the <code>Prefer: include-unknown-enum-members</code> request header to get the following members in this evolvable enum: <code>shared</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tenantId</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The ID of the Microsoft Entra tenant.</td>
+</tr>
+<tr>
+<td style="text-align: left;">webUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">summary</td>
+<td style="text-align: left;">channelSummary</td>
+<td style="text-align: left;">Contains summary information about the channel, including number of owners, members, guests, and an indicator for members from other tenants. The **s</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_chat2" role="tabpanel" data-tab="chat2" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/chat?view=graph-rest-1.0&amp;tabs=http">chat</a></p>
 <table>
@@ -399,7 +484,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_onlineMeeting2" role="tabpanel" data-tab="onlineMeeting2" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_onlineMeeting3" role="tabpanel" data-tab="onlineMeeting3" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/onlinemeeting?view=graph-rest-1.0&amp;tabs=http">onlineMeeting</a></p>
 <table>
@@ -629,7 +714,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_resourceSpecificPermissionGrant3" role="tabpanel" data-tab="resourceSpecificPermissionGrant3" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_resourceSpecificPermissionGrant4" role="tabpanel" data-tab="resourceSpecificPermissionGrant4" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/resourcespecificpermissiongrant?view=graph-rest-1.0&amp;tabs=http">resourceSpecificPermissionGrant</a></p>
 <table>
@@ -679,7 +764,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_team4" role="tabpanel" data-tab="team4" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_team5" role="tabpanel" data-tab="team5" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/team?view=graph-rest-1.0&amp;tabs=http">team</a></p>
 <table>
@@ -784,7 +869,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_teamsApp5" role="tabpanel" data-tab="teamsApp5" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_teamsApp6" role="tabpanel" data-tab="teamsApp6" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/teamsapp?view=graph-rest-1.0&amp;tabs=http">teamsApp</a></p>
 <table>
@@ -819,7 +904,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_teamsAppInstallation6" role="tabpanel" data-tab="teamsAppInstallation6" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_teamsAppInstallation7" role="tabpanel" data-tab="teamsAppInstallation7" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/teamsappinstallation?view=graph-rest-1.0&amp;tabs=http">teamsAppInstallation</a></p>
 <table>
@@ -844,7 +929,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_teamsAppPermissionSet7" role="tabpanel" data-tab="teamsAppPermissionSet7" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_teamsAppPermissionSet8" role="tabpanel" data-tab="teamsAppPermissionSet8" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/teamsapppermissionset?view=graph-rest-1.0&amp;tabs=http">teamsAppPermissionSet</a></p>
 <table>
@@ -864,7 +949,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_teamworkBot8" role="tabpanel" data-tab="teamworkBot8" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_teamworkBot9" role="tabpanel" data-tab="teamworkBot9" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/teamworkbot?view=graph-rest-1.0&amp;tabs=http">teamworkBot</a></p>
 <table>
@@ -884,7 +969,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_user9" role="tabpanel" data-tab="user9" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_user10" role="tabpanel" data-tab="user10" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/user?view=graph-rest-1.0&amp;tabs=http">user</a></p>
 <table>

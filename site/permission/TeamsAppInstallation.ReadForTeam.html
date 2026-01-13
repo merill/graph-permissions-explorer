@@ -196,6 +196,14 @@
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/team-list-permissiongrants?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}/permissionGrants</a></div></td>
 </tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/channel-list-enabledapps?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamsId}/channels/{channelId}/enabledApps</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/teamsapp-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{teamsId}/channels/{channelId}/enabledApps/{teamsAppId}</a></div></td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -236,6 +244,10 @@
 <tbody>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.teams/get-mgbetateamchannelenabledapp">Get-MgBetaTeamChannelEnabledApp</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.teams/get-mgbetateaminstalledapp">Get-MgBetaTeamInstalledApp</a></div></td>
 </tr>
 <tr>
@@ -251,19 +263,95 @@
 <div class="tabGroup" id="tabgroup_2">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_2_resourceSpecificPermissionGrant1" role="tab" aria-controls="tabpanel_2_resourceSpecificPermissionGrant1" data-tab="resourceSpecificPermissionGrant1" tabindex="0" aria-selected="true">resourceSpecificPermissionGrant</a>
+<a href="#tabpanel_2_channel1" role="tab" aria-controls="tabpanel_2_channel1" data-tab="channel1" tabindex="0" aria-selected="true">channel</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_team2" role="tab" aria-controls="tabpanel_2_team2" data-tab="team2" tabindex="-1">team</a>
+<a href="#tabpanel_2_resourceSpecificPermissionGrant2" role="tab" aria-controls="tabpanel_2_resourceSpecificPermissionGrant2" data-tab="resourceSpecificPermissionGrant2" tabindex="-1">resourceSpecificPermissionGrant</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_teamsAppInstallation3" role="tab" aria-controls="tabpanel_2_teamsAppInstallation3" data-tab="teamsAppInstallation3" tabindex="-1">teamsAppInstallation</a>
+<a href="#tabpanel_2_team3" role="tab" aria-controls="tabpanel_2_team3" data-tab="team3" tabindex="-1">team</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_teamworkBot4" role="tab" aria-controls="tabpanel_2_teamworkBot4" data-tab="teamworkBot4" tabindex="-1">teamworkBot</a>
+<a href="#tabpanel_2_teamsApp4" role="tab" aria-controls="tabpanel_2_teamsApp4" data-tab="teamsApp4" tabindex="-1">teamsApp</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_teamsAppInstallation5" role="tab" aria-controls="tabpanel_2_teamsAppInstallation5" data-tab="teamsAppInstallation5" tabindex="-1">teamsAppInstallation</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_teamworkBot6" role="tab" aria-controls="tabpanel_2_teamworkBot6" data-tab="teamworkBot6" tabindex="-1">teamworkBot</a>
 </li>
 </ul>
-<section id="tabpanel_2_resourceSpecificPermissionGrant1" role="tabpanel" data-tab="resourceSpecificPermissionGrant1">
+<section id="tabpanel_2_channel1" role="tabpanel" data-tab="channel1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/channel?view=graph-rest-1.0&amp;tabs=http">channel</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">dateTimeOffset</td>
+<td style="text-align: left;">Read only. Timestamp at which the channel was created.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Optional textual description for the channel.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Channel name as it will appear to the user in Microsoft Teams. The maximum length is 50 characters.</td>
+</tr>
+<tr>
+<td style="text-align: left;">email</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The email address for sending messages to the channel. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The channel's unique identifier. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isArchived</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the channel is archived. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isFavoriteByDefault</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the channel should be marked as recommended for all members of the team to show in their channel list. <strong>Note:</strong> All recommended channels automatically show in the channels list for education and frontline worker users. The property can only be set programmatically via the Create team method. The default value is <code>false</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">membershipType</td>
+<td style="text-align: left;">channelMembershipType</td>
+<td style="text-align: left;">The type of the channel. Can be set during creation and can't be changed. The possible values are: <code>standard</code>, <code>private</code>, <code>unknownFutureValue</code>, <code>shared</code>. The default value is <code>standard</code>. Use the <code>Prefer: include-unknown-enum-members</code> request header to get the following members in this evolvable enum: <code>shared</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tenantId</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The ID of the Microsoft Entra tenant.</td>
+</tr>
+<tr>
+<td style="text-align: left;">webUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">summary</td>
+<td style="text-align: left;">channelSummary</td>
+<td style="text-align: left;">Contains summary information about the channel, including number of owners, members, guests, and an indicator for members from other tenants. The **s</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_resourceSpecificPermissionGrant2" role="tabpanel" data-tab="resourceSpecificPermissionGrant2" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/resourcespecificpermissiongrant?view=graph-rest-1.0&amp;tabs=http">resourceSpecificPermissionGrant</a></p>
 <table>
@@ -313,7 +401,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_team2" role="tabpanel" data-tab="team2" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_team3" role="tabpanel" data-tab="team3" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/team?view=graph-rest-1.0&amp;tabs=http">team</a></p>
 <table>
@@ -418,7 +506,42 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_teamsAppInstallation3" role="tabpanel" data-tab="teamsAppInstallation3" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_teamsApp4" role="tabpanel" data-tab="teamsApp4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/teamsapp?view=graph-rest-1.0&amp;tabs=http">teamsApp</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.</td>
+</tr>
+<tr>
+<td style="text-align: left;">distributionMethod</td>
+<td style="text-align: left;">teamsAppDistributionMethod</td>
+<td style="text-align: left;">The method of distribution for the app. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">externalId</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The app ID generated for the catalog is different from the developer-provided ID found within the Microsoft Teams zip app package. The **e</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_teamsAppInstallation5" role="tabpanel" data-tab="teamsAppInstallation5" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/teamsappinstallation?view=graph-rest-1.0&amp;tabs=http">teamsAppInstallation</a></p>
 <table>
@@ -443,7 +566,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_teamworkBot4" role="tabpanel" data-tab="teamworkBot4" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_teamworkBot6" role="tabpanel" data-tab="teamworkBot6" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/teamworkbot?view=graph-rest-1.0&amp;tabs=http">teamworkBot</a></p>
 <table>
