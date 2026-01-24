@@ -93,6 +93,11 @@
 <blockquote>
 <p>Allows the app to read all Configuration Monitoring entities on behalf of the signed-in user.</p>
 </blockquote>
+<blockquote>
+<p><strong>Merill's Note</strong></p>
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>ConfigurationMonitoring.Read.All</code> permission.</p>
+<p>If you need to create an audit report of the permissions granted to all the apps in your tenant, you can run the <code>Export-MsIdAppConsentGrantReport</code> command. See <a href="https://www.youtube.com/watch?v=vO0m5yE3dZA">How To: Run a quick OAuth app audit of your tenant</a></p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -125,11 +130,438 @@
 </tbody>
 </table>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_apiv1" role="tab" aria-controls="tabpanel_1_apiv1" data-tab="apiv1" tabindex="0" aria-selected="true"><span><i class='bi bi-braces'></i></span> API [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_apibeta" role="tab" aria-controls="tabpanel_1_apibeta" data-tab="apibeta" tabindex="-1"><span><i class='bi bi-braces'></i></span> API [beta]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psv1" role="tab" aria-controls="tabpanel_1_psv1" data-tab="psv1" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psbeta" role="tab" aria-controls="tabpanel_1_psbeta" data-tab="psbeta" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [beta]</a>
+</li>
+</ul>
+<section id="tabpanel_1_apiv1" role="tabpanel" data-tab="apiv1">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_apibeta" role="tabpanel" data-tab="apibeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/configurationmanagement-list-configurationdrifts?view=graph-rest-beta&amp;tabs=http">GET /admin/configurationManagement/configurationDrifts</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/configurationdrift-get?view=graph-rest-beta&amp;tabs=http">GET /admin/configurationManagement/configurationDrifts/{configurationDriftId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/configurationmanagement-list-configurationmonitoringresults?view=graph-rest-beta&amp;tabs=http">GET /admin/configurationManagement/configurationMonitoringResults</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/configurationmonitoringresult-get?view=graph-rest-beta&amp;tabs=http">GET /admin/configurationManagement/configurationMonitoringResults/{configurationMonitoringResultId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/configurationmanagement-list-configurationmonitors?view=graph-rest-beta&amp;tabs=http">GET /admin/configurationManagement/configurationMonitors</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/configurationmonitor-get?view=graph-rest-beta&amp;tabs=http">GET /admin/configurationManagement/configurationMonitors/{configurationMonitorId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/configurationbaseline-get?view=graph-rest-beta&amp;tabs=http">GET /admin/configurationManagement/configurationMonitors/{configurationMonitorId}/baseline</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/configurationmanagement-list-configurationsnapshotjobs?view=graph-rest-beta&amp;tabs=http">GET /admin/configurationManagement/configurationSnapshotJobs</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/configurationsnapshotjob-get?view=graph-rest-beta&amp;tabs=http">GET /admin/configurationManagement/configurationSnapshotJobs/{configurationSnapshotJobId}</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_psv1" role="tabpanel" data-tab="psv1" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_psbeta" role="tabpanel" data-tab="psbeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
 </div>
-<hr>
+<h2 id="resources">Resources</h2>
+<p>Granting this permission allows the calling application to access (and/or update) the following information in your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_configurationBaseline1" role="tab" aria-controls="tabpanel_2_configurationBaseline1" data-tab="configurationBaseline1" tabindex="0" aria-selected="true">configurationBaseline</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_configurationDrift2" role="tab" aria-controls="tabpanel_2_configurationDrift2" data-tab="configurationDrift2" tabindex="-1">configurationDrift</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_configurationMonitor3" role="tab" aria-controls="tabpanel_2_configurationMonitor3" data-tab="configurationMonitor3" tabindex="-1">configurationMonitor</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_configurationMonitoringResult4" role="tab" aria-controls="tabpanel_2_configurationMonitoringResult4" data-tab="configurationMonitoringResult4" tabindex="-1">configurationMonitoringResult</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_configurationSnapshotJob5" role="tab" aria-controls="tabpanel_2_configurationSnapshotJob5" data-tab="configurationSnapshotJob5" tabindex="-1">configurationSnapshotJob</a>
+</li>
+</ul>
+<section id="tabpanel_2_configurationBaseline1" role="tabpanel" data-tab="configurationBaseline1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/configurationbaseline?view=graph-rest-1.0&amp;tabs=http">configurationBaseline</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">User-friendly description of the baseline given by the user.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">User-friendly name given by the user to the baseline.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the <strong>configurationBaseline</strong> object. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">parameters</td>
+<td style="text-align: left;">baselineParameter collection</td>
+<td style="text-align: left;">Collection of parameters attached to the baseline.</td>
+</tr>
+<tr>
+<td style="text-align: left;">resources</td>
+<td style="text-align: left;">baselineResource collection</td>
+<td style="text-align: left;">Collection of resources and their properties that are added to the baseline. At least one property of one resource must be present in the baseline.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_configurationDrift2" role="tabpanel" data-tab="configurationDrift2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/configurationdrift?view=graph-rest-1.0&amp;tabs=http">configurationDrift</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">baselineResourceDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Resource instance for which the drift is detected.</td>
+</tr>
+<tr>
+<td style="text-align: left;">driftedProperties</td>
+<td style="text-align: left;">driftedProperty collection</td>
+<td style="text-align: left;">Properties within one or more resource instances in which drift is detected.</td>
+</tr>
+<tr>
+<td style="text-align: left;">firstReportedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time at which drift is first detected. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Globally unique identifier (GUID) of the drift. System-generated. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">monitorId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Globally unique identifier (GUID) of the monitor. System-generated.</td>
+</tr>
+<tr>
+<td style="text-align: left;">resourceInstanceIdentifier</td>
+<td style="text-align: left;">openComplexDictionaryType</td>
+<td style="text-align: left;">An identifier that allows users to understand exactly where the drift is.</td>
+</tr>
+<tr>
+<td style="text-align: left;">resourceType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Resource for which the drift is detected.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">driftStatus</td>
+<td style="text-align: left;">Status of the drift. The possible values are: <code>active</code>, <code>fixed</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tenantId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Globally unique identifier (GUID) of the tenant for which the monitor runs. Fetched automatically by the system.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_configurationMonitor3" role="tabpanel" data-tab="configurationMonitor3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/configurationmonitor?view=graph-rest-1.0&amp;tabs=http">configurationMonitor</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The user who created the monitor.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the monitor was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">User-friendly description of the monitor given by the user.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">User-friendly name given by the user to the monitor.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Globally unique identifier (GUID) for the monitor. System-generated. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">inactivationReason</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The reason for the monitor's inactivation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The user who last modified the monitor.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the monitor was last modified. If no modifications are made to the monitor, it's the same as <strong>createdDateTime</strong>. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">mode</td>
+<td style="text-align: left;">monitorMode</td>
+<td style="text-align: left;">Monitor mode in which the monitor runs.  The possible values are: <code>monitorOnly</code>, <code>unknownFutureValue</code>. The default value is <code>monitorOnly</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">monitorRunFrequencyInHours</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Frequency at which the monitor runs. The default frequency is six hours. Regardless of when you create or update a monitor, it gets triggered within the next 6 hours. Currently, monitors are picked up at fixed times: 6 AM, 12 PM, 6 PM, and 12 AM (all in GMT). For example, if you create a monitor at 9 AM, it gets triggered around 12 PM. If you update a monitor at 4 PM, it gets triggered around 6 PM.</td>
+</tr>
+<tr>
+<td style="text-align: left;">parameters</td>
+<td style="text-align: left;">openComplexDictionaryType</td>
+<td style="text-align: left;">Key-value pairs that contain parameter values which might be used in the baseline.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">monitorStatus</td>
+<td style="text-align: left;">Status of the monitor  The possible values are: <code>active</code>, <code>unknownFutureValue</code>. The default value is <code>active</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tenantId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Globally unique identifier (GUID) of the tenant for which the monitor runs. Fetched automatically by the system.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_configurationMonitoringResult4" role="tabpanel" data-tab="configurationMonitoringResult4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/configurationmonitoringresult?view=graph-rest-1.0&amp;tabs=http">configurationMonitoringResult</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">driftsCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Number of drifts observed during a monitor run.</td>
+</tr>
+<tr>
+<td style="text-align: left;">errorDetails</td>
+<td style="text-align: left;">errorDetail collection</td>
+<td style="text-align: left;">All the error details that prevent the monitor from running successfully. The error details are a contained entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Globally unique identifier (GUID) of the monitor run. System-generated. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">monitorId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Globally unique identifier (GUID) of the monitor. System-generated.</td>
+</tr>
+<tr>
+<td style="text-align: left;">runCompletionDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time at which the monitor run completed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">runInitiationDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time at which the monitor run initiated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">runStatus</td>
+<td style="text-align: left;">monitorRunStatus</td>
+<td style="text-align: left;">Status of the monitor run. The possible values are: <code>successful</code>, <code>partiallySuccessful</code>, <code>failed</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tenantId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Globally unique identifier (GUID) of the tenant for which the monitor runs. Fetched automatically by the system.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_configurationSnapshotJob5" role="tabpanel" data-tab="configurationSnapshotJob5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/configurationsnapshotjob?view=graph-rest-1.0&amp;tabs=http">configurationSnapshotJob</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">completedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the snapshot job was completed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The user who triggered the snapshot.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the snapshot job was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">User-friendly description of the snapshot given by the user.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">User-friendly name provided by the user during snapshot creation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">errorDetails</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Details of errors related to the reasons why the snapshot can't complete.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Globally unique identifier (GUID) of the snapshot job. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">resourceLocation</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The URL at which the snapshot file resides.</td>
+</tr>
+<tr>
+<td style="text-align: left;">resources</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">The names of all resources included in the request body by the user who created the snapshot. Fetched by the system.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">snapshotJobStatus</td>
+<td style="text-align: left;">Status of the snapshot. The possible values are: <code>notStarted</code>, <code>running</code>, <code>succeeded</code>, <code>failed</code>, <code>unknownFutureValue</code>, <code>partiallySuccessful</code>. Use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value in this evolvable enum: <code>partiallySuccessful</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tenantId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Globally unique identifier (GUID) of the tenant for which the snapshot is created.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</div>
 
 </article>
 
