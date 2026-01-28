@@ -167,6 +167,14 @@
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/authentication-list-externalauthenticationmethods?view=graph-rest-1.0&amp;tabs=http">GET /me/authentication/externalAuthenticationMethods</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/externalauthenticationmethod-get?view=graph-rest-1.0&amp;tabs=http">GET /me/authentication/externalAuthenticationMethods/{externalAuthenticationMethodId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/fido2authenticationmethod-list?view=graph-rest-1.0&amp;tabs=http">GET /me/authentication/fido2Methods</a></div></td>
 </tr>
 <tr>
@@ -627,6 +635,11 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Represents the date and time when an entity was created. Read-only.</td>
+</tr>
+<tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The identifier of this instance of an authentication method registered to this user. Read-only.</td>
@@ -690,11 +703,6 @@
 <td style="text-align: left;">Represents the date and time when an entity was created. Inherited from authenticationMethod.</td>
 </tr>
 <tr>
-<td style="text-align: left;">lastUsedDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time the authentication method was last used by the user. Read-only. Optional. This optional value is <code>null</code> if the authentication method doesn't populate it. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Inherited from authenticationMethod.</td>
-</tr>
-<tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Custom name given to the registered external authentication method.</td>
@@ -737,7 +745,7 @@
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The timestamp when this key was registered to the user.</td>
+<td style="text-align: left;">The timestamp when this key was registered to the user. Inherited from authenticationMethod.</td>
 </tr>
 <tr>
 <td style="text-align: left;">displayName</td>
@@ -847,7 +855,7 @@
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time that this app was registered. This property is null if the device isn't registered for passwordless Phone Sign-In.</td>
+<td style="text-align: left;">The date and time that this app was registered. This property is null if the device isn't registered for passwordless Phone Sign-In. Inherited from authenticationMethod.</td>
 </tr>
 <tr>
 <td style="text-align: left;">deviceTag</td>
@@ -887,7 +895,7 @@
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time when this password was last updated. This property is currently not populated. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+<td style="text-align: left;">The date and time when this password was last updated. This property is currently not populated. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Inherited from authenticationMethod.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
@@ -982,7 +990,7 @@
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time that this Platform Credential Key was registered.</td>
+<td style="text-align: left;">The date and time that this Platform Credential Key was registered. Inherited from authenticationMethod.</td>
 </tr>
 <tr>
 <td style="text-align: left;">displayName</td>
@@ -1137,7 +1145,7 @@
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time when the Temporary Access Pass was created.</td>
+<td style="text-align: left;">The date and time when the Temporary Access Pass was created. Inherited from authenticationMethod.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
@@ -1652,7 +1660,7 @@
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time that this Windows Hello for Business key was registered.</td>
+<td style="text-align: left;">The date and time that this Windows Hello for Business key was registered. Inherited from authenticationMethod.</td>
 </tr>
 <tr>
 <td style="text-align: left;">displayName</td>
