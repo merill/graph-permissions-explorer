@@ -156,6 +156,16 @@
 <th>Methods</th>
 </tr>
 </thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/messagetracingroot-list-messagetraces?view=graph-rest-1.0&amp;tabs=http">GET /admin/exchange/tracing/messageTraces</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/exchangemessagetrace-getdetailsbyrecipient?view=graph-rest-1.0&amp;tabs=http">GET /admin/exchange/tracing/messageTraces/{exchangeMessageTraceId}/getDetailsByRecipient(recipientAddress='parameterValue')</a></div></td>
+</tr>
+</tbody>
 </table>
 </section>
 <section id="tabpanel_1_apibeta" role="tabpanel" data-tab="apibeta" aria-hidden="true" hidden="hidden">
@@ -234,32 +244,32 @@
 <tr>
 <td style="text-align: left;">fromIP</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The source IP address. For incoming messages, this value is the public IP address of the SMTP email server that sent the message.</td>
+<td style="text-align: left;">The source IP address. For incoming messages, this value is the public IP address of the SMTP email server that sent the message. <br><br>Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the message trace.</td>
+<td style="text-align: left;">The unique identifier for the message trace. <br><br>Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">messageId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The Message-ID header field of the message. The format of the Message-ID depends on the messaging server that sent the message.</td>
+<td style="text-align: left;">The Message-ID header field of the message. The format of the Message-ID depends on the messaging server that sent the message. <br><br>Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">receivedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time when the message was received by Exchange Online. The timestamp is in UTC format.</td>
+<td style="text-align: left;">The date and time when the message was received by Exchange Online. The timestamp is in UTC format. <br><br>Supports <code>$filter</code> (<code>ge</code>, <code>le</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">recipientAddress</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The SMTP email address of the user that the message was addressed to.</td>
+<td style="text-align: left;">The SMTP email address of the user that the message was addressed to. <br><br>Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">senderAddress</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The SMTP email address of the user the message was purportedly from.</td>
+<td style="text-align: left;">The SMTP email address of the user the message was purportedly from. <br><br>Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">size</td>
@@ -269,17 +279,17 @@
 <tr>
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">exchangeMessageTraceStatus</td>
-<td style="text-align: left;">The delivery status of the message. The possible values are: <code>gettingStatus</code>, <code>pending</code>, <code>failed</code>, <code>delivered</code>, <code>expanded</code>, <code>quarantined</code>, <code>filteredAsSpam</code>, <code>unknownFutureValue</code>.</td>
+<td style="text-align: left;">The delivery status of the message. The possible values are: <code>gettingStatus</code>, <code>pending</code>, <code>failed</code>, <code>delivered</code>, <code>expanded</code>, <code>quarantined</code>, <code>filteredAsSpam</code>, <code>unknownFutureValue</code>. <br><br>Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">subject</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The subject line of the message.</td>
+<td style="text-align: left;">The subject line of the message. <br><br>Supports <code>$filter</code> (<code>contains</code>, <code>startsWith</code>, <code>endsWith</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">toIP</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The destination IP address. For outgoing messages, this value is the public IP address in the resolved MX record for the destination domain. For incoming messages to Exchange Online, this value is blank.</td>
+<td style="text-align: left;">The destination IP address. For outgoing messages, this value is the public IP address in the resolved MX record for the destination domain. For incoming messages to Exchange Online, this value is blank. <br><br>Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 </tbody>
 </table>
