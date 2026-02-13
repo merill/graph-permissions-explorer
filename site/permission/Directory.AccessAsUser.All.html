@@ -261,6 +261,10 @@
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/qrpin-updatepin?view=graph-rest-1.0&amp;tabs=http">PATCH /me/authentication/qrCodePinMethod/pin/updatepin</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/opentypeextension-update?view=graph-rest-1.0&amp;tabs=http">PATCH /organization/{Id}/extensions/{extensionId}</a></div></td>
 </tr>
 <tr>
@@ -2376,22 +2380,27 @@
 <tr>
 <td style="text-align: left;">code</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">PIN of the user. It is between 8-20 digits as configured in the QR code authentication method policy. The code is temporary when issued by admin but permanent after the user changes it at the first login attempt. This PIN can be reset by the admin but not the user.</td>
+<td style="text-align: left;">The PIN code value. This property is only returned at the time of creating or resetting the PIN. For GET operations, this property returns <code>null</code>. The PIN must be between 8-20 digits.</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time when the PIN was created.</td>
+<td style="text-align: left;">The date and time when the PIN was created. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">forceChangePinNextSignIn</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Defaults to <code>true</code> for a temporary PIN.</td>
+<td style="text-align: left;">Indicates whether the user must change the PIN on their next sign-in. This is <code>true</code> when an admin creates or resets the PIN, and <code>false</code> after the user changes it.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the PIN. Inherited from entity. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">updatedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time when the PIN was updated.</td>
+<td style="text-align: left;">The date and time when the PIN was last updated. Read-only.</td>
 </tr>
 </tbody>
 </table>

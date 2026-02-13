@@ -223,6 +223,14 @@
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/qrcode-get?view=graph-rest-1.0&amp;tabs=http">GET /me/authentication/qrCodePinMethod/standardQRCode</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/qrcode-get?view=graph-rest-1.0&amp;tabs=http">GET /me/authentication/qrCodePinMethod/temporaryQRCode</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/authentication-list-softwareoathmethods?view=graph-rest-1.0&amp;tabs=http">GET /me/authentication/softwareOathMethods</a></div></td>
 </tr>
 <tr>
@@ -248,6 +256,10 @@
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/longrunningoperation-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/authentication/operations/{id}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/qrcodepinauthenticationmethod-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{id | userPrincipalName}/authentication/qrCodePinMethod</a></div></td>
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
@@ -1019,32 +1031,32 @@
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time when the QR code was created.</td>
+<td style="text-align: left;">The date and time when the QR code was created. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">expireDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Temporary QR code lifetime is between 1-12 hours. Standard QR code lifetime is in days and max. is 395 days (13 months) and default value is 365 days (12 months).</td>
+<td style="text-align: left;">The date and time when the QR code expires. For standard QR codes, the lifetime is in days with a maximum of 395 days (13 months) and a default of 365 days. For temporary QR codes, the lifetime must be between 1-12 hours. The <strong>expireDateTime</strong> can be edited for standard QR codes but not for temporary QR codes.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Unique identifier of the QR code. Inherits from entity</td>
+<td style="text-align: left;">The unique identifier (GUID) of the QR code. Inherited from entity. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">image</td>
 <td style="text-align: left;">qrCodeImageDetails</td>
-<td style="text-align: left;">The QR code image's raw data that is returned when a standard or temporary QR code is created.</td>
+<td style="text-align: left;">The QR code image data. This property is only returned at the time of creating or resetting the QR code because the private key isn't stored on the server.</td>
 </tr>
 <tr>
 <td style="text-align: left;">lastUsedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time when the QR code was last used for a successful sign-in.</td>
+<td style="text-align: left;">The date and time when the QR code was last successfully used for authentication. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">startDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time when the QR code becomes active and available to use.</td>
+<td style="text-align: left;">The date and time when the QR code becomes available for use.</td>
 </tr>
 </tbody>
 </table>
@@ -1062,14 +1074,14 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The identifier of the QR code auth added to this user. Inherited from authenticationMethod. Inherits from entity</td>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when this authentication method was created. Inherited from authenticationMethod. Read-only.</td>
 </tr>
 <tr>
-<td style="text-align: left;">lastUsedDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time the authentication method was last used by the user. Read-only. Optional. This optional value is <code>null</code> if the authentication method doesn't populate it. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Inherited from authenticationMethod.</td>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for this authentication method. Inherited from entity. Read-only.</td>
 </tr>
 </tbody>
 </table>
