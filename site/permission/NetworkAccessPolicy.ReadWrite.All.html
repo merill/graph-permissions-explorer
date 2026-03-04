@@ -200,10 +200,6 @@
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
-<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/networkaccess-tlsinspectionpolicylink-get?view=graph-rest-beta&amp;tabs=http">GET /networkAccess/filteringProfiles/{filteringProfileId}/policies/{tlsPolicyLinkId}</a></div></td>
-</tr>
-<tr>
-<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/networkaccess-forwardingprofile-list-policies?view=graph-rest-beta&amp;tabs=http">GET /networkAccess/forwardingProfiles/{forwardingProfileId}/policies/ </a></div></td>
 </tr>
 <tr>
@@ -309,10 +305,6 @@
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.networkaccess/get-mgbetanetworkaccessfilteringpolicy">Get-MgBetaNetworkAccessFilteringPolicy</a></div></td>
-</tr>
-<tr>
-<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
-<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.networkaccess/get-mgbetanetworkaccessfilteringprofilepolicy">Get-MgBetaNetworkAccessFilteringProfilePolicy</a></div></td>
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
@@ -439,7 +431,7 @@
 <a href="#tabpanel_2_threatIntelligencePolicy24" role="tab" aria-controls="tabpanel_2_threatIntelligencePolicy24" data-tab="threatIntelligencePolicy24" tabindex="-1">threatIntelligencePolicy</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_tlsInspectionPolicyLink25" role="tab" aria-controls="tabpanel_2_tlsInspectionPolicyLink25" data-tab="tlsInspectionPolicyLink25" tabindex="-1">tlsInspectionPolicyLink</a>
+<a href="#tabpanel_2_tlsInspectionPolicy25" role="tab" aria-controls="tabpanel_2_tlsInspectionPolicy25" data-tab="tlsInspectionPolicy25" tabindex="-1">tlsInspectionPolicy</a>
 </li>
 <li role="presentation">
 <a href="#tabpanel_2_transactionSummary26" role="tab" aria-controls="tabpanel_2_transactionSummary26" data-tab="transactionSummary26" tabindex="-1">transactionSummary</a>
@@ -1362,9 +1354,9 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_tlsInspectionPolicyLink25" role="tabpanel" data-tab="tlsInspectionPolicyLink25" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_tlsInspectionPolicy25" role="tabpanel" data-tab="tlsInspectionPolicy25" aria-hidden="true" hidden="hidden">
 
-<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/networkaccess-tlsinspectionpolicylink?view=graph-rest-1.0&amp;tabs=http">tlsInspectionPolicyLink</a></p>
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/networkaccess-tlsinspectionpolicy?view=graph-rest-1.0&amp;tabs=http">tlsInspectionPolicy</a></p>
 <table>
 <thead>
 <tr>
@@ -1375,19 +1367,34 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">id</td>
+<td style="text-align: left;">description</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the policy link. Inherited from microsoft.graph.networkaccess.policyLink. Inherits from entity.</td>
+<td style="text-align: left;">Optional description of the policy. Inherited from microsoft.graph.networkaccess.policy. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>startsWith</code>)</td>
 </tr>
 <tr>
-<td style="text-align: left;">state</td>
-<td style="text-align: left;">microsoft.graph.networkaccess.status</td>
-<td style="text-align: left;">The state of the policy link. Inherited from microsoft.graph.networkaccess.policyLink. The possible values are: <code>enabled</code>, <code>disabled</code>, <code>unknownFutureValue</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the policy. Read-only. Inherited from microsoft.graph.networkaccess.policy.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The timestamp of when the policy was last modified. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>) and <code>$orderby</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the policy. Inherited from microsoft.graph.networkaccess.policy.</td>
+</tr>
+<tr>
+<td style="text-align: left;">settings</td>
+<td style="text-align: left;">microsoft.graph.networkaccess.tlsInspectionPolicySettings</td>
+<td style="text-align: left;">Settings that configure the default behavior of the policy.</td>
 </tr>
 <tr>
 <td style="text-align: left;">version</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Version number of the policy link.   Inherited from microsoft.graph.networkaccess.policyLink.</td>
+<td style="text-align: left;">Version number of the policy. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>startsWith</code>). Read-only. Inherited from microsoft.graph.networkaccess.policy.</td>
 </tr>
 </tbody>
 </table>
