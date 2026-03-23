@@ -93,6 +93,11 @@
 <blockquote>
 <p>Allows the application to list, read, create, update, and delete Tenant Governance policy templates on behalf of the signed-in user.</p>
 </blockquote>
+<blockquote>
+<p><strong>Merill's Note</strong></p>
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>TenantGovernance-PolicyTemplate.ReadWrite.All</code> permission.</p>
+<p>If you need to create an audit report of the permissions granted to all the apps in your tenant, you can run the <code>Export-MsIdAppConsentGrantReport</code> command. See <a href="https://www.youtube.com/watch?v=vO0m5yE3dZA">How To: Run a quick OAuth app audit of your tenant</a></p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -125,11 +130,234 @@
 </tbody>
 </table>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_apiv1" role="tab" aria-controls="tabpanel_1_apiv1" data-tab="apiv1" tabindex="0" aria-selected="true"><span><i class='bi bi-braces'></i></span> API [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_apibeta" role="tab" aria-controls="tabpanel_1_apibeta" data-tab="apibeta" tabindex="-1"><span><i class='bi bi-braces'></i></span> API [beta]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psv1" role="tab" aria-controls="tabpanel_1_psv1" data-tab="psv1" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psbeta" role="tab" aria-controls="tabpanel_1_psbeta" data-tab="psbeta" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [beta]</a>
+</li>
+</ul>
+<section id="tabpanel_1_apiv1" role="tabpanel" data-tab="apiv1">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_apibeta" role="tabpanel" data-tab="apibeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/tenantgovernanceservices-delete-governancepolicytemplates?view=graph-rest-beta&amp;tabs=http">DELETE /directory/tenantGovernance/governancePolicyTemplates/{governancePolicyTemplateId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/tenantgovernanceservices-list-governancepolicytemplates?view=graph-rest-beta&amp;tabs=http">GET /directory/tenantGovernance/governancePolicyTemplates</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/tenantgovernanceservices-governancepolicytemplate-get?view=graph-rest-beta&amp;tabs=http">GET /directory/tenantGovernance/governancePolicyTemplates/{governancePolicyTemplateId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/tenantgovernanceservices-governancepolicytemplate-get?view=graph-rest-beta&amp;tabs=http">GET /directory/tenantGovernance/governancePolicyTemplates/default</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/tenantgovernanceservices-governancepolicytemplate-update?view=graph-rest-beta&amp;tabs=http">PATCH /directory/tenantGovernance/governancePolicyTemplates/{governancePolicyTemplateId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/tenantgovernanceservices-governancepolicytemplate-update?view=graph-rest-beta&amp;tabs=http">PATCH /directory/tenantGovernance/governancePolicyTemplates/default</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/tenantgovernanceservices-post-governancepolicytemplates?view=graph-rest-beta&amp;tabs=http">POST /directory/tenantGovernance/governancePolicyTemplates</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_psv1" role="tabpanel" data-tab="psv1" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_psbeta" role="tabpanel" data-tab="psbeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
 </div>
-<hr>
+<h2 id="resources">Resources</h2>
+<p>Granting this permission allows the calling application to access (and/or update) the following information in your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_delegatedAdministrationRoleAssignment1" role="tab" aria-controls="tabpanel_2_delegatedAdministrationRoleAssignment1" data-tab="delegatedAdministrationRoleAssignment1" tabindex="0" aria-selected="true">delegatedAdministrationRoleAssignment</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_governancePolicyTemplate2" role="tab" aria-controls="tabpanel_2_governancePolicyTemplate2" data-tab="governancePolicyTemplate2" tabindex="-1">governancePolicyTemplate</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_multiTenantApplicationsToProvision3" role="tab" aria-controls="tabpanel_2_multiTenantApplicationsToProvision3" data-tab="multiTenantApplicationsToProvision3" tabindex="-1">multiTenantApplicationsToProvision</a>
+</li>
+</ul>
+<section id="tabpanel_2_delegatedAdministrationRoleAssignment1" role="tabpanel" data-tab="delegatedAdministrationRoleAssignment1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/tenantgovernanceservices-delegatedadministrationroleassignment?view=graph-rest-1.0&amp;tabs=http">delegatedAdministrationRoleAssignment</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">roleTemplates</td>
+<td style="text-align: left;">microsoft.graph.tenantGovernanceServices.roleTemplate collection</td>
+<td style="text-align: left;">A collection of role templates that define the roles to be assigned to the group in the governed tenant.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_governancePolicyTemplate2" role="tabpanel" data-tab="governancePolicyTemplate2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/tenantgovernanceservices-governancepolicytemplate?view=graph-rest-1.0&amp;tabs=http">governancePolicyTemplate</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the template was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC.<br><br> Supports <code>$filter</code> (<code>lt</code>, <code>le</code>, <code>gt</code>, <code>ge</code>, <code>eq</code>, <code>ne</code>) and <code>$orderBy</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">delegatedAdministrationRoleAssignments</td>
+<td style="text-align: left;">microsoft.graph.tenantGovernanceServices.delegatedAdministrationRoleAssignment collection</td>
+<td style="text-align: left;">A collection of delegated administration role assignments to be applied in the governed tenant when the governance relationship is established.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A description of the policy template.<br><br> Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>) and <code>$orderBy</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the policy template.<br><br> Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>) and <code>$orderBy</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">governedTenantCanTerminate</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Not implemented.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the policy template. Is <code>default</code> for the default template. Inherited from entity.<br><br> Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>) and <code>$orderBy</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the template was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC.<br><br> Supports <code>$filter</code> (<code>lt</code>, <code>le</code>, <code>gt</code>, <code>ge</code>, <code>eq</code>, <code>ne</code>) and <code>$orderBy</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">multiTenantApplicationsToProvision</td>
+<td style="text-align: left;">microsoft.graph.tenantGovernanceServices.multiTenantApplicationsToProvision collection</td>
+<td style="text-align: left;">A collection of multi-tenant applications to be provisioned in the governed tenant when the governance relationship is established.</td>
+</tr>
+<tr>
+<td style="text-align: left;">version</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The version of the policy template. Version count increased by 1 when updated.<br><br> Supports <code>$filter</code> (<code>lt</code>, <code>le</code>, <code>gt</code>, <code>ge</code>, <code>eq</code>, <code>ne</code>) and <code>$orderBy</code>.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_multiTenantApplicationsToProvision3" role="tabpanel" data-tab="multiTenantApplicationsToProvision3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/tenantgovernanceservices-multitenantapplicationstoprovision?view=graph-rest-1.0&amp;tabs=http">multiTenantApplicationsToProvision</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">appId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The <strong>appId</strong> (client ID) of the multi-tenant application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">objectId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The object ID of the service principal in the governing tenant.</td>
+</tr>
+<tr>
+<td style="text-align: left;">requiredResourceAccesses</td>
+<td style="text-align: left;">microsoft.graph.tenantGovernanceServices.requiredResourceAccess collection</td>
+<td style="text-align: left;">The collection of resource accesses (permissions) required by the application.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</div>
 
 </article>
 
