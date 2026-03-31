@@ -188,6 +188,10 @@
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/networkaccess-logs-list-generativeaiinsights?view=graph-rest-beta&amp;tabs=http">GET /networkAccess/logs/generativeAiInsights</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/networkaccess-logs-list-remotenetworks?view=graph-rest-beta&amp;tabs=http">GET /networkAccess/logs/remoteNetworks</a></div></td>
 </tr>
 <tr>
@@ -270,10 +274,16 @@
 <a href="#tabpanel_2_networkaccess-deployment5" role="tab" aria-controls="tabpanel_2_networkaccess-deployment5" data-tab="networkaccess-deployment5" tabindex="-1">networkaccess-deployment</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_networkAccessTraffic6" role="tab" aria-controls="tabpanel_2_networkAccessTraffic6" data-tab="networkAccessTraffic6" tabindex="-1">networkAccessTraffic</a>
+<a href="#tabpanel_2_generativeAIInsight6" role="tab" aria-controls="tabpanel_2_generativeAIInsight6" data-tab="generativeAIInsight6" tabindex="-1">generativeAIInsight</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_remoteNetworkHealthEvent7" role="tab" aria-controls="tabpanel_2_remoteNetworkHealthEvent7" data-tab="remoteNetworkHealthEvent7" tabindex="-1">remoteNetworkHealthEvent</a>
+<a href="#tabpanel_2_logs7" role="tab" aria-controls="tabpanel_2_logs7" data-tab="logs7" tabindex="-1">logs</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_networkAccessTraffic8" role="tab" aria-controls="tabpanel_2_networkAccessTraffic8" data-tab="networkAccessTraffic8" tabindex="-1">networkAccessTraffic</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_remoteNetworkHealthEvent9" role="tab" aria-controls="tabpanel_2_remoteNetworkHealthEvent9" data-tab="remoteNetworkHealthEvent9" tabindex="-1">remoteNetworkHealthEvent</a>
 </li>
 </ul>
 <section id="tabpanel_2_alert1" role="tabpanel" data-tab="alert1">
@@ -816,7 +826,86 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_networkAccessTraffic6" role="tabpanel" data-tab="networkAccessTraffic6" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_generativeAIInsight6" role="tabpanel" data-tab="generativeAIInsight6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/networkaccess-generativeaiinsight?view=graph-rest-1.0&amp;tabs=http">generativeAIInsight</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">activity</td>
+<td style="text-align: left;">microsoft.graph.networkaccess.applicationActivity</td>
+<td style="text-align: left;">The high-level activity type for this insight. The possible values are: <code>none</code>, <code>prompt</code>, <code>mcp</code>, <code>unknownFutureValue</code>. Supports <code>$filter</code> (<code>eq</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">content</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The prompt text or content captured for this insight. Supports <code>$filter</code> (<code>eq</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the insight was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is <code>2024-01-01T00:00:00Z</code>. Supports <code>$filter</code> (<code>eq</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">destinationUrl</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The destination URL associated with this insight. Supports <code>$filter</code> (<code>eq</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">eventId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the event. Supports <code>$filter</code> (<code>eq</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">eventType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The event type that classifies the insight event. Supports <code>$filter</code> (<code>eq</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">mcpClientName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The MCP client name when the activity is related to MCP interactions. Supports <code>$filter</code> (<code>eq</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">mcpServerName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The MCP server name when the activity is related to MCP interactions. Supports <code>$filter</code> (<code>eq</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sessionId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The session identifier used to correlate related events. Supports <code>$filter</code> (<code>eq</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">subactivity</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A finer-grained classification of activity, such as <code>chat-interaction</code>, <code>tools/call</code>, or <code>data-analysis</code>. Supports <code>$filter</code> (<code>eq</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">transactionId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A unique identifier assigned to a specific transaction or operation. Key. Supports <code>$filter</code> (<code>eq</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">userPrincipalName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The UPN of the user associated with this insight. Supports <code>$filter</code> (<code>eq</code>) and <code>$orderby</code>.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_logs7" role="tabpanel" data-tab="logs7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/networkaccess-logs?view=graph-rest-1.0&amp;tabs=http">logs</a></p>
+</section>
+<section id="tabpanel_2_networkAccessTraffic8" role="tabpanel" data-tab="networkAccessTraffic8" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/networkaccess-networkaccesstraffic?view=graph-rest-1.0&amp;tabs=http">networkAccessTraffic</a></p>
 <table>
@@ -1056,7 +1145,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_remoteNetworkHealthEvent7" role="tabpanel" data-tab="remoteNetworkHealthEvent7" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_remoteNetworkHealthEvent9" role="tabpanel" data-tab="remoteNetworkHealthEvent9" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/networkaccess-remotenetworkhealthevent?view=graph-rest-1.0&amp;tabs=http">remoteNetworkHealthEvent</a></p>
 <table>
