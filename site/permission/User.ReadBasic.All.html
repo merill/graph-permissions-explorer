@@ -1387,6 +1387,11 @@
 <td style="text-align: left;">The collection of key credentials associated with the agent identity blueprint. Not nullable. Inherited from application.</td>
 </tr>
 <tr>
+<td style="text-align: left;">managerApplications</td>
+<td style="text-align: left;">Guid collection</td>
+<td style="text-align: left;">A collection of application IDs for Microsoft first-party applications designated as managers of this agent blueprint. Manager applications can create agent blueprint principals, agent identities, and agent users for managed agent blueprints without requiring highly privileged permissions such as <code>AgentIdentityBlueprintPrincipal.ReadWrite.All</code>. Limited to a maximum of 10 entries. Not nullable. Only Microsoft first-party applications can be designated as managers. Not returned by default. Supports <code>$select</code>.</td>
+</tr>
+<tr>
 <td style="text-align: left;">optionalClaims</td>
 <td style="text-align: left;">optionalClaims</td>
 <td style="text-align: left;">Application developers can configure optional claims in their Microsoft Entra agent identity blueprints to specify the claims that are sent to their application by the Microsoft security token service. Inherited from application.</td>
@@ -1930,6 +1935,11 @@
 <td style="text-align: left;">logo</td>
 <td style="text-align: left;">Stream</td>
 <td style="text-align: left;">The main logo for the application. Not nullable.</td>
+</tr>
+<tr>
+<td style="text-align: left;">managerApplications</td>
+<td style="text-align: left;">Guid collection</td>
+<td style="text-align: left;">A collection of application IDs for Microsoft first-party applications designated as managers. Manager applications can create service principals, agent identities, and agent users for managed agent blueprints. Limited to a maximum of 10 entries. Not nullable. Only supported on agentIdentityBlueprint objects; attempts to set this property on non-agent-blueprint applications return an error. Not returned by default; must be explicitly requested via <code>$select</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">nativeAuthenticationApisEnabled</td>
