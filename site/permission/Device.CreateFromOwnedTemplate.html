@@ -319,7 +319,7 @@
 <tr>
 <td style="text-align: left;">isManagementRestricted</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates whether the device is a member of a restricted management administrative unit. If not set, the default value is <code>null</code> and the default behavior is false. Read-only. <br><br> To manage a device that's a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. <br><br>Returned only on <code>$select</code>.</td>
+<td style="text-align: left;">Indicates whether the device is a member of a restricted management administrative unit. If not set, the default value is <code>null</code> and the default behavior is false. Read-only. <br><br> To manage a device that's a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. <br><br>Requires <code>$select</code> to retrieve.</td>
 </tr>
 <tr>
 <td style="text-align: left;">isRooted</td>
@@ -354,7 +354,7 @@
 <tr>
 <td style="text-align: left;">onPremisesSecurityIdentifier</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>).</td>
+<td style="text-align: left;">The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Requires <code>$select</code> to retrieve. Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">onPremisesSyncEnabled</td>
@@ -484,7 +484,7 @@
 <tr>
 <td style="text-align: left;">key</td>
 <td style="text-align: left;">Binary</td>
-<td style="text-align: left;">The certificate's raw data in byte array converted to Base64 string. Returned only on <code>$select</code> for a single object, that is, <code>GET applications/{applicationId}?$select=keyCredentials</code> or <code>GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials</code>; otherwise, it's always <code>null</code>. <br><br> From a <em>.cer</em> certificate, you can read the key using the <strong>Convert.ToBase64String()</strong> method. For more information, see Get the certificate key.</td>
+<td style="text-align: left;">The certificate's raw data in byte array converted to Base64 string. Requires <code>$select</code> to retrieve; only available for single object requests (<code>GET /applications/{applicationId}?$select=keyCredentials</code> or <code>GET /servicePrincipals/{servicePrincipalId}?$select=keyCredentials</code>); otherwise, it's always <code>null</code>. <br><br> From a <em>.cer</em> certificate, you can read the key using the <strong>Convert.ToBase64String()</strong> method. For more information, see Get the certificate key.</td>
 </tr>
 <tr>
 <td style="text-align: left;">keyId</td>
