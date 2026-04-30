@@ -1926,6 +1926,11 @@
 <td style="text-align: left;">The display name for the Azure network connection.</td>
 </tr>
 <tr>
+<td style="text-align: left;">healthCheckPaused</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether regular health checks on the network or domain configuration are paused or active. <code>false</code> if the regular health checks on the network or domain configuration are currently active. <code>true</code> if the checks are paused. If you perform a create or update operation on a <strong>onPremisesNetworkConnection</strong> resource, this value is set to <code>false</code> for four weeks. If you retry a health check on network or domain configuration, this value is set to <code>false</code> for two weeks. If the <strong>onPremisesNetworkConnection</strong> resource is attached in a <strong>provisioningPolicy</strong> or used by a Cloud PC in the past four weeks, <code>healthCheckPaused</code> is set to <code>false</code>. Read-only. Default is <code>false</code>.</td>
+</tr>
+<tr>
 <td style="text-align: left;">healthCheckStatus</td>
 <td style="text-align: left;">cloudPcOnPremisesConnectionStatus</td>
 <td style="text-align: left;">The status of the most recent health check done on the on-premises connection. For example, if the status is <code>passed</code>, the on-premises connection passed all checks run by the service. Possible values: <code>pending</code>, <code>running</code>, <code>passed</code>, <code>failed</code>, <code>warning</code>, <code>informational</code>. Default is <code>pending</code>. Read-only.</td>
@@ -1943,7 +1948,12 @@
 <tr>
 <td style="text-align: left;">inUse</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">When <code>true</code>, the Azure network connection is in use. When <code>false</code>, the connection isn't in use. You can't delete a connection that’s in use. Requires <code>$select</code> to retrieve. For an example that shows how to get the <strong>inUse</strong> property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetail. Read-only.</td>
+<td style="text-align: left;">When <code>true</code>, the Azure network connection is in use. When <code>false</code>, the connection isn't in use. You can't delete a connection that’s in use. Returned only on <code>$select</code>. For an example that shows how to get the <strong>inUse</strong> property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetail. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">inUseByCloudPc</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether a Cloud PC is using this on-premises network connection. <code>true</code> if at least one Cloud PC is using it. Otherwise, <code>false</code>. Read-only. Default is <code>false</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">organizationalUnit</td>
@@ -1954,6 +1964,11 @@
 <td style="text-align: left;">resourceGroupId</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The unique identifier of the target resource group used associated with the on-premises network connectivity for Cloud PCs. Required format: “/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}”</td>
+</tr>
+<tr>
+<td style="text-align: left;">scopeIds</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">The scope IDs of the corresponding permission. Currently, it's the Intune scope tag ID.</td>
 </tr>
 <tr>
 <td style="text-align: left;">subnetId</td>
