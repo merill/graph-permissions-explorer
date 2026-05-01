@@ -156,6 +156,28 @@
 <th>Methods</th>
 </tr>
 </thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/identityverifiedidroot-delete-profiles?view=graph-rest-1.0&amp;tabs=http">DELETE /identity/verifiedId/profiles/{verifiedIdProfileId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/identityverifiedidroot-list-profiles?view=graph-rest-1.0&amp;tabs=http">GET /identity/verifiedId/profiles</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/verifiedidprofile-get?view=graph-rest-1.0&amp;tabs=http">GET /identity/verifiedId/profiles/{verifiedIdProfileId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/verifiedidprofile-update?view=graph-rest-1.0&amp;tabs=http">PATCH /identity/verifiedId/profiles/{verifiedIdProfileId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/identityverifiedidroot-post-profiles?view=graph-rest-1.0&amp;tabs=http">POST /identity/verifiedId/profiles</a></div></td>
+</tr>
+</tbody>
 </table>
 </section>
 <section id="tabpanel_1_apibeta" role="tabpanel" data-tab="apibeta" aria-hidden="true" hidden="hidden">
@@ -270,12 +292,12 @@
 <tr>
 <td style="text-align: left;">isEnabled</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Defines if Face Check is required. Currently must always be true.</td>
+<td style="text-align: left;">Defines if Face Check is required. Currently must always be <code>true</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">sourcePhotoClaimName</td>
-<td style="text-align: left;">Source of photo to validate Face Check against. Currently must always be <code>portrait</code></td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Source of photo to validate Face Check against. Currently must always be <code>portrait</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -340,7 +362,7 @@
 <tr>
 <td style="text-align: left;">verifiedIdUsageConfigurations</td>
 <td style="text-align: left;">verifiedIdUsageConfiguration collection</td>
-<td style="text-align: left;">Collection defining the usage purpose for the profile. The possible values are: <code>recovery</code>, <code>onboarding</code>, <code>all</code>, <code>unknownFutureValue</code>. Required.</td>
+<td style="text-align: left;">Collection defining the usage purpose for the profile. Required.</td>
 </tr>
 </tbody>
 </table>
@@ -371,6 +393,11 @@
 <td style="text-align: left;">claimBindingSource</td>
 <td style="text-align: left;">claimBindingSource</td>
 <td style="text-align: left;">Source to validate against Verified ID claims. The possible values are: <code>directory</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">claimValidation</td>
+<td style="text-align: left;">claimValidation</td>
+<td style="text-align: left;">Validation settings for claim processing.</td>
 </tr>
 <tr>
 <td style="text-align: left;">type</td>
