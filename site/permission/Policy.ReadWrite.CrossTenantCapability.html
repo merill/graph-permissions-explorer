@@ -93,6 +93,11 @@
 <blockquote>
 <p>Allows the app to read and write your organization's M365 cross tenant access capabilities on behalf of the signed-in user.</p>
 </blockquote>
+<blockquote>
+<p><strong>Merill's Note</strong></p>
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>Policy.ReadWrite.CrossTenantCapability</code> permission.</p>
+<p>If you need to create an audit report of the permissions granted to all the apps in your tenant, you can run the <code>Export-MsIdAppConsentGrantReport</code> command. See <a href="https://www.youtube.com/watch?v=vO0m5yE3dZA">How To: Run a quick OAuth app audit of your tenant</a></p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -125,11 +130,376 @@
 </tbody>
 </table>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_apiv1" role="tab" aria-controls="tabpanel_1_apiv1" data-tab="apiv1" tabindex="0" aria-selected="true"><span><i class='bi bi-braces'></i></span> API [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_apibeta" role="tab" aria-controls="tabpanel_1_apibeta" data-tab="apibeta" tabindex="-1"><span><i class='bi bi-braces'></i></span> API [beta]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psv1" role="tab" aria-controls="tabpanel_1_psv1" data-tab="psv1" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psbeta" role="tab" aria-controls="tabpanel_1_psbeta" data-tab="psbeta" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [beta]</a>
+</li>
+</ul>
+<section id="tabpanel_1_apiv1" role="tabpanel" data-tab="apiv1">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_apibeta" role="tabpanel" data-tab="apibeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationdefault-list-m365capabilities?view=graph-rest-beta&amp;tabs=http">GET /policies/crossTenantAccessPolicy/default/m365Capabilities</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-list-m365capabilities?view=graph-rest-beta&amp;tabs=http">GET /policies/crossTenantAccessPolicy/partners/{crossTenantAccessPolicyConfigurationPartner-id}/m365Capabilities</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationdefault-post-m365capabilities?view=graph-rest-beta&amp;tabs=http">POST /policies/crossTenantAccessPolicy/default/m365Capabilities</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-post-m365capabilities?view=graph-rest-beta&amp;tabs=http">POST /policies/crossTenantAccessPolicy/partners/{crossTenantAccessPolicyConfigurationPartner-id}/m365Capabilities</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_psv1" role="tabpanel" data-tab="psv1" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_psbeta" role="tabpanel" data-tab="psbeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
 </div>
-<hr>
+<h2 id="resources">Resources</h2>
+<p>Granting this permission allows the calling application to access (and/or update) the following information in your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_crosstenantaccesspolicy-overview1" role="tab" aria-controls="tabpanel_2_crosstenantaccesspolicy-overview1" data-tab="crosstenantaccesspolicy-overview1" tabindex="0" aria-selected="true">crosstenantaccesspolicy-overview</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_crossTenantAccessPolicyConfigurationDefault2" role="tab" aria-controls="tabpanel_2_crossTenantAccessPolicyConfigurationDefault2" data-tab="crossTenantAccessPolicyConfigurationDefault2" tabindex="-1">crossTenantAccessPolicyConfigurationDefault</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_crossTenantMailTipsLimited3" role="tab" aria-controls="tabpanel_2_crossTenantMailTipsLimited3" data-tab="crossTenantMailTipsLimited3" tabindex="-1">crossTenantMailTipsLimited</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_crossTenantMigration4" role="tab" aria-controls="tabpanel_2_crossTenantMigration4" data-tab="crossTenantMigration4" tabindex="-1">crossTenantMigration</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_crossTenantOpenProfileCard5" role="tab" aria-controls="tabpanel_2_crossTenantOpenProfileCard5" data-tab="crossTenantOpenProfileCard5" tabindex="-1">crossTenantOpenProfileCard</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_crossTenantPlacesRoomBooking6" role="tab" aria-controls="tabpanel_2_crossTenantPlacesRoomBooking6" data-tab="crossTenantPlacesRoomBooking6" tabindex="-1">crossTenantPlacesRoomBooking</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_m365CapabilityBase7" role="tab" aria-controls="tabpanel_2_m365CapabilityBase7" data-tab="m365CapabilityBase7" tabindex="-1">m365CapabilityBase</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_m365CapabilityInboundAccess8" role="tab" aria-controls="tabpanel_2_m365CapabilityInboundAccess8" data-tab="m365CapabilityInboundAccess8" tabindex="-1">m365CapabilityInboundAccess</a>
+</li>
+</ul>
+<section id="tabpanel_2_crosstenantaccesspolicy-overview1" role="tabpanel" data-tab="crosstenantaccesspolicy-overview1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/crosstenantaccesspolicy-overview?view=graph-rest-1.0&amp;tabs=http">crosstenantaccesspolicy-overview</a></p>
+</section>
+<section id="tabpanel_2_crossTenantAccessPolicyConfigurationDefault2" role="tabpanel" data-tab="crossTenantAccessPolicyConfigurationDefault2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/crosstenantaccesspolicyconfigurationdefault?view=graph-rest-1.0&amp;tabs=http">crossTenantAccessPolicyConfigurationDefault</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">appServiceConnectInbound</td>
+<td style="text-align: left;">crossTenantAccessPolicyAppServiceConnectSetting</td>
+<td style="text-align: left;">Defines your default configuration for inbound app service connect settings that control which applications can connect across tenant boundaries.</td>
+</tr>
+<tr>
+<td style="text-align: left;">automaticUserConsentSettings</td>
+<td style="text-align: left;">inboundOutboundPolicyConfiguration</td>
+<td style="text-align: left;">Determines the default configuration for automatic user consent settings. The <strong>inboundAllowed</strong> and <strong>outboundAllowed</strong> properties are always <code>false</code> and can't be updated in the default configuration. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">b2bCollaborationInbound</td>
+<td style="text-align: left;">crossTenantAccessPolicyB2BSetting</td>
+<td style="text-align: left;">Defines your default configuration for users from other organizations accessing your resources via Microsoft Entra B2B collaboration.</td>
+</tr>
+<tr>
+<td style="text-align: left;">b2bCollaborationOutbound</td>
+<td style="text-align: left;">crossTenantAccessPolicyB2BSetting</td>
+<td style="text-align: left;">Defines your default configuration for users in your organization going outbound to access resources in another organization via Microsoft Entra B2B collaboration.</td>
+</tr>
+<tr>
+<td style="text-align: left;">b2bDirectConnectInbound</td>
+<td style="text-align: left;">crossTenantAccessPolicyB2BSetting</td>
+<td style="text-align: left;">Defines your default configuration for users from other organizations accessing your resources via Microsoft Entra B2B direct connect.</td>
+</tr>
+<tr>
+<td style="text-align: left;">b2bDirectConnectOutbound</td>
+<td style="text-align: left;">crossTenantAccessPolicyB2BSetting</td>
+<td style="text-align: left;">Defines your default configuration for users in your organization going outbound to access resources in another organization via Microsoft Entra B2B direct connect.</td>
+</tr>
+<tr>
+<td style="text-align: left;">inboundTrust</td>
+<td style="text-align: left;">crossTenantAccessPolicyInboundTrust</td>
+<td style="text-align: left;">Determines the default configuration for trusting other Conditional Access claims from external Microsoft Entra organizations.</td>
+</tr>
+<tr>
+<td style="text-align: left;">invitationRedemptionIdentityProviderConfiguration</td>
+<td style="text-align: left;">defaultInvitationRedemptionIdentityProviderConfiguration</td>
+<td style="text-align: left;">Defines the priority order based on which an identity provider is selected during invitation redemption for a guest user.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isServiceDefault</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">If <code>true</code>, the default configuration is set to the system default configuration. If <code>false</code>, the default settings are customized.</td>
+</tr>
+<tr>
+<td style="text-align: left;">m365CollaborationInbound</td>
+<td style="text-align: left;">crossTenantAccessPolicyM365CollaborationInboundSetting</td>
+<td style="text-align: left;">Defines your default configuration for inbound Microsoft 365 collaboration settings that determine which users from other organizations can collaborate with your organization using Microsoft 365 apps.</td>
+</tr>
+<tr>
+<td style="text-align: left;">m365CollaborationOutbound</td>
+<td style="text-align: left;">crossTenantAccessPolicyM365CollaborationOutboundSetting</td>
+<td style="text-align: left;">Defines your default configuration for outbound Microsoft 365 collaboration settings that determine which users in your organization can collaborate with other organizations using Microsoft 365 apps.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tenantRestrictions</td>
+<td style="text-align: left;">crossTenantAccessPolicyTenantRestrictions</td>
+<td style="text-align: left;">Defines the default tenant restrictions configuration for users in your organization who access an external organization on your network or devices.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_crossTenantMailTipsLimited3" role="tabpanel" data-tab="crossTenantMailTipsLimited3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/crosstenantmailtipslimited?view=graph-rest-1.0&amp;tabs=http">crossTenantMailTipsLimited</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">inboundAccess</td>
+<td style="text-align: left;">m365CapabilityInboundAccess</td>
+<td style="text-align: left;">The inbound access settings for the capability. Inherited from m365CapabilityBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The automatically updated last modified timestamp for the capability. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is <code>2024-01-01T00:00:00Z</code>. Inherited from m365CapabilityBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name or identifier of the capability. Inherited from m365CapabilityBase.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_crossTenantMigration4" role="tabpanel" data-tab="crossTenantMigration4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/crosstenantmigration?view=graph-rest-1.0&amp;tabs=http">crossTenantMigration</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">inboundAccess</td>
+<td style="text-align: left;">m365CapabilityInboundAccess</td>
+<td style="text-align: left;">The inbound access settings for the capability. Inherited from m365CapabilityBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The automatically updated last modified timestamp for the capability. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is <code>2024-01-01T00:00:00Z</code>. Inherited from m365CapabilityBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name or identifier of the capability. Inherited from m365CapabilityBase.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_crossTenantOpenProfileCard5" role="tabpanel" data-tab="crossTenantOpenProfileCard5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/crosstenantopenprofilecard?view=graph-rest-1.0&amp;tabs=http">crossTenantOpenProfileCard</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">inboundAccess</td>
+<td style="text-align: left;">m365CapabilityInboundAccess</td>
+<td style="text-align: left;">The inbound access settings for the capability. Inherited from m365CapabilityBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The automatically updated last modified timestamp for the capability. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is <code>2024-01-01T00:00:00Z</code>. Inherited from m365CapabilityBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name or identifier of the capability. Inherited from m365CapabilityBase.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_crossTenantPlacesRoomBooking6" role="tabpanel" data-tab="crossTenantPlacesRoomBooking6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/crosstenantplacesroombooking?view=graph-rest-1.0&amp;tabs=http">crossTenantPlacesRoomBooking</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">inboundAccess</td>
+<td style="text-align: left;">m365CapabilityInboundAccess</td>
+<td style="text-align: left;">The inbound access settings for the capability. Inherited from m365CapabilityBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The automatically updated last modified timestamp for the capability. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is <code>2024-01-01T00:00:00Z</code>. Inherited from m365CapabilityBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name or identifier of the capability. Inherited from m365CapabilityBase.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_m365CapabilityBase7" role="tabpanel" data-tab="m365CapabilityBase7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/m365capabilitybase?view=graph-rest-1.0&amp;tabs=http">m365CapabilityBase</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">inboundAccess</td>
+<td style="text-align: left;">m365CapabilityInboundAccess</td>
+<td style="text-align: left;">The inbound access settings for the capability.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The automatically updated last modified timestamp for the capability. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is <code>2024-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name or identifier of the capability. Key.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_m365CapabilityInboundAccess8" role="tabpanel" data-tab="m365CapabilityInboundAccess8" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/m365capabilityinboundaccess?view=graph-rest-1.0&amp;tabs=http">m365CapabilityInboundAccess</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">isAllowed</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether this capability should be allowed or blocked for inbound access.</td>
+</tr>
+<tr>
+<td style="text-align: left;">resourceScopes</td>
+<td style="text-align: left;">m365CapabilityResourceScopes</td>
+<td style="text-align: left;">Specifies the included and excluded resource scopes for the capability.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</div>
 
 </article>
 
