@@ -783,12 +783,17 @@
 <tr>
 <td style="text-align: left;">failureReason</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Describes why the taskProcessingResult has failed.</td>
+<td style="text-align: left;">Describes why the taskProcessingResult failed.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Identifier used for individually addressing a specific task processing result. Inherited from entity.<br><br>Supports <code>$filter</code>(<code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">processingInfo</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Additional human-readable context about the task processing outcome. This property contains information about edge cases where the task completed successfully but the expected action wasn't performed because the target was already in the desired state, such as when the user was already a member of the specified group. Returns <code>null</code> when no additional context is needed. Nullable.</td>
 </tr>
 <tr>
 <td style="text-align: left;">processingStatus</td>
@@ -798,7 +803,7 @@
 <tr>
 <td style="text-align: left;">startedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date time when taskProcessingResult execution started. Value is <code>null</code> if task execution has not yet started.<br><br>Supports <code>$filter</code>(<code>lt</code>, <code>le</code>, <code>gt</code>, <code>ge</code>, <code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
+<td style="text-align: left;">The date time when taskProcessingResult execution started. Value is <code>null</code> if task execution hasn't started yet.<br><br>Supports <code>$filter</code>(<code>lt</code>, <code>le</code>, <code>gt</code>, <code>ge</code>, <code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
 </tr>
 </tbody>
 </table>
