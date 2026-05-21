@@ -346,6 +346,10 @@
 <tbody>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/cloudpccloudapp-delete?view=graph-rest-beta&amp;tabs=http">DELETE /deviceManagement/virtualEndpoint/cloudApps/{cloudPcCloudAppId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/cloudpcpool-delete?view=graph-rest-beta&amp;tabs=http">DELETE /deviceManagement/virtualEndpoint/cloudPcPools/{cloudPcPool-id}</a></div></td>
 </tr>
 <tr>
@@ -755,6 +759,10 @@
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/cloudpcbulkaction-retry?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/bulkActions/{id}/retry</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/virtualendpoint-post-cloudapps?view=graph-rest-beta&amp;tabs=http">POST /deviceManagement/virtualEndpoint/cloudApps</a></div></td>
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
@@ -2027,7 +2035,7 @@
 <tr>
 <td style="text-align: left;">actionFailedErrorCode</td>
 <td style="text-align: left;">cloudPcCloudAppActionFailedErrorCode</td>
-<td style="text-align: left;">The error code if publishing, unpublishing, or resetting a cloud app fails. The possible values are: <code>cloudAppQuotaExceeded</code>, <code>cloudPcLicenseNotFound</code>, <code>internalServerError</code>, <code>appDiscoveryFailed</code>, <code>unknownFutureValue</code>. The default value is <code>null</code>. Supports <code>$filter</code>, <code>$select</code>, <code>$orderBy</code>. Read-only.</td>
+<td style="text-align: left;">The error code if publishing, unpublishing, or resetting a cloud app fails. The possible values are: <code>cloudAppQuotaExceeded</code>, <code>cloudPcLicenseNotFound</code>, <code>internalServerError</code>, <code>appDiscoveryFailed</code>, <code>unknownFutureValue</code>, <code>iconPathInvalid</code>, <code>filePathInvalid</code>. Use the <code>Prefer: include-unknown-enum-members</code> request header to get the following values in this evolvable enum: <code>iconPathInvalid</code>, <code>filePathInvalid</code>. The default value is <code>null</code>. Supports <code>$filter</code>, <code>$select</code>, <code>$orderBy</code>. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">actionFailedErrorMessage</td>
@@ -2042,7 +2050,7 @@
 <tr>
 <td style="text-align: left;">appDetail</td>
 <td style="text-align: left;">cloudPcCloudAppDetail</td>
-<td style="text-align: left;">The details about the cloud app. These values come initially from the <strong>appDetail</strong> property of the associated discovered app. The <strong>iconPath</strong>, <strong>iconIndex</strong>, and <strong>commandLineArguments</strong> properties can be changed as needed when you update the cloud app. Supports <code>$select</code>.</td>
+<td style="text-align: left;">The details about the cloud app. These values come initially from the <strong>appDetail</strong> property of the associated discovered app. The <strong>iconPath</strong>, <strong>iconIndex</strong>, and <strong>commandLineArguments</strong> properties can be changed as needed when you update the cloud app. The <strong>cloudPcCloudAppDetail</strong> type is polymorphic and includes the following derived types: cloudPcAutomaticDiscoveredAppDetail for apps automatically discovered from the <em>start</em> menu, and cloudPcFilePathAppDetail for apps manually created when a file path is specified. The **@odata.type** property indicates the specific type. Supports <code>$select</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">appStatus</td>
@@ -2082,7 +2090,7 @@
 <tr>
 <td style="text-align: left;">provisioningPolicyId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The ID of the provisioning policy associated with this cloud app. For example, <code>96133506-c05b-4dbb-a150-ed4adc59895f</code>. Supports <code>$filter</code>, <code>$select</code>, and <code>$orderBy</code>. Read-only. Required.</td>
+<td style="text-align: left;">The ID of the provisioning policy associated with this cloud app. For example, <code>96133506-c05b-4dbb-a150-ed4adc59895f</code>. Supports <code>$filter</code>, <code>$select</code>, and <code>$orderBy</code>. Required.</td>
 </tr>
 <tr>
 <td style="text-align: left;">scopeIds</td>
@@ -2112,7 +2120,7 @@
 <tr>
 <td style="text-align: left;">filePath</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Specifies the path to the executable file for the application within the OS of the hosting Cloud PC. The value should be an absolute path to a Windows or Universal app. For example, <code>C:\app.exe</code> or <code>shell:AppsFolder\appname!App</code>. Read-only.</td>
+<td style="text-align: left;">Specifies the path to the executable file for the application within the OS of the hosting Cloud PC. The value should be an absolute path to a Windows or Universal app. For example, <code>C:\app.exe</code> or <code>shell:AppsFolder\appname!App</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">iconIndex</td>
