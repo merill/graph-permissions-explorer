@@ -93,6 +93,12 @@
 <blockquote>
 <p>Allows the app to request access to and management of access packages and related entitlement management resources on behalf of the signed-in user.</p>
 </blockquote>
+<!-- markdownlint-disable MD002 MD041 -->
+<div class="CAUTION">
+<h5>Caution</h5>
+<p>Permissions that allow granting authorization, such as <em>EntitlementManagement.ReadWrite.All</em>, allow an application to grant additional privileges to itself, other applications, or any user. Use caution when granting any of these permissions.</p>
+<p>With the <em>EntitlementManagement.ReadWrite.All</em> permission, an application can manage authorizations for all resources that have been <a href="https://docs.microsoft.com/entra/id-governance/entitlement-management-catalog-create">onboarded by resource owners to entitlement management catalogs</a>. This includes Microsoft Entra role assignments, app role assignments and API permissions (including Microsoft Graph) of Microsoft Entra integrated apps, Azure resource roles, SharePoint site roles, group memberships, and more. For details, see <a href="https://docs.microsoft.com/graph/api/entitlementmanagement-post-resourcerequests">Add a resource to a catalog</a>.</p>
+</div>
 <blockquote>
 <p><strong>Merill's Note</strong></p>
 <p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>EntitlementManagement.ReadWrite.All</code> permission.</p>
