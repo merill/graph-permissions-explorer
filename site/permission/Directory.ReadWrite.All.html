@@ -5475,6 +5475,11 @@
 <td style="text-align: left;">The list of categories for the application. Supported values can be: <code>Collaboration</code>, <code>Business Management</code>, <code>Consumer</code>, <code>Content management</code>, <code>CRM</code>, <code>Data services</code>, <code>Developer services</code>, <code>E-commerce</code>, <code>Education</code>, <code>ERP</code>, <code>Finance</code>, <code>Health</code>, <code>Human resources</code>, <code>IT infrastructure</code>, <code>Mail</code>, <code>Management</code>, <code>Marketing</code>, <code>Media</code>, <code>Productivity</code>, <code>Project management</code>, <code>Telecommunications</code>, <code>Tools</code>, <code>Travel</code>, and <code>Web design &amp; hosting</code>. <br><br> Supports <code>$filter</code> (<code>contains</code>).</td>
 </tr>
 <tr>
+<td style="text-align: left;">deprecationDate</td>
+<td style="text-align: left;">Date</td>
+<td style="text-align: left;">Deprecation date for this application. If specified, the application will be removed from the Microsoft Entra application gallery on this date.</td>
+</tr>
+<tr>
 <td style="text-align: left;">description</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">A description of the application.</td>
@@ -5483,6 +5488,11 @@
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The name of the application. Supports <code>$filter</code> (<code>contains</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">endpoints</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">A collection of string URLs representing various domains that are used by this application.</td>
 </tr>
 <tr>
 <td style="text-align: left;">homePageUrl</td>
@@ -5495,6 +5505,16 @@
 <td style="text-align: left;">Unique identifier for the application. Read-only.</td>
 </tr>
 <tr>
+<td style="text-align: left;">isEntraIntegrated</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the application is integrated with Entra ID (for example, through single sign-on or user provisioning).</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the data for the application was last updated, represented using ISO 8601 format and always in UTC time.</td>
+</tr>
+<tr>
 <td style="text-align: left;">logoUrl</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The URL to get the logo for this application.</td>
@@ -5503,6 +5523,16 @@
 <td style="text-align: left;">publisher</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The name of the publisher for this application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">riskFactors</td>
+<td style="text-align: left;">applicationRiskFactors</td>
+<td style="text-align: left;">A comprehensive set of risk assessment data for the application, including general, security, compliance, and legal dimensions. Returned only when <code>$select</code> is used.</td>
+</tr>
+<tr>
+<td style="text-align: left;">riskScore</td>
+<td style="text-align: left;">applicationRiskScore</td>
+<td style="text-align: left;">Represents the Microsoft-generated numerical risk score assessment for the application. Supported <code>$orderby</code> on <strong>total</strong> (for example, <code>$orderby=riskScore/total desc</code>). Returned only when <code>$select</code> is used.</td>
 </tr>
 <tr>
 <td style="text-align: left;">supportedProvisioningTypes</td>
