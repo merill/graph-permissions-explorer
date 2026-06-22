@@ -172,11 +172,11 @@
 <tbody>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
-<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/security-detectionrule-list?view=graph-rest-beta&amp;tabs=http">GET /security/rules/detectionRules</a></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/security-rulesroot-list-detectionrules?view=graph-rest-beta&amp;tabs=http">GET /security/rules/detectionRules</a></div></td>
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
-<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/security-detectionrule-get?view=graph-rest-beta&amp;tabs=http">GET /security/rules/detectionRules/{ruleId}</a></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/security-detectionrule-get?view=graph-rest-beta&amp;tabs=http">GET /security/rules/detectionRules/{detectionRuleId}</a></div></td>
 </tr>
 </tbody>
 </table>
@@ -435,62 +435,72 @@
 <tr>
 <td style="text-align: left;">createdBy</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Name of the user or application that created the rule. Inherited from microsoft.graph.security.protectionRule.</td>
+<td style="text-align: left;">Name of the user or application that created the rule. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>, <code>startsWith</code>, <code>endsWith</code>, <code>contains</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Timestamp of rule creation. Inherited from microsoft.graph.security.protectionRule.</td>
+<td style="text-align: left;">Timestamp of rule creation. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>le</code>, <code>ge</code>, <code>lt</code>, <code>gt</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
-<td style="text-align: left;">detectionAction</td>
-<td style="text-align: left;">microsoft.graph.security.detectionAction</td>
-<td style="text-align: left;">Complex type representing the actions taken when a detection is made by this rule.</td>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A user-supplied description of the detection rule. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>, <code>startsWith</code>, <code>endsWith</code>, <code>contains</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Name of the rule. Inherited from microsoft.graph.security.protectionRule.</td>
+<td style="text-align: left;">The display name of the rule. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>, <code>startsWith</code>, <code>endsWith</code>, <code>contains</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Unique identifier to represent the rule. Inherited from microsoft.graph.entity.</td>
-</tr>
-<tr>
-<td style="text-align: left;">isEnabled</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates whether rule is turned on for the tenant. Inherited from microsoft.graph.security.protectionRule.</td>
+<td style="text-align: left;">Unique identifier of the rule. Inherited from entity. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">lastModifiedBy</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Name of user or application who last updated the rule. Inherited from microsoft.graph.security.protectionRule.</td>
+<td style="text-align: left;">Name of the user or application that last updated the rule. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>, <code>startsWith</code>, <code>endsWith</code>, <code>contains</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">lastModifiedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Timestamp of when the rule was last updated. Inherited from microsoft.graph.security.protectionRule.</td>
-</tr>
-<tr>
-<td style="text-align: left;">detectorId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The ID of the detector that triggered the alert. Also see the 'detectorId' field in microsoft.graph.security.alert.</td>
-</tr>
-<tr>
-<td style="text-align: left;">lastRunDetails</td>
-<td style="text-align: left;">microsoft.graph.security.runDetails</td>
-<td style="text-align: left;">Complex type holding details about the last run of this rule.</td>
+<td style="text-align: left;">Timestamp of when the rule was last updated. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>le</code>, <code>ge</code>, <code>lt</code>, <code>gt</code>) and <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">queryCondition</td>
 <td style="text-align: left;">microsoft.graph.security.queryCondition</td>
-<td style="text-align: left;">Complex type holding data about the advanced hunting query of this rule.</td>
+<td style="text-align: left;">The advanced hunting query that defines the detection logic of this rule. Supports <code>$filter</code> on <strong>queryCondition/queryText</strong> (String) with <code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>, <code>startsWith</code>, <code>endsWith</code>, <code>contains</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">schedule</td>
 <td style="text-align: left;">microsoft.graph.security.ruleSchedule</td>
-<td style="text-align: left;">Complex type holding data about the triggering schedule of this rule.</td>
+<td style="text-align: left;">The triggering schedule of this rule. Supports <code>$filter</code> on <strong>schedule/frequency</strong> (Duration) with <code>eq</code>, <code>ne</code>, <code>not</code>, <code>le</code>, <code>ge</code>, <code>lt</code>, <code>gt</code>. Supports <code>$orderby</code> on <strong>schedule/frequency</strong> and <strong>schedule/nextRunDateTime</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">microsoft.graph.security.detectionRuleStatus</td>
+<td style="text-align: left;">The current run status of the rule. The possible values are: <code>enabled</code>, <code>disabled</code>, <code>autoDisabled</code>, <code>unknownFutureValue</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">detectorId (deprecated)</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Internal detector identifier. <strong>Deprecated.</strong> This property will be removed from this resource on 2026-10-01.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isEnabled (deprecated)</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the rule is turned on for the tenant. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>). <strong>Deprecated.</strong> Use <strong>status</strong> instead. This property will be removed from this resource on 2026-10-01.</td>
+</tr>
+<tr>
+<td style="text-align: left;">detectionAction</td>
+<td style="text-align: left;">microsoft.graph.security.detectionAction</td>
+<td style="text-align: left;">The actions taken when a detection is made by this rule, including the alert that is created and any automated response actions. Supports <code>$filter</code> on the following nested <strong>alertTemplate</strong> properties:<br><li>String: <strong>detectionAction/alertTemplate/title</strong>, <strong>detectionAction/alertTemplate/description</strong>, <strong>detectionAction/alertTemplate/category</strong>, <strong>detectionAction/alertTemplate/recommendedActions</strong> — each supports <code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>, <code>startsWith</code>, <code>endsWith</code>, <code>contains</code>.</li><li>Enum: <strong>detectionAction/alertTemplate/severity</strong> — supports <code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>.</li></td>
+</tr>
+<tr>
+<td style="text-align: left;">lastRunDetails (deprecated)</td>
+<td style="text-align: left;">microsoft.graph.security.runDetails</td>
+<td style="text-align: left;">Runtime execution details for the most recent rule run. Supports <code>$filter</code> on the following nested properties:<br><li>String: **l</li></td>
 </tr>
 </tbody>
 </table>
