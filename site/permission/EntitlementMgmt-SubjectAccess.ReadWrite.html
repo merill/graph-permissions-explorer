@@ -93,6 +93,11 @@
 <blockquote>
 <p>Allows the app to manage self-service entitlement management resources on behalf of the signed-in user.  This includes operations such as requesting access and approving access of others.</p>
 </blockquote>
+<blockquote>
+<p><strong>Merill's Note</strong></p>
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>EntitlementMgmt-SubjectAccess.ReadWrite</code> permission.</p>
+<p>If you need to create an audit report of the permissions granted to all the apps in your tenant, you can run the <code>Export-MsIdAppConsentGrantReport</code> command. See <a href="https://www.youtube.com/watch?v=vO0m5yE3dZA">How To: Run a quick OAuth app audit of your tenant</a></p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -125,11 +130,694 @@
 </tbody>
 </table>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_apiv1" role="tab" aria-controls="tabpanel_1_apiv1" data-tab="apiv1" tabindex="0" aria-selected="true"><span><i class='bi bi-braces'></i></span> API [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_apibeta" role="tab" aria-controls="tabpanel_1_apibeta" data-tab="apibeta" tabindex="-1"><span><i class='bi bi-braces'></i></span> API [beta]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psv1" role="tab" aria-controls="tabpanel_1_psv1" data-tab="psv1" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psbeta" role="tab" aria-controls="tabpanel_1_psbeta" data-tab="psbeta" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [beta]</a>
+</li>
+</ul>
+<section id="tabpanel_1_apiv1" role="tabpanel" data-tab="apiv1">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/accesspackage-filterbycurrentuser?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackages/filterByCurrentUser(on='allowedRequestor')</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/accesspackageassignmentrequest-filterbycurrentuser?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/assignmentRequests/filterByCurrentUser(on='parameterValue')</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/accesspackageassignment-filterbycurrentuser?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/entitlementManagement/assignments/filterByCurrentUser(on='parameterValue')</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/accesspackage-getapplicablepolicyrequirements?view=graph-rest-1.0&amp;tabs=http">POST /identityGovernance/entitlementManagement/accessPackages/{accessPackageId}/getApplicablePolicyRequirements</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/entitlementmanagement-post-assignmentrequests?view=graph-rest-1.0&amp;tabs=http">POST /identityGovernance/entitlementManagement/assignmentRequests</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/accesspackageassignmentrequest-cancel?view=graph-rest-1.0&amp;tabs=http">POST /identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequestId}/cancel</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_apibeta" role="tabpanel" data-tab="apibeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/accesspackageassignmentrequest-filterbycurrentuser?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignmentRequests/filterByCurrentUser(on='parameterValue')</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/accesspackageassignment-filterbycurrentuser?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageAssignments/filterByCurrentUser(on='parameterValue')</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/accesspackage-filterbycurrentuser?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackages/filterByCurrentUser(on='allowedRequestor')</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/accesspackagesuggestions-filterbycurrentuser?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/accessPackageSuggestions/filterByCurrentUser(on={on})</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/accesspackageassignmentrequest-filterbycurrentuser?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/assignmentRequests/filterByCurrentUser(on='parameterValue')</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/availableaccesspackage-list-resourcerolescopes?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/entitlementManagement/availableAccessPackages/{availableAccessPackage-id}/resourceRoleScopes</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/entitlementmanagement-post-accesspackageassignmentrequests?view=graph-rest-beta&amp;tabs=http">POST /identityGovernance/entitlementManagement/accessPackageAssignmentRequests</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/accesspackageassignmentrequest-cancel?view=graph-rest-beta&amp;tabs=http">POST /identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{id}/cancel</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/accesspackage-getapplicablepolicyrequirements?view=graph-rest-beta&amp;tabs=http">POST /identityGovernance/entitlementManagement/accessPackages/{id}/getApplicablePolicyRequirements</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/entitlementmanagement-post-assignmentrequests?view=graph-rest-beta&amp;tabs=http">POST /identityGovernance/entitlementManagement/assignmentRequests</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/accesspackageassignmentrequest-cancel?view=graph-rest-beta&amp;tabs=http">POST /identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequestId}/cancel</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_psv1" role="tabpanel" data-tab="psv1" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.identity.governance/get-mgentitlementmanagementaccesspackageapplicablepolicyrequirement">Get-MgEntitlementManagementAccessPackageApplicablePolicyRequirement</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.identity.governance/invoke-mgfilterentitlementmanagementaccesspackagebycurrentuser">Invoke-MgFilterEntitlementManagementAccessPackageByCurrentUser</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.identity.governance/invoke-mgfilterentitlementmanagementassignmentbycurrentuser">Invoke-MgFilterEntitlementManagementAssignmentByCurrentUser</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.identity.governance/invoke-mgfilterentitlementmanagementassignmentrequestbycurrentuser">Invoke-MgFilterEntitlementManagementAssignmentRequestByCurrentUser</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.identity.governance/new-mgentitlementmanagementassignmentrequest">New-MgEntitlementManagementAssignmentRequest</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.identity.governance/stop-mgentitlementmanagementassignmentrequest">Stop-MgEntitlementManagementAssignmentRequest</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_psbeta" role="tabpanel" data-tab="psbeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.governance/get-mgbetaentitlementmanagementaccesspackageapplicablepolicyrequirement">Get-MgBetaEntitlementManagementAccessPackageApplicablePolicyRequirement</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.governance/get-mgbetaentitlementmanagementavailableaccesspackageresourcerolescope">Get-MgBetaEntitlementManagementAvailableAccessPackageResourceRoleScope</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.governance/invoke-mgbetafilterentitlementmanagementaccesspackageassignmentbycurrentuser">Invoke-MgBetaFilterEntitlementManagementAccessPackageAssignmentByCurrentUser</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.governance/invoke-mgbetafilterentitlementmanagementaccesspackageassignmentrequestbycurrentuser">Invoke-MgBetaFilterEntitlementManagementAccessPackageAssignmentRequestByCurrentUser</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.governance/invoke-mgbetafilterentitlementmanagementaccesspackagebycurrentuser">Invoke-MgBetaFilterEntitlementManagementAccessPackageByCurrentUser</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.governance/invoke-mgbetafilterentitlementmanagementaccesspackagesuggestionbycurrentuser">Invoke-MgBetaFilterEntitlementManagementAccessPackageSuggestionByCurrentUser</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.governance/new-mgbetaentitlementmanagementaccesspackageassignmentrequest">New-MgBetaEntitlementManagementAccessPackageAssignmentRequest</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.governance/new-mgbetaentitlementmanagementassignmentrequest">New-MgBetaEntitlementManagementAssignmentRequest</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.governance/stop-mgbetaentitlementmanagementaccesspackageassignmentrequest">Stop-MgBetaEntitlementManagementAccessPackageAssignmentRequest</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
 </div>
-<hr>
+<h2 id="resources">Resources</h2>
+<p>Granting this permission allows the calling application to access (and/or update) the following information in your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_accessPackage1" role="tab" aria-controls="tabpanel_2_accessPackage1" data-tab="accessPackage1" tabindex="0" aria-selected="true">accessPackage</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_accessPackageAssignment2" role="tab" aria-controls="tabpanel_2_accessPackageAssignment2" data-tab="accessPackageAssignment2" tabindex="-1">accessPackageAssignment</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_accesspackageassignment-accesspackageassignmentfilterbycurrentuseroptions3" role="tab" aria-controls="tabpanel_2_accesspackageassignment-accesspackageassignmentfilterbycurrentuseroptions3" data-tab="accesspackageassignment-accesspackageassignmentfilterbycurrentuseroptions3" tabindex="-1">accesspackageassignment-accesspackageassignmentfilterbycurrentuseroptions</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_accessPackageAssignmentPolicy4" role="tab" aria-controls="tabpanel_2_accessPackageAssignmentPolicy4" data-tab="accessPackageAssignmentPolicy4" tabindex="-1">accessPackageAssignmentPolicy</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_accessPackageAssignmentRequest5" role="tab" aria-controls="tabpanel_2_accessPackageAssignmentRequest5" data-tab="accessPackageAssignmentRequest5" tabindex="-1">accessPackageAssignmentRequest</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_accesspackageassignmentrequestfilterbycurrentuseroptions6" role="tab" aria-controls="tabpanel_2_accesspackageassignmentrequestfilterbycurrentuseroptions6" data-tab="accesspackageassignmentrequestfilterbycurrentuseroptions6" tabindex="-1">accesspackageassignmentrequestfilterbycurrentuseroptions</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_accessPackageAssignmentRequestRequirements7" role="tab" aria-controls="tabpanel_2_accessPackageAssignmentRequestRequirements7" data-tab="accessPackageAssignmentRequestRequirements7" tabindex="-1">accessPackageAssignmentRequestRequirements</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_accessPackageResourceRoleScope8" role="tab" aria-controls="tabpanel_2_accessPackageResourceRoleScope8" data-tab="accessPackageResourceRoleScope8" tabindex="-1">accessPackageResourceRoleScope</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_accessPackageSubject9" role="tab" aria-controls="tabpanel_2_accessPackageSubject9" data-tab="accessPackageSubject9" tabindex="-1">accessPackageSubject</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_accessPackageSuggestion10" role="tab" aria-controls="tabpanel_2_accessPackageSuggestion10" data-tab="accessPackageSuggestion10" tabindex="-1">accessPackageSuggestion</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_availableAccessPackage11" role="tab" aria-controls="tabpanel_2_availableAccessPackage11" data-tab="availableAccessPackage11" tabindex="-1">availableAccessPackage</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_entitlementmanagement-overview12" role="tab" aria-controls="tabpanel_2_entitlementmanagement-overview12" data-tab="entitlementmanagement-overview12" tabindex="-1">entitlementmanagement-overview</a>
+</li>
+</ul>
+<section id="tabpanel_2_accessPackage1" role="tabpanel" data-tab="accessPackage1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/accesspackage?view=graph-rest-1.0&amp;tabs=http">accessPackage</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The description of the access package.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Required. The display name of the access package. Supports $filter (<code>eq</code>, <code>contains</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isHidden</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the access package is hidden from the requestor.</td>
+</tr>
+<tr>
+<td style="text-align: left;">modifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_accessPackageAssignment2" role="tabpanel" data-tab="accessPackageAssignment2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/accesspackageassignment?view=graph-rest-1.0&amp;tabs=http">accessPackageAssignment</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">customExtensionCalloutInstances</td>
+<td style="text-align: left;">customExtensionCalloutInstance collection</td>
+<td style="text-align: left;">Information about all the custom extension calls that were made during the access package assignment workflow.</td>
+</tr>
+<tr>
+<td style="text-align: left;">expiredDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">schedule</td>
+<td style="text-align: left;">entitlementManagementSchedule</td>
+<td style="text-align: left;">When the access assignment is to be in place. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">state</td>
+<td style="text-align: left;">accessPackageAssignmentState</td>
+<td style="text-align: left;">The state of the access package assignment. The possible values are: <code>delivering</code>, <code>partiallyDelivered</code>, <code>delivered</code>, <code>expired</code>, <code>deliveryFailed</code>, <code>unknownFutureValue</code>. Read-only. Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">More information about the assignment lifecycle. Possible values include <code>Delivering</code>, <code>Delivered</code>, <code>AutoAssignmentInGracePeriod</code>, <code>NearExpiry1DayNotificationTriggered</code>, or <code>ExpiredNotificationTriggered</code>. Read-only.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_accesspackageassignment-accesspackageassignmentfilterbycurrentuseroptions3" role="tabpanel" data-tab="accesspackageassignment-accesspackageassignmentfilterbycurrentuseroptions3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/accesspackageassignment-accesspackageassignmentfilterbycurrentuseroptions?view=graph-rest-1.0&amp;tabs=http">accesspackageassignment-accesspackageassignmentfilterbycurrentuseroptions</a></p>
+</section>
+<section id="tabpanel_2_accessPackageAssignmentPolicy4" role="tabpanel" data-tab="accessPackageAssignmentPolicy4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/accesspackageassignmentpolicy?view=graph-rest-1.0&amp;tabs=http">accessPackageAssignmentPolicy</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">accessPackageNotificationSettings</td>
+<td style="text-align: left;">accessPackageNotificationSettings</td>
+<td style="text-align: left;">Represents the settings for email notifications for requests to an access package.</td>
+</tr>
+<tr>
+<td style="text-align: left;">allowedTargetScope</td>
+<td style="text-align: left;">allowedTargetScope</td>
+<td style="text-align: left;">Principals that can be assigned the access package through this policy. The possible values are: <code>notSpecified</code>, <code>specificDirectoryUsers</code>, <code>specificConnectedOrganizationUsers</code>, <code>specificDirectoryServicePrincipals</code>, <code>allMemberUsers</code>, <code>allDirectoryUsers</code>, <code>allDirectoryServicePrincipals</code>, <code>allConfiguredConnectedOrganizationUsers</code>, <code>allExternalUsers</code>, <code>allDirectoryAgentIdentities</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">automaticRequestSettings</td>
+<td style="text-align: left;">accessPackageAutomaticRequestSettings</td>
+<td style="text-align: left;">This property is only present for an auto assignment policy; if absent, this is a request-based policy.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The description of the policy.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the policy.</td>
+</tr>
+<tr>
+<td style="text-align: left;">expiration</td>
+<td style="text-align: left;">expirationPattern</td>
+<td style="text-align: left;">The expiration date for assignments created in this policy.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">modifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">requestApprovalSettings</td>
+<td style="text-align: left;">accessPackageAssignmentApprovalSettings</td>
+<td style="text-align: left;">Specifies the settings for approval of requests for an access package assignment through this policy. For example, if approval is required for new requests.</td>
+</tr>
+<tr>
+<td style="text-align: left;">requestorSettings</td>
+<td style="text-align: left;">accessPackageAssignmentRequestorSettings</td>
+<td style="text-align: left;">Provides additional settings to select who can create a request for an access package assignment through this policy, and what they can include in their request.</td>
+</tr>
+<tr>
+<td style="text-align: left;">reviewSettings</td>
+<td style="text-align: left;">accessPackageAssignmentReviewSettings</td>
+<td style="text-align: left;">Settings for access reviews of assignments through this policy.</td>
+</tr>
+<tr>
+<td style="text-align: left;">specificAllowedTargets</td>
+<td style="text-align: left;">subjectSet collection</td>
+<td style="text-align: left;">The principals that can be assigned access from an access package through this policy.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_accessPackageAssignmentRequest5" role="tabpanel" data-tab="accessPackageAssignmentRequest5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/accesspackageassignmentrequest?view=graph-rest-1.0&amp;tabs=http">accessPackageAssignmentRequest</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">answers</td>
+<td style="text-align: left;">accessPackageAnswer collection</td>
+<td style="text-align: left;">Answers provided by the requestor to accessPackageQuestions asked of them at the time of request.</td>
+</tr>
+<tr>
+<td style="text-align: left;">completedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date of the end of processing, either successful or failure, of a request. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">customExtensionCalloutInstances</td>
+<td style="text-align: left;">customExtensionCalloutInstance collection</td>
+<td style="text-align: left;">Information about all the custom extension calls that were made during the access package assignment workflow.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Read-only. Supports <code>$filter</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">justification</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The requestor's supplied justification.</td>
+</tr>
+<tr>
+<td style="text-align: left;">requestType</td>
+<td style="text-align: left;">accessPackageRequestType</td>
+<td style="text-align: left;">The type of the request. The possible values are: <code>notSpecified</code>, <code>userAdd</code>, <code>userUpdate</code>, <code>userRemove</code>, <code>adminAdd</code>, <code>adminUpdate</code>, <code>adminRemove</code>, <code>systemAdd</code>, <code>systemUpdate</code>, <code>systemRemove</code>, <code>onBehalfAdd</code> (not supported), <code>unknownFutureValue</code>. Use the <code>Prefer: include-unknown-enum-members</code> request header to get the following values in this evolvable enum: <code>approverRemove</code>. Requests from the user have a <strong>requestType</strong> of <code>userAdd</code>, <code>userUpdate</code>, or <code>userRemove</code>. This property can't be changed once set.</td>
+</tr>
+<tr>
+<td style="text-align: left;">schedule</td>
+<td style="text-align: left;">entitlementManagementSchedule</td>
+<td style="text-align: left;">The range of dates that access is to be assigned to the requestor. This property can't be changed once set, but a new schedule for an assignment can be included in another <code>userUpdate</code> or <code>adminUpdate</code> assignment request.</td>
+</tr>
+<tr>
+<td style="text-align: left;">state</td>
+<td style="text-align: left;">accessPackageRequestState</td>
+<td style="text-align: left;">The state of the request. The possible values are: <code>submitted</code>, <code>pendingApproval</code>, <code>delivering</code>, <code>delivered</code>, <code>deliveryFailed</code>, <code>denied</code>, <code>scheduled</code>, <code>canceled</code>, <code>partiallyDelivered</code>, <code>unknownFutureValue</code>. Read-only. Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">More information on the request processing status. Read-only.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_accesspackageassignmentrequestfilterbycurrentuseroptions6" role="tabpanel" data-tab="accesspackageassignmentrequestfilterbycurrentuseroptions6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/accesspackageassignmentrequestfilterbycurrentuseroptions?view=graph-rest-1.0&amp;tabs=http">accesspackageassignmentrequestfilterbycurrentuseroptions</a></p>
+</section>
+<section id="tabpanel_2_accessPackageAssignmentRequestRequirements7" role="tabpanel" data-tab="accessPackageAssignmentRequestRequirements7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/accesspackageassignmentrequestrequirements?view=graph-rest-1.0&amp;tabs=http">accessPackageAssignmentRequestRequirements</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">allowCustomAssignmentSchedule</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the requestor is allowed to set a custom schedule.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isApprovalRequiredForAdd</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether a request to add must be approved by an approver.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isApprovalRequiredForUpdate</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether a request to update must be approved by an approver.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isRequestorJustificationRequired</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether requestors must justify requesting access to an access package.</td>
+</tr>
+<tr>
+<td style="text-align: left;">policyDescription</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The description of the policy that the user is trying to request access using.</td>
+</tr>
+<tr>
+<td style="text-align: left;">policyDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the policy that the user is trying to request access using.</td>
+</tr>
+<tr>
+<td style="text-align: left;">policyId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the policy that these requirements are associated with. This identifier can be used when creating a new assignment request.</td>
+</tr>
+<tr>
+<td style="text-align: left;">questions</td>
+<td style="text-align: left;">accessPackageQuestion collection</td>
+<td style="text-align: left;">Questions that are configured on the policy. The questions can be required or optional; callers can determine whether a question is required or optional based on the <strong>isRequired</strong> property on <strong>accessPackageQuestion</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">schedule</td>
+<td style="text-align: left;">entitlementManagementSchedule</td>
+<td style="text-align: left;">Schedule restrictions enforced, if any.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_accessPackageResourceRoleScope8" role="tabpanel" data-tab="accessPackageResourceRoleScope8" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/accesspackageresourcerolescope?view=graph-rest-1.0&amp;tabs=http">accessPackageResourceRoleScope</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Read-only.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_accessPackageSubject9" role="tabpanel" data-tab="accessPackageSubject9" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/accesspackagesubject?view=graph-rest-1.0&amp;tabs=http">accessPackageSubject</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the subject.</td>
+</tr>
+<tr>
+<td style="text-align: left;">email</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The email address of the subject.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">This property shouldn't be used as a dependency, as it could change without notice. Instead, use the <strong>objectId</strong> property.</td>
+</tr>
+<tr>
+<td style="text-align: left;">objectId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The object identifier of the subject. <code>null</code> if the subject isn't yet a user in the tenant.</td>
+</tr>
+<tr>
+<td style="text-align: left;">onPremisesSecurityIdentifier</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A string representation of the principal's security identifier, if known, or <code>null</code> if the subject doesn't have a security identifier.</td>
+</tr>
+<tr>
+<td style="text-align: left;">principalName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The principal name, if known, of the subject.</td>
+</tr>
+<tr>
+<td style="text-align: left;">subjectLifecycle</td>
+<td style="text-align: left;">accessPackageSubjectLifecycle</td>
+<td style="text-align: left;">The lifecycle of the subject user, if a guest. The possible values are: <code>notDefined</code>, <code>notGoverned</code>, <code>governed</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">subjectType</td>
+<td style="text-align: left;">accessPackageSubjectType</td>
+<td style="text-align: left;">The resource type of the subject. The possible values are: <code>notSpecified</code>, <code>user</code>, <code>servicePrincipal</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_accessPackageSuggestion10" role="tabpanel" data-tab="accessPackageSuggestion10" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/accesspackagesuggestion?view=graph-rest-1.0&amp;tabs=http">accessPackageSuggestion</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the suggested access package. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">reasons</td>
+<td style="text-align: left;">Collection(accessPackageSuggestionReason)</td>
+<td style="text-align: left;">A collection of reasons why this access package is being suggested to the user.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_availableAccessPackage11" role="tabpanel" data-tab="availableAccessPackage11" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/availableaccesspackage?view=graph-rest-1.0&amp;tabs=http">availableAccessPackage</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The description of the access package.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the access package.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifier of the access package. Read-only.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_entitlementmanagement-overview12" role="tabpanel" data-tab="entitlementmanagement-overview12" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/entitlementmanagement-overview?view=graph-rest-1.0&amp;tabs=http">entitlementmanagement-overview</a></p>
+</section>
+</div>
 
 </article>
 
