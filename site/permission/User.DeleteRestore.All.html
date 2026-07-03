@@ -1969,7 +1969,7 @@
 <tr>
 <td style="text-align: left;">accountEnabled</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;"><code>true</code> if the account is enabled; otherwise, <code>false</code>. This property is required when a user is created. <br><br>Requires <code>$select</code> to retrieve. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, and <code>in</code>).</td>
+<td style="text-align: left;"><code>true</code> if the account is enabled; otherwise, <code>false</code>. This property is required when a user is created. <br><br>Requires <code>$select</code> to retrieve. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, and <code>in</code>). <br><br>This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.</td>
 </tr>
 <tr>
 <td style="text-align: left;">ageGroup</td>
@@ -1994,7 +1994,7 @@
 <tr>
 <td style="text-align: left;">businessPhones</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">The telephone numbers for the user. NOTE: Although it's a string collection, only one number can be set for this property. Read-only for users synced from the on-premises directory. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>).</td>
+<td style="text-align: left;">The telephone numbers for the user. NOTE: Although it's a string collection, only one number can be set for this property. Read-only for users synced from the on-premises directory. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>startsWith</code>). <br><br>This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.</td>
 </tr>
 <tr>
 <td style="text-align: left;">city</td>
@@ -2164,7 +2164,7 @@
 <tr>
 <td style="text-align: left;">mobilePhone</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The primary cellular telephone number for the user. Read-only for users synced from the on-premises directory. Maximum length is 64 characters. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values) and <code>$search</code>.</td>
+<td style="text-align: left;">The primary cellular telephone number for the user. Read-only for users synced from the on-premises directory. Maximum length is 64 characters. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, and <code>eq</code> on <code>null</code> values) and <code>$search</code>. <br><br>This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.</td>
 </tr>
 <tr>
 <td style="text-align: left;">mySite</td>
@@ -2194,7 +2194,7 @@
 <tr>
 <td style="text-align: left;">onPremisesImmutableId</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">This property is used to associate an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you're using a federated domain for the user's <strong>userPrincipalName</strong> (UPN) property. <strong>NOTE:</strong> The <strong>$</strong> and <strong>_</strong> characters can't be used when specifying this property. <br><br>Requires <code>$select</code> to retrieve. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>).</td>
+<td style="text-align: left;">This property is used to associate an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you're using a federated domain for the user's <strong>userPrincipalName</strong> (UPN) property. <strong>NOTE:</strong> The <strong>$</strong> and <strong>_</strong> characters can't be used when specifying this property. <br><br>Requires <code>$select</code> to retrieve. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>). <br><br>This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.</td>
 </tr>
 <tr>
 <td style="text-align: left;">onPremisesLastSyncDateTime</td>
@@ -2229,7 +2229,7 @@
 <tr>
 <td style="text-align: left;">otherMails</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">A list of other email addresses for the user; for example: <code>[&quot;bob@contoso.com&quot;, &quot;Robert@fabrikam.com&quot;]</code>. Can store up to 250 values, each with a limit of 250 characters. <br>NOTE: This property can't contain accent characters. <br><br>Requires <code>$select</code> to retrieve. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, <code>endsWith</code>, <code>/$count eq 0</code>, <code>/$count ne 0</code>).</td>
+<td style="text-align: left;">A list of other email addresses for the user; for example: <code>&quot;bob@contoso.com&quot;, &quot;Robert@fabrikam.com&quot;]</code>. Can store up to 250 values, each with a limit of 250 characters. <br>NOTE: This property can't contain accent characters. <br><br>Requires <code>$select</code> to retrieve. Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, <code>endsWith</code>, <code>/$count eq 0</code>, <code>/$count ne 0</code>). <br><br>This property is subject to [sensitive action restrictions; only specific privileged administrator roles can update it.</td>
 </tr>
 <tr>
 <td style="text-align: left;">passwordPolicies</td>
@@ -2239,7 +2239,7 @@
 <tr>
 <td style="text-align: left;">passwordProfile</td>
 <td style="text-align: left;">passwordProfile</td>
-<td style="text-align: left;">Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the <strong>passwordPolicies</strong> property. By default, a strong password is required. <br><br>Requires <code>$select</code> to retrieve. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>, and <code>eq</code> on <code>null</code> values). <br><br>To update this property: <br><li> <em>User-PasswordProfile.ReadWrite.All</em> is the least privileged permission to update this property. <li> In delegated scenarios, the <em>User Administrator</em> Microsoft Entra role is the least privileged admin role supported to update this property for nonadmin users. <em>Privileged Authentication Administrator</em> is the least privileged role that's allowed to update this property for <em>all</em> administrators in the tenant. In general, the signed-in user must have a higher privileged administrator role as indicated in Who can reset passwords. <li> In app-only scenarios, the calling app must be assigned a supported permission <em>and</em> at least the <em>User Administrator</em> Microsoft Entra role.</li></td>
+<td style="text-align: left;">Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the <strong>passwordPolicies</strong> property. By default, a strong password is required. <br><br>Requires <code>$select</code> to retrieve. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>, and <code>eq</code> on <code>null</code> values). <br><br>To update this property: <br><li> <em>User-PasswordProfile.ReadWrite.All</em> is the least privileged permission to update this property. <li> In delegated scenarios, the <em>User Administrator</em> Microsoft Entra role is the least privileged admin role supported to update this property for nonadmin users. <em>Privileged Authentication Administrator</em> is the least privileged role that's allowed to update this property for <em>all</em> administrators in the tenant. In general, the signed-in user must have a higher privileged administrator role as indicated in Who can reset passwords. <li> In app-only scenarios, the calling app must be assigned a supported permission <em>and</em> at least the <em>User Administrator</em> Microsoft Entra role. <br><br>This property is also subject to sensitive action restrictions.</li></td>
 </tr>
 <tr>
 <td style="text-align: left;">pastProjects</td>
@@ -2344,7 +2344,7 @@
 <tr>
 <td style="text-align: left;">userPrincipalName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this value should map to the user's email name. The general format is alias@domain, where the domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the <strong>verifiedDomains</strong> property of organization.<br>NOTE: This property can't contain accent characters. Only the following characters are allowed <code>A - Z</code>, <code>a - z</code>, <code>0 - 9</code>, <code> ' . - _ ! # ^ ~</code>. For the complete list of allowed characters, see username policies. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, <code>endsWith</code>) and <code>$orderby</code>.</td>
+<td style="text-align: left;">The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this value should map to the user's email name. The general format is alias@domain, where the domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the <strong>verifiedDomains</strong> property of organization.<br>NOTE: This property can't contain accent characters. Only the following characters are allowed <code>A - Z</code>, <code>a - z</code>, <code>0 - 9</code>, <code> ' . - _ ! # ^ ~</code>. For the complete list of allowed characters, see username policies. <br><br>Returned by default. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>, <code>startsWith</code>, <code>endsWith</code>) and <code>$orderby</code>. <br><br>This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.</td>
 </tr>
 <tr>
 <td style="text-align: left;">userType</td>
@@ -2357,60 +2357,6 @@
 <section id="tabpanel_2_users16" role="tabpanel" data-tab="users16" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/users?view=graph-rest-1.0&amp;tabs=http">users</a></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">id</td>
-<td style="text-align: left;">The unique identifier for the user.</td>
-</tr>
-<tr>
-<td style="text-align: left;">businessPhones</td>
-<td style="text-align: left;">The user's phone numbers.</td>
-</tr>
-<tr>
-<td style="text-align: left;">displayName</td>
-<td style="text-align: left;">The name displayed in the address book for the user.</td>
-</tr>
-<tr>
-<td style="text-align: left;">givenName</td>
-<td style="text-align: left;">The first name of the user.</td>
-</tr>
-<tr>
-<td style="text-align: left;">jobTitle</td>
-<td style="text-align: left;">The user's job title.</td>
-</tr>
-<tr>
-<td style="text-align: left;">mail</td>
-<td style="text-align: left;">The user's email address.</td>
-</tr>
-<tr>
-<td style="text-align: left;">mobilePhone</td>
-<td style="text-align: left;">The user's cellphone number.</td>
-</tr>
-<tr>
-<td style="text-align: left;">officeLocation</td>
-<td style="text-align: left;">The user's physical office location.</td>
-</tr>
-<tr>
-<td style="text-align: left;">preferredLanguage</td>
-<td style="text-align: left;">The user's language of preference.</td>
-</tr>
-<tr>
-<td style="text-align: left;">surname</td>
-<td style="text-align: left;">The last name of the user.</td>
-</tr>
-<tr>
-<td style="text-align: left;">userPrincipalName</td>
-<td style="text-align: left;">The user's principal name.</td>
-</tr>
-</tbody>
-</table>
 </section>
 </div>
 
