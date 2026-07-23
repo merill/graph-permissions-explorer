@@ -175,6 +175,10 @@
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/virtualeventtownhallregistrationconfiguration-get?view=graph-rest-1.0&amp;tabs=http">GET /solutions/virtualEvents/townhalls/{townhallId}/registrationConfiguration</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/virtualeventtownhall-getbyuserrole?view=graph-rest-1.0&amp;tabs=http">GET /solutions/virtualEvents/townhalls/getByUserRole(role='{role}')</a></div></td>
 </tr>
 <tr>
@@ -361,11 +365,23 @@
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.bookings/get-mgvirtualeventwebinarbyuseridandrole">Get-MgVirtualEventWebinarByUserIdAndRole</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.bookings/get-mgvirtualeventwebinarbyuserrole">Get-MgVirtualEventWebinarByUserRole</a></div></td>
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.bookings/get-mgvirtualeventwebinarregistration">Get-MgVirtualEventWebinarRegistration</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.bookings/get-mgvirtualeventwebinarregistrationbyemail">Get-MgVirtualEventWebinarRegistrationByEmail</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.bookings/get-mgvirtualeventwebinarregistrationbyuserid">Get-MgVirtualEventWebinarRegistrationByUserId</a></div></td>
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
@@ -2848,6 +2864,11 @@
 <td style="text-align: left;">Specifies the configuration settings for meeting chat restrictions. Inherited from onlineMeetingBase.</td>
 </tr>
 <tr>
+<td style="text-align: left;">cloudVideoInteropInfo</td>
+<td style="text-align: left;">cloudVideoInteropInfo</td>
+<td style="text-align: left;">Conferencing device integration settings for Cloud Video Interop (CVI). Read-only. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
 <td style="text-align: left;">creationDateTime</td>
 <td style="text-align: left;">DateTime</td>
 <td style="text-align: left;">The meeting creation time in UTC. Read-only.</td>
@@ -2916,6 +2937,11 @@
 <td style="text-align: left;">meetingTemplateId</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The ID of the meeting template.</td>
+</tr>
+<tr>
+<td style="text-align: left;">meetingType</td>
+<td style="text-align: left;">onlineMeetingType</td>
+<td style="text-align: left;">The type of the online meeting. The possible values are: <code>adhoc</code>, <code>scheduled</code>, <code>recurring</code>, <code>broadcast</code>, <code>meetnow</code>, <code>unknownFutureValue</code>. Read-only. Inherited from onlineMeetingBase.</td>
 </tr>
 <tr>
 <td style="text-align: left;">participants</td>
@@ -4382,14 +4408,24 @@
 <td style="text-align: left;">The phone access (dial-in) information for the virtual event session. Read-only. Inherited from onlineMeetingBase.</td>
 </tr>
 <tr>
-<td style="text-align: left;">chatRestrictions</td>
-<td style="text-align: left;">chatRestrictions</td>
-<td style="text-align: left;">Specifies the configuration settings for meeting chat restrictions. Inherited from onlineMeetingBase.</td>
+<td style="text-align: left;">capacity</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Represents the expected number of attendees for the virtual event session.</td>
 </tr>
 <tr>
 <td style="text-align: left;">chatInfo</td>
 <td style="text-align: left;">chatInfo</td>
 <td style="text-align: left;">The chat information associated with the virtual event session. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">chatRestrictions</td>
+<td style="text-align: left;">chatRestrictions</td>
+<td style="text-align: left;">Specifies the configuration settings for meeting chat restrictions. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">cloudVideoInteropInfo</td>
+<td style="text-align: left;">cloudVideoInteropInfo</td>
+<td style="text-align: left;">Conferencing device integration settings for Cloud Video Interop (CVI). Read-only. Inherited from onlineMeetingBase.</td>
 </tr>
 <tr>
 <td style="text-align: left;">endDateTime</td>
@@ -4447,6 +4483,11 @@
 <td style="text-align: left;">Specifies the spoken language used during the meeting for recording and transcription purposes. Inherited from onlineMeetingBase.</td>
 </tr>
 <tr>
+<td style="text-align: left;">meetingType</td>
+<td style="text-align: left;">onlineMeetingType</td>
+<td style="text-align: left;">The type of the online meeting. The possible values are: <code>adhoc</code>, <code>scheduled</code>, <code>recurring</code>, <code>broadcast</code>, <code>meetnow</code>, <code>unknownFutureValue</code>. Read-only. Inherited from onlineMeetingBase.</td>
+</tr>
+<tr>
 <td style="text-align: left;">recordAutomatically</td>
 <td style="text-align: left;">Boolean</td>
 <td style="text-align: left;">Indicates whether to record the virtual event session automatically. Inherited from onlineMeetingBase.</td>
@@ -4502,6 +4543,11 @@
 <td style="text-align: left;">The audience to whom the town hall is visible. The possible values are: <code>everyone</code>, <code>organization</code>, and <code>unknownFutureValue</code>.</td>
 </tr>
 <tr>
+<td style="text-align: left;">capacity</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Represents the expected number of attendees for the town hall.</td>
+</tr>
+<tr>
 <td style="text-align: left;">coOrganizers</td>
 <td style="text-align: left;">communicationsUserIdentity collection</td>
 <td style="text-align: left;">Identity information of the coorganizers of the town hall.</td>
@@ -4545,6 +4591,11 @@
 <td style="text-align: left;">isInviteOnly</td>
 <td style="text-align: left;">Boolean</td>
 <td style="text-align: left;">Indicates whether the town hall is only open to invited people and groups within your organization. The <strong>isInviteOnly</strong> property can only be <code>true</code> if the value of the <strong>audience</strong> property is set to <code>organization</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isRegistrationRequired</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether attendee registration is enabled for the town hall. Inherited from virtualEvent.</td>
 </tr>
 <tr>
 <td style="text-align: left;">settings</td>
@@ -4662,6 +4713,11 @@
 <td>Unique identifier of the webinar. Inherited from entity.</td>
 </tr>
 <tr>
+<td>isRegistrationRequired</td>
+<td>Boolean</td>
+<td>Indicates whether attendee registration is enabled for the webinar. Inherited from virtualEvent.</td>
+</tr>
+<tr>
 <td>settings</td>
 <td>virtualEventSettings</td>
 <td>The webinar settings. Inherited from virtualEvent.</td>
@@ -4686,6 +4742,26 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align: left;">capacity</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Total capacity of the virtual event. Inherited from virtualEventRegistrationConfiguration.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for the <strong>virtualEventRegistrationConfiguration</strong> object. Inherited from virtualEventRegistrationConfiguration.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isManualApprovalEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether registrations require organizer approval before a participant is confirmed. Inherited from virtualEventRegistrationConfiguration.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isWaitlistEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether more registrants are automatically placed on a waitlist when capacity is reached. Inherited from virtualEventRegistrationConfiguration.</td>
+</tr>
 <tr>
 <td style="text-align: left;">registrationWebUrl</td>
 <td style="text-align: left;">String</td>
