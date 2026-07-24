@@ -311,16 +311,6 @@
 <td style="text-align: left;">Additional information associated with the risk detection.</td>
 </tr>
 <tr>
-<td style="text-align: left;">agentDisplayName</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Name of the agent. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>startsWith</code>).</td>
-</tr>
-<tr>
-<td style="text-align: left;">agentId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the agent. This is equivalent to 'id' to the specific agent type. See riskyAgentIdentity, riskyAgentIdentityBlueprintPrincipal, and riskyAgentUser. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>startsWith</code>).</td>
-</tr>
-<tr>
 <td style="text-align: left;">blueprintId</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The identifier of the blueprint associated with the agent. Nullable.</td>
@@ -336,14 +326,24 @@
 <td style="text-align: left;">Timing of the detected risk (real-time/offline). The possible values are: <code>notDefined</code>, <code>realtime</code>, <code>nearRealtime</code>, <code>offline</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 <tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Human-readable name of the identity associated with this risk detection. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>startsWith</code>).</td>
+</tr>
+<tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Unique ID of the risk detection. Inherited from entity.</td>
 </tr>
 <tr>
+<td style="text-align: left;">identityId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier of the identity associated with this risk detection. <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>startsWith</code>).</td>
+</tr>
+<tr>
 <td style="text-align: left;">identityType</td>
 <td style="text-align: left;">agentIdentityType</td>
-<td style="text-align: left;">The type of agent identity associated with this risk detection. The possible values are: <code>agentIdentity</code>, <code>agentUser</code>, <code>unknownFutureValue</code>, <code>agentIdentityBlueprintPrincipal</code>. You must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value in this evolvable enum: <code>agentIdentityBlueprintPrincipal</code>. Required. <br><br> Supports <code>$filter</code> (<code>eq</code>).</td>
+<td style="text-align: left;">The type of agent identity associated with this risk detection. The possible values are: <code>agentIdentity</code>, <code>agentIdentityBlueprintPrincipal</code>, <code>agentUser</code>, <code>user</code>, <code>unknownFutureValue</code>. You must use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value in this evolvable enum: <code>agentIdentityBlueprintPrincipal</code>. Required. <br><br> Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">lastModifiedDateTime</td>
@@ -379,6 +379,16 @@
 <td style="text-align: left;">source</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The source system that generated the risk detection. Nullable.</td>
+</tr>
+<tr>
+<td style="text-align: left;">agentDisplayName (deprecated)</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the agent. <strong>Deprecated. Use <code>displayName</code> instead. This property will be removed after 2027-04-28.</strong> <br><br> Supports <code>$filter</code> (<code>eq</code>, <code>startsWith</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">agentId (deprecated)</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the agent. **D</td>
 </tr>
 </tbody>
 </table>
