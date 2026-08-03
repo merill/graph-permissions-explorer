@@ -222,6 +222,10 @@
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/teamworkmessaging-list-customemojis?view=graph-rest-beta&amp;tabs=http">GET /teamwork/messaging/customEmojis</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/teamworksection-update?view=graph-rest-beta&amp;tabs=http">PATCH /users/{user-id}/teamwork/sections/{teamworkSection-id}</a></div></td>
 </tr>
 <tr>
@@ -263,6 +267,10 @@
 <tr>
 <td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/team-completemigration?view=graph-rest-beta&amp;tabs=http">POST /teams/{team-id}/completeMigration</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/teamworkmessaging-post-customemojis?view=graph-rest-beta&amp;tabs=http">POST /teamwork/messaging/customEmojis</a></div></td>
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
@@ -416,16 +424,19 @@
 <a href="#tabpanel_2_teamsAsyncOperation7" role="tab" aria-controls="tabpanel_2_teamsAsyncOperation7" data-tab="teamsAsyncOperation7" tabindex="-1">teamsAsyncOperation</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_teamworkSection8" role="tab" aria-controls="tabpanel_2_teamworkSection8" data-tab="teamworkSection8" tabindex="-1">teamworkSection</a>
+<a href="#tabpanel_2_teamworkCustomEmoji8" role="tab" aria-controls="tabpanel_2_teamworkCustomEmoji8" data-tab="teamworkCustomEmoji8" tabindex="-1">teamworkCustomEmoji</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_teamworkSectionItem9" role="tab" aria-controls="tabpanel_2_teamworkSectionItem9" data-tab="teamworkSectionItem9" tabindex="-1">teamworkSectionItem</a>
+<a href="#tabpanel_2_teamworkSection9" role="tab" aria-controls="tabpanel_2_teamworkSection9" data-tab="teamworkSection9" tabindex="-1">teamworkSection</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_user10" role="tab" aria-controls="tabpanel_2_user10" data-tab="user10" tabindex="-1">user</a>
+<a href="#tabpanel_2_teamworkSectionItem10" role="tab" aria-controls="tabpanel_2_teamworkSectionItem10" data-tab="teamworkSectionItem10" tabindex="-1">teamworkSectionItem</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_userTeamwork11" role="tab" aria-controls="tabpanel_2_userTeamwork11" data-tab="userTeamwork11" tabindex="-1">userTeamwork</a>
+<a href="#tabpanel_2_user11" role="tab" aria-controls="tabpanel_2_user11" data-tab="user11" tabindex="-1">user</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_userTeamwork12" role="tab" aria-controls="tabpanel_2_userTeamwork12" data-tab="userTeamwork12" tabindex="-1">userTeamwork</a>
 </li>
 </ul>
 <section id="tabpanel_2_channel1" role="tabpanel" data-tab="channel1">
@@ -1178,7 +1189,42 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_teamworkSection8" role="tabpanel" data-tab="teamworkSection8" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_teamworkCustomEmoji8" role="tabpanel" data-tab="teamworkCustomEmoji8" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/teamworkcustomemoji?view=graph-rest-1.0&amp;tabs=http">teamworkCustomEmoji</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">contentBytes</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The base64-encoded image content of the emoji. Supported formats include PNG and GIF.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">customEmojiFromIdentitySet</td>
+<td style="text-align: left;">Identity of the user who created the emoji.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the emoji was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is <code>2024-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique display name of the custom emoji. Key. Must be unique and must not conflict with existing emoji names.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_teamworkSection9" role="tabpanel" data-tab="teamworkSection9" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/teamworksection?view=graph-rest-1.0&amp;tabs=http">teamworkSection</a></p>
 <table>
@@ -1238,7 +1284,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_teamworkSectionItem9" role="tabpanel" data-tab="teamworkSectionItem9" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_teamworkSectionItem10" role="tabpanel" data-tab="teamworkSectionItem10" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/teamworksectionitem?view=graph-rest-1.0&amp;tabs=http">teamworkSectionItem</a></p>
 <table>
@@ -1273,7 +1319,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_user10" role="tabpanel" data-tab="user10" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_user11" role="tabpanel" data-tab="user11" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/user?view=graph-rest-1.0&amp;tabs=http">user</a></p>
 <table>
@@ -1678,7 +1724,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_userTeamwork11" role="tabpanel" data-tab="userTeamwork11" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_userTeamwork12" role="tabpanel" data-tab="userTeamwork12" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/userteamwork?view=graph-rest-1.0&amp;tabs=http">userTeamwork</a></p>
 <table>
