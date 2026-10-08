@@ -93,6 +93,11 @@
 <blockquote>
 <p>Allows the app to report synthetic media detections for participants in calls, without a signed-in user.</p>
 </blockquote>
+<blockquote>
+<p><strong>Merill's Note</strong></p>
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>Calls.ReportSyntheticMedia.All</code> permission.</p>
+<p>If you need to create an audit report of the permissions granted to all the apps in your tenant, you can run the <code>Export-MsIdAppConsentGrantReport</code> command. See <a href="https://www.youtube.com/watch?v=vO0m5yE3dZA">How To: Run a quick OAuth app audit of your tenant</a></p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -125,11 +130,428 @@
 </tbody>
 </table>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_apiv1" role="tab" aria-controls="tabpanel_1_apiv1" data-tab="apiv1" tabindex="0" aria-selected="true"><span><i class='bi bi-braces'></i></span> API [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_apibeta" role="tab" aria-controls="tabpanel_1_apibeta" data-tab="apibeta" tabindex="-1"><span><i class='bi bi-braces'></i></span> API [beta]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psv1" role="tab" aria-controls="tabpanel_1_psv1" data-tab="psv1" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psbeta" role="tab" aria-controls="tabpanel_1_psbeta" data-tab="psbeta" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [beta]</a>
+</li>
+</ul>
+<section id="tabpanel_1_apiv1" role="tabpanel" data-tab="apiv1">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_apibeta" role="tabpanel" data-tab="apibeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/participant-reportsyntheticmedia?view=graph-rest-beta&amp;tabs=http">POST /app/calls/{call-id}/participants/{participant-id}/reportSyntheticMedia</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/participant-reportsyntheticmedia?view=graph-rest-beta&amp;tabs=http">POST /communications/calls/{call-id}/participants/{participant-id}/reportSyntheticMedia</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_psv1" role="tabpanel" data-tab="psv1" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_psbeta" role="tabpanel" data-tab="psbeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.cloudcommunications/invoke-mgbetareportcommunicationcallparticipantsyntheticmedium">Invoke-MgBetaReportCommunicationCallParticipantSyntheticMedium</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
 </div>
-<hr>
+<h2 id="resources">Resources</h2>
+<p>Granting this permission allows the calling application to access (and/or update) the following information in your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_call1" role="tab" aria-controls="tabpanel_2_call1" data-tab="call1" tabindex="0" aria-selected="true">call</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_communications-api-overview2" role="tab" aria-controls="tabpanel_2_communications-api-overview2" data-tab="communications-api-overview2" tabindex="-1">communications-api-overview</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_mediaMetadata3" role="tab" aria-controls="tabpanel_2_mediaMetadata3" data-tab="mediaMetadata3" tabindex="-1">mediaMetadata</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_participant4" role="tab" aria-controls="tabpanel_2_participant4" data-tab="participant4" tabindex="-1">participant</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_syntheticMediaDetectionDetail5" role="tab" aria-controls="tabpanel_2_syntheticMediaDetectionDetail5" data-tab="syntheticMediaDetectionDetail5" tabindex="-1">syntheticMediaDetectionDetail</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_syntheticMediaDetectionInfo6" role="tab" aria-controls="tabpanel_2_syntheticMediaDetectionInfo6" data-tab="syntheticMediaDetectionInfo6" tabindex="-1">syntheticMediaDetectionInfo</a>
+</li>
+</ul>
+<section id="tabpanel_2_call1" role="tabpanel" data-tab="call1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/call?view=graph-rest-1.0&amp;tabs=http">call</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">callbackUri</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The callback URL on which callbacks are delivered. Must be an HTTPS URL.</td>
+</tr>
+<tr>
+<td style="text-align: left;">callChainId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This identifier must be copied over from <code>Microsoft.Graph.Call.CallChainId</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">callOptions</td>
+<td style="text-align: left;">outgoingCallOptions</td>
+<td style="text-align: left;">Contains the optional features for the call.</td>
+</tr>
+<tr>
+<td style="text-align: left;">callRoutes</td>
+<td style="text-align: left;">callRoute collection</td>
+<td style="text-align: left;">The routing information on how the call was retargeted. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">chatInfo</td>
+<td style="text-align: left;">chatInfo</td>
+<td style="text-align: left;">The chat information. Required information for joining a meeting.</td>
+</tr>
+<tr>
+<td style="text-align: left;">direction</td>
+<td style="text-align: left;">callDirection</td>
+<td style="text-align: left;">The direction of the call. The possible values are <code>incoming</code> or <code>outgoing</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the call. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">incomingContext</td>
+<td style="text-align: left;">incomingContext</td>
+<td style="text-align: left;">Call context associated with an incoming call.</td>
+</tr>
+<tr>
+<td style="text-align: left;">mediaConfig</td>
+<td style="text-align: left;">appHostedMediaConfig or serviceHostedMediaConfig</td>
+<td style="text-align: left;">The media configuration. Required.</td>
+</tr>
+<tr>
+<td style="text-align: left;">mediaState</td>
+<td style="text-align: left;">callMediaState</td>
+<td style="text-align: left;">Read-only. The call media state.</td>
+</tr>
+<tr>
+<td style="text-align: left;">meetingInfo</td>
+<td style="text-align: left;">organizerMeetingInfo, tokenMeetingInfo, or joinMeetingIdMeetingInfo</td>
+<td style="text-align: left;">The meeting information. Required information for meeting scenarios.</td>
+</tr>
+<tr>
+<td style="text-align: left;">myParticipantId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">requestedModalities</td>
+<td style="text-align: left;">modality collection</td>
+<td style="text-align: left;">The list of requested modalities. The possible values are: <code>unknown</code>, <code>audio</code>, <code>video</code>, <code>videoBasedScreenSharing</code>, <code>data</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">resultInfo</td>
+<td style="text-align: left;">resultInfo</td>
+<td style="text-align: left;">The result information. For example, the result can hold termination reason. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">source</td>
+<td style="text-align: left;">participantInfo</td>
+<td style="text-align: left;">The originator of the call.</td>
+</tr>
+<tr>
+<td style="text-align: left;">state</td>
+<td style="text-align: left;">callState</td>
+<td style="text-align: left;">The call state. The possible values are: <code>incoming</code>, <code>establishing</code>, <code>ringing</code>, <code>established</code>, <code>hold</code>, <code>transferring</code>, <code>transferAccepted</code>, <code>redirecting</code>, <code>terminating</code>, <code>terminated</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">subject</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The subject of the conversation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">targets</td>
+<td style="text-align: left;">invitationParticipantInfo collection</td>
+<td style="text-align: left;">The targets of the call. Required information for creating peer to peer call.</td>
+</tr>
+<tr>
+<td style="text-align: left;">toneInfo</td>
+<td style="text-align: left;">toneInfo</td>
+<td style="text-align: left;">Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">transcription</td>
+<td style="text-align: left;">callTranscriptionInfo</td>
+<td style="text-align: left;">The transcription information for the call. Read-only.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_communications-api-overview2" role="tabpanel" data-tab="communications-api-overview2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/communications-api-overview?view=graph-rest-1.0&amp;tabs=http">communications-api-overview</a></p>
+</section>
+<section id="tabpanel_2_mediaMetadata3" role="tabpanel" data-tab="mediaMetadata3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/mediametadata?view=graph-rest-1.0&amp;tabs=http">mediaMetadata</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">audioMetadata</td>
+<td style="text-align: left;">audioMetadata</td>
+<td style="text-align: left;">Audio-specific encoding details. Nullable. Set when the analyzed content is audio or multimodal.</td>
+</tr>
+<tr>
+<td style="text-align: left;">byteSize</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">Size of the content in bytes. Set this value to <code>0</code> for live streams where the total size is unknown; for recorded files, specify the actual size.</td>
+</tr>
+<tr>
+<td style="text-align: left;">duration</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Duration of the analyzed content in whole seconds. Sub-second or millisecond windows are rounded to the nearest second. For a continuous live stream, set this value to the length of the analysis window.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isRealTime</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the analysis was performed in real time on a live stream.</td>
+</tr>
+<tr>
+<td style="text-align: left;">mimeType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">MIME type of the analyzed content. Common values for Teams media include <code>audio/pcm</code>, <code>video/mp4</code>, and <code>video/h264</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">modality</td>
+<td style="text-align: left;">contentModality</td>
+<td style="text-align: left;">Type of content to be analyzed. The possible values are: <code>audio</code>, <code>video</code>, <code>image</code>, <code>text</code>, <code>multimodal</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">streamingMetadata</td>
+<td style="text-align: left;">streamingMetadata</td>
+<td style="text-align: left;">Network and real-time streaming quality metrics. Nullable. Set when the analyzed content was streamed in real time.</td>
+</tr>
+<tr>
+<td style="text-align: left;">videoMetadata</td>
+<td style="text-align: left;">videoMetadata</td>
+<td style="text-align: left;">Video-specific encoding and quality details. Nullable. Set when the analyzed content is video or multimodal.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_participant4" role="tabpanel" data-tab="participant4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/participant?view=graph-rest-1.0&amp;tabs=http">participant</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The participant ID.</td>
+</tr>
+<tr>
+<td style="text-align: left;">info</td>
+<td style="text-align: left;">participantInfo</td>
+<td style="text-align: left;">Information about the participant.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isInLobby</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if the participant is in lobby.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isMuted</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if the participant is muted (client or server muted).</td>
+</tr>
+<tr>
+<td style="text-align: left;">mediaStreams</td>
+<td style="text-align: left;">mediaStream collection</td>
+<td style="text-align: left;">The list of media streams.</td>
+</tr>
+<tr>
+<td style="text-align: left;">metadata</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A blob of data provided by the participant in the roster.</td>
+</tr>
+<tr>
+<td style="text-align: left;">recordingInfo</td>
+<td style="text-align: left;">recordingInfo</td>
+<td style="text-align: left;">Information about whether the participant has recording capability.</td>
+</tr>
+<tr>
+<td style="text-align: left;">removedState</td>
+<td style="text-align: left;">removedState</td>
+<td style="text-align: left;">Indicates the reason why the <strong>participant</strong> was removed from the roster.</td>
+</tr>
+<tr>
+<td style="text-align: left;">restrictedExperience</td>
+<td style="text-align: left;">onlineMeetingRestricted</td>
+<td style="text-align: left;">Indicates the reason or reasons media content from this participant is restricted.</td>
+</tr>
+<tr>
+<td style="text-align: left;">rosterSequenceNumber</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">Indicates the roster sequence number in which the **p</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_syntheticMediaDetectionDetail5" role="tabpanel" data-tab="syntheticMediaDetectionDetail5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/syntheticmediadetectiondetail?view=graph-rest-1.0&amp;tabs=http">syntheticMediaDetectionDetail</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">confidence</td>
+<td style="text-align: left;">Double</td>
+<td style="text-align: left;">Confidence score for this specific detection, expressed as a value between <code>0.0</code> and <code>1.0</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">modality</td>
+<td style="text-align: left;">contentModality</td>
+<td style="text-align: left;">Type of media to be analyzed. The possible values are: <code>audio</code>, <code>video</code>, <code>image</code>, <code>text</code>, <code>multimodal</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">modelName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the detection model used (for example, <code>DeepfakeDetector-v2</code>, <code>VoiceAuthenticator-v1</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">modelTasks</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Detection tasks that the model performed. This value is free-form text. The bot can specify any task names that describe its analysis. Common examples include <code>faceSwap</code>, <code>lipSync</code>, and <code>voiceClone</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">segment</td>
+<td style="text-align: left;">mediaSegment</td>
+<td style="text-align: left;">Time segment of the media that was analyzed.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_syntheticMediaDetectionInfo6" role="tabpanel" data-tab="syntheticMediaDetectionInfo6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/syntheticmediadetectioninfo?view=graph-rest-1.0&amp;tabs=http">syntheticMediaDetectionInfo</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">detectionId</td>
+<td style="text-align: left;">Guid</td>
+<td style="text-align: left;">Unique identifier for the detection event. This property correlates with the <code>id</code> parameter that the detection bot passed to <strong>reportSyntheticMedia</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">detectorBot</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifier of the detection bot that produced this result.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isParticipantTrusted</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Set to <code>true</code> if the participant is classified as trusted or reliable (for example, a known internal user); otherwise, <code>false</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">syntheticConfidence</td>
+<td style="text-align: left;">Double</td>
+<td style="text-align: left;">Confidence score (<code>0.0</code> to <code>1.0</code>) that the participant's media is synthetic.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</div>
 
 </article>
 

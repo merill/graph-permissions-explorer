@@ -213,6 +213,10 @@
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/accessreviewscheduledefinition-filterbycurrentuser?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/accessReviews/definitions/filterByCurrentUser(on='reviewer')</a></div></td>
 </tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/unifiedroot-list-definitions?view=graph-rest-1.0&amp;tabs=http">GET /identityGovernance/accessReviews/unified/definitions</a></div></td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -358,6 +362,10 @@
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.identity.governance/get-mgidentitygovernanceaccessreviewdefinitioninstancestagedecision">Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.identity.governance/get-mgidentitygovernanceaccessreviewunifieddefinition">Get-MgIdentityGovernanceAccessReviewUnifiedDefinition</a></div></td>
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
@@ -684,6 +692,11 @@
 <td style="text-align: left;">DateTime when review instance is scheduled to end.The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>. Supports <code>$select</code>. Read-only.</td>
 </tr>
 <tr>
+<td style="text-align: left;">errors</td>
+<td style="text-align: left;">accessReviewError collection</td>
+<td style="text-align: left;">Collection of errors in an access review instance lifecycle. Read-only.</td>
+</tr>
+<tr>
 <td style="text-align: left;">fallbackReviewers</td>
 <td style="text-align: left;">accessReviewReviewerScope collection</td>
 <td style="text-align: left;">This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist. Supports <code>$select</code>.</td>
@@ -744,6 +757,11 @@
 <td style="text-align: left;">The timestamp when the approval decision was applied.<code>00000000-0000-0000-0000-000000000000</code> if the assigned reviewer hasn't applied the decision or it was automatically applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.  Supports <code>$select</code>. Read-only.</td>
 </tr>
 <tr>
+<td style="text-align: left;">applyDescription</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The description of the apply result. Read-only.</td>
+</tr>
+<tr>
 <td style="text-align: left;">applyResult</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The result of applying the decision. Possible values: <code>New</code>, <code>AppliedSuccessfully</code>, <code>AppliedWithUnknownFailure</code>, <code>AppliedSuccessfullyButObjectNotFound</code> and <code>ApplyNotSupported</code>. Supports <code>$select</code>, <code>$orderby</code>, and <code>$filter</code> (<code>eq</code> only). Read-only.</td>
@@ -762,6 +780,11 @@
 <td style="text-align: left;">justification</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Justification left by the reviewer when they made the decision.</td>
+</tr>
+<tr>
+<td style="text-align: left;">permission</td>
+<td style="text-align: left;">accessReviewInstanceDecisionItemPermission</td>
+<td style="text-align: left;">The permission that grants the principal access to a resource. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">principal</td>

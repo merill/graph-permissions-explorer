@@ -439,6 +439,11 @@
 <td style="text-align: left;">Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. Inherited from servicePrincipal.</td>
 </tr>
 <tr>
+<td style="text-align: left;">managerApplications</td>
+<td style="text-align: left;">Guid collection</td>
+<td style="text-align: left;">The collection of application IDs designated as managers of this agent identity blueprint principal's backing agentIdentityBlueprint. Read-only; the value is server-managed and reflects the <strong>managerApplications</strong> of the backing agentIdentityBlueprint. To change the managers, an owner or administrator must update the <strong>managerApplications</strong> property on the backing agentIdentityBlueprint <strong>in the tenant where it's registered</strong>. For multitenant agent identity blueprints, admins in a tenant where the blueprint is only consumed can't make this change — they must ask an owner or administrator in the blueprint's home tenant. Not nullable. Returned only on <code>$select</code>.</td>
+</tr>
+<tr>
 <td style="text-align: left;">publishedPermissionScopes</td>
 <td style="text-align: left;">permissionScope collection</td>
 <td style="text-align: left;">The delegated permissions exposed by the application. For more information, see the <strong>oauth2PermissionScopes</strong> property on the agent identity blueprint entity's <strong>api</strong> property. Not nullable. Inherited from servicePrincipal.</td>

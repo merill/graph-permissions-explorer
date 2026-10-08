@@ -93,6 +93,11 @@
 <blockquote>
 <p>Allows the app to read identity lifecycle policies for external guests on behalf of the signed-in user.</p>
 </blockquote>
+<blockquote>
+<p><strong>Merill's Note</strong></p>
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>LifecyclePolicies-Guests.Read.All</code> permission.</p>
+<p>If you need to create an audit report of the permissions granted to all the apps in your tenant, you can run the <code>Export-MsIdAppConsentGrantReport</code> command. See <a href="https://www.youtube.com/watch?v=vO0m5yE3dZA">How To: Run a quick OAuth app audit of your tenant</a></p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -125,11 +130,349 @@
 </tbody>
 </table>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_apiv1" role="tab" aria-controls="tabpanel_1_apiv1" data-tab="apiv1" tabindex="0" aria-selected="true"><span><i class='bi bi-braces'></i></span> API [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_apibeta" role="tab" aria-controls="tabpanel_1_apibeta" data-tab="apibeta" tabindex="-1"><span><i class='bi bi-braces'></i></span> API [beta]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psv1" role="tab" aria-controls="tabpanel_1_psv1" data-tab="psv1" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psbeta" role="tab" aria-controls="tabpanel_1_psbeta" data-tab="psbeta" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [beta]</a>
+</li>
+</ul>
+<section id="tabpanel_1_apiv1" role="tabpanel" data-tab="apiv1">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_apibeta" role="tabpanel" data-tab="apibeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-lifecyclepolicies?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/lifecycleWorkflows/lifecyclePolicies</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/identitygovernance-lifecyclepolicy-get?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/lifecycleWorkflows/lifecyclePolicies/{lifecyclePolicyId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/identitygovernance-lifecyclepolicy-impact?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/lifecycleWorkflows/lifecyclePolicies/{lifecyclePolicyId}/impact(startDateTime={startDateTime},endDateTime={endDateTime})</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/identitygovernance-lifecyclepolicy-list-report?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/lifecycleWorkflows/lifecyclePolicies/{lifecyclePolicyId}/report</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/identitygovernance-lifecyclepolicyreport-list-subjects?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/lifecycleWorkflows/lifecyclePolicies/{lifecyclePolicyId}/report/subjects</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/identitygovernance-lifecyclepolicy-list-rules?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/lifecycleWorkflows/lifecyclePolicies/{lifecyclePolicyId}/rules</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_psv1" role="tabpanel" data-tab="psv1" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_psbeta" role="tabpanel" data-tab="psbeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
 </div>
-<hr>
+<h2 id="resources">Resources</h2>
+<p>Granting this permission allows the calling application to access (and/or update) the following information in your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_lifecyclePolicy1" role="tab" aria-controls="tabpanel_2_lifecyclePolicy1" data-tab="lifecyclePolicy1" tabindex="0" aria-selected="true">lifecyclePolicy</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_lifecyclePolicyImpactSummary2" role="tab" aria-controls="tabpanel_2_lifecyclePolicyImpactSummary2" data-tab="lifecyclePolicyImpactSummary2" tabindex="-1">lifecyclePolicyImpactSummary</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_lifecyclePolicyReport3" role="tab" aria-controls="tabpanel_2_lifecyclePolicyReport3" data-tab="lifecyclePolicyReport3" tabindex="-1">lifecyclePolicyReport</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_lifecyclePolicyRule4" role="tab" aria-controls="tabpanel_2_lifecyclePolicyRule4" data-tab="lifecyclePolicyRule4" tabindex="-1">lifecyclePolicyRule</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_lifecyclePolicySubjectReport5" role="tab" aria-controls="tabpanel_2_lifecyclePolicySubjectReport5" data-tab="lifecyclePolicySubjectReport5" tabindex="-1">lifecyclePolicySubjectReport</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_lifecycleWorkflowsContainer6" role="tab" aria-controls="tabpanel_2_lifecycleWorkflowsContainer6" data-tab="lifecycleWorkflowsContainer6" tabindex="-1">lifecycleWorkflowsContainer</a>
+</li>
+</ul>
+<section id="tabpanel_2_lifecyclePolicy1" role="tabpanel" data-tab="lifecyclePolicy1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/identitygovernance-lifecyclepolicy?view=graph-rest-1.0&amp;tabs=http">lifecyclePolicy</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the policy was created.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The description of the policy.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the policy.</td>
+</tr>
+<tr>
+<td style="text-align: left;">enforcementAction</td>
+<td style="text-align: left;">microsoft.graph.identityGovernance.lifecyclePolicyEnforcementAction</td>
+<td style="text-align: left;">The action taken when an identity governed by the policy becomes non-compliant. This is a polymorphic type; the possible types are deleteOnlyEnforcementAction, disableOnlyEnforcementAction, and disableThenDeleteEnforcementAction.</td>
+</tr>
+<tr>
+<td style="text-align: left;">gracePeriodInDays</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The number of days after an identity becomes non-compliant before the enforcement action is applied.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the policy. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the policy is enabled and actively evaluated.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the policy was last modified.</td>
+</tr>
+<tr>
+<td style="text-align: left;">notificationSchedule</td>
+<td style="text-align: left;">microsoft.graph.identityGovernance.lifecyclePolicyNotificationSettings</td>
+<td style="text-align: left;">The notification settings for the policy, including the offsets, in days after non-compliance, at which notifications are sent.</td>
+</tr>
+<tr>
+<td style="text-align: left;">policySource</td>
+<td style="text-align: left;">microsoft.graph.identityGovernance.lifecyclePolicySource</td>
+<td style="text-align: left;">Indicates whether the policy is system-managed (a built-in default) or created by an administrator. The possible values are: <code>userCreated</code>, <code>systemDefault</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">scope</td>
+<td style="text-align: left;">subjectSet</td>
+<td style="text-align: left;">The set of subjects that the policy applies to. For example, use an allExcludingGroupsSubjectSet to exclude specific groups from evaluation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">versionNumber</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The version number of the policy, which increments each time the policy is updated.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_lifecyclePolicyImpactSummary2" role="tabpanel" data-tab="lifecyclePolicyImpactSummary2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/identitygovernance-lifecyclepolicyimpactsummary?view=graph-rest-1.0&amp;tabs=http">lifecyclePolicyImpactSummary</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">actionsTaken</td>
+<td style="text-align: left;">microsoft.graph.identityGovernance.lifecyclePolicyImpactAction collection</td>
+<td style="text-align: left;">The policy actions taken for the subject during the evaluation period.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the impact result. Inherited from entity.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_lifecyclePolicyReport3" role="tabpanel" data-tab="lifecyclePolicyReport3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/identitygovernance-lifecyclepolicyreport?view=graph-rest-1.0&amp;tabs=http">lifecyclePolicyReport</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the report. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">policyVersion</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The version of the lifecycle policy represented by the report.</td>
+</tr>
+<tr>
+<td style="text-align: left;">scopeProcessing</td>
+<td style="text-align: left;">microsoft.graph.identityGovernance.lifecyclePolicyScopeProcessing</td>
+<td style="text-align: left;">The current and latest scope-processing status for the policy.</td>
+</tr>
+<tr>
+<td style="text-align: left;">subjectsInScopeCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The number of subjects currently in scope for the policy.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_lifecyclePolicyRule4" role="tabpanel" data-tab="lifecyclePolicyRule4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/identitygovernance-lifecyclepolicyrule?view=graph-rest-1.0&amp;tabs=http">lifecyclePolicyRule</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the rule. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the rule is enabled and evaluated as part of its policy.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_lifecyclePolicySubjectReport5" role="tabpanel" data-tab="lifecyclePolicySubjectReport5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/identitygovernance-lifecyclepolicysubjectreport?view=graph-rest-1.0&amp;tabs=http">lifecyclePolicySubjectReport</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">compliance</td>
+<td style="text-align: left;">microsoft.graph.identityGovernance.lifecyclePolicySubjectCompliance</td>
+<td style="text-align: left;">The subject's compliance status and the date and time when it was evaluated.</td>
+</tr>
+<tr>
+<td style="text-align: left;">effectivePolicy</td>
+<td style="text-align: left;">microsoft.graph.identityGovernance.lifecyclePolicyReference</td>
+<td style="text-align: left;">A reference to the effective lifecycle policy for the subject.</td>
+</tr>
+<tr>
+<td style="text-align: left;">enforcement</td>
+<td style="text-align: left;">microsoft.graph.identityGovernance.lifecyclePolicySubjectEnforcement</td>
+<td style="text-align: left;">The subject's enforcement status and action schedule.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the subject report. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">relationship</td>
+<td style="text-align: left;">microsoft.graph.identityGovernance.lifecyclePolicyRelationship</td>
+<td style="text-align: left;">The relationship between this policy and the subject. The possible values are: <code>effective</code>, <code>inScopeButIneffective</code>, <code>pending</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">subject</td>
+<td style="text-align: left;">microsoft.graph.identityGovernance.lifecyclePolicySubjectReference</td>
+<td style="text-align: left;">The subject represented by this result.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_lifecycleWorkflowsContainer6" role="tabpanel" data-tab="lifecycleWorkflowsContainer6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/identitygovernance-lifecycleworkflowscontainer?view=graph-rest-1.0&amp;tabs=http">lifecycleWorkflowsContainer</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Identifier used for individually addressing the lifecycle workflows objects. Inherited from entity.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</div>
 
 </article>
 

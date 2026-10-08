@@ -716,7 +716,7 @@
 <tr>
 <td style="text-align: left;">appRoles</td>
 <td style="text-align: left;">appRole collection</td>
-<td style="text-align: left;">The roles exposed by the application that's linked to this service principal. For more information, see the <strong>appRoles</strong> property definition on the application entity. Not nullable.</td>
+<td style="text-align: left;">The roles exposed by the application that's linked to this service principal. For more information, see the <strong>appRoles</strong> property definition on the application entity. Not nullable. <br><br>App roles and exposed delegated permission scopes (<strong>oauth2PermissionScopes</strong>) share a default limit of 700 permission definitions per service principal, including definitions inherited from the application and definitions added directly to the service principal. Enabled and disabled definitions both count. This limit counts definitions, not app role assignments. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdByAppId</td>
@@ -791,7 +791,7 @@
 <tr>
 <td style="text-align: left;">oauth2PermissionScopes</td>
 <td style="text-align: left;">permissionScope collection</td>
-<td style="text-align: left;">The delegated permissions exposed by the application. For more information, see the <strong>oauth2PermissionScopes</strong> property on the application entity's <strong>api</strong> property. Not nullable.</td>
+<td style="text-align: left;">The delegated permissions exposed by the application. For more information, see the <strong>oauth2PermissionScopes</strong> property on the application entity's <strong>api</strong> property. Not nullable. <br><br>These scopes and <strong>appRoles</strong> share a default limit of 700 permission definitions per service principal. Enabled and disabled definitions both count. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.</td>
 </tr>
 <tr>
 <td style="text-align: left;">passwordCredentials</td>

@@ -2105,6 +2105,11 @@
 <td style="text-align: left;">The unique identifier for the agent identity. Inherited from directoryObject. Key. Not nullable. Read-only. Inherited from entity.</td>
 </tr>
 <tr>
+<td style="text-align: left;">managerApplications</td>
+<td style="text-align: left;">Guid collection</td>
+<td style="text-align: left;">The collection of application IDs designated as managers of this agent identity's backing agentIdentityBlueprint. Read-only; the value is server-managed and reflects the <strong>managerApplications</strong> of the backing agentIdentityBlueprint. To change the managers, an owner or administrator must update the <strong>managerApplications</strong> property on the backing agentIdentityBlueprint <strong>in the tenant where it's registered</strong>. For multitenant agent identity blueprints, admins in a tenant where the blueprint is only consumed can't make this change — they must ask an owner or administrator in the blueprint's home tenant. Not nullable. Returned only on <code>$select</code>.</td>
+</tr>
+<tr>
 <td style="text-align: left;">servicePrincipalType</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Set to <strong>ServiceIdentity</strong> for all agent identities. Inherited from servicePrincipal.</td>
@@ -2968,6 +2973,11 @@
 <td style="text-align: left;">onPremisesDomainName</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Contains the on-premises <strong>domain FQDN</strong>, also called <strong>dnsDomainName</strong> synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.<br><br>Returned by default. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">onPremisesExtensionAttributes</td>
+<td style="text-align: left;">onPremisesExtensionAttributes</td>
+<td style="text-align: left;">Complex type containing extension attributes 1-15 for the group, synchronized from on-premises Active Directory. Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">onPremisesLastSyncDateTime</td>
@@ -4968,6 +4978,11 @@
 <td style="text-align: left;">relationship</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The possible values are: <code>manager</code>, <code>colleague</code>, <code>directReport</code>, <code>dotLineReport</code>, <code>assistant</code>, <code>dotLineManager</code>, <code>alternateContact</code>, <code>friend</code>, <code>spouse</code>, <code>sibling</code>, <code>child</code>, <code>parent</code>, <code>sponsor</code>, <code>emergencyContact</code>, <code>other</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">relationshipLabel</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Information (free-text) describing the relationship between the user and the related person. This property provides additional context beyond the predefined relationship values and can be used by clients, including AI-powered experiences, to better understand and reason about the relationship.</td>
 </tr>
 <tr>
 <td style="text-align: left;">userId</td>

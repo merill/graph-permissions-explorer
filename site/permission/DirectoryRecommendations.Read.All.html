@@ -338,7 +338,7 @@
 <tr>
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">recommendationStatus</td>
-<td style="text-align: left;">Indicates whether a resource needs to be addressed. The possible values are: <code>active</code>, <code>completedBySystem</code>, <code>completedByUser</code>, <code>dismissed</code>, <code>postponed</code>, <code>unknownFutureValue</code>, <code>riskAccepted</code>, <code>thirdParty</code>, <code>planned</code>, <code>alternateMitigation</code>. Use the <code>Prefer: include-unknown-enum-members</code> request header to get the following values from this evolvable enum: <code>riskAccepted</code> , <code>thirdParty</code> , <code>planned</code> , <code>alternateMitigation</code>. By default, a recommendation's <strong>status</strong> is set to <code>active</code> when the recommendation is first generated. <strong>Status</strong> is set to <code>completedBySystem</code> when our service detects that a resource which was once active no longer applies.</td>
+<td style="text-align: left;">Indicates whether a resource needs to be addressed. The possible values are: <code>active</code>, <code>completedBySystem</code>, <code>completedByUser</code>, <code>dismissed</code>, <code>postponed</code>, <code>unknownFutureValue</code>, <code>riskAccepted</code>, <code>thirdParty</code>, <code>planned</code>, <code>alternateMitigation</code>, <code>needsMoreAction</code>. Use the <code>Prefer: include-unknown-enum-members</code> request header to get the following values from this evolvable enum: <code>riskAccepted</code> , <code>thirdParty</code> , <code>planned</code> , <code>alternateMitigation</code> , <code>needsMoreAction</code>. By default, a recommendation's <strong>status</strong> is set to <code>active</code> when the recommendation is first generated. <strong>Status</strong> is set to <code>completedBySystem</code> when our service detects that a resource which was once active no longer applies.</td>
 </tr>
 <tr>
 <td style="text-align: left;">subjectId</td>
@@ -376,6 +376,21 @@
 <td style="text-align: left;">Indicates the category of intelligent guidance that the recommendation falls under. The possible values are: <code>identityBestPractice</code>, <code>identitySecureScore</code>, <code>unknownFutureValue</code>, <code>mdiSecureScore</code>. Use the <code>Prefer: include-unknown-enum-members</code> request header to get the following values from this evolvable enum: <code>mdiSecureScore</code>. Inherited from recommendationBase. <br><br> Supports <code>$filter</code>(<code>eq</code>).</td>
 </tr>
 <tr>
+<td style="text-align: left;">categoryGroup</td>
+<td style="text-align: left;">recommendationCategoryGroup</td>
+<td style="text-align: left;">The business taxonomy group that the recommendation belongs to, used to organize recommendations in the Microsoft Entra admin center. The possible values are: <code>strengthenAuthentication</code>, <code>detectAndRespondToThreats</code>, <code>enforceLeastPrivilege</code>, <code>governAppsCredentialsAndAgents</code>, <code>hardenInfrastructure</code>, <code>defenderForIdentity</code>, <code>unknownFutureValue</code>. Inherited from recommendationBase. Read-only. <br><br> Supports <code>$filter</code>(<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">completedBySystemDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the recommendations service verified that the recommendation was fully remediated and set its <strong>status</strong> to <code>completedBySystem</code>. Is <code>null</code> if the recommendation wasn't completed by the system. Inherited from recommendationBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">completedByUserDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the recommendation was marked as completed by the user for the current review cycle. Is <code>null</code> if the recommendation wasn't completed by a user in the current cycle. Inherited from recommendationBase.</td>
+</tr>
+<tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">The date and time when the recommendation was detected as applicable to your directory. Inherited from recommendationBase.</td>
@@ -389,6 +404,11 @@
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The title of the recommendation. Inherited from recommendationBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">failedReviewDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the recommendations service most recently verified that one or more impacted resources the user marked as completed are still impacted, moving them to <code>needsMoreAction</code>. Is mutually exclusive with <strong>remediatedDateTime</strong>. Is <code>null</code> when no user-reviewed resource is currently failing verification. Inherited from recommendationBase.</td>
 </tr>
 <tr>
 <td style="text-align: left;">featureAreas</td>
@@ -436,6 +456,16 @@
 <td style="text-align: left;">The maximum number of points attainable. Only applies to recommendations with <strong>category</strong> set to <code>identitySecureScore</code>. Inherited from recommendationBase.</td>
 </tr>
 <tr>
+<td style="text-align: left;">needsMoreActionResourceCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The number of impacted resources that the user marked as completed and that the recommendations service subsequently verified are still impacted (moved to <code>needsMoreAction</code>). This value is greater than zero exactly when <strong>failedReviewDateTime</strong> is set. Is <code>null</code> when the recommendation doesn't participate in the review lifecycle. Inherited from recommendationBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">nistClassifications</td>
+<td style="text-align: left;">nistClassification collection</td>
+<td style="text-align: left;">The NIST Cybersecurity Framework (CSF) 2.0 categories that the recommendation maps to. Inherited from recommendationBase. Read-only.</td>
+</tr>
+<tr>
 <td style="text-align: left;">postponeUntilDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">The future date and time when the <strong>status</strong> of a postponed recommendation will be <code>active</code> again. Inherited from recommendationBase.</td>
@@ -443,7 +473,7 @@
 <tr>
 <td style="text-align: left;">priority</td>
 <td style="text-align: left;">recommendationPriority</td>
-<td style="text-align: left;">Indicates the time sensitivity for a recommendation to be completed. Microsoft auto assigns this value. The possible values are: <code>low</code>, <code>medium</code>, <code>high</code>. Inherited from recommendationBase. Read-only. <br><br> Supports <code>$filter</code>(<code>eq</code>).</td>
+<td style="text-align: left;">Indicates the time sensitivity for a recommendation to be completed. Microsoft auto assigns this value. The possible values are: <code>low</code>, <code>medium</code>, <code>high</code>, <code>critical</code>, <code>unknownFutureValue</code>. Inherited from recommendationBase. Read-only. <br><br> Supports <code>$filter</code>(<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">recommendationType</td>
@@ -456,6 +486,11 @@
 <td style="text-align: left;">The current release type of the recommendation. The possible values are: <code>preview</code>, <code>generallyAvailable</code>, <code>unknownFutureValue</code>. Inherited from recommendationBase.</td>
 </tr>
 <tr>
+<td style="text-align: left;">remediatedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the recommendations service verified that the impacted resources the user marked as completed were remediated, meaning the user-reviewed resources reached <code>completedBySystem</code>. Is superseded by <strong>failedReviewDateTime</strong> if a reviewed resource subsequently fails verification. Is <code>null</code> if the system hasn't verified a user-driven remediation in the current cycle. Inherited from recommendationBase.</td>
+</tr>
+<tr>
 <td style="text-align: left;">remediationImpact</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Description of the impact on users of the remediation. Only applies to recommendations with <strong>category</strong> set to <code>identitySecureScore</code>. Inherited from recommendationBase.</td>
@@ -463,7 +498,12 @@
 <tr>
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">recommendationStatus</td>
-<td style="text-align: left;">Indicates the status of the recommendation based on user or system action. The possible values are: <code>active</code>, <code>completedBySystem</code>, <code>completedByUser</code>, <code>dismissed</code>, <code>postponed</code>, <code>unknownFutureValue</code>, <code>riskAccepted</code>, <code>thirdParty</code>, <code>planned</code>, <code>alternateMitigation</code>. Use the <code>Prefer: include-unknown-enum-members</code> request header to get the following values from this evolvable enum: <code>riskAccepted</code> , <code>thirdParty</code> , <code>planned</code> , <code>alternateMitigation</code>. By default, a recommendation's **s</td>
+<td style="text-align: left;">Indicates the status of the recommendation based on user or system action. The possible values are: <code>active</code>, <code>completedBySystem</code>, <code>completedByUser</code>, <code>dismissed</code>, <code>postponed</code>, <code>unknownFutureValue</code>, <code>riskAccepted</code>, <code>thirdParty</code>, <code>planned</code>, <code>alternateMitigation</code>, <code>needsMoreAction</code>. Use the <code>Prefer: include-unknown-enum-members</code> request header to get the following values from this evolvable enum: <code>riskAccepted</code> , <code>thirdParty</code> , <code>planned</code> , <code>alternateMitigation</code> , <code>needsMoreAction</code>. By default, a recommendation's <strong>status</strong> is set to <code>active</code> when the recommendation is first generated. <strong>Status</strong> is set to <code>completedBySystem</code> when our service detects that a recommendation which was previously active no longer applies. Inherited from recommendationBase. <br><br> Supports <code>$filter</code>(<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">statusModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the recommendation's **s</td>
 </tr>
 </tbody>
 </table>
@@ -484,6 +524,11 @@
 <td style="text-align: left;">isNotificationEnabled</td>
 <td style="text-align: left;">Boolean</td>
 <td style="text-align: left;">Indicates whether notifications for recommendations are enabled.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastRefreshedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time of the most recent refresh cycle in which every pipeline that populates Microsoft Entra recommendations completed successfully for the tenant's region. The value advances only when all contributing pipelines succeed and remains at the last fully successful cycle if any contributing pipeline is unhealthy. A successful refresh doesn't imply that any individual recommendation changed. Is <code>null</code> when no fully successful refresh has been recorded yet. Read-only.</td>
 </tr>
 </tbody>
 </table>

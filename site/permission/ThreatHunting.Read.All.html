@@ -178,6 +178,14 @@
 <tbody>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/security-security-gethuntingschematables?view=graph-rest-beta&amp;tabs=http">GET /security/getHuntingSchemaTables</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/security-security-gethuntingschematables?view=graph-rest-beta&amp;tabs=http">GET /security/getHuntingSchemaTables(workspaceId={workspaceId})</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/security-security-getrunhuntingquery?view=graph-rest-beta&amp;tabs=http">GET /security/getRunHuntingQuery(query='{query}',timespan='{timespan}',workspaceId={workspaceId})</a></div></td>
 </tr>
 <tr>
@@ -233,6 +241,12 @@
 <li role="presentation">
 <a href="#tabpanel_2_huntingQueryResults1" role="tab" aria-controls="tabpanel_2_huntingQueryResults1" data-tab="huntingQueryResults1" tabindex="0" aria-selected="true">huntingQueryResults</a>
 </li>
+<li role="presentation">
+<a href="#tabpanel_2_huntingSchemaResult2" role="tab" aria-controls="tabpanel_2_huntingSchemaResult2" data-tab="huntingSchemaResult2" tabindex="-1">huntingSchemaResult</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_huntingSchemaTable3" role="tab" aria-controls="tabpanel_2_huntingSchemaTable3" data-tab="huntingSchemaTable3" tabindex="-1">huntingSchemaTable</a>
+</li>
 </ul>
 <section id="tabpanel_2_huntingQueryResults1" role="tabpanel" data-tab="huntingQueryResults1">
 
@@ -255,6 +269,61 @@
 <td style="text-align: left;">results</td>
 <td style="text-align: left;">microsoft.graph.security.huntingRowResult collection</td>
 <td style="text-align: left;">The results of the hunting query.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_huntingSchemaResult2" role="tabpanel" data-tab="huntingSchemaResult2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-huntingschemaresult?view=graph-rest-1.0&amp;tabs=http">huntingSchemaResult</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">functions</td>
+<td style="text-align: left;">microsoft.graph.security.huntingSchemaFunctions</td>
+<td style="text-align: left;">Object containing the built-in functions and saved functions available to the user.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tables</td>
+<td style="text-align: left;">microsoft.graph.security.huntingSchemaTable collection</td>
+<td style="text-align: left;">Collection of advanced hunting tables the user is authorized to query.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_huntingSchemaTable3" role="tabpanel" data-tab="huntingSchemaTable3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-huntingschematable?view=graph-rest-1.0&amp;tabs=http">huntingSchemaTable</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">columns</td>
+<td style="text-align: left;">microsoft.graph.security.huntingSchemaTableColumn collection</td>
+<td style="text-align: left;">Collection of columns in the table with their data types.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Description of what data the table contains.</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the table. Required.</td>
 </tr>
 </tbody>
 </table>

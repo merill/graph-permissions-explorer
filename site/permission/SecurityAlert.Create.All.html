@@ -174,6 +174,10 @@
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/security-alert-post-manualalert?view=graph-rest-beta&amp;tabs=http">POST /security/alerts_v2</a></div></td>
 </tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/security-alert-createalert?view=graph-rest-beta&amp;tabs=http">POST /security/alerts_v2/createAlert</a></div></td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -204,6 +208,10 @@
 <tbody>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.security/invoke-mgbetacreatesecurityalert">Invoke-MgBetaCreateSecurityAlert</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.security/new-mgbetasecurityalertv2">New-MgBetaSecurityAlertV2</a></div></td>
 </tr>
 </tbody>
@@ -218,10 +226,13 @@
 <a href="#tabpanel_2_alert1" role="tab" aria-controls="tabpanel_2_alert1" data-tab="alert1" tabindex="0" aria-selected="true">alert</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_entityDefinitionInput2" role="tab" aria-controls="tabpanel_2_entityDefinitionInput2" data-tab="entityDefinitionInput2" tabindex="-1">entityDefinitionInput</a>
+<a href="#tabpanel_2_createAlertInput2" role="tab" aria-controls="tabpanel_2_createAlertInput2" data-tab="createAlertInput2" tabindex="-1">createAlertInput</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_manualAlert3" role="tab" aria-controls="tabpanel_2_manualAlert3" data-tab="manualAlert3" tabindex="-1">manualAlert</a>
+<a href="#tabpanel_2_entityDefinitionInput3" role="tab" aria-controls="tabpanel_2_entityDefinitionInput3" data-tab="entityDefinitionInput3" tabindex="-1">entityDefinitionInput</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_manualAlert4" role="tab" aria-controls="tabpanel_2_manualAlert4" data-tab="manualAlert4" tabindex="-1">manualAlert</a>
 </li>
 </ul>
 <section id="tabpanel_2_alert1" role="tabpanel" data-tab="alert1">
@@ -419,7 +430,72 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_entityDefinitionInput2" role="tabpanel" data-tab="entityDefinitionInput2" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_createAlertInput2" role="tabpanel" data-tab="createAlertInput2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-createalertinput?view=graph-rest-1.0&amp;tabs=http">createAlertInput</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">category</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">MITRE ATT&amp;CK category for the alert.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Free-text explanation of the suspicious activity or policy violation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">entityDefinitions</td>
+<td style="text-align: left;">microsoft.graph.security.entityDefinition collection</td>
+<td style="text-align: left;">Inline entity definitions that associate entities with the alert.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isExcludedFromCorrelation</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Whether the alert is excluded from automatic correlation. Defaults to <code>false</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">linkToIncident</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">Incident ID to link the alert to. Use <code>0</code> or omit the value to create a new incident.</td>
+</tr>
+<tr>
+<td style="text-align: left;">mitreTechniques</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">MITRE ATT&amp;CK technique identifiers associated with the alert.</td>
+</tr>
+<tr>
+<td style="text-align: left;">recommendedActions</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Recommended remediation actions for the alert.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sentinelWorkspace</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Microsoft Sentinel workspace identifier used for workspace routing.</td>
+</tr>
+<tr>
+<td style="text-align: left;">severity</td>
+<td style="text-align: left;">microsoft.graph.security.alertSeverity</td>
+<td style="text-align: left;">Severity level of the alert. The possible values are: <code>unknown</code>, <code>informational</code>, <code>low</code>, <code>medium</code>, <code>high</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">title</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Short display name shown for the alert in the Defender portal.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_entityDefinitionInput3" role="tabpanel" data-tab="entityDefinitionInput3" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-entitydefinitioninput?view=graph-rest-1.0&amp;tabs=http">entityDefinitionInput</a></p>
 <table>
@@ -454,7 +530,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_manualAlert3" role="tabpanel" data-tab="manualAlert3" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_manualAlert4" role="tabpanel" data-tab="manualAlert4" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-manualalert?view=graph-rest-1.0&amp;tabs=http">manualAlert</a></p>
 <table>

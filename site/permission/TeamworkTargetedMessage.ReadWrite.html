@@ -156,6 +156,16 @@
 <th>Methods</th>
 </tr>
 </thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/chat-delete-targetedmessages?view=graph-rest-1.0&amp;tabs=http">DELETE /users/{user-id | userPrincipalName}/chats/{chat-id}/targetedMessages/{message-id}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/userteamwork-deletetargetedmessage?view=graph-rest-1.0&amp;tabs=http">POST /users/{user-id | userPrincipalName}/teamwork/deleteTargetedMessage</a></div></td>
+</tr>
+</tbody>
 </table>
 </section>
 <section id="tabpanel_1_apibeta" role="tabpanel" data-tab="apibeta" aria-hidden="true" hidden="hidden">
@@ -192,6 +202,16 @@
 <th>Commands</th>
 </tr>
 </thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.teams/remove-mguserchattargetedmessage">Remove-MgUserChatTargetedMessage</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.teams/remove-mguserteamworktargetedmessage">Remove-MgUserTeamworkTargetedMessage</a></div></td>
+</tr>
+</tbody>
 </table>
 </section>
 <section id="tabpanel_1_psbeta" role="tabpanel" data-tab="psbeta" aria-hidden="true" hidden="hidden">
@@ -249,14 +269,14 @@
 <td style="text-align: left;">The content of the message. Inherited from chatMessage.</td>
 </tr>
 <tr>
-<td style="text-align: left;">channelIdentity</td>
-<td style="text-align: left;">channelIdentity</td>
-<td style="text-align: left;">The channel and team information if the targeted message was sent in a channel context. Contains the <strong>channelId</strong> and <strong>teamId</strong> properties. Inherited from chatMessage.</td>
-</tr>
-<tr>
 <td style="text-align: left;">chatId</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The unique identifier of the chat if the targeted message was sent in a group chat context. Inherited from chatMessage.</td>
+</tr>
+<tr>
+<td style="text-align: left;">channelIdentity</td>
+<td style="text-align: left;">channelIdentity</td>
+<td style="text-align: left;">The channel and team information if the targeted message was sent in a channel context. Contains the <strong>channelId</strong> and <strong>teamId</strong> properties. Inherited from chatMessage.</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdDateTime</td>
@@ -291,7 +311,7 @@
 <tr>
 <td style="text-align: left;">importance</td>
 <td style="text-align: left;">chatMessageImportance</td>
-<td style="text-align: left;">The importance of the message. The possible values are: <code>normal</code>, <code>high</code>, <code>urgent</code>. Inherited from chatMessage.</td>
+<td style="text-align: left;">The importance of the message. The possible values are: <code>normal</code>, <code>high</code>, <code>urgent</code>, <code>unknownFutureValue</code>. Inherited from chatMessage.</td>
 </tr>
 <tr>
 <td style="text-align: left;">lastEditedDateTime</td>
@@ -324,11 +344,6 @@
 <td style="text-align: left;">The type of message. The possible values are: <code>message</code>, <code>chatEvent</code>, <code>typing</code>, <code>unknownFutureValue</code>, <code>systemEventMessage</code>. Use the <code>Prefer: include-unknown-enum-members</code> request header to get the following values from this evolvable enum: <code>systemEventMessage</code>. Inherited from chatMessage.</td>
 </tr>
 <tr>
-<td style="text-align: left;">onBehalfOf</td>
-<td style="text-align: left;">chatMessageFromIdentitySet</td>
-<td style="text-align: left;">Information about the user on whose behalf the message was sent. Inherited from chatMessage.</td>
-</tr>
-<tr>
 <td style="text-align: left;">policyViolation</td>
 <td style="text-align: left;">chatMessagePolicyViolation</td>
 <td style="text-align: left;">Information about policy violations applied to the message by data loss prevention (DLP) applications. Inherited from chatMessage.</td>
@@ -336,7 +351,7 @@
 <tr>
 <td style="text-align: left;">reactions</td>
 <td style="text-align: left;">chatMessageReaction collection</td>
-<td style="text-align: left;">The reactions applied to the message (for example, like, heart, laugh). Inherited from chatMessage.</td>
+<td style="text-align: left;">The reactions applied to the message (for example, like, heart, and laugh). Inherited from chatMessage.</td>
 </tr>
 <tr>
 <td style="text-align: left;">recipient</td>

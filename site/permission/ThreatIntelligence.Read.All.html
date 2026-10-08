@@ -919,67 +919,82 @@
 <tr>
 <td style="text-align: left;">administrativeUnitIdFilters</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">The administrative units tagged to an audit log record.</td>
+<td style="text-align: left;">The collection of administrative unit IDs to filter on.</td>
+</tr>
+<tr>
+<td style="text-align: left;">approximateReturnedRecordCount</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">The approximate number of records retrieved by the query. This value can be higher or lower than <strong>recordCountLimit</strong> due to distributed counting. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The display name of the saved audit log query.</td>
+<td style="text-align: left;">The display name of the audit log query.</td>
 </tr>
 <tr>
 <td style="text-align: left;">filterEndDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The end date of the date range in the query.</td>
+<td style="text-align: left;">The end date and time of the audit log query filter.</td>
 </tr>
 <tr>
 <td style="text-align: left;">filterStartDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The start date of the date range in the query.</td>
+<td style="text-align: left;">The start date and time of the audit log query filter.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Unique identifier for the audit log query. Inherited from microsoft.graph.entity.</td>
+<td style="text-align: left;">The unique identifier for the audit log query. Inherited from entity.</td>
 </tr>
 <tr>
 <td style="text-align: left;">ipAddressFilters</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">The IP address of the device that was used when the activity was logged.</td>
+<td style="text-align: left;">The collection of IP addresses to filter on.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isRecordCountLimitExceeded</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the query exceeded the per-search record-count limit. The default value is <code>false</code>. A value of <code>true</code> is authoritative and isn't derived from <strong>approximateReturnedRecordCount</strong>. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">keywordFilter</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">Free text field to search non-indexed properties of the audit log.</td>
+<td style="text-align: left;">The keyword to filter on.</td>
 </tr>
 <tr>
 <td style="text-align: left;">objectIdFilters</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">For SharePoint and OneDrive for Business activity, the full path name of the file or folder accessed by the user. For Exchange admin audit logging, the name of the object that was modified by the cmdlet.</td>
+<td style="text-align: left;">The collection of object IDs to filter on.</td>
 </tr>
 <tr>
 <td style="text-align: left;">operationFilters</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">The name of the user or admin activity. For a description of the most common operations/activities, see Search the audit log in the Office 365 Protection Center.</td>
+<td style="text-align: left;">The collection of operations to filter on.</td>
+</tr>
+<tr>
+<td style="text-align: left;">recordCountLimit</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">The record-count threshold used to limit query result retrieval. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">recordTypeFilters</td>
 <td style="text-align: left;">microsoft.graph.security.auditLogRecordType collection</td>
-<td style="text-align: left;">The type of operation indicated by the record. For the list of member values, see auditLogRecordType.</td>
+<td style="text-align: left;">The collection of record types to filter on.</td>
 </tr>
 <tr>
-<td style="text-align: left;">serviceFilter</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Refers to the workload property in the audit record. This is the Microsoft service where the activity occurred. Optional.</td>
+<td style="text-align: left;">serviceFilters</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">The collection of services to filter on.</td>
 </tr>
 <tr>
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">microsoft.graph.security.auditLogQueryStatus</td>
-<td style="text-align: left;">Describes the current status of the query. The possible values are: <code>notStarted</code>, <code>running</code>, <code>succeeded</code>, <code>failed</code>, <code>cancelled</code>, <code>unknownFutureValue</code>.</td>
+<td style="text-align: left;">The status of the audit log query. Possible values are: <code>notStarted</code>, <code>running</code>, <code>succeeded</code>, <code>failed</code>, <code>cancelled</code>, <code>unknownFutureValue</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">userPrincipalNameFilters</td>
 <td style="text-align: left;">String collection</td>
-<td style="text-align: left;">The UPN (user principal name) of the user who performed the action (specified in the operation property) that resulted in the record being logged; for example, _m</td>
+<td style="text-align: left;">The collection of user principal names to filter on.</td>
 </tr>
 </tbody>
 </table>

@@ -862,6 +862,10 @@
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/licensedetails-getteamslicensingdetails?view=graph-rest-1.0&amp;tabs=http">GET /users/{user-id}/licenseDetails/getTeamsLicensingDetails</a></div></td>
 </tr>
 <tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0&amp;tabs=http">GET /users/{userId|userPrincipalName}/notes/{noteId}/extensions/{extensionId}</a></div></td>
+</tr>
+<tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/agentuser-list-approleassignments?view=graph-rest-1.0&amp;tabs=http">GET /users/{usersId}/appRoleAssignments</a></div></td>
 </tr>
@@ -1207,6 +1211,10 @@
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/device-list-usagerights?view=graph-rest-beta&amp;tabs=http">GET /devices(deviceId='{deviceId}')/usageRights</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/cloudlicensing-devicecloudlicensing-list-waitingmembers?view=graph-rest-beta&amp;tabs=http">GET /devices/{deviceId}/cloudLicensing/waitingMembers</a></div></td>
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
@@ -3046,9 +3054,6 @@
 <a href="#tabpanel_2_assignmentError17" role="tab" aria-controls="tabpanel_2_assignmentError17" data-tab="assignmentError17" tabindex="-1">assignmentError</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_usageRight18" role="tab" aria-controls="tabpanel_2_usageRight18" data-tab="usageRight18" tabindex="-1">usageRight</a>
-</li>
-<li role="presentation">
 <a href="#tabpanel_2_waitingMember19" role="tab" aria-controls="tabpanel_2_waitingMember19" data-tab="waitingMember19" tabindex="-1">waitingMember</a>
 </li>
 <li role="presentation">
@@ -3399,6 +3404,11 @@
 <td style="text-align: left;">The unique identifier for the agent identity. Inherited from directoryObject. Key. Not nullable. Read-only. Inherited from entity.</td>
 </tr>
 <tr>
+<td style="text-align: left;">managerApplications</td>
+<td style="text-align: left;">Guid collection</td>
+<td style="text-align: left;">The collection of application IDs designated as managers of this agent identity's backing agentIdentityBlueprint. Read-only; the value is server-managed and reflects the <strong>managerApplications</strong> of the backing agentIdentityBlueprint. To change the managers, an owner or administrator must update the <strong>managerApplications</strong> property on the backing agentIdentityBlueprint <strong>in the tenant where it's registered</strong>. For multitenant agent identity blueprints, admins in a tenant where the blueprint is only consumed can't make this change — they must ask an owner or administrator in the blueprint's home tenant. Not nullable. Returned only on <code>$select</code>.</td>
+</tr>
+<tr>
 <td style="text-align: left;">servicePrincipalType</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Set to <strong>ServiceIdentity</strong> for all agent identities. Inherited from servicePrincipal.</td>
@@ -3627,6 +3637,11 @@
 <td style="text-align: left;">info</td>
 <td style="text-align: left;">informationalUrl</td>
 <td style="text-align: left;">Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. Inherited from servicePrincipal.</td>
+</tr>
+<tr>
+<td style="text-align: left;">managerApplications</td>
+<td style="text-align: left;">Guid collection</td>
+<td style="text-align: left;">The collection of application IDs designated as managers of this agent identity blueprint principal's backing agentIdentityBlueprint. Read-only; the value is server-managed and reflects the <strong>managerApplications</strong> of the backing agentIdentityBlueprint. To change the managers, an owner or administrator must update the <strong>managerApplications</strong> property on the backing agentIdentityBlueprint <strong>in the tenant where it's registered</strong>. For multitenant agent identity blueprints, admins in a tenant where the blueprint is only consumed can't make this change — they must ask an owner or administrator in the blueprint's home tenant. Not nullable. Returned only on <code>$select</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">publishedPermissionScopes</td>
@@ -4036,7 +4051,12 @@
 <tr>
 <td style="text-align: left;">appRoles</td>
 <td style="text-align: left;">appRole collection</td>
-<td style="text-align: left;">The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.</td>
+<td style="text-align: left;">The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable. <br><br>App roles and exposed delegated permission scopes (<strong>api.oauth2PermissionScopes</strong>) share a default limit of 700 permission definitions per application. Enabled and disabled definitions both count. This limit is separate from the aggregate 1,200-entry application manifest limit and from app role assignment limits. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.</td>
+</tr>
+<tr>
+<td style="text-align: left;">authenticationBehaviors</td>
+<td style="text-align: left;">authenticationBehaviors</td>
+<td style="text-align: left;">The set of breaking change behaviors related to token issuance that are configured for the application. Authentication behaviors are unset by default (<code>null</code>) and must be explicitly enabled or disabled. Nullable. Returned only on <code>$select</code>. Requires <code>$select</code> to retrieve. <br><br> For more information about authentication behaviors, see Manage application authenticationBehaviors.</td>
 </tr>
 <tr>
 <td style="text-align: left;">certification</td>
@@ -4650,10 +4670,8 @@
 </tr>
 </tbody>
 </table>
-</section>
-<section id="tabpanel_2_usageRight18" role="tabpanel" data-tab="usageRight18" aria-hidden="true" hidden="hidden">
-
-<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudlicensing-usageright?view=graph-rest-1.0&amp;tabs=http">usageRight</a></p>
+<h1 id="cloudlicensing-usagerighttabcloudlicensing-usageright18">[cloudLicensing usageRight](#tab/cloudLicensing usageRight18)</h1>
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/cloudlicensing-usageright?view=graph-rest-1.0&amp;tabs=http">cloudLicensing usageRight</a></p>
 <table>
 <thead>
 <tr>
@@ -6389,6 +6407,11 @@
 <td style="text-align: left;">Contains the on-premises <strong>domain FQDN</strong>, also called <strong>dnsDomainName</strong> synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.<br><br>Returned by default. Read-only.</td>
 </tr>
 <tr>
+<td style="text-align: left;">onPremisesExtensionAttributes</td>
+<td style="text-align: left;">onPremisesExtensionAttributes</td>
+<td style="text-align: left;">Complex type containing extension attributes 1-15 for the group, synchronized from on-premises Active Directory. Returned only on <code>$select</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>in</code>).</td>
+</tr>
+<tr>
 <td style="text-align: left;">onPremisesLastSyncDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">Indicates the last time at which the group was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on January 1, 2014 is <code>2014-01-01T00:00:00Z</code>. <br><br>Returned by default. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>not</code>, <code>ge</code>, <code>le</code>, <code>in</code>).</td>
@@ -7139,7 +7162,7 @@
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time when the note was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is <code>2024-01-01T00:00:00Z</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ge</code>, <code>le</code>, <code>gt</code>, <code>lt</code>). Read-only. Inherited from outlookItem.</td>
+<td style="text-align: left;">The date and time when the note was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is <code>2024-01-01T00:00:00Z</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>ge</code>, <code>le</code>, <code>gt</code>, <code>lt</code>). Read-only. Inherited from outlookItem.</td>
 </tr>
 <tr>
 <td style="text-align: left;">hasAttachments</td>
@@ -7159,7 +7182,7 @@
 <tr>
 <td style="text-align: left;">lastModifiedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The date and time when the note was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is <code>2024-01-01T00:00:00Z</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ge</code>, <code>le</code>, <code>gt</code>, <code>lt</code>) and <code>$orderby</code>. Read-only. Inherited from outlookItem.</td>
+<td style="text-align: left;">The date and time when the note was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is <code>2024-01-01T00:00:00Z</code>. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>ge</code>, <code>le</code>, <code>gt</code>, <code>lt</code>) and <code>$orderby</code>. Read-only. Inherited from outlookItem.</td>
 </tr>
 <tr>
 <td style="text-align: left;">subject</td>
@@ -7904,7 +7927,7 @@
 <tr>
 <td style="text-align: left;">appRoles</td>
 <td style="text-align: left;">appRole collection</td>
-<td style="text-align: left;">The roles exposed by the application that's linked to this service principal. For more information, see the <strong>appRoles</strong> property definition on the application entity. Not nullable.</td>
+<td style="text-align: left;">The roles exposed by the application that's linked to this service principal. For more information, see the <strong>appRoles</strong> property definition on the application entity. Not nullable. <br><br>App roles and exposed delegated permission scopes (<strong>oauth2PermissionScopes</strong>) share a default limit of 700 permission definitions per service principal, including definitions inherited from the application and definitions added directly to the service principal. Enabled and disabled definitions both count. This limit counts definitions, not app role assignments. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdByAppId</td>
@@ -7979,7 +8002,7 @@
 <tr>
 <td style="text-align: left;">oauth2PermissionScopes</td>
 <td style="text-align: left;">permissionScope collection</td>
-<td style="text-align: left;">The delegated permissions exposed by the application. For more information, see the <strong>oauth2PermissionScopes</strong> property on the application entity's <strong>api</strong> property. Not nullable.</td>
+<td style="text-align: left;">The delegated permissions exposed by the application. For more information, see the <strong>oauth2PermissionScopes</strong> property on the application entity's <strong>api</strong> property. Not nullable. <br><br>These scopes and <strong>appRoles</strong> share a default limit of 700 permission definitions per service principal. Enabled and disabled definitions both count. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.</td>
 </tr>
 <tr>
 <td style="text-align: left;">passwordCredentials</td>

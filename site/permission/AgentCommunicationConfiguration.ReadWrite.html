@@ -93,6 +93,11 @@
 <blockquote>
 <p>Allows the app to read and update the communication configuration of agent blueprints on behalf of the signed-in user.</p>
 </blockquote>
+<blockquote>
+<p><strong>Merill's Note</strong></p>
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>AgentCommunicationConfiguration.ReadWrite</code> permission.</p>
+<p>If you need to create an audit report of the permissions granted to all the apps in your tenant, you can run the <code>Export-MsIdAppConsentGrantReport</code> command. See <a href="https://www.youtube.com/watch?v=vO0m5yE3dZA">How To: Run a quick OAuth app audit of your tenant</a></p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -125,11 +130,439 @@
 </tbody>
 </table>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_apiv1" role="tab" aria-controls="tabpanel_1_apiv1" data-tab="apiv1" tabindex="0" aria-selected="true"><span><i class='bi bi-braces'></i></span> API [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_apibeta" role="tab" aria-controls="tabpanel_1_apibeta" data-tab="apibeta" tabindex="-1"><span><i class='bi bi-braces'></i></span> API [beta]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psv1" role="tab" aria-controls="tabpanel_1_psv1" data-tab="psv1" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psbeta" role="tab" aria-controls="tabpanel_1_psbeta" data-tab="psbeta" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [beta]</a>
+</li>
+</ul>
+<section id="tabpanel_1_apiv1" role="tabpanel" data-tab="apiv1">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_apibeta" role="tabpanel" data-tab="apibeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/agentidentityblueprint-get-communicationconfiguration?view=graph-rest-beta&amp;tabs=http">GET /applications/{agentIdentityBlueprintId}/microsoft.graph.agentIdentityBlueprint/communicationConfiguration</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/agentidentity-get-communicationconfiguration?view=graph-rest-beta&amp;tabs=http">GET /servicePrincipals/microsoft.graph.agentIdentity/{agentIdentityId}/communicationConfiguration</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/agentcommunicationconfiguration-reset?view=graph-rest-beta&amp;tabs=http">POST /servicePrincipals/microsoft.graph.agentIdentity/{agentIdentityId}/communicationConfiguration/reset</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/agentidentityblueprint-update-communicationconfiguration?view=graph-rest-beta&amp;tabs=http">PUT /applications/{agentIdentityBlueprintId}/microsoft.graph.agentIdentityBlueprint/communicationConfiguration</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/agentidentity-update-communicationconfiguration?view=graph-rest-beta&amp;tabs=http">PUT /servicePrincipals/microsoft.graph.agentIdentity/{agentIdentityId}/communicationConfiguration</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_psv1" role="tabpanel" data-tab="psv1" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_psbeta" role="tabpanel" data-tab="psbeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
 </div>
-<hr>
+<h2 id="resources">Resources</h2>
+<p>Granting this permission allows the calling application to access (and/or update) the following information in your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_agentCommunicationConfiguration1" role="tab" aria-controls="tabpanel_2_agentCommunicationConfiguration1" data-tab="agentCommunicationConfiguration1" tabindex="0" aria-selected="true">agentCommunicationConfiguration</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_agentEndpointConfiguration2" role="tab" aria-controls="tabpanel_2_agentEndpointConfiguration2" data-tab="agentEndpointConfiguration2" tabindex="-1">agentEndpointConfiguration</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_agentIdentity3" role="tab" aria-controls="tabpanel_2_agentIdentity3" data-tab="agentIdentity3" tabindex="-1">agentIdentity</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_agentIdentityBlueprint4" role="tab" aria-controls="tabpanel_2_agentIdentityBlueprint4" data-tab="agentIdentityBlueprint4" tabindex="-1">agentIdentityBlueprint</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_agentTeamworkConfiguration5" role="tab" aria-controls="tabpanel_2_agentTeamworkConfiguration5" data-tab="agentTeamworkConfiguration5" tabindex="-1">agentTeamworkConfiguration</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_enums6" role="tab" aria-controls="tabpanel_2_enums6" data-tab="enums6" tabindex="-1">enums</a>
+</li>
+</ul>
+<section id="tabpanel_2_agentCommunicationConfiguration1" role="tabpanel" data-tab="agentCommunicationConfiguration1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/agentcommunicationconfiguration?view=graph-rest-1.0&amp;tabs=http">agentCommunicationConfiguration</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">endpointConfiguration</td>
+<td style="text-align: left;">agentEndpointConfiguration</td>
+<td style="text-align: left;">The endpoint binding (bot ID or callback URI) that the agent uses to receive messages.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isOverridableAtAgentIdLevel</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether individual agent instances created from this blueprint can override the <code>endpointConfiguration</code>. When <code>true</code>, each instance can override it; when <code>false</code>, every instance inherits it. Not nullable.</td>
+</tr>
+<tr>
+<td style="text-align: left;">teamworkConfiguration</td>
+<td style="text-align: left;">agentTeamworkConfiguration</td>
+<td style="text-align: left;">The per-conversation-context message notification settings (group chat, channel, one-on-one chat, and meeting chat) that agents use.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_agentEndpointConfiguration2" role="tabpanel" data-tab="agentEndpointConfiguration2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/agentendpointconfiguration?view=graph-rest-1.0&amp;tabs=http">agentEndpointConfiguration</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">apiBased</td>
+<td style="text-align: left;">agentBlueprintApiBasedEndpointConfigurationDetails</td>
+<td style="text-align: left;">The API-based endpoint details. Populated when <code>configurationType</code> is <code>apiBased</code>; carries the callback URI that Teams posts to. Must be null when <code>configurationType</code> is <code>botBased</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">botBased</td>
+<td style="text-align: left;">agentBlueprintBotBasedEndpointConfigurationDetails</td>
+<td style="text-align: left;">The bot-based endpoint details. Populated when <code>configurationType</code> is <code>botBased</code>; carries the bot ID that Teams messages. Must be null when <code>configurationType</code> is <code>apiBased</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">configurationType</td>
+<td style="text-align: left;">agentEndpointConfigurationType</td>
+<td style="text-align: left;">The discriminator that indicates which endpoint variant is in effect. The possible values are: <code>apiBased</code>, <code>botBased</code>, <code>unknownFutureValue</code>. Not nullable.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_agentIdentity3" role="tabpanel" data-tab="agentIdentity3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/agentidentity?view=graph-rest-1.0&amp;tabs=http">agentIdentity</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">odata.type</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;"><code>#microsoft.graph.agentIdentity</code>. Distinguishes this object as an agent identity. Can be used to identify this object as an agent identity, instead of another kind of service principal.</td>
+</tr>
+<tr>
+<td style="text-align: left;">accountEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if the agent identity account is enabled; otherwise, <code>false</code>. If set to <code>false</code>, then no users are able to sign in to this app, even if they're assigned to it. Inherited from servicePrincipal.</td>
+</tr>
+<tr>
+<td style="text-align: left;">agentIdentityBlueprintId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The <strong>appId</strong> of the agent identity blueprint that defines the configuration for this agent identity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">customSecurityAttributes</td>
+<td style="text-align: left;">customSecurityAttributeValue</td>
+<td style="text-align: left;">An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Requires <code>$select</code> to retrieve. Inherited from servicePrincipal.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdByAppId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The <strong>appId</strong> of the application that created this agent identity. Set internally by Microsoft Entra ID. Read-only. Inherited from servicePrincipal.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the agent identity was created. Read-only. Inherited from servicePrincipal.</td>
+</tr>
+<tr>
+<td style="text-align: left;">disabledByMicrosoftStatus</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Specifies whether Microsoft has disabled the registered Agent Identity Blueprint. The possible values are: <code>null</code> (default value), <code>NotDisabled</code>, and <code>DisabledDueToViolationOfServicesAgreement</code> (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement). Inherited from servicePrincipal.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name for the agent identity. Inherited from servicePrincipal.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the agent identity. Inherited from directoryObject. Key. Not nullable. Read-only. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">managerApplications</td>
+<td style="text-align: left;">Guid collection</td>
+<td style="text-align: left;">The collection of application IDs designated as managers of this agent identity's backing agentIdentityBlueprint. Read-only; the value is server-managed and reflects the <strong>managerApplications</strong> of the backing agentIdentityBlueprint. To change the managers, an owner or administrator must update the <strong>managerApplications</strong> property on the backing agentIdentityBlueprint <strong>in the tenant where it's registered</strong>. For multitenant agent identity blueprints, admins in a tenant where the blueprint is only consumed can't make this change — they must ask an owner or administrator in the blueprint's home tenant. Not nullable. Returned only on <code>$select</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">servicePrincipalType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Set to <strong>ServiceIdentity</strong> for all agent identities. Inherited from servicePrincipal.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tags</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Custom strings that can be used to categorize and identify the agent identity. Not nullable. The value is the union of strings set here and on the associated Agent Identity Blueprint entity's **t</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_agentIdentityBlueprint4" role="tabpanel" data-tab="agentIdentityBlueprint4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/agentidentityblueprint?view=graph-rest-1.0&amp;tabs=http">agentIdentityBlueprint</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">api</td>
+<td style="text-align: left;">apiApplication</td>
+<td style="text-align: left;">Specifies settings for an agent identity blueprint that implements a web API. Inherited from application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">appId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the agent identity blueprint that is assigned by Microsoft Entra ID. Not nullable. Read-only. Inherited from application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">appRoles</td>
+<td style="text-align: left;">appRole collection</td>
+<td style="text-align: left;">The collection of roles defined for the agent identity blueprint. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable. Inherited from application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">certification</td>
+<td style="text-align: left;">certification</td>
+<td style="text-align: left;">Specifies the certification status of the agent identity blueprint. Inherited from application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdByAppId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The <strong>appId</strong> of the application that created this agent identity blueprint. Set internally by Microsoft Entra ID. Read-only. Inherited from application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the agent identity blueprint was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Read-only. Inherited from application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Free text field to provide a description of the agent identity blueprint to end users. The maximum allowed size is 1,024 characters. The least privileged permission to update this property is <em>AgentIdentityBlueprint.UpdateBranding.All</em>. Inherited from application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">disabledByMicrosoftStatus</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Specifies whether Microsoft has disabled the registered agent identity blueprint. The possible values are: <code>null</code> (default value), <code>NotDisabled</code>, and <code>DisabledDueToViolationOfServicesAgreement</code> (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement). Inherited from application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name for the agent identity blueprint. Maximum length is 256 characters. The least privileged permission to update this property is <em>AgentIdentityBlueprint.UpdateBranding.All</em>. Inherited from application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">groupMembershipClaims</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Configures the <code>groups</code> claim issued in a user or OAuth 2.0 access token that the agent identity blueprint expects. To set this attribute, use one of the following string values: <code>None</code>, <code>SecurityGroup</code> (for security groups and Microsoft Entra roles), <code>All</code> (this gets all security groups, distribution groups, and Microsoft Entra directory roles that the signed-in user is a member of). Inherited from application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for the agent identity blueprint object. This property is referred to as <strong>Object ID</strong> in the Microsoft Entra admin center. Key. Not nullable. Read-only. Inherited from directoryObject.</td>
+</tr>
+<tr>
+<td style="text-align: left;">identifierUris</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Also known as App ID URI, this value is set when an agent identity blueprint is used as a resource app. The identifierUris acts as the prefix for the scopes you reference in your API's code, and it must be globally unique across Microsoft Entra ID. Not nullable. Inherited from application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">info</td>
+<td style="text-align: left;">informationalUrl</td>
+<td style="text-align: left;">Basic profile information of the agent identity blueprint, such as it's marketing, support, terms of service, and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. Inherited from application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">keyCredentials</td>
+<td style="text-align: left;">keyCredential collection</td>
+<td style="text-align: left;">The collection of key credentials associated with the agent identity blueprint. Not nullable. The least privileged permission to update this property is <em>AgentIdentityBlueprint.AddRemoveCreds.All</em>. Inherited from application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">managerApplications</td>
+<td style="text-align: left;">Guid collection</td>
+<td style="text-align: left;">A collection of application IDs for Microsoft first-party applications designated as managers of this agent blueprint. Manager applications can create agent blueprint principals, agent identities, and agent users for managed agent blueprints without requiring highly privileged permissions such as <code>AgentIdentityBlueprintPrincipal.ReadWrite.All</code>. Limited to a maximum of 10 entries. Not nullable. Only Microsoft first-party applications can be designated as managers. Not returned by default. Supports <code>$select</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">optionalClaims</td>
+<td style="text-align: left;">optionalClaims</td>
+<td style="text-align: left;">Application developers can configure optional claims in their Microsoft Entra agent identity blueprints to specify the claims that are sent to their application by the Microsoft security token service. Inherited from application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">passwordCredentials</td>
+<td style="text-align: left;">passwordCredential collection</td>
+<td style="text-align: left;">The collection of password credentials associated with the agent identity blueprint. Not nullable. The least privileged permission to update this property is <em>AgentIdentityBlueprint.AddRemoveCreds.All</em>. Inherited from application.<br><br>You can also add passwords after creating the agent identity blueprint by calling the Add password API.</td>
+</tr>
+<tr>
+<td style="text-align: left;">publisherDomain</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The verified publisher domain for the agent identity blueprint. Read-only. Inherited from application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">requiredResourceAccess</td>
+<td style="text-align: left;">requiredResourceAccess collection</td>
+<td style="text-align: left;">Specifies the resources that the agentIdentityBlueprint needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. <br><br>No more than 50 resource services (APIs) can be configured. The total number of required permissions must not exceed 400. For more information, see Limits on requested permissions per app. Not nullable.  Inherited from application.<br><br>Supports <code>$filter</code> (<code>eq</code>, <code>not</code>, <code>ge</code>, <code>le</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">serviceManagementReference</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">References application or service contact information from a Service or Asset Management database. Nullable. Inherited from application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">signInAudience</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Specifies the Microsoft accounts that are supported for the current agent identity blueprint. The possible values are: <code>AzureADMyOrg</code> (default), <code>AzureADMultipleOrgs</code>, <code>AzureADandPersonalMicrosoftAccount</code>, and <code>PersonalMicrosoftAccount</code>. Inherited from application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tags</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Custom strings that can be used to categorize and identify the agent identity blueprint. Not nullable. Inherited from application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tokenEncryptionKeyId</td>
+<td style="text-align: left;">Guid</td>
+<td style="text-align: left;">Specifies the keyId of a public key from the keyCredentials collection. When configured, Microsoft Entra ID encrypts all the tokens it emits by using the key this property points to. Inherited from application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">uniqueName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier that can be assigned to an agent identity blueprint and used as an alternate key. Immutable. Read-only. Inherited from application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">verifiedPublisher</td>
+<td style="text-align: left;">verifiedPublisher</td>
+<td style="text-align: left;">Specifies the verified publisher of the agent identity blueprint. Inherited from application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">web</td>
+<td style="text-align: left;">webApplication</td>
+<td style="text-align: left;">Specifies settings for a web application. Inherited from application.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_agentTeamworkConfiguration5" role="tabpanel" data-tab="agentTeamworkConfiguration5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/agentteamworkconfiguration?view=graph-rest-1.0&amp;tabs=http">agentTeamworkConfiguration</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">channelConfiguration</td>
+<td style="text-align: left;">agentConversationConfiguration</td>
+<td style="text-align: left;">The message notification settings that the agent uses in channels.</td>
+</tr>
+<tr>
+<td style="text-align: left;">groupChatConfiguration</td>
+<td style="text-align: left;">agentConversationConfiguration</td>
+<td style="text-align: left;">The message notification settings that the agent uses in group chats.</td>
+</tr>
+<tr>
+<td style="text-align: left;">meetingChatConfiguration</td>
+<td style="text-align: left;">agentConversationConfiguration</td>
+<td style="text-align: left;">The message notification settings that the agent uses in meeting chats.</td>
+</tr>
+<tr>
+<td style="text-align: left;">oneOnOneChatConfiguration</td>
+<td style="text-align: left;">agentConversationConfiguration</td>
+<td style="text-align: left;">The message notification settings that the agent uses in one-on-one chats.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_enums6" role="tabpanel" data-tab="enums6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/enums?view=graph-rest-1.0&amp;tabs=http">enums</a></p>
+</section>
+</div>
 
 </article>
 

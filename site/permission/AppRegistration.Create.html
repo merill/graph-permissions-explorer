@@ -410,7 +410,12 @@
 <tr>
 <td style="text-align: left;">appRoles</td>
 <td style="text-align: left;">appRole collection</td>
-<td style="text-align: left;">The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.</td>
+<td style="text-align: left;">The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable. <br><br>App roles and exposed delegated permission scopes (<strong>api.oauth2PermissionScopes</strong>) share a default limit of 700 permission definitions per application. Enabled and disabled definitions both count. This limit is separate from the aggregate 1,200-entry application manifest limit and from app role assignment limits. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.</td>
+</tr>
+<tr>
+<td style="text-align: left;">authenticationBehaviors</td>
+<td style="text-align: left;">authenticationBehaviors</td>
+<td style="text-align: left;">The set of breaking change behaviors related to token issuance that are configured for the application. Authentication behaviors are unset by default (<code>null</code>) and must be explicitly enabled or disabled. Nullable. Returned only on <code>$select</code>. Requires <code>$select</code> to retrieve. <br><br> For more information about authentication behaviors, see Manage application authenticationBehaviors.</td>
 </tr>
 <tr>
 <td style="text-align: left;">certification</td>
