@@ -2093,10 +2093,13 @@
 <a href="#tabpanel_2_serviceActivityValueMetric26" role="tab" aria-controls="tabpanel_2_serviceActivityValueMetric26" data-tab="serviceActivityValueMetric26" tabindex="-1">serviceActivityValueMetric</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_userCredentialUsageDetails27" role="tab" aria-controls="tabpanel_2_userCredentialUsageDetails27" data-tab="userCredentialUsageDetails27" tabindex="-1">userCredentialUsageDetails</a>
+<a href="#tabpanel_2_sharePointApiUsageDataPoint27" role="tab" aria-controls="tabpanel_2_sharePointApiUsageDataPoint27" data-tab="sharePointApiUsageDataPoint27" tabindex="-1">sharePointApiUsageDataPoint</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_userRegistrationDetails28" role="tab" aria-controls="tabpanel_2_userRegistrationDetails28" data-tab="userRegistrationDetails28" tabindex="-1">userRegistrationDetails</a>
+<a href="#tabpanel_2_userCredentialUsageDetails28" role="tab" aria-controls="tabpanel_2_userCredentialUsageDetails28" data-tab="userCredentialUsageDetails28" tabindex="-1">userCredentialUsageDetails</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_userRegistrationDetails29" role="tab" aria-controls="tabpanel_2_userRegistrationDetails29" data-tab="userRegistrationDetails29" tabindex="-1">userRegistrationDetails</a>
 </li>
 </ul>
 <section id="tabpanel_2_applicationSignInDetailedSummary1" role="tabpanel" data-tab="applicationSignInDetailedSummary1">
@@ -3692,7 +3695,82 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_userCredentialUsageDetails27" role="tabpanel" data-tab="userCredentialUsageDetails27" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_sharePointApiUsageDataPoint27" role="tabpanel" data-tab="sharePointApiUsageDataPoint27" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/sharepointapiusagedatapoint?view=graph-rest-1.0&amp;tabs=http">sharePointApiUsageDataPoint</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">activeApps</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The number of distinct applications with usage during the reporting period. Summary rows: populated with the count of active applications. Detail rows: null. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">appId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier (GUID) for the application. Summary rows: null. Detail rows: the application GUID. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">billedHeavyRequestCount</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">The number of heavy API requests that were billed. Only present in the <code>sharePointServicePrioritizationReport</code>. For summary rows, this is the total number of billed heavy requests across all applications. For detail rows, this is the number of billed heavy requests for the specific application on the specific date. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">billedStandardRequestCount</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">The number of standard API requests that were billed. Only present in the <code>sharePointServicePrioritizationReport</code>. For summary rows, this is the total number of billed standard requests across all applications. For detail rows, this is the number of billed standard requests for the specific application on the specific date. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">heavyRequestCount</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">The number of API requests classified as heavy. Only present in the <code>sharePointServicePrioritizationReport</code>. For summary rows, this is the total number of heavy requests across all applications. For detail rows, this is the number of heavy requests for the specific application on the specific date. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">serviceArea</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The service area name. Always <code>OneDrive and SharePoint</code> for SharePoint API usage reports. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">standardRequestCount</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">The number of API requests classified as standard. Only present in the <code>sharePointServicePrioritizationReport</code>. For summary rows, this is the total number of standard requests across all applications. For detail rows, this is the number of standard requests for the specific application on the specific date. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tenantId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier (GUID) for the tenant. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">throttledRequests</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">The number of API requests that were throttled. Only present in the <code>throttlingReport</code>. For summary rows, this is the total number of throttled requests across all applications. For detail rows, this is the number of throttled requests for the specific application on the specific date. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">usageDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time for this data point in ISO 8601 format. For summary rows, this is the most recent date in the reporting period. For detail rows, this is the specific date for the usage data. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">usageMB</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">Total usage in megabytes (MB) for this data point. Only present in the <code>egressReport</code>. For summary rows, this is the total aggregated usage across all applications for the reporting period. For detail rows, this is the usage for the specific application on the specific date. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">usageRequests</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">The number of API requests. Present in all report types. For summary rows, this is the total number of requests across all applications. For detail rows, this is the number of requests for the specific application on the specific date. Read-only.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_userCredentialUsageDetails28" role="tabpanel" data-tab="userCredentialUsageDetails28" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/usercredentialusagedetails?view=graph-rest-1.0&amp;tabs=http">userCredentialUsageDetails</a></p>
 <table>
@@ -3747,7 +3825,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_userRegistrationDetails28" role="tabpanel" data-tab="userRegistrationDetails28" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_userRegistrationDetails29" role="tabpanel" data-tab="userRegistrationDetails29" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/userregistrationdetails?view=graph-rest-1.0&amp;tabs=http">userRegistrationDetails</a></p>
 <table>
