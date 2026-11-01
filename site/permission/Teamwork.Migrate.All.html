@@ -187,7 +187,7 @@
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
-<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0&amp;tabs=http">POST /teams/{team-id}/channels/{channel-id}/messages/{message-id}/replies</a></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0&amp;tabs=http">POST /teams/{team-id}/channels/{channel-id}/messages/{message-id}/replies</a></div></td>
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
@@ -1264,8 +1264,13 @@
 <tbody>
 <tr>
 <td style="text-align: left;">contentBytes</td>
+<td style="text-align: left;">Binary</td>
+<td style="text-align: left;">The base64-encoded image content of the emoji. Supported formats include PNG and GIF. Inherited from teamworkHostedContent.</td>
+</tr>
+<tr>
+<td style="text-align: left;">contentType</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The base64-encoded image content of the emoji. Supported formats include PNG and GIF.</td>
+<td style="text-align: left;">The media type of the custom emoji content, such as <code>image/png</code> or <code>image/gif</code>. Inherited from teamworkHostedContent.</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdBy</td>
@@ -1280,7 +1285,12 @@
 <tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique display name of the custom emoji. Key. Must be unique and must not conflict with existing emoji names.</td>
+<td style="text-align: left;">The unique display name of the custom emoji. This property is an alternate key and must not conflict with existing emoji names.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The service-generated identifier of the custom emoji. Inherited from teamworkHostedContent.</td>
 </tr>
 </tbody>
 </table>

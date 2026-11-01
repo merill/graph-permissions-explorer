@@ -215,13 +215,44 @@
 <div class="tabGroup" id="tabgroup_2">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_2_processContentRequest1" role="tab" aria-controls="tabpanel_2_processContentRequest1" data-tab="processContentRequest1" tabindex="0" aria-selected="true">processContentRequest</a>
+<a href="#tabpanel_2_currentLabel1" role="tab" aria-controls="tabpanel_2_currentLabel1" data-tab="currentLabel1" tabindex="0" aria-selected="true">currentLabel</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_processContentResponse2" role="tab" aria-controls="tabpanel_2_processContentResponse2" data-tab="processContentResponse2" tabindex="-1">processContentResponse</a>
+<a href="#tabpanel_2_processContentRequest2" role="tab" aria-controls="tabpanel_2_processContentRequest2" data-tab="processContentRequest2" tabindex="-1">processContentRequest</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_processContentResponse3" role="tab" aria-controls="tabpanel_2_processContentResponse3" data-tab="processContentResponse3" tabindex="-1">processContentResponse</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_processFileMetadata4" role="tab" aria-controls="tabpanel_2_processFileMetadata4" data-tab="processFileMetadata4" tabindex="-1">processFileMetadata</a>
 </li>
 </ul>
-<section id="tabpanel_2_processContentRequest1" role="tabpanel" data-tab="processContentRequest1">
+<section id="tabpanel_2_currentLabel1" role="tabpanel" data-tab="currentLabel1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/currentlabel?view=graph-rest-1.0&amp;tabs=http">currentLabel</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">applicationMode</td>
+<td style="text-align: left;">applicationMode</td>
+<td style="text-align: left;">The application mode associated with the sensitivity label. The possible values are: <code>manual</code>, <code>automatic</code>, <code>recommended</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The GUID that identifies the sensitivity label.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_processContentRequest2" role="tabpanel" data-tab="processContentRequest2" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/processcontentrequest?view=graph-rest-1.0&amp;tabs=http">processContentRequest</a></p>
 <table>
@@ -261,7 +292,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_processContentResponse2" role="tabpanel" data-tab="processContentResponse2" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_processContentResponse3" role="tabpanel" data-tab="processContentResponse3" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/processcontentresponse?view=graph-rest-1.0&amp;tabs=http">processContentResponse</a></p>
 <table>
@@ -287,6 +318,76 @@
 <td style="text-align: left;">protectionScopeState</td>
 <td style="text-align: left;">microsoft.graph.security.protectionScopeState</td>
 <td style="text-align: left;">Indicates if the applicable protection scope (policies) has changed since the last known state for the context. Possible values are <code>modified</code> and <code>notModified</code>.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_processFileMetadata4" role="tabpanel" data-tab="processFileMetadata4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/processfilemetadata?view=graph-rest-1.0&amp;tabs=http">processFileMetadata</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">content</td>
+<td style="text-align: left;">contentBase</td>
+<td style="text-align: left;">Represents the actual content, either as text (<code>textContent</code>) or binary data (<code>binaryContent</code>). Optional if metadata alone is sufficient for policy evaluation. <strong>Do not use for contentActivities.</strong> Inherited from processContentMetadataBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">correlationId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">An identifier used to group multiple related content entries (for example, different parts of the same file upload, messages in a conversation). Inherited from processContentMetadataBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Required. Timestamp indicating when the original content was created (for example, file creation time, message sent time). Inherited from processContentMetadataBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">customProperties</td>
+<td style="text-align: left;">customMetadataDictionary</td>
+<td style="text-align: left;">A dictionary containing custom metadata associated with the file, potentially extracted by the calling application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">identifier</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Required. A unique identifier for this specific content entry within the context of the calling application or enforcement plane (for example, message ID, file path/URL). Inherited from processContentMetadataBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isTruncated</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Required. Indicates if the provided <code>content</code> has been truncated from its original form (for example, due to size limits). Inherited from processContentMetadataBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">length</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">The length of the original content in bytes. Inherited from processContentMetadataBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">modifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Required. Timestamp indicating when the original content was last modified. For ephemeral content like messages, this might be the same as <code>createdDateTime</code>. Inherited from processContentMetadataBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Required. A descriptive name for the content (for example, file name, web page title, <code>Chat Message</code>). Inherited from processContentMetadataBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">ownerId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier (for example, Entra User ID or UPN) of the owner of the file.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sequenceNumber</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">A sequence number indicating the order in which content was generated or should be processed, required when <code>correlationId</code> is used. Inherited from processContentMetadataBase.</td>
 </tr>
 </tbody>
 </table>

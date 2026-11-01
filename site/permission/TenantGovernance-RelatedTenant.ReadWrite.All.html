@@ -167,6 +167,10 @@
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/tenantgovernanceservices-relatedtenant-refreshstatus?view=graph-rest-1.0&amp;tabs=http">GET /directory/tenantGovernance/relatedTenants/refreshStatus</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/tenantgovernanceservices-relatedtenant-refresh?view=graph-rest-1.0&amp;tabs=http">POST /directory/tenantGovernance/relatedTenants/refresh</a></div></td>
 </tr>
 </tbody>
@@ -308,19 +312,19 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">mostRecentRefreshTime</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Timestamp of the respective refresh request.</td>
+<td style="text-align: left;">isFirstRefresh</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the operation is the first refresh of the related tenants list.</td>
+</tr>
+<tr>
+<td style="text-align: left;">mostRecentRefreshDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time of the most recent refresh operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is <code>2024-01-01T00:00:00Z</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">mostRecentRefreshRequestStatus</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The status of the refresh operation</td>
-</tr>
-<tr>
-<td style="text-align: left;">isFirstRefresh</td>
-<td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Describes whether the related tenants refresh was the initial aggregation done by our service or not.</td>
+<td style="text-align: left;">The status of the most recent refresh operation.</td>
 </tr>
 </tbody>
 </table>

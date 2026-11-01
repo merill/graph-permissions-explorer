@@ -172,6 +172,10 @@
 <tbody>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/teamworkcustomemoji-delete?view=graph-rest-beta&amp;tabs=http">DELETE /teamwork/messaging/customEmojis/{displayName}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/teamworkmessaging-post-customemojis?view=graph-rest-beta&amp;tabs=http">POST /teamwork/messaging/customEmojis</a></div></td>
 </tr>
 </tbody>
@@ -206,6 +210,10 @@
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.teams/new-mgbetateamworkmessagingcustomemoji">New-MgBetaTeamworkMessagingCustomEmoji</a></div></td>
 </tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.teams/remove-mgbetateamworkmessagingcustomemoji">Remove-MgBetaTeamworkMessagingCustomEmoji</a></div></td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -232,8 +240,13 @@
 <tbody>
 <tr>
 <td style="text-align: left;">contentBytes</td>
+<td style="text-align: left;">Binary</td>
+<td style="text-align: left;">The base64-encoded image content of the emoji. Supported formats include PNG and GIF. Inherited from teamworkHostedContent.</td>
+</tr>
+<tr>
+<td style="text-align: left;">contentType</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The base64-encoded image content of the emoji. Supported formats include PNG and GIF.</td>
+<td style="text-align: left;">The media type of the custom emoji content, such as <code>image/png</code> or <code>image/gif</code>. Inherited from teamworkHostedContent.</td>
 </tr>
 <tr>
 <td style="text-align: left;">createdBy</td>
@@ -248,7 +261,12 @@
 <tr>
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique display name of the custom emoji. Key. Must be unique and must not conflict with existing emoji names.</td>
+<td style="text-align: left;">The unique display name of the custom emoji. This property is an alternate key and must not conflict with existing emoji names.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The service-generated identifier of the custom emoji. Inherited from teamworkHostedContent.</td>
 </tr>
 </tbody>
 </table>

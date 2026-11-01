@@ -236,6 +236,14 @@
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/security-casemanagement-casetypeconfiguration-list-slapolicies?view=graph-rest-beta&amp;tabs=http">GET /security/caseManagement/caseTypeConfigurations/{caseTypeConfiguration-id}/slaPolicies</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/security-casemanagement-slapolicydefinition-get?view=graph-rest-beta&amp;tabs=http">GET /security/caseManagement/caseTypeConfigurations/{caseTypeConfiguration-id}/slaPolicies/{slaPolicyDefinition-id}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/security-casemanagement-casetypeconfiguration-get?view=graph-rest-beta&amp;tabs=http">GET /security/caseManagement/caseTypeConfigurations/{caseTypeConfigurationId}</a></div></td>
 </tr>
 <tr>
@@ -482,16 +490,19 @@
 <a href="#tabpanel_2_relation17" role="tab" aria-controls="tabpanel_2_relation17" data-tab="relation17" tabindex="-1">relation</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_statusDefinition18" role="tab" aria-controls="tabpanel_2_statusDefinition18" data-tab="statusDefinition18" tabindex="-1">statusDefinition</a>
+<a href="#tabpanel_2_slaPolicyDefinition18" role="tab" aria-controls="tabpanel_2_slaPolicyDefinition18" data-tab="slaPolicyDefinition18" tabindex="-1">slaPolicyDefinition</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_stringCustomFieldDefinition19" role="tab" aria-controls="tabpanel_2_stringCustomFieldDefinition19" data-tab="stringCustomFieldDefinition19" tabindex="-1">stringCustomFieldDefinition</a>
+<a href="#tabpanel_2_statusDefinition19" role="tab" aria-controls="tabpanel_2_statusDefinition19" data-tab="statusDefinition19" tabindex="-1">statusDefinition</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_security-casemanagement-task20" role="tab" aria-controls="tabpanel_2_security-casemanagement-task20" data-tab="security-casemanagement-task20" tabindex="-1">security-casemanagement-task</a>
+<a href="#tabpanel_2_stringCustomFieldDefinition20" role="tab" aria-controls="tabpanel_2_stringCustomFieldDefinition20" data-tab="stringCustomFieldDefinition20" tabindex="-1">stringCustomFieldDefinition</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_workspaceIndicatorRelation21" role="tab" aria-controls="tabpanel_2_workspaceIndicatorRelation21" data-tab="workspaceIndicatorRelation21" tabindex="-1">workspaceIndicatorRelation</a>
+<a href="#tabpanel_2_security-casemanagement-task21" role="tab" aria-controls="tabpanel_2_security-casemanagement-task21" data-tab="security-casemanagement-task21" tabindex="-1">security-casemanagement-task</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_workspaceIndicatorRelation22" role="tab" aria-controls="tabpanel_2_workspaceIndicatorRelation22" data-tab="workspaceIndicatorRelation22" tabindex="-1">workspaceIndicatorRelation</a>
 </li>
 </ul>
 <section id="tabpanel_2_activity1" role="tabpanel" data-tab="activity1">
@@ -714,7 +725,7 @@
 <tr>
 <td style="text-align: left;">slaPolicies</td>
 <td style="text-align: left;">microsoft.graph.security.caseManagement.caseSlaPolicyEntry collection</td>
-<td style="text-align: left;">A denormalized, read-only collection of SLA (service level agreement) policy status entries for the case. Each entry represents one SLA policy applied to the case, including its current status and breach target time. Computed by the service; any value supplied in a create or update request is silently ignored. Supports <code>$filter</code> using the <code>any()</code> lambda operator only, for example, <code>$filter=slaPolicies/any(p: p/status eq 'breached')</code>. The <code>all()</code> lambda operator and other collection functions aren't supported. Doesn't support <code>$orderby</code>.</td>
+<td style="text-align: left;">A read-only collection of SLA (service level agreement) policy status entries for the case. Each entry contains the policy's current status and breach target time. Computed by the service. Supports <code>$filter</code> using the <code>any()</code> lambda operator only, for example, <code>$filter=slaPolicies/any(p: p/status eq 'breached')</code>. The <code>all()</code> lambda operator and other collection functions aren't supported. Doesn't support <code>$orderby</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">status</td>
@@ -834,7 +845,7 @@
 <tr>
 <td style="text-align: left;">message</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The comment body. Supports <code>$filter</code>.</td>
+<td style="text-align: left;">The comment body. The maximum length is 1,000 characters for incident cases and 5,000 characters for generic cases. Supports <code>$filter</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -1473,7 +1484,87 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_statusDefinition18" role="tabpanel" data-tab="statusDefinition18" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_slaPolicyDefinition18" role="tabpanel" data-tab="slaPolicyDefinition18" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-casemanagement-slapolicydefinition?view=graph-rest-1.0&amp;tabs=http">slaPolicyDefinition</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the identity that created the policy. Read-only. Inherited from <strong>caseManagementEntity</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the policy was created, in ISO 8601 format and UTC. Read-only. Inherited from <strong>caseManagementEntity</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The description of the policy. Maximum length: 5,000 characters.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name of the policy. Must be unique across the tenant, using a case-insensitive comparison. Maximum length: 150 characters.</td>
+</tr>
+<tr>
+<td style="text-align: left;">exitCriteria</td>
+<td style="text-align: left;">microsoft.graph.security.caseManagement.slaPolicyCriteriaBlock</td>
+<td style="text-align: left;">The condition that removes a case from the policy's scope.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique, server-generated identifier of the policy. Read-only. Inherited from <strong>caseManagementEntity</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isActive</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Whether the policy is actively evaluated. Inactive policies are excluded from new case evaluations. The default value on creation is <code>true</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedBy</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the identity that last modified the policy. Read-only. Inherited from <strong>caseManagementEntity</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the policy was last modified, in ISO 8601 format and UTC. Read-only. Inherited from <strong>caseManagementEntity</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">pauseCriteria</td>
+<td style="text-align: left;">microsoft.graph.security.caseManagement.slaPolicyCriteriaBlock</td>
+<td style="text-align: left;">The condition that pauses the timer while a case matches it.</td>
+</tr>
+<tr>
+<td style="text-align: left;">recalculateCondition</td>
+<td style="text-align: left;">microsoft.graph.security.caseManagement.slaPolicyRecalculateCondition</td>
+<td style="text-align: left;">The settings that control whether elapsed time resets when the policy is recalculated.</td>
+</tr>
+<tr>
+<td style="text-align: left;">setCriteria</td>
+<td style="text-align: left;">microsoft.graph.security.caseManagement.slaPolicyCriteriaBlock</td>
+<td style="text-align: left;">The condition a case must match to enter the policy's scope. When omitted, the policy applies to all cases of its owning case type. The maximum nesting depth is two.</td>
+</tr>
+<tr>
+<td style="text-align: left;">timers</td>
+<td style="text-align: left;">microsoft.graph.security.caseManagement.slaPolicyTimer collection</td>
+<td style="text-align: left;">The embedded warning and breach timers, evaluated in **o</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_statusDefinition19" role="tabpanel" data-tab="statusDefinition19" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-casemanagement-statusdefinition?view=graph-rest-1.0&amp;tabs=http">statusDefinition</a></p>
 <table>
@@ -1508,7 +1599,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_stringCustomFieldDefinition19" role="tabpanel" data-tab="stringCustomFieldDefinition19" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_stringCustomFieldDefinition20" role="tabpanel" data-tab="stringCustomFieldDefinition20" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-casemanagement-stringcustomfielddefinition?view=graph-rest-1.0&amp;tabs=http">stringCustomFieldDefinition</a></p>
 <table>
@@ -1553,7 +1644,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_security-casemanagement-task20" role="tabpanel" data-tab="security-casemanagement-task20" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_security-casemanagement-task21" role="tabpanel" data-tab="security-casemanagement-task21" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-casemanagement-task?view=graph-rest-1.0&amp;tabs=http">security-casemanagement-task</a></p>
 <table>
@@ -1633,7 +1724,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_workspaceIndicatorRelation21" role="tabpanel" data-tab="workspaceIndicatorRelation21" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_workspaceIndicatorRelation22" role="tabpanel" data-tab="workspaceIndicatorRelation22" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-casemanagement-workspaceindicatorrelation?view=graph-rest-1.0&amp;tabs=http">workspaceIndicatorRelation</a></p>
 <table>
