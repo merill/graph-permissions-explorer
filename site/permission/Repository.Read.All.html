@@ -93,6 +93,11 @@
 <blockquote>
 <p>Allows the app to read connected security content source-control repositories and their deployment status, and to discover candidate repositories accessible with a supplied provider credential, on behalf of the signed-in user.</p>
 </blockquote>
+<blockquote>
+<p><strong>Merill's Note</strong></p>
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>Repository.Read.All</code> permission.</p>
+<p>If you need to create an audit report of the permissions granted to all the apps in your tenant, you can run the <code>Export-MsIdAppConsentGrantReport</code> command. See <a href="https://www.youtube.com/watch?v=vO0m5yE3dZA">How To: Run a quick OAuth app audit of your tenant</a></p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -125,11 +130,217 @@
 </tbody>
 </table>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_apiv1" role="tab" aria-controls="tabpanel_1_apiv1" data-tab="apiv1" tabindex="0" aria-selected="true"><span><i class='bi bi-braces'></i></span> API [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_apibeta" role="tab" aria-controls="tabpanel_1_apibeta" data-tab="apibeta" tabindex="-1"><span><i class='bi bi-braces'></i></span> API [beta]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psv1" role="tab" aria-controls="tabpanel_1_psv1" data-tab="psv1" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psbeta" role="tab" aria-controls="tabpanel_1_psbeta" data-tab="psbeta" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [beta]</a>
+</li>
+</ul>
+<section id="tabpanel_1_apiv1" role="tabpanel" data-tab="apiv1">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_apibeta" role="tabpanel" data-tab="apibeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/contentmanagementroot-list-repositories?view=graph-rest-beta&amp;tabs=http">GET /security/contentManagement/repositories</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/security-contentmanagement-contentmanagementrepository-get?view=graph-rest-beta&amp;tabs=http">GET /security/contentManagement/repositories/{contentManagementRepositoryId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/security-contentmanagement-contentmanagementrepository-discoveravailablerepositories?view=graph-rest-beta&amp;tabs=http">POST /security/contentManagement/repositories/microsoft.graph.security.contentManagement.discoverAvailableRepositories</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_psv1" role="tabpanel" data-tab="psv1" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_psbeta" role="tabpanel" data-tab="psbeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
 </div>
-<hr>
+<h2 id="resources">Resources</h2>
+<p>Granting this permission allows the calling application to access (and/or update) the following information in your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_contentManagementRepository1" role="tab" aria-controls="tabpanel_2_contentManagementRepository1" data-tab="contentManagementRepository1" tabindex="0" aria-selected="true">contentManagementRepository</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_discoveredRepository2" role="tab" aria-controls="tabpanel_2_discoveredRepository2" data-tab="discoveredRepository2" tabindex="-1">discoveredRepository</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_repositoryAccessCredential3" role="tab" aria-controls="tabpanel_2_repositoryAccessCredential3" data-tab="repositoryAccessCredential3" tabindex="-1">repositoryAccessCredential</a>
+</li>
+</ul>
+<section id="tabpanel_2_contentManagementRepository1" role="tabpanel" data-tab="contentManagementRepository1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-contentmanagement-contentmanagementrepository?view=graph-rest-1.0&amp;tabs=http">contentManagementRepository</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">contentTypes</td>
+<td style="text-align: left;">microsoft.graph.security.contentManagement.repositoryContentType collection</td>
+<td style="text-align: left;">Content kinds this repository is configured to deploy. The possible values are: <code>customDetection</code>, <code>unknownFutureValue</code>, <code>defenderWorkbook</code>. Use the <code>Prefer: include-unknown-enum-members</code> request header to get <code>defenderWorkbook</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">deploymentIdentity</td>
+<td style="text-align: left;">microsoft.graph.security.contentManagement.deploymentIdentity</td>
+<td style="text-align: left;">Bring-your-own deployment identity used for deployment. Optional; when omitted the platform-managed identity path is used. Provide a service principal or a managed identity. Immutable after connecting.</td>
+</tr>
+<tr>
+<td style="text-align: left;">deploymentScope</td>
+<td style="text-align: left;">microsoft.graph.security.contentManagement.deploymentScope</td>
+<td style="text-align: left;">Optional Azure deployment scope, immutable after connecting the repository.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Optional description of the connection.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Human-readable name of the connection. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A unique identifier for this resource. Inherited from entity. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastDeploymentInfo</td>
+<td style="text-align: left;">microsoft.graph.security.contentManagement.repositoryDeploymentInfo</td>
+<td style="text-align: left;">Status of the most recent deployment from this repository. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">pullRequest</td>
+<td style="text-align: left;">microsoft.graph.security.contentManagement.repositoryPullRequest</td>
+<td style="text-align: left;">The setup pull request opened for this connection, when applicable. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">repoType</td>
+<td style="text-align: left;">microsoft.graph.security.contentManagement.repositoryType</td>
+<td style="text-align: left;">Source-control provider for this repository. Immutable after connecting. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>). The possible values are: <code>gitHub</code>, <code>azureDevOps</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">servicePrincipal</td>
+<td style="text-align: left;">microsoft.graph.security.contentManagement.repositoryServicePrincipal</td>
+<td style="text-align: left;">Service principal / managed identity used by the connection. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sourceLocation</td>
+<td style="text-align: left;">microsoft.graph.security.contentManagement.repositorySettings</td>
+<td style="text-align: left;">Location of the source repository (URL and branch).</td>
+</tr>
+<tr>
+<td style="text-align: left;">systemData</td>
+<td style="text-align: left;">microsoft.graph.security.contentManagement.systemData</td>
+<td style="text-align: left;">Creation and last modification provenance. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">workloadIdentityFederation</td>
+<td style="text-align: left;">microsoft.graph.security.contentManagement.repositoryWorkloadIdentityFederation</td>
+<td style="text-align: left;">Workload identity federation details for the connection, when configured. Read-only.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_discoveredRepository2" role="tabpanel" data-tab="discoveredRepository2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-contentmanagement-discoveredrepository?view=graph-rest-1.0&amp;tabs=http">discoveredRepository</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">branches</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Branch names available in the repository.</td>
+</tr>
+<tr>
+<td style="text-align: left;">fullName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Provider full name, for example <code>owner/repo</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">url</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Repository URL.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_repositoryAccessCredential3" role="tabpanel" data-tab="repositoryAccessCredential3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-contentmanagement-repositoryaccesscredential?view=graph-rest-1.0&amp;tabs=http">repositoryAccessCredential</a></p>
+</section>
+</div>
 
 </article>
 

@@ -676,6 +676,16 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">createdBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The identity of the user or application that created the item. Returned only when <strong>type</strong> is <code>file</code> or <code>folder</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the item was created. Returned only when <strong>type</strong> is <code>file</code> or <code>folder</code>. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is <code>2024-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
 <td style="text-align: left;">itemKey</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Unique identifier of the returned item.</td>
@@ -684,6 +694,16 @@
 <td style="text-align: left;">itemsCount</td>
 <td style="text-align: left;">Int32</td>
 <td style="text-align: left;">The count of items present within the items; for example, the count of files in a folder.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The identity of the user or application that last modified the item. Returned only when <strong>type</strong> is <code>file</code> or <code>folder</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the item was last modified. Returned only when <strong>type</strong> is <code>file</code> or <code>folder</code>. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is <code>2024-01-01T00:00:00Z</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">name</td>
@@ -1005,9 +1025,19 @@
 <td style="text-align: left;">Date time when the artifact's restoration completes. Inherited from granularRestoreArtifactBase.</td>
 </tr>
 <tr>
+<td style="text-align: left;">directoryObjectId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Id of the drive in which artifact is present.</td>
+</tr>
+<tr>
+<td style="text-align: left;">error</td>
+<td style="text-align: left;">publicError</td>
+<td style="text-align: left;">Contains error details if the restoration fails or completes with an error. Inherited from granularRestoreArtifactBase.</td>
+</tr>
+<tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the artifact. Inherited from entity. Inherits from entity</td>
+<td style="text-align: left;">The unique identifier for the artifact. Inherited from entity.</td>
 </tr>
 <tr>
 <td style="text-align: left;">restoredItemKey</td>
@@ -1043,11 +1073,6 @@
 <td style="text-align: left;">webUrl</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The original web url of the artifact being restored. Inherited from granularRestoreArtifactBase.</td>
-</tr>
-<tr>
-<td style="text-align: left;">directoryObjectId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Id of the drive in which artifact is present.</td>
 </tr>
 </tbody>
 </table>
@@ -1145,9 +1170,14 @@
 <td style="text-align: left;">Date time when the artifact's restoration completes. Inherited from granularRestoreArtifactBase.</td>
 </tr>
 <tr>
+<td style="text-align: left;">error</td>
+<td style="text-align: left;">publicError</td>
+<td style="text-align: left;">Contains error details if the restoration fails or completes with an error. Inherited from granularRestoreArtifactBase.</td>
+</tr>
+<tr>
 <td style="text-align: left;">id</td>
 <td style="text-align: left;">String</td>
-<td style="text-align: left;">The unique identifier for the artifact. Inherited from entity. Inherits from entity</td>
+<td style="text-align: left;">The unique identifier for the artifact. Inherited from entity.</td>
 </tr>
 <tr>
 <td style="text-align: left;">restoredItemKey</td>
@@ -1170,6 +1200,11 @@
 <td style="text-align: left;">The restore point date time to which the artifact is restored. Inherited from granularRestoreArtifactBase.</td>
 </tr>
 <tr>
+<td style="text-align: left;">siteId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The ID of the site in which the artifact is present.</td>
+</tr>
+<tr>
 <td style="text-align: left;">startDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">The start time of the restoration. Inherited from granularRestoreArtifactBase.</td>
@@ -1183,11 +1218,6 @@
 <td style="text-align: left;">webUrl</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The original web url of the artifact being restored. Inherited from granularRestoreArtifactBase.</td>
-</tr>
-<tr>
-<td style="text-align: left;">siteId</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">Id of the site in which artifact is present.</td>
 </tr>
 </tbody>
 </table>
@@ -1480,6 +1510,11 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">backupRetentionPeriodInDays</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The policy-configured retention period of the backup, in days. Not nullable.</td>
+</tr>
+<tr>
 <td style="text-align: left;">createdBy</td>
 <td style="text-align: left;">identitySet</td>
 <td style="text-align: left;">The identity of the person who created the protection unit.</td>
@@ -1513,6 +1548,11 @@
 <td style="text-align: left;">offboardRequestedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">The date and time when protection unit offboard was requested. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">pendingRetentionPeriodChange</td>
+<td style="text-align: left;">retentionPeriodChange</td>
+<td style="text-align: left;">The retention period change to be applied to the protection unit when it moves between policies with different retention periods. Read-only. <code>null</code> when no change is pending.</td>
 </tr>
 <tr>
 <td style="text-align: left;">policyId</td>

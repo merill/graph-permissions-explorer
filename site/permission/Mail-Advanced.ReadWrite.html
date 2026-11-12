@@ -93,6 +93,11 @@
 <blockquote>
 <p>Allows the app to create, read, update, and delete email, including contents of non-draft emails in user mailboxes, on behalf of the signed-in user. Does not include permission to send mail.</p>
 </blockquote>
+<blockquote>
+<p><strong>Merill's Note</strong></p>
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>Mail-Advanced.ReadWrite</code> permission.</p>
+<p>If you need to create an audit report of the permissions granted to all the apps in your tenant, you can run the <code>Export-MsIdAppConsentGrantReport</code> command. See <a href="https://www.youtube.com/watch?v=vO0m5yE3dZA">How To: Run a quick OAuth app audit of your tenant</a></p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -125,11 +130,311 @@
 </tbody>
 </table>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_apiv1" role="tab" aria-controls="tabpanel_1_apiv1" data-tab="apiv1" tabindex="0" aria-selected="true"><span><i class='bi bi-braces'></i></span> API [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_apibeta" role="tab" aria-controls="tabpanel_1_apibeta" data-tab="apibeta" tabindex="-1"><span><i class='bi bi-braces'></i></span> API [beta]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psv1" role="tab" aria-controls="tabpanel_1_psv1" data-tab="psv1" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psbeta" role="tab" aria-controls="tabpanel_1_psbeta" data-tab="psbeta" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [beta]</a>
+</li>
+</ul>
+<section id="tabpanel_1_apiv1" role="tabpanel" data-tab="apiv1">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_apibeta" role="tabpanel" data-tab="apibeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/mailfolder-importmime?view=graph-rest-beta&amp;tabs=http">POST /me/mailFolders/{mailFolderId}/importMime</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/mailfolder-importmime?view=graph-rest-beta&amp;tabs=http">POST /users/{usersId}/mailFolders/{mailFolderId}/importMime</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_psv1" role="tabpanel" data-tab="psv1" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_psbeta" role="tabpanel" data-tab="psbeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
 </div>
-<hr>
+<h2 id="resources">Resources</h2>
+<p>Granting this permission allows the calling application to access (and/or update) the following information in your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_mailFolder1" role="tab" aria-controls="tabpanel_2_mailFolder1" data-tab="mailFolder1" tabindex="0" aria-selected="true">mailFolder</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_message2" role="tab" aria-controls="tabpanel_2_message2" data-tab="message2" tabindex="-1">message</a>
+</li>
+</ul>
+<section id="tabpanel_2_mailFolder1" role="tabpanel" data-tab="mailFolder1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/mailfolder?view=graph-rest-1.0&amp;tabs=http">mailFolder</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">childFolderCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The number of immediate child mailFolders in the current mailFolder.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The mailFolder's display name.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The mailFolder's unique identifier.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isHidden</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the mailFolder is hidden. This property can be set only when creating the folder. Find more information in Hidden mail folders.</td>
+</tr>
+<tr>
+<td style="text-align: left;">parentFolderId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the mailFolder's parent mailFolder.</td>
+</tr>
+<tr>
+<td style="text-align: left;">totalItemCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The number of items in the mailFolder.</td>
+</tr>
+<tr>
+<td style="text-align: left;">unreadItemCount</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The number of items in the mailFolder marked as unread.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_message2" role="tabpanel" data-tab="message2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/message?view=graph-rest-1.0&amp;tabs=http">message</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">bccRecipients</td>
+<td style="text-align: left;">recipient collection</td>
+<td style="text-align: left;">The Bcc: recipients for the message.</td>
+</tr>
+<tr>
+<td style="text-align: left;">body</td>
+<td style="text-align: left;">itemBody</td>
+<td style="text-align: left;">The body of the message. It can be in HTML or text format. Find out about safe HTML in a message body.</td>
+</tr>
+<tr>
+<td style="text-align: left;">bodyPreview</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The first 255 characters of the message body. It is in text format.</td>
+</tr>
+<tr>
+<td style="text-align: left;">ccRecipients</td>
+<td style="text-align: left;">recipient collection</td>
+<td style="text-align: left;">The Cc: recipients for the message.</td>
+</tr>
+<tr>
+<td style="text-align: left;">changeKey</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The version of the message.</td>
+</tr>
+<tr>
+<td style="text-align: left;">conversationId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The ID of the conversation the email belongs to.</td>
+</tr>
+<tr>
+<td style="text-align: left;">conversationIndex</td>
+<td style="text-align: left;">Edm.Binary</td>
+<td style="text-align: left;">Indicates the position of the message within the conversation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the message was created. <br><br> The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">flag</td>
+<td style="text-align: left;">followupFlag</td>
+<td style="text-align: left;">Indicates the status, start date, due date, or completion date for the message.</td>
+</tr>
+<tr>
+<td style="text-align: left;">from</td>
+<td style="text-align: left;">recipient</td>
+<td style="text-align: left;">The owner of the mailbox from which the message is sent. In most cases, this value is the same as the <strong>sender</strong> property, except for sharing or delegation scenarios. The value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message.</td>
+</tr>
+<tr>
+<td style="text-align: left;">hasAttachments</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the message has attachments. This property doesn't include inline attachments, so if a message contains only inline attachments, this property is false. To verify the existence of inline attachments, parse the <strong>body</strong> property to look for a <code>src</code> attribute, such as <code>&lt;IMG src=&quot;cid:image001.jpg@01D26CD8.6C05F070&quot;&gt;</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Unique identifier for the message. !INCLUDE [outlook-beta-id] Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">importance</td>
+<td style="text-align: left;">importance</td>
+<td style="text-align: left;">The importance of the message. The possible values are: <code>low</code>, <code>normal</code>, and <code>high</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">inferenceClassification</td>
+<td style="text-align: left;">inferenceClassificationType</td>
+<td style="text-align: left;">The classification of the message for the user, based on inferred relevance or importance, or on an explicit override. The possible values are: <code>focused</code> or <code>other</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">internetMessageHeaders</td>
+<td style="text-align: left;">internetMessageHeader collection</td>
+<td style="text-align: left;">A collection of message headers defined by RFC5322. The set includes message headers indicating the network path taken by a message from the sender to the recipient. It can also contain custom message headers that hold app data for the message. <br><br> Requires <code>$select</code> to retrieve. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">internetMessageId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The message ID in the format specified by RFC2822.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isDeliveryReceiptRequested</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether a read receipt is requested for the message.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isDraft</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the message is a draft. A message is a draft if it hasn't been sent yet.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isRead</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the message has been read.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isReadReceiptRequested</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether a read receipt is requested for the message.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the message was last changed. <br><br> The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">parentFolderId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the message's parent mailFolder.</td>
+</tr>
+<tr>
+<td style="text-align: left;">receivedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the message was received. <br><br> The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">replyTo</td>
+<td style="text-align: left;">recipient collection</td>
+<td style="text-align: left;">The email addresses to use when replying.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sender</td>
+<td style="text-align: left;">recipient</td>
+<td style="text-align: left;">The account that is used to generate the message. In most cases, this value is the same as the <strong>from</strong> property. You can set this property to a different value when sending a message from a shared mailbox, for a shared calendar, or as a delegate. In any case, the value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sentDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the message was sent. <br><br> The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is <code>2014-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">subject</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The subject of the message.</td>
+</tr>
+<tr>
+<td style="text-align: left;">toRecipients</td>
+<td style="text-align: left;">recipient collection</td>
+<td style="text-align: left;">The To: recipients for the message.</td>
+</tr>
+<tr>
+<td style="text-align: left;">uniqueBody</td>
+<td style="text-align: left;">itemBody</td>
+<td style="text-align: left;">The part of the body of the message that is unique to the current message. <strong>uniqueBody</strong> is not returned by default but can be retrieved for a given message by use of the <code>?$select=uniqueBody</code> query. It can be in HTML or text format.</td>
+</tr>
+<tr>
+<td style="text-align: left;">webLink</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The URL to open the message in Outlook on the web.<br><br>You can append an <code>ispopout</code> argument to the end of the URL to change how the message is displayed. If <code>ispopout</code> is not present or if it is set to <code>1</code>, then the message is shown in a popout window. If <code>ispopout</code> is set to <code>0</code>, the browser shows the message in the Outlook on the web review pane.<br><br>The message opens in the browser if you are signed in to your mailbox via Outlook on the web. You are prompted to sign in if you are not already signed in with the browser.<br><br>This URL cannot be accessed from within an iFrame.<br><br>**N</td>
+</tr>
+</tbody>
+</table>
+</section>
+</div>
 
 </article>
 

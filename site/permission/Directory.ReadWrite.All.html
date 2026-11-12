@@ -9141,6 +9141,11 @@
 <td style="text-align: left;">Flag indicating whether the role is enabled for assignment. If <code>false</code> the role is not available for assignment. Read-only when <strong>isBuiltIn</strong> is true.</td>
 </tr>
 <tr>
+<td style="text-align: left;">isPrivileged</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Flag indicating whether the role is privileged. Microsoft Entra ID defines a role as privileged if it contains at least one sensitive resource action in the <strong>allowedResourceActions</strong> collection of <strong>rolePermissions</strong>. Applies only to actions in the <code>microsoft.directory</code> resource namespace. Nullable. A value of <code>null</code> indicates that the privileged classification is unavailable, not that the role is nonprivileged. Read-only. Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
 <td style="text-align: left;">resourceScopes</td>
 <td style="text-align: left;">String collection</td>
 <td style="text-align: left;">List of the scopes or permissions the role definition applies to. Currently only <code>/</code> is supported. Read-only when <strong>isBuiltIn</strong> is true. <strong>DO NOT USE. This will be deprecated soon. Attach scope to role assignment.</strong></td>

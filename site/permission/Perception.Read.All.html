@@ -93,6 +93,11 @@
 <blockquote>
 <p>Allows the app to read Agentic Security playbook definitions, sessions, agent runs, inputs, outputs and messages on behalf of the signed-in user, subject to the user's access.</p>
 </blockquote>
+<blockquote>
+<p><strong>Merill's Note</strong></p>
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>Perception.Read.All</code> permission.</p>
+<p>If you need to create an audit report of the permissions granted to all the apps in your tenant, you can run the <code>Export-MsIdAppConsentGrantReport</code> command. See <a href="https://www.youtube.com/watch?v=vO0m5yE3dZA">How To: Run a quick OAuth app audit of your tenant</a></p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -125,11 +130,403 @@
 </tbody>
 </table>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_apiv1" role="tab" aria-controls="tabpanel_1_apiv1" data-tab="apiv1" tabindex="0" aria-selected="true"><span><i class='bi bi-braces'></i></span> API [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_apibeta" role="tab" aria-controls="tabpanel_1_apibeta" data-tab="apibeta" tabindex="-1"><span><i class='bi bi-braces'></i></span> API [beta]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psv1" role="tab" aria-controls="tabpanel_1_psv1" data-tab="psv1" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psbeta" role="tab" aria-controls="tabpanel_1_psbeta" data-tab="psbeta" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [beta]</a>
+</li>
+</ul>
+<section id="tabpanel_1_apiv1" role="tabpanel" data-tab="apiv1">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_apibeta" role="tabpanel" data-tab="apibeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/agenticsecurityroot-list-playbookdefinitions?view=graph-rest-beta&amp;tabs=http">GET /security/agenticSecurity/playbookDefinitions</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/playbookdefinition-get?view=graph-rest-beta&amp;tabs=http">GET /security/agenticSecurity/playbookDefinitions/{playbookDefinition-id}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/agenticsecurityroot-list-sessions?view=graph-rest-beta&amp;tabs=http">GET /security/agenticSecurity/sessions</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/investigationsession-get?view=graph-rest-beta&amp;tabs=http">GET /security/agenticSecurity/sessions/{session-id}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/investigationsession-list-agentruns?view=graph-rest-beta&amp;tabs=http">GET /security/agenticSecurity/sessions/{session-id}/agentRuns</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/agentrun-get?view=graph-rest-beta&amp;tabs=http">GET /security/agenticSecurity/sessions/{session-id}/agentRuns/{agentRun-id}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/investigationsession-list-inputs?view=graph-rest-beta&amp;tabs=http">GET /security/agenticSecurity/sessions/{session-id}/inputs</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/investigationinput-get?view=graph-rest-beta&amp;tabs=http">GET /security/agenticSecurity/sessions/{session-id}/inputs/{input-id}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/investigationsession-list-outputs?view=graph-rest-beta&amp;tabs=http">GET /security/agenticSecurity/sessions/{session-id}/outputs</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/investigationoutput-get?view=graph-rest-beta&amp;tabs=http">GET /security/agenticSecurity/sessions/{session-id}/outputs/{output-id}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/investigationoutput-get-content?view=graph-rest-beta&amp;tabs=http">GET /security/agenticSecurity/sessions/{session-id}/outputs/{output-id}/content</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/playbookdefinition-get?view=graph-rest-beta&amp;tabs=http">GET /security/agenticSecurity/sessions/{session-id}/playbookDefinition</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_psv1" role="tabpanel" data-tab="psv1" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_psbeta" role="tabpanel" data-tab="psbeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
 </div>
-<hr>
+<h2 id="resources">Resources</h2>
+<p>Granting this permission allows the calling application to access (and/or update) the following information in your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_agentRun1" role="tab" aria-controls="tabpanel_2_agentRun1" data-tab="agentRun1" tabindex="0" aria-selected="true">agentRun</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_agentRunFailureInfo2" role="tab" aria-controls="tabpanel_2_agentRunFailureInfo2" data-tab="agentRunFailureInfo2" tabindex="-1">agentRunFailureInfo</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_investigationInput3" role="tab" aria-controls="tabpanel_2_investigationInput3" data-tab="investigationInput3" tabindex="-1">investigationInput</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_investigationOutput4" role="tab" aria-controls="tabpanel_2_investigationOutput4" data-tab="investigationOutput4" tabindex="-1">investigationOutput</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_investigationSession5" role="tab" aria-controls="tabpanel_2_investigationSession5" data-tab="investigationSession5" tabindex="-1">investigationSession</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_playbookDefinition6" role="tab" aria-controls="tabpanel_2_playbookDefinition6" data-tab="playbookDefinition6" tabindex="-1">playbookDefinition</a>
+</li>
+</ul>
+<section id="tabpanel_2_agentRun1" role="tabpanel" data-tab="agentRun1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/agentrun?view=graph-rest-1.0&amp;tabs=http">agentRun</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">agent</td>
+<td style="text-align: left;">agentInfo</td>
+<td style="text-align: left;">The embedded description of the agent that performed this run. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">completedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The UTC date and time when the run completed successfully, in ISO 8601 format. Absent otherwise. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The UTC date and time when the resource was created, in ISO 8601 format. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">durationInMilliseconds</td>
+<td style="text-align: left;">Int64</td>
+<td style="text-align: left;">The elapsed time from creation to successful completion, in milliseconds. Absent otherwise. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">failureInfo</td>
+<td style="text-align: left;">agentRunFailureInfo</td>
+<td style="text-align: left;">The run-level failure details, when available. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique, read-only identifier of the resource.</td>
+</tr>
+<tr>
+<td style="text-align: left;">initiatedBy</td>
+<td style="text-align: left;">investigationIdentitySet</td>
+<td style="text-align: left;">The initiating principals recorded by the service, when available. Read-only. This property doesn't select an execution identity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The UTC date and time when the resource was last updated, in ISO 8601 format. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">startedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The UTC start timestamp, in ISO 8601 format. Currently reflects creation time, not a distinct execution-start measurement. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">longRunningOperationStatus</td>
+<td style="text-align: left;">The service-computed processing status. The possible values are: <code>notStarted</code>, <code>running</code>, <code>succeeded</code>, <code>failed</code>, <code>unknownFutureValue</code>. A canceled execution has <code>failed</code> status and <code>canceled</code> <strong>statusDetail</strong>. A request for input has <code>running</code> status and <code>pendingInput</code> <strong>statusDetail</strong>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">statusDetail</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Additional processing detail, including <code>pendingInput</code> or <code>canceled</code>, when the status alone doesn't describe the source lifecycle. Read-only. Doesn't support <code>$filter</code>.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_agentRunFailureInfo2" role="tabpanel" data-tab="agentRunFailureInfo2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/agentrunfailureinfo?view=graph-rest-1.0&amp;tabs=http">agentRunFailureInfo</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">errorType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The error classification, when available.</td>
+</tr>
+<tr>
+<td style="text-align: left;">message</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The human-readable failure detail, when available.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_investigationInput3" role="tabpanel" data-tab="investigationInput3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/investigationinput?view=graph-rest-1.0&amp;tabs=http">investigationInput</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name populated by the service when available. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The stable, service-generated input identifier, unique within its containing session. Read-only. Don't supply it on deep insert.</td>
+</tr>
+<tr>
+<td style="text-align: left;">kind</td>
+<td style="text-align: left;">investigationInputType</td>
+<td style="text-align: left;">The input kind. Required when creating a session and immutable afterward. The possible values are: <code>defenderIncidentId</code>, <code>defenderAlertId</code>, <code>defenderThreatIntelligenceId</code>, <code>azureSubscriptionId</code>, <code>azureIdentityId</code>, <code>keyword</code>, <code>unknownFutureValue</code>. The selected playbook must accept the kind. Don't supply <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">value</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The type-specific resource identifier or keyword text. Required when creating a session and immutable afterward.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_investigationOutput4" role="tabpanel" data-tab="investigationOutput4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/investigationoutput?view=graph-rest-1.0&amp;tabs=http">investigationOutput</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">content</td>
+<td style="text-align: left;">Stream</td>
+<td style="text-align: left;">The output bytes, retrieved through <code>/security/agenticSecurity/sessions/{session-id}/outputs/{output-id}/content</code>. The stream isn't inline in the metadata response. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The stable, opaque stored-file identifier, unique within its containing session. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">kind</td>
+<td style="text-align: left;">investigationOutputType</td>
+<td style="text-align: left;">The output category. The possible values are: <code>summary</code>, <code>artifact</code>, <code>unknownFutureValue</code>. Both summary text and artifact bytes are retrieved through the authenticated content route. Read-only.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_investigationSession5" role="tabpanel" data-tab="investigationSession5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/investigationsession?view=graph-rest-1.0&amp;tabs=http">investigationSession</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The UTC date and time when the resource was created, in ISO 8601 format. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The session name generated by the service. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique, read-only identifier of the resource.</td>
+</tr>
+<tr>
+<td style="text-align: left;">initiatedBy</td>
+<td style="text-align: left;">investigationIdentitySet</td>
+<td style="text-align: left;">The initiating principals recorded by the service, when available. Read-only. This property doesn't select an execution identity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The UTC date and time when the resource was last updated, in ISO 8601 format. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">longRunningOperationStatus</td>
+<td style="text-align: left;">The service-computed processing status. The possible values are: <code>notStarted</code>, <code>running</code>, <code>succeeded</code>, <code>failed</code>, <code>unknownFutureValue</code>. A canceled execution has <code>failed</code> status and <code>canceled</code> <strong>statusDetail</strong>. A request for input has <code>running</code> status and <code>waitingForInput</code> <strong>statusDetail</strong>. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>or</code>, <code>in</code>) when listing sessions.</td>
+</tr>
+<tr>
+<td style="text-align: left;">statusDetail</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Additional processing detail, including <code>waitingForInput</code> or <code>canceled</code>, when the status alone doesn't describe the source lifecycle. Read-only. Doesn't support <code>$filter</code>. For the session lifecycle combinations, see Get agentic session.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tags</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">The service-generated tags for the session. Read-only. Can't be supplied when creating a session.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_playbookDefinition6" role="tabpanel" data-tab="playbookDefinition6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/playbookdefinition?view=graph-rest-1.0&amp;tabs=http">playbookDefinition</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">acceptedInputTypes</td>
+<td style="text-align: left;">investigationInputType collection</td>
+<td style="text-align: left;">The input kinds accepted by this playbook. The possible values are: <code>defenderIncidentId</code>, <code>defenderAlertId</code>, <code>defenderThreatIntelligenceId</code>, <code>azureSubscriptionId</code>, <code>azureIdentityId</code>, <code>keyword</code>, <code>unknownFutureValue</code>. <code>unknownFutureValue</code> isn't a valid value when creating a session. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The description of the work performed by the playbook. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The human-readable name of the playbook. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The service-generated, persisted GUID-string identifier of the playbook definition. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">uniqueName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The immutable, unique catalog name, such as <code>investigate-incident</code>. Distinct from **i</td>
+</tr>
+</tbody>
+</table>
+</section>
+</div>
 
 </article>
 
