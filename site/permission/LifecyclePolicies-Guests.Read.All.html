@@ -194,6 +194,10 @@
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/identitygovernance-lifecyclepolicy-list-rules?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/lifecycleWorkflows/lifecyclePolicies/{lifecyclePolicyId}/rules</a></div></td>
 </tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/identitygovernance-lifecyclepolicypriorityconfiguration-get?view=graph-rest-beta&amp;tabs=http">GET /identityGovernance/lifecycleWorkflows/lifecyclePolicyPriorityConfigurations/{subjectType}</a></div></td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -235,16 +239,19 @@
 <a href="#tabpanel_2_lifecyclePolicyImpactSummary2" role="tab" aria-controls="tabpanel_2_lifecyclePolicyImpactSummary2" data-tab="lifecyclePolicyImpactSummary2" tabindex="-1">lifecyclePolicyImpactSummary</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_lifecyclePolicyReport3" role="tab" aria-controls="tabpanel_2_lifecyclePolicyReport3" data-tab="lifecyclePolicyReport3" tabindex="-1">lifecyclePolicyReport</a>
+<a href="#tabpanel_2_lifecyclePolicyPriorityConfiguration3" role="tab" aria-controls="tabpanel_2_lifecyclePolicyPriorityConfiguration3" data-tab="lifecyclePolicyPriorityConfiguration3" tabindex="-1">lifecyclePolicyPriorityConfiguration</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_lifecyclePolicyRule4" role="tab" aria-controls="tabpanel_2_lifecyclePolicyRule4" data-tab="lifecyclePolicyRule4" tabindex="-1">lifecyclePolicyRule</a>
+<a href="#tabpanel_2_lifecyclePolicyReport4" role="tab" aria-controls="tabpanel_2_lifecyclePolicyReport4" data-tab="lifecyclePolicyReport4" tabindex="-1">lifecyclePolicyReport</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_lifecyclePolicySubjectReport5" role="tab" aria-controls="tabpanel_2_lifecyclePolicySubjectReport5" data-tab="lifecyclePolicySubjectReport5" tabindex="-1">lifecyclePolicySubjectReport</a>
+<a href="#tabpanel_2_lifecyclePolicyRule5" role="tab" aria-controls="tabpanel_2_lifecyclePolicyRule5" data-tab="lifecyclePolicyRule5" tabindex="-1">lifecyclePolicyRule</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_lifecycleWorkflowsContainer6" role="tab" aria-controls="tabpanel_2_lifecycleWorkflowsContainer6" data-tab="lifecycleWorkflowsContainer6" tabindex="-1">lifecycleWorkflowsContainer</a>
+<a href="#tabpanel_2_lifecyclePolicySubjectReport6" role="tab" aria-controls="tabpanel_2_lifecyclePolicySubjectReport6" data-tab="lifecyclePolicySubjectReport6" tabindex="-1">lifecyclePolicySubjectReport</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_lifecycleWorkflowsContainer7" role="tab" aria-controls="tabpanel_2_lifecycleWorkflowsContainer7" data-tab="lifecycleWorkflowsContainer7" tabindex="-1">lifecycleWorkflowsContainer</a>
 </li>
 </ul>
 <section id="tabpanel_2_lifecyclePolicy1" role="tabpanel" data-tab="lifecyclePolicy1">
@@ -347,7 +354,37 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_lifecyclePolicyReport3" role="tabpanel" data-tab="lifecyclePolicyReport3" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_lifecyclePolicyPriorityConfiguration3" role="tabpanel" data-tab="lifecyclePolicyPriorityConfiguration3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/identitygovernance-lifecyclepolicypriorityconfiguration?view=graph-rest-1.0&amp;tabs=http">lifecyclePolicyPriorityConfiguration</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier for the priority configuration, which corresponds to the subject type that the configuration applies to. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">orderedPolicyIds</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">The identifiers of the lifecycle policies in evaluation priority order. The first policy in the collection has the highest priority. A maximum of 10 policies are allowed per subject type.</td>
+</tr>
+<tr>
+<td style="text-align: left;">subjectType</td>
+<td style="text-align: left;">microsoft.graph.identityGovernance.subjectType</td>
+<td style="text-align: left;">The subject type that the lifecycle policies in this configuration apply to. The possible values are: <code>user</code>, <code>agentIdentity</code>, <code>unknownFutureValue</code>, <code>provisioningObject</code>. Use the <code>Prefer: include-unknown-enum-members</code> request header to get the <code>provisioningObject</code> value in this evolvable enum. Immutable.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_lifecyclePolicyReport4" role="tabpanel" data-tab="lifecyclePolicyReport4" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/identitygovernance-lifecyclepolicyreport?view=graph-rest-1.0&amp;tabs=http">lifecyclePolicyReport</a></p>
 <table>
@@ -382,7 +419,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_lifecyclePolicyRule4" role="tabpanel" data-tab="lifecyclePolicyRule4" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_lifecyclePolicyRule5" role="tabpanel" data-tab="lifecyclePolicyRule5" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/identitygovernance-lifecyclepolicyrule?view=graph-rest-1.0&amp;tabs=http">lifecyclePolicyRule</a></p>
 <table>
@@ -412,7 +449,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_lifecyclePolicySubjectReport5" role="tabpanel" data-tab="lifecyclePolicySubjectReport5" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_lifecyclePolicySubjectReport6" role="tabpanel" data-tab="lifecyclePolicySubjectReport6" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/identitygovernance-lifecyclepolicysubjectreport?view=graph-rest-1.0&amp;tabs=http">lifecyclePolicySubjectReport</a></p>
 <table>
@@ -457,7 +494,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_lifecycleWorkflowsContainer6" role="tabpanel" data-tab="lifecycleWorkflowsContainer6" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_lifecycleWorkflowsContainer7" role="tabpanel" data-tab="lifecycleWorkflowsContainer7" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/identitygovernance-lifecycleworkflowscontainer?view=graph-rest-1.0&amp;tabs=http">lifecycleWorkflowsContainer</a></p>
 <table>

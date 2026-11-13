@@ -218,6 +218,10 @@
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/conditionalaccesssettings-get?view=graph-rest-beta&amp;tabs=http">GET /identity/conditionalAccess/settings</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/conditionalaccessroot-evaluate?view=graph-rest-beta&amp;tabs=http">POST /identity/conditionalAccess/evaluate</a></div></td>
 </tr>
 </tbody>
@@ -292,16 +296,19 @@
 <a href="#tabpanel_2_conditionalAccessPolicyRule3" role="tab" aria-controls="tabpanel_2_conditionalAccessPolicyRule3" data-tab="conditionalAccessPolicyRule3" tabindex="-1">conditionalAccessPolicyRule</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_signInConditions4" role="tab" aria-controls="tabpanel_2_signInConditions4" data-tab="signInConditions4" tabindex="-1">signInConditions</a>
+<a href="#tabpanel_2_conditionalaccesssettings4" role="tab" aria-controls="tabpanel_2_conditionalaccesssettings4" data-tab="conditionalaccesssettings4" tabindex="-1">conditionalaccesssettings</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_signInContext5" role="tab" aria-controls="tabpanel_2_signInContext5" data-tab="signInContext5" tabindex="-1">signInContext</a>
+<a href="#tabpanel_2_signInConditions5" role="tab" aria-controls="tabpanel_2_signInConditions5" data-tab="signInConditions5" tabindex="-1">signInConditions</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_signInIdentity6" role="tab" aria-controls="tabpanel_2_signInIdentity6" data-tab="signInIdentity6" tabindex="-1">signInIdentity</a>
+<a href="#tabpanel_2_signInContext6" role="tab" aria-controls="tabpanel_2_signInContext6" data-tab="signInContext6" tabindex="-1">signInContext</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_whatIfAnalysisResult7" role="tab" aria-controls="tabpanel_2_whatIfAnalysisResult7" data-tab="whatIfAnalysisResult7" tabindex="-1">whatIfAnalysisResult</a>
+<a href="#tabpanel_2_signInIdentity7" role="tab" aria-controls="tabpanel_2_signInIdentity7" data-tab="signInIdentity7" tabindex="-1">signInIdentity</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_whatIfAnalysisResult8" role="tab" aria-controls="tabpanel_2_whatIfAnalysisResult8" data-tab="whatIfAnalysisResult8" tabindex="-1">whatIfAnalysisResult</a>
 </li>
 </ul>
 <section id="tabpanel_2_authenticationContextClassReference1" role="tabpanel" data-tab="authenticationContextClassReference1">
@@ -449,7 +456,37 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_signInConditions4" role="tabpanel" data-tab="signInConditions4" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_conditionalaccesssettings4" role="tabpanel" data-tab="conditionalaccesssettings4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/conditionalaccesssettings?view=graph-rest-1.0&amp;tabs=http">conditionalaccesssettings</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">exclusions</td>
+<td style="text-align: left;">conditionalAccessExclusions</td>
+<td style="text-align: left;">The tenant-wide exclusions configuration.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier of the settings resource. Read-only. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">modifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the settings were last modified, in ISO 8601 format and UTC. Nullable. Read-only.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_signInConditions5" role="tabpanel" data-tab="signInConditions5" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/signinconditions?view=graph-rest-1.0&amp;tabs=http">signInConditions</a></p>
 <table>
@@ -514,15 +551,15 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_signInContext5" role="tabpanel" data-tab="signInContext5" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_signInContext6" role="tabpanel" data-tab="signInContext6" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/signincontext?view=graph-rest-1.0&amp;tabs=http">signInContext</a></p>
 </section>
-<section id="tabpanel_2_signInIdentity6" role="tabpanel" data-tab="signInIdentity6" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_signInIdentity7" role="tabpanel" data-tab="signInIdentity7" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/signinidentity?view=graph-rest-1.0&amp;tabs=http">signInIdentity</a></p>
 </section>
-<section id="tabpanel_2_whatIfAnalysisResult7" role="tabpanel" data-tab="whatIfAnalysisResult7" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_whatIfAnalysisResult8" role="tabpanel" data-tab="whatIfAnalysisResult8" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/whatifanalysisresult?view=graph-rest-1.0&amp;tabs=http">whatIfAnalysisResult</a></p>
 <table>
