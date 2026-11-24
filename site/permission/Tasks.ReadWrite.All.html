@@ -515,7 +515,7 @@
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
-<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/singlevaluelegacyextendedproperty-post-singlevalueextendedproperties?view=graph-rest-1.0&amp;tabs=http">POST /me/todo/lists</a></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/todo-post-lists?view=graph-rest-1.0&amp;tabs=http">POST /me/todo/lists</a></div></td>
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
@@ -567,7 +567,7 @@
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
-<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0&amp;tabs=http">POST /users/{id|userPrincipalName}/todo/lists</a></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/todo-post-lists?view=graph-rest-1.0&amp;tabs=http">POST /users/{id|userPrincipalName}/todo/lists</a></div></td>
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
@@ -743,6 +743,18 @@
 <tr>
 <td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/plan-get?view=graph-rest-beta&amp;tabs=http">GET /planner/plans_v2/{planId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/planview-list-categories?view=graph-rest-beta&amp;tabs=http">GET /planner/plans_v2/{planId}?$expand=planView($expand=categories)</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/plan-list-buckets?view=graph-rest-beta&amp;tabs=http">GET /planner/plans_v2/{planId}/buckets</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/plan-list-tasks?view=graph-rest-beta&amp;tabs=http">GET /planner/plans_v2/{planId}/tasks</a></div></td>
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
@@ -1596,250 +1608,256 @@
 <a href="#tabpanel_2_basetasklist3" role="tab" aria-controls="tabpanel_2_basetasklist3" data-tab="basetasklist3" tabindex="-1">basetasklist</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_calendar4" role="tab" aria-controls="tabpanel_2_calendar4" data-tab="calendar4" tabindex="-1">calendar</a>
+<a href="#tabpanel_2_bucket4" role="tab" aria-controls="tabpanel_2_bucket4" data-tab="bucket4" tabindex="-1">bucket</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_callRecording5" role="tab" aria-controls="tabpanel_2_callRecording5" data-tab="callRecording5" tabindex="-1">callRecording</a>
+<a href="#tabpanel_2_calendar5" role="tab" aria-controls="tabpanel_2_calendar5" data-tab="calendar5" tabindex="-1">calendar</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_callRecord6" role="tab" aria-controls="tabpanel_2_callRecord6" data-tab="callRecord6" tabindex="-1">callRecord</a>
+<a href="#tabpanel_2_callRecording6" role="tab" aria-controls="tabpanel_2_callRecording6" data-tab="callRecording6" tabindex="-1">callRecording</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_callTranscript7" role="tab" aria-controls="tabpanel_2_callTranscript7" data-tab="callTranscript7" tabindex="-1">callTranscript</a>
+<a href="#tabpanel_2_callRecord7" role="tab" aria-controls="tabpanel_2_callRecord7" data-tab="callRecord7" tabindex="-1">callRecord</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_channel8" role="tab" aria-controls="tabpanel_2_channel8" data-tab="channel8" tabindex="-1">channel</a>
+<a href="#tabpanel_2_callTranscript8" role="tab" aria-controls="tabpanel_2_callTranscript8" data-tab="callTranscript8" tabindex="-1">callTranscript</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_chat9" role="tab" aria-controls="tabpanel_2_chat9" data-tab="chat9" tabindex="-1">chat</a>
+<a href="#tabpanel_2_categoryDefinition9" role="tab" aria-controls="tabpanel_2_categoryDefinition9" data-tab="categoryDefinition9" tabindex="-1">categoryDefinition</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_chatMessage10" role="tab" aria-controls="tabpanel_2_chatMessage10" data-tab="chatMessage10" tabindex="-1">chatMessage</a>
+<a href="#tabpanel_2_channel10" role="tab" aria-controls="tabpanel_2_channel10" data-tab="channel10" tabindex="-1">channel</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_checklistItem11" role="tab" aria-controls="tabpanel_2_checklistItem11" data-tab="checklistItem11" tabindex="-1">checklistItem</a>
+<a href="#tabpanel_2_chat11" role="tab" aria-controls="tabpanel_2_chat11" data-tab="chat11" tabindex="-1">chat</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_contact12" role="tab" aria-controls="tabpanel_2_contact12" data-tab="contact12" tabindex="-1">contact</a>
+<a href="#tabpanel_2_chatMessage12" role="tab" aria-controls="tabpanel_2_chatMessage12" data-tab="chatMessage12" tabindex="-1">chatMessage</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_contactFolder13" role="tab" aria-controls="tabpanel_2_contactFolder13" data-tab="contactFolder13" tabindex="-1">contactFolder</a>
+<a href="#tabpanel_2_checklistItem13" role="tab" aria-controls="tabpanel_2_checklistItem13" data-tab="checklistItem13" tabindex="-1">checklistItem</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_contentSensitivityLabelAssignment14" role="tab" aria-controls="tabpanel_2_contentSensitivityLabelAssignment14" data-tab="contentSensitivityLabelAssignment14" tabindex="-1">contentSensitivityLabelAssignment</a>
+<a href="#tabpanel_2_contact14" role="tab" aria-controls="tabpanel_2_contact14" data-tab="contact14" tabindex="-1">contact</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_conversation15" role="tab" aria-controls="tabpanel_2_conversation15" data-tab="conversation15" tabindex="-1">conversation</a>
+<a href="#tabpanel_2_contactFolder15" role="tab" aria-controls="tabpanel_2_contactFolder15" data-tab="contactFolder15" tabindex="-1">contactFolder</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_conversationMember16" role="tab" aria-controls="tabpanel_2_conversationMember16" data-tab="conversationMember16" tabindex="-1">conversationMember</a>
+<a href="#tabpanel_2_contentSensitivityLabelAssignment16" role="tab" aria-controls="tabpanel_2_contentSensitivityLabelAssignment16" data-tab="contentSensitivityLabelAssignment16" tabindex="-1">contentSensitivityLabelAssignment</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_dateTimeTimeZone17" role="tab" aria-controls="tabpanel_2_dateTimeTimeZone17" data-tab="dateTimeTimeZone17" tabindex="-1">dateTimeTimeZone</a>
+<a href="#tabpanel_2_conversation17" role="tab" aria-controls="tabpanel_2_conversation17" data-tab="conversation17" tabindex="-1">conversation</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_device18" role="tab" aria-controls="tabpanel_2_device18" data-tab="device18" tabindex="-1">device</a>
+<a href="#tabpanel_2_conversationMember18" role="tab" aria-controls="tabpanel_2_conversationMember18" data-tab="conversationMember18" tabindex="-1">conversationMember</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_driveItem19" role="tab" aria-controls="tabpanel_2_driveItem19" data-tab="driveItem19" tabindex="-1">driveItem</a>
+<a href="#tabpanel_2_dateTimeTimeZone19" role="tab" aria-controls="tabpanel_2_dateTimeTimeZone19" data-tab="dateTimeTimeZone19" tabindex="-1">dateTimeTimeZone</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_entity20" role="tab" aria-controls="tabpanel_2_entity20" data-tab="entity20" tabindex="-1">entity</a>
+<a href="#tabpanel_2_device20" role="tab" aria-controls="tabpanel_2_device20" data-tab="device20" tabindex="-1">device</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_event21" role="tab" aria-controls="tabpanel_2_event21" data-tab="event21" tabindex="-1">event</a>
+<a href="#tabpanel_2_driveItem21" role="tab" aria-controls="tabpanel_2_driveItem21" data-tab="driveItem21" tabindex="-1">driveItem</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_extended-properties-overview22" role="tab" aria-controls="tabpanel_2_extended-properties-overview22" data-tab="extended-properties-overview22" tabindex="-1">extended-properties-overview</a>
+<a href="#tabpanel_2_entity22" role="tab" aria-controls="tabpanel_2_entity22" data-tab="entity22" tabindex="-1">entity</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_group23" role="tab" aria-controls="tabpanel_2_group23" data-tab="group23" tabindex="-1">group</a>
+<a href="#tabpanel_2_event23" role="tab" aria-controls="tabpanel_2_event23" data-tab="event23" tabindex="-1">event</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_alert24" role="tab" aria-controls="tabpanel_2_alert24" data-tab="alert24" tabindex="-1">alert</a>
+<a href="#tabpanel_2_extended-properties-overview24" role="tab" aria-controls="tabpanel_2_extended-properties-overview24" data-tab="extended-properties-overview24" tabindex="-1">extended-properties-overview</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_itemBody25" role="tab" aria-controls="tabpanel_2_itemBody25" data-tab="itemBody25" tabindex="-1">itemBody</a>
+<a href="#tabpanel_2_group25" role="tab" aria-controls="tabpanel_2_group25" data-tab="group25" tabindex="-1">group</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_linkedResource26" role="tab" aria-controls="tabpanel_2_linkedResource26" data-tab="linkedResource26" tabindex="-1">linkedResource</a>
+<a href="#tabpanel_2_alert26" role="tab" aria-controls="tabpanel_2_alert26" data-tab="alert26" tabindex="-1">alert</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_List27" role="tab" aria-controls="tabpanel_2_List27" data-tab="List27" tabindex="-1">List</a>
+<a href="#tabpanel_2_itemBody27" role="tab" aria-controls="tabpanel_2_itemBody27" data-tab="itemBody27" tabindex="-1">itemBody</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_mailboxFolder28" role="tab" aria-controls="tabpanel_2_mailboxFolder28" data-tab="mailboxFolder28" tabindex="-1">mailboxFolder</a>
+<a href="#tabpanel_2_linkedResource28" role="tab" aria-controls="tabpanel_2_linkedResource28" data-tab="linkedResource28" tabindex="-1">linkedResource</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_mailFolder29" role="tab" aria-controls="tabpanel_2_mailFolder29" data-tab="mailFolder29" tabindex="-1">mailFolder</a>
+<a href="#tabpanel_2_List29" role="tab" aria-controls="tabpanel_2_List29" data-tab="List29" tabindex="-1">List</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_message30" role="tab" aria-controls="tabpanel_2_message30" data-tab="message30" tabindex="-1">message</a>
+<a href="#tabpanel_2_mailboxFolder30" role="tab" aria-controls="tabpanel_2_mailboxFolder30" data-tab="mailboxFolder30" tabindex="-1">mailboxFolder</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_note31" role="tab" aria-controls="tabpanel_2_note31" data-tab="note31" tabindex="-1">note</a>
+<a href="#tabpanel_2_mailFolder31" role="tab" aria-controls="tabpanel_2_mailFolder31" data-tab="mailFolder31" tabindex="-1">mailFolder</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_offerShiftRequest32" role="tab" aria-controls="tabpanel_2_offerShiftRequest32" data-tab="offerShiftRequest32" tabindex="-1">offerShiftRequest</a>
+<a href="#tabpanel_2_message32" role="tab" aria-controls="tabpanel_2_message32" data-tab="message32" tabindex="-1">message</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_onlineMeeting33" role="tab" aria-controls="tabpanel_2_onlineMeeting33" data-tab="onlineMeeting33" tabindex="-1">onlineMeeting</a>
+<a href="#tabpanel_2_note33" role="tab" aria-controls="tabpanel_2_note33" data-tab="note33" tabindex="-1">note</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_openShiftChangeRequest34" role="tab" aria-controls="tabpanel_2_openShiftChangeRequest34" data-tab="openShiftChangeRequest34" tabindex="-1">openShiftChangeRequest</a>
+<a href="#tabpanel_2_offerShiftRequest34" role="tab" aria-controls="tabpanel_2_offerShiftRequest34" data-tab="offerShiftRequest34" tabindex="-1">offerShiftRequest</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_opentypeextension35" role="tab" aria-controls="tabpanel_2_opentypeextension35" data-tab="opentypeextension35" tabindex="-1">opentypeextension</a>
+<a href="#tabpanel_2_onlineMeeting35" role="tab" aria-controls="tabpanel_2_onlineMeeting35" data-tab="onlineMeeting35" tabindex="-1">onlineMeeting</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_organization36" role="tab" aria-controls="tabpanel_2_organization36" data-tab="organization36" tabindex="-1">organization</a>
+<a href="#tabpanel_2_openShiftChangeRequest36" role="tab" aria-controls="tabpanel_2_openShiftChangeRequest36" data-tab="openShiftChangeRequest36" tabindex="-1">openShiftChangeRequest</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_outlookCategory37" role="tab" aria-controls="tabpanel_2_outlookCategory37" data-tab="outlookCategory37" tabindex="-1">outlookCategory</a>
+<a href="#tabpanel_2_opentypeextension37" role="tab" aria-controls="tabpanel_2_opentypeextension37" data-tab="opentypeextension37" tabindex="-1">opentypeextension</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_outlooktask38" role="tab" aria-controls="tabpanel_2_outlooktask38" data-tab="outlooktask38" tabindex="-1">outlooktask</a>
+<a href="#tabpanel_2_organization38" role="tab" aria-controls="tabpanel_2_organization38" data-tab="organization38" tabindex="-1">organization</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_outlooktaskfolder39" role="tab" aria-controls="tabpanel_2_outlooktaskfolder39" data-tab="outlooktaskfolder39" tabindex="-1">outlooktaskfolder</a>
+<a href="#tabpanel_2_outlookCategory39" role="tab" aria-controls="tabpanel_2_outlookCategory39" data-tab="outlookCategory39" tabindex="-1">outlookCategory</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_patternedRecurrence40" role="tab" aria-controls="tabpanel_2_patternedRecurrence40" data-tab="patternedRecurrence40" tabindex="-1">patternedRecurrence</a>
+<a href="#tabpanel_2_outlooktask40" role="tab" aria-controls="tabpanel_2_outlooktask40" data-tab="outlooktask40" tabindex="-1">outlooktask</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_plan41" role="tab" aria-controls="tabpanel_2_plan41" data-tab="plan41" tabindex="-1">plan</a>
+<a href="#tabpanel_2_outlooktaskfolder41" role="tab" aria-controls="tabpanel_2_outlooktaskfolder41" data-tab="outlooktaskfolder41" tabindex="-1">outlooktaskfolder</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_planner-identifiers-disclaimer42" role="tab" aria-controls="tabpanel_2_planner-identifiers-disclaimer42" data-tab="planner-identifiers-disclaimer42" tabindex="-1">planner-identifiers-disclaimer</a>
+<a href="#tabpanel_2_patternedRecurrence42" role="tab" aria-controls="tabpanel_2_patternedRecurrence42" data-tab="patternedRecurrence42" tabindex="-1">patternedRecurrence</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_planner-order-hint-format43" role="tab" aria-controls="tabpanel_2_planner-order-hint-format43" data-tab="planner-order-hint-format43" tabindex="-1">planner-order-hint-format</a>
+<a href="#tabpanel_2_plan43" role="tab" aria-controls="tabpanel_2_plan43" data-tab="plan43" tabindex="-1">plan</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_planner-overview44" role="tab" aria-controls="tabpanel_2_planner-overview44" data-tab="planner-overview44" tabindex="-1">planner-overview</a>
+<a href="#tabpanel_2_planner-identifiers-disclaimer44" role="tab" aria-controls="tabpanel_2_planner-identifiers-disclaimer44" data-tab="planner-identifiers-disclaimer44" tabindex="-1">planner-identifiers-disclaimer</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_plannerAppliedCategories45" role="tab" aria-controls="tabpanel_2_plannerAppliedCategories45" data-tab="plannerAppliedCategories45" tabindex="-1">plannerAppliedCategories</a>
+<a href="#tabpanel_2_planner-order-hint-format45" role="tab" aria-controls="tabpanel_2_planner-order-hint-format45" data-tab="planner-order-hint-format45" tabindex="-1">planner-order-hint-format</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_plannerAssignedToTaskBoardTaskFormat46" role="tab" aria-controls="tabpanel_2_plannerAssignedToTaskBoardTaskFormat46" data-tab="plannerAssignedToTaskBoardTaskFormat46" tabindex="-1">plannerAssignedToTaskBoardTaskFormat</a>
+<a href="#tabpanel_2_planner-overview46" role="tab" aria-controls="tabpanel_2_planner-overview46" data-tab="planner-overview46" tabindex="-1">planner-overview</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_plannerAssignments47" role="tab" aria-controls="tabpanel_2_plannerAssignments47" data-tab="plannerAssignments47" tabindex="-1">plannerAssignments</a>
+<a href="#tabpanel_2_plannerAppliedCategories47" role="tab" aria-controls="tabpanel_2_plannerAppliedCategories47" data-tab="plannerAppliedCategories47" tabindex="-1">plannerAppliedCategories</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_plannerBucket48" role="tab" aria-controls="tabpanel_2_plannerBucket48" data-tab="plannerBucket48" tabindex="-1">plannerBucket</a>
+<a href="#tabpanel_2_plannerAssignedToTaskBoardTaskFormat48" role="tab" aria-controls="tabpanel_2_plannerAssignedToTaskBoardTaskFormat48" data-tab="plannerAssignedToTaskBoardTaskFormat48" tabindex="-1">plannerAssignedToTaskBoardTaskFormat</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_plannerBucketTaskBoardTaskFormat49" role="tab" aria-controls="tabpanel_2_plannerBucketTaskBoardTaskFormat49" data-tab="plannerBucketTaskBoardTaskFormat49" tabindex="-1">plannerBucketTaskBoardTaskFormat</a>
+<a href="#tabpanel_2_plannerAssignments49" role="tab" aria-controls="tabpanel_2_plannerAssignments49" data-tab="plannerAssignments49" tabindex="-1">plannerAssignments</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_plannerCategoryDescriptions50" role="tab" aria-controls="tabpanel_2_plannerCategoryDescriptions50" data-tab="plannerCategoryDescriptions50" tabindex="-1">plannerCategoryDescriptions</a>
+<a href="#tabpanel_2_plannerBucket50" role="tab" aria-controls="tabpanel_2_plannerBucket50" data-tab="plannerBucket50" tabindex="-1">plannerBucket</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_plannerChecklistItems51" role="tab" aria-controls="tabpanel_2_plannerChecklistItems51" data-tab="plannerChecklistItems51" tabindex="-1">plannerChecklistItems</a>
+<a href="#tabpanel_2_plannerBucketTaskBoardTaskFormat51" role="tab" aria-controls="tabpanel_2_plannerBucketTaskBoardTaskFormat51" data-tab="plannerBucketTaskBoardTaskFormat51" tabindex="-1">plannerBucketTaskBoardTaskFormat</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_plannerExternalReferences52" role="tab" aria-controls="tabpanel_2_plannerExternalReferences52" data-tab="plannerExternalReferences52" tabindex="-1">plannerExternalReferences</a>
+<a href="#tabpanel_2_plannerCategoryDescriptions52" role="tab" aria-controls="tabpanel_2_plannerCategoryDescriptions52" data-tab="plannerCategoryDescriptions52" tabindex="-1">plannerCategoryDescriptions</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_plannerGoal53" role="tab" aria-controls="tabpanel_2_plannerGoal53" data-tab="plannerGoal53" tabindex="-1">plannerGoal</a>
+<a href="#tabpanel_2_plannerChecklistItems53" role="tab" aria-controls="tabpanel_2_plannerChecklistItems53" data-tab="plannerChecklistItems53" tabindex="-1">plannerChecklistItems</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_plannerHistoryItem54" role="tab" aria-controls="tabpanel_2_plannerHistoryItem54" data-tab="plannerHistoryItem54" tabindex="-1">plannerHistoryItem</a>
+<a href="#tabpanel_2_plannerExternalReferences54" role="tab" aria-controls="tabpanel_2_plannerExternalReferences54" data-tab="plannerExternalReferences54" tabindex="-1">plannerExternalReferences</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_plannerOrderHintsByAssignee55" role="tab" aria-controls="tabpanel_2_plannerOrderHintsByAssignee55" data-tab="plannerOrderHintsByAssignee55" tabindex="-1">plannerOrderHintsByAssignee</a>
+<a href="#tabpanel_2_plannerGoal55" role="tab" aria-controls="tabpanel_2_plannerGoal55" data-tab="plannerGoal55" tabindex="-1">plannerGoal</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_plannerPlan56" role="tab" aria-controls="tabpanel_2_plannerPlan56" data-tab="plannerPlan56" tabindex="-1">plannerPlan</a>
+<a href="#tabpanel_2_plannerHistoryItem56" role="tab" aria-controls="tabpanel_2_plannerHistoryItem56" data-tab="plannerHistoryItem56" tabindex="-1">plannerHistoryItem</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_plannerPlanContainer57" role="tab" aria-controls="tabpanel_2_plannerPlanContainer57" data-tab="plannerPlanContainer57" tabindex="-1">plannerPlanContainer</a>
+<a href="#tabpanel_2_plannerOrderHintsByAssignee57" role="tab" aria-controls="tabpanel_2_plannerOrderHintsByAssignee57" data-tab="plannerOrderHintsByAssignee57" tabindex="-1">plannerOrderHintsByAssignee</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_plannerPlanDetails58" role="tab" aria-controls="tabpanel_2_plannerPlanDetails58" data-tab="plannerPlanDetails58" tabindex="-1">plannerPlanDetails</a>
+<a href="#tabpanel_2_plannerPlan58" role="tab" aria-controls="tabpanel_2_plannerPlan58" data-tab="plannerPlan58" tabindex="-1">plannerPlan</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_plannerProgressTaskBoardTaskFormat59" role="tab" aria-controls="tabpanel_2_plannerProgressTaskBoardTaskFormat59" data-tab="plannerProgressTaskBoardTaskFormat59" tabindex="-1">plannerProgressTaskBoardTaskFormat</a>
+<a href="#tabpanel_2_plannerPlanContainer59" role="tab" aria-controls="tabpanel_2_plannerPlanContainer59" data-tab="plannerPlanContainer59" tabindex="-1">plannerPlanContainer</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_plannerRoster60" role="tab" aria-controls="tabpanel_2_plannerRoster60" data-tab="plannerRoster60" tabindex="-1">plannerRoster</a>
+<a href="#tabpanel_2_plannerPlanDetails60" role="tab" aria-controls="tabpanel_2_plannerPlanDetails60" data-tab="plannerPlanDetails60" tabindex="-1">plannerPlanDetails</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_plannerRosterMember61" role="tab" aria-controls="tabpanel_2_plannerRosterMember61" data-tab="plannerRosterMember61" tabindex="-1">plannerRosterMember</a>
+<a href="#tabpanel_2_plannerProgressTaskBoardTaskFormat61" role="tab" aria-controls="tabpanel_2_plannerProgressTaskBoardTaskFormat61" data-tab="plannerProgressTaskBoardTaskFormat61" tabindex="-1">plannerProgressTaskBoardTaskFormat</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_plannerTask62" role="tab" aria-controls="tabpanel_2_plannerTask62" data-tab="plannerTask62" tabindex="-1">plannerTask</a>
+<a href="#tabpanel_2_plannerRoster62" role="tab" aria-controls="tabpanel_2_plannerRoster62" data-tab="plannerRoster62" tabindex="-1">plannerRoster</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_plannerTaskDetails63" role="tab" aria-controls="tabpanel_2_plannerTaskDetails63" data-tab="plannerTaskDetails63" tabindex="-1">plannerTaskDetails</a>
+<a href="#tabpanel_2_plannerRosterMember63" role="tab" aria-controls="tabpanel_2_plannerRosterMember63" data-tab="plannerRosterMember63" tabindex="-1">plannerRosterMember</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_plannerTaskRecurrence64" role="tab" aria-controls="tabpanel_2_plannerTaskRecurrence64" data-tab="plannerTaskRecurrence64" tabindex="-1">plannerTaskRecurrence</a>
+<a href="#tabpanel_2_plannerTask64" role="tab" aria-controls="tabpanel_2_plannerTask64" data-tab="plannerTask64" tabindex="-1">plannerTask</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_plannerUser65" role="tab" aria-controls="tabpanel_2_plannerUser65" data-tab="plannerUser65" tabindex="-1">plannerUser</a>
+<a href="#tabpanel_2_plannerTaskDetails65" role="tab" aria-controls="tabpanel_2_plannerTaskDetails65" data-tab="plannerTaskDetails65" tabindex="-1">plannerTaskDetails</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_plannerUserIds66" role="tab" aria-controls="tabpanel_2_plannerUserIds66" data-tab="plannerUserIds66" tabindex="-1">plannerUserIds</a>
+<a href="#tabpanel_2_plannerTaskRecurrence66" role="tab" aria-controls="tabpanel_2_plannerTaskRecurrence66" data-tab="plannerTaskRecurrence66" tabindex="-1">plannerTaskRecurrence</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_post67" role="tab" aria-controls="tabpanel_2_post67" data-tab="post67" tabindex="-1">post</a>
+<a href="#tabpanel_2_plannerUser67" role="tab" aria-controls="tabpanel_2_plannerUser67" data-tab="plannerUser67" tabindex="-1">plannerUser</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_presence68" role="tab" aria-controls="tabpanel_2_presence68" data-tab="presence68" tabindex="-1">presence</a>
+<a href="#tabpanel_2_plannerUserIds68" role="tab" aria-controls="tabpanel_2_plannerUserIds68" data-tab="plannerUserIds68" tabindex="-1">plannerUserIds</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_printer69" role="tab" aria-controls="tabpanel_2_printer69" data-tab="printer69" tabindex="-1">printer</a>
+<a href="#tabpanel_2_post69" role="tab" aria-controls="tabpanel_2_post69" data-tab="post69" tabindex="-1">post</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_printTaskDefinition70" role="tab" aria-controls="tabpanel_2_printTaskDefinition70" data-tab="printTaskDefinition70" tabindex="-1">printTaskDefinition</a>
+<a href="#tabpanel_2_presence70" role="tab" aria-controls="tabpanel_2_presence70" data-tab="presence70" tabindex="-1">presence</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_sensitivityLabelAssignment71" role="tab" aria-controls="tabpanel_2_sensitivityLabelAssignment71" data-tab="sensitivityLabelAssignment71" tabindex="-1">sensitivityLabelAssignment</a>
+<a href="#tabpanel_2_printer71" role="tab" aria-controls="tabpanel_2_printer71" data-tab="printer71" tabindex="-1">printer</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_shift72" role="tab" aria-controls="tabpanel_2_shift72" data-tab="shift72" tabindex="-1">shift</a>
+<a href="#tabpanel_2_printTaskDefinition72" role="tab" aria-controls="tabpanel_2_printTaskDefinition72" data-tab="printTaskDefinition72" tabindex="-1">printTaskDefinition</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_singleValueLegacyExtendedProperty73" role="tab" aria-controls="tabpanel_2_singleValueLegacyExtendedProperty73" data-tab="singleValueLegacyExtendedProperty73" tabindex="-1">singleValueLegacyExtendedProperty</a>
+<a href="#tabpanel_2_sensitivityLabelAssignment73" role="tab" aria-controls="tabpanel_2_sensitivityLabelAssignment73" data-tab="sensitivityLabelAssignment73" tabindex="-1">sensitivityLabelAssignment</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_site74" role="tab" aria-controls="tabpanel_2_site74" data-tab="site74" tabindex="-1">site</a>
+<a href="#tabpanel_2_shift74" role="tab" aria-controls="tabpanel_2_shift74" data-tab="shift74" tabindex="-1">shift</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_subscription75" role="tab" aria-controls="tabpanel_2_subscription75" data-tab="subscription75" tabindex="-1">subscription</a>
+<a href="#tabpanel_2_singleValueLegacyExtendedProperty75" role="tab" aria-controls="tabpanel_2_singleValueLegacyExtendedProperty75" data-tab="singleValueLegacyExtendedProperty75" tabindex="-1">singleValueLegacyExtendedProperty</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_swapShiftsChangeRequest76" role="tab" aria-controls="tabpanel_2_swapShiftsChangeRequest76" data-tab="swapShiftsChangeRequest76" tabindex="-1">swapShiftsChangeRequest</a>
+<a href="#tabpanel_2_site76" role="tab" aria-controls="tabpanel_2_site76" data-tab="site76" tabindex="-1">site</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_task77" role="tab" aria-controls="tabpanel_2_task77" data-tab="task77" tabindex="-1">task</a>
+<a href="#tabpanel_2_subscription77" role="tab" aria-controls="tabpanel_2_subscription77" data-tab="subscription77" tabindex="-1">subscription</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_tasks-identifiers-disclaimer78" role="tab" aria-controls="tabpanel_2_tasks-identifiers-disclaimer78" data-tab="tasks-identifiers-disclaimer78" tabindex="-1">tasks-identifiers-disclaimer</a>
+<a href="#tabpanel_2_swapShiftsChangeRequest78" role="tab" aria-controls="tabpanel_2_swapShiftsChangeRequest78" data-tab="swapShiftsChangeRequest78" tabindex="-1">swapShiftsChangeRequest</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_team79" role="tab" aria-controls="tabpanel_2_team79" data-tab="team79" tabindex="-1">team</a>
+<a href="#tabpanel_2_task79" role="tab" aria-controls="tabpanel_2_task79" data-tab="task79" tabindex="-1">task</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_timeOffRequest80" role="tab" aria-controls="tabpanel_2_timeOffRequest80" data-tab="timeOffRequest80" tabindex="-1">timeOffRequest</a>
+<a href="#tabpanel_2_tasks-identifiers-disclaimer80" role="tab" aria-controls="tabpanel_2_tasks-identifiers-disclaimer80" data-tab="tasks-identifiers-disclaimer80" tabindex="-1">tasks-identifiers-disclaimer</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_todoTask81" role="tab" aria-controls="tabpanel_2_todoTask81" data-tab="todoTask81" tabindex="-1">todoTask</a>
+<a href="#tabpanel_2_team81" role="tab" aria-controls="tabpanel_2_team81" data-tab="team81" tabindex="-1">team</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_todoTaskList82" role="tab" aria-controls="tabpanel_2_todoTaskList82" data-tab="todoTaskList82" tabindex="-1">todoTaskList</a>
+<a href="#tabpanel_2_timeOffRequest82" role="tab" aria-controls="tabpanel_2_timeOffRequest82" data-tab="timeOffRequest82" tabindex="-1">timeOffRequest</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_user83" role="tab" aria-controls="tabpanel_2_user83" data-tab="user83" tabindex="-1">user</a>
+<a href="#tabpanel_2_todoTask83" role="tab" aria-controls="tabpanel_2_todoTask83" data-tab="todoTask83" tabindex="-1">todoTask</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_virtualEventTownhall84" role="tab" aria-controls="tabpanel_2_virtualEventTownhall84" data-tab="virtualEventTownhall84" tabindex="-1">virtualEventTownhall</a>
+<a href="#tabpanel_2_todoTaskList84" role="tab" aria-controls="tabpanel_2_todoTaskList84" data-tab="todoTaskList84" tabindex="-1">todoTaskList</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_virtualEventWebinar85" role="tab" aria-controls="tabpanel_2_virtualEventWebinar85" data-tab="virtualEventWebinar85" tabindex="-1">virtualEventWebinar</a>
+<a href="#tabpanel_2_user85" role="tab" aria-controls="tabpanel_2_user85" data-tab="user85" tabindex="-1">user</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_virtualEventTownhall86" role="tab" aria-controls="tabpanel_2_virtualEventTownhall86" data-tab="virtualEventTownhall86" tabindex="-1">virtualEventTownhall</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_virtualEventWebinar87" role="tab" aria-controls="tabpanel_2_virtualEventWebinar87" data-tab="virtualEventWebinar87" tabindex="-1">virtualEventWebinar</a>
 </li>
 </ul>
 <section id="tabpanel_2_alert1" role="tabpanel" data-tab="alert1">
@@ -2132,7 +2150,62 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_calendar4" role="tabpanel" data-tab="calendar4" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_bucket4" role="tabpanel" data-tab="bucket4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/bucket?view=graph-rest-1.0&amp;tabs=http">bucket</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">capabilities</td>
+<td style="text-align: left;">bucketCapability</td>
+<td style="text-align: left;">Server-computed, read-only capability flags indicating which optional features are enabled for the entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">creationInfo</td>
+<td style="text-align: left;">creationInfo</td>
+<td style="text-align: left;">Read-only creation metadata for the entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Title of the bucket.</td>
+</tr>
+<tr>
+<td style="text-align: left;">extensions</td>
+<td style="text-align: left;">extensionFieldCollection</td>
+<td style="text-align: left;">Custom extension field values set on the entity. Supports $select.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier of the entity. Read-only. Inherited from entity</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedBy</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">Identity of the user (or application) who last modified the entity. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time the entity was last modified. The value is represented in ISO 8601 format and is always in UTC time. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">planId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">ID of the plan that contains the bucket. Immutable after creation.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_calendar5" role="tabpanel" data-tab="calendar5" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/calendar?view=graph-rest-1.0&amp;tabs=http">calendar</a></p>
 <table>
@@ -2222,7 +2295,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_callRecording5" role="tabpanel" data-tab="callRecording5" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_callRecording6" role="tabpanel" data-tab="callRecording6" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/callrecording?view=graph-rest-1.0&amp;tabs=http">callRecording</a></p>
 <table>
@@ -2282,7 +2355,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_callRecord6" role="tabpanel" data-tab="callRecord6" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_callRecord7" role="tabpanel" data-tab="callRecord7" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/callrecords-callrecord?view=graph-rest-1.0&amp;tabs=http">callRecord</a></p>
 <table>
@@ -2347,7 +2420,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_callTranscript7" role="tabpanel" data-tab="callTranscript7" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_callTranscript8" role="tabpanel" data-tab="callTranscript8" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/calltranscript?view=graph-rest-1.0&amp;tabs=http">callTranscript</a></p>
 <table>
@@ -2412,7 +2485,42 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_channel8" role="tabpanel" data-tab="channel8" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_categoryDefinition9" role="tabpanel" data-tab="categoryDefinition9" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/categorydefinition?view=graph-rest-1.0&amp;tabs=http">categoryDefinition</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">capabilities</td>
+<td style="text-align: left;">categoryDefinitionCapability</td>
+<td style="text-align: left;">Server-computed, read-only capability flags indicating which optional features are enabled for the entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the category.</td>
+</tr>
+<tr>
+<td style="text-align: left;">extensions</td>
+<td style="text-align: left;">extensionFieldCollection</td>
+<td style="text-align: left;">Custom extension field values set on the entity. Supports $select.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier of the entity. Read-only. Inherited from entity</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_channel10" role="tabpanel" data-tab="channel10" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/channel?view=graph-rest-1.0&amp;tabs=http">channel</a></p>
 <table>
@@ -2497,7 +2605,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_chat9" role="tabpanel" data-tab="chat9" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_chat11" role="tabpanel" data-tab="chat11" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/chat?view=graph-rest-1.0&amp;tabs=http">chat</a></p>
 <table>
@@ -2572,7 +2680,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_chatMessage10" role="tabpanel" data-tab="chatMessage10" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_chatMessage12" role="tabpanel" data-tab="chatMessage12" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/chatmessage?view=graph-rest-1.0&amp;tabs=http">chatMessage</a></p>
 <table>
@@ -2702,7 +2810,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_checklistItem11" role="tabpanel" data-tab="checklistItem11" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_checklistItem13" role="tabpanel" data-tab="checklistItem13" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/checklistitem?view=graph-rest-1.0&amp;tabs=http">checklistItem</a></p>
 <table>
@@ -2742,7 +2850,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_contact12" role="tabpanel" data-tab="contact12" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_contact14" role="tabpanel" data-tab="contact14" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/contact?view=graph-rest-1.0&amp;tabs=http">contact</a></p>
 <table>
@@ -2962,7 +3070,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_contactFolder13" role="tabpanel" data-tab="contactFolder13" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_contactFolder15" role="tabpanel" data-tab="contactFolder15" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/contactfolder?view=graph-rest-1.0&amp;tabs=http">contactFolder</a></p>
 <table>
@@ -2992,7 +3100,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_contentSensitivityLabelAssignment14" role="tabpanel" data-tab="contentSensitivityLabelAssignment14" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_contentSensitivityLabelAssignment16" role="tabpanel" data-tab="contentSensitivityLabelAssignment16" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/contentsensitivitylabelassignment?view=graph-rest-1.0&amp;tabs=http">contentSensitivityLabelAssignment</a></p>
 <table>
@@ -3027,7 +3135,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_conversation15" role="tabpanel" data-tab="conversation15" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_conversation17" role="tabpanel" data-tab="conversation17" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/conversation?view=graph-rest-1.0&amp;tabs=http">conversation</a></p>
 <table>
@@ -3072,7 +3180,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_conversationMember16" role="tabpanel" data-tab="conversationMember16" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_conversationMember18" role="tabpanel" data-tab="conversationMember18" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/conversationmember?view=graph-rest-1.0&amp;tabs=http">conversationMember</a></p>
 <table>
@@ -3107,7 +3215,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_dateTimeTimeZone17" role="tabpanel" data-tab="dateTimeTimeZone17" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_dateTimeTimeZone19" role="tabpanel" data-tab="dateTimeTimeZone19" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/datetimetimezone?view=graph-rest-1.0&amp;tabs=http">dateTimeTimeZone</a></p>
 <table>
@@ -3132,7 +3240,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_device18" role="tabpanel" data-tab="device18" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_device20" role="tabpanel" data-tab="device20" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/device?view=graph-rest-1.0&amp;tabs=http">device</a></p>
 <table>
@@ -3307,7 +3415,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_driveItem19" role="tabpanel" data-tab="driveItem19" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_driveItem21" role="tabpanel" data-tab="driveItem21" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/driveitem?view=graph-rest-1.0&amp;tabs=http">driveItem</a></p>
 <table>
@@ -3492,7 +3600,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_entity20" role="tabpanel" data-tab="entity20" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_entity22" role="tabpanel" data-tab="entity22" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/entity?view=graph-rest-1.0&amp;tabs=http">entity</a></p>
 <table>
@@ -3512,7 +3620,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_event21" role="tabpanel" data-tab="event21" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_event23" role="tabpanel" data-tab="event23" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/event?view=graph-rest-1.0&amp;tabs=http">event</a></p>
 <table>
@@ -3737,11 +3845,11 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_extended-properties-overview22" role="tabpanel" data-tab="extended-properties-overview22" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_extended-properties-overview24" role="tabpanel" data-tab="extended-properties-overview24" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/extended-properties-overview?view=graph-rest-1.0&amp;tabs=http">extended-properties-overview</a></p>
 </section>
-<section id="tabpanel_2_group23" role="tabpanel" data-tab="group23" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_group25" role="tabpanel" data-tab="group25" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/group?view=graph-rest-1.0&amp;tabs=http">group</a></p>
 <table>
@@ -4006,7 +4114,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_alert24" role="tabpanel" data-tab="alert24" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_alert26" role="tabpanel" data-tab="alert26" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/healthmonitoring-alert?view=graph-rest-1.0&amp;tabs=http">alert</a></p>
 <table>
@@ -4021,7 +4129,7 @@
 <tr>
 <td style="text-align: left;">alertType</td>
 <td style="text-align: left;">microsoft.graph.healthMonitoring.alertType</td>
-<td style="text-align: left;">Indicates the type of alert. The possible values are: <code>unknown</code>, <code>mfaSignInFailure</code>, <code>managedDeviceSignInFailure</code>, <code>compliantDeviceSignInFailure</code>, <code>unknownFutureValue</code>, <code>conditionalAccessBlockedSignIn</code>, <code>samlSignInFailure</code>, <code>internetAppBlockedByPolicy</code>, <code>privateAppBlockedByConnector</code>, <code>remoteNetworkTunnelConnectivity</code>, <code>remoteNetworkBgpConnectivity</code>. Use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value or values in this evolvable enum: <code>conditionalAccessBlockedSignIn</code>, <code>samlSignInFailure</code>, <code>internetAppBlockedByPolicy</code>, <code>privateAppBlockedByConnector</code>, <code>remoteNetworkTunnelConnectivity</code>, <code>remoteNetworkBgpConnectivity</code>. Supports <code>$filter</code> (<code>eq</code>).</td>
+<td style="text-align: left;">Indicates the type of alert. The possible values are: <code>unknown</code>, <code>mfaSignInFailure</code>, <code>managedDeviceSignInFailure</code>, <code>compliantDeviceSignInFailure</code>, <code>unknownFutureValue</code>, <code>conditionalAccessBlockedSignIn</code>, <code>samlSignInFailure</code>, <code>internetAppBlockedByPolicy</code>, <code>privateAppBlockedByConnector</code>, <code>remoteNetworkTunnelConnectivity</code>, <code>remoteNetworkBgpConnectivity</code>, <code>agentIdAutonomousSignInFailure</code>, <code>agentIdInteractiveSignInFailure</code>. Use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value or values in this evolvable enum: <code>conditionalAccessBlockedSignIn</code>, <code>samlSignInFailure</code>, <code>internetAppBlockedByPolicy</code>, <code>privateAppBlockedByConnector</code>, <code>remoteNetworkTunnelConnectivity</code>, <code>remoteNetworkBgpConnectivity</code>, <code>agentIdAutonomousSignInFailure</code>, <code>agentIdInteractiveSignInFailure</code>. Supports <code>$filter</code> (<code>eq</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left;">category</td>
@@ -4051,7 +4159,7 @@
 <tr>
 <td style="text-align: left;">scenario</td>
 <td style="text-align: left;">microsoft.graph.healthMonitoring.scenario</td>
-<td style="text-align: left;">The area being monitored on the system that is emitting the source signals. The possible values are: <code>unknown</code>, <code>mfa</code>, <code>devices</code>, <code>unknownFutureValue</code>, <code>conditionalAccess</code>, <code>saml</code>, <code>gsa</code>. Use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value or values in this evolvable enum: <code>conditionalAccess</code>, <code>saml</code>, <code>gsa</code>.</td>
+<td style="text-align: left;">The area being monitored on the system that is emitting the source signals. The possible values are: <code>unknown</code>, <code>mfa</code>, <code>devices</code>, <code>unknownFutureValue</code>, <code>conditionalAccess</code>, <code>saml</code>, <code>gsa</code>, <code>agentId</code>. Use the <code>Prefer: include-unknown-enum-members</code> request header to get the following value or values in this evolvable enum: <code>conditionalAccess</code>, <code>saml</code>, <code>gsa</code>, <code>agentId</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">signals</td>
@@ -4066,7 +4174,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_itemBody25" role="tabpanel" data-tab="itemBody25" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_itemBody27" role="tabpanel" data-tab="itemBody27" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/itembody?view=graph-rest-1.0&amp;tabs=http">itemBody</a></p>
 <table>
@@ -4091,7 +4199,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_linkedResource26" role="tabpanel" data-tab="linkedResource26" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_linkedResource28" role="tabpanel" data-tab="linkedResource28" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/linkedresource?view=graph-rest-1.0&amp;tabs=http">linkedResource</a></p>
 <table>
@@ -4131,7 +4239,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_List27" role="tabpanel" data-tab="List27" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_List29" role="tabpanel" data-tab="List29" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/list?view=graph-rest-1.0&amp;tabs=http">List</a></p>
 <table>
@@ -4216,7 +4324,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_mailboxFolder28" role="tabpanel" data-tab="mailboxFolder28" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_mailboxFolder30" role="tabpanel" data-tab="mailboxFolder30" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/mailboxfolder?view=graph-rest-1.0&amp;tabs=http">mailboxFolder</a></p>
 <table>
@@ -4271,7 +4379,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_mailFolder29" role="tabpanel" data-tab="mailFolder29" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_mailFolder31" role="tabpanel" data-tab="mailFolder31" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/mailfolder?view=graph-rest-1.0&amp;tabs=http">mailFolder</a></p>
 <table>
@@ -4321,7 +4429,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_message30" role="tabpanel" data-tab="message30" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_message32" role="tabpanel" data-tab="message32" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/message?view=graph-rest-1.0&amp;tabs=http">message</a></p>
 <table>
@@ -4486,7 +4594,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_note31" role="tabpanel" data-tab="note31" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_note33" role="tabpanel" data-tab="note33" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/note?view=graph-rest-1.0&amp;tabs=http">note</a></p>
 <table>
@@ -4551,7 +4659,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_offerShiftRequest32" role="tabpanel" data-tab="offerShiftRequest32" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_offerShiftRequest34" role="tabpanel" data-tab="offerShiftRequest34" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/offershiftrequest?view=graph-rest-1.0&amp;tabs=http">offerShiftRequest</a></p>
 <table>
@@ -4651,7 +4759,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_onlineMeeting33" role="tabpanel" data-tab="onlineMeeting33" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_onlineMeeting35" role="tabpanel" data-tab="onlineMeeting35" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/onlinemeeting?view=graph-rest-1.0&amp;tabs=http">onlineMeeting</a></p>
 <table>
@@ -4891,7 +4999,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_openShiftChangeRequest34" role="tabpanel" data-tab="openShiftChangeRequest34" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_openShiftChangeRequest36" role="tabpanel" data-tab="openShiftChangeRequest36" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/openshiftchangerequest?view=graph-rest-1.0&amp;tabs=http">openShiftChangeRequest</a></p>
 <table>
@@ -4976,7 +5084,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_opentypeextension35" role="tabpanel" data-tab="opentypeextension35" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_opentypeextension37" role="tabpanel" data-tab="opentypeextension37" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/opentypeextension?view=graph-rest-1.0&amp;tabs=http">opentypeextension</a></p>
 <table>
@@ -5001,7 +5109,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_organization36" role="tabpanel" data-tab="organization36" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_organization38" role="tabpanel" data-tab="organization38" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/organization?view=graph-rest-1.0&amp;tabs=http">organization</a></p>
 <table>
@@ -5146,7 +5254,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_outlookCategory37" role="tabpanel" data-tab="outlookCategory37" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_outlookCategory39" role="tabpanel" data-tab="outlookCategory39" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/outlookcategory?view=graph-rest-1.0&amp;tabs=http">outlookCategory</a></p>
 <table>
@@ -5171,7 +5279,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_outlooktask38" role="tabpanel" data-tab="outlooktask38" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_outlooktask40" role="tabpanel" data-tab="outlooktask40" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/outlooktask?view=graph-rest-1.0&amp;tabs=http">outlooktask</a></p>
 <table>
@@ -5286,7 +5394,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_outlooktaskfolder39" role="tabpanel" data-tab="outlooktaskfolder39" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_outlooktaskfolder41" role="tabpanel" data-tab="outlooktaskfolder41" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/outlooktaskfolder?view=graph-rest-1.0&amp;tabs=http">outlooktaskfolder</a></p>
 <table>
@@ -5326,7 +5434,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_patternedRecurrence40" role="tabpanel" data-tab="patternedRecurrence40" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_patternedRecurrence42" role="tabpanel" data-tab="patternedRecurrence42" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/patternedrecurrence?view=graph-rest-1.0&amp;tabs=http">patternedRecurrence</a></p>
 <table>
@@ -5351,7 +5459,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_plan41" role="tabpanel" data-tab="plan41" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_plan43" role="tabpanel" data-tab="plan43" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plan?view=graph-rest-1.0&amp;tabs=http">plan</a></p>
 <table>
@@ -5366,7 +5474,7 @@
 <tr>
 <td style="text-align: left;">archivalInfo</td>
 <td style="text-align: left;">plannerArchivalInfo</td>
-<td style="text-align: left;">Information about whether the entity is archived, and when it was archived.</td>
+<td style="text-align: left;">Service-populated information about whether the entity is archived, and when it was archived. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">calendar</td>
@@ -5401,7 +5509,7 @@
 <tr>
 <td style="text-align: left;">duration</td>
 <td style="text-align: left;">Int32</td>
-<td style="text-align: left;">Duration of the plan, in days.</td>
+<td style="text-align: left;">Computed duration of the plan, in seconds. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">extensions</td>
@@ -5411,7 +5519,7 @@
 <tr>
 <td style="text-align: left;">hasChat</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates whether the plan has an associated chat.</td>
+<td style="text-align: left;">Indicates whether the plan has an associated chat. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
@@ -5441,23 +5549,23 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_planner-identifiers-disclaimer42" role="tabpanel" data-tab="planner-identifiers-disclaimer42" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_planner-identifiers-disclaimer44" role="tabpanel" data-tab="planner-identifiers-disclaimer44" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/planner-identifiers-disclaimer?view=graph-rest-1.0&amp;tabs=http">planner-identifiers-disclaimer</a></p>
 </section>
-<section id="tabpanel_2_planner-order-hint-format43" role="tabpanel" data-tab="planner-order-hint-format43" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_planner-order-hint-format45" role="tabpanel" data-tab="planner-order-hint-format45" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/planner-order-hint-format?view=graph-rest-1.0&amp;tabs=http">planner-order-hint-format</a></p>
 </section>
-<section id="tabpanel_2_planner-overview44" role="tabpanel" data-tab="planner-overview44" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_planner-overview46" role="tabpanel" data-tab="planner-overview46" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/planner-overview?view=graph-rest-1.0&amp;tabs=http">planner-overview</a></p>
 </section>
-<section id="tabpanel_2_plannerAppliedCategories45" role="tabpanel" data-tab="plannerAppliedCategories45" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_plannerAppliedCategories47" role="tabpanel" data-tab="plannerAppliedCategories47" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannerappliedcategories?view=graph-rest-1.0&amp;tabs=http">plannerAppliedCategories</a></p>
 </section>
-<section id="tabpanel_2_plannerAssignedToTaskBoardTaskFormat46" role="tabpanel" data-tab="plannerAssignedToTaskBoardTaskFormat46" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_plannerAssignedToTaskBoardTaskFormat48" role="tabpanel" data-tab="plannerAssignedToTaskBoardTaskFormat48" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannerassignedtotaskboardtaskformat?view=graph-rest-1.0&amp;tabs=http">plannerAssignedToTaskBoardTaskFormat</a></p>
 <table>
@@ -5487,11 +5595,11 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_plannerAssignments47" role="tabpanel" data-tab="plannerAssignments47" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_plannerAssignments49" role="tabpanel" data-tab="plannerAssignments49" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannerassignments?view=graph-rest-1.0&amp;tabs=http">plannerAssignments</a></p>
 </section>
-<section id="tabpanel_2_plannerBucket48" role="tabpanel" data-tab="plannerBucket48" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_plannerBucket50" role="tabpanel" data-tab="plannerBucket50" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannerbucket?view=graph-rest-1.0&amp;tabs=http">plannerBucket</a></p>
 <table>
@@ -5526,7 +5634,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_plannerBucketTaskBoardTaskFormat49" role="tabpanel" data-tab="plannerBucketTaskBoardTaskFormat49" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_plannerBucketTaskBoardTaskFormat51" role="tabpanel" data-tab="plannerBucketTaskBoardTaskFormat51" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannerbuckettaskboardtaskformat?view=graph-rest-1.0&amp;tabs=http">plannerBucketTaskBoardTaskFormat</a></p>
 <table>
@@ -5551,7 +5659,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_plannerCategoryDescriptions50" role="tabpanel" data-tab="plannerCategoryDescriptions50" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_plannerCategoryDescriptions52" role="tabpanel" data-tab="plannerCategoryDescriptions52" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannercategorydescriptions?view=graph-rest-1.0&amp;tabs=http">plannerCategoryDescriptions</a></p>
 <table>
@@ -5691,15 +5799,15 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_plannerChecklistItems51" role="tabpanel" data-tab="plannerChecklistItems51" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_plannerChecklistItems53" role="tabpanel" data-tab="plannerChecklistItems53" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannerchecklistitems?view=graph-rest-1.0&amp;tabs=http">plannerChecklistItems</a></p>
 </section>
-<section id="tabpanel_2_plannerExternalReferences52" role="tabpanel" data-tab="plannerExternalReferences52" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_plannerExternalReferences54" role="tabpanel" data-tab="plannerExternalReferences54" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannerexternalreferences?view=graph-rest-1.0&amp;tabs=http">plannerExternalReferences</a></p>
 </section>
-<section id="tabpanel_2_plannerGoal53" role="tabpanel" data-tab="plannerGoal53" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_plannerGoal55" role="tabpanel" data-tab="plannerGoal55" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannergoal?view=graph-rest-1.0&amp;tabs=http">plannerGoal</a></p>
 <table>
@@ -5754,7 +5862,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_plannerHistoryItem54" role="tabpanel" data-tab="plannerHistoryItem54" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_plannerHistoryItem56" role="tabpanel" data-tab="plannerHistoryItem56" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannerhistoryitem?view=graph-rest-1.0&amp;tabs=http">plannerHistoryItem</a></p>
 <table>
@@ -5804,11 +5912,11 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_plannerOrderHintsByAssignee55" role="tabpanel" data-tab="plannerOrderHintsByAssignee55" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_plannerOrderHintsByAssignee57" role="tabpanel" data-tab="plannerOrderHintsByAssignee57" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannerorderhintsbyassignee?view=graph-rest-1.0&amp;tabs=http">plannerOrderHintsByAssignee</a></p>
 </section>
-<section id="tabpanel_2_plannerPlan56" role="tabpanel" data-tab="plannerPlan56" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_plannerPlan58" role="tabpanel" data-tab="plannerPlan58" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannerplan?view=graph-rest-1.0&amp;tabs=http">plannerPlan</a></p>
 <table>
@@ -5853,7 +5961,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_plannerPlanContainer57" role="tabpanel" data-tab="plannerPlanContainer57" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_plannerPlanContainer59" role="tabpanel" data-tab="plannerPlanContainer59" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannerplancontainer?view=graph-rest-1.0&amp;tabs=http">plannerPlanContainer</a></p>
 <table>
@@ -5883,7 +5991,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_plannerPlanDetails58" role="tabpanel" data-tab="plannerPlanDetails58" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_plannerPlanDetails60" role="tabpanel" data-tab="plannerPlanDetails60" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannerplandetails?view=graph-rest-1.0&amp;tabs=http">plannerPlanDetails</a></p>
 <table>
@@ -5913,7 +6021,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_plannerProgressTaskBoardTaskFormat59" role="tabpanel" data-tab="plannerProgressTaskBoardTaskFormat59" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_plannerProgressTaskBoardTaskFormat61" role="tabpanel" data-tab="plannerProgressTaskBoardTaskFormat61" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannerprogresstaskboardtaskformat?view=graph-rest-1.0&amp;tabs=http">plannerProgressTaskBoardTaskFormat</a></p>
 <table>
@@ -5938,7 +6046,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_plannerRoster60" role="tabpanel" data-tab="plannerRoster60" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_plannerRoster62" role="tabpanel" data-tab="plannerRoster62" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannerroster?view=graph-rest-1.0&amp;tabs=http">plannerRoster</a></p>
 <table>
@@ -5963,7 +6071,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_plannerRosterMember61" role="tabpanel" data-tab="plannerRosterMember61" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_plannerRosterMember63" role="tabpanel" data-tab="plannerRosterMember63" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannerrostermember?view=graph-rest-1.0&amp;tabs=http">plannerRosterMember</a></p>
 <table>
@@ -5998,7 +6106,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_plannerTask62" role="tabpanel" data-tab="plannerTask62" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_plannerTask64" role="tabpanel" data-tab="plannerTask64" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannertask?view=graph-rest-1.0&amp;tabs=http">plannerTask</a></p>
 <table>
@@ -6123,7 +6231,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_plannerTaskDetails63" role="tabpanel" data-tab="plannerTaskDetails63" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_plannerTaskDetails65" role="tabpanel" data-tab="plannerTaskDetails65" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannertaskdetails?view=graph-rest-1.0&amp;tabs=http">plannerTaskDetails</a></p>
 <table>
@@ -6163,7 +6271,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_plannerTaskRecurrence64" role="tabpanel" data-tab="plannerTaskRecurrence64" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_plannerTaskRecurrence66" role="tabpanel" data-tab="plannerTaskRecurrence66" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/plannertaskrecurrence?view=graph-rest-1.0&amp;tabs=http">plannerTaskRecurrence</a></p>
 <table>
@@ -6208,7 +6316,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_plannerUser65" role="tabpanel" data-tab="plannerUser65" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_plannerUser67" role="tabpanel" data-tab="plannerUser67" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/planneruser?view=graph-rest-1.0&amp;tabs=http">plannerUser</a></p>
 <table>
@@ -6228,11 +6336,11 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_plannerUserIds66" role="tabpanel" data-tab="plannerUserIds66" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_plannerUserIds68" role="tabpanel" data-tab="plannerUserIds68" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/planneruserids?view=graph-rest-1.0&amp;tabs=http">plannerUserIds</a></p>
 </section>
-<section id="tabpanel_2_post67" role="tabpanel" data-tab="post67" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_post69" role="tabpanel" data-tab="post69" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/post?view=graph-rest-1.0&amp;tabs=http">post</a></p>
 <table>
@@ -6312,7 +6420,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_presence68" role="tabpanel" data-tab="presence68" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_presence70" role="tabpanel" data-tab="presence70" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/presence?view=graph-rest-1.0&amp;tabs=http">presence</a></p>
 <table>
@@ -6362,7 +6470,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_printer69" role="tabpanel" data-tab="printer69" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_printer71" role="tabpanel" data-tab="printer71" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/printer?view=graph-rest-1.0&amp;tabs=http">printer</a></p>
 <table>
@@ -6430,6 +6538,11 @@
 <td style="text-align: left;">The model name reported by the printer. Inherited from printerBase.</td>
 </tr>
 <tr>
+<td style="text-align: left;">printerProvidedReleaseSupport</td>
+<td style="text-align: left;">printerProvidedReleaseSupport</td>
+<td style="text-align: left;">The secure release capabilities that the physical printer reports as supported. Read-only.</td>
+</tr>
+<tr>
 <td style="text-align: left;">registeredDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">The DateTimeOffset when the printer was registered. Read-only.</td>
@@ -6442,7 +6555,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_printTaskDefinition70" role="tabpanel" data-tab="printTaskDefinition70" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_printTaskDefinition72" role="tabpanel" data-tab="printTaskDefinition72" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/printtaskdefinition?view=graph-rest-1.0&amp;tabs=http">printTaskDefinition</a></p>
 <table>
@@ -6472,7 +6585,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_sensitivityLabelAssignment71" role="tabpanel" data-tab="sensitivityLabelAssignment71" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_sensitivityLabelAssignment73" role="tabpanel" data-tab="sensitivityLabelAssignment73" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/sensitivitylabelassignment?view=graph-rest-1.0&amp;tabs=http">sensitivityLabelAssignment</a></p>
 <table>
@@ -6502,11 +6615,11 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_shift72" role="tabpanel" data-tab="shift72" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_shift74" role="tabpanel" data-tab="shift74" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/shift?view=graph-rest-1.0&amp;tabs=http">shift</a></p>
 </section>
-<section id="tabpanel_2_singleValueLegacyExtendedProperty73" role="tabpanel" data-tab="singleValueLegacyExtendedProperty73" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_singleValueLegacyExtendedProperty75" role="tabpanel" data-tab="singleValueLegacyExtendedProperty75" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/singlevaluelegacyextendedproperty?view=graph-rest-1.0&amp;tabs=http">singleValueLegacyExtendedProperty</a></p>
 <table>
@@ -6531,7 +6644,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_site74" role="tabpanel" data-tab="site74" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_site76" role="tabpanel" data-tab="site76" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/site?view=graph-rest-1.0&amp;tabs=http">site</a></p>
 <table>
@@ -6606,7 +6719,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_subscription75" role="tabpanel" data-tab="subscription75" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_subscription77" role="tabpanel" data-tab="subscription77" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/subscription?view=graph-rest-1.0&amp;tabs=http">subscription</a></p>
 <table>
@@ -6711,7 +6824,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_swapShiftsChangeRequest76" role="tabpanel" data-tab="swapShiftsChangeRequest76" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_swapShiftsChangeRequest78" role="tabpanel" data-tab="swapShiftsChangeRequest78" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/swapshiftschangerequest?view=graph-rest-1.0&amp;tabs=http">swapShiftsChangeRequest</a></p>
 <table>
@@ -6816,7 +6929,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_task77" role="tabpanel" data-tab="task77" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_task79" role="tabpanel" data-tab="task79" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/task?view=graph-rest-1.0&amp;tabs=http">task</a></p>
 <table>
@@ -6831,7 +6944,7 @@
 <tr>
 <td style="text-align: left;">archivalInfo</td>
 <td style="text-align: left;">plannerArchivalInfo</td>
-<td style="text-align: left;">Information about whether the entity is archived, and when it was archived.</td>
+<td style="text-align: left;">Service-populated information about whether the entity is archived, and when it was archived. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">bucketId</td>
@@ -6846,12 +6959,12 @@
 <tr>
 <td style="text-align: left;">completedBy</td>
 <td style="text-align: left;">identitySet</td>
-<td style="text-align: left;">Identity of the user who marked the task complete.</td>
+<td style="text-align: left;">Identity of the user who marked the task complete. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">completedDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">Date and time the task was completed.</td>
+<td style="text-align: left;">Date and time the task was completed. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">creationInfo</td>
@@ -6886,12 +6999,12 @@
 <tr>
 <td style="text-align: left;">hasChat</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates whether the task has an associated chat.</td>
+<td style="text-align: left;">Indicates whether the task has an associated chat. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">hasChildren</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates whether the task has subtasks.</td>
+<td style="text-align: left;">Indicates whether the task has subtasks. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
@@ -6901,7 +7014,7 @@
 <tr>
 <td style="text-align: left;">isCritical</td>
 <td style="text-align: left;">Boolean</td>
-<td style="text-align: left;">Indicates whether the task is on the critical path, as computed from its dependencies.</td>
+<td style="text-align: left;">Indicates whether the task is on the critical path, as computed from its dependencies. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">lastModifiedBy</td>
@@ -6966,11 +7079,11 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_tasks-identifiers-disclaimer78" role="tabpanel" data-tab="tasks-identifiers-disclaimer78" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_tasks-identifiers-disclaimer80" role="tabpanel" data-tab="tasks-identifiers-disclaimer80" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/tasks-identifiers-disclaimer?view=graph-rest-1.0&amp;tabs=http">tasks-identifiers-disclaimer</a></p>
 </section>
-<section id="tabpanel_2_team79" role="tabpanel" data-tab="team79" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_team81" role="tabpanel" data-tab="team81" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/team?view=graph-rest-1.0&amp;tabs=http">team</a></p>
 <table>
@@ -7075,7 +7188,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_timeOffRequest80" role="tabpanel" data-tab="timeOffRequest80" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_timeOffRequest82" role="tabpanel" data-tab="timeOffRequest82" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/timeoffrequest?view=graph-rest-1.0&amp;tabs=http">timeOffRequest</a></p>
 <table>
@@ -7170,7 +7283,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_todoTask81" role="tabpanel" data-tab="todoTask81" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_todoTask83" role="tabpanel" data-tab="todoTask83" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/todotask?view=graph-rest-1.0&amp;tabs=http">todoTask</a></p>
 <table>
@@ -7265,7 +7378,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_todoTaskList82" role="tabpanel" data-tab="todoTaskList82" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_todoTaskList84" role="tabpanel" data-tab="todoTaskList84" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/todotasklist?view=graph-rest-1.0&amp;tabs=http">todoTaskList</a></p>
 <table>
@@ -7305,7 +7418,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_user83" role="tabpanel" data-tab="user83" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_user85" role="tabpanel" data-tab="user85" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/user?view=graph-rest-1.0&amp;tabs=http">user</a></p>
 <table>
@@ -7710,7 +7823,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_virtualEventTownhall84" role="tabpanel" data-tab="virtualEventTownhall84" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_virtualEventTownhall86" role="tabpanel" data-tab="virtualEventTownhall86" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/virtualeventtownhall?view=graph-rest-1.0&amp;tabs=http">virtualEventTownhall</a></p>
 <table>
@@ -7800,7 +7913,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_virtualEventWebinar85" role="tabpanel" data-tab="virtualEventWebinar85" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_virtualEventWebinar87" role="tabpanel" data-tab="virtualEventWebinar87" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/virtualeventwebinar?view=graph-rest-1.0&amp;tabs=http">virtualEventWebinar</a></p>
 <table>

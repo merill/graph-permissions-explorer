@@ -93,6 +93,11 @@
 <blockquote>
 <p>Allows the application to create, read, update and delete pull-print printers and manage member printers on behalf of the signed-in user.</p>
 </blockquote>
+<blockquote>
+<p><strong>Merill's Note</strong></p>
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>PullPrintPrinter.FullControl.All</code> permission.</p>
+<p>If you need to create an audit report of the permissions granted to all the apps in your tenant, you can run the <code>Export-MsIdAppConsentGrantReport</code> command. See <a href="https://www.youtube.com/watch?v=vO0m5yE3dZA">How To: Run a quick OAuth app audit of your tenant</a></p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -125,11 +130,754 @@
 </tbody>
 </table>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_apiv1" role="tab" aria-controls="tabpanel_1_apiv1" data-tab="apiv1" tabindex="0" aria-selected="true"><span><i class='bi bi-braces'></i></span> API [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_apibeta" role="tab" aria-controls="tabpanel_1_apibeta" data-tab="apibeta" tabindex="-1"><span><i class='bi bi-braces'></i></span> API [beta]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psv1" role="tab" aria-controls="tabpanel_1_psv1" data-tab="psv1" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psbeta" role="tab" aria-controls="tabpanel_1_psbeta" data-tab="psbeta" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [beta]</a>
+</li>
+</ul>
+<section id="tabpanel_1_apiv1" role="tabpanel" data-tab="apiv1">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/pullprintprinter-delete?view=graph-rest-1.0&amp;tabs=http">DELETE /print/pullPrintPrinters/{pullPrintPrinterId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/pullprintprinter-delete-printers?view=graph-rest-1.0&amp;tabs=http">DELETE /print/pullPrintPrinters/{pullPrintPrinterId}/printers/{printerId}/$ref</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/pullprintprintercreateoperation-get?view=graph-rest-1.0&amp;tabs=http">GET /print/operations/{printOperationId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/pullprintprinter-get?view=graph-rest-1.0&amp;tabs=http">GET /print/operations/{printOperationId}/pullPrintPrinter</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/printer-list-pullprintprinters?view=graph-rest-1.0&amp;tabs=http">GET /print/printers/{printerId}/pullPrintPrinters</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/print-list-pullprintprinters?view=graph-rest-1.0&amp;tabs=http">GET /print/pullPrintPrinters</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/pullprintprinter-get?view=graph-rest-1.0&amp;tabs=http">GET /print/pullPrintPrinters/{pullPrintPrinterId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/pullprintprinter-membersuggestions?view=graph-rest-1.0&amp;tabs=http">GET /print/pullPrintPrinters/{pullPrintPrinterId}/memberSuggestions</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/printershare-list-pullprintprinter?view=graph-rest-1.0&amp;tabs=http">GET /print/shares/{printerShareId}/pullPrintPrinter</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/pullprintprinter-update?view=graph-rest-1.0&amp;tabs=http">PATCH /print/pullPrintPrinters/{pullPrintPrinterId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/pullprintprinter-restorefactorydefaults?view=graph-rest-1.0&amp;tabs=http">POST /print/operations/{printOperationId}/pullPrintPrinter/restoreFactoryDefaults</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/print-post-pullprintprinters?view=graph-rest-1.0&amp;tabs=http">POST /print/pullPrintPrinters</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/pullprintprinter-post-printers?view=graph-rest-1.0&amp;tabs=http">POST /print/pullPrintPrinters/{pullPrintPrinterId}/printers/$ref</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/pullprintprinter-restorefactorydefaults?view=graph-rest-1.0&amp;tabs=http">POST /print/pullPrintPrinters/{pullPrintPrinterId}/restoreFactoryDefaults</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_apibeta" role="tabpanel" data-tab="apibeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/pullprintprinter-delete?view=graph-rest-beta&amp;tabs=http">DELETE /print/pullPrintPrinters/{pullPrintPrinterId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/pullprintprinter-delete-printers?view=graph-rest-beta&amp;tabs=http">DELETE /print/pullPrintPrinters/{pullPrintPrinterId}/printers/{printerId}/$ref</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/pullprintprintercreateoperation-get?view=graph-rest-beta&amp;tabs=http">GET /print/operations/{printOperationId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/pullprintprinter-get?view=graph-rest-beta&amp;tabs=http">GET /print/operations/{printOperationId}/pullPrintPrinter</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/printer-list-pullprintprinters?view=graph-rest-beta&amp;tabs=http">GET /print/printers/{printerId}/pullPrintPrinters</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/print-list-pullprintprinters?view=graph-rest-beta&amp;tabs=http">GET /print/pullPrintPrinters</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/pullprintprinter-get?view=graph-rest-beta&amp;tabs=http">GET /print/pullPrintPrinters/{pullPrintPrinterId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/pullprintprinter-membersuggestions?view=graph-rest-beta&amp;tabs=http">GET /print/pullPrintPrinters/{pullPrintPrinterId}/memberSuggestions</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/printershare-list-pullprintprinter?view=graph-rest-beta&amp;tabs=http">GET /print/shares/{printerShareId}/pullPrintPrinter</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/pullprintprinter-update?view=graph-rest-beta&amp;tabs=http">PATCH /print/pullPrintPrinters/{pullPrintPrinterId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/pullprintprinter-restorefactorydefaults?view=graph-rest-beta&amp;tabs=http">POST /print/operations/{printOperationId}/pullPrintPrinter/restoreFactoryDefaults</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/print-post-pullprintprinters?view=graph-rest-beta&amp;tabs=http">POST /print/pullPrintPrinters</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/pullprintprinter-post-printers?view=graph-rest-beta&amp;tabs=http">POST /print/pullPrintPrinters/{pullPrintPrinterId}/printers/$ref</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/pullprintprinter-restorefactorydefaults?view=graph-rest-beta&amp;tabs=http">POST /print/pullPrintPrinters/{pullPrintPrinterId}/restoreFactoryDefaults</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_psv1" role="tabpanel" data-tab="psv1" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.devices.cloudprint/get-mgprintoperation">Get-MgPrintOperation</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_psbeta" role="tabpanel" data-tab="psbeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devices.cloudprint/get-mgbetaprintoperation">Get-MgBetaPrintOperation</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
 </div>
-<hr>
+<h2 id="resources">Resources</h2>
+<p>Granting this permission allows the calling application to access (and/or update) the following information in your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_printer1" role="tab" aria-controls="tabpanel_2_printer1" data-tab="printer1" tabindex="0" aria-selected="true">printer</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_printerBase2" role="tab" aria-controls="tabpanel_2_printerBase2" data-tab="printerBase2" tabindex="-1">printerBase</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_printerDefaults3" role="tab" aria-controls="tabpanel_2_printerDefaults3" data-tab="printerDefaults3" tabindex="-1">printerDefaults</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_printerLocation4" role="tab" aria-controls="tabpanel_2_printerLocation4" data-tab="printerLocation4" tabindex="-1">printerLocation</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_printerShare5" role="tab" aria-controls="tabpanel_2_printerShare5" data-tab="printerShare5" tabindex="-1">printerShare</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_pullPrintPrinter6" role="tab" aria-controls="tabpanel_2_pullPrintPrinter6" data-tab="pullPrintPrinter6" tabindex="-1">pullPrintPrinter</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_pullPrintPrinterCreateOperation7" role="tab" aria-controls="tabpanel_2_pullPrintPrinterCreateOperation7" data-tab="pullPrintPrinterCreateOperation7" tabindex="-1">pullPrintPrinterCreateOperation</a>
+</li>
+</ul>
+<section id="tabpanel_2_printer1" role="tabpanel" data-tab="printer1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/printer?view=graph-rest-1.0&amp;tabs=http">printer</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">capabilities</td>
+<td style="text-align: left;">printerCapabilities</td>
+<td style="text-align: left;">The capabilities of the printer associated with this printer share. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">defaults</td>
+<td style="text-align: left;">printerDefaults</td>
+<td style="text-align: left;">The printer's default print settings. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name of the printer. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">hasPhysicalDevice</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">True if the printer has a physical device for printing. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The document's identifier. Inherited from printerBase. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isAcceptingJobs</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">True if the printer is currently accepting new print jobs. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isShared</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">True if the printer is shared; false otherwise. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastSeenDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The most recent dateTimeOffset when a printer interacted with Universal Print. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">location</td>
+<td style="text-align: left;">printerLocation</td>
+<td style="text-align: left;">The physical and/or organizational location of the printer. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">manufacturer</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The manufacturer reported by the printer. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">model</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The model name reported by the printer. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">printerProvidedReleaseSupport</td>
+<td style="text-align: left;">printerProvidedReleaseSupport</td>
+<td style="text-align: left;">The secure release capabilities that the physical printer reports as supported. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">registeredDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The DateTimeOffset when the printer was registered. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">printerStatus</td>
+<td style="text-align: left;">The processing status of the printer, including any errors. Inherited from printerBase.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_printerBase2" role="tabpanel" data-tab="printerBase2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/printerbase?view=graph-rest-1.0&amp;tabs=http">printerBase</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">capabilities</td>
+<td style="text-align: left;">printerCapabilities</td>
+<td style="text-align: left;">The capabilities of the printer/printerShare.</td>
+</tr>
+<tr>
+<td style="text-align: left;">defaults</td>
+<td style="text-align: left;">printerDefaults</td>
+<td style="text-align: left;">The default print settings of printer/printerShare.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name of the printer/printerShare.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isAcceptingJobs</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Specifies whether the printer/printerShare is currently accepting new print jobs.</td>
+</tr>
+<tr>
+<td style="text-align: left;">location</td>
+<td style="text-align: left;">printerLocation</td>
+<td style="text-align: left;">The physical and/or organizational location of the printer/printerShare.</td>
+</tr>
+<tr>
+<td style="text-align: left;">manufacturer</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The manufacturer of the printer/printerShare.</td>
+</tr>
+<tr>
+<td style="text-align: left;">model</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The model name of the printer/printerShare.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">printerStatus</td>
+<td style="text-align: left;">The processing status of the printer/printerShare, including any errors.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_printerDefaults3" role="tabpanel" data-tab="printerDefaults3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/printerdefaults?view=graph-rest-1.0&amp;tabs=http">printerDefaults</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">colorMode</td>
+<td style="text-align: left;">printColorMode</td>
+<td style="text-align: left;">The default color mode to use when printing the document. Valid values are described in the following table.</td>
+</tr>
+<tr>
+<td style="text-align: left;">contentType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The default content (MIME) type to use when processing documents.</td>
+</tr>
+<tr>
+<td style="text-align: left;">copiesPerJob</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The default number of copies printed per job.</td>
+</tr>
+<tr>
+<td style="text-align: left;">dpi</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The default resolution in DPI to use when printing the job.</td>
+</tr>
+<tr>
+<td style="text-align: left;">duplexMode</td>
+<td style="text-align: left;">printDuplexMode</td>
+<td style="text-align: left;">The default duplex (double-sided) configuration to use when printing a document. Valid values are described in the following table.</td>
+</tr>
+<tr>
+<td style="text-align: left;">finishings</td>
+<td style="text-align: left;">printFinishing collection</td>
+<td style="text-align: left;">The default set of finishings to apply to print jobs. Valid values are described in the following table.</td>
+</tr>
+<tr>
+<td style="text-align: left;">fitPdfToPage</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The default fitPdfToPage setting. True to fit each page of a PDF document to a physical sheet of media; false to let the printer decide how to lay out impressions.</td>
+</tr>
+<tr>
+<td style="text-align: left;">inputBin</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The default input bin that serves as the paper source.</td>
+</tr>
+<tr>
+<td style="text-align: left;">mediaColor</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The default media (such as paper) color to print the document on.</td>
+</tr>
+<tr>
+<td style="text-align: left;">mediaSize</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The default media size to use. Supports standard size names for ISO and ANSI media sizes. Valid values are listed in the printerCapabilities topic.</td>
+</tr>
+<tr>
+<td style="text-align: left;">mediaType</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The default media (such as paper) type to print the document on.</td>
+</tr>
+<tr>
+<td style="text-align: left;">multipageLayout</td>
+<td style="text-align: left;">printMultipageLayout</td>
+<td style="text-align: left;">The default direction to lay out pages when multiple pages are being printed per sheet. Valid values are described in the following table.</td>
+</tr>
+<tr>
+<td style="text-align: left;">orientation</td>
+<td style="text-align: left;">printOrientation</td>
+<td style="text-align: left;">The default orientation to use when printing the document. Valid values are described in the following table.</td>
+</tr>
+<tr>
+<td style="text-align: left;">outputBin</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The default output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.</td>
+</tr>
+<tr>
+<td style="text-align: left;">pagesPerSheet</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The default number of document pages to print on each sheet.</td>
+</tr>
+<tr>
+<td style="text-align: left;">quality</td>
+<td style="text-align: left;">printQuality</td>
+<td style="text-align: left;">The default quality to use when printing the document. Valid values are described in the following table.</td>
+</tr>
+<tr>
+<td style="text-align: left;">scaling</td>
+<td style="text-align: left;">printScaling</td>
+<td style="text-align: left;">Specifies how the printer scales the document data to fit the requested media. Valid values are described in the following table.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_printerLocation4" role="tabpanel" data-tab="printerLocation4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/printerlocation?view=graph-rest-1.0&amp;tabs=http">printerLocation</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">altitudeInMeters</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The altitude, in meters, that the printer is located at.</td>
+</tr>
+<tr>
+<td style="text-align: left;">building</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The building that the printer is located in.</td>
+</tr>
+<tr>
+<td style="text-align: left;">city</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The city that the printer is located in.</td>
+</tr>
+<tr>
+<td style="text-align: left;">countryOrRegion</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The country or region that the printer is located in.</td>
+</tr>
+<tr>
+<td style="text-align: left;">floor</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The floor that the printer is located on. Only numerical values are supported right now.</td>
+</tr>
+<tr>
+<td style="text-align: left;">floorDescription</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The description of the floor that the printer is located on.</td>
+</tr>
+<tr>
+<td style="text-align: left;">latitude</td>
+<td style="text-align: left;">Double</td>
+<td style="text-align: left;">The latitude that the printer is located at.</td>
+</tr>
+<tr>
+<td style="text-align: left;">longitude</td>
+<td style="text-align: left;">Double</td>
+<td style="text-align: left;">The longitude that the printer is located at.</td>
+</tr>
+<tr>
+<td style="text-align: left;">organization</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">The organizational hierarchy that the printer belongs to. The elements should be in hierarchical order.</td>
+</tr>
+<tr>
+<td style="text-align: left;">postalCode</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The postal code that the printer is located in.</td>
+</tr>
+<tr>
+<td style="text-align: left;">roomDescription</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The description of the room that the printer is located in.</td>
+</tr>
+<tr>
+<td style="text-align: left;">roomName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The room that the printer is located in. Only numerical values are supported right now.</td>
+</tr>
+<tr>
+<td style="text-align: left;">site</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The site that the printer is located in.</td>
+</tr>
+<tr>
+<td style="text-align: left;">stateOrProvince</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The state or province that the printer is located in.</td>
+</tr>
+<tr>
+<td style="text-align: left;">streetAddress</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The street address where the printer is located.</td>
+</tr>
+<tr>
+<td style="text-align: left;">subdivision</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">The subdivision that the printer is located in. The elements should be in hierarchical order.</td>
+</tr>
+<tr>
+<td style="text-align: left;">subUnit</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">The subunit hierarchy where the printer is located. The elements should be in hierarchical order. For example, if a campus is divided into different sections, the hierarchy might look like this: <code>[&quot;East Wing&quot;, &quot;Block A&quot;]</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_printerShare5" role="tabpanel" data-tab="printerShare5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/printershare?view=graph-rest-1.0&amp;tabs=http">printerShare</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">allowAllUsers</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the <strong>allowedUsers</strong> and <strong>allowedGroups</strong> navigation properties.</td>
+</tr>
+<tr>
+<td style="text-align: left;">capabilities</td>
+<td style="text-align: left;">printerCapabilities</td>
+<td style="text-align: left;">The capabilities of the printer associated with this printer share. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The DateTimeOffset when the printer share was created. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">defaults</td>
+<td style="text-align: left;">printerDefaults</td>
+<td style="text-align: left;">The default print settings of the printer associated with this printer share. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name of the printer share that print clients should display. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">holdJobsForSecureRelease</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether print jobs that are sent to this printer share are held in the cloud until a user releases them at the printer.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The printerShare's identifier. Inherited from printerBase. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isAcceptingJobs</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Whether the printer associated with this printer share is currently accepting new print jobs. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">location</td>
+<td style="text-align: left;">printerLocation</td>
+<td style="text-align: left;">The physical and/or organizational location of the printer associated with this printer share. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">manufacturer</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The manufacturer reported by the printer associated with this printer share. Inherited from printerBase. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">model</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The model name reported by the printer associated with this printer share. Inherited from printerBase. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">printerStatus</td>
+<td style="text-align: left;">The processing status, including any errors, of the printer associated with this printer share.Inherited from printerBase. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">viewPoint</td>
+<td style="text-align: left;">printerShareViewpoint</td>
+<td style="text-align: left;">Additional data for a printer share as viewed by the signed-in user.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_pullPrintPrinter6" role="tabpanel" data-tab="pullPrintPrinter6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/pullprintprinter?view=graph-rest-1.0&amp;tabs=http">pullPrintPrinter</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">capabilities</td>
+<td style="text-align: left;">printerCapabilities</td>
+<td style="text-align: left;">The capabilities of the pull print printer. Read-only. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">defaults</td>
+<td style="text-align: left;">printerDefaults</td>
+<td style="text-align: left;">The default print settings of the pull print printer. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name of the pull print printer. Set when you create the pull print printer; read-only after creation. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the pull print printer. Read-only. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">includeAllPrinters</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether every printer in the tenant is automatically a member of this pull print printer. When <code>true</code>, the <strong>printers</strong> collection doesn't need to be managed explicitly.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isAcceptingJobs</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Specifies whether the pull print printer currently acceptes new print jobs. Read-only. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">location</td>
+<td style="text-align: left;">printerLocation</td>
+<td style="text-align: left;">The organizational location of the pull print printer. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">manufacturer</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The manufacturer of the pull print printer. Read-only. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">model</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The model name of the pull print printer. Read-only. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">registeredDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the pull print printer was registered. Read-only. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is <code>2024-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">printerStatus</td>
+<td style="text-align: left;">The processing status of the pull print printer, including any errors. Read-only. Inherited from printerBase.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_pullPrintPrinterCreateOperation7" role="tabpanel" data-tab="pullPrintPrinterCreateOperation7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/pullprintprintercreateoperation?view=graph-rest-1.0&amp;tabs=http">pullPrintPrinterCreateOperation</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the operation was created. Read-only. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is <code>2024-01-01T00:00:00Z</code>. Inherited from printOperation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier. Inherited from printOperation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">printOperationStatus</td>
+<td style="text-align: left;">The status of the operation. Read-only. Inherited from printOperation.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</div>
 
 </article>
 

@@ -93,6 +93,11 @@
 <blockquote>
 <p>Allows the app to read and write resource policy assignments, on behalf of the signed-in user.</p>
 </blockquote>
+<blockquote>
+<p><strong>Merill's Note</strong></p>
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>ResourcePolicyAssignment.ReadWrite.All</code> permission.</p>
+<p>If you need to create an audit report of the permissions granted to all the apps in your tenant, you can run the <code>Export-MsIdAppConsentGrantReport</code> command. See <a href="https://www.youtube.com/watch?v=vO0m5yE3dZA">How To: Run a quick OAuth app audit of your tenant</a></p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -125,11 +130,305 @@
 </tbody>
 </table>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_apiv1" role="tab" aria-controls="tabpanel_1_apiv1" data-tab="apiv1" tabindex="0" aria-selected="true"><span><i class='bi bi-braces'></i></span> API [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_apibeta" role="tab" aria-controls="tabpanel_1_apibeta" data-tab="apibeta" tabindex="-1"><span><i class='bi bi-braces'></i></span> API [beta]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psv1" role="tab" aria-controls="tabpanel_1_psv1" data-tab="psv1" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psbeta" role="tab" aria-controls="tabpanel_1_psbeta" data-tab="psbeta" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [beta]</a>
+</li>
+</ul>
+<section id="tabpanel_1_apiv1" role="tabpanel" data-tab="apiv1">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_apibeta" role="tabpanel" data-tab="apibeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/resourcepolicyassignment-delete?view=graph-rest-beta&amp;tabs=http">DELETE /admin/resourcePolicy/assignments/{resourcePolicyAssignment-uniqueName}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/resourcepolicydeletableroot-delete-assignments?view=graph-rest-beta&amp;tabs=http">DELETE /admin/resourcePolicy/deletedItems/assignments/{resourcePolicyAssignment-uniqueName}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/resourcepolicyroot-list-assignments?view=graph-rest-beta&amp;tabs=http">GET /admin/resourcePolicy/assignments</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/resourcepolicyassignment-get?view=graph-rest-beta&amp;tabs=http">GET /admin/resourcePolicy/assignments/{resourcePolicyAssignment-uniqueName}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/resourcepolicydeletableroot-list-assignments?view=graph-rest-beta&amp;tabs=http">GET /admin/resourcePolicy/deletedItems/assignments</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/resourcepolicyassignment-get?view=graph-rest-beta&amp;tabs=http">GET /admin/resourcePolicy/deletedItems/assignments/{resourcePolicyAssignment-uniqueName}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/resourcepolicyassignment-upsert?view=graph-rest-beta&amp;tabs=http">PATCH /admin/resourcePolicy/assignments/{resourcePolicyAssignment-uniqueName}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/resourcepolicyassignment-create?view=graph-rest-beta&amp;tabs=http">POST /admin/resourcePolicy/assignments</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/resourcepolicyassignment-restore?view=graph-rest-beta&amp;tabs=http">POST /admin/resourcePolicy/deletedItems/assignments/{resourcePolicyAssignment-uniqueName}/restore</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_psv1" role="tabpanel" data-tab="psv1" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_psbeta" role="tabpanel" data-tab="psbeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
 </div>
-<hr>
+<h2 id="resources">Resources</h2>
+<p>Granting this permission allows the calling application to access (and/or update) the following information in your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_assignedPolicyReference1" role="tab" aria-controls="tabpanel_2_assignedPolicyReference1" data-tab="assignedPolicyReference1" tabindex="0" aria-selected="true">assignedPolicyReference</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_enums2" role="tab" aria-controls="tabpanel_2_enums2" data-tab="enums2" tabindex="-1">enums</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_json3" role="tab" aria-controls="tabpanel_2_json3" data-tab="json3" tabindex="-1">json</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_policyDefinitionReference4" role="tab" aria-controls="tabpanel_2_policyDefinitionReference4" data-tab="policyDefinitionReference4" tabindex="-1">policyDefinitionReference</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_resourcePolicyAssignment5" role="tab" aria-controls="tabpanel_2_resourcePolicyAssignment5" data-tab="resourcePolicyAssignment5" tabindex="-1">resourcePolicyAssignment</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_resourcePolicyDefinition6" role="tab" aria-controls="tabpanel_2_resourcePolicyDefinition6" data-tab="resourcePolicyDefinition6" tabindex="-1">resourcePolicyDefinition</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_resourcePolicyDeletableRoot7" role="tab" aria-controls="tabpanel_2_resourcePolicyDeletableRoot7" data-tab="resourcePolicyDeletableRoot7" tabindex="-1">resourcePolicyDeletableRoot</a>
+</li>
+</ul>
+<section id="tabpanel_2_assignedPolicyReference1" role="tabpanel" data-tab="assignedPolicyReference1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/assignedpolicyreference?view=graph-rest-1.0&amp;tabs=http">assignedPolicyReference</a></p>
+</section>
+<section id="tabpanel_2_enums2" role="tabpanel" data-tab="enums2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/enums?view=graph-rest-1.0&amp;tabs=http">enums</a></p>
+</section>
+<section id="tabpanel_2_json3" role="tabpanel" data-tab="json3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/json?view=graph-rest-1.0&amp;tabs=http">json</a></p>
+</section>
+<section id="tabpanel_2_policyDefinitionReference4" role="tabpanel" data-tab="policyDefinitionReference4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/policydefinitionreference?view=graph-rest-1.0&amp;tabs=http">policyDefinitionReference</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">policyUniqueName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique name of the referenced policy definition.</td>
+</tr>
+<tr>
+<td style="text-align: left;">version</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The semantic version of the policy definition to assign.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_resourcePolicyAssignment5" role="tabpanel" data-tab="resourcePolicyAssignment5" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/resourcepolicyassignment?view=graph-rest-1.0&amp;tabs=http">resourcePolicyAssignment</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">assignedPolicy</td>
+<td style="text-align: left;">assignedPolicyReference</td>
+<td style="text-align: left;">The reference to the policy definition and version to assign. Supply a policyDefinitionReference and its <code>@odata.type</code> discriminator.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the object was created, in ISO 8601 format and UTC. Read-only. Supports <code>$filter</code> (<code>le</code>, <code>gt</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">deletedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the object was deleted, in ISO 8601 format and UTC. Null for an active object. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">enforcementMode</td>
+<td style="text-align: left;">enforcementMode</td>
+<td style="text-align: left;">Controls whether the assignment's effect is applied. <code>doNotEnforce</code>, the default, evaluates and records the result without applying the effect. <code>enforce</code> applies the effect. The possible values are: <code>doNotEnforce</code>, <code>enforce</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the assignment is evaluated. The default is <code>true</code>. Supports <code>$filter</code> (<code>eq</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the object was last modified, in ISO 8601 format and UTC. Read-only. Supports <code>$filter</code> (<code>le</code>, <code>gt</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">params</td>
+<td style="text-align: left;">Json</td>
+<td style="text-align: left;">The JSON parameter values for the assignment. Values are validated against the referenced definition's <strong>paramsSchema</strong>; declared defaults are applied.</td>
+</tr>
+<tr>
+<td style="text-align: left;">scope</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The scope of the assignment. Currently, only tenant-wide scope (<code>/</code>) is supported. The default is <code>/</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">uniqueName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The user-supplied, immutable unique name and primary key. Required on creation. Must start with an ASCII letter, contain only ASCII letters, digits, or underscores, and have at most 128 characters. The prefixes <code>microsoft</code> and <code>ms</code> (including <code>msft</code>) are reserved, regardless of case. This is the assignment's name, not the referenced definition's name.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_resourcePolicyDefinition6" role="tabpanel" data-tab="resourcePolicyDefinition6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/resourcepolicydefinition?view=graph-rest-1.0&amp;tabs=http">resourcePolicyDefinition</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">category</td>
+<td style="text-align: left;">policyCategory</td>
+<td style="text-align: left;">The functional category extracted from the Rego policy metadata. The default is <code>notSpecified</code>. Supports <code>$filter</code> (<code>eq</code>). Read-only. The possible values are: <code>notSpecified</code>, <code>workloadIdentity</code>, <code>identityAndTenant</code>, <code>privilegedAccess</code>, <code>zeroTrust</code>, <code>agenticIdentity</code>, <code>networkAccess</code>, <code>unknownFutureValue</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">createdDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the object was created, in ISO 8601 format and UTC. Read-only. Supports <code>$filter</code> (<code>le</code>, <code>gt</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">deletedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the object was deleted, in ISO 8601 format and UTC. Null for an active object. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The description extracted from the Rego policy metadata. Maximum length is 1,024 characters. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The display name extracted from the Rego policy's <code>__metadata__.title</code>. Maximum length is 128 characters. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time the object was last modified, in ISO 8601 format and UTC. Read-only. Supports <code>$filter</code> (<code>le</code>, <code>gt</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">paramsSchema</td>
+<td style="text-align: left;">Json</td>
+<td style="text-align: left;">The JSON parameter schema extracted from the Rego policy's <code>__metadata__</code>. Assignment parameter values are validated against this schema. Supports <code>$select</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">rule</td>
+<td style="text-align: left;">resourcePolicyRule</td>
+<td style="text-align: left;">The Rego policy and its computed applicability information.</td>
+</tr>
+<tr>
+<td style="text-align: left;">uniqueName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The immutable unique name and primary key, matching the name in the Rego package. Required in a JSON create request; derived from the package name in a plain-text create request. Must start with an ASCII letter, contain only ASCII letters, digits, or underscores, and have at most 128 characters. The prefixes <code>microsoft</code> and <code>ms</code> (including <code>msft</code>) and the exact names <code>utils</code> and <code>input</code> are reserved, regardless of case. Hyphens and non-ASCII characters aren't allowed.</td>
+</tr>
+<tr>
+<td style="text-align: left;">version</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The three-part semantic version extracted from the Rego package name, such as <code>1.0.0</code> in <code>package graph.require_application_name[&quot;1.0.0&quot;]</code>. Read-only.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_resourcePolicyDeletableRoot7" role="tabpanel" data-tab="resourcePolicyDeletableRoot7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/resourcepolicydeletableroot?view=graph-rest-1.0&amp;tabs=http">resourcePolicyDeletableRoot</a></p>
+</section>
+</div>
 
 </article>
 

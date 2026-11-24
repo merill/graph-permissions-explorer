@@ -93,6 +93,11 @@
 <blockquote>
 <p>Allows the app to read which Content Hub security content packages and content items your organization has installed, and to create, update, and delete installed packages and package-scoped content items in your organization, on behalf of the signed-in user.</p>
 </blockquote>
+<blockquote>
+<p><strong>Merill's Note</strong></p>
+<p>For an app to access data in Microsoft Graph, the user or administrator must grant it the permissions it needs. This article lists all the Microsoft Graph APIs and your tenant data that can be accessed by the application (vendor/developer) if you consent to the <code>ContentHub-Installed.ReadWrite.All</code> permission.</p>
+<p>If you need to create an audit report of the permissions granted to all the apps in your tenant, you can run the <code>Export-MsIdAppConsentGrantReport</code> command. See <a href="https://www.youtube.com/watch?v=vO0m5yE3dZA">How To: Run a quick OAuth app audit of your tenant</a></p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -125,11 +130,485 @@
 </tbody>
 </table>
 <h2 id="graph-methods">Graph Methods</h2>
-<div class="NOTE">
-<h5>Note</h5>
-<p>This permission does not have any graph methods published.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_apiv1" role="tab" aria-controls="tabpanel_1_apiv1" data-tab="apiv1" tabindex="0" aria-selected="true"><span><i class='bi bi-braces'></i></span> API [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_apibeta" role="tab" aria-controls="tabpanel_1_apibeta" data-tab="apibeta" tabindex="-1"><span><i class='bi bi-braces'></i></span> API [beta]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psv1" role="tab" aria-controls="tabpanel_1_psv1" data-tab="psv1" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [v1.0]</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_psbeta" role="tab" aria-controls="tabpanel_1_psbeta" data-tab="psbeta" tabindex="-1"><span><i class='bi bi-terminal-fill'></i></span> PowerShell [beta]</a>
+</li>
+</ul>
+<section id="tabpanel_1_apiv1" role="tabpanel" data-tab="apiv1">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_apibeta" role="tabpanel" data-tab="apibeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">API supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">API supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/contentmanagementroot-delete-installedpackages?view=graph-rest-beta&amp;tabs=http">DELETE /security/contentManagement/installedPackages/{packageId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/contentmanagementroot-delete-installedpackagecontents?view=graph-rest-beta&amp;tabs=http">DELETE /security/contentManagement/installedPackages/{packageId}/contents/{contentId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/contentmanagementroot-list-installedpackagecontents?view=graph-rest-beta&amp;tabs=http">GET /security/contentManagement/installedPackageContents</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/contentmanagementroot-list-installedpackages?view=graph-rest-beta&amp;tabs=http">GET /security/contentManagement/installedPackages</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/security-contentmanagement-installedpackage-get?view=graph-rest-beta&amp;tabs=http">GET /security/contentManagement/installedPackages/{packageId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/security-contentmanagement-installedpackage-list-contents?view=graph-rest-beta&amp;tabs=http">GET /security/contentManagement/installedPackages/{packageId}/contents</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/security-contentmanagement-installedcontentitem-get?view=graph-rest-beta&amp;tabs=http">GET /security/contentManagement/installedPackages/{packageId}/contents/{contentId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/security-contentmanagement-installedpackage-update?view=graph-rest-beta&amp;tabs=http">PATCH /security/contentManagement/installedPackages/{packageId}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/security-contentmanagement-installedcontentitem-update?view=graph-rest-beta&amp;tabs=http">PATCH /security/contentManagement/installedPackages/{packageId}/contents/{contentId}</a></div></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_psv1" role="tabpanel" data-tab="psv1" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
+<section id="tabpanel_1_psbeta" role="tabpanel" data-tab="psbeta" aria-hidden="true" hidden="hidden">
+
+<p><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user">Command supports delegated access (access on behalf of a user)</a><br>
+<a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a> → <a href="https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user">Command supports app-only access (access without a user)</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Commands</th>
+</tr>
+</thead>
+</table>
+</section>
 </div>
-<hr>
+<h2 id="resources">Resources</h2>
+<p>Granting this permission allows the calling application to access (and/or update) the following information in your tenant.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_contentItem1" role="tab" aria-controls="tabpanel_2_contentItem1" data-tab="contentItem1" tabindex="0" aria-selected="true">contentItem</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_contentPackage2" role="tab" aria-controls="tabpanel_2_contentPackage2" data-tab="contentPackage2" tabindex="-1">contentPackage</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_installedContentItem3" role="tab" aria-controls="tabpanel_2_installedContentItem3" data-tab="installedContentItem3" tabindex="-1">installedContentItem</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_installedPackage4" role="tab" aria-controls="tabpanel_2_installedPackage4" data-tab="installedPackage4" tabindex="-1">installedPackage</a>
+</li>
+</ul>
+<section id="tabpanel_2_contentItem1" role="tabpanel" data-tab="contentItem1">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-contentmanagement-contentitem?view=graph-rest-1.0&amp;tabs=http">contentItem</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">contentProductId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">ARM-facing product identifier of the content item. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">dependencies</td>
+<td style="text-align: left;">Json</td>
+<td style="text-align: left;">Publisher-defined content dependencies as JSON. Included on by-key reads and expanded package manifests; unavailable on catalog content collection reads even with <code>$select</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Description of the content item, when supplied by the publisher. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Display name of the content item, when supplied by the publisher. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Customer-facing Content Hub identifier of the content item, globally unique across packages. Inherited from entity. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">isDeprecated</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the owning package is deprecated. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">kind</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Content kind, such as <code>AnalyticsRule</code>, <code>Workbook</code>, or <code>HuntingQuery</code>. Open string defined by the publisher. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">mainTemplate</td>
+<td style="text-align: left;">Json</td>
+<td style="text-align: left;">Publisher-defined deployment template as a direct JSON object. Included by default on by-key reads; unavailable on catalog content collection reads and expanded package manifests even with <code>$select</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">packageId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Owning package reference carried on the underlying Content Hub payload (for example, the parent package's <strong>contentProductId</strong>). Note that the canonical <code>{packageId}</code> route key on <code>/security/contentManagement/packages/{packageId}</code> is the parent contentPackage resource's <strong>id</strong>. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">packageVersion</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Version of the owning package in which this content item ships. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">version</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Version of the content item shipped in the owning package's latest version. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_contentPackage2" role="tabpanel" data-tab="contentPackage2" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-contentmanagement-contentpackage?view=graph-rest-1.0&amp;tabs=http">contentPackage</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">author</td>
+<td style="text-align: left;">microsoft.graph.security.contentManagement.contentAuthor</td>
+<td style="text-align: left;">The package author. Inherited from contentPackageBase. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>) on <code>author/displayName</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">categories</td>
+<td style="text-align: left;">microsoft.graph.security.contentManagement.contentCategories</td>
+<td style="text-align: left;">Publisher taxonomy for the package. Inherited from contentPackageBase. Read-only. Supports <code>$filter</code> (<code>any</code>) on <code>categories/domains</code> and <code>categories/verticals</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">contentProductId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">ARM-facing product identifier of the package in Azure Marketplace and Azure Resource Manager, distinct from the version-stable <strong>id</strong>. Inherited from contentPackageBase. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">dependencies</td>
+<td style="text-align: left;">Json</td>
+<td style="text-align: left;">Publisher-defined package prerequisites and bill-of-materials criteria as JSON. Returned on by-key reads; unavailable on collection reads even with <code>$select</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Plain-text description of the latest version, when supplied by the publisher. Inherited from contentPackageBase. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">descriptionHtml</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Publisher-authored description of the latest version, including HTML markup. Callers that render this field must sanitize it as untrusted markup. Inherited from contentPackageBase. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Display name of the latest version of the package. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">firstPublishDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time when the package was first published, in UTC. Null when unknown. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>gt</code>, <code>ge</code>, <code>lt</code>, <code>le</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">icon</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Publisher-authored icon reference for the package, when declared. Inherited from contentPackageBase. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Stable identifier of the package across versions. Inherited from entity. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">isDeprecated</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the package is deprecated in this catalog generation. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">isFeatured</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the package is editorially promoted by the publisher. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">isNew</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the package is marked as new by the publisher. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">isPreview</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether the latest version is a prerelease, as declared by the publisher. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">kind</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Package kind, such as <code>Solution</code> or <code>Standalone</code>. Open string defined by the publisher; null when no kind is declared. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastPublishDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time when the package was last published, in UTC. Null when unknown. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>gt</code>, <code>ge</code>, <code>lt</code>, <code>le</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">mainTemplate</td>
+<td style="text-align: left;">Json</td>
+<td style="text-align: left;">Publisher-defined deployment template as a direct JSON object. Included by default on by-key reads; unavailable on collection reads even with <code>$select</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">migratedToPackageId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Publisher-supplied identifier of the package that this package migrated to, when applicable. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">providers</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Security providers for which the package delivers content. Inherited from contentPackageBase. Read-only. Supports <code>$filter</code> (<code>any</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">publisherDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Display name of the publishing organization. Inherited from contentPackageBase. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">source</td>
+<td style="text-align: left;">microsoft.graph.security.contentManagement.contentPackageSource</td>
+<td style="text-align: left;">Publisher source information. Returned on by-key reads; unavailable on collection reads even with <code>$select</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">support</td>
+<td style="text-align: left;">microsoft.graph.security.contentManagement.contentSupport</td>
+<td style="text-align: left;">Support contact and tier information for the package. Inherited from contentPackageBase. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>) on <code>support/tier</code> and <code>support/displayName</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">version</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Latest version of the package in the committed catalog generation. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_installedContentItem3" role="tabpanel" data-tab="installedContentItem3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-contentmanagement-installedcontentitem?view=graph-rest-1.0&amp;tabs=http">installedContentItem</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">contentProductId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">ARM-facing product identifier of the installed content item. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Customer-facing Content Hub identifier of the content item, matching the catalog contentItem <strong>id</strong> and globally unique across packages. Inherited from entity. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">installedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time when the tenant first installed this content item, in UTC. Preserved across content and package version upgrades; null when unknown. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>gt</code>, <code>ge</code>, <code>lt</code>, <code>le</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">kind</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Content kind, such as <code>AnalyticsRule</code>, <code>Workbook</code>, or <code>HuntingQuery</code>. Open string defined by the publisher. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time when this content installation last changed, in UTC. Null when unknown. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>gt</code>, <code>ge</code>, <code>lt</code>, <code>le</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">packageId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Owning package reference recorded on the installed content item payload (for example, the owning package's <strong>contentProductId</strong>). Note that the canonical <code>{packageId}</code> route key on <code>/security/contentManagement/installedPackages/{packageId}</code> is the parent installedPackage resource's <strong>id</strong>. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">packageVersion</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Version of the owning package under which this content item is installed. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">version</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Installed version of the content item. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_installedPackage4" role="tabpanel" data-tab="installedPackage4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/security-contentmanagement-installedpackage?view=graph-rest-1.0&amp;tabs=http">installedPackage</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">author</td>
+<td style="text-align: left;">microsoft.graph.security.contentManagement.contentAuthor</td>
+<td style="text-align: left;">Author information for the installed catalog version, when available. Inherited from contentPackageBase. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">categories</td>
+<td style="text-align: left;">microsoft.graph.security.contentManagement.contentCategories</td>
+<td style="text-align: left;">Publisher taxonomy for the installed catalog version, when available. Inherited from contentPackageBase. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">contentProductId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">ARM-facing product identifier of the installed package, distinct from its stable Graph <strong>id</strong>. Inherited from contentPackageBase. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">dependencies</td>
+<td style="text-align: left;">Json</td>
+<td style="text-align: left;">Publisher-defined prerequisites for the installed catalog version as JSON, when available. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Plain-text description of the installed catalog version, when available. Inherited from contentPackageBase. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">descriptionHtml</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Publisher-authored markup description of the installed catalog version, when available. Callers that render this field must sanitize it as untrusted markup. Inherited from contentPackageBase. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Display name of the installed catalog version. Null when catalog metadata for that version is no longer available. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">icon</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Publisher-authored icon reference for the installed catalog version, when available. Inherited from contentPackageBase. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Stable identifier of the package, matching the catalog contentPackage <strong>id</strong>. Inherited from entity. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">installedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time when the tenant first installed this package, in UTC. Preserved across package upgrades; null when unknown. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>gt</code>, <code>ge</code>, <code>lt</code>, <code>le</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastModifiedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">Date and time when this installation last changed, in UTC. Null when unknown. Read-only. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>, <code>gt</code>, <code>ge</code>, <code>lt</code>, <code>le</code>) and <code>$orderby</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">mainTemplate</td>
+<td style="text-align: left;">Json</td>
+<td style="text-align: left;">Publisher-defined deployment template for the installed package version as a direct JSON object. Returned on collection reads only when explicitly requested via <code>$select=mainTemplate</code> or <code>$select=*,mainTemplate</code>; unavailable on by-key reads even with <code>$select</code>. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">providers</td>
+<td style="text-align: left;">String collection</td>
+<td style="text-align: left;">Security providers associated with the installed catalog version, when available. Inherited from contentPackageBase. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">publisherDisplayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Display name of the publishing organization, when catalog metadata is available. Inherited from contentPackageBase. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">source</td>
+<td style="text-align: left;">microsoft.graph.security.contentManagement.contentPackageSource</td>
+<td style="text-align: left;">Publisher source information for the installed catalog version, when available. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">support</td>
+<td style="text-align: left;">microsoft.graph.security.contentManagement.contentSupport</td>
+<td style="text-align: left;">Support contact and tier information for the installed catalog version, when available. Inherited from contentPackageBase. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">version</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Version of the package installed in the tenant. Supports <code>$filter</code> (<code>eq</code>, <code>ne</code>) and <code>$orderby</code>.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</div>
 
 </article>
 

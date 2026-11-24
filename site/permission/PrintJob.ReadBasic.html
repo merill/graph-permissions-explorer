@@ -169,6 +169,10 @@
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/printjob-releasewait?view=graph-rest-1.0&amp;tabs=http">GET /print/printers/{printerId}/jobs/releaseWait</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/print-list-services?view=graph-rest-1.0&amp;tabs=http">GET /print/services</a></div></td>
 </tr>
 <tr>
@@ -209,6 +213,10 @@
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/printjob-get?view=graph-rest-beta&amp;tabs=http">GET /print/printers/{id}/jobs/{id}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/printjob-releasewait?view=graph-rest-beta&amp;tabs=http">GET /print/printers/{printerId}/jobs/releaseWait</a></div></td>
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
@@ -320,6 +328,9 @@
 </li>
 <li role="presentation">
 <a href="#tabpanel_2_printTask7" role="tab" aria-controls="tabpanel_2_printTask7" data-tab="printTask7" tabindex="-1">printTask</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_pullPrintPrinter8" role="tab" aria-controls="tabpanel_2_pullPrintPrinter8" data-tab="pullPrintPrinter8" tabindex="-1">pullPrintPrinter</a>
 </li>
 </ul>
 <section id="tabpanel_2_printDocument1" role="tabpanel" data-tab="printDocument1">
@@ -435,6 +446,11 @@
 <td style="text-align: left;">The model name reported by the printer. Inherited from printerBase.</td>
 </tr>
 <tr>
+<td style="text-align: left;">printerProvidedReleaseSupport</td>
+<td style="text-align: left;">printerProvidedReleaseSupport</td>
+<td style="text-align: left;">The secure release capabilities that the physical printer reports as supported. Read-only.</td>
+</tr>
+<tr>
 <td style="text-align: left;">registeredDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
 <td style="text-align: left;">The DateTimeOffset when the printer was registered. Read-only.</td>
@@ -483,6 +499,11 @@
 <td style="text-align: left;">displayName</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The name of the printer share that print clients should display. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">holdJobsForSecureRelease</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether print jobs that are sent to this printer share are held in the cloud until a user releases them at the printer.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
@@ -535,6 +556,11 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">acknowledgedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the job was acknowledged. Read-only. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is <code>2024-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
 <td style="text-align: left;">configuration</td>
 <td style="text-align: left;">printJobConfiguration</td>
 <td style="text-align: left;">A group of settings that a printer should use to print a job.</td>
@@ -547,7 +573,12 @@
 <tr>
 <td style="text-align: left;">createdDateTime</td>
 <td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The DateTimeOffset when the job was created. Read-only.</td>
+<td style="text-align: left;">The date and time when the job was created. Read-only. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is <code>2024-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">errorCode</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">The error code of the print job. Read-only.</td>
 </tr>
 <tr>
 <td style="text-align: left;">id</td>
@@ -556,33 +587,28 @@
 </tr>
 <tr>
 <td style="text-align: left;">isFetchable</td>
-<td style="text-align: left;">Edm.Boolean</td>
-<td style="text-align: left;">If true, document can be fetched by printer.</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">If <code>true</code>, document can be fetched by printer.</td>
 </tr>
 <tr>
 <td style="text-align: left;">redirectedFrom</td>
-<td style="text-align: left;">Edm.String</td>
+<td style="text-align: left;">String</td>
 <td style="text-align: left;">Contains the source job URL, if the job has been redirected from another printer.</td>
 </tr>
 <tr>
 <td style="text-align: left;">redirectedTo</td>
-<td style="text-align: left;">Edm.String</td>
+<td style="text-align: left;">String</td>
 <td style="text-align: left;">Contains the destination job URL, if the job has been redirected to another printer.</td>
+</tr>
+<tr>
+<td style="text-align: left;">releasedDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the print job was released for printing. This property can be absent for jobs that aren't released. Read-only. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is <code>2024-01-01T00:00:00Z</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">status</td>
 <td style="text-align: left;">printJobStatus</td>
 <td style="text-align: left;">The status of the print job. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">errorCode</td>
-<td style="text-align: left;">Int32</td>
-<td style="text-align: left;">The error code of the print job. Read-only.</td>
-</tr>
-<tr>
-<td style="text-align: left;">acknowledgedDateTime</td>
-<td style="text-align: left;">DateTimeOffset</td>
-<td style="text-align: left;">The dateTimeOffset when the job was acknowledged. Read-only.</td>
 </tr>
 </tbody>
 </table>
@@ -663,6 +689,76 @@
 <td style="text-align: left;">parentUrl</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The URL for the print entity that triggered this task. For example, <code>https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}</code>. Read-only.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_pullPrintPrinter8" role="tabpanel" data-tab="pullPrintPrinter8" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/pullprintprinter?view=graph-rest-1.0&amp;tabs=http">pullPrintPrinter</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">capabilities</td>
+<td style="text-align: left;">printerCapabilities</td>
+<td style="text-align: left;">The capabilities of the pull print printer. Read-only. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">defaults</td>
+<td style="text-align: left;">printerDefaults</td>
+<td style="text-align: left;">The default print settings of the pull print printer. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">displayName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name of the pull print printer. Set when you create the pull print printer; read-only after creation. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The identifier of the pull print printer. Read-only. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">includeAllPrinters</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Indicates whether every printer in the tenant is automatically a member of this pull print printer. When <code>true</code>, the <strong>printers</strong> collection doesn't need to be managed explicitly.</td>
+</tr>
+<tr>
+<td style="text-align: left;">isAcceptingJobs</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Specifies whether the pull print printer currently acceptes new print jobs. Read-only. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">location</td>
+<td style="text-align: left;">printerLocation</td>
+<td style="text-align: left;">The organizational location of the pull print printer. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">manufacturer</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The manufacturer of the pull print printer. Read-only. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">model</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The model name of the pull print printer. Read-only. Inherited from printerBase.</td>
+</tr>
+<tr>
+<td style="text-align: left;">registeredDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">The date and time when the pull print printer was registered. Read-only. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is <code>2024-01-01T00:00:00Z</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">printerStatus</td>
+<td style="text-align: left;">The processing status of the pull print printer, including any errors. Read-only. Inherited from printerBase.</td>
 </tr>
 </tbody>
 </table>
