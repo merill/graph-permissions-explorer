@@ -257,6 +257,14 @@
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/channel-doesuserhaveaccess?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/doesUserHaveAccess(userId='@userId',tenantId='@tenantId',userPrincipalName='@userPrincipalName')</a></div></td>
 </tr>
 <tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/channel-list-joinrequests?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/joinRequests</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/channeljoinrequest-get?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/joinRequests/{channelJoinRequest-id}</a></div></td>
+</tr>
+<tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/channel-list-members?view=graph-rest-beta&amp;tabs=http">GET /teams/{team-id}/channels/{channel-id}/members</a></div></td>
 </tr>
@@ -279,6 +287,14 @@
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/channel-update-members?view=graph-rest-beta&amp;tabs=http">PATCH /teams/{team-id}/channels/{channel-id}/members/{membership-id}</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/channeljoinrequest-approve?view=graph-rest-beta&amp;tabs=http">POST /teams/{team-id}/channels/{channel-id}/joinRequests/approve</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/channeljoinrequest-reject?view=graph-rest-beta&amp;tabs=http">POST /teams/{team-id}/channels/{channel-id}/joinRequests/reject</a></div></td>
 </tr>
 <tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
@@ -373,22 +389,28 @@
 <a href="#tabpanel_2_channel2" role="tab" aria-controls="tabpanel_2_channel2" data-tab="channel2" tabindex="-1">channel</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_chatMessage3" role="tab" aria-controls="tabpanel_2_chatMessage3" data-tab="chatMessage3" tabindex="-1">chatMessage</a>
+<a href="#tabpanel_2_channelJoinRequest3" role="tab" aria-controls="tabpanel_2_channelJoinRequest3" data-tab="channelJoinRequest3" tabindex="-1">channelJoinRequest</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_conversationMember4" role="tab" aria-controls="tabpanel_2_conversationMember4" data-tab="conversationMember4" tabindex="-1">conversationMember</a>
+<a href="#tabpanel_2_channelJoinRequestActionResult4" role="tab" aria-controls="tabpanel_2_channelJoinRequestActionResult4" data-tab="channelJoinRequestActionResult4" tabindex="-1">channelJoinRequestActionResult</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_sharedWithChannelTeamInfo5" role="tab" aria-controls="tabpanel_2_sharedWithChannelTeamInfo5" data-tab="sharedWithChannelTeamInfo5" tabindex="-1">sharedWithChannelTeamInfo</a>
+<a href="#tabpanel_2_chatMessage5" role="tab" aria-controls="tabpanel_2_chatMessage5" data-tab="chatMessage5" tabindex="-1">chatMessage</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_team6" role="tab" aria-controls="tabpanel_2_team6" data-tab="team6" tabindex="-1">team</a>
+<a href="#tabpanel_2_conversationMember6" role="tab" aria-controls="tabpanel_2_conversationMember6" data-tab="conversationMember6" tabindex="-1">conversationMember</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_user7" role="tab" aria-controls="tabpanel_2_user7" data-tab="user7" tabindex="-1">user</a>
+<a href="#tabpanel_2_sharedWithChannelTeamInfo7" role="tab" aria-controls="tabpanel_2_sharedWithChannelTeamInfo7" data-tab="sharedWithChannelTeamInfo7" tabindex="-1">sharedWithChannelTeamInfo</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_userIdentity8" role="tab" aria-controls="tabpanel_2_userIdentity8" data-tab="userIdentity8" tabindex="-1">userIdentity</a>
+<a href="#tabpanel_2_team8" role="tab" aria-controls="tabpanel_2_team8" data-tab="team8" tabindex="-1">team</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_user9" role="tab" aria-controls="tabpanel_2_user9" data-tab="user9" tabindex="-1">user</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_userIdentity10" role="tab" aria-controls="tabpanel_2_userIdentity10" data-tab="userIdentity10" tabindex="-1">userIdentity</a>
 </li>
 </ul>
 <section id="tabpanel_2_aadUserConversationMember1" role="tabpanel" data-tab="aadUserConversationMember1">
@@ -526,7 +548,57 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_chatMessage3" role="tabpanel" data-tab="chatMessage3" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_channelJoinRequest3" role="tabpanel" data-tab="channelJoinRequest3" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/channeljoinrequest?view=graph-rest-1.0&amp;tabs=http">channelJoinRequest</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier of the join request. Equal to the Microsoft Entra object ID of the requester. Read-only. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">requester</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The identity that is added to the channel if the request is approved. Currently, the **u</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_channelJoinRequestActionResult4" role="tabpanel" data-tab="channelJoinRequestActionResult4" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/channeljoinrequestactionresult?view=graph-rest-1.0&amp;tabs=http">channelJoinRequestActionResult</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">error</td>
+<td style="text-align: left;">publicError</td>
+<td style="text-align: left;">The error that occurred for this join request, if any. <code>null</code> when the operation succeeded. Inherited from actionResultPart.</td>
+</tr>
+<tr>
+<td style="text-align: left;">joinRequestId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The ID of the channelJoinRequest associated with this result.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_chatMessage5" role="tabpanel" data-tab="chatMessage5" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/chatmessage?view=graph-rest-1.0&amp;tabs=http">chatMessage</a></p>
 <table>
@@ -656,7 +728,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_conversationMember4" role="tabpanel" data-tab="conversationMember4" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_conversationMember6" role="tabpanel" data-tab="conversationMember6" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/conversationmember?view=graph-rest-1.0&amp;tabs=http">conversationMember</a></p>
 <table>
@@ -691,7 +763,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_sharedWithChannelTeamInfo5" role="tabpanel" data-tab="sharedWithChannelTeamInfo5" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_sharedWithChannelTeamInfo7" role="tabpanel" data-tab="sharedWithChannelTeamInfo7" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/sharedwithchannelteaminfo?view=graph-rest-1.0&amp;tabs=http">sharedWithChannelTeamInfo</a></p>
 <table>
@@ -726,7 +798,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_team6" role="tabpanel" data-tab="team6" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_team8" role="tabpanel" data-tab="team8" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/team?view=graph-rest-1.0&amp;tabs=http">team</a></p>
 <table>
@@ -831,7 +903,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_user7" role="tabpanel" data-tab="user7" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_user9" role="tabpanel" data-tab="user9" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/user?view=graph-rest-1.0&amp;tabs=http">user</a></p>
 <table>
@@ -1236,7 +1308,7 @@
 </tbody>
 </table>
 </section>
-<section id="tabpanel_2_userIdentity8" role="tabpanel" data-tab="userIdentity8" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_userIdentity10" role="tabpanel" data-tab="userIdentity10" aria-hidden="true" hidden="hidden">
 
 <p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/useridentity?view=graph-rest-1.0&amp;tabs=http">userIdentity</a></p>
 <table>

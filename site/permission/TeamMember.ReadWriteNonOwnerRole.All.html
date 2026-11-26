@@ -205,6 +205,14 @@
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/team-update-members?view=graph-rest-beta&amp;tabs=http">PATCH /teams/{team-id}/members/{membership-id}</a></div></td>
 </tr>
 <tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/teamjoinrequest-approve?view=graph-rest-beta&amp;tabs=http">POST /teams/{team-id}/joinRequests/approve</a></div></td>
+</tr>
+<tr>
+<td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div></div></td>
+<td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/teamjoinrequest-reject?view=graph-rest-beta&amp;tabs=http">POST /teams/{team-id}/joinRequests/reject</a></div></td>
+</tr>
+<tr>
 <td><div class='d-flex flex-row w-100'><div><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#delegated-access-access-on-behalf-of-a-user' title='supports delegated access (access on behalf of a user)'><i class='bi bi-person-bounding-box'></i></a></div><div class='w-100 flex-column d-flex align-items-end'><a class='btn border-0 p-1' target='_blank' href='https://learn.microsoft.com/en-us/graph/auth/auth-concepts#app-only-access-access-without-a-user' title='supports app-only access (access without a user)'><i class='bi bi-box-fill'></i></a></div></div></td>
 <td><div class='text-break'><a href="https://docs.microsoft.com/graph/api/team-post-members?view=graph-rest-beta&amp;tabs=http">POST /teams/{team-id}/members</a></div></td>
 </tr>
@@ -296,6 +304,12 @@
 </li>
 <li role="presentation">
 <a href="#tabpanel_2_team5" role="tab" aria-controls="tabpanel_2_team5" data-tab="team5" tabindex="-1">team</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_teamJoinRequest6" role="tab" aria-controls="tabpanel_2_teamJoinRequest6" data-tab="teamJoinRequest6" tabindex="-1">teamJoinRequest</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_teamJoinRequestActionResult7" role="tab" aria-controls="tabpanel_2_teamJoinRequestActionResult7" data-tab="teamJoinRequestActionResult7" tabindex="-1">teamJoinRequestActionResult</a>
 </li>
 </ul>
 <section id="tabpanel_2_actionResultPart1" role="tabpanel" data-tab="actionResultPart1">
@@ -543,6 +557,61 @@
 <td style="text-align: left;">webUrl</td>
 <td style="text-align: left;">string (readonly)</td>
 <td style="text-align: left;">A hyperlink that goes to the team in the Microsoft Teams client. You get this URL when you right-click a team in the Microsoft Teams client and select **G</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_teamJoinRequest6" role="tabpanel" data-tab="teamJoinRequest6" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/teamjoinrequest?view=graph-rest-1.0&amp;tabs=http">teamJoinRequest</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The unique identifier of the join request. Equal to the Microsoft Entra object ID of the requester. Read-only. Inherited from entity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">requester</td>
+<td style="text-align: left;">identitySet</td>
+<td style="text-align: left;">The identity that is added to the team if the request is approved. Currently, the <strong>user</strong> property is always a teamworkUserIdentity. Read-only.</td>
+</tr>
+<tr>
+<td style="text-align: left;">sponsors</td>
+<td style="text-align: left;">identitySet collection</td>
+<td style="text-align: left;">The identities that asked for the requester to be added to the team on their behalf. Currently, the **u</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_2_teamJoinRequestActionResult7" role="tabpanel" data-tab="teamJoinRequestActionResult7" aria-hidden="true" hidden="hidden">
+
+<p>Graph reference: <a href="https://docs.microsoft.com/graph/api/resources/teamjoinrequestactionresult?view=graph-rest-1.0&amp;tabs=http">teamJoinRequestActionResult</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">error</td>
+<td style="text-align: left;">publicError</td>
+<td style="text-align: left;">The error that occurred for this join request, if any. <code>null</code> when the operation succeeded. Inherited from actionResultPart.</td>
+</tr>
+<tr>
+<td style="text-align: left;">joinRequestId</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The ID of the teamJoinRequest associated with this result.</td>
 </tr>
 </tbody>
 </table>
